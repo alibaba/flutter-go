@@ -1,0 +1,10 @@
+.idea/*
+.DS_Store
+.flutter-plugins
+.packages
+android/*
+build/*
+flutter_rookie_book.iml
+flutter_rookie_book_android.iml
+ios/*
+pubspec.lock
