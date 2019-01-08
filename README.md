@@ -27,7 +27,7 @@ flutter优点主要包括：
 
 ### app 预览
 
-<img src="https://img.alicdn.com/tfs/TB1x4gdASzqK1RjSZFHXXb3CpXa-1080-2340.jpg" width=200><img src="https://img.alicdn.com/tfs/TB1xioCANnaK1RjSZFtXXbC2VXa-1080-2340.jpg" width=200><img src="https://img.alicdn.com/tfs/TB1XFwcAOrpK1RjSZFhXXXSdXXa-1080-2340.jpg" width=200><img src="https://img.alicdn.com/tfs/TB1Hf7aAPTpK1RjSZKPXXa3UpXa-1080-2340.jpg" width=200>
+<img src="https://img.alicdn.com/tfs/TB1x4gdASzqK1RjSZFHXXb3CpXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1xioCANnaK1RjSZFtXXbC2VXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1XFwcAOrpK1RjSZFhXXXSdXXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1Hf7aAPTpK1RjSZKPXXa3UpXa-1080-2340.jpg" width=200>
 
 ### 团队
 
