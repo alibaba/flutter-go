@@ -18,7 +18,7 @@ class Provider {
     } catch (e) {
       print("Error $e");
     }
-    if (db == null && isCreate) {
+    if (isCreate) {
       ByteData data = await rootBundle.load(join("assets", "app.db"));
       List<int> bytes =
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
