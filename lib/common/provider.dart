@@ -13,7 +13,7 @@ class Provider {
   Future init(bool isCreate) async {
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath,'flutter.db');
-    print("path ${path}");
+    // print("path ${path}");
 
     if(db == null && isCreate){
       ByteData data = await rootBundle.load(join("assets", "app.db"));
@@ -21,12 +21,12 @@ class Provider {
       await new File(path).writeAsBytes(bytes);
 
       db = await openDatabase(path,version: 2,onCreate : (Database db, int version) async{
-        print('db created version is $version');
+        // print('db created version is $version');
       },onOpen : (Database db) async{
-        print('new db opened');
+        // print('new db opened');
       });
     }else{
-      print('Opening existing database');
+      // print('Opening existing database');
     }
   }
 }

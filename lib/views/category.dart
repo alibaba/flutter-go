@@ -1,14 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../routers/application.dart';
 import '../model/cat.dart';
 import '../model/widget.dart';
 import '../widgets/index.dart';
+import '../components/widget_item_container.dart';
 
+enum CateOrWigdet { Cat, WidgetDemo }
 
-enum CateOrWigdet {
-  Cat,
-  WidgetDemo
-}
 class CategoryHome extends StatefulWidget {
   CategoryHome(this.name);
   final String name;
@@ -42,6 +42,7 @@ class _CategoryHome extends State<CategoryHome> {
   Future<Cat> getCatByName(String name) async {
     return await catControl.getCatByName(name);
   }
+
   Future<bool> back() {
     if (catHistory.length == 1) {
       return Future<bool>.value(true);
@@ -49,12 +50,13 @@ class _CategoryHome extends State<CategoryHome> {
     catHistory.removeLast();
     searchCatOrWigdet();
     return Future<bool>.value(false);
-
   }
+
   void go(Cat cat) {
     catHistory.add(cat);
     searchCatOrWigdet();
   }
+
   void searchCatOrWigdet() async {
     // 假设进入这个界面的parent一定存在
     Cat parentCat = catHistory.last;
@@ -62,27 +64,31 @@ class _CategoryHome extends State<CategoryHome> {
     int depth = catHistory.length;
 
     // 继续搜索显示下一级depth: depth + 1, parentId: parentCat.id
-    List<Cat> _categories = await catControl.getList(new Cat(parentId: parentCat.id, depth: depth + 1));
+    List<Cat> _categories =
+        await catControl.getList(new Cat(parentId: parentCat.id));
     List<WidgetPoint> _widgetPoints = new List();
     if (_categories.isEmpty) {
-      _widgetPoints = await widgetControl.getList(new WidgetPoint(catId: parentCat.id));
+      _widgetPoints =
+          await widgetControl.getList(new WidgetPoint(catId: parentCat.id));
     }
-
 
     this.setState(() {
       categories = _categories;
-      title  = parentCat.name;
+      title = parentCat.name;
       widgetPoints = _widgetPoints;
     });
   }
 
   void onCatgoryTap(Cat cat) {
-      go(cat);
+    go(cat);
   }
+
   void onWidgetTap(WidgetPoint widgetPoint) {
     String targetName = widgetPoint.name;
     String targetRouter = '/category/error/404';
+    print("widgetDemosList> ${widgetDemosList}");
     widgetDemosList.forEach((item) {
+      // print("targetRouter = item.routerName> ${[item.name,targetName]}");
       if (item.name == targetName) {
         targetRouter = item.routerName;
       }
@@ -91,161 +97,49 @@ class _CategoryHome extends State<CategoryHome> {
     Application.router.navigateTo(context, "${targetRouter}");
   }
 
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: WillPopScope(
-          onWillPop: () {
-            return back();
-        },
-        child: new Container(
-            child: new CategoryOrWidgetList(
-              categorys: categories,
-              widgetPoints: widgetPoints,
-              onCatgoryTap: onCatgoryTap,
-              onWidgetTap: onWidgetTap
-            ),
-        )
-      )
+  Widget _buildContent() {
+    WidgetItemContainer wiContaienr = WidgetItemContainer(
+      columnCount: 3,
+      categories: categories,
+      isWidgetPoint:false
     );
-  }
-}
-
-
-
-class CategoryOrWidgetList extends StatelessWidget {
-
-  List<Cat> categorys = [];
-  List<WidgetPoint> widgetPoints = [];
-
-  var onCatgoryTap;
-  var onWidgetTap;
-  CategoryOrWidgetList({
-    this.categorys,
-    this.widgetPoints,
-    this.onCatgoryTap,
-    this.onWidgetTap,
-  });
-
-  Widget build(BuildContext context) {
-    print("categorys $categorys");
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, //每行2个
-          mainAxisSpacing: 0.0, //主轴(竖直)方向间距
-          crossAxisSpacing: 0.0, //纵轴(水平)方向间距
-          childAspectRatio: 0.8 //纵轴缩放比例
+    if (widgetPoints.length > 0) {
+      wiContaienr = WidgetItemContainer(
+        categories: widgetPoints,
+        columnCount: 3,
+        isWidgetPoint:true
+      );
+    }
+    return Container(
+      padding: const EdgeInsets.only(bottom: 10.0, top: 5.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(
+            image: AssetImage('assets/images/paimaiLogo.png'),
+            alignment: Alignment.bottomRight),
       ),
-      itemCount: widgetPoints.length == 0 ? categorys.length : widgetPoints.length,
-      itemBuilder: (BuildContext context, int index) {
-        if (widgetPoints.length > 0) {
-          return new ListItemWidget(
-            widgetPoint: widgetPoints[index],
-            onTap: () {
-              onWidgetTap(widgetPoints[index]);
-            },
-          );
-        }
-        return new ListCatWidget(
-          cat: categorys[index],
-          onTap: () {
-            onCatgoryTap(categorys[index]);
-          },
-        );
-      },
+      child: wiContaienr,
     );
   }
-}
-
-
-
-class ListCatWidget extends StatelessWidget {
-  final Cat cat;
-  final VoidCallback onTap;
-
-  ListCatWidget({
-    this.cat,
-    this.onTap
-  });
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-        color: Colors.green,
-        child: Container(
-            decoration:  new BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                right: const BorderSide(width: 1.0, color: const Color(0xFFFF000000)),
-                bottom: const BorderSide(width: 1.0, color: const Color(0xFFFF000000)),
-              ),
-            ),
-            child: new RaisedButton(
-                onPressed: () {
-                  onTap();
-                },
-                child: new Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Icon(
-                     Icons.add
-                    ),
-                    Text(cat.name),
-                  ],
-                )
-            )
-        )
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: WillPopScope(
+        onWillPop: () {
+          return back();
+        },
+        child: ListView(
+          children: <Widget>[
+            _buildContent(),
+          ],
+        ),
+        // child: Container(color: Colors.blue,child: Text('123'),),
+      ),
     );
   }
 }
-
-
-class ListItemWidget extends StatelessWidget {
-  final WidgetPoint widgetPoint;
-  final VoidCallback onTap;
-
-  ListItemWidget({
-    this.widgetPoint,
-    this.onTap
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-        color: Colors.green,
-        child: Container(
-            decoration:  new BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                right: const BorderSide(width: 1.0, color: const Color(0xFFFF000000)),
-                bottom: const BorderSide(width: 1.0, color: const Color(0xFFFF000000)),
-              ),
-            ),
-            child: new RaisedButton(
-                onPressed: () {
-                  onTap();
-                },
-                child: new Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Icon(
-                        Icons.add
-                    ),
-                    Text(widgetPoint.name),
-                  ],
-                )
-            )
-        )
-    );
-  }
-}
-
-
-
 

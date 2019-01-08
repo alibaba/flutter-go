@@ -40,6 +40,7 @@ class ThirdPageState extends State<ThirdPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('===========>>>:123123123123');
     return new Center(
         child: new Column(children: <Widget>[
           new Container(

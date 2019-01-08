@@ -4,6 +4,7 @@ import 'package:sqflite/sqflite.dart';
 
 
 
+
 class BaseModel{
   Database db;
   final String table = '';
@@ -15,7 +16,6 @@ class BaseModel{
 
 class Sql extends BaseModel {
   final String tableName;
-
   Sql.setTable(String name)
       : tableName = name,
         super(Provider.db);
@@ -36,12 +36,12 @@ class Sql extends BaseModel {
     String stringConditions = '';
 
     int index = 0;
-    print("condition>>> $conditions");
+    // print("condition>>> $conditions");
     conditions.forEach((key, value) {
       if (value == null) {
         return ;
       }
-      print("$key value.runtimeType: ${value.runtimeType}");
+      // print("$key value.runtimeType: ${value.runtimeType}");
       if (value.runtimeType == String) {
         stringConditions = '$stringConditions $key = "$value"';
       }
@@ -54,7 +54,7 @@ class Sql extends BaseModel {
       }
       index++;
     });
-    print("this is string condition for sql > $stringConditions");
+    // print("this is string condition for sql > $stringConditions");
 
     return await this.query(tableName, where: stringConditions);
   }
@@ -62,5 +62,38 @@ class Sql extends BaseModel {
     var id = await this.db.insert(tableName, json);
     json['id'] = id;
     return json;
+  }
+  ///
+  /// 搜索
+  /// @param Object condition
+  /// @mods [And, Or] default is Or
+  /// search({'name': "hanxu', 'id': 1};
+  ///
+  Future<List> search({Map<String, dynamic> conditions, String Mods = 'Or'}) async {
+    if (conditions == null || conditions.isEmpty) {
+      return this.get();
+    }
+    String stringConditions = '';
+    int index = 0;
+    conditions.forEach((key, value) {
+      if (value == null) {
+        return ;
+      }
+
+      if (value.runtimeType == String) {
+        stringConditions = '$stringConditions $key like "%$value%"';
+      }
+      if (value.runtimeType == int) {
+        stringConditions = '$stringConditions $key = "%$value%"';
+      }
+
+      if (index >= 0 && index < conditions.length -1) {
+        stringConditions = '$stringConditions $Mods';
+      }
+      index++;
+    });
+    print("this is string search condition for sql > $stringConditions");
+
+    return await this.query(tableName, where: stringConditions);
   }
 }

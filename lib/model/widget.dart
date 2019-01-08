@@ -3,47 +3,60 @@ import 'dart:async';
 import '../common/sql.dart';
 import "package:flutter/material.dart";
 
-abstract class WidgetInterface{
-    int get id;
-    //组件英文名
-    String get name;
-    //组件中文名
-    String get cnName;
-    //组件截图
-    String get image;
-    //组件markdown 文档
-    String get doc;
-    //类目 id
-    int get catId;
+abstract class WidgetInterface {
+  int get id;
+
+  //组件英文名
+  String get name;
+
+  //组件中文名
+  String get cnName;
+
+  //组件截图
+  String get image;
+
+  //组件markdown 文档
+  String get doc;
+
+  //类目 id
+  int get catId;
 }
 
-class WidgetPoint implements WidgetInterface{
-  int  id;
+class WidgetPoint implements WidgetInterface {
+  int id;
+
   //组件英文名
-  String  name;
+  String name;
+
   //组件中文名
-  String  cnName;
+  String cnName;
+
   //组件截图
-  String  image;
+  String image;
+
   // 路由地址
   String routerName;
+
   //组件markdown 文档
-  String  doc;
+  String doc;
+
   //组件 demo ，多个以 , 分割
-  String  demo;
+  String demo;
+
   //类目 id
-  int  catId;
+  int catId;
   final WidgetBuilder buildRouter;
-  WidgetPoint({
-    this.id,
-    this.name,
-    this.cnName,
-    this.image,
-    this.doc,
-    this.catId,
-    this.routerName,
-    this.buildRouter
-  });
+
+  WidgetPoint(
+      {this.id,
+      this.name,
+      this.cnName,
+      this.image,
+      this.doc,
+      this.catId,
+      this.routerName,
+      this.buildRouter});
+
   WidgetPoint.fromJSON(Map json)
       : id = json['id'],
         name = json['name'],
@@ -53,6 +66,7 @@ class WidgetPoint implements WidgetInterface{
         doc = json['doc'],
         catId = json['catId'],
         buildRouter = json['buildRouter'];
+
   String toString() {
     return '(WidgetPoint $name)';
   }
@@ -67,13 +81,12 @@ class WidgetPoint implements WidgetInterface{
       'catId': catId
     };
   }
+
   Map toSqlCondition() {
     Map _map = this.toMap();
     Map condition = {};
     _map.forEach((k, value) {
-
       if (value != null) {
-
         condition[k] = value;
       }
     });
@@ -85,19 +98,23 @@ class WidgetPoint implements WidgetInterface{
     return condition;
   }
 }
-class WidgetControlModel{
+
+class WidgetControlModel {
   final String table = 'widget';
   Sql sql;
+
   WidgetControlModel() {
     sql = Sql.setTable(table);
   }
+
   // 获取Widget不同条件的列表
-  Future<List<WidgetPoint>> getList(WidgetPoint widgetPoint) async{
-    List listJson =  await sql.getByCondition(conditions: widgetPoint.toSqlCondition());
+  Future<List<WidgetPoint>> getList(WidgetPoint widgetPoint) async {
+    List listJson =
+        await sql.getByCondition(conditions: widgetPoint.toSqlCondition());
     List<WidgetPoint> widgets = listJson.map((json) {
       return new WidgetPoint.fromJSON(json);
     }).toList();
-    print("widgets $widgets");
+    // print("widgets $widgets");
     return widgets;
   }
 
@@ -108,5 +125,18 @@ class WidgetControlModel{
       return null;
     }
     return new WidgetPoint.fromJSON(json.first);
+  }
+  Future<List<WidgetPoint>> search(String name) async {
+    List json = await sql.search(conditions: {'name': name});
+
+    if (json.isEmpty) {
+      return [];
+    }
+
+    List<WidgetPoint> widgets = json.map((json) {
+      return new WidgetPoint.fromJSON(json);
+    }).toList();
+
+    return widgets;
   }
 }
