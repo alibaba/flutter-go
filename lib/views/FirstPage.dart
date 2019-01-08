@@ -47,7 +47,6 @@ class FirstPageState extends State<FirstPage> {
         resultList.add(cellData);
       } catch (e) {
         // No specified type, handles all
-        print('Something really unknown: $i');
       }
     }
     Map<String, dynamic> result = {"list":resultList, 'total':pageTotal, 'pageIndex':pageIndex};

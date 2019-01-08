@@ -12,20 +12,25 @@ class Provider {
   // isCreate 用永远 copy 一个新的数据库
   Future init(bool isCreate) async {
     String databasesPath = await getDatabasesPath();
-    String path = join(databasesPath,'flutter.db');
-    // print("path ${path}");
-
-    if(db == null && isCreate){
+    String path = join(databasesPath, 'flutter.db');
+    try {
+      db = await openDatabase(path);
+    } catch (e) {
+      print("Error $e");
+    }
+    if (db == null && isCreate) {
       ByteData data = await rootBundle.load(join("assets", "app.db"));
-      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await new File(path).writeAsBytes(bytes);
 
-      db = await openDatabase(path,version: 2,onCreate : (Database db, int version) async{
-        // print('db created version is $version');
-      },onOpen : (Database db) async{
-        // print('new db opened');
+      db = await openDatabase(path, version: 2,
+          onCreate: (Database db, int version) async {
+        print('db created version is $version');
+      }, onOpen: (Database db) async {
+        print('new db opened');
       });
-    }else{
+    } else {
       // print('Opening existing database');
     }
   }

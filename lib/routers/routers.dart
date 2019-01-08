@@ -13,7 +13,6 @@ class Routes {
     List widgetDemosList = new WidgetDemoList().getDemos();
     router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-          print("ROUTE WAS NOT FOUND !!!");
         });
 
 
@@ -22,11 +21,9 @@ class Routes {
     widgetDemosList.forEach((demo) {
       Handler handler = new Handler(
           handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-            print('detail路由:${demo.buildRouter(context)}');
             return demo.buildRouter(context);
       });
 
-      print('路由:${demo.routerName}');
 
       router.define('${demo.routerName}', handler: handler);
     });

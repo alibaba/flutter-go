@@ -101,7 +101,7 @@ class _BannerState extends State<HomeBanner> {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 22.0, horizontal: 16.0),
         child: Text(
-          title, style: TextStyle(color: Colors.white, fontSize: 22.0),),),
+          title, style: TextStyle(color: Colors.white, fontSize: 18.0),),),
     );
   }
 

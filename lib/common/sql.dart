@@ -28,7 +28,10 @@ class Sql extends BaseModel {
     return tableName;
   }
 
-  // condition: {}
+  Future<int> delete(String value,String key) async{
+    return await this.db.delete(tableName,where:'$key = ?',whereArgs:[value]);
+  }
+
   Future<List> getByCondition({Map<dynamic, dynamic> conditions}) async {
     if (conditions == null || conditions.isEmpty) {
       return this.get();
@@ -36,12 +39,10 @@ class Sql extends BaseModel {
     String stringConditions = '';
 
     int index = 0;
-    // print("condition>>> $conditions");
     conditions.forEach((key, value) {
       if (value == null) {
         return ;
       }
-      // print("$key value.runtimeType: ${value.runtimeType}");
       if (value.runtimeType == String) {
         stringConditions = '$stringConditions $key = "$value"';
       }
@@ -92,7 +93,6 @@ class Sql extends BaseModel {
       }
       index++;
     });
-    print("this is string search condition for sql > $stringConditions");
 
     return await this.query(tableName, where: stringConditions);
   }

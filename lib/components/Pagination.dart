@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import './homeBanner.dart';
 import '../model/story.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class Pagination extends StatelessWidget {
   static const String routeName = '/material/page-selector';
@@ -21,36 +21,31 @@ class Pagination extends StatelessWidget {
   List<StoryModel> bannerStories = [];
 
   List<dynamic> arr = [
-    {'image': 'https://pic2.zhimg.com/v2-6733af287e1220a041fc8dcef6be9dc9.jpg', 'type': 0, 'id': 9695909, 'ga_prefix': 091507, 'title': '从一个摄影师的角度，我来谈谈这一代 iPhone 是如何继续'},
-    {'image': 'https://pic1.zhimg.com/v2-c9a673ff89e5cc4c31ffcdf0c2d2f364.jpg', 'type': 0, 'id': 9695859, 'ga_prefix': 091517, 'title': '怪不得他能拿诺贝尔文学奖，一个月就能写出一部了不起的长篇小说'},
-    {'image': 'https://pic3.zhimg.com/v2-cf89ac60dbe59ab3ca908ff4bbf843e6.jpg', 'type': 0, 'id': 96956491409, 'title': '「死者被碎尸，警方排除他杀」，这并不荒唐'},
-    {'image': 'https://pic4.zhimg.com/v2-e21659cb7bc4ab43599772fa552e6e8b.jpg', 'type': 0, 'id': 9695816, 'ga_prefix': 091312, 'title': 'iPhone 5c、SE 接连失利之后，这次苹果还是「没长记性」'}
+    {'image': 'https://img.alicdn.com/tfs/TB1W4hMAwHqK1RjSZJnXXbNLpXa-519-260.jpg', 'type': 0, 'id': 9695909, 'url': 'https://www.zhihu.com/question/294145797/answer/551162834', 'title': '为什么阿里巴巴、腾讯和 Google 之类的企业都在使用 Flutter 开发 App？'},
+    {'image': 'https://img.alicdn.com/tfs/TB1XmFIApzqK1RjSZSgXXcpAVXa-720-338.jpg', 'type': 0, 'id': 9695859, 'url': 'https://zhuanlan.zhihu.com/p/51696594', 'title': 'Flutter 1.0 正式发布: Google 的便携 UI 工具包'},
+    {'image': 'https://img.alicdn.com/tfs/TB1mClCABLoK1RjSZFuXXXn0XXa-600-362.jpg', 'type': 0, 'id': 96956491409, 'url':'https://zhuanlan.zhihu.com/p/53497167','title': 'Flutter 示范应用现已开源 — 万物起源(The History of Everything)'},
+    {'image': 'https://img.alicdn.com/tfs/TB1fXxIAAvoK1RjSZFNXXcxMVXa-600-362.jpg', 'type': 0, 'id': 9695816, 'url': 'https://mp.weixin.qq.com/s?__biz=MzAwODY4OTk2Mg==&mid=2652048101&idx=1&sn=20296088e4bd8ca33c5c9991167d9f7d&chksm=808caaa0b7fb23b65c0e5806209f8d86da6732f3a00a70353f3606018339518b0a8656f14dc5&mpshare=1&scene=2&srcid=0106SZapVysZdIS6Oc5AhNH6&from=timeline&ascene=2&devicetype=android-27&version=27000038&nettype=WIFI&abtest_cookie=BQABAAgACgALABMAFAAFAJ2GHgAjlx4AV5keAJuZHgCcmR4AAAA%3D&lang=zh_CN&pass_ticket=4K1%2FUpsxP4suPj2iubR17wbAP7r9LW9iYrPAC2dppTqv7j7JO5FWMXtcKeBRxueV&wx_header=1', 'title': 'Flutter 与 Material Design 双剑合璧，助您构建精美应用'}
   ];
 
-
-//  @override
-//  void initState() { // 无状态widget 不会调用
-//    print('start');
-//    /// super.initState();
-//    arr.forEach((item) {
-//      bannerStories.add(StoryModel.fromJson(item));
-//    });
-//
-//  }
-
+  void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   List<Widget> _PageSelector(BuildContext context) {
     List<Widget> list = [];
-    print('start');
     /// super.initState();
     arr.forEach((item) {
       bannerStories.add(StoryModel.fromJson(item));
     });
 
 
-    if (icons.length > 0) {
+    if (arr.length > 0) {
       list.add(HomeBanner(bannerStories, (story) {
-        /// _openStoryDetailPage(story);
+        _launchURL('${story.url}');
       }));
     }
     return list;

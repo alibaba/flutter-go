@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rookie_book/views/Detail.dart';
 
-class List extends StatefulWidget {
+class CompList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -9,7 +9,7 @@ class List extends StatefulWidget {
   }
 }
 
-class ListState extends State<List> {
+class ListState extends State<CompList> {
   @override
   Widget build(BuildContext context) {
     /// getData() ; this is test;

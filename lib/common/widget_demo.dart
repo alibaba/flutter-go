@@ -5,11 +5,13 @@
  */
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_markdown/flutter_markdown.dart';
 import '../routers/application.dart';
 import '../components/markdown.dart';
+import '../model/collection.dart';
+import '../widgets/index.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class WidgetDemo extends StatelessWidget {
+class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
   final String docUrl;
   final String title;
@@ -22,6 +24,27 @@ class WidgetDemo extends StatelessWidget {
       @required this.codeUrl,
       @required this.docUrl})
       : super(key: key);
+
+  _WidgetDemoState createState() => _WidgetDemoState();
+}
+
+class _WidgetDemoState extends State<WidgetDemo> {
+  bool _hasCollected = false;
+  CollectionControlModel _collectionControl = new CollectionControlModel();
+  Collection _collection;
+  Color _collectionColor;
+  List widgetDemosList = new WidgetDemoList().getDemos();
+  String _router = '';
+
+  void showInSnackBar(String value) {
+    Fluttertoast.showToast(
+        msg: value,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white);
+  }
 
   void _launchURL(String url) async {
     if (await canLaunch(url)) {
@@ -37,7 +60,7 @@ class WidgetDemo extends StatelessWidget {
         height: 10.0,
       ),
     ];
-    contentList.forEach((item) {
+    widget.contentList.forEach((item) {
       if (item.runtimeType == String) {
         _list.add(MarkdownBody(item));
         _list.add(
@@ -53,23 +76,71 @@ class WidgetDemo extends StatelessWidget {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _collectionControl.getRouterByName(widget.title).then((list) {
+      widgetDemosList.forEach((item) {
+        if (item.name == widget.title) {
+          _router = item.routerName;
+        }
+      });
+      setState(() {
+        _hasCollected = list.length > 0;
+      });
+    });
+  }
+
+// 点击收藏按钮
+  _getCollection() {
+    if (_hasCollected) {
+      // 删除操作
+      _collectionControl.deleteByName(widget.title).then((result) {
+        if (result > 0 && this.mounted) {
+          setState(() {
+            _hasCollected = false;
+          });
+          showInSnackBar('已取消收藏');
+          return;
+        }
+        print('删除错误');
+      });
+    } else {
+      // 插入操作
+      _collectionControl
+          .insert(Collection(name: widget.title, router: _router))
+          .then((result) {
+        if (this.mounted) {
+          setState(() {
+            _hasCollected = true;
+          });
+          showInSnackBar('收藏成功');
+        }
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_hasCollected) {
+      _collectionColor = Colors.yellow;
+    } else {
+      _collectionColor = Colors.white;
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
         actions: <Widget>[
           new IconButton(
             tooltip: 'widget doc',
             onPressed: () {
-              _launchURL(docUrl);
+              _launchURL(widget.docUrl);
             },
             icon: Icon(Icons.library_books),
           ),
           new IconButton(
             tooltip: 'github code',
             onPressed: () {
-              print(Application.github['widgetsURL']+codeUrl);
-              _launchURL(Application.github['widgetsURL']+codeUrl);
+              _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
             },
             icon: Icon(Icons.code),
           ),
@@ -93,6 +164,15 @@ class WidgetDemo extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _getCollection,
+        tooltip: '收藏',
+        child: Icon(
+          Icons.star,
+          color: _collectionColor,
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }
