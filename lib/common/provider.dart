@@ -13,25 +13,16 @@ class Provider {
   Future init(bool isCreate) async {
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'flutter.db');
-    try {
-      db = await openDatabase(path);
-    } catch (e) {
-      print("Error $e");
-    }
-    if (isCreate) {
-      ByteData data = await rootBundle.load(join("assets", "app.db"));
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      await new File(path).writeAsBytes(bytes);
+    ByteData data = await rootBundle.load(join("assets", "app.db"));
+    List<int> bytes =
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    await new File(path).writeAsBytes(bytes);
 
-      db = await openDatabase(path, version: 2,
-          onCreate: (Database db, int version) async {
-        print('db created version is $version');
-      }, onOpen: (Database db) async {
-        print('new db opened');
-      });
-    } else {
-      // print('Opening existing database');
-    }
+    db = await openDatabase(path, version: 2,
+        onCreate: (Database db, int version) async {
+      print('db created version is $version');
+    }, onOpen: (Database db) async {
+      print('new db opened');
+    });
   }
 }
