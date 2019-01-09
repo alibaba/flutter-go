@@ -28,7 +28,7 @@ class ColumnDefault extends StatelessWidget {
       /**
        * > mainAxisSize 属性
           - 一行的高度是有mainAxisSize属性控制，默认是max
-          - mainAxisSize: MainAxisSize.min,一行的宽度是孩子传入的约束
+          - mainAxisSize: MainAxisSize.min,一行的宽度是child传入的约束
           - mainAxisSize: MainAxisSize.max,一行的宽度的最大宽度是传入的约束。
           > mainAxisAlignment属性
        */
