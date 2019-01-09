@@ -35,27 +35,27 @@ flutter优点主要包括：
   <tbody>
     <tr>
       <td align="center" width="80" valign="top">
-        <img height="80" src="https://github.com/minghe.png?s=128">
+        <img height="80" width="80" src="https://github.com/minghe.png?s=128">
         <br>
-        <a href="https://github.com/minghe">@明河</a>
+        <a href="https://github.com/minghe">@minghe</a>
       </td>
       <td align="center" width="80" valign="top">
-        <img height="80" src="https://github.com/ryan730.png?s=128">
+        <img height="80" width="80"  src="https://github.com/ryan730.png?s=128">
         <br>
         <a href="https://github.com/ryan730">@ryan730</a>
       </td>
       <td align="center" width="80" valign="top">
-        <img height="80" src="https://github.com/Nealyang.png?s=128">
+        <img height="80" width="80"  src="https://github.com/Nealyang.png?s=128">
         <br>
         <a href="https://github.com/Nealyang">@Nealyang</a>
       </td>
       <td align="center" width="80" valign="top">
-        <img height="80" src="https://github.com/hanxu317317.png?s=128">
+        <img height="80" width="80"  src="https://github.com/hanxu317317.png?s=128">
         <br>
         <a href="https://github.com/hanxu317317">@hanxu317317</a>
       </td>
       <td align="center" width="80" valign="top">
-        <img height="80" src="https://github.com/DeckeDeng.png?s=128">
+        <img height="80" width="80"  src="https://github.com/DeckeDeng.png?s=128">
         <br>
         <a href="https://github.com/DeckeDeng">@DeckeDeng</a>
       </td>
