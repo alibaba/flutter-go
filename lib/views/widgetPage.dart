@@ -13,7 +13,7 @@ class WidgetPage extends StatefulWidget {
   SecondPageState createState() => new SecondPageState(catModel);
 }
 
-class SecondPageState extends State<WidgetPage> {
+class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMixin{
   CatControlModel catModel;
   SecondPageState(this.catModel) : super();
 
@@ -23,6 +23,11 @@ class SecondPageState extends State<WidgetPage> {
 
   List<Cat> categories = [];
 
+  @override
+    // TODO: implement wantKeepAlive
+    bool get wantKeepAlive => true;
+
+  @override
   void initState() { 
     super.initState();
     renderCats();
@@ -52,6 +57,7 @@ class SecondPageState extends State<WidgetPage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     if (categories.length == 0) {
       return ListView(
         children: <Widget>[new Container()],
