@@ -31,16 +31,12 @@ class Provider {
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await new File(path).writeAsBytes(bytes);
 
-      // db = await openDatabase(path, version: 2,
-      //     onCreate: (Database db, int version) async {
-      //   print('db created version is $version');
-      // }, onOpen: (Database db) async {
-      //   print('new db opened');
-      // });
-      db = await openDatabase(path, readOnly: true);
-            list = await db
-          .rawQuery('SELECT name FROM sqlite_master WHERE type = "table"');
-      print('$list 1234567891');
+      db = await openDatabase(path, version: 2,
+          onCreate: (Database db, int version) async {
+        print('db created version is $version');
+      }, onOpen: (Database db) async {
+        print('new db opened');
+      });
     } else {
       print("Opening existing database");
     }

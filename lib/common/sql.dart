@@ -56,7 +56,6 @@ class Sql extends BaseModel {
       index++;
     });
     // print("this is string condition for sql > $stringConditions");
-
     return await this.query(tableName, where: stringConditions);
   }
   Future<Map<String, dynamic>> insert(Map<String, dynamic> json) async {
