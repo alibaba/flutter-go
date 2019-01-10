@@ -1,6 +1,6 @@
 ## Flutter 菜鸟手册
 
-> 帮助开发者快速上手 Flutter
+> 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
 ### 背景
 
@@ -29,9 +29,41 @@ flutter优点主要包括：
 
 <img src="https://img.alicdn.com/tfs/TB1x4gdASzqK1RjSZFHXXb3CpXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1xioCANnaK1RjSZFtXXbC2VXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1XFwcAOrpK1RjSZFhXXXSdXXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1Hf7aAPTpK1RjSZKPXXa3UpXa-1080-2340.jpg" width=200>
 
-### 团队
+### Core Team
 
-power by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
+<table>
+  <tbody>
+    <tr>
+      <td align="center" width="80" valign="top">
+        <img height="80" width="80" src="https://github.com/minghe.png?s=128">
+        <br>
+        <a href="https://github.com/minghe">@minghe</a>
+      </td>
+      <td align="center" width="80" valign="top">
+        <img height="80" width="80"  src="https://github.com/ryan730.png?s=128">
+        <br>
+        <a href="https://github.com/ryan730">@ryan730</a>
+      </td>
+      <td align="center" width="80" valign="top">
+        <img height="80" width="80"  src="https://github.com/Nealyang.png?s=128">
+        <br>
+        <a href="https://github.com/Nealyang">@Nealyang</a>
+      </td>
+      <td align="center" width="80" valign="top">
+        <img height="80" width="80"  src="https://github.com/hanxu317317.png?s=128">
+        <br>
+        <a href="https://github.com/hanxu317317">@hanxu317317</a>
+      </td>
+      <td align="center" width="80" valign="top">
+        <img height="80" width="80"  src="https://github.com/DeckeDeng.png?s=128">
+        <br>
+        <a href="https://github.com/DeckeDeng">@DeckeDeng</a>
+      </td>
+     </tr>
+  </tbody>
+</table>
+
+Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
 
 
