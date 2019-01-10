@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/myListView.dart';
+import 'package:flutter_rookie_book/common/list_view_item.dart';
 //import 'package:flutter_rookie_book/components/CompList.dart';
 import 'package:flutter_rookie_book/components/ListRefresh.dart' as listComp;
 import 'package:flutter_rookie_book/components/Pagination.dart';
@@ -63,7 +63,7 @@ class FirstPageState extends State<FirstPage> {
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
 
-    return new MyListView(currCodeUrl:codeUrl,currTitle: myTitle,developer: myUsername,);
+    return new ListViewItem(itemUrl:codeUrl,itemTitle: myTitle,data: myUsername,);
   }
 
   @override

@@ -10,6 +10,8 @@ import '../components/markdown.dart';
 import '../model/collection.dart';
 import '../widgets/index.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../event/event-bus.dart';
+import '../event/event-model.dart';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -84,9 +86,11 @@ class _WidgetDemoState extends State<WidgetDemo> {
           _router = item.routerName;
         }
       });
-      setState(() {
+      if(this.mounted){
+        setState(() {
         _hasCollected = list.length > 0;
       });
+      }
     });
   }
 
@@ -100,6 +104,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
             _hasCollected = false;
           });
           showInSnackBar('已取消收藏');
+          ApplicationEvent.event.fire(CollectionEvent(widget.title,true));
           return;
         }
         print('删除错误');
@@ -113,6 +118,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
           setState(() {
             _hasCollected = true;
           });
+          ApplicationEvent.event.fire(CollectionEvent(widget.title,false));
           showInSnackBar('收藏成功');
         }
       });
@@ -167,6 +173,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _getCollection,
+        mini: true,
         tooltip: '收藏',
         child: Icon(
           Icons.star,

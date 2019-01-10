@@ -14,18 +14,21 @@ class Provider {
     //Get a location using getDatabasesPath
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'flutter.db');
-    List<Map> list;
-    // try {
-    //   db = await openDatabase(path, readOnly: true);
+    List<Map> tables;
+    try {
+      db = await openDatabase(path);
+      tables = await db
+          .rawQuery('SELECT name FROM sqlite_master WHERE type = "table"');
+      print('${tables.length} 7891');
+    } catch (e) {
+      print("Error $e");
+    }
 
-    // } catch (e) {
-    //   print("Error $e");
-    // }
-
-    if (db == null) {
+    if (tables.length < 3) {
       // Delete the database
       await deleteDatabase(path);
-
+      // 关闭上面打开的db，否则无法执行open
+      db.close();
       ByteData data = await rootBundle.load(join("assets", "app.db"));
       List<int> bytes =
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
