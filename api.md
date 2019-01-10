@@ -39,7 +39,7 @@ Animate< T >
 一个通过输入动画来生成类型为T的值的对象。[...]
 
 AnimatedAlign
-Align的 动画版本，只要给定的对齐发生变化，就会在给定的持续时间内自动转换孩子的位置。[...]
+Align的 动画版本，只要给定的对齐发生变化，就会在给定的持续时间内自动转换child的位置。[...]
 
 AnimatedBuilder
 用于构建动画的通用widget。[...]
@@ -64,7 +64,7 @@ AnimatedModalBarrier
 一个widget，可以防止用户与自身后面的widget交互，并且可以使用动画颜色值进行配置。[...]
 
 AnimatedOpacity
-不透明度的 动画版本，只要给定的不透明度发生变化，就会自动转换孩子在给定持续时间内的不透明度。[...]
+不透明度的 动画版本，只要给定的不透明度发生变化，就会自动转换child在给定持续时间内的不透明度。[...]
 
 AnimatedPadding
 Padding的 动画版本，无论何时给定的插入更改，它都会在给定的持续时间内自动转换缩进。[...]
@@ -73,10 +73,10 @@ AnimatedPhysicalModel
 PhysicalModel的 动画版本。[...]
 
 AnimatedPositioned
-定位的 动画版本，可在给定位置发生变化时自动转换孩子在给定持续时间内的位置。[...]
+定位的 动画版本，可在给定位置发生变化时自动转换child在给定持续时间内的位置。[...]
 
 AnimatedPositionedDirectional
-PositionedDirectional的 动画版本，可在给定位置发生变化时自动转换孩子在给定持续时间内的位置。[...]
+PositionedDirectional的 动画版本，可在给定位置发生变化时自动转换child在给定持续时间内的位置。[...]
 
 AnimatedSize
 动画窗口widget，只要给定子项的大小发生更改，就会在给定的持续时间内自动转换其大小。
@@ -153,7 +153,7 @@ BallisticScrollActivity
 BannerPainter
 画横幅。
 底线
-根据孩子的基线定位孩子的widget。[...]
+根据child的基线定位child的widget。[...]
 
 BeveledRectangleBorder
 带有扁平或“斜角”角的矩形边框。[...]
@@ -225,7 +225,7 @@ BuildOwner
 用于记录图形操作的界面。[...]
 
 中央
-一个小孩，它将孩子置于其中心。[...]
+一个小孩，它将child置于其中心。[...]
 
 ChangeNotifier
 可以扩展或混合的类，使用VoidCallback为通知提供更改通知API 。[...]
@@ -639,7 +639,7 @@ IntTween
 两个整数之间的插值。[...]
 
 活着
-标记一个孩子需要保持活着，即使它在一个懒惰的列表中，否则将删除它。[...]
+标记一个child需要保持活着，即使它在一个懒惰的列表中，否则将删除它。[...]
 
 KeepAliveHandle
 甲收听其可以手动触发。[...]
@@ -693,7 +693,7 @@ ListBody
 可线性排列的widget可滚动列表。[...]
 
 ListWheelScrollView
-一个盒子，可以滚动轮子上的孩子。[...]
+一个盒子，可以滚动轮子上的child。[...]
 
 ListWheelViewport
 显示轮子上的子集子集的视口。[...]
@@ -718,7 +718,7 @@ LocalKey
 不是GlobalKey的关键[...]
 
 LongPressDraggable < T >
-从长按开始使其孩子可以拖拽。
+从长按开始使其child可以拖拽。
 
 MaskFilter
 一个蒙版过滤器，用于在绘制时应用于形状。掩码过滤器是一种采用彩色像素位图的函数，并返回另一个彩色像素位图。[...]
@@ -805,7 +805,7 @@ ObjectKey
 抵消
 不可变的2D浮点偏移量。[...]
 台下
-一个widget，它将孩子放在树中，但没有绘制任何东西，没有让孩子可用于命中测试，也没有占用父母的任何空间。[...]
+一个widget，它将child放在树中，但没有绘制任何东西，没有让child可用于命中测试，也没有占用父母的任何空间。[...]
 
 OneFrameImageStreamCompleter
 管理dart：ui.Image对象的加载，用于静态ImageStream（只有一帧）。
@@ -922,7 +922,7 @@ PositionedDirectional
 一个widget，用于控制堆栈子项的位置，而不需要提交特定的TextDirection。[...]
 
 PositionedTransition
-定位的 动画版本，它采用特定的 动画在动画的生命周期内将孩子的位置从起始位置转换到结束位置。[...]
+定位的 动画版本，它采用特定的 动画在动画的生命周期内将child的位置从起始位置转换到结束位置。[...]
 
 PREFERREDSIZE
 具有首选大小的widget。[...]
@@ -1127,7 +1127,7 @@ Scrollable widget已更改其滚动位置的 通知。[...]
 一个widget，用widget含义的描述来注释widget树。[...]
 
 SemanticsDebugger
-一个可视化孩子语义的widget。[...]
+一个可视化child语义的widget。[...]
 
 着色器
 Gradient和ImageShader 等对象的基类，它们对应于Paint.shader使用的着色器。
@@ -1178,7 +1178,7 @@ SizedOverflowBox
 一个特定大小的窗口widget，但将其原始约束传递给其子节点，然后可能会溢出。[...]
 
 SizeTransition
-动画自己的大小和剪辑并对齐孩子。[...]
+动画自己的大小和剪辑并对齐child。[...]
 
 SizeTween
 两种尺寸之间的插值。[...]
@@ -1651,7 +1651,7 @@ FilterQuality
 图像过滤器的质量级别。[...]
 
 FLEXFIT
-如何将孩子铭刻在可用空间内。[...]
+如何将child铭刻在可用空间内。[...]
 
 FlutterLogoStyle
 绘制Flutter徽标的可能方法。
@@ -1678,7 +1678,7 @@ MainAxisSize
 无论是纵向还是横向。
 
 溢出
-是否应该剪掉溢出的孩子，或者看到他们的溢出。
+是否应该剪掉溢出的child，或者看到他们的溢出。
 
 PaintingStyle
 在画布上绘制形状和路径的策略。[...]
@@ -1926,7 +1926,7 @@ TextSelectionOverlayChanged（TextEditingValue value， Rect caretRect） →voi
 签名报告变更的筛选组件 TextEditingValue为的目的TextSelectionOverlay。该 caretRect参数给出插入符在的坐标空间中的位置RenderBox由给定的TextSelectionOverlay.renderObject。[...]
 
 TransitionBuilder（BuildContext context， Widget child） → Widget
-给孩子建立widget的构建器。[...]
+给child建立widget的构建器。[...]
 
 TweenConstructor < T > （T targetValue） → Tween < T >
 签名Tween工厂。[...]

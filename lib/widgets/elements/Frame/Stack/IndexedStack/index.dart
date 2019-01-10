@@ -10,7 +10,7 @@ const String _stackText0 = """### **简介**
 """;
 const String _stackText1 = """### **基本用法**
 > index → int
-- 控制显示孩子的索引
+- 控制显示child的索引
 - ex:可以通过多个图片转化表示状态（正确，错误，警告等）。
  """;
 

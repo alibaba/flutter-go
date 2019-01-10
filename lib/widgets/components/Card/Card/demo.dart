@@ -51,7 +51,7 @@ class CardLessDefault extends StatelessWidget {
       elevation:20.0, // 卡片的z坐标,控制卡片下面的阴影大小
       margin:EdgeInsets.all(20.0),
       //  margin: EdgeInsetsDirectional.only(bottom: 30.0, top: 30.0, start: 30.0),// 边距
-      semanticContainer:true, // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个孩子，但该孩子可以是Row，Column或其他包含子级列表的widget
+      semanticContainer:true, // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个child，但该child可以是Row，Column或其他包含子级列表的widget
 //      shape:new Border.all(
 //          color: Colors.indigo, width: 1.0, style: BorderStyle.solid), // 卡片材质的形状，以及边框
       shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)), // 圆角

@@ -16,11 +16,11 @@ const String _flatText0 = """
 
 const String _flatText1 = """
 >  widthFactor / heightFactor → double
-- 如果widthFactor / heightFactor 为空，并且外部无任何约束，孩子控件大小默认，那么这个控件将根据自身尺寸最大化
+- 如果widthFactor / heightFactor 为空，并且外部无任何约束，child控件大小默认，那么这个控件将根据自身尺寸最大化
 
-- 如果widthFactor / heightFactor 不为空，并且外部无约束，align将匹配对应的孩子尺寸
-- ex：widthFactor/ heightFactor 为2.0；那么widget的宽高为孩子宽高的两倍
-- 如果widthFactor / heightFactor 为空，并且外部无约束，孩子控件设置自身大小
+- 如果widthFactor / heightFactor 不为空，并且外部无约束，align将匹配对应的child尺寸
+- ex：widthFactor/ heightFactor 为2.0；那么widget的宽高为child宽高的两倍
+- 如果widthFactor / heightFactor 为空，并且外部无约束，child控件设置自身大小
 - Alignment部分标签失效
 """;
 
