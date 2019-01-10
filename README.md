@@ -16,7 +16,7 @@ iphone下载地址:
 
 #### Flutter 是什么
 
-2018年6月21日Google发布Flutter首个release预览版,作为Google baba大力推出的一种全新的响应式，跨平台，高性能的移动开发框架。Flutter是一个跨平台的移动UI框架，旨在帮助开发者使用一套代码开发高性能、高保真的Android和iOS应用。
+2018年6月21日Google发布Flutter首个release预览版,作为Google 大力推出的一种全新的响应式，跨平台，高性能的移动开发框架。Flutter是一个跨平台的移动UI框架，旨在帮助开发者使用一套代码开发高性能、高保真的Android和iOS应用。
 
 flutter优点主要包括：
 - 跨平台
