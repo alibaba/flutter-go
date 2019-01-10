@@ -2,6 +2,16 @@
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
+
+## Release安装包下载地址
+
+android下载地址:
+
+<img src="https://img.alicdn.com/tfs/TB18ud1BmzqK1RjSZFjXXblCFXa-380-384.png" width="200px">
+
+iphone下载地址:
+暂无
+
 ### 背景
 
 #### Flutter 是什么
