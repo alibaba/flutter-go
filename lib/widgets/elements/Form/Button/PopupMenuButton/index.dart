@@ -8,8 +8,7 @@
  * 对应文档地址:https://docs.flutter.io/flutter/material/PopupMenuButton-class.html
  */
 
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -55,8 +54,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'PopupMenuButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/RaisedButton/demo.dart',
-      child: allPopupMenuButton(widget,this),
+      codeUrl: 'elements/Form/Button/RaisedButton/demo.dart',
+      contentList: [allPopupMenuButton(widget,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
     );
   }

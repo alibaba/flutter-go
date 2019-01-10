@@ -7,8 +7,7 @@
  * target: IconButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/IconButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -54,8 +53,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'IconButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/IconButton/demo.dart',
-      child: allIconButtons(context,this),
+      codeUrl: 'elements/Form/Button/IconButton/demo.dart',
+      contentList: [ allIconButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/IconButton-class.html',
     );
   }

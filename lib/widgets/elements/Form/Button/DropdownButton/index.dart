@@ -7,9 +7,7 @@
  * target: DropdownButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/DropdownButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
-import 'dart:math';
+import '../../../../../common/widget_demo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -51,8 +49,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'DropdownButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/DropdownButton/demo.dart',
-      child: allDropdownButtons(context,this),
+      codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
+      contentList: [allDropdownButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
   }

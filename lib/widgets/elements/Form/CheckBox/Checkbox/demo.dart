@@ -10,7 +10,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
-* Checkbox 默认按钮的实例
+* Checkbox 默认的实例
 * index 当前checkbox 的索引值
 * */
 class CheckboxDefault extends StatefulWidget{
@@ -39,7 +39,7 @@ class _CheckboxDefault extends State {
 }
 
 /*
-* Checkbox 默认按钮的实例
+* Checkbox 默认的实例
 * index 当前checkbox 的索引值
 * */
 class CheckboxSelect extends StatelessWidget {

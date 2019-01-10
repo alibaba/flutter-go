@@ -7,7 +7,6 @@
  * tartget: SnackBarAction 的示例
  */
 import '../../../../common/widget_demo.dart';
-import '../../../../routers/application.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 

@@ -7,8 +7,7 @@
  * target: FloatingActionButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/FloatingActionButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -62,9 +61,8 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'FloatingActionButton',
       // desc: _floatingActionTitle,
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/FloatingActionButton/demo.dart',
-      child: allFloatingActionButtons(context,this),
-      //child: Text('123'),
+      codeUrl: 'elements/Form/Button/FloatingActionButton/demo.dart',
+      contentList: [allFloatingActionButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/FloatingActionButton-class.html',
     );
   }

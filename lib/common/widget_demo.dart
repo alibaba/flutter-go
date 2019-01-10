@@ -16,13 +16,16 @@ class WidgetDemo extends StatefulWidget {
   final String docUrl;
   final String title;
   final String codeUrl;
+  final Widget bottomNaviBar;
 
   WidgetDemo(
       {Key key,
       @required this.title,
       @required this.contentList,
       @required this.codeUrl,
-      @required this.docUrl})
+      @required this.docUrl,
+      this.bottomNaviBar,
+      })
       : super(key: key);
 
   _WidgetDemoState createState() => _WidgetDemoState();
@@ -174,6 +177,8 @@ class _WidgetDemoState extends State<WidgetDemo> {
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
+        bottomNavigationBar: (widget.bottomNaviBar is Widget) ? widget
+            .bottomNaviBar : null
     );
   }
 }

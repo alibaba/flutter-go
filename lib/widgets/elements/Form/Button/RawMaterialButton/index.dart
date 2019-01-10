@@ -7,8 +7,7 @@
  * target: RawMaterialButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/RawMaterialButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -52,8 +51,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'RawMaterialButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/RawMaterialButton/demo.dart',
-      child: allRawMaterialButtons(context,this),
+      codeUrl: 'elements/Form/Button/RawMaterialButton/demo.dart',
+      contentList: [allRawMaterialButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/RawMaterialButton-class.html',
     );
   }

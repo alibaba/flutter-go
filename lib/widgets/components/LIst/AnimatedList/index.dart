@@ -6,8 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: AnimatedList 的示例
  */
-import '../../../../common/widget-demo.dart';
-import '../../../../routers/application.dart';
+import '../../../../common/widget_demo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -45,8 +44,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'AnimatedList',
-      codeUrl: '${Application.github['widgetsURL']}componentss/List/AnimatedList/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'componentss/List/AnimatedList/demo.dart',
+      contentList: [allDemoBoxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/AnimatedList-class.html',
     );
   }
@@ -57,7 +56,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDemoBoxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

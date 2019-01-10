@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import '../../../../../common/widget-demo.dart';
+import '../../../../../common/widget_demo.dart';
 
 const String intro = """
 # 富文本显示
@@ -67,7 +67,7 @@ class _Demo extends State<Demo> {
       title: 'Rich Text',
       docUrl: 'https://docs.flutter.io/flutter/widgets/RichText-class.html',
       codeUrl: '',
-      child: new Column(
+      contentList: [new Column(
         children: <Widget>[
           MarkdownBody(data: markDesc['intro']),
           Container(
@@ -87,6 +87,6 @@ class _Demo extends State<Demo> {
           MarkdownBody(data: markDesc['diff']),
         ],
       ),
-    );
+    ]);
   }
 }

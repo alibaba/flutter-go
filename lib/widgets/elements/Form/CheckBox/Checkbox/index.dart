@@ -7,8 +7,7 @@
  * target: Checkbox 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/Checkbox-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -48,8 +47,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Checkbox',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Checkbox/Checkbox/demo.dart',
-      child: allCheckboxs(context,this),
+      codeUrl: 'elements/Form/Checkbox/Checkbox/demo.dart',
+      contentList: [allCheckboxs(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/Checkbox-class.html',
     );
   }

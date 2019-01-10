@@ -6,8 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: CheckboxListTile 的示例
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -49,8 +48,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CheckboxListTile',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Checkbox/CheckboxListTile/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'elements/Form/Checkbox/CheckboxListTile/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/CheckboxListTile-class.html',
     );
   }

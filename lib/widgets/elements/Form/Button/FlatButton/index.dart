@@ -7,9 +7,7 @@
  * target: FlatButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
-import 'dart:math';
+import '../../../../../common/widget_demo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -83,8 +81,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'FlatButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/FlatButton/demo.dart',
-      child: allFlatButtons(context),
+      codeUrl: 'elements/Form/Button/FlatButton/demo.dart',
+      contentList: [allFlatButtons(context)],
       docUrl: 'https://docs.flutter.io/flutter/material/FlatButton-class.html',
     );
   }

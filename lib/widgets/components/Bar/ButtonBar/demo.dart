@@ -11,8 +11,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
-* Checkbox 默认按钮的实例
-* index 当前checkbox 的索引值
+* ButtonBar 默认的实例
 * */
 class ButtonBarFullDefault extends StatefulWidget {
   const ButtonBarFullDefault() : super();

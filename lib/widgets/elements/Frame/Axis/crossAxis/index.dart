@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../common/widget-demo.dart';
+import '../../../../../common/widget_demo.dart';
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Frame/Axis/crossAxis';
