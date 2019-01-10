@@ -63,7 +63,7 @@ class FirstPageState extends State<FirstPage> {
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
 
-    return new MyListView(currCodeUrl:codeUrl,currTitle: myTitle,developer: myUsername,);
+    return new ListViewItem(itemUrl:codeUrl,itemTitle: myTitle,data: myUsername,);
   }
 
   @override

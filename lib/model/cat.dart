@@ -88,7 +88,6 @@ class CatControlModel{
       cat = new Cat(depth: 1, parentId: 0);
     }
     // print("cat in getList ${cat.toMap()}");
-
     List listJson =  await sql.getByCondition(conditions: cat.toSqlCondition());
     List<Cat> cats = listJson.map((json) {
       return new Cat.fromJSON(json);

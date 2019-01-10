@@ -2,11 +2,21 @@
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
+
+## Release安装包下载地址
+
+android下载地址:
+
+<img src="https://img.alicdn.com/tfs/TB18ud1BmzqK1RjSZFjXXblCFXa-380-384.png" width="200px">
+
+iphone下载地址:
+暂无
+
 ### 背景
 
 #### Flutter 是什么?
 
-2018年6月21日Google发布Flutter首个release预览版,作为Google baba大力推出的一种全新的响应式，跨平台，高性能的移动开发框架。Flutter是一个跨平台的移动UI框架，旨在帮助开发者使用一套代码开发高性能、高保真的Android和iOS应用。
+2018年6月21日Google发布Flutter首个release预览版,作为Google 大力推出的一种全新的响应式，跨平台，高性能的移动开发框架。Flutter是一个跨平台的移动UI框架，旨在帮助开发者使用一套代码开发高性能、高保真的Android和iOS应用。
 
 flutter优点主要包括：
 - 跨平台
@@ -19,15 +29,18 @@ flutter优点主要包括：
 
 - Flutter学习资料太少，对于英文不好的同学相对来说比较困难
 - 官网文档示例不够健全，不够直观
+- 各个 widget 的用法各异，属性纷繁，要运行一个 widget 的 demo 往往要到处翻阅各种资料
 
 #### 菜鸟手册的优势
 
 - 详解常用widget多达 **130+** 个
 - 配套 Demo 详解 widget 常规用法
+- 集中整合 widget 案例，一个 APP 搞定所有常用 widget 的用法
+- 持续迭代 ‘追新’ 官方版本
 
 ### app 预览
 
-<img src="https://img.alicdn.com/tfs/TB1x4gdASzqK1RjSZFHXXb3CpXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1xioCANnaK1RjSZFtXXbC2VXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1XFwcAOrpK1RjSZFhXXXSdXXa-1080-2340.jpg" width=200>  <img src="https://img.alicdn.com/tfs/TB1Hf7aAPTpK1RjSZKPXXa3UpXa-1080-2340.jpg" width=200>
+<img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1WJNuBmzqK1RjSZPcXXbTepXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
 
 ### Core Team
 
