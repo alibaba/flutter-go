@@ -6,7 +6,6 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: OutlineButton 的示例
  */
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
@@ -16,7 +15,7 @@ import 'package:flutter/material.dart';
 class FloatingActionButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const FloatingActionButtonDefault([bool this.isDisabled = true])
+  const FloatingActionButtonDefault([ this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -41,10 +40,10 @@ class FloatingActionButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const FloatingActionButtonCustom(
-      [String this.txt = '自定义按钮',
-      Color this.color = Colors.orange,
-      ShapeBorder this.shape,
-      VoidCallback this.onPressed])
+      [ this.txt = '自定义按钮',
+       this.color = Colors.orange,
+       this.shape,
+       this.onPressed])
       : super();
 
   @override
@@ -93,10 +92,10 @@ class FloatingActionButtonCustom2 extends StatelessWidget {
   final VoidCallback onPressed;
 
   const FloatingActionButtonCustom2(
-      [String this.txt = '自定义按钮',
-        Color this.color = Colors.orange,
-        ShapeBorder this.shape,
-        VoidCallback this.onPressed])
+      [ this.txt = '自定义按钮',
+         this.color = Colors.orange,
+         this.shape,
+         this.onPressed])
       : super();
 
   @override

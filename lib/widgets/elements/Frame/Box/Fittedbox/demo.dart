@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-/**
+/*
  * Author: xiaojia.dxj
  * Date: 2018/12/2
  * Email: xiaojia.dxj@alibaba-inc.com
@@ -13,9 +13,9 @@ import 'package:flutter/widgets.dart';
 
 class FittedBoxDefault extends StatelessWidget {
   final BoxFit curfit;
-  String dec;
+  final String dec;
 
-  FittedBoxDefault({Key key, BoxFit this.curfit, this.dec});
+  FittedBoxDefault({Key key,  this.curfit, this.dec});
 
   @override
   Widget build(BuildContext context) {

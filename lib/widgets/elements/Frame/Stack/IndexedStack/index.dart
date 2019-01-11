@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
 import './demo.dart';
 
@@ -22,7 +21,6 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  String _desc = "IndexedStack 使用";
   int currIndex = 0;
 
   void _indexAdd() {
@@ -45,12 +43,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         _stackText0,
         _stackText1,
-        _IndexedStackCreate(),
+        _indexedStackCreate(),
       ],
     );
   }
 
-  Column _IndexedStackCreate() {
+  Column _indexedStackCreate() {
     return new Column(
       children: <Widget>[
         SizedBox(

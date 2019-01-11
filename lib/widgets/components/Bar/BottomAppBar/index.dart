@@ -8,7 +8,6 @@
  */
 import '../../../../common/widget-demo.dart';
 import '../../../../routers/application.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -26,11 +25,6 @@ const String _Text1 =
 > 通常与Scaffold和FloatingActionButton一起使用。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> BottomAppBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components//Bar/BottomAppBar';
@@ -51,7 +45,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 BottomAppBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

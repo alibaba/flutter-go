@@ -6,7 +6,6 @@
  */
 import 'package:flutter/material.dart';
 import '../../../../../common/widget_demo.dart';
-import './demo.dart' as sizeBox;
 
 const String _Text = '''
 ### **简介**
@@ -35,13 +34,13 @@ class _DemoState extends State<Demo> {
       codeUrl: 'elements/Frame/Box/RenderBox/demo.dart',
       contentList: [
         _Text,
-        _SizeBoxCreate(),
+        _sizeBoxCreate(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/widgets/RenderBox-class.html',
     );
   }
 
-  Column _SizeBoxCreate() {
+  Column _sizeBoxCreate() {
     return new Column(
       children: <Widget>[
         /**

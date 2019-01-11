@@ -42,12 +42,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         Text0,
         Text1,
-        _FittedBoxCreate(),
+        _fittedBoxCreate(),
       ],
     );
   }
 
-  Column _FittedBoxCreate() {
+  Column _fittedBoxCreate() {
     return Column(
       children: <Widget>[
         Row(

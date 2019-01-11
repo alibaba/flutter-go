@@ -19,7 +19,7 @@ final  int len = IconNames.Names.length;
 class IconButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const IconButtonDefault([bool this.isDisabled = true])
+  const IconButtonDefault([ this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -43,10 +43,10 @@ class IconButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const IconButtonCustom(
-      [String this.txt = '自定义按钮',
-      Color this.color = Colors.blueAccent,
-      ShapeBorder this.shape,
-      VoidCallback this.onPressed])
+      [ this.txt = '自定义按钮',
+       this.color = Colors.blueAccent,
+       this.shape,
+       this.onPressed])
       : super();
 
    getIcons(){

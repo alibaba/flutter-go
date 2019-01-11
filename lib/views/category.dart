@@ -61,7 +61,6 @@ class _CategoryHome extends State<CategoryHome> {
     // 假设进入这个界面的parent一定存在
     Cat parentCat = catHistory.last;
 
-    int depth = catHistory.length;
 
     // 继续搜索显示下一级depth: depth + 1, parentId: parentCat.id
     List<Cat> _categories =
@@ -92,7 +91,7 @@ class _CategoryHome extends State<CategoryHome> {
         targetRouter = item.routerName;
       }
     });
-    Application.router.navigateTo(context, "${targetRouter}");
+    Application.router.navigateTo(context, "$targetRouter");
   }
 
   Widget _buildContent() {

@@ -5,7 +5,6 @@
  * @Last Modified time: 2018-11-16 15:09:12 
  */
 import 'package:flutter/material.dart';
-import '../../../../../common/widget-demo.dart';
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Media/Image/precacheImage';

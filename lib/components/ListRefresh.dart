@@ -7,7 +7,6 @@
  * tartget: FlatButton 的示例
  */
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class ListRefresh extends StatefulWidget {
   final renderItem;

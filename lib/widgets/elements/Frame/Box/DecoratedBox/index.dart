@@ -32,13 +32,13 @@ class _DemoState extends State<Demo> {
       contentList: [
         _Text,
         _Text1,
-        _DecoratedBoxCreate(),
+        _decoratedBoxCreate(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html',
     );
   }
 
-  Column _DecoratedBoxCreate() {
+  Column _decoratedBoxCreate() {
     return new Column(
       children: <Widget>[
         Container(

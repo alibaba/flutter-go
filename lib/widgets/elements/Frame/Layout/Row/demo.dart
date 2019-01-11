@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-/**
+/*
  * Author: xiaojia.dxj
  * Date: 2018/11/22
  * Email: xiaojia.dxj@alibaba-inc.com
@@ -10,7 +10,7 @@ import 'package:flutter/widgets.dart';
  * Describle:Row
  */
 class RowMainAxisAlignment extends StatelessWidget {
-  /**
+  /*
    * > mainAxisAlignment属性
    * - MainAxisAlignment.spaceEvenly/spaceAround/spaceBetween,
       - spaceEvenly：将主轴方向空白区域均分，使得children之间空间相等，包括首尾childre
@@ -23,7 +23,7 @@ class RowMainAxisAlignment extends StatelessWidget {
    */
   final MainAxisAlignment status;
 
-  /**
+  /*
    * > CrossAxisAlignment 属性
       -  crossAxisAlignment: CrossAxisAlignment.center/end/start,
       - 即，根据设定的位置交叉对齐
@@ -35,7 +35,7 @@ class RowMainAxisAlignment extends StatelessWidget {
   final CrossAxisAlignment crossStatus;
 
   const RowMainAxisAlignment(
-      MainAxisAlignment this.status, CrossAxisAlignment this.crossStatus)
+       this.status,  this.crossStatus)
       : super();
 
   @override

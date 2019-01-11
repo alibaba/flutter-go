@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 
 class IconDataDemo extends StatelessWidget {
-  Color curColor = Colors.red;
+  final Color curColor ;
 
   IconDataDemo({Key key, this.curColor}) : super();
 

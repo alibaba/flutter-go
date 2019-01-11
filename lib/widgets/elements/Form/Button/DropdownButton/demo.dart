@@ -6,7 +6,6 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: DropdownButton 的示例
  */
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
@@ -14,15 +13,15 @@ import 'package:flutter/material.dart';
 * isDisabled:是否是禁用，isDisabled 默认为true
 * */
 class DropdownButtonDefault extends StatelessWidget {
-  List<DropdownMenuItem> generateItemList() {
-    List<DropdownMenuItem> items = new List();
-    DropdownMenuItem item1 = new DropdownMenuItem(
+   List<DropdownMenuItem> generateItemList() {
+    final List<DropdownMenuItem> items = new List();
+    final DropdownMenuItem item1 = new DropdownMenuItem(
         value: '张三', child: new Text('张三'));
-    DropdownMenuItem item2 = new DropdownMenuItem(
+    final DropdownMenuItem item2 = new DropdownMenuItem(
         value: '李四', child: new Text('李四'));
-    DropdownMenuItem item3 = new DropdownMenuItem(
+    final DropdownMenuItem item3 = new DropdownMenuItem(
         value: '王二', child: new Text('王二'));
-    DropdownMenuItem item4 = new DropdownMenuItem(
+    final DropdownMenuItem item4 = new DropdownMenuItem(
         value: '麻子', child: new Text('麻子'));
     items.add(item1);
     items.add(item2);

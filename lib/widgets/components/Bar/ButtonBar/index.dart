@@ -8,7 +8,6 @@
  */
 import '../../../../common/widget-demo.dart';
 import '../../../../routers/application.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -27,11 +26,6 @@ const String _Text1 =
 - 当Directionality为TextDirection.ltr时，按钮栏的子项右对齐，最后一个子项成为最右边的子项。当Directionality TextDirection.rtl时，子项被左对齐，最后一个子项成为最左边的子项。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> ButtonBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Bar/ButtonBar';
@@ -53,7 +47,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 ButtonBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
