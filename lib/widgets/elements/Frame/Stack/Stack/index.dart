@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
 import './demo.dart';
 
@@ -36,7 +35,6 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  String _desc = "Stack 使用";
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +45,7 @@ class _DemoState extends State<Demo> {
       docUrl: 'https://docs.flutter.io/flutter/widgets/Stack-class.html',
       contentList: [
         _stackText0,
-        _StackCreate(),
+        _stackCreate(),
         _stackText1,
         new Container(
           width: 300.0,
@@ -67,7 +65,7 @@ class _DemoState extends State<Demo> {
     );
   }
 
-  Column _StackCreate() {
+  Column _stackCreate() {
     return new Column(
       children: <Widget>[
         Column(

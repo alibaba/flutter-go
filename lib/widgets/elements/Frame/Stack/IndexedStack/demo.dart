@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/**
+/*
  * Author: xiaojia.dxj
  * Date: 2018/11/22
  * Email: xiaojia.dxj@alibaba-inc.com
@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 class StackDefault extends StatelessWidget {
   final int currIndex;
 
-  const StackDefault(int this.currIndex) : super();
+  const StackDefault( this.currIndex) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class StackDefault extends StatelessWidget {
 class StackIndex extends StatelessWidget {
   final int currIndex;
 
-  const StackIndex(int this.currIndex) : super();
+  const StackIndex( this.currIndex) : super();
 
   @override
   Widget build(BuildContext context) {

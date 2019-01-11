@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 class FlatButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const FlatButtonDefault([bool this.isDisabled = true])
+  const FlatButtonDefault([ this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -39,7 +39,7 @@ class FlatButtonIconDefault extends StatelessWidget {
   final IconData icon;
 
   const FlatButtonIconDefault(
-      [bool this.isDisabled = true, IconData this.icon = Icons.add_circle])
+      [ this.isDisabled = true,  this.icon = Icons.add_circle])
       : super();
 
   Color _randomColor() {
@@ -73,10 +73,10 @@ class FlatButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const FlatButtonCustom([
-    String this.txt = '自定义按钮',
-    Color this.color = Colors.blueAccent,
-    ShapeBorder this.shape,
-    VoidCallback this.onPressed
+     this.txt = '自定义按钮',
+     this.color = Colors.blueAccent,
+     this.shape,
+     this.onPressed
   ]) :super();
 
   @override

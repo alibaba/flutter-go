@@ -8,7 +8,7 @@ class WidgetItemContainer extends StatelessWidget {
   final List<dynamic> categories;
   final bool isWidgetPoint;
   // 所有的可用demos;
-  List widgetDemosList = new WidgetDemoList().getDemos();
+  final List widgetDemosList = new WidgetDemoList().getDemos();
 
   WidgetItemContainer(
       {Key key,
@@ -41,7 +41,7 @@ class WidgetItemContainer extends StatelessWidget {
                         targetRouter = item.routerName;
                       }
                     });
-                    Application.router.navigateTo(context, "${targetRouter}");
+                    Application.router.navigateTo(context, "$targetRouter");
                   } else {
                     Application.router
                         .navigateTo(context, "/category/${item.name}");

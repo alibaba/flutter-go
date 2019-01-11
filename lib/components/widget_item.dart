@@ -72,16 +72,16 @@ class WidgetItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10.0),
         height: 150.0,
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              widgetIcon,
-              SizedBox(
-                height: 8.0,
-              ),
-              Text(_widgetName),
-            ],
-          ) ,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            widgetIcon,
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(_widgetName),
+          ],
+        ),
       ),
     );
   }

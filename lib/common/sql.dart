@@ -69,7 +69,7 @@ class Sql extends BaseModel {
   /// @mods [And, Or] default is Or
   /// search({'name': "hanxu', 'id': 1};
   ///
-  Future<List> search({Map<String, dynamic> conditions, String Mods = 'Or'}) async {
+  Future<List> search({Map<String, dynamic> conditions, String mods = 'Or'}) async {
     if (conditions == null || conditions.isEmpty) {
       return this.get();
     }
@@ -88,7 +88,7 @@ class Sql extends BaseModel {
       }
 
       if (index >= 0 && index < conditions.length -1) {
-        stringConditions = '$stringConditions $Mods';
+        stringConditions = '$stringConditions $mods';
       }
       index++;
     });

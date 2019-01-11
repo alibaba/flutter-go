@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-/**
+/*
  * Author: xiaojia.dxj
  * Date: 2018/11/22
  * Email: xiaojia.dxj@alibaba-inc.com
@@ -14,7 +14,7 @@ class AlignAlignment extends StatelessWidget {
   final Alignment status;
   final String dec;
 
-  const AlignAlignment(Alignment this.status, String this.dec) : super();
+  const AlignAlignment( this.status,  this.dec) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class AlignFactor extends StatelessWidget {
   final double hFactor;
   final String dec;
 
-  const AlignFactor(Alignment this.status, double this.wFactor,
-      double this.hFactor, String this.dec)
+  const AlignFactor( this.status,  this.wFactor,
+       this.hFactor,  this.dec)
       : super();
 
   @override

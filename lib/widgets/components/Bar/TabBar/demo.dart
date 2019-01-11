@@ -7,7 +7,6 @@
  * tartget: TabBar 的示例
  */
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class TabBarDemo extends StatefulWidget {

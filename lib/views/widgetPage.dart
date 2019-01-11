@@ -1,3 +1,9 @@
+/*
+ * @Author: 一凨 
+ * @Date: 2019-01-11 14:39:48 
+ * @Last Modified by: 一凨
+ * @Last Modified time: 2019-01-11 14:40:09
+ */
 import 'package:flutter/material.dart';
 import 'widgetPage/cate_card.dart';
 import '../model/cat.dart';
@@ -24,7 +30,6 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   List<Cat> categories = [];
 
   @override
-    // TODO: implement wantKeepAlive
     bool get wantKeepAlive => true;
 
   @override
@@ -46,7 +51,6 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   Widget buildGrid() {
     // 存放最后的widget
     List<Widget> tiles = [];
-    Widget content;
     for (Cat item in categories) {
       tiles.add(new CateCard(category: item));
     }
@@ -69,10 +73,4 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
     );
   }
 
-  void _onChanged(String value) {
-    setState(() {
-      active = value;
-      data = '90';
-    });
-  }
 }

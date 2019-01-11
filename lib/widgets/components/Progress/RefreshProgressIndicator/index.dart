@@ -6,7 +6,6 @@
  */
 import 'package:flutter/material.dart';
 import '../../../../common/widget_demo.dart';
-import 'demo.dart';
 
 const String content0 = '''
 ### **简介**

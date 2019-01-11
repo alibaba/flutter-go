@@ -8,7 +8,6 @@
  */
 import '../../../../common/widget-demo.dart';
 import '../../../../routers/application.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -76,7 +75,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 ListView widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

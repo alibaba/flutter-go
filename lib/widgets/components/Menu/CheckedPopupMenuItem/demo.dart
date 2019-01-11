@@ -13,7 +13,6 @@ class CheckedPopupMenuItemDemo extends StatefulWidget {
 }
 
 class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   List<String> _checkedValues;
 
   final String _checkedValue1 = 'One';

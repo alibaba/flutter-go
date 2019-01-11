@@ -15,18 +15,18 @@ class CollectionPage extends StatefulWidget {
   _CollectionPageState createState() => _CollectionPageState();
 }
 
-class _CollectionPageState extends State<CollectionPage> with AutomaticKeepAliveClientMixin{
+class _CollectionPageState extends State<CollectionPage>
+    with AutomaticKeepAliveClientMixin {
   _CollectionPageState() {
     final eventBus = new EventBus();
     ApplicationEvent.event = eventBus;
   }
   CollectionControlModel _collectionControl = new CollectionControlModel();
-  List<Collection> _collectionList;
+  List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
 
   @override
-    // TODO: implement wantKeepAlive
-    bool get wantKeepAlive => true;
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _CollectionPageState extends State<CollectionPage> with AutomaticKeepAlive
   }
 
   void _getList() {
-    _collectionList = [];
+    _collectionList.clear();
     _collectionControl.getAllCollection().then((resultList) {
       resultList.forEach((item) {
         _collectionList.add(item);

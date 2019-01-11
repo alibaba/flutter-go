@@ -8,9 +8,9 @@ class SizeOverflowBoxDefault extends StatelessWidget {
 
   SizeOverflowBoxDefault(
       {Key key,
-      double this.curSizeWidth,
-      double this.curSizeHeight,
-      String this.text})
+       this.curSizeWidth,
+       this.curSizeHeight,
+       this.text})
       : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class SizeBoxDefault extends StatelessWidget {
   final double curWidth;
   final double curHeight;
 
-  SizeBoxDefault({Key key, double this.curHeight, double this.curWidth})
+  SizeBoxDefault({Key key,  this.curHeight,  this.curWidth})
       : super(key: key);
 
   @override

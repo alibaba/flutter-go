@@ -40,7 +40,6 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  var animatedList = null;
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
@@ -52,7 +51,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 AnimatedList widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

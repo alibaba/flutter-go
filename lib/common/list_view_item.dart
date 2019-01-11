@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../routers/application.dart';
 
 class ListViewItem extends StatelessWidget {
   final String itemUrl;
@@ -11,15 +10,13 @@ class ListViewItem extends StatelessWidget {
       : super(key: key);
 
   void _launchURL(String url, BuildContext context) async {
-    if (url.contains("https") || url.contains("http")) {
+
       if (await canLaunch(url)) {
         await launch(url);
       } else {
         throw 'Could not launch $url';
       }
-    } else {
-      Application.router.navigateTo(context, "${url}");
-    }
+
   }
 
   @override

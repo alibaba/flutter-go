@@ -2,7 +2,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import '../widgets/index.dart';
-import '../model/widget.dart';
 import './router_handler.dart';
 
 class Routes {
