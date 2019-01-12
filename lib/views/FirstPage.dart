@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/list_view_item.dart';
-import 'package:flutter_rookie_book/components/ListRefresh.dart' as listComp;
-import 'package:flutter_rookie_book/components/Pagination.dart';
+import 'package:flutter_go/common/list_view_item.dart';
+import 'package:flutter_go/components/ListRefresh.dart' as listComp;
+import 'package:flutter_go/components/Pagination.dart';
 import './widgetFeature/FirstPageItem.dart';
 import '../common/net_utils.dart';
 

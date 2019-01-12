@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/model/widget.dart';
+import 'package:flutter_go/model/widget.dart';
 
 import './Align/index.dart' as Align;
 

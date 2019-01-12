@@ -8,7 +8,7 @@
  */
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/iconNames.dart';
+import 'package:flutter_go/common/iconNames.dart';
 
 final  int len = IconNames.Names.length;
 
