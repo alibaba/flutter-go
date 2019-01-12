@@ -10,7 +10,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_rookie_book/common/iconNames.dart';
 
-final  int len = IconNames.Names.length;
+final  int len = IconNames.names.length;
 
 /*
 * IconButton 默认按钮的实例
@@ -56,7 +56,7 @@ class IconButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int iconIndex = Random.secure().nextInt(len);
-    final IconData type = IconNames.Names[iconIndex];
+    final IconData type = IconNames.names[iconIndex];
     final _onPressed = onPressed;
     return IconButton(
         // 定义图标在IconButton中的定位方式,AlignmentGeometry 如果父Widget尺寸大于child Widget尺寸，这个属性设置会起作用，有很多种对齐方式。
