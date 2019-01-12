@@ -13,6 +13,7 @@ import './PopupMenuButton/index.dart' as PopupMenuButton;
 import './PopupMenuDivider/index.dart' as PopupMenuDivider;
 import './PopupMenuEntry/index.dart' as PopupMenuEntry;
 import './PopupMenuItemState/index.dart' as PopupMenuItemState;
+import './PopupMenuItem/index.dart' as PopupMenuItem;
 
 
 List<WidgetPoint> widgetPoints = [
@@ -45,5 +46,10 @@ List<WidgetPoint> widgetPoints = [
     name:'PopupMenuItemState',
     routerName: PopupMenuItemState.Demo.routeName,
     buildRouter: (BuildContext context) => PopupMenuItemState.Demo(),
+  ),
+  WidgetPoint(
+    name:'PopupMenuItem',
+    routerName: PopupMenuItem.Demo.routeName,
+    buildRouter: (BuildContext context) => PopupMenuItem.Demo(),
   ),
 ];
