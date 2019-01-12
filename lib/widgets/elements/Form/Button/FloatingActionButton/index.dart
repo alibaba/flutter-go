@@ -15,8 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as floatingActionButton;
 
-const String _floatingActionTitle =
-    'FloatingAction Button 示例';
 
 const String _floatingActionText0 =
 """### **简介**
@@ -70,7 +68,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 FloatingActionButton 按钮
  */
 Widget allFloatingActionButtons(BuildContext context,_DemoState that){
@@ -107,26 +105,26 @@ Widget allFloatingActionButtons(BuildContext context,_DemoState that){
   * alert 弹框
   * context:容器的父级
   * */
-void _showMessage(String name, BuildContext context) {
-  showDialog(
-    // alert 的父级
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-          title: new Text('提示'),
-          content: new Text(name),
-          actions: <Widget>[
-            new FlatButton(
-              // alert 的取消按钮
-                onPressed: () {
-                  // 取消的事件
-                  Navigator.of(context).pop(true);
-                },
-                child: new Text('取消'))
-          ]);
-    }
-  );
-}
+// void _showMessage(String name, BuildContext context) {
+//   showDialog(
+//     // alert 的父级
+//     context: context,
+//     builder: (BuildContext context) {
+//       return AlertDialog(
+//           title: new Text('提示'),
+//           content: new Text(name),
+//           actions: <Widget>[
+//             new FlatButton(
+//               // alert 的取消按钮
+//                 onPressed: () {
+//                   // 取消的事件
+//                   Navigator.of(context).pop(true);
+//                 },
+//                 child: new Text('取消'))
+//           ]);
+//     }
+//   );
+// }
 
 /*
 * 带align的text

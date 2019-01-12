@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class OverflowBoxDefault extends StatelessWidget {
-  double curmaxHeight;
-  double curmaxWidth;
-  double curHeight;
-  double curWidth;
-  AlignmentGeometry curalignment;
+  final double curmaxHeight;
+  final double curmaxWidth;
+  final double curHeight;
+  final double curWidth;
+  final AlignmentGeometry curalignment;
 
   OverflowBoxDefault(
       {Key key,
-      double this.curmaxHeight,
-      double this.curmaxWidth,
-      double this.curWidth,
-      double this.curHeight,
-      AlignmentGeometry this.curalignment})
+       this.curmaxHeight,
+       this.curmaxWidth,
+       this.curWidth,
+       this.curHeight,
+       this.curalignment})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return OverflowBox(
-      minHeight: 50.0,
-      minWidth: 50.0,
+      minHeight: 80.0,
+      minWidth: 80.0,
       //设置最大宽，高
       maxWidth: curmaxWidth,
       maxHeight: curmaxHeight,
@@ -36,7 +36,8 @@ class OverflowBoxDefault extends StatelessWidget {
          * * */
         height: curHeight,
         width: curWidth,
-        color: Colors.red,
+        child: Text("$curmaxWidth * $curmaxHeight",style: TextStyle(color: Colors.white),),
+        color: Color(0xfff48fb1),
       ),
     );
   }

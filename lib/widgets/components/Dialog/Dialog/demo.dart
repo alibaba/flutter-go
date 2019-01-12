@@ -7,8 +7,6 @@
  * tartget:  xxx
  */
 
-import 'dart:math';
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 
@@ -72,7 +70,7 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
                       value += 1;
                     });
                   },
-                  child:  Text("我是一个Dialog, 点我更新value: ${value}"),
+                  child:  Text("我是一个Dialog, 点我更新value: $value"),
                 )
             );
           }
@@ -105,3 +103,4 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
     );
   }
 }
+

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
 import './demo.dart';
 
 const String _stackText0 = """### **简介**
-> 显示来自子项列表的单个子项。
-- 只显示指定位置的窗口小部件，其他的位置的窗口小部件不会显示，所以indexedStack的尺寸永远和最大的子节点一样。
+> 显示一个子项列表的单个子项。
+- 只显示指定位置的widget，其他的位置的widget不会显示，所以indexedStack的尺寸永远和最大的子节点一样。
+- 显示的子项widget是给到了具体的索引选择出来的widget
 - 如果value 为null，将不显示任何内容
 """;
 const String _stackText1 = """### **基本用法**
@@ -22,7 +22,6 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  String _desc = "IndexedStack 使用";
   int currIndex = 0;
 
   void _indexAdd() {
@@ -45,12 +44,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         _stackText0,
         _stackText1,
-        _IndexedStackCreate(),
+        _indexedStackCreate(),
       ],
     );
   }
 
-  Column _IndexedStackCreate() {
+  Column _indexedStackCreate() {
     return new Column(
       children: <Widget>[
         SizedBox(

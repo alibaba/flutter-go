@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 
 import 'views/FirstPage.dart';
 import 'views/widgetPage.dart';
-import 'views/ThirdPage.dart';
 import 'views/FourthPage.dart';
 import 'views/collection_page.dart';
 import 'routers/routers.dart';
@@ -13,6 +12,8 @@ import 'common/provider.dart';
 import 'model/widget.dart';
 import './widgets/index.dart';
 import 'package:flutter_rookie_book/components/SearchInput.dart';
+
+
 
 const int ThemeColor = 0xFFC91B3A;
 
@@ -81,7 +82,6 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = new TabController(
         initialIndex: 0, vsync: this, length: 4); // 这里的length 决定有多少个底导 submenus
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage>
         targetRouter = item.routerName;
       }
     });
-    Application.router.navigateTo(context, "${targetRouter}");
+    Application.router.navigateTo(context, "$targetRouter");
   }
 
   Widget buildSearchInput(BuildContext context) {
@@ -184,11 +184,11 @@ class _MyHomePageState extends State<MyHomePage>
     }
   }
 
-  void _onDataChange(val) {
-    if (this.mounted) {
-      setState(() {
-        data = val;
-      });
-    }
-  }
+  // void _onDataChange(val) {
+  //   if (this.mounted) {
+  //     setState(() {
+  //       data = val;
+  //     });
+  //   }
+  // }
 }

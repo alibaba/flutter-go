@@ -27,8 +27,7 @@ final List<InputEntry> _lists=<InputEntry>[
     const InputEntry('web', 'W'),
 ];
 
-List<String> _inputs=<String>[];
-Iterable<Widget> get RawChipWidget sync*{
+Iterable<Widget> get _rawChipWidget sync*{
   for(InputEntry value in _lists){
     yield Padding(
       padding: const EdgeInsets.all(4.0),
@@ -57,7 +56,7 @@ Iterable<Widget> get RawChipWidget sync*{
     return Column(
       children: <Widget>[
          Wrap(
-          children: RawChipWidget.toList(),
+          children: _rawChipWidget.toList(),
         ),
     
       ],

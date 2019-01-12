@@ -21,13 +21,13 @@ class _DemoState extends State<Demo> {
       title: 'Table',
       codeUrl: 'elements/Frame/Box/SizedBox/demo.dart',
       contentList: [
-        _SizeBoxCreate(),
+        _sizeBoxCreate(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/widgets/SizedBox-class.html',
     );
   }
 
-  Column _SizeBoxCreate() {
+  Column _sizeBoxCreate() {
     return new Column(
       children: <Widget>[
         new Text("SizedBox",

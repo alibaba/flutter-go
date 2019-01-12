@@ -6,7 +6,6 @@
  */
 import 'package:flutter/material.dart';
 import '../../../../../common/widget_demo.dart';
-import './paint_image_demo.dart';
 
 const String contentText0 = '''
 ### **非Widget 待删除**

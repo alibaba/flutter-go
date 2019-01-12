@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../../common/widget_demo.dart';
-import './demo.dart' as TextBox;
 
 const String _Text = """### **TextBox简介**
 > 是一个包含一段文本的矩形

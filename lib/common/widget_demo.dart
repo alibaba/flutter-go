@@ -10,6 +10,8 @@ import '../components/markdown.dart';
 import '../model/collection.dart';
 import '../widgets/index.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../event/event-bus.dart';
+import '../event/event-model.dart';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -31,7 +33,6 @@ class WidgetDemo extends StatefulWidget {
 class _WidgetDemoState extends State<WidgetDemo> {
   bool _hasCollected = false;
   CollectionControlModel _collectionControl = new CollectionControlModel();
-  Collection _collection;
   Color _collectionColor;
   List widgetDemosList = new WidgetDemoList().getDemos();
   String _router = '';
@@ -84,9 +85,11 @@ class _WidgetDemoState extends State<WidgetDemo> {
           _router = item.routerName;
         }
       });
-      setState(() {
-        _hasCollected = list.length > 0;
-      });
+      if (this.mounted) {
+        setState(() {
+          _hasCollected = list.length > 0;
+        });
+      }
     });
   }
 
@@ -100,6 +103,11 @@ class _WidgetDemoState extends State<WidgetDemo> {
             _hasCollected = false;
           });
           showInSnackBar('已取消收藏');
+
+          if (ApplicationEvent.event != null) {
+            ApplicationEvent.event
+                .fire(CollectionEvent(widget.title, _router, true));
+          }
           return;
         }
         print('删除错误');
@@ -113,43 +121,76 @@ class _WidgetDemoState extends State<WidgetDemo> {
           setState(() {
             _hasCollected = true;
           });
+
+          if (ApplicationEvent.event != null) {
+            ApplicationEvent.event
+                .fire(CollectionEvent(widget.title, _router, false));
+          }
+
           showInSnackBar('收藏成功');
         }
       });
     }
   }
 
+  void _selectValue(value){
+    if(value == 'doc'){
+      _launchURL(widget.docUrl);
+    }else if(value =='code'){
+       _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
+    }else{
+      _getCollection();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_hasCollected) {
-      _collectionColor = Colors.yellow;
+      _collectionColor = Colors.red;
+      _router='取消收藏';
     } else {
-      _collectionColor = Colors.white;
+      _collectionColor =null;
+      _router='组件收藏';
     }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
           new IconButton(
-            tooltip: 'widget doc',
-            onPressed: () {
-              _launchURL(widget.docUrl);
-            },
-            icon: Icon(Icons.library_books),
-          ),
-          new IconButton(
-            tooltip: 'github code',
-            onPressed: () {
-              _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
-            },
-            icon: Icon(Icons.code),
-          ),
-          new IconButton(
             tooltip: 'goBack home',
             onPressed: () {
               Navigator.popUntil(context, ModalRoute.withName('/'));
             },
             icon: Icon(Icons.home),
+          ),
+          PopupMenuButton<String>(
+            onSelected: _selectValue,
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  const PopupMenuItem<String>(
+                    value: 'doc',
+                    child: ListTile(
+                      leading: Icon(Icons.library_books,size: 22.0,),
+                      title: Text('查看文档'),
+                    ),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem<String>(
+                    value: 'code',
+                    child: ListTile(
+                      leading: Icon(Icons.code,size: 22.0,),
+                      title: Text('查看Demo'),
+                    ),
+                  ),
+                  const PopupMenuDivider(),
+                   PopupMenuItem<String>(
+                    value: 'collection',
+                    child: ListTile(
+                      leading: Icon(Icons.star,size: 22.0,color: _collectionColor,),
+                      title: Text(_router),
+                      
+                    ),
+                  ),
+                ],
           ),
         ],
       ),
@@ -164,15 +205,6 @@ class _WidgetDemoState extends State<WidgetDemo> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _getCollection,
-        tooltip: '收藏',
-        child: Icon(
-          Icons.star,
-          color: _collectionColor,
-        ),
-        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 class ExpandedDemo extends StatelessWidget {
 
-  TextStyle txtColor = TextStyle(color: Colors.white);
+  final TextStyle txtColor = TextStyle(color: Colors.white);
   @override
   Widget build(BuildContext context) {
     return Column(

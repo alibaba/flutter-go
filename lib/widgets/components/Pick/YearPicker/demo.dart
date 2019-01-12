@@ -1,8 +1,8 @@
 /*
  * @Author: xiaojia.dxj
  * @Date: 2018-12-17 15:37:32 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-18 19:12:32
+ * @Last Modified by: 一凨
+ * @Last Modified time: 2019-01-11 15:17:26
  */
 import 'dart:async';
 
@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 
 class YearPickerDemo extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _showDialog();
+  State<StatefulWidget> createState() => _YearPickerDemoState();
 }
 
-class _showDialog extends State<YearPickerDemo> {
+class _YearPickerDemoState extends State<YearPickerDemo> {
   DateTime _date = new DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {

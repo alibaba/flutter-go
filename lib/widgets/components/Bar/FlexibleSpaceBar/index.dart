@@ -8,7 +8,6 @@
  */
 import '../../../../common/widget-demo.dart';
 import '../../../../routers/application.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -28,11 +27,6 @@ const String _Text1 =
 - 要调整 AppBar 大小,必须将其包装在 FlexibleSpaceBar.createSettings 返回的 widget 中 ，以将大小调整信息传递给 FlexibleSpaceBar。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> FlexibleSpaceBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components//Bar/FlexibleSpaceBar';
@@ -54,7 +48,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 FlexibleSpaceBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

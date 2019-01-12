@@ -3,10 +3,10 @@ import '../../../../../common/widget_demo.dart';
 import './demo.dart';
 
 const String Text0 = """### **简介**
-> Row 是一个将其child显示在水平数组的小部件
+> Row 是一个将其child显示在水平数组的widget
 - 将其child填充可用的横向水平空间，一行高度是childs的最大高度（即：总是满足传入的垂直约束）
 - 如果你只有一个child，只需要考虑使用对其或者中间位置，如果多个child，注意扩展水平空间(Expanded)，可以将child封装在一个扩展部件里面
-- 当我们看到行有黄色和黑色条纹警告时候，说明行已经溢出，当行溢出，行之间当空间将没有任何空间可供扩展。
+- 当我们看到行有黄色和黑色条纹警告时候，说明行已经溢出，当行溢出，行之间空间将没有任何空间可供扩展。
 
 """;
 
@@ -43,15 +43,15 @@ class _DemoState extends State<Demo> {
       contentList: [
         Text0,
         Text1,
-        _RowCreate(),
+        _rowCreate(),
       ],
     );
   }
 
-  Column _RowCreate() {
+  Column _rowCreate() {
     return new Column(
       children: <Widget>[
-        RowLayout(),
+        RowLayoutCreate(),
         Row(
           children: <Widget>[
             Expanded(

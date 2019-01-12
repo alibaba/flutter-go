@@ -22,7 +22,7 @@ const String Text1 = """
 > 根据外部约束，调整child
 - 如果外部没有约束，按照child的大小。
 - 如果外部有约束，按照外部约束调整自身大小，然后缩放调整child，根据条件进行放置
-- BoxFix 属性，修改child写入布局时期分配的空间
+- BoxFix 属性，可修改child写入布局时期分配的空间
 - alignment修改child于父空间对齐方式，默认：Alignment.center,
 """;
 
@@ -42,12 +42,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         Text0,
         Text1,
-        _FittedBoxCreate(),
+        _fittedBoxCreate(),
       ],
     );
   }
 
-  Column _FittedBoxCreate() {
+  Column _fittedBoxCreate() {
     return Column(
       children: <Widget>[
         Row(

@@ -15,7 +15,7 @@ enum Location {
 typedef DemoItemBodyBuilder<T> = Widget Function(DemoItem<T> item);
 typedef ValueToString<T> = String Function(T value);
 
-/**
+/*
  * google flutter 详情多个例子地址：
  * https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/expansion_panels_demo.dart
  */
@@ -135,11 +135,6 @@ class _ExpansionPanelsDemoState extends State<ExpansionPanelsDemo> {
         hint: 'Select location',
         valueToString: (Location location) => location.toString().split('.')[1],
         builder: (DemoItem<Location> item) {
-          void close() {
-            setState(() {
-              item.isExpanded = false;
-            });
-          }
           return Form(
             child: Builder(
               builder: (BuildContext context) {
