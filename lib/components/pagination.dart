@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import './home_banner.dart';
+import './homeBanner.dart';
 import '../model/story.dart';
 import 'package:url_launcher/url_launcher.dart';
 
