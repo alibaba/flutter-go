@@ -9,18 +9,6 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认按钮的实例
-* index 当前checkbox 的索引值
-* */
-class BottomNavigationBarItemFullDefault extends StatefulWidget {
-  const BottomNavigationBarItemFullDefault() : super();
-
-  @override
-  State<StatefulWidget> createState() => _BottomNavigationBarItemFullDefault();
-}
-
-
 
 /*
 * BottomNavigationBarItem 默认的实例,无状态
