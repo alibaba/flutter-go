@@ -10,7 +10,7 @@
 import 'package:flutter/material.dart';
 
 /*
-* Checkbox 默认AppBar的实例
+* 默认 AppBar 的实例
 * index 当前AppBar 的索引值
 * */
 class AppBarLessDefaultComplex extends StatefulWidget {

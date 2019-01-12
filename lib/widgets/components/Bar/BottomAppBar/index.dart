@@ -16,13 +16,13 @@ import './demo.dart' as BottomAppBarDemo;
 const String _Text0 =
 """### **简介**
 > BottomAppBar “底部应用栏”
-- 一个通常与 Scaffold.bottomNavigationBar 一起使用的容器，可以在顶部有一个凹口，为重叠的FloatingActionButton腾出空间 。
+- 一个通常与 Scaffold.bottomNavigationBar 一起使用的容器，可以在顶部有一个凹口，为重叠的FloatingActionButton腾出空间;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
-> 通常与Scaffold和FloatingActionButton一起使用。
+> 通常与 Scaffold 和 FloatingActionButton 一起使用;
 """;
 
 
@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'BottomAppBar',
       codeUrl: 'componentss/Bar/BottomAppBar/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/BottomAppBar-class.html',
     );
   }
@@ -50,7 +50,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

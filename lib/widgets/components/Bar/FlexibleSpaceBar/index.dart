@@ -16,15 +16,15 @@ import './demo.dart' as FlexibleSpaceBarDemo;
 const String _Text0 =
 """### **简介**
 > FlexibleSpaceBar “扩展和折叠的应用栏”
-- AppBar的一部分，可以扩展和折叠。
+- AppBar 的一部分，可以扩展和折叠;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
 > 最常用于 SliverAppBar.flexibleSpace 字段
-- 灵活的空格键随着应用滚动而扩展和收缩，以便AppBar 从应用程序的顶部到达应用程序滚动内容的顶部。
-- 要调整 AppBar 大小,必须将其包装在 FlexibleSpaceBar.createSettings 返回的 widget 中 ，以将大小调整信息传递给 FlexibleSpaceBar。
+- 灵活的空格键随着应用滚动而扩展和收缩，以便 AppBar 从应用程序的顶部到达应用程序滚动内容的顶部;
+- 要调整 AppBar 大小,必须将其包装在 FlexibleSpaceBar.createSettings 返回的 widget 中 ，以将大小调整信息传递给 FlexibleSpaceBar;
 """;
 
 
@@ -41,7 +41,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'FlexibleSpaceBar',
       codeUrl: 'components/Bar/FlexibleSpaceBar/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/FlexibleSpaceBar-class.html',
     );
   }
@@ -52,7 +52,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

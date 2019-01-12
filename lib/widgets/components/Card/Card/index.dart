@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'Card',
       codeUrl: 'components/Card/Card/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/Card-class.html',
     );
   }
@@ -50,7 +50,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

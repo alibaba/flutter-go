@@ -17,21 +17,21 @@ import './demo.dart' as checkbox;
 const String _checkboxText0 =
 """### **简介**
 > checkbox “复选框”
-- 复选框本身不保持任何状态
-- 当复选框的状态发生变化时，窗口小部件会调用onChanged回调。
-- 大多数使用复选框的小部件将侦听onChanged回调，并使用新值重建复选框以更新复选框的可视外观。""";
+- 复选框本身不保持任何状态;
+- 当复选框的状态发生变化时，窗口小部件会调用onChanged回调;
+- 大多数使用复选框的小部件将侦听onChanged回调，并使用新值重建复选框以更新复选框的可视外观;""";
 
 
 const String _checkboxText1 =
 """### **基本用法**
 > 下面示例展示多个颜色(随机)样式的 `checkbox`
-- 一个多选的 `checkbox`
+- 一个多选的 `checkbox`;
 """;
 
 const String _checkboxText2 =
 """### **进阶用法**
 > 下面示例展示多个颜色(随机)样式的 `checkbox`
-- 一个单选 `checkbox` 操作
+- 一个单选 `checkbox` 操作;
 """;
 
 class Demo extends StatefulWidget {

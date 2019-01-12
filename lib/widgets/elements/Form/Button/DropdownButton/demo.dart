@@ -12,6 +12,9 @@ import 'package:flutter/material.dart';
 * DropdownButton 默认按钮的实例
 * isDisabled:是否是禁用，isDisabled 默认为true
 * */
+var selectItValue;
+var selectItemValue;
+
 class DropdownButtonDefault extends StatelessWidget {
    List<DropdownMenuItem> generateItemList() {
     final List<DropdownMenuItem> items = new List();
@@ -30,15 +33,13 @@ class DropdownButtonDefault extends StatelessWidget {
     return items;
   }
 
-  var selectItemValue;
-
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
         hint: new Text('下拉菜单选择一个人名'),
         //设置这个value之后,选中对应位置的item，
         //再次呼出下拉菜单，会自动定位item位置在当前按钮显示的位置处
-        value: selectItemValue,
+        value: selectItValue,
         items: generateItemList(),
         onChanged: (T){
 //          setState(() {
@@ -103,7 +104,6 @@ List<DropdownMenuItem> getListData(){
   items.add(dropdownMenuItem10);
   return items;
 }
-var selectItemValue;
 
 /*
 * DropdownButton 自定义的实例

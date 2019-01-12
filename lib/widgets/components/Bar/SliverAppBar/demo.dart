@@ -10,7 +10,7 @@
 import 'package:flutter/material.dart';
 
 /*
-* Checkbox 默认SliverAppBar的实例
+* 默认 SliverAppBar 的实例
 * */
 class SliverAppBarFullDefault extends StatefulWidget {
   const SliverAppBarFullDefault() : super();

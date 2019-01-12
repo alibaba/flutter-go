@@ -18,7 +18,7 @@ import './demo.dart' as dropdownButton;
 const String _dropdownText0 =
 """### **简介**
 > Dropdown button “用于从项目列表中进行选择的按钮”
-- 类型T是下拉菜单表示的值的类型。给定菜单中的所有条目必须表示具有一致类型的值。通常，使用枚举。每个DropdownMenuItem在项目必须专门与同类型的说法。。
+- 参数类型 T 是下拉菜单表示的值的类型。给定菜单中的所有条目必须表示具有一致类型的值。通常，使用枚举。每个DropdownMenuItem在项目必须专门与同类型的说法；
 """;
 
 const String _dropdownText1 =

@@ -16,23 +16,24 @@ import './demo.dart' as AppBarDemo;
 const String _Text0 =
 """### **简介**
 > AppBar “应用栏”
-- 应用栏由工具栏和可能的其他 widget 组成，例如 TabBar和FlexibleSpaceBar。
-- 应用栏通常用于 Scaffold.appBa r属性，该属性将应用栏放置在屏幕顶部的固定高度小部件中。
-- 对于可滚动的应用栏，请参阅SliverAppBar，它将AppBar嵌入 sliver 中以便在CustomScrollView中使用。
+- 应用栏由工具栏和可能的其他 widget 组成，例如 TabBar和FlexibleSpaceBar;
+- 应用栏通常用于 Scaffold.appBar 属性，该属性将应用栏放置在屏幕顶部的固定高度小部件中;
+- 对于可滚动的应用栏，请参阅SliverAppBar，它将AppBar嵌入 sliver 中以便在CustomScrollView中使用;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
 > AppBar
-- AppBar 在底部上方显示工具栏 widget，前导 leading ，标题 title 和操作 actions。
+- AppBar 在底部上方显示工具栏 widget，前导 leading ，标题 title 和操作 actions;
 """;
 
 const String _Text2 =
 """### **进阶用法**
 > AppBar
-- 一个完整的 AppBar 的例子, 增加 PopupMenuButton,TabBar 的示例子。
-- 所述底部通常用于一个的TabBar。如果指定了flexibleSpace窗口小部件，则它将堆叠在工具栏和底部窗口 widget 后面。
+- 一个完整的 AppBar 的例子, 增加 PopupMenuButton,TabBar 的示例子;
+- 所述底部通常用于一个的 TabBar;
+- 如果指定了 flexibleSpace 窗口 widget，则它将堆叠在工具栏和底部窗口 widget 后面;
 """;
 
 class Demo extends StatefulWidget {
@@ -48,7 +49,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'AppBar',
       codeUrl: 'componentss/Bar/AppBar/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/AppBar-class.html',
     );
   }
@@ -59,7 +60,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

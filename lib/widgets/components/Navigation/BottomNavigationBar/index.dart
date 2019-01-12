@@ -16,18 +16,18 @@ import './demo.dart' as BottomNavigationBarDemo;
 const String _text0 =
 """### **简介**
 > BottomNavigationBar “底部导航栏”，
-- 显示在应用程序底部的导航栏,由文本标签，图标或两者形式的多个项目组成。
-- 它提供了应用程序顶级视图之间的快速导航。
+- 显示在应用程序底部的导航栏,由文本标签，图标或两者形式的多个项目组成;
+- 它提供了应用程序顶级视图之间的快速导航;
 """;
 
 
 const String _text1 =
 """### **基本用法**
 > BottomNavigationBar 底部导航栏通常与Scaffold结合使用
-- 它作为Scaffold.bottomNavigationBar参数。
-- BottomNavigationBar金支持0-4个之间个底部按钮数量，超出4个系统将会报异常。
-- 默认0-3个底部按钮数量时，BottomNavigationBar采用fixed的模式摆放底部按钮，当超过4个时默认使用 BottomNavigationBarType.shifting 模式摆放底部按钮
-- 下面的底部导航即是效果。
+- 它作为 Scaffold.bottomNavigationBar 参数;
+- BottomNavigationBar 支持0-4个之间个底部按钮数量，超出4个系统将会报异常;
+- 默认0-3个底部按钮数量时，BottomNavigationBar采用fixed的模式摆放底部按钮，当超过4个时默认使用 BottomNavigationBarType.shifting 模式摆放底部按钮;
+- 下面的底部导航即是效果;
 """;
 
 class Demo extends StatefulWidget {

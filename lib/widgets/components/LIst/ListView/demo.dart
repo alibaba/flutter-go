@@ -134,7 +134,9 @@ class ListViewLessDefault extends StatelessWidget {
           ),
         );
         break;
+      default:
+        return null;
+        break;
     }
-
   }
 }
