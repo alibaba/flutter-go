@@ -7,7 +7,7 @@
  * tartget: FirstPageItem
  */
 
-import '../../common/Util.dart';
+import '../common/Util.dart';
 
 class FirstPageItem {
   bool hot;

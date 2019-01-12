@@ -2,7 +2,7 @@
  * @author 一凨
  */
 import 'package:flutter/material.dart';
-import '../common/Style.dart';
+import '../common/style.dart';
 import '../common/widget_name_to_icon.dart';
 
 class WidgetItem extends StatelessWidget {

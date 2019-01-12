@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/views/Detail.dart';
+import 'package:flutter_rookie_book/views/detail.dart';
 
 
 
