@@ -133,38 +133,64 @@ class _WidgetDemoState extends State<WidgetDemo> {
     }
   }
 
+  void _selectValue(value){
+    if(value == 'doc'){
+      _launchURL(widget.docUrl);
+    }else if(value =='code'){
+       _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
+    }else{
+      _getCollection();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     if (_hasCollected) {
-      _collectionColor = Colors.yellow;
+      _collectionColor = Colors.red;
+      _router='取消收藏';
     } else {
-      _collectionColor = Colors.white;
+      _collectionColor =null;
+      _router='组件收藏';
     }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
           new IconButton(
-            tooltip: 'widget doc',
-            onPressed: () {
-              _launchURL(widget.docUrl);
-            },
-            icon: Icon(Icons.library_books),
-          ),
-          new IconButton(
-            tooltip: 'github code',
-            onPressed: () {
-              _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
-            },
-            icon: Icon(Icons.code),
-          ),
-          new IconButton(
             tooltip: 'goBack home',
             onPressed: () {
               Navigator.popUntil(context, ModalRoute.withName('/'));
             },
             icon: Icon(Icons.home),
+          ),
+          PopupMenuButton<String>(
+            onSelected: _selectValue,
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  const PopupMenuItem<String>(
+                    value: 'doc',
+                    child: ListTile(
+                      leading: Icon(Icons.library_books,size: 22.0,),
+                      title: Text('查看文档'),
+                    ),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem<String>(
+                    value: 'code',
+                    child: ListTile(
+                      leading: Icon(Icons.code,size: 22.0,),
+                      title: Text('查看Demo'),
+                    ),
+                  ),
+                  const PopupMenuDivider(),
+                   PopupMenuItem<String>(
+                    value: 'collection',
+                    child: ListTile(
+                      leading: Icon(Icons.star,size: 22.0,color: _collectionColor,),
+                      title: Text(_router),
+                      
+                    ),
+                  ),
+                ],
           ),
         ],
       ),
@@ -179,16 +205,6 @@ class _WidgetDemoState extends State<WidgetDemo> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _getCollection,
-        mini: true,
-        tooltip: '收藏',
-        child: Icon(
-          Icons.star,
-          color: _collectionColor,
-        ),
-        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }
