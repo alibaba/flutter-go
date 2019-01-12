@@ -8,12 +8,17 @@ import 'package:flutter/widgets.dart';
  * LastUpdateTime: 2018/11/22
  * LastUpdateBy: xj.deng
  *
- * Describle:Align描述
+ * Describle:ConstrainedBox描述
  */
-class ConstracubedBox extends StatelessWidget {
+class ConstrainedBoxCreate extends StatelessWidget {
+  final double currWidth;
+  final String describe;
+
+  const ConstrainedBoxCreate({Key key,this.currWidth,this.describe}):
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    
     return Column(
       children: <Widget>[
         ConstrainedBox(
@@ -21,19 +26,21 @@ class ConstracubedBox extends StatelessWidget {
           constraints: const BoxConstraints(
             minWidth: 100.0,
             minHeight: 20.0,
-            maxWidth: 500.0,
+            maxWidth: 300.0,
             maxHeight: 50.0,
           ),
           child: new Container(
             margin: const EdgeInsets.only(left: 20.0, right: 20.0),
             //child 宽高超过制定限制范围失效，效果宽/高=100/20区域
-            width: 600.0,
+            width: currWidth,
             height: 250.0,
-            child: new Text('ConstrainedBox',style: TextStyle(color: Colors.white),),
-            color: Colors.red,
+            child: new Text(
+              describe,
+              style: TextStyle(color: Colors.white),
+            ),
+            color: Color(0xfff8bbd0),
           ),
         ),
-       
       ],
     );
   }

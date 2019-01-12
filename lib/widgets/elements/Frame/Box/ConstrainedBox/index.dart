@@ -17,7 +17,11 @@ const String _Text = '''
 const String _Text1 = '''
 ### **基本用法**
 > 添加额外的限制条件到child上
-- 比如说，你限制child最小高度为50.0像素，就可以用constraints: const BoxConstraints(minHeight：50）
+- ex:添加ConstrainedBox约束如下，传入不同Width约束的Container效果
+minWidth: 100.0,
+minHeight: 20.0,
+maxWidth: 300.0,
+maxHeight: 50.0
 
 ''';
 
@@ -36,7 +40,27 @@ class _DemoState extends State<Demo> {
       contentList: [
         _Text,
         _Text1,
-        ConstracubedBox(),
+        // maxWidth: 300.0,
+        ConstrainedBoxCreate(currWidth: 500, describe: "currWidth>maxWidth"),
+        SizedBox(
+          height: 10.0,
+        ),
+        ConstrainedBoxCreate(currWidth: 300, describe: "currWidth=maxWidth"),
+        SizedBox(
+          height: 10.0,
+        ),
+        ConstrainedBoxCreate(currWidth: 200, describe: "currWidth<maxWidth"),
+        SizedBox(
+          height: 10.0,
+        ),
+
+        // minWidth: 100.0,
+        ConstrainedBoxCreate(currWidth: 150, describe: "currWidth>minWidth"),
+        SizedBox(
+          height: 10.0,
+        ),
+        ConstrainedBoxCreate(currWidth: 100, describe: "currWidth=minWidth"),
+
       ],
       docUrl:
           'https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html',

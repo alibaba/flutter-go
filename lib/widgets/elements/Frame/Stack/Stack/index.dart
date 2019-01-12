@@ -3,9 +3,9 @@ import '../../../../../common/widget_demo.dart';
 import './demo.dart';
 
 const String _stackText0 = """### **简介**
-> 用于将多个子级相对于其框的边缘定位，多用于以简单方式重叠children
+> 用于将多个childs相对于其框的边缘定位，多用于以简单方式重叠children
 - 当第一个child置于底部时，堆栈按顺序绘制其子项。如果更改子项绘制顺序，可以使用新顺序重新建立堆栈
-- 注意：stack的每一个子节点都已定位或为定位，定位子项必须至少一个非null属性的定位。
+- 注意：stack的每一个子节点都已定位或未定位，定位子项必须至少一个非null属性的定位。
 
 """;
 const String _stackText1 = """### **基本用法**

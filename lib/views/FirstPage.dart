@@ -5,7 +5,6 @@ import 'package:flutter_rookie_book/components/ListRefresh.dart' as listComp;
 import 'package:flutter_rookie_book/components/Pagination.dart';
 import './widgetFeature/FirstPageItem.dart';
 import '../common/net_utils.dart';
-import 'package:flutter_rookie_book/common/iconNames.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -49,10 +48,6 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
   }
 
   Widget makeCard(index,item){
-    const emojis = ['👲'];
-    var smallParts_Color = Colors.primaries[index % Colors.primaries.length];
-    var smallParts_icon = IconNames.Names[index % IconNames.Names.length];
-    var smallParts_emojis = IconNames.Names[index % IconNames.Names.length];
 
     var myTitle = '${item.title}';
     var myUsername = '${'👲'}: ${item.username} ';

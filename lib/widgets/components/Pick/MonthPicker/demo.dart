@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 
 class MothPickerDemo extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _first();
+  State<StatefulWidget> createState() => _MothPickerState();
 }
 
-class _first extends State<MothPickerDemo> {
+class _MothPickerState extends State<MothPickerDemo> {
   DateTime _date = new DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {

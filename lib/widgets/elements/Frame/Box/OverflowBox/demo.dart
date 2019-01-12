@@ -20,8 +20,8 @@ class OverflowBoxDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OverflowBox(
-      minHeight: 50.0,
-      minWidth: 50.0,
+      minHeight: 80.0,
+      minWidth: 80.0,
       //设置最大宽，高
       maxWidth: curmaxWidth,
       maxHeight: curmaxHeight,
@@ -36,7 +36,8 @@ class OverflowBoxDefault extends StatelessWidget {
          * * */
         height: curHeight,
         width: curWidth,
-        color: Colors.red,
+        child: Text("$curmaxWidth * $curmaxHeight",style: TextStyle(color: Colors.white),),
+        color: Color(0xfff48fb1),
       ),
     );
   }
