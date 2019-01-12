@@ -36,6 +36,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
   Color _collectionColor;
   List widgetDemosList = new WidgetDemoList().getDemos();
   String _router = '';
+  String _collText = '';
 
   void showInSnackBar(String value) {
     Fluttertoast.showToast(
@@ -147,10 +148,10 @@ class _WidgetDemoState extends State<WidgetDemo> {
   Widget build(BuildContext context) {
     if (_hasCollected) {
       _collectionColor = Colors.red;
-      _router='取消收藏';
+      _collText='取消收藏';
     } else {
       _collectionColor =null;
-      _router='组件收藏';
+      _collText='组件收藏';
     }
     return Scaffold(
       appBar: AppBar(
@@ -186,7 +187,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
                     value: 'collection',
                     child: ListTile(
                       leading: Icon(Icons.star,size: 22.0,color: _collectionColor,),
-                      title: Text(_router),
+                      title: Text(_collText),
                       
                     ),
                   ),
