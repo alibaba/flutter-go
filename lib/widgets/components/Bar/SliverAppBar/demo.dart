@@ -7,7 +7,6 @@
  * tartget: SliverAppBar 的示例
  */
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*

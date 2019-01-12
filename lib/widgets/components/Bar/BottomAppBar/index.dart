@@ -7,6 +7,7 @@
  * tartget: BottomAppBar 的示例
  */
 import '../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -24,11 +25,6 @@ const String _Text1 =
 > 通常与Scaffold和FloatingActionButton一起使用。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> BottomAppBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components//Bar/BottomAppBar';
@@ -43,18 +39,18 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'BottomAppBar',
       codeUrl: 'componentss/Bar/BottomAppBar/demo.dart',
-      contentList: [allDomeBoxs(context, this)],
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/BottomAppBar-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 BottomAppBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allDomeBoxs(BuildContext context, _DemoState that) {
+Widget allCheckboxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

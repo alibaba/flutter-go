@@ -7,7 +7,7 @@
  * tartget: SnackBar 的示例
  */
 import '../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -27,11 +27,6 @@ const String _Text1 =
 - 要控制SnackBar保持可见的时间，请指定持续时间。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> SnackBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components//Bar/SnackBar';
@@ -46,18 +41,18 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'SnackBar',
       codeUrl: 'componentss/Bar/SnackBar/demo.dart',
-      contentList: [allDemoBoxs(context, this)],
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/SnackBar-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 SnackBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allDemoBoxs(BuildContext context, _DemoState that) {
+Widget allCheckboxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

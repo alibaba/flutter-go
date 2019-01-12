@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 class RawMaterialButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const RawMaterialButtonDefault([bool this.isDisabled = true])
+  const RawMaterialButtonDefault([ this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -39,10 +39,10 @@ class RawMaterialButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const RawMaterialButtonCustom(
-      [String this.txt = '自定义按钮',
-      Color this.color = Colors.blueAccent,
-      ShapeBorder this.shape,
-      VoidCallback this.onPressed])
+      [ this.txt = '自定义按钮',
+       this.color = Colors.blueAccent,
+       this.shape,
+       this.onPressed])
       : super();
 
   @override

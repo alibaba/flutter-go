@@ -7,7 +7,6 @@
  * tartget: ListView 的示例
  */
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
@@ -86,8 +85,8 @@ class ListViewLessDefault extends StatelessWidget {
                   dense:true,                // item 直观感受是整体大小
                   contentPadding: EdgeInsets.all(10.0),// item 内容内边距
                   enabled:true,
-                  onTap:(){print('点击:${index}');},// item onTap 点击事件
-                  onLongPress:(){print('长按:${index}');},// item onLongPress 长按事件
+                  onTap:(){print('点击:$index');},// item onTap 点击事件
+                  onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
                   selected:false,     // item 是否选中状态
               );
             },
@@ -111,8 +110,8 @@ class ListViewLessDefault extends StatelessWidget {
                 dense:true,                // item 直观感受是整体大小
                 contentPadding: EdgeInsets.all(10.0),// item 内容内边距
                 enabled:true,
-                onTap:(){print('点击:${index}');},// item onTap 点击事件
-                onLongPress:(){print('长按:${index}');},// item onLongPress 长按事件
+                onTap:(){print('点击:$index');},// item onTap 点击事件
+                onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
                 selected:false,     // item 是否选中状态
               );
             },

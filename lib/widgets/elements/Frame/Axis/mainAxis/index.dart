@@ -11,7 +11,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'mainAxis',
-      child: Flex(
+      contentList: [Flex(
         direction: Axis.vertical,
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -42,9 +42,8 @@ class _DemoState extends State<Demo> {
             margin: const EdgeInsets.all(10.0),
           ),
         ],
-      ),
-      docUrl:
-          'https://docs.flutter.io/flutter/material/MergeableMaterial/mainAxis.html',
+      )],
+      docUrl: 'https://docs.flutter.io/flutter/material/MergeableMaterial/mainAxis.html',
     );
   }
 }

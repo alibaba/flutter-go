@@ -41,12 +41,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         _flatText0,
         _flatText1,
-        _AlignCreate()
+        _alignCreate()
       ],
     );
   }
 
-  Column _AlignCreate() {
+  Column _alignCreate() {
     return new Column(
       children: <Widget>[
         SizedBox(height: 10.0),

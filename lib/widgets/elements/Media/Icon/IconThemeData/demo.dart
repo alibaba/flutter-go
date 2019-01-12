@@ -8,8 +8,8 @@
 import 'package:flutter/material.dart';
 
 class IconThemeDemo extends StatelessWidget {
-  Color curColor = Colors.white;
-  double curOpacity;
+  final Color curColor ;
+  final double curOpacity;
 
   IconThemeDemo({Key key, this.curColor, this.curOpacity}) : super();
 
@@ -29,7 +29,7 @@ class IconThemeDemo extends StatelessWidget {
 }
 
 class IconThemeDemo2 extends StatelessWidget {
-  Color curColor = Colors.white;
+  final Color curColor ;
   final double curSize;
 
   IconThemeDemo2({Key key, this.curColor, this.curSize}) : super();

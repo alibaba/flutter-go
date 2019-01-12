@@ -5,7 +5,6 @@
  * @Last Modified time: 2019-01-08 15:56:31 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
 import './demo.dart' as overflowBox;
 
@@ -39,12 +38,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         Text0,
         Text1,
-        _OverflowBoxCreate(),
+        _overflowBoxCreate(),
       ],
     );
   }
 
-  Row _OverflowBoxCreate() {
+  Row _overflowBoxCreate() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[

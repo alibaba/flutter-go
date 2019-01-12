@@ -7,7 +7,7 @@
  * tartget: FlexibleSpaceBar 的示例
  */
 import '../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -27,11 +27,6 @@ const String _Text1 =
 - 要调整 AppBar 大小,必须将其包装在 FlexibleSpaceBar.createSettings 返回的 widget 中 ，以将大小调整信息传递给 FlexibleSpaceBar。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> FlexibleSpaceBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components//Bar/FlexibleSpaceBar';
@@ -45,19 +40,19 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'FlexibleSpaceBar',
-      codeUrl: 'Bar/FlexibleSpaceBar/demo.dart',
-      contentList: [allDemoBoxs(context, this)],
+      codeUrl: 'components/Bar/FlexibleSpaceBar/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/FlexibleSpaceBar-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 FlexibleSpaceBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allDemoBoxs(BuildContext context, _DemoState that) {
+Widget allCheckboxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

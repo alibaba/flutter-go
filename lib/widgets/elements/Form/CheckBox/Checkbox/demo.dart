@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 class CheckboxDefault extends StatefulWidget{
   final int index;
   final parent;
-  const CheckboxDefault([this.parent,int this.index = -1]) : super();
+  const CheckboxDefault([this.parent, this.index = -1]) : super();
   @override
   State<StatefulWidget> createState() =>_CheckboxDefault();
 }
@@ -47,7 +47,7 @@ class CheckboxSelect extends StatelessWidget {
   final widget;
   final parent;
 
-  const CheckboxSelect([this.widget,this.parent,int this.index = -1])
+  const CheckboxSelect([this.widget,this.parent, this.index = -1])
       : super();
 
   @override

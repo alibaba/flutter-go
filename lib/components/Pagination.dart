@@ -8,7 +8,7 @@ import '../model/story.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Pagination extends StatelessWidget {
-  static const String routeName = '/material/page-selector';
+  static final String routeName = '/material/page-selector';
   static final List<Icon> icons = <Icon>[
     const Icon(Icons.event, semanticLabel: 'Event'),
     const Icon(Icons.home, semanticLabel: 'Home'),
@@ -18,9 +18,9 @@ class Pagination extends StatelessWidget {
     const Icon(Icons.language, semanticLabel: 'Language'),
   ];
 
-  List<StoryModel> bannerStories = [];
+  final List<StoryModel> bannerStories = [];
 
-  List<dynamic> arr = [
+  final List<dynamic> arr = [
     {'image': 'https://img.alicdn.com/tfs/TB1W4hMAwHqK1RjSZJnXXbNLpXa-519-260.jpg', 'type': 0, 'id': 9695909, 'url': 'https://www.zhihu.com/question/294145797/answer/551162834', 'title': '为什么阿里巴巴、腾讯和 Google 之类的企业都在使用 Flutter 开发 App？'},
     {'image': 'https://img.alicdn.com/tfs/TB1XmFIApzqK1RjSZSgXXcpAVXa-720-338.jpg', 'type': 0, 'id': 9695859, 'url': 'https://zhuanlan.zhihu.com/p/51696594', 'title': 'Flutter 1.0 正式发布: Google 的便携 UI 工具包'},
     {'image': 'https://img.alicdn.com/tfs/TB1mClCABLoK1RjSZFuXXXn0XXa-600-362.jpg', 'type': 0, 'id': 96956491409, 'url':'https://zhuanlan.zhihu.com/p/53497167','title': 'Flutter 示范应用现已开源 — 万物起源(The History of Everything)'},
@@ -35,7 +35,7 @@ class Pagination extends StatelessWidget {
     }
   }
 
-  List<Widget> _PageSelector(BuildContext context) {
+  List<Widget> _pageSelector(BuildContext context) {
     List<Widget> list = [];
     /// super.initState();
     arr.forEach((item) {
@@ -57,7 +57,7 @@ class Pagination extends StatelessWidget {
       Column(
         //physics: AlwaysScrollableScrollPhysics(),
         //padding: EdgeInsets.only(),
-        children: _PageSelector(context)
+        children: _pageSelector(context)
       );
   }
 }

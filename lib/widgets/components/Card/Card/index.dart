@@ -7,7 +7,7 @@
  * tartget: Card 的示例
  */
 import '../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -25,11 +25,6 @@ const String _Text1 =
 > 此示例显示了创建卡片窗口组件，其中显示了相册信息和两个操作
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> Card
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Card/Card';
@@ -43,19 +38,19 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Card',
-      codeUrl: 'componentss/Card/Card/demo.dart',
-      contentList: [allDemoBoxs(context, this)],
+      codeUrl: 'components/Card/Card/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/Card-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 Card widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allDemoBoxs(BuildContext context, _DemoState that) {
+Widget allCheckboxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

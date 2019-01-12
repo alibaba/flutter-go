@@ -7,9 +7,8 @@
  * tartget: CheckboxListTile 的示例
  */
 import '../../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as CheckboxListTileDemo;
@@ -38,7 +37,7 @@ const String _CheckboxListTileText2 =
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Checkbox/CheckboxListTile';
-  bool valBool = true;
+  final bool valBool = true;
   @override
   _DemoState createState() => _DemoState();
 }
@@ -55,7 +54,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 CheckboxListTile widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

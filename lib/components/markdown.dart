@@ -8,7 +8,6 @@ final hightlighter = new HighLight();
 class HighLight extends md.SyntaxHighlighter {
   @override
   TextSpan format(String source) {
-    // TODO: implement format
     final SyntaxHighlighterStyle style = SyntaxHighlighterStyle.lightThemeStyle();
     return TextSpan(
         style: const TextStyle(fontSize: 10.0),
@@ -22,11 +21,10 @@ class HighLight extends md.SyntaxHighlighter {
 
 
 class MarkdownBody extends StatelessWidget {
-  String data;
+  final String data;
   MarkdownBody(this.data);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return md.MarkdownBody(data: data, syntaxHighlighter: new HighLight());
   }
 }

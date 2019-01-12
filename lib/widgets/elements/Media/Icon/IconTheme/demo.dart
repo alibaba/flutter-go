@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 
 class IconThemeDemo extends StatelessWidget {
-  Color curColor = Colors.white;
+  final Color curColor ;
 
   IconThemeDemo({Key key, this.curColor}) : super();
 
@@ -25,7 +25,7 @@ class IconThemeDemo extends StatelessWidget {
 }
 
 class IconThemeDemo2 extends StatelessWidget {
-  Color curColor = Colors.white;
+  final Color curColor ;
   final double curSize;
 
   IconThemeDemo2({Key key, this.curColor, this.curSize}) : super();

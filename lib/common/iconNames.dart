@@ -6,7 +6,6 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: FlatButton 的示例
  */
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 

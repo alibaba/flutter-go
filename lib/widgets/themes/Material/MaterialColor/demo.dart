@@ -14,7 +14,7 @@ class Palette {
   final String name;
   final MaterialColor primary;
 
-  /**
+  /*
    * MaterialAccentColor：定义单一的色滴，颜色的阴影用索引表示，
    * 索引比较小的颜色比较浅，较大的索引较暗
    */

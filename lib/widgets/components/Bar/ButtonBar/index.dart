@@ -7,7 +7,7 @@
  * tartget: ButtonBar 的示例
  */
 import '../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -26,11 +26,6 @@ const String _Text1 =
 - 当Directionality为TextDirection.ltr时，按钮栏的子项右对齐，最后一个子项成为最右边的子项。当Directionality TextDirection.rtl时，子项被左对齐，最后一个子项成为最左边的子项。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> ButtonBar
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Bar/ButtonBar';
@@ -44,19 +39,19 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'ButtonBar',
-      codeUrl: 'componentss//Bar/ButtonBar/demo.dart',
-      contentList: [allDemoBoxs(context, this)],
+      codeUrl: 'components/Bar/ButtonBar/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/ButtonBar-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 ButtonBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allDemoBoxs(BuildContext context, _DemoState that) {
+Widget allCheckboxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

@@ -1,30 +1,25 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/myListView.dart';
-//import 'package:flutter_rookie_book/components/CompList.dart';
+import 'package:flutter_rookie_book/common/list_view_item.dart';
 import 'package:flutter_rookie_book/components/ListRefresh.dart' as listComp;
 import 'package:flutter_rookie_book/components/Pagination.dart';
-
 import './widgetFeature/FirstPageItem.dart';
 import '../common/net_utils.dart';
-
 import 'package:flutter_rookie_book/common/iconNames.dart';
-import '../common/sql.dart';
-import 'dart:async';
-
-import 'package:url_launcher/url_launcher.dart';
 
 class FirstPage extends StatefulWidget {
   @override
   FirstPageState createState() => new FirstPageState();
 }
 
-class FirstPageState extends State<FirstPage> {
+class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin{
+
+  
+  @override
+    bool get wantKeepAlive => true;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -68,6 +63,7 @@ class FirstPageState extends State<FirstPage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return new Column(
         children: <Widget>[
           new Container(

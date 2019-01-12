@@ -7,8 +7,7 @@
  * tartget: BottomNavigationBarItem 的示例
  */
 import '../../../../common/widget_demo.dart';
-import '../../../../routers/application.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -26,11 +25,6 @@ const String _Text1 =
 > 这个类很少单独使用。通常嵌入在上面的一个底部 bottom navigation widgets 中。
 """;
 
-const String _Text2 =
-"""### **进阶用法**
-> BottomNavigationBarItem
-- 
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Navigation/BottomNavigationBarItem';
@@ -44,14 +38,14 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'BottomNavigationBarItem',
-      codeUrl: '${Application.github['widgetsURL']}components/Bar/BottomNavigationBarItem/demo.dart',
+      codeUrl: 'components/Bar/BottomNavigationBarItem/demo.dart',
       contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );
   }
 }
 
-/**
+/*
  * 所有的 BottomNavigationBarItem widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

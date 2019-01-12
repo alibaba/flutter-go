@@ -11,7 +11,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'crossAxis',
-      child: Column(
+      contentList: [Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
             margin: const EdgeInsets.all(10.0),
           ),
         ],
-      ),
+      )],
       docUrl: 'https://docs.flutter.io/flutter/widgets/Padding-class.html',
     );
   }

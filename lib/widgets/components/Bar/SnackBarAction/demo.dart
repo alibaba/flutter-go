@@ -7,10 +7,8 @@
  * tartget: SnackBarAction 的示例
  */
 
-import 'dart:math';
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'demo.dart';
+
 
 class SnackBarActionDemo extends StatefulWidget {
   _Demo createState() => _Demo();

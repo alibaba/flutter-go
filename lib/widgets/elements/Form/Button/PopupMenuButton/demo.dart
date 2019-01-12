@@ -6,7 +6,6 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: RaisedButton 的示例
  */
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /*
@@ -20,7 +19,7 @@ class PopupMenuButtonDefault extends StatelessWidget {
   final String type;
 
   const PopupMenuButtonDefault(
-      [String this.type = 'default1', bool this.isDisabled = true])
+      [ this.type = 'default1',  this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -107,7 +106,7 @@ class PopupMenuButtonCustom extends StatelessWidget {
           label: Text(
                 '自定义按钮', style: TextStyle(color: Colors.white),
                 semanticsLabel: 'FLAT BUTTON'),
-          // onPressed:(){} // 激活状态按钮
+          onPressed:(){} // 激活状态按钮
         ),
         // 打开时放置菜单的z坐标。这可以控制菜单下方阴影的大小。
         elevation:10.0,

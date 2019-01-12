@@ -6,7 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: BottomNavigationBar 的示例
  */
-import '../../../../routers/application.dart';
+
 import 'package:flutter/material.dart';
 import  '../../../../common/widget_demo.dart';
 
@@ -42,7 +42,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'BottomNavigationBar',
-      codeUrl: '${Application.github['widgetsURL']}components/Navigation/BottomNavigationBar/demo.dart',
+      codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
       contentList: [allDemoBoxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
       bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
@@ -50,7 +50,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/**
+/*
  * 所有的 BottomNavigationBar widget
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget

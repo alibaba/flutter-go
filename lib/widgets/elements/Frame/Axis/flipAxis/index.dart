@@ -37,7 +37,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'flipAxis',
-      child: Flex(
+      contentList: [Flex(
         direction: _direction,
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -72,7 +72,7 @@ class _DemoState extends State<Demo> {
             onPressed: _changeDirection,
           )
         ],
-      ),
+      )],
       docUrl: 'https://docs.flutter.io/flutter/painting/flipAxis.html',
     );
   }

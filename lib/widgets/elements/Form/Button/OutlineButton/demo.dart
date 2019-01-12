@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 class OutlineButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const OutlineButtonDefault([bool this.isDisabled = true])
+  const OutlineButtonDefault([ this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -39,7 +39,7 @@ class OutlineButtonIconDefault extends StatelessWidget {
   final IconData icon;
 
   const OutlineButtonIconDefault(
-      [bool this.isDisabled = true, IconData this.icon = Icons.add_circle])
+      [ this.isDisabled = true,  this.icon = Icons.add_circle])
       : super();
 
   @override
@@ -66,10 +66,10 @@ class OutlineButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const OutlineButtonCustom(
-      [String this.txt = '自定义按钮',
-      Color this.color = Colors.blueAccent,
-      ShapeBorder this.shape,
-      VoidCallback this.onPressed])
+      [ this.txt = '自定义按钮',
+       this.color = Colors.blueAccent,
+       this.shape,
+       this.onPressed])
       : super();
 
   @override

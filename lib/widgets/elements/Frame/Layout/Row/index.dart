@@ -43,12 +43,12 @@ class _DemoState extends State<Demo> {
       contentList: [
         Text0,
         Text1,
-        _RowCreate(),
+        _rowCreate(),
       ],
     );
   }
 
-  Column _RowCreate() {
+  Column _rowCreate() {
     return new Column(
       children: <Widget>[
         RowLayout(),

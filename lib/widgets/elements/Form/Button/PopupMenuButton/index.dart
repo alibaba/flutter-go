@@ -9,7 +9,7 @@
  */
 
 import '../../../../../common/widget_demo.dart';
-import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as popupMenuButton;
@@ -37,8 +37,9 @@ const String _titleText2 = """
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Button/PopupMenuButton';
   final Map<String,String> options = {'defaultSelect': '选项二的内容'};
-  @override
   final _DemoState self =  _DemoState();
+
+  @override
   _DemoState createState() => self;
 }
 
