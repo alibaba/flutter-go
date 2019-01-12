@@ -6,15 +6,21 @@
  */
 import 'package:flutter/material.dart';
 import '../../../../../common/widget_demo.dart';
-import './demo.dart' as decoratedBox;
+import './demo.dart';
 
 const String _Text = """### **简介**
-> 在绘制前或绘制后，添加额外的限制条件到child上的widget
+> 在child绘制前或绘制后，添加额外的限制条件到child上的widget
 - 根据边界的宽高，对其child进行插入绘制
 """;
 
 const String _Text1 = """### **基本用法**
-> 常用于BoxDecoration
+> decoration → Decoration
+- 常用于BoxDecoration
+- BoxDecoration提供多种方式来绘制以一个框
+- 盒子形状可以是圆形也可以是矩形，用borderRadius属性来绘制角度
+
+> position → DecorationPosition
+- position: DecorationPosition.foreground,
 """;
 
 class Demo extends StatefulWidget {
@@ -42,9 +48,25 @@ class _DemoState extends State<Demo> {
     return new Column(
       children: <Widget>[
         Container(
-          height: 200.0,
-          width: 200.0,
-          child: decoratedBox.DecoratedBoxCreate(),
+          height: 100.0,
+          width: 100.0,
+          child: DecoratedBoxCreate(),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          child: DecoratedBoxCreateTwo(),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          child: DecoratedBoxCreateShape(),
         )
       ],
     );

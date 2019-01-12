@@ -10,25 +10,6 @@
 import 'package:flutter/material.dart';
 
 /*
-* BottomNavigationBar 默认的实例
-* */
-class BottomNavigationBarItemFullDefault extends StatefulWidget {
-  const BottomNavigationBarItemFullDefault() : super();
-
-  @override
-  State<StatefulWidget> createState() => _BottomNavigationBarItemFullDefault();
-}
-
-/*
-* BottomNavigationBarItem 默认的实例,有状态
-* */
-class _BottomNavigationBarItemFullDefault extends State {
-  @override
-  Widget build(BuildContext context) {
-  }
-}
-
-/*
 * BottomNavigationBarItem 默认的实例,无状态
 * */
 class BottomNavigationBarItemLessDefault extends StatelessWidget {

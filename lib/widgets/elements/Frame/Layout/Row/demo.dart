@@ -34,9 +34,7 @@ class RowMainAxisAlignment extends StatelessWidget {
 
   final CrossAxisAlignment crossStatus;
 
-  const RowMainAxisAlignment(
-       this.status,  this.crossStatus)
-      : super();
+  const RowMainAxisAlignment(this.status, this.crossStatus) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -63,8 +61,8 @@ class RowMainAxisAlignment extends StatelessWidget {
   }
 }
 
-class RowLayout extends StatelessWidget {
-  const RowLayout() : super();
+class RowLayoutCreate extends StatelessWidget {
+  const RowLayoutCreate() : super();
 
   @override
   Widget build(BuildContext context) {

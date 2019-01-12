@@ -11,28 +11,6 @@
 import 'package:flutter/material.dart';
 
 /*
-* Checkbox 默认的实例
-* */
-class SnackBarFullDefault extends StatefulWidget {
-  const SnackBarFullDefault() : super();
-
-  @override
-  State<StatefulWidget> createState() => _SnackBarFullDefault();
-}
-
-/*
-* SnackBar 默认的实例,有状态
-* */
-class _SnackBarFullDefault extends State {
-  @override
-  Widget build(BuildContext context) {
-    return SnackBar(
-      // ...  // 如果没有,就是不需要有状态的 StatefulWidget
-    );
-  }
-}
-
-/*
 * SnackBar 默认的实例,无状态
 * */
 class SnackBarLessDefault extends StatelessWidget {

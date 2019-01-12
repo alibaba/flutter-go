@@ -45,7 +45,7 @@ class _DemoState extends State<Demo> {
       codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
       contentList: [allDemoBoxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
-      bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
+      //bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
     );
   }
 }

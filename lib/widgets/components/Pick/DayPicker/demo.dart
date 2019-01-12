@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 
 class DayPickerDemo extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _showDialog();
+  State<StatefulWidget> createState() => _DayPickerState();
 }
 
-class _showDialog extends State<DayPickerDemo> {
+class _DayPickerState extends State<DayPickerDemo> {
   DateTime _date = new DateTime.now();
   TimeOfDay _time = new TimeOfDay.now();
 

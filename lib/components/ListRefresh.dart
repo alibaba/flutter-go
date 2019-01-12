@@ -15,10 +15,10 @@ class ListRefresh extends StatefulWidget {
   const ListRefresh([this.requestApi, this.renderItem]) : super();
 
   @override
-  State<StatefulWidget> createState() => listRefresh();
+  State<StatefulWidget> createState() => _ListRefreshState();
 }
 
-class listRefresh extends State<ListRefresh> {
+class _ListRefreshState extends State<ListRefresh> {
   bool isLoading = false; // 是否正在请求数据中
   bool _hasMore = true; // 是否还有更多数据可加载
   int _pageIndex = 0; // 页面的索引

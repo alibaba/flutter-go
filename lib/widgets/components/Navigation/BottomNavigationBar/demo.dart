@@ -51,19 +51,3 @@ class _BottomNavigationBarFullDefault extends State {
   }
 }
 
-/*
-* BottomNavigationBar 默认的实例,无状态
-* */
-class BottomNavigationBarLessDefault extends StatelessWidget {
-  final widget;
-  final parent;
-
-  const BottomNavigationBarLessDefault([this.widget, this.parent])
-      : super();
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-    );
-  }
-}
