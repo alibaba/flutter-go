@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/list_view_item.dart';
-import 'package:flutter_rookie_book/components/list_refresh.dart' as listComp;
-import 'package:flutter_rookie_book/components/pagination.dart';
-import 'package:flutter_rookie_book/components/first_page_item.dart';
-import 'package:flutter_rookie_book/components/disclaimer_msg.dart';
+
+import 'package:flutter_go/common/list_view_item.dart';
+import 'package:flutter_go/components/list_refresh.dart' as listComp;
+import 'package:flutter_go/components/pagination.dart';
+import 'package:flutter_go/components/first_page_item.dart';
+import 'package:flutter_go/components/disclaimer_msg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../common/net_utils.dart';
 
 GlobalKey<DisclaimerMsgState> key;

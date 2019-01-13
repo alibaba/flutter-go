@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/views/detail.dart';
-
-
+import 'package:flutter_go/views/Detail.dart';
 
 class CompList extends StatefulWidget {
   @override
