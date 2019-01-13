@@ -102,7 +102,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
                         showAlertDialog(context); //here i call the same function
                       }
                     ),
-                    Text('不再显示',style:TextStyle(fontSize: 14)),
+                    Text('不再自动提示',style:TextStyle(fontSize: 14)),
                   ],
                 ),
                 new Flexible(
