@@ -16,7 +16,7 @@ import './demo.dart' as AppBarDemo;
 const String _Text0 =
 """### **简介**
 > AppBar “应用栏”
-- 应用栏由工具栏和可能的其他 widget 组成，例如 TabBar和FlexibleSpaceBar;
+- 应用栏由工具栏组成，或者是工具栏和其他 widget 组合形成，例如 TabBar和FlexibleSpaceBar;
 - 应用栏通常用于 Scaffold.appBar 属性，该属性将应用栏放置在屏幕顶部的固定高度小部件中;
 - 对于可滚动的应用栏，请参阅SliverAppBar，它将AppBar嵌入 sliver 中以便在CustomScrollView中使用;
 """;
