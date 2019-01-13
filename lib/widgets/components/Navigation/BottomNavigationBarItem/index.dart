@@ -6,8 +6,8 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: BottomNavigationBarItem 的示例
  */
-import '../../../../common/widget-demo.dart';
-import '../../../../routers/application.dart';
+import '../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -16,13 +16,13 @@ import './demo.dart' as BottomNavigationBarItemDemo;
 const String _Text0 =
 """### **简介**
 > BottomNavigationBarItem “底部导航应用栏”
-- material 的 BottomNavigationBar 或带有图标和标题的 iOS主题 CupertinoTabBar 中的交互式按钮。
+- material 的 BottomNavigationBar 或带有图标和标题的 iOS主题 CupertinoTabBar 中的交互式按钮;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
-> 这个类很少单独使用。通常嵌入在上面的一个底部 bottom navigation widgets 中。
+> 这个类很少单独使用。通常嵌入在上面的一个底部 bottom navigation widgets 中;
 """;
 
 
@@ -38,8 +38,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'BottomNavigationBarItem',
-      codeUrl: '${Application.github['widgetsURL']}componentss/Bar/BottomNavigationBarItem/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'components/Bar/BottomNavigationBarItem/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );
   }

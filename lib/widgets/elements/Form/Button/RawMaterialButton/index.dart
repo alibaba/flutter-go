@@ -7,8 +7,7 @@
  * target: RawMaterialButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/RawMaterialButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -19,13 +18,13 @@ import './demo.dart' as rawMaterialButton;
 const String _rawMaterialText0 =
 """### **简介**
 > RawMaterial button “RawMaterial 按钮”
-- 基于Semantics，Material和InkWell 小部件创建按钮。
-- 此类不使用当前Theme或ButtonTheme来计算未指定参数的默认值。它旨在用于自定义材质按钮，可选择包含主题或特定于应用程序源的默认值。
+- 基于 Semantics，Material 和InkWell 小部件创建按钮;
+- 此类不使用当前 Theme 或 ButtonTheme 来计算未指定参数的默认值。它旨在用于自定义 Material button，可选择包含主题或特定于应用程序源的默认值;
 """;
 
 const String _rawMaterialText1 =
 """### **基本用法**
-> 参数的默认的按钮和禁用按钮
+> 参数的默认的 button 和禁用 button
 """;
 
 const String _rawMaterialText2 =
@@ -52,8 +51,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'RawMaterialButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/RawMaterialButton/demo.dart',
-      child: allRawMaterialButtons(context,this),
+      codeUrl: 'elements/Form/Button/RawMaterialButton/demo.dart',
+      contentList: [allRawMaterialButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/RawMaterialButton-class.html',
     );
   }

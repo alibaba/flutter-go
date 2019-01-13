@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/views/Detail.dart';
 
-
-
 class CompList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

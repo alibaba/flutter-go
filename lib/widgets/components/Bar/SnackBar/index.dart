@@ -6,8 +6,8 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: SnackBar 的示例
  */
-import '../../../../common/widget-demo.dart';
-import '../../../../routers/application.dart';
+import '../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -16,14 +16,14 @@ import './demo.dart' as SnackBarDemo;
 const String _Text0 =
 """### **简介**
 > SnackBar “屏幕底部消息”
-- 带有可选操作的轻量级消息，短暂显示在屏幕底部。
-- SnackBar是用户操作后，显示提示信息的一个控件，类似Toast，会自动隐藏。
+- 带有可选操作的轻量级消息，短暂显示在屏幕底部
+- SnackBar是用户操作后，显示提示信息的一个控件，类似Toast，会自动隐藏;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
-> Scaffold.of(context).showSnackBar()，传递描述消息的SnackBar实例。
+> Scaffold.of(context).showSnackBar()，传递描述消息的 SnackBar 实例;
 - 要控制SnackBar保持可见的时间，请指定持续时间。
 """;
 
@@ -40,8 +40,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SnackBar',
-      codeUrl: '${Application.github['widgetsURL']}componentss/Bar/SnackBar/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'componentss/Bar/SnackBar/demo.dart',
+      contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/SnackBar-class.html',
     );
   }
@@ -52,7 +52,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

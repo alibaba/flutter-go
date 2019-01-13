@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import '../components/CompList.dart';
+import '../components/comp_list.dart';
 
 
 class FourthPage extends StatefulWidget {

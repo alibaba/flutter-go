@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-11 14:40:09
  */
 import 'package:flutter/material.dart';
-import 'widgetPage/cate_card.dart';
+import 'package:flutter_go/components/cate_card.dart';
 import '../model/cat.dart';
 
 class WidgetPage extends StatefulWidget {

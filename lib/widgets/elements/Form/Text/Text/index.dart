@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_markdown/flutter_markdown.dart';
-import '../../../../../common/widget-demo.dart';
+import '../../../../../common/widget_demo.dart';
 import '../../../../../components/markdown.dart';
 
 const String intro = """
@@ -79,7 +79,7 @@ class _Demo extends State<Demo> {
       title: "Text",
       docUrl: 'flutter/widgets/Text-class.html',
       codeUrl: 'elements/Form/Text/Text/index.dart',
-      child: new Column(
+      contentList: [new Column(
         children: <Widget>[
           MarkdownBody(markDesc['intro']),
           Text(
@@ -110,7 +110,7 @@ class _Demo extends State<Demo> {
             ),
           )
         ],
-      )
+      )]
     );
   }
 }

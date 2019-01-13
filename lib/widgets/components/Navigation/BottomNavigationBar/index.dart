@@ -6,9 +6,9 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: BottomNavigationBar 的示例
  */
-import '../customDemo.dart';
-import '../../../../routers/application.dart';
+
 import 'package:flutter/material.dart';
+import  '../../../../common/widget_demo.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as BottomNavigationBarDemo;
@@ -16,18 +16,18 @@ import './demo.dart' as BottomNavigationBarDemo;
 const String _text0 =
 """### **简介**
 > BottomNavigationBar “底部导航栏”，
-- 显示在应用程序底部的导航栏,由文本标签，图标或两者形式的多个项目组成。
-- 它提供了应用程序顶级视图之间的快速导航。
+- 显示在应用程序底部的导航栏,由文本标签，图标或两者形式的多个项目组成;
+- 它提供了应用程序顶级视图之间的快速导航;
 """;
 
 
 const String _text1 =
 """### **基本用法**
 > BottomNavigationBar 底部导航栏通常与Scaffold结合使用
-- 它作为Scaffold.bottomNavigationBar参数。
-- BottomNavigationBar金支持0-4个之间个底部按钮数量，超出4个系统将会报异常。
-- 默认0-3个底部按钮数量时，BottomNavigationBar采用fixed的模式摆放底部按钮，当超过4个时默认使用 BottomNavigationBarType.shifting 模式摆放底部按钮
-- 下面的底部导航即是效果。
+- 它作为 Scaffold.bottomNavigationBar 参数;
+- BottomNavigationBar 支持0-4个之间个底部按钮数量，超出4个系统将会报异常;
+- 默认0-3个底部按钮数量时，BottomNavigationBar采用fixed的模式摆放底部按钮，当超过4个时默认使用 BottomNavigationBarType.shifting 模式摆放底部按钮;
+- 下面的底部导航即是效果;
 """;
 
 class Demo extends StatefulWidget {
@@ -40,10 +40,10 @@ class Demo extends StatefulWidget {
 class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
-    return CustomDemo(
+    return WidgetDemo(
       title: 'BottomNavigationBar',
-      codeUrl: '${Application.github['widgetsURL']}components/Navigation/BottomNavigationBar/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
+      contentList: [allDemoBoxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
       bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
     );
@@ -55,7 +55,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDemoBoxs(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

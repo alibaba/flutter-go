@@ -11,7 +11,7 @@ import 'demo.dart';
 const String content0 = '''
 ### **简介**
 > 通过使用标签或者描述性词语来过滤内容
-- FilterChip是checkbox或switch widget 的替换品。
+- FilterChip 是 checkbox 或 switch widget 的替换品。
 
 ''';
 const String content1 = '''

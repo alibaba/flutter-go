@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/common/list_view_item.dart';
-import 'package:flutter_go/components/ListRefresh.dart' as listComp;
-import 'package:flutter_go/components/Pagination.dart';
-import './widgetFeature/FirstPageItem.dart';
+import 'package:flutter_go/components/list_refresh.dart' as listComp;
+import 'package:flutter_go/components/pagination.dart';
+import 'package:flutter_go/components/first_page_item.dart';
+
 import '../common/net_utils.dart';
 
 class FirstPage extends StatefulWidget {

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
 
-import 'views/FirstPage.dart';
-import 'views/widgetPage.dart';
-import 'views/FourthPage.dart';
+import 'views/first_page.dart';
+import 'views/widget_page.dart';
+import 'views/fourth_page.dart';
 import 'views/collection_page.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
@@ -12,9 +12,6 @@ import 'common/provider.dart';
 import 'model/widget.dart';
 import './widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
-
-
-
 const int ThemeColor = 0xFFC91B3A;
 
 class MyApp extends StatelessWidget {

@@ -14,11 +14,11 @@ const String _Text0 = """
 ### **简介**
 > SnackBarAction “屏幕底部消息右侧可操作的行为”
 
-带有可选操作的轻量级消息，短暂显示在屏幕底部, 并提供按钮交互。
+- 带有可选操作的轻量级消息，短暂显示在屏幕底部, 并提供按钮交互。
 
 ### **基本用法**
 
-> 为SnackBar加入action[SnackBarAction]显示按区, 默认下是隐藏的.
+> 为SnackBar加入action[SnackBarAction]显示按区, 默认下是隐藏的
 
 """;
 

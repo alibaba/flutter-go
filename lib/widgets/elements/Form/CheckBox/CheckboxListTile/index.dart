@@ -6,8 +6,8 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: CheckboxListTile 的示例
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -16,18 +16,18 @@ import './demo.dart' as CheckboxListTileDemo;
 const String _CheckboxListTileText0 =
 """### **简介**
 > CheckboxListTile “下拉复选框”
-- 带有复选框的ListTile,带有标签的复选框。
-- 整个列表图块是交互式的：点击图块中的任意位置可切换复选框。
+- 带有复选框的 ListTile,带有标签的 ListTile；
+- 整个列表图块是交互式的：点击图块中的任意位置可切换复选框；
 """;
 
 
 const String _CheckboxListTileText1 =
 """### **基本用法**
 > CheckboxListTile 的属性特征
-- Checkbox类似的命名属性，比如：onChanged和activeColor。
-- 和ListTile类似的命名属性，比如：title, subtitle, isThreeLine，dense。
-- selected属性和ListTile.selected 属性类似，但使用的颜色是activeColor属性，默认为当前Theme的颜色。
-- onChanged 回调函数为 null,显示禁用
+- 与 Checkbox 类似的命名属性，比如：onChanged 和 activeColor；
+- 和 ListTile 类似的命名属性，比如：title, subtitle, isThreeLine，dense；
+- selected 属性和 ListTile.selected 属性类似，但使用的颜色是 activeColor 属性，默认为当前 Theme 的颜色；
+- onChanged 回调函数为 null,显示禁用；
 """;
 
 const String _CheckboxListTileText2 =
@@ -47,8 +47,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CheckboxListTile',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Checkbox/CheckboxListTile/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'elements/Form/Checkbox/CheckboxListTile/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/CheckboxListTile-class.html',
     );
   }

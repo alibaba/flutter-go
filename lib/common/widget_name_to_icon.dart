@@ -137,8 +137,14 @@ class WidgetName2Icon {
     "YearPicker":Icons.event_busy,
     "ShowdatePicker":Icons.event,
     "MaterialPageRoute":Icons.album,
-     "MaterialAccentColor":Icons.brush,
-
-
+    "MaterialAccentColor":Icons.brush,
+    "SnackBarAction":Icons.assessment,
+    "TabBar":Icons.burst_mode,
+    "AlertDialog":Icons.sms_failed,
+    "AboutDialog":Icons.sms,
+    "SimpleDialog":Icons.message,
+    "ScaffoldState":Icons.local_bar,
+    "GridTile":Icons.apps,
+    "MergeableMaterialItem":Icons.view_list
   };
 }

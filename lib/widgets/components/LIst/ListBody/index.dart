@@ -6,8 +6,8 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: ListBody 的示例
  */
-import '../../../../common/widget-demo.dart';
-import '../../../../routers/application.dart';
+import '../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -41,9 +41,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'ListBody',
-      codeUrl: '${Application
-          .github['widgetsURL']}/componentss/List/ListBody/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'components/List/ListBody/demo.dart',
+      contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/ListBody-class.html',
     );
   }
