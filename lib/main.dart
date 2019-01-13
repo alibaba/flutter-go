@@ -118,12 +118,12 @@ class _MyHomePageState extends State<MyHomePage>
 
         return list
             .map((item) => new MaterialSearchResult<String>(
-                  value: item.name,
-                  text: item.name,
-                  onTap: () {
-                    onWidgetTap(item, context);
-                  },
-                ))
+          value: item.name,
+          text: item.name,
+          onTap: () {
+            onWidgetTap(item, context);
+          },
+        ))
             .toList();
       } else {
         return null;
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage>
                 child: new TabBar(
                     controller: controller,
                     indicatorColor:
-                        Theme.of(context).primaryColor, //tab标签的下划线颜色
+                    Theme.of(context).primaryColor, //tab标签的下划线颜色
                     // labelColor: const Color(0xFF000000),
                     indicatorWeight: 3.0,
                     labelColor: Theme.of(context).primaryColor,
@@ -181,11 +181,11 @@ class _MyHomePageState extends State<MyHomePage>
     }
   }
 
-  // void _onDataChange(val) {
-  //   if (this.mounted) {
-  //     setState(() {
-  //       data = val;
-  //     });
-  //   }
-  // }
+// void _onDataChange(val) {
+//   if (this.mounted) {
+//     setState(() {
+//       data = val;
+//     });
+//   }
+// }
 }

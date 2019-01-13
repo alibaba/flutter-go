@@ -5,8 +5,12 @@ import 'package:flutter_go/common/list_view_item.dart';
 import 'package:flutter_go/components/list_refresh.dart' as listComp;
 import 'package:flutter_go/components/pagination.dart';
 import 'package:flutter_go/components/first_page_item.dart';
+import 'package:flutter_go/components/disclaimer_msg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../common/net_utils.dart';
+
+GlobalKey<DisclaimerMsgState> key;
 
 class FirstPage extends StatefulWidget {
   @override
@@ -15,13 +19,52 @@ class FirstPage extends StatefulWidget {
 
 class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin{
 
-  
   @override
-    bool get wantKeepAlive => true;
+  bool get wantKeepAlive => true;
+
+  save(bool flag) async{
+    //print('=============save=========$flag');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('disclaimer', flag.toString());
+  }
+
+  Future<String> get() async {
+    var value;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    value = prefs.getString('disclaimer');
+    return value;
+  }
 
   @override
   void initState() {
     super.initState();
+    if(key == null) {
+      //print('=============111=========${key}');
+      delayed();
+    }
+    key = GlobalKey<DisclaimerMsgState>();
+
+  }
+
+  /*
+  * 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
+  * */
+  Future delayed() async {
+    await new Future.delayed(const Duration(seconds: 1));
+//    if (this.mounted) {
+//      setState(() {
+//        print('test=======>${key.currentState}');
+//        key.currentState.showAlertDialog(context);
+//        //key.currentState.init(context);
+//      });
+//    }
+    Future<String> flag = get();
+    flag.then((String value) {
+      //print('=============get=========$value');
+      if(value.toString() == 'false'){ // 如果没有勾选下次开启
+        key.currentState.showAlertDialog(context);
+      }
+    });
   }
 
   Future<Map> getIndexListData([Map<String, dynamic> params]) async {
@@ -54,7 +97,6 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     var myTitle = '${item.title}';
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
-
     return new ListViewItem(itemUrl:codeUrl,itemTitle: myTitle,data: myUsername,);
   }
 
@@ -63,14 +105,21 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     super.build(context);
     return new Column(
         children: <Widget>[
-          new Container(
-            child: new Pagination(),
-          ),
+          new Stack(
+            //alignment: const FractionalOffset(0.9, 0.1),//方法一
+            children: <Widget>[
+            Pagination(),
+            Positioned(//方法二
+              top: 10.0,
+              left: 0.0,
+              child: DisclaimerMsg(key:key,pWidget:this)
+            ),
+          ]),
           SizedBox(height: 2, child:Container(color: Theme.of(context).primaryColor)),
           new Expanded(
             //child: new List(),
             child: listComp.ListRefresh(getIndexListData,makeCard)
-          ),
+          )
         ]
 
     );

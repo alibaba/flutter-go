@@ -37,7 +37,7 @@ const String _CheckboxListTileText2 =
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Checkbox/CheckboxListTile';
-  final bool valBool = true;
+  final Map<String,bool> valBool = {'val':true};
   @override
   _DemoState createState() => _DemoState();
 }
