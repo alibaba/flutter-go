@@ -12,6 +12,8 @@ import '../../../model/widget.dart';
 import 'GridTile/index.dart' as GridTile;
 import 'GridView/index.dart' as GridView;
 import 'GridTileBar/index.dart' as GridTileBar;
+import 'GridPaper/index.dart' as GridPaper;
+import 'SliverGrid/index.dart' as SliverGrid;
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'GridTile',
@@ -27,5 +29,15 @@ List<WidgetPoint> widgetPoints = [
     name: 'GridView',
     routerName: GridView.Demo.routeName,
     buildRouter: (BuildContext context) => GridView.Demo(),
+  ),
+  WidgetPoint(
+    name: 'GridPaper',
+    routerName: GridPaper.Demo.routeName,
+    buildRouter: (BuildContext context) => GridPaper.Demo(),
+  ),
+  WidgetPoint(
+    name: 'SliverGrid',
+    routerName: SliverGrid.Demo.routeName,
+    buildRouter: (BuildContext context) => SliverGrid.Demo(),
   )
 ];
