@@ -17,7 +17,7 @@ const String content0 = '''
 const String content1 = '''
 ### **基本用法**
 - 创建ChipThemeData最简单的方法是使用copyWith您从得到一个ChipTheme.of，
-或创建一个全新的一个具有 ChipThemeData..fromDefaults。。
+或创建一个全新的一个具有 ChipThemeData..fromDefaults
 ''';
 
 class Demo extends StatefulWidget {
