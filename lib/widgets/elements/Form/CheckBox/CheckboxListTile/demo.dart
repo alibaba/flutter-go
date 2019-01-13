@@ -119,9 +119,9 @@ class CheckboxListTileDefault extends StatelessWidget {
     return CheckboxListTile(
       title: Text('一个简单的例子'),
       activeColor: Colors.red,
-      value: widget.valBool,
+      value: widget.valBool['val'],
         onChanged: (bool value) {
-          parant.setState(()=> widget.valBool = value);
+          parant.setState(()=> widget.valBool['val'] = value);
         },
         secondary: const Icon(Icons.hourglass_empty),
     );

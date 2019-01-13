@@ -34,9 +34,10 @@ const String _CheckboxListTileText2 =
 """### **进阶用法**
 > CheckboxListTile 单选和全选的示例 
 """;
-var valBool = true;
+
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Checkbox/CheckboxListTile';
+  final Map<String,bool> valBool = {'val':true};
   @override
   _DemoState createState() => _DemoState();
 }
