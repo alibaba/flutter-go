@@ -12,7 +12,7 @@ const String content0 = '''
 ### **简介**
 > 一个提供菜单栏弹出对话框的按钮
 - 点击的时候弹出菜单栏对话框，当选择其中一项后会调用 onSelected方法。传递其所选的菜单项的值
-- 可以提供child子widget或者一个icon给它，但是并不能两者都提供
+- 可以提供一个child widget或者提供一个icon给它，但是并不能两者都提供
 - 如果什么都没有提供给 PopupMenuButton ，则会根据运行平台创建一个overflow icon
 
 ''';

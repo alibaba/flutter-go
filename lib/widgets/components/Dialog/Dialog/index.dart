@@ -12,16 +12,13 @@ import 'demo.dart';
 
 const String _Text0 = """
 ### **简介**
-> AlertDialog 向用户传递信息的弹出层。
-
-这个组件没有任何可操作的选项. 相比使用这个组件, 通常我们更喜欢使用 **AlertDialog**或者**SimpleDialog**
+> Dialog 向用户传递信息的弹出层。
+-这个组件没有任何可操作的选项. 相比使用这个组件, 通常我们更喜欢使用 **AlertDialog**或者**SimpleDialog**
 
 
 
 ### **基本用法**
-
 > 通常作为子窗口小部件传递给showDialog，后者显示对话框。
-
 
 """;
 

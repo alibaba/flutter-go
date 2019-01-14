@@ -69,15 +69,33 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('免责声明'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text(disclaimerText1),
-                Text(disclaimerText2),
-              ],
+          //title: Text('免责声明'),
+          content:SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 10.0),
+                      //width: 100,
+                      height: 35,
+                      child: Text('免责声明',style:TextStyle(fontSize: 18,fontWeight:FontWeight.w700 )),
+                      decoration: BoxDecoration(
+                        //color: Colors.blue,
+                        image: DecorationImage(
+                          fit: BoxFit.fitWidth,
+                          image: AssetImage('assets/images/paimaiLogo.png')
+                        ),
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(10.0),
+                        ),
+                          //alignment: Alignment.bottomRight,
+                      )
+                    ),
+                    SizedBox(height:20),
+                    Text(disclaimerText1),
+                    Text(disclaimerText2),
+                  ],
+              ),
             ),
-          ),
           shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)), // 圆角
           actions: <Widget>[
         Container(
