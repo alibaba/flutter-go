@@ -15,7 +15,7 @@ const String _Text0 = """
 ### **简介**
 > SnackBarAction 来实现并行界面的横向滑动展示
 
-TabBar，是材料设计中很常用的一种横向标签. 来实现并行界面的横向滑动展示，在Flutter的世界中，TabBar有着相同的作用。通常，我们会在AppBar的底部部分结合TabBarView来使用TabBar。
+- TabBar，是材料设计中很常用的一种横向标签. 来实现并行界面的横向滑动展示，在Flutter的世界中，TabBar有着相同的作用。通常，我们会在AppBar的底部部分结合TabBarView来使用TabBar;
 
 
 

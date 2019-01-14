@@ -2,8 +2,10 @@
  * @author 一凨
  */
 import 'package:flutter/material.dart';
-import '../common/Style.dart';
+import '../common/style.dart';
 import '../common/widget_name_to_icon.dart';
+
+String _widgetName;
 
 class WidgetItem extends StatelessWidget {
   final String title;
@@ -11,7 +13,6 @@ class WidgetItem extends StatelessWidget {
   final int index; //用于计算border
   final int totalCount;
   final int rowLength;
-  String _widgetName;
 
   WidgetItem(
       {this.title, this.onTap, this.index, this.totalCount, this.rowLength});

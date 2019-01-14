@@ -6,8 +6,8 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: SliverAppBar 的示例
  */
-import '../../../../common/widget-demo.dart';
-import '../../../../routers/application.dart';
+import '../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -16,16 +16,16 @@ import './demo.dart' as SliverAppBarDemo;
 const String _Text0 =
 """### **简介**
 > SliverAppBar “应用栏”
-- 它类似于Android中的toolbar。
+- 它类似于Android中的toolbar;
 """;
 
 
 const String _Text1 =
 """### **基本用法**
-> 虽然基本相同，构造方法也是非常的简单，但是却不能直接使用它，由官方文档可以看到通常结合ScrollView来使用它。
-- AppBar 和 SliverAppBar 都是继承StatefulWidget 类，都代表 Toobar。
-- 二者的区别在于 AppBar 位置的固定的应用最上面的;而 SliverAppBar 是可以跟随内容滚动的。
-- 下面的示例,放在 NestedScrollView 实现上提到顶的悬停。
+> 虽然基本相同，构造方法也是非常的简单，但是却不能直接使用它，由官方文档可以看到通常结合 ScrollView 来使用它;
+- AppBar 和 SliverAppBar 都是继承StatefulWidget 类，都代表 Toobar;
+- 二者的区别在于 AppBar 位置的固定的应用最上面的;而 SliverAppBar 是可以跟随内容滚动的;
+- 下面的示例,放在 NestedScrollView 实现上提到顶的悬停;
 """;
 
 class Demo extends StatefulWidget {
@@ -40,8 +40,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliverAppBar',
-      codeUrl: '${Application.github['widgetsURL']}componentss/Bar/SliverAppBar/demo.dart',
-      child: allCheckboxs(context, this),
+      codeUrl: 'componentss/Bar/SliverAppBar/demo.dart',
+      contentList:[allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/SliverAppBar-class.html',
     );
   }
@@ -52,7 +52,7 @@ class _DemoState extends State<Demo> {
  * context: 运行上下文
  * that: 指向有状态的 StatefulWidget
  */
-Widget allCheckboxs(BuildContext context, _DemoState that) {
+Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(

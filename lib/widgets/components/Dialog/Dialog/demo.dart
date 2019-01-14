@@ -22,7 +22,21 @@ class _Demo extends State<DialogDemo> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return Dialog(
-          child: Text("我是一个Dialog"),
+          child: Container(
+            height: 100,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Text('我是一个dialog'),
+                RaisedButton(
+                  child: Text('取消'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            ),
+          )
         );
       },
     );
@@ -63,15 +77,30 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
         return StatefulBuilder(
           builder: (context, state) {
             return Dialog(
-                child: RaisedButton(
-                  onPressed: () {
-                    print("print $value");
-                    state(() {
-                      value += 1;
-                    });
-                  },
-                  child:  Text("我是一个Dialog, 点我更新value: $value"),
-                )
+              child: Container(
+                height: 150,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Text('我是一个dialog'),
+                    RaisedButton(
+                      onPressed: () {
+                        state(() {
+                          value += 1;
+                        });
+                      },
+                      child:  Text("我是一个Dialog, 点我更新value: $value"),
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                       Navigator.of(context).pop();
+                      },
+                      child:  Text("取消"),
+                    )
+                  ],
+                ),
+              ),
+
             );
           }
         );

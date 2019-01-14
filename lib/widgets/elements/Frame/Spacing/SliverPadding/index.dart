@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-11-28 20:39:28
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_rookie_book/common/widget_demo.dart';
+import 'package:flutter_go/common/widget_demo.dart';
 import './sliverpadding_demo.dart';
 
 const contentDesc0 = '''

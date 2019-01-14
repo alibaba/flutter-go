@@ -7,8 +7,8 @@
  * target: DropdownButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/DropdownButton-class.html
  */
-import '../../../../../common/widget-demo.dart';
-import '../../../../../routers/application.dart';
+import '../../../../../common/widget_demo.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -18,7 +18,7 @@ import './demo.dart' as dropdownButton;
 const String _dropdownText0 =
 """### **简介**
 > Dropdown button “用于从项目列表中进行选择的按钮”
-- 类型T是下拉菜单表示的值的类型。给定菜单中的所有条目必须表示具有一致类型的值。通常，使用枚举。每个DropdownMenuItem在项目必须专门与同类型的说法。。
+- 参数类型 T 是下拉菜单表示的值的类型。给定菜单中的所有条目必须表示具有一致类型的值。通常，使用枚举。每个DropdownMenuItem在项目必须专门与同类型的说法；
 """;
 
 const String _dropdownText1 =
@@ -50,8 +50,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'DropdownButton',
-      codeUrl: '${Application.github['widgetsURL']}elements/Form/Button/DropdownButton/demo.dart',
-      child: allDropdownButtons(context,this),
+      codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
+      contentList: [allDropdownButtons(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
   }

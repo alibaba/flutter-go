@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
 
-import 'views/FirstPage.dart';
-import 'views/widgetPage.dart';
-import 'views/FourthPage.dart';
+import 'views/first_page.dart';
+import 'views/widget_page.dart';
+import 'views/fourth_page.dart';
 import 'views/collection_page.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
 import 'common/provider.dart';
 import 'model/widget.dart';
 import './widgets/index.dart';
-import 'package:flutter_rookie_book/components/SearchInput.dart';
-
-
+import 'package:flutter_go/components/search_input.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 
@@ -121,59 +119,63 @@ class _MyHomePageState extends State<MyHomePage>
 
         return list
             .map((item) => new MaterialSearchResult<String>(
-                  value: item.name,
-                  text: item.name,
-                  onTap: () {
-                    onWidgetTap(item, context);
-                  },
-                ))
+          value: item.name,
+          text: item.name,
+          onTap: () {
+            onWidgetTap(item, context);
+          },
+        ))
             .toList();
       } else {
         return null;
       }
-    }, (value) {
-    }, () {});
+    }, (value) {}, () {});
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(title: buildSearchInput(context)),
-        body: new TabBarView(controller: controller, children: <Widget>[
-          new FirstPage(),
-          new WidgetPage(db),
-          new CollectionPage(),
-          new FourthPage()
-        ]),
-        bottomNavigationBar: new Material(
-            color: const Color(0xFFF0EEEF), //底部导航栏主题颜色
-            child: new Container(
-                height: 65.0,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF0F0F0),
-                  boxShadow: <BoxShadow>[
-                    new BoxShadow(
-                      color: const Color(0xFFd0d0d0),
-                      blurRadius: 3.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(-1.0, -1.0),
-                    ),
-                  ],
+      appBar: new AppBar(title: buildSearchInput(context)),
+      body: new TabBarView(controller: controller, children: <Widget>[
+        new FirstPage(),
+        new WidgetPage(db),
+        new CollectionPage(),
+        new FourthPage()
+      ]),
+      bottomNavigationBar: Material(
+        color: const Color(0xFFF0EEEF), //底部导航栏主题颜色
+        child: SafeArea(
+          child: Container(
+            height: 65.0,
+            decoration: BoxDecoration(
+              color: const Color(0xFFF0F0F0),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: const Color(0xFFd0d0d0),
+                  blurRadius: 3.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(-1.0, -1.0),
                 ),
-                child: new TabBar(
-                    controller: controller,
-                    indicatorColor:
-                        Theme.of(context).primaryColor, //tab标签的下划线颜色
-                    // labelColor: const Color(0xFF000000),
-                    indicatorWeight: 3.0,
-                    labelColor: Theme.of(context).primaryColor,
-                    unselectedLabelColor: const Color(0xFF8E8E8E),
-                    tabs: <Tab>[
-                      new Tab(text: '业界动态', icon: new Icon(Icons.language)),
-                      new Tab(text: '组件', icon: new Icon(Icons.extension)),
-                      new Tab(text: '组件收藏', icon: new Icon(Icons.star)),
-                      new Tab(text: '关于手册', icon: new Icon(Icons.favorite)),
-                    ]))));
+              ],
+            ),
+            child: TabBar(
+              controller: controller,
+              indicatorColor: Theme.of(context).primaryColor, //tab标签的下划线颜色
+              // labelColor: const Color(0xFF000000),
+              indicatorWeight: 3.0,
+              labelColor: Theme.of(context).primaryColor,
+              unselectedLabelColor: const Color(0xFF8E8E8E),
+              tabs: <Tab>[
+                Tab(text: '业界动态', icon: Icon(Icons.language)),
+                Tab(text: '组件', icon: Icon(Icons.extension)),
+                Tab(text: '组件收藏', icon: Icon(Icons.star)),
+                Tab(text: '关于手册', icon: Icon(Icons.favorite)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   void _onTabChange() {
@@ -184,11 +186,11 @@ class _MyHomePageState extends State<MyHomePage>
     }
   }
 
-  // void _onDataChange(val) {
-  //   if (this.mounted) {
-  //     setState(() {
-  //       data = val;
-  //     });
-  //   }
-  // }
+// void _onDataChange(val) {
+//   if (this.mounted) {
+//     setState(() {
+//       data = val;
+//     });
+//   }
+// }
 }

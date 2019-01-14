@@ -10,7 +10,6 @@
 
 import 'package:flutter/material.dart';
 
-
 /*
 * SnackBar 默认的实例,无状态
 * */

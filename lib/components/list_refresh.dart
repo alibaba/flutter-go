@@ -11,8 +11,9 @@ import 'package:flutter/material.dart';
 class ListRefresh extends StatefulWidget {
   final renderItem;
   final requestApi;
+  final headerView;
 
-  const ListRefresh([this.requestApi, this.renderItem]) : super();
+  const ListRefresh([this.requestApi, this.renderItem, this.headerView]) : super();
 
   @override
   State<StatefulWidget> createState() => _ListRefreshState();
@@ -167,7 +168,11 @@ class _ListRefreshState extends State<ListRefresh> {
         itemCount: items.length + 1,
         itemBuilder: (context, index) {
           if (index == 0 && index != items.length) {
-            return Container(height: 0);
+            if(widget.headerView is Function){
+              return widget.headerView();
+            }else {
+              return Container(height: 0);
+            }
           }
           if (index == items.length) {
             //return _buildLoadText();
@@ -178,7 +183,6 @@ class _ListRefreshState extends State<ListRefresh> {
             if (widget.renderItem is Function) {
               return widget.renderItem(index, items[index]);
             }
-            //return makeCard(index,items[index]);
           }
         },
         controller: _scrollController,

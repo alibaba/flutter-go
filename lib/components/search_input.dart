@@ -159,7 +159,9 @@ class _MaterialSearchState<T> extends State<MaterialSearch> {
     _resultsTimer?.cancel();
   }
   Widget buildBody(List results) {
-    if (_loading) {
+    if (_criteria.isEmpty) {
+      return History();
+    } else if (_loading) {
       return new Center(
           child: new Padding(
               padding: const EdgeInsets.only(top: 50.0),
@@ -396,3 +398,35 @@ class SearchInput extends StatelessWidget {
   }
 }
 // wigdet干掉.=> componets
+
+
+class History extends StatefulWidget {
+  const History() : super();
+
+  @override
+  _History  createState() => _History();
+}
+
+/*
+* AppBar 默认的实例,有状态
+* */
+class _History extends State<History> {
+ 
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: Text('这是一个即将完善的历史记录的面板'),
+    );
+  }
+}
