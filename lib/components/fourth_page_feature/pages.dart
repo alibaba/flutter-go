@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import '../../routers/application.dart';
+import '../../routers/routers.dart';
 
 final pages = [
   new PageViewModel(
-      const Color(0xFFC91B3A),
+      const Color(0xFFcd344f),
       //'assets/mountain.png',
       'assets/images/p1.png',
       'FlutterGo是什么？',
-      '【FlutterGo】 是由"阿里拍卖"前端团队几位 Flutter 粉丝，用业余时间开发的一款，Flutter 教学练习帮助App，这里没有高大尚的概念，只有一个一个亲历的尝试，用最直观的方式展示的 Flutter 官方demo',
+      '【FlutterGo】 是由"阿里拍卖"前端团队几位 Flutter 粉丝，用业余时间开发的一款，用于 Flutter 教学帮助的App，这里没有高大尚的概念，只有一个一个亲历的尝试，用最直观的方式展示的 Flutter 官方demo',
       'assets/images/plane.png'),
   new PageViewModel(
-
-      const Color(0xFF548CFF),
+      const Color(0xFF638de3),
       //'assets/world.png',
       'assets/images/p2.png',
       'FLutterGo的背景',
@@ -39,9 +40,9 @@ class Page extends StatelessWidget {
     return RaisedButton.icon(
         onPressed: () {
           if(type == 'start'){
-            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.popUntil(context, ModalRoute.withName('/'));
           }else if(type == 'goGithub'){
-            Navigator.popUntil(context, ModalRoute.withName('/'));
+            Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(txt)} Doc&&url=${Uri.encodeComponent("https://github.com/alibaba/flutter-go")}');
           }
         },
         elevation: 10.0,
@@ -80,7 +81,7 @@ class Page extends StatelessWidget {
                     new Transform(
                       transform: new Matrix4.translationValues(0.0, 30.0 * (1.0 - percentVisible) ,0.0),
                       child: new Padding(
-                          padding: new EdgeInsets.only(top: 10.0, bottom: 0.0),
+                          padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: new Text(
                             viewModel.title,
                             style: new TextStyle(
@@ -111,7 +112,7 @@ class Page extends StatelessWidget {
                       alignment: MainAxisAlignment.center,
                       children: <Widget>[
                         creatButton(context,'开始使用',Icons.add_circle_outline,'start'),
-                        creatButton(context,'GitHub',Icons.arrow_forward,'goGitHub'),
+                        creatButton(context,'GitHub',Icons.arrow_forward,'goGithub'),
                     ],)
         ]),
     ));

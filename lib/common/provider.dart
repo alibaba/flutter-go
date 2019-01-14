@@ -46,7 +46,6 @@ class Provider {
 
     for(int i = 0; i < expectTables.length; i++) {
       if (!tables.contains(expectTables[i])) {
-        print("table lost in app");
         return false;
       }
     }
