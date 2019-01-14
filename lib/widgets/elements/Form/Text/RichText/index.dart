@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
-
+import 'demo.dart';
 const String intro = """
 # 富文本显示
 
@@ -70,20 +70,7 @@ class _Demo extends State<Demo> {
       contentList: [new Column(
         children: <Widget>[
           MarkdownBody(data: markDesc['intro']),
-          Container(
-            color: Color(0xff000000),
-            width: 750.0,
-            child:  RichText(
-              text: TextSpan(
-                text: 'Hello ',
-//                style: TextStyle(fontWeight: FontWeight.normal, inherit: true, fontSize: 44),
-                children: <TextSpan>[
-                  TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xfffffc42))),
-                  TextSpan(text: ' world!', style: TextStyle(fontStyle: FontStyle.italic)),
-                ],
-              ),
-            ),
-          ),
+          Demo(),
           MarkdownBody(data: markDesc['diff']),
         ],
       ),
