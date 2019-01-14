@@ -29,6 +29,7 @@ dependencies:
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
   dio: ^1.0.6
+  flutter_webview_plugin: ^0.3.0+2
 
 dev_dependencies:
   flutter_test:

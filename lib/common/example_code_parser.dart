@@ -14,8 +14,6 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
-const String _kStartTag = '// START ';
-const String _kEndTag = '// END';
 
 Map<String, String> _exampleCode;
 String _code;
@@ -38,7 +36,6 @@ Future<void> _parseExampleCode(context,String filePath, AssetBundle bundle) asyn
   try {
     code = await bundle.loadString('lib/widgets/$filePath');
   } catch (err) {
-    print('${Application.github['widgetsURL']} $filePath');
     Navigator.of(context).pop();
     _launchURL(Application.github['widgetsURL'] + filePath);
   }
