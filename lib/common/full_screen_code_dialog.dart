@@ -1,0 +1,73 @@
+/*
+ * @Author: 一凨 
+ * @Date: 2019-01-14 11:42:32 
+ * @Last Modified by: 一凨
+ * @Last Modified time: 2019-01-14 14:42:00
+ */
+import 'package:flutter/material.dart';
+import 'example_code_parser.dart';
+import 'syntax_highlighter.dart';
+
+class FullScreenCodeDialog extends StatefulWidget {
+  const FullScreenCodeDialog({this.filePath});
+
+  final String filePath;
+  _FullScreenCodeDialogState createState() => _FullScreenCodeDialogState();
+}
+
+class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
+  String _exampleCode;
+
+  @override
+  void didChangeDependencies() {
+    getExampleCode(widget.filePath, DefaultAssetBundle.of(context))
+        .then<void>((String code) {
+      if (mounted) {
+        setState(() {
+          _exampleCode = code ?? 'Example code not found';
+        });
+      }
+    });
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final SyntaxHighlighterStyle style =
+        Theme.of(context).brightness == Brightness.dark
+            ? SyntaxHighlighterStyle.darkThemeStyle()
+            : SyntaxHighlighterStyle.lightThemeStyle();
+
+    Widget body;
+    if (_exampleCode == null) {
+      body = const Center(child: CircularProgressIndicator());
+    } else {
+      body = SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: RichText(
+            text: TextSpan(
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
+                children: <TextSpan>[
+                  DartSyntaxHighlighter(style).format(_exampleCode)
+                ]),
+          ),
+        ),
+      );
+    }
+
+    return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+              icon: const Icon(
+                Icons.clear,
+                semanticLabel: 'Close',
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
+          title: const Text('Example code'),
+        ),
+        body: body);
+  }
+}
