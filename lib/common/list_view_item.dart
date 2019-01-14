@@ -1,5 +1,14 @@
+/*
+ * @Author: 一凨 
+ * @Date: 2019-01-14 17:53:54 
+ * @Last Modified by: 一凨
+ * @Last Modified time: 2019-01-14 17:57:51
+ */
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../routers/application.dart';
+import '../routers/routers.dart';
+import 'dart:core';
+
 
 class ListViewItem extends StatelessWidget {
   final String itemUrl;
@@ -9,15 +18,6 @@ class ListViewItem extends StatelessWidget {
   const ListViewItem({Key key, this.itemUrl, this.itemTitle, this.data})
       : super(key: key);
 
-  void _launchURL(String url, BuildContext context) async {
-
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class ListViewItem extends StatelessWidget {
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: ListTile(
         onTap: () {
-          _launchURL(itemUrl, context);
+          // _launchURL(itemUrl, context);
+          Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(itemTitle)}&url=${Uri.encodeComponent(itemUrl)}');
         },
         title: Padding(
           child: Text(
