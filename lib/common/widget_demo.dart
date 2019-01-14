@@ -12,6 +12,10 @@ import '../widgets/index.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../event/event-bus.dart';
 import '../event/event-model.dart';
+import './full_screen_code_dialog.dart';
+import '../routers/application.dart';
+import '../routers/routers.dart';
+import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -141,7 +145,9 @@ class _WidgetDemoState extends State<WidgetDemo> {
     if(value == 'doc'){
       _launchURL(widget.docUrl);
     }else if(value =='code'){
-       _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
+      //  _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
+      Application.router.navigateTo(context, '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
+      
     }else{
       _getCollection();
     }

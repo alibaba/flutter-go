@@ -7,6 +7,7 @@ import './router_handler.dart';
 class Routes {
   static String root = "/";
   static String widgetDemo = '/widget-demo';
+  static String codeView = '/code-view';
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
@@ -17,13 +18,12 @@ class Routes {
 
     router.define('/category/:type', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
+    router.define(codeView,handler:fullScreenCodeDialog);
     widgetDemosList.forEach((demo) {
       Handler handler = new Handler(
           handlerFunc: (BuildContext context, Map<String, List<String>> params) {
             return demo.buildRouter(context);
       });
-
-
       router.define('${demo.routerName}', handler: handler);
     });
   }
