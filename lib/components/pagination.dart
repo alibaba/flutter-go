@@ -18,8 +18,6 @@ class Pagination extends StatelessWidget {
     const Icon(Icons.language, semanticLabel: 'Language'),
   ];
 
-  final List<StoryModel> bannerStories = [];
-
   final List<dynamic> arr = [
     {'image': 'https://img.alicdn.com/tfs/TB1W4hMAwHqK1RjSZJnXXbNLpXa-519-260.jpg', 'type': 0, 'id': 9695909, 'url': 'https://www.zhihu.com/question/294145797/answer/551162834', 'title': '为什么阿里巴巴、腾讯和 Google 之类的企业都在使用 Flutter 开发 App？'},
     {'image': 'https://img.alicdn.com/tfs/TB1XmFIApzqK1RjSZSgXXcpAVXa-720-338.jpg', 'type': 0, 'id': 9695859, 'url': 'https://zhuanlan.zhihu.com/p/51696594', 'title': 'Flutter 1.0 正式发布: Google 的便携 UI 工具包'},
@@ -37,6 +35,7 @@ class Pagination extends StatelessWidget {
 
   List<Widget> _pageSelector(BuildContext context) {
     List<Widget> list = [];
+    List<StoryModel> bannerStories = [];
     /// super.initState();
     arr.forEach((item) {
       bannerStories.add(StoryModel.fromJson(item));
@@ -55,6 +54,7 @@ class Pagination extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       Column(
+        key:Key('__header__'),
         //physics: AlwaysScrollableScrollPhysics(),
         //padding: EdgeInsets.only(),
         children: _pageSelector(context)
