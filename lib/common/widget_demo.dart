@@ -146,8 +146,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
       _launchURL(widget.docUrl);
     }else if(value =='code'){
       //  _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
-      String targetUrl = 'lib/widgets/${widget.codeUrl}';
-      Application.router.navigateTo(context, '${Routes.codeView}?filePath=${Uri.encodeComponent(targetUrl)}');
+      Application.router.navigateTo(context, '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
       
     }else{
       _getCollection();

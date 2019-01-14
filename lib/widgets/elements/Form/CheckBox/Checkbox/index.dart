@@ -47,7 +47,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Checkbox',
-      codeUrl: 'elements/Form/Checkbox/Checkbox/demo.dart',
+      codeUrl: 'elements/Form/CheckBox/Checkbox/demo.dart',
       contentList: [allCheckboxs(context,this)],
       docUrl: 'https://docs.flutter.io/flutter/material/Checkbox-class.html',
     );

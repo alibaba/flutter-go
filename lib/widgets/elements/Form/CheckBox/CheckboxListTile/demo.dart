@@ -9,10 +9,8 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认的实例
-* index 当前checkbox 的索引值
-* */
+// Checkbox 默认的实例
+// index 当前checkbox 的索引值
 class CheckboxListTileStateDefault extends StatefulWidget {
   const CheckboxListTileStateDefault() : super();
 
@@ -20,9 +18,7 @@ class CheckboxListTileStateDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CheckboxListTileStateDefault();
 }
 
-/*
-* CheckboxListTile 默认的实例,有状态
-* */
+// CheckboxListTile 默认的实例,有状态
 class _CheckboxListTileStateDefault extends State {
   bool _value = false;
   void _valueChanged(bool value) {
@@ -105,9 +101,7 @@ class _CheckboxListTileStateDefault extends State {
   }
 }
 
-/*
-* CheckboxListTile 默认的实例,无状态
-* */
+// CheckboxListTile 默认的实例,无状态
 class CheckboxListTileDefault extends StatelessWidget {
   final widget;
   final parant;
