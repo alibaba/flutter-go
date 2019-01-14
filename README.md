@@ -7,7 +7,7 @@
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB18ud1BmzqK1RjSZFjXXblCFXa-380-384.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB1q1GVB4naK1RjSZFtXXbC2VXa-195-198.png" width="200px">
 
 iphone下载地址:
 暂无
