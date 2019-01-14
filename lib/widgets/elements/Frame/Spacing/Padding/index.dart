@@ -1,8 +1,8 @@
 /*
  * @Author: 一凨 
  * @Date: 2018-11-28 20:25:24 
- * @Last Modified by:   一凨 
- * @Last Modified time: 2018-11-28 20:25:24 
+ * @Last Modified by: 一凨
+ * @Last Modified time: 2019-01-14 17:01:55
  */
 import 'package:flutter/material.dart';
 import '../../../../../common/widget_demo.dart';
@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
       ],
       docUrl: 'https://docs.flutter.io/flutter/widgets/Padding-class.html',
       codeUrl:
-          'elements/Frame/spacing/Padding/padding_demo.dart',
+          'elements/Frame/Spacing/Padding/padding_demo.dart',
     );
   }
 }

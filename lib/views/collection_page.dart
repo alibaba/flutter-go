@@ -2,11 +2,12 @@
  * @Author: 一凨 
  * @Date: 2019-01-08 17:12:58 
  * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-08 20:14:56
+ * @Last Modified time: 2019-01-14 20:02:46
  */
 import 'package:flutter/material.dart';
 import '../model/collection.dart';
 import '../routers/application.dart';
+import '../routers/routers.dart';
 import '../event/event-bus.dart';
 import '../event/event-model.dart';
 import 'package:event_bus/event_bus.dart';
@@ -15,8 +16,7 @@ class CollectionPage extends StatefulWidget {
   _CollectionPageState createState() => _CollectionPageState();
 }
 
-class _CollectionPageState extends State<CollectionPage>
-    with AutomaticKeepAliveClientMixin {
+class _CollectionPageState extends State<CollectionPage> {
   _CollectionPageState() {
     final eventBus = new EventBus();
     ApplicationEvent.event = eventBus;
@@ -24,9 +24,7 @@ class _CollectionPageState extends State<CollectionPage>
   CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
-
-  @override
-  bool get wantKeepAlive => true;
+  var _icons;
 
   @override
   void initState() {
@@ -76,8 +74,17 @@ class _CollectionPageState extends State<CollectionPage>
         ),
       );
     }
+    if (_collectionList[index - 1].router.contains('http')) {
+      if (_collectionList[index - 1].name.endsWith('Doc')) {
+        _icons = Icons.library_books;
+      } else {
+        _icons = Icons.bookmark;
+      }
+    } else {
+      _icons = Icons.extension;
+    }
     return Container(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
       margin: const EdgeInsets.only(bottom: 7.0),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -91,15 +98,26 @@ class _CollectionPageState extends State<CollectionPage>
         ],
       ),
       child: ListTile(
+        leading: Icon(
+          _icons,
+          size: 30.0,
+          color: Theme.of(context).primaryColor,
+        ),
         title: Text(
           _collectionList[index - 1].name,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),
         trailing:
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
-          Application.router
-              .navigateTo(context, "${_collectionList[index - 1].router}");
+          if (_collectionList[index - 1].router.contains('http')) {
+            Application.router.navigateTo(context,
+                '${Routes.webViewPage}?title=${Uri.encodeComponent(_collectionList[index - 1].name)}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
+          } else {
+            Application.router
+                .navigateTo(context, "${_collectionList[index - 1].router}");
+          }
         },
       ),
     );
@@ -107,7 +125,6 @@ class _CollectionPageState extends State<CollectionPage>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     if (_collectionList.length == 0) {
       return ListView(
         children: <Widget>[

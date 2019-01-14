@@ -41,7 +41,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'Stack',
       codeUrl:
-          'https://github.com/alibaba-paimai-frontend/flutter-common-widgets-app/blob/dev/sanlu-0.0.4/lib/widgets/elements/Frame/Stack/Stack/demo.dart',
+          'elements/Frame/Stack/Stack/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/Stack-class.html',
       contentList: [
         _stackText0,

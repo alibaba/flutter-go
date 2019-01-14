@@ -2,7 +2,7 @@
  * @Author: 一凨 
  * @Date: 2018-11-28 20:26:16 
  * @Last Modified by: 一凨
- * @Last Modified time: 2018-11-28 20:39:28
+ * @Last Modified time: 2019-01-14 17:06:36
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_go/common/widget_demo.dart';
@@ -33,7 +33,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliverPadding',
-      codeUrl: 'elements/Frame/spacing/SliverPadding/sliverpadding_demo.dart',
+      codeUrl: 'elements/Frame/Spacing/SliverPadding/sliverpadding_demo.dart',
       contentList: [
         contentDesc0,
         contentDesc1,
