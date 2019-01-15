@@ -6,9 +6,10 @@
  */
 
 import './Material/index.dart' as Material;
-
+import './Cupertino/index.dart' as Cupertion;
 List getWidgets() {
   List result = [];
   result.addAll(Material.widgetPoints);
+  result.addAll(Cupertion.widgetPoints);
   return result;
 }
