@@ -2,7 +2,7 @@
  * @Author: 一凨 
  * @Date: 2019-01-08 17:12:58 
  * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 20:02:46
+ * @Last Modified time: 2019-01-14 20:13:28
  */
 import 'package:flutter/material.dart';
 import '../model/collection.dart';
@@ -78,7 +78,7 @@ class _CollectionPageState extends State<CollectionPage> {
       if (_collectionList[index - 1].name.endsWith('Doc')) {
         _icons = Icons.library_books;
       } else {
-        _icons = Icons.bookmark;
+        _icons = Icons.language;
       }
     } else {
       _icons = Icons.extension;
