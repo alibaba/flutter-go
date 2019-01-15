@@ -12,6 +12,7 @@ import 'common/provider.dart';
 import 'model/widget.dart';
 import './widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
+import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           size: 35.0,
         ),
       ),
-      home: new MyHomePage(),
+      home: new WelcomePage(),
       onGenerateRoute: Application.router.generator,
     );
   }
