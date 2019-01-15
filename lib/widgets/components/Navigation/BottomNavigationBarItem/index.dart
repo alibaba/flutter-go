@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'BottomNavigationBarItem',
-      codeUrl: 'components/Bar/BottomNavigationBarItem/demo.dart',
+      codeUrl: 'components/Navigation/BottomNavigationBarItem/demo.dart',
       contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );
