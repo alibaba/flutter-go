@@ -60,7 +60,7 @@ class PagerIndicator extends StatelessWidget {
       children: <Widget>[
         new Expanded(child: new Container()),
         new Transform(
-          transform: new Matrix4.translationValues(translation, 0.0, 0.0),
+          transform: new Matrix4.translationValues(0, 0.0, 0.0),
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: bubbles,

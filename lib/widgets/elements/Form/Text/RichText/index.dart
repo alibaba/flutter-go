@@ -70,7 +70,7 @@ class _Demo extends State<Demo> {
       contentList: [new Column(
         children: <Widget>[
           MarkdownBody(data: markDesc['intro']),
-          Demo(),
+          RichTextDemo(),
           MarkdownBody(data: markDesc['diff']),
         ],
       ),

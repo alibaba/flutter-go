@@ -7,8 +7,6 @@ import 'package:flutter_go/components/fourth_page_feature/page_reveal.dart';
 import 'package:flutter_go/components/fourth_page_feature/pager_indicator.dart';
 import 'package:flutter_go/components/fourth_page_feature/pages.dart';
 
-import '../components/comp_list.dart';
-
 class FourthPage extends StatefulWidget {
   @override
   FourthPageState createState() => new FourthPageState();

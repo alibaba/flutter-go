@@ -35,12 +35,16 @@ class Page extends StatelessWidget {
     this.viewModel,
     this.percentVisible = 1.0,
   });
+  _goHomePage(context) {
+    Navigator.of(context).pushNamedAndRemoveUntil(
+        '/home', (Route<dynamic> route) => false);
+  }
 
   Widget creatButton(BuildContext context,String txt,IconData iconName,String type){
     return RaisedButton.icon(
         onPressed: () {
           if(type == 'start'){
-            //Navigator.popUntil(context, ModalRoute.withName('/'));
+            _goHomePage(context);
           }else if(type == 'goGithub'){
             Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(txt)} Doc&&url=${Uri.encodeComponent("https://github.com/alibaba/flutter-go")}');
           }
@@ -60,13 +64,13 @@ class Page extends StatelessWidget {
     return new Container(
         width: double.infinity,
         color: viewModel.color,
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: new Opacity(
               opacity: percentVisible,
               child: new Column(
                   crossAxisAlignment:CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
                     new Transform(
                       transform: new Matrix4.translationValues(0.0, 50.0 * (1.0 - percentVisible) ,0.0),
                       child: new Padding(
