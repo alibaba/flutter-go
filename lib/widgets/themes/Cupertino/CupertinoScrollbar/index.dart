@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/common/widget_demo.dart';
 import 'package:flutter_go/widgets/themes/Material/MaterialColor/demo.dart';
-
+import 'demo.dart';
 const Text0 = '''
 ### **简介**
 > 用来定义单一的强调色，以及四种色调的色系
@@ -30,6 +30,7 @@ class _DemoState extends State<Demo> {
           'https://docs.flutter.io/flutter/material/MaterialAccentColor-class.html',
       contentList: [
         Text0,
+        CupertinoScrollbarDemo(),
       ],
     );
   }
