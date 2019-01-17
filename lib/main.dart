@@ -168,8 +168,8 @@ class _MyHomePageState extends State<MyHomePage>
               tabs: <Tab>[
                 Tab(text: '业界动态', icon: Icon(Icons.language)),
                 Tab(text: '组件', icon: Icon(Icons.extension)),
-                Tab(text: '组件收藏', icon: Icon(Icons.star)),
-                Tab(text: '关于手册', icon: Icon(Icons.favorite)),
+                Tab(text: '组件收藏', icon: Icon(Icons.favorite)),
+                Tab(text: '关于手册', icon: Icon(Icons.line_weight)),
               ],
             ),
           ),

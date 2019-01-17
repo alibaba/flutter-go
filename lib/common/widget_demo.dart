@@ -4,14 +4,15 @@
  * 新widget详情页模板
  */
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../routers/application.dart';
+import '../routers/routers.dart';
 import '../components/markdown.dart';
 import '../model/collection.dart';
 import '../widgets/index.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../event/event-bus.dart';
 import '../event/event-model.dart';
+import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -36,10 +37,9 @@ class WidgetDemo extends StatefulWidget {
 class _WidgetDemoState extends State<WidgetDemo> {
   bool _hasCollected = false;
   CollectionControlModel _collectionControl = new CollectionControlModel();
-  Color _collectionColor;
+  var _collectionIcons;
   List widgetDemosList = new WidgetDemoList().getDemos();
   String _router = '';
-  String _collText = '';
 
   void showInSnackBar(String value) {
     Fluttertoast.showToast(
@@ -51,13 +51,6 @@ class _WidgetDemoState extends State<WidgetDemo> {
         textColor: Colors.white);
   }
 
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
 
   List<Widget> _buildContent() {
     List<Widget> _list = [
@@ -139,22 +132,20 @@ class _WidgetDemoState extends State<WidgetDemo> {
 
   void _selectValue(value){
     if(value == 'doc'){
-      _launchURL(widget.docUrl);
+      // _launchURL(widget.docUrl);
+      Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(widget.title)} Doc&&url=${Uri.encodeComponent(widget.docUrl)}');
     }else if(value =='code'){
-       _launchURL(Application.github['widgetsURL'] + widget.codeUrl);
-    }else{
-      _getCollection();
+      Application.router.navigateTo(context, '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
+      
     }
   }
 
   @override
   Widget build(BuildContext context) {
     if (_hasCollected) {
-      _collectionColor = Colors.red;
-      _collText='取消收藏';
+      _collectionIcons = Icons.favorite;
     } else {
-      _collectionColor =null;
-      _collText='组件收藏';
+      _collectionIcons = Icons.favorite_border;
     }
     return Scaffold(
       appBar: AppBar(
@@ -166,6 +157,11 @@ class _WidgetDemoState extends State<WidgetDemo> {
               Navigator.popUntil(context, ModalRoute.withName('/'));
             },
             icon: Icon(Icons.home),
+          ),
+          new IconButton(
+            tooltip: 'collection',
+            onPressed: _getCollection,
+            icon: Icon(_collectionIcons),
           ),
           PopupMenuButton<String>(
             onSelected: _selectValue,
@@ -183,15 +179,6 @@ class _WidgetDemoState extends State<WidgetDemo> {
                     child: ListTile(
                       leading: Icon(Icons.code,size: 22.0,),
                       title: Text('查看Demo'),
-                    ),
-                  ),
-                  const PopupMenuDivider(),
-                   PopupMenuItem<String>(
-                    value: 'collection',
-                    child: ListTile(
-                      leading: Icon(Icons.star,size: 22.0,color: _collectionColor,),
-                      title: Text(_collText),
-                      
                     ),
                   ),
                 ],
