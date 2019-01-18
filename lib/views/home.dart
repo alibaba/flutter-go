@@ -14,7 +14,7 @@ import 'package:flutter/rendering.dart';
 
 import 'first_page.dart';
 import 'widget_page.dart';
-//import 'package:flutter_go/views/welcome_page/fourth_page.dart';
+import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'collection_page.dart';
 import '../routers/application.dart';
 import '../common/provider.dart';
@@ -112,11 +112,7 @@ class _MyHomePageState extends State<AppPage>
         new FirstPage(),
         new WidgetPage(db),
         new CollectionPage(),
-        Container(
-          child: Center(
-            child: Text("开发中"),
-          ),
-        )
+        FourthPage()
       ]),
       bottomNavigationBar: Material(
         color: const Color(0xFFF0EEEF), //底部导航栏主题颜色
