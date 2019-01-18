@@ -9,6 +9,7 @@
 
 //import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 class CupertinoScrollbarDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }
@@ -16,25 +17,60 @@ class CupertinoScrollbarDemo extends StatefulWidget {
 class _Demo extends State<CupertinoScrollbarDemo> {
 
   Widget build(BuildContext context) {
-    return CupertinoScrollbar(
-      child: new SliverGrid(
-        gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200.0,
-          mainAxisSpacing: 10.0,
-          crossAxisSpacing: 10.0,
-          childAspectRatio: 4.0,
+    return Column(
+      children: <Widget>[
+        CupertinoScrollbar(
+            child: Container(
+                height: 300,
+                child: ListView.custom(
+                  scrollDirection: Axis.vertical,
+                  childrenDelegate:SliverChildBuilderDelegate((BuildContext context, int index) {
+                    return Container(
+                      height: 50.0,
+                      alignment: Alignment.center,
+                      color: Colors.lightBlue[100 * (index % 9)],
+                      child: Text('list item $index'),
+                    );
+                  }, childCount: 10),
+                )
+            )
         ),
-        delegate: new SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-            return new Container(
-              alignment: Alignment.center,
-//              color: Colors.cyan[100 * (index % 5)],
-              child: new Text('grid item $index'),
-            );
-          },
-          childCount: 20,
+        Center(
+          child: Text("CupertinoScrollbar效果"),
+        )
+      ],
+    );
+  }
+}
+
+
+class NoCupertinoScrollbarDemo extends StatefulWidget {
+  _NoCupertinoScrollbarDemo createState() => _NoCupertinoScrollbarDemo();
+}
+
+class _NoCupertinoScrollbarDemo extends State<NoCupertinoScrollbarDemo> {
+
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+            height: 300,
+            child: ListView.custom(
+              scrollDirection: Axis.vertical,
+              childrenDelegate:SliverChildBuilderDelegate((BuildContext context, int index) {
+                return Container(
+                  height: 50.0,
+                  alignment: Alignment.center,
+                  color: Colors.lightBlue[100 * (index % 9)],
+                  child: Text('list item $index'),
+                );
+              }, childCount: 10),
+            )
         ),
-      )
+        Center(
+          child: Text("无CupertinoScrollbar效果"),
+        )
+      ],
     );
   }
 }
