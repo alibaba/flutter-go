@@ -164,6 +164,8 @@ flutter:
     - lib/widgets/themes/Material/MaterialPageRoute/demo.dart
     - lib/widgets/themes/Material/MergeableMaterialItem/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
     - assets/app.db
     - assets/images/
     - lib/common/example_code_parser.dart
