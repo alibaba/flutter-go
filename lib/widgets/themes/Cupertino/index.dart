@@ -25,4 +25,9 @@ List<WidgetPoint> widgetPoints = [
     routerName: CupertinoSliverNavigationBar.Demo.routeName,
     buildRouter: (BuildContext context) => CupertinoSliverNavigationBar.Demo(),
   ),
+  WidgetPoint(
+    name: 'CupertinoSliverRefreshControl',
+    routerName: CupertinoSliverNavigationBar.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoSliverNavigationBar.Demo(),
+  ),
 ];
