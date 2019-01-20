@@ -21,6 +21,7 @@ import '../common/provider.dart';
 import '../model/widget.dart';
 import '../widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
+import '../common/widget_name_to_icon.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 
@@ -90,7 +91,8 @@ class _MyHomePageState extends State<AppPage>
         return list
             .map((item) => new MaterialSearchResult<String>(
           value: item.name,
-          text: item.name,
+          icon: WidgetName2Icon.icons[item.name] ?? null,
+          text: 'widget',
           onTap: () {
             onWidgetTap(item, context);
           },
