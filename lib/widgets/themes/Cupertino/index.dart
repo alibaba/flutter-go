@@ -3,6 +3,7 @@ import '../../../model/widget.dart';
 import './CupertinoScrollbar/index.dart' as CupertinoScrollbar;
 import './CupertinoSlider/index.dart' as CupertinoSlider;
 import './CupertinoSegmentedControl/index.dart' as CupertinoSegmentedControl;
+import './CupertinoSliverNavigationBar/index.dart' as CupertinoSliverNavigationBar;
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'CupertinoScrollbar',
@@ -18,5 +19,10 @@ List<WidgetPoint> widgetPoints = [
     name: 'CupertinoSegmentedControl',
     routerName: CupertinoSegmentedControl.Demo.routeName,
     buildRouter: (BuildContext context) => CupertinoSegmentedControl.Demo(),
-  )
+  ),
+  WidgetPoint(
+    name: 'CupertinoSliverNavigationBar',
+    routerName: CupertinoSliverNavigationBar.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoSliverNavigationBar.Demo(),
+  ),
 ];
