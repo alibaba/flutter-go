@@ -4,6 +4,14 @@ import '../views/category.dart';
 import '../widgets/404.dart';
 import '../common/full_screen_code_dialog.dart';
 import '../views/web_view_page.dart';
+import '../views/home.dart';
+
+// app的首页
+var homeHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    return new AppPage();
+  },
+);
 
 var categoryHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {

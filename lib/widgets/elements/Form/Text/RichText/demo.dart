@@ -9,11 +9,11 @@
 
 import 'package:flutter/material.dart';
 
-class Demo extends StatefulWidget {
+class RichTextDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }
 
-class _Demo extends State<Demo> {
+class _Demo extends State<RichTextDemo> {
 
   Widget build(BuildContext context) {
     return Container(

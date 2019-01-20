@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -7,42 +6,38 @@ import 'package:flutter_go/components/fourth_page_feature/page_reveal.dart';
 import 'package:flutter_go/components/fourth_page_feature/pager_indicator.dart';
 import 'package:flutter_go/components/fourth_page_feature/pages.dart';
 
-import '../components/comp_list.dart';
-
 class FourthPage extends StatefulWidget {
   @override
   FourthPageState createState() => new FourthPageState();
 }
 
 class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
-
   StreamController<SlideUpdate> slideUpdateStream;
   AnimatedPageDragger animatedPageDragger;
 
-  int activeIndex = 0 ;
+  int activeIndex = 0;
   SlideDirection slideDirection = SlideDirection.none;
-  int nextPageIndex = 0 ;
-  double slidePercent= 0.0;
+  int nextPageIndex = 0;
+  double slidePercent = 0.0;
 
-  FourthPageState(){
+  FourthPageState() {
     slideUpdateStream = new StreamController<SlideUpdate>();
 
-    slideUpdateStream.stream.listen((SlideUpdate event){
+    slideUpdateStream.stream.listen((SlideUpdate event) {
       setState(() {
-        if( event.updateType == UpdateType.dragging){
+        if (event.updateType == UpdateType.dragging) {
           slideDirection = event.direction;
           slidePercent = event.slidePercent;
 
-          if( slideDirection == SlideDirection.leftToRight ){
+          if (slideDirection == SlideDirection.leftToRight) {
             nextPageIndex = activeIndex - 1;
-          } else if (slideDirection == SlideDirection.rightToLeft){
+          } else if (slideDirection == SlideDirection.rightToLeft) {
             nextPageIndex = activeIndex + 1;
-          } else{
+          } else {
             nextPageIndex = activeIndex;
           }
-        } else if( event.updateType == UpdateType.doneDragging){
-          if(slidePercent > 0.5){
-
+        } else if (event.updateType == UpdateType.doneDragging) {
+          if (slidePercent > 0.5) {
             animatedPageDragger = new AnimatedPageDragger(
               slideDirection: slideDirection,
               transitionGoal: TransitionGoal.open,
@@ -50,8 +45,7 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
               slideUpdateStream: slideUpdateStream,
               vsync: this,
             );
-
-          } else{
+          } else {
             animatedPageDragger = new AnimatedPageDragger(
               slideDirection: slideDirection,
               transitionGoal: TransitionGoal.close,
@@ -64,13 +58,10 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
           }
 
           animatedPageDragger.run();
-        }
-        else if( event.updateType == UpdateType.animating){
+        } else if (event.updateType == UpdateType.animating) {
           slideDirection = event.direction;
           slidePercent = event.slidePercent;
-        }
-
-        else if (event.updateType == UpdateType.doneAnimating){
+        } else if (event.updateType == UpdateType.doneAnimating) {
           activeIndex = nextPageIndex;
 
           slideDirection = SlideDirection.none;
@@ -80,23 +71,22 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
         }
       });
     });
-
-
   }
 
   @override
   Widget build(BuildContext context) {
     return new Stack(
       children: [
-        new Page( // page 的主要内容
+        new Page(
+          // page 的主要内容
           viewModel: pages[activeIndex],
-          percentVisible: 1.0 ,
+          percentVisible: 1.0,
         ),
         new PageReveal(
           revealPercent: slidePercent,
           child: new Page(
             viewModel: pages[nextPageIndex],
-            percentVisible: slidePercent ,
+            percentVisible: slidePercent,
           ),
         ),
         new PagerIndicator(
@@ -108,8 +98,8 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
           ),
         ),
         new PageDragger(
-          canDragLeftToRight: activeIndex > 0 ,
-          canDragRightToLeft: activeIndex < pages.length - 1 ,
+          canDragLeftToRight: activeIndex > 0,
+          canDragRightToLeft: activeIndex < pages.length - 1,
           slideUpdateStream: this.slideUpdateStream,
         )
       ],

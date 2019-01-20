@@ -7,7 +7,6 @@ import 'package:flutter_go/components/pagination.dart';
 import 'package:flutter_go/components/first_page_item.dart';
 import 'package:flutter_go/components/disclaimer_msg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../common/net_utils.dart';
 
 GlobalKey<DisclaimerMsgState> key;
@@ -18,54 +17,35 @@ class FirstPage extends StatefulWidget {
 }
 
 class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin{
+  Future<SharedPreferences> _prefs=SharedPreferences.getInstance();
+  Future<bool> _unKnow;
 
   @override
   bool get wantKeepAlive => true;
 
-  save(bool flag) async{
-    //print('=============save=========$flag');
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('disclaimer', flag.toString());
-  }
 
-  Future<String> get() async {
-    var value;
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    value = prefs.getString('disclaimer');
-    return value;
-  }
-
-  @override
+ @override
   void initState() {
     super.initState();
-    if(key == null) {
-      //print('=============111=========${key}');
-      delayed();
+    if (key == null) {
+       key = GlobalKey<DisclaimerMsgState>();
+      //获取sharePre
+      _unKnow = _prefs.then((SharedPreferences prefs) {
+        return (prefs.getBool('disclaimer') ?? false);
+      });
+      /**
+       * 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
+       */
+      _unKnow.then((bool value) {
+         print("==========FirstPageState========_unKnow========${value}");
+        if (!value) {
+          key.currentState.showAlertDialog(context);
+        }
+      });
     }
-    key = GlobalKey<DisclaimerMsgState>();
-
+   
   }
 
-  /*
-  * 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
-  * */
-  Future delayed() async {
-    await new Future.delayed(const Duration(seconds: 1));
-//    if (this.mounted) {
-//      setState(() {
-//        print('test=======>${key.currentState}');
-//        key.currentState.showAlertDialog(context);
-//        //key.currentState.init(context);
-//      });
-//    }
-    Future<String> flag = get();
-    flag.then((String value) {
-      //print('=============get=========$value');
-      if(value.toString() == 'false'){ // 如果没有勾选下次开启
-        key.currentState.showAlertDialog(context);
-      }
-    });
-  }
 
   Future<Map> getIndexListData([Map<String, dynamic> params]) async {
     const juejin_flutter = 'https://timeline-merger-ms.juejin.im/v1/get_tag_entry?src=web&tagId=5a96291f6fb9a0535b535438';
