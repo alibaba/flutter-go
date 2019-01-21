@@ -21,7 +21,7 @@ const String content1 = '''
 ''';
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/themes/Cupertino/CupertinoApp';
+  static const String routeName = '/themes/Cupertino/CupertinoColors';
   _DemoState createState() => _DemoState();
 }
 
