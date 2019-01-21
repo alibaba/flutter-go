@@ -35,7 +35,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
     setState(() {
-      _unKnow = prefs.setBool("disclaimer", unKnow).then((bool success) {
+      _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
         return unKnow;
       });
     });
@@ -46,7 +46,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
     super.initState();
     //获取SharedPreferences 存储结果
     _unKnow = _prefs.then((SharedPreferences prefs) {
-      return (prefs.getBool('disclaimer') ?? false);
+      return (prefs.getBool('disclaimer::Boolean') ?? false);
     });
     _unKnow.then((bool value) {
       _valBool = value;
