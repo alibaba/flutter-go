@@ -145,6 +145,10 @@ class WidgetName2Icon {
     "SimpleDialog":Icons.message,
     "ScaffoldState":Icons.local_bar,
     "GridTile":Icons.apps,
-    "MergeableMaterialItem":Icons.view_list
+    "MergeableMaterialItem":Icons.view_list,
+    "CupertinoApp":Icons.face,
+    "CupertinoButton":Icons.crop_7_5,
+    "CupertinoColors":Icons.color_lens,
+    "CupertinoIcons":Icons.insert_emoticon,
   };
 }

@@ -48,7 +48,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'AppBar',
-      codeUrl: 'componentss/Bar/AppBar/demo.dart',
+      codeUrl: 'components/Bar/AppBar/demo.dart',
       contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/AppBar-class.html',
     );
