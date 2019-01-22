@@ -12,8 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/common/icon_names.dart' as icon_names;
 
 /*
-* Checkbox 默认按钮的实例
-* index 当前checkbox 的索引值
+* CupertinoIcons 默认的实例
 * */
 class CupertinoIconsFullDefault extends StatefulWidget {
   const CupertinoIconsFullDefault() : super();

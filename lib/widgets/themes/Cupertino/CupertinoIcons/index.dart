@@ -19,7 +19,7 @@ const String content0 = '''
 
 const String content1 = '''
 ### **基本用法**
-> CupertinoIcons 的一个是示例
+> CupertinoIcons 的一个示例
 ''';
 
 class Demo extends StatefulWidget {
@@ -36,7 +36,7 @@ class _DemoState extends State<Demo> {
         content1,
         demoBox.CupertinoIconsFullDefault()
       ],
-      title: 'CupertinoApp',
+      title: 'CupertinoIcons',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html',
       codeUrl: '/themes/Cupertino/CupertinoColor/demo.dart',
     );

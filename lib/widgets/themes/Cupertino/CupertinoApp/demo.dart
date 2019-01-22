@@ -58,12 +58,12 @@ class _CupertinoAppFullDefault extends State {
         //height: 500.0,
         child: CupertinoApp(
           title: '这里是标题',// 设备用于识别用户的应用程序的单行描述
-          builder: (BuildContext context,Widget child) { // 当构建一个Widget前调用一般做字体大小，方向，主题颜色等配置
+          builder: (BuildContext context,Widget child) { // 覆盖下面的所有界面,一般当作追加属性用
             //return Container(child:Text('这里是内容1',style:TextStyle(color:Colors.black)));
-            return MediaQuery(
+            return MediaQuery(// 当构建一个Widget前,调用一般做字体大小，方向，主题颜色等配置
               //字体大小
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.4),
-              child: child,
+              child: child
             );
           },
           checkerboardOffscreenLayers:false, // 打开渲染到屏幕外位图的图层的checkerboarding
@@ -77,7 +77,11 @@ class _CupertinoAppFullDefault extends State {
               middle: Text('Title'),
               trailing: Icon(CupertinoIcons.share),
             ),
-            child:Container(child:Text('这里是内容',style:TextStyle(color:Colors.black))), // 应用程序默认路由,（Navigator.defaultRouteName，即/）
+            child:Container( // home 对应的内容和 router对应的内容，同时存在
+                padding: const EdgeInsets.only(bottom: 60.0),
+                alignment: Alignment.center,
+                child:Text('这里是 home 属性对应的内容',style:TextStyle(color:Colors.black))
+            ), // 应用程序默认路由,（Navigator.defaultRouteName，即/）
          ),
           initialRoute:'/home',// 如果构建了导航器，则显示的第一条路径的名称,初始路由，当用户进入程序时，自动打开对应的路由。(home还是位于一级)传入的是上面routes的key
           locale:Locale('zh', 'CH'),// 本地化初始值
