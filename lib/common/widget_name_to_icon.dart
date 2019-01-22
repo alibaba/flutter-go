@@ -150,5 +150,8 @@ class WidgetName2Icon {
     "CupertinoButton":Icons.crop_7_5,
     "CupertinoColors":Icons.color_lens,
     "CupertinoIcons":Icons.insert_emoticon,
+    "CupertinoNavigationBar":Icons.payment,
+    "CupertinoPageRoute":Icons.router,
+    "CupertinoPageScaffold":Icons.pages,
   };
 }

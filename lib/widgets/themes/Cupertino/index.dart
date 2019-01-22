@@ -2,10 +2,13 @@ import "package:flutter/material.dart";
 import '../../../model/widget.dart';
 
 
-import 'CupertinoApp/index.dart' as CupertinoApp;
-import 'CupertinoButton/index.dart' as CupertinoButton;
-import 'CupertinoColors/index.dart' as CupertinoColors;
-import 'CupertinoIcons/index.dart' as CupertinoIcons;
+import './CupertinoApp/index.dart' as CupertinoApp;
+import './CupertinoButton/index.dart' as CupertinoButton;
+import './CupertinoColors/index.dart' as CupertinoColors;
+import './CupertinoIcons/index.dart' as CupertinoIcons;
+import './CupertinoNavigationBar/index.dart' as CupertinoNavigationBar;
+import './CupertinoPageRoute/index.dart' as CupertinoPageRoute;
+import './CupertinoPageScaffold/index.dart' as CupertinoPageScaffold;
 
 import './CupertinoScrollbar/index.dart' as CupertinoScrollbar;
 import './CupertinoSlider/index.dart' as CupertinoSlider;
@@ -14,6 +17,21 @@ import './CupertinoSliverNavigationBar/index.dart' as CupertinoSliverNavigationB
 import './CupertinoSwitch/index.dart' as CupertinoSwitch;
 
 List<WidgetPoint> widgetPoints = [
+  WidgetPoint(
+    name: 'CupertinoPageScaffold',
+    routerName: CupertinoPageScaffold.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoPageScaffold.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoPageRoute',
+    routerName: CupertinoPageRoute.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoPageRoute.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoNavigationBar',
+    routerName: CupertinoNavigationBar.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoNavigationBar.Demo(),
+  ),
   WidgetPoint(
     name: 'CupertinoIcons',
     routerName: CupertinoIcons.Demo.routeName,

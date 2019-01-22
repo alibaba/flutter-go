@@ -34,7 +34,7 @@ class _DemoState extends State<Demo> {
         content1,
         demoBox.CupertinoColorsFullDefault()
       ],
-      title: 'CupertinoApp',
+      title: 'CupertinoColors',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoColors-class.html',
       codeUrl: '/themes/Cupertino/CupertinoColor/demo.dart',
     );
