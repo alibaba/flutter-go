@@ -1,3 +1,4 @@
+Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md) | [中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md)
 ## Flutter Go
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
