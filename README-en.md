@@ -1,6 +1,6 @@
 ## Flutter Go
 
-> Help developers get started quickly Flutter ** In-house testing, the 1.0 official version will be released on February 20. **
+> Help developers get started quickly Flutter **In-house testing, the 1.0 official version will be released on February 20.**
 
 
 ## Download URL
