@@ -9,6 +9,8 @@ import './CupertinoIcons/index.dart' as CupertinoIcons;
 import './CupertinoNavigationBar/index.dart' as CupertinoNavigationBar;
 import './CupertinoPageRoute/index.dart' as CupertinoPageRoute;
 import './CupertinoPageScaffold/index.dart' as CupertinoPageScaffold;
+import './CupertinoPicker/index.dart' as CupertinoPicker;
+import './CupertinoPopupSurface/index.dart' as CupertinoPopupSurface;
 
 import './CupertinoScrollbar/index.dart' as CupertinoScrollbar;
 import './CupertinoSlider/index.dart' as CupertinoSlider;
@@ -17,6 +19,16 @@ import './CupertinoSliverNavigationBar/index.dart' as CupertinoSliverNavigationB
 import './CupertinoSwitch/index.dart' as CupertinoSwitch;
 
 List<WidgetPoint> widgetPoints = [
+  WidgetPoint(
+    name: 'CupertinoPopupSurface',
+    routerName: CupertinoPopupSurface.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoPopupSurface.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoPicker',
+    routerName: CupertinoPicker.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoPicker.Demo(),
+  ),
   WidgetPoint(
     name: 'CupertinoPageScaffold',
     routerName: CupertinoPageScaffold.Demo.routeName,

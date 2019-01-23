@@ -30,6 +30,8 @@ dependencies:
   shared_preferences: ^0.4.3
   dio: ^1.0.6
   flutter_webview_plugin: ^0.3.0+2
+  # 日期格式化
+  intl: 0.15.7
 
 dev_dependencies:
   flutter_test:

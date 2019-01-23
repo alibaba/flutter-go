@@ -153,5 +153,7 @@ class WidgetName2Icon {
     "CupertinoNavigationBar":Icons.payment,
     "CupertinoPageRoute":Icons.router,
     "CupertinoPageScaffold":Icons.pages,
+    "CupertinoPicker":Icons.add_alarm,
+    "CupertinoPopupSurface":Icons.center_focus_weak,
   };
 }
