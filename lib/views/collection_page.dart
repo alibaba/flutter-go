@@ -104,7 +104,7 @@ class _CollectionPageState extends State<CollectionPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          _collectionList[index - 1].name,
+          Uri.decodeComponent(_collectionList[index - 1].name),
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),
@@ -112,8 +112,9 @@ class _CollectionPageState extends State<CollectionPage> {
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
           if (_collectionList[index - 1].router.contains('http')) {
+            // 注意这里title已经转义过了
             Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${Uri.encodeComponent(_collectionList[index - 1].name)}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
+                '${Routes.webViewPage}?title=${_collectionList[index - 1].name}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
           } else {
             Application.router
                 .navigateTo(context, "${_collectionList[index - 1].router}");
