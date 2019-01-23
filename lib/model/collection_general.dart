@@ -50,7 +50,6 @@ class CollectionControlModel {
     List list = await sql.getByCondition();
     List<CollectionGeneral> resultList = [];
     list.forEach((item){
-      print(item);
       resultList.add(CollectionGeneral.fromJSON(item));
     });
     return resultList;

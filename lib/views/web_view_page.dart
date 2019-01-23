@@ -10,6 +10,7 @@ import '../model/collection.dart';
 import '../event/event-bus.dart';
 import '../event/event-model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'dart:core';
 
 class WebViewPage extends StatefulWidget {
   final String url;
@@ -38,7 +39,7 @@ class _WebViewPageState extends State<WebViewPage> {
   @override
   void initState() {
     super.initState();
-    _collectionControl.getRouterByName(widget.title.trim()).then((list) {
+    _collectionControl.getRouterByName(Uri.encodeComponent(widget.title.trim())).then((list) {
       
       list.forEach((item) {
         if(widget.title.trim() == item['name']){
@@ -57,7 +58,7 @@ class _WebViewPageState extends State<WebViewPage> {
   _getCollection() {
     if (_hasCollected) {
       // 删除操作
-      _collectionControl.deleteByName(widget.title.trim()).then((result) {
+      _collectionControl.deleteByName(Uri.encodeComponent(widget.title.trim())).then((result) {
         if (result > 0 && this.mounted) {
           setState(() {
             _hasCollected = false;
@@ -75,7 +76,7 @@ class _WebViewPageState extends State<WebViewPage> {
     } else {
       // 插入操作
       _collectionControl
-          .insert(Collection(name: widget.title.trim(), router: widget.url))
+          .insert(Collection(name:Uri.encodeComponent(widget.title.trim()) , router: widget.url))
           .then((result) {
         if (this.mounted) {
           setState(() {
