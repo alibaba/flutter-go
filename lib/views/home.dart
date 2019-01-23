@@ -43,8 +43,8 @@ class _MyHomePageState extends State<AppPage>
   static List tabData = [
     {'text': '业界动态', 'icon': new Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': new Icon(Icons.extension)},
-    {'text': '组件收藏', 'icon': new Icon(Icons.star)},
-    {'text': '关于手册', 'icon': new Icon(Icons.favorite)}
+    {'text': '组件收藏', 'icon': new Icon(Icons.favorite)},
+    {'text': '关于手册', 'icon': new Icon(Icons.import_contacts)}
   ];
 
   List<Widget> myTabs = [];
@@ -139,12 +139,7 @@ class _MyHomePageState extends State<AppPage>
               indicatorWeight: 3.0,
               labelColor: Theme.of(context).primaryColor,
               unselectedLabelColor: const Color(0xFF8E8E8E),
-              tabs: <Tab>[
-                Tab(text: '业界动态', icon: Icon(Icons.language)),
-                Tab(text: '组件', icon: Icon(Icons.extension)),
-                Tab(text: '组件收藏', icon: Icon(Icons.favorite)),
-                Tab(text: '关于手册', icon: Icon(Icons.line_weight)),
-              ],
+              tabs: myTabs
             ),
           ),
         ),
