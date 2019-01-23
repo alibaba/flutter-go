@@ -59,7 +59,7 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
                               child: Center(
                                 child: CupertinoButton(
                                   child: const Text('Back'),
-                                  onPressed: () { Navigator.of(context).pop(g); },
+                                  onPressed: () { Navigator.of(context).pop(); },
                                 ),
                               ),
                             );

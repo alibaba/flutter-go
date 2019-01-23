@@ -7,6 +7,7 @@ import './CupertinoSliverNavigationBar/index.dart' as CupertinoSliverNavigationB
 import './CupertinoSwitch/index.dart' as CupertinoSwitch;
 import './CupertinoTabBar/index.dart' as CupertinoTabBar;
 import './CupertinoTabScaffold/index.dart' as CupertinoTabScaffold;
+import './CupertinoTabView/index.dart' as CupertinoTabView;
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'CupertinoScrollbar',
@@ -47,5 +48,10 @@ List<WidgetPoint> widgetPoints = [
     name: 'CupertinoTabScaffold',
     routerName: CupertinoTabScaffold.Demo.routeName,
     buildRouter: (BuildContext context) => CupertinoTabScaffold.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoTabView',
+    routerName: CupertinoTabView.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoTabView.Demo(),
   ),
 ];

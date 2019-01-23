@@ -168,6 +168,7 @@ flutter:
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
     - assets/app.db
     - assets/images/
     - lib/common/example_code_parser.dart
