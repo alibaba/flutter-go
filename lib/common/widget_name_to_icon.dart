@@ -155,5 +155,14 @@ class WidgetName2Icon {
     "CupertinoPageScaffold":Icons.pages,
     "CupertinoPicker":Icons.add_alarm,
     "CupertinoPopupSurface":Icons.center_focus_weak,
+    "CupertinoScrollbar": Icons.fullscreen,
+    "CupertinoSlider": Icons.switch_camera,
+    "CupertinoSegmentedControl": Icons.radio_button_checked,
+    "CupertinoSliverNavigationBar": Icons.subtitles,
+    "CupertinoSwitch": Icons.check_box,
+    "CupertinoTabBar": Icons.tab,
+    "CupertinoTabScaffold": Icons.tab,
+    "CupertinoTabView": Icons.table_chart,
+    "CupertinoTimerPicker": Icons.timer
   };
 }
