@@ -18,6 +18,10 @@ import './CupertinoSegmentedControl/index.dart' as CupertinoSegmentedControl;
 import './CupertinoSliverNavigationBar/index.dart' as CupertinoSliverNavigationBar;
 import './CupertinoSwitch/index.dart' as CupertinoSwitch;
 
+import './CupertinoTabBar/index.dart' as CupertinoTabBar;
+import './CupertinoTabScaffold/index.dart' as CupertinoTabScaffold;
+import './CupertinoTabView/index.dart' as CupertinoTabView;
+
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'CupertinoPopupSurface',
@@ -93,6 +97,21 @@ List<WidgetPoint> widgetPoints = [
     name: 'CupertinoSwitch',
     routerName: CupertinoSwitch.Demo.routeName,
     buildRouter: (BuildContext context) => CupertinoSwitch.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoTabBar',
+    routerName: CupertinoTabBar.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoTabBar.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoTabScaffold',
+    routerName: CupertinoTabScaffold.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoTabScaffold.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoTabView',
+    routerName: CupertinoTabView.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoTabView.Demo(),
   ),
 ];
 

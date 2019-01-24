@@ -1,3 +1,4 @@
+Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md) | [中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md)
 ## Flutter Go
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
@@ -7,7 +8,7 @@
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB18ud1BmzqK1RjSZFjXXblCFXa-380-384.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB1q1GVB4naK1RjSZFtXXbC2VXa-195-198.png" width="200px">
 
 iphone下载地址:
 暂无
@@ -33,7 +34,7 @@ flutter优点主要包括：
 
 #### Flutter Go 的优势
 
-- 详解常用widget多达 **130+** 个
+- 详解常用widget多达 **140+** 个
 - 配套 Demo 详解 widget 常规用法
 - 集中整合 widget 案例，一个 APP 搞定所有常用 widget 的用法
 - 持续迭代 ‘追新’ 官方版本
