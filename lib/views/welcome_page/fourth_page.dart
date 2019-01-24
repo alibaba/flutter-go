@@ -74,6 +74,12 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    slideUpdateStream.close();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Stack(
       children: [

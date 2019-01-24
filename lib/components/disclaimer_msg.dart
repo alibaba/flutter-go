@@ -31,7 +31,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   var _readed = false;
 
   //SharedPreferences 存储结果
-  Future<bool> refs(bool value) async {
+  void refs(bool value) async {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
     setState(() {

@@ -26,7 +26,7 @@ class CupertinoAppFullDefault extends StatefulWidget {
 * */
 class _CupertinoAppFullDefault extends State {
 
-  RouterHandler(setting){
+  routerHandler(setting){
     //setting.isInitialRoute; bool类型 是否初始路由
     //setting.name; 要跳转的路由名key
     return PageRouteBuilder(
@@ -94,7 +94,7 @@ class _CupertinoAppFullDefault extends State {
             MyObserver(),
           ],
           onGenerateRoute: (setting){ // 当通过Navigation.of(context).pushNamed跳转路由时，在routes查找不到时，会调用该方法
-            RouterHandler(setting);
+            routerHandler(setting);
           },
           onGenerateTitle: (context){ // 跟上面的tiitle一样，但含有一个context参数用于做本地化
             return 'Flutter应用';
