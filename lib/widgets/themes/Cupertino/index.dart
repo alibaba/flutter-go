@@ -21,6 +21,7 @@ import './CupertinoSwitch/index.dart' as CupertinoSwitch;
 import './CupertinoTabBar/index.dart' as CupertinoTabBar;
 import './CupertinoTabScaffold/index.dart' as CupertinoTabScaffold;
 import './CupertinoTabView/index.dart' as CupertinoTabView;
+import './CupertinoTimerPicker/index.dart' as CupertinoTimerPicker;
 
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
@@ -112,6 +113,11 @@ List<WidgetPoint> widgetPoints = [
     name: 'CupertinoTabView',
     routerName: CupertinoTabView.Demo.routeName,
     buildRouter: (BuildContext context) => CupertinoTabView.Demo(),
+  ),
+  WidgetPoint(
+    name: 'CupertinoTimerPicker',
+    routerName: CupertinoTimerPicker.Demo.routeName,
+    buildRouter: (BuildContext context) => CupertinoTimerPicker.Demo(),
   ),
 ];
 
