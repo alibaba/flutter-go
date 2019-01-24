@@ -46,7 +46,7 @@ class _DemoState extends State<Demo> {
         demoBox.CupertinoNavigationBarFullDefault(),
         SizedBox(height:50)
       ],
-      title: 'CupertinoApp',
+      title: 'CupertinoNavigationBar',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html',
       codeUrl: '/themes/Cupertino/CupertinoNavigationBar/demo.dart',
     );
