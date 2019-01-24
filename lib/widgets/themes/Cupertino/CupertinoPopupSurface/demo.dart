@@ -28,11 +28,11 @@ class _CupertinoPopupSurfaceFullDefault extends State {
   Widget build(BuildContext context) {
     return SizedBox(
         height: MediaQuery.of(context).size.height/5,
-        child: CupertinoPopupSurfaceBar(context)
+        child: cupertinoPopupSurfaceBar(context)
     );
   }
 
-  Widget CupertinoPopupSurfaceBar(BuildContext context) {
+  Widget cupertinoPopupSurfaceBar(BuildContext context) {
     return CupertinoPopupSurface(
       isSurfacePainted:false,
       child: Container(
