@@ -26,12 +26,12 @@ class CupertinoColorsFullDefault extends StatefulWidget {
 * */
 class _CupertinoColorsFullDefault extends State {
 
-  Widget setColorsView(Cupertino_colors,String colorName){
+  Widget setColorsView(cupertinoColors,String colorName){
     return Container(
         width: MediaQuery.of(context).size.width-100,
         padding: const EdgeInsets.all(10.0),
         child:Text(colorName,style:TextStyle(color:Colors.white)),
-        decoration:BoxDecoration(color: Cupertino_colors)
+        decoration:BoxDecoration(color: cupertinoColors)
     );
   }
   @override
