@@ -40,6 +40,7 @@ class _CupertinoIconsFullDefault extends State {
           flex:1,
           child: CupertinoButton(
             padding: EdgeInsets.only(left: 0),
+            onPressed: () { },
             child:FlatButton.icon(
                 label: Text('默认按钮', semanticsLabel: 'Add'),
                 icon:Icon(itA,
@@ -51,6 +52,7 @@ class _CupertinoIconsFullDefault extends State {
             flex:1,
             child: CupertinoButton(
                 padding: EdgeInsets.zero,
+                onPressed: () { },
                 child:FlatButton.icon(
                   label: Text('默认按钮', semanticsLabel: 'Add'),
                   icon:Icon(itB,

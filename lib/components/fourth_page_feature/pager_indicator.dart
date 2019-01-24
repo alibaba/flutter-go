@@ -46,14 +46,14 @@ class PagerIndicator extends StatelessWidget {
       );
     }
 
-    final BUBBLE_WIDHT = 55.0 ;
-    final baseTranslation = ((viewModel.pages.length * BUBBLE_WIDHT) / 2) - (BUBBLE_WIDHT / 2) ;
-    var translation = baseTranslation - (viewModel.activeIndex * BUBBLE_WIDHT);
+    final bubbleWidth = 55.0 ;
+    final baseTranslation = ((viewModel.pages.length * bubbleWidth) / 2) - (bubbleWidth / 2) ;
+    var translation = baseTranslation - (viewModel.activeIndex * bubbleWidth);
 
     if (viewModel.slideDirection == SlideDirection.leftToRight){
-        translation += BUBBLE_WIDHT * viewModel.slidePercent;
+        translation = bubbleWidth * viewModel.slidePercent + translation;
     }else if (viewModel.slideDirection == SlideDirection.rightToLeft){
-        translation -= BUBBLE_WIDHT * viewModel.slidePercent;
+        translation = bubbleWidth * viewModel.slidePercent - translation;
     }
 
     return new Column(
