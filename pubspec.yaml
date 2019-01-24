@@ -7,7 +7,7 @@ description: flutter_go
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.0.3
+version: 0.0.4
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

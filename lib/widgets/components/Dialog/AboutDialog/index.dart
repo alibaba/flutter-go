@@ -35,7 +35,7 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: 'AlertDialog',
+      title: 'AboutDialog',
       codeUrl: 'components/Dialog/AboutDialog/demo.dart',
       contentList: [
         _Text0,
