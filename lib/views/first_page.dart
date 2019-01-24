@@ -30,20 +30,22 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     if (key == null) {
        key = GlobalKey<DisclaimerMsgState>();
       //获取sharePre
-      _unKnow = _prefs.then((SharedPreferences prefs) {
-        return (prefs.getBool('disclaimer') ?? false);
-      });
+       _unKnow = _prefs.then((SharedPreferences prefs) {
+         return (prefs.getBool('disclaimer::Boolean') ?? false);
+       });
+
       /**
        * 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
        */
       _unKnow.then((bool value) {
          print("==========FirstPageState========_unKnow========${value}");
-        if (!value) {
-          key.currentState.showAlertDialog(context);
-        }
+         new Future.delayed(const Duration(seconds: 1),(){
+           if (!value) {
+            key.currentState.showAlertDialog(context);
+           }
+         });
       });
     }
-   
   }
 
 
@@ -51,12 +53,18 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     const juejin_flutter = 'https://timeline-merger-ms.juejin.im/v1/get_tag_entry?src=web&tagId=5a96291f6fb9a0535b535438';
     var pageIndex = (params is Map) ? params['pageIndex'] : 0;
     final _param  = {'page':pageIndex,'pageSize':20,'sort':'rankIndex'};
+    var responseList = [];
+    var  pageTotal = 0;
 
-    var response = await NetUtils.get(juejin_flutter, params: _param);
-    var responseList = response['d']['entrylist'];
-    var  pageTotal = response['d']['total'];
-    if (!(pageTotal is int) || pageTotal <= 0) {
-      pageTotal = 0;
+    try{
+      var response = await NetUtils.get(juejin_flutter, params: _param);
+      responseList = response['d']['entrylist'];
+      pageTotal = response['d']['total'];
+      if (!(pageTotal is int) || pageTotal <= 0) {
+        pageTotal = 0;
+      }
+    }catch(e){
+
     }
     pageIndex += 1;
     List resultList = new List();

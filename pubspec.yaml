@@ -30,6 +30,8 @@ dependencies:
   shared_preferences: ^0.4.3
   dio: ^1.0.6
   flutter_webview_plugin: ^0.3.0+2
+  # 日期格式化
+  intl: 0.15.7
 
 dev_dependencies:
   flutter_test:
@@ -171,10 +173,17 @@ flutter:
     - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
     - assets/app.db
     - assets/images/
+    - assets/fonts/
     - lib/common/example_code_parser.dart
     - lib/common/syntax_highlighter.dart
 
-
+  fonts:
+  - family: FlamanteRoma
+    fonts:
+    - asset: assets/fonts/Flamante-Roma-Medium.ttf
+    - asset: assets/fonts/Lato-Bold.ttf
+    - asset: assets/fonts/Flamante-Roma-MediumItalic.ttf
+      style: italic
 
   # To add assets to your application, add an assets section, like this:
   # assets:
