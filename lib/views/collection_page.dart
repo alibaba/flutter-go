@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import '../model/collection.dart';
 import '../routers/application.dart';
 import '../routers/routers.dart';
-import '../event/event-bus.dart';
-import '../event/event-model.dart';
+import '../event/event_bus.dart';
+import '../event/event_model.dart';
 import 'package:event_bus/event_bus.dart';
 
 class CollectionPage extends StatefulWidget {

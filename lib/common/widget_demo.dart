@@ -10,8 +10,8 @@ import '../components/markdown.dart';
 import '../model/collection.dart';
 import '../widgets/index.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../event/event-bus.dart';
-import '../event/event-model.dart';
+import '../event/event_bus.dart';
+import '../event/event_model.dart';
 import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
