@@ -40,7 +40,7 @@ The advantages of Flutter mainly include:
 
 ### App Preview
 
-<img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1WJNuBmzqK1RjSZPcXXbTepXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
+<img src="https://img.alicdn.com/tfs/TB1pfkIDHPpK1RjSZFFXXa5PpXa-336-708.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1lSMKDNTpK1RjSZR0XXbEwXXa-336-708.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1klMNDSzqK1RjSZFpXXakSXXa-336-708.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1tgoODFzqK1RjSZFCXXbbxVXa-336-708.gif" width=200>
 
 
 ### Core Team
