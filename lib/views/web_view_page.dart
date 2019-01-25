@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import '../model/collection.dart';
-import '../event/event-bus.dart';
+import '../event/event_bus.dart';
 import '../event/event-model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:core';
