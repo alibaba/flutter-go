@@ -102,7 +102,6 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
   - [x] 功能：为搜索列表加入图标
   - [x] 功能：CupertinoSliverRefreshControl演示
   - [x] 功能：CupertinoSliverNavigationBar演示
-#### 2019-1-19
 #### 2019-1-18
   - [x] 更新：SharedPreferences保存数据和android设备布局溢出
   - [x] 功能：添加CupertinoScrollbar演示
