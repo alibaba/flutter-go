@@ -27,7 +27,7 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
   }
 
   void showInSnackBar(String value){
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,

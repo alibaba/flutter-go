@@ -24,7 +24,7 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
   }
 
     void showInSnackBar(String value) {
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
