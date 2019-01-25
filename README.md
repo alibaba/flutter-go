@@ -89,6 +89,7 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
   - [x] Modfiy：关于手册图标更换
   - [x]文案描述
   - [x] add：CupertinoPicker，CupertinoPopupSurface
+  
 #### 2019-1-23
   - [x] fix：导航栏home返回报错
   - [x]修复：收集错误
