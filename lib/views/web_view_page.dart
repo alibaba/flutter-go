@@ -27,7 +27,7 @@ class _WebViewPageState extends State<WebViewPage> {
   CollectionControlModel _collectionControl = new CollectionControlModel();
 
   void showInSnackBar(String value) {
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,

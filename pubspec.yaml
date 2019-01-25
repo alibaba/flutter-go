@@ -25,7 +25,7 @@ dependencies:
   sqflite: ^0.12.1
   flutter_markdown: ^0.2.0
   url_launcher: ^4.0.1
-  fluttertoast: ^2.2.2
+  fluttertoast: ^2.2.7
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
   dio: ^1.0.6
