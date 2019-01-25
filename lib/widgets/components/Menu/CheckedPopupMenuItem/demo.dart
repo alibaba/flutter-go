@@ -26,19 +26,8 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
     _checkedValues = <String>[_checkedValue3];
   }
 
-  void showInSnackBar(String value){
-    Fluttertoast.instance.showToast(
-        msg: value,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
-        backgroundColor: Colors.grey,
-        textColor: Colors.white
-    );
-  }
 
   bool isChecked(String value) => _checkedValues.contains(value);
-
 
   void showCheckedMenuSelections(String value){
     if(_checkedValues.contains(value)){
@@ -46,7 +35,9 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
     }else{
       _checkedValues.add(value);
     }
-    showInSnackBar('Checked $_checkedValues');
+   
+    Scaffold.of(context).showSnackBar(new SnackBar(
+                content: new Text('Checked $_checkedValues')));
   }
 
   @override
