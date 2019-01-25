@@ -42,7 +42,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
   String _router = '';
 
   void showInSnackBar(String value) {
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
