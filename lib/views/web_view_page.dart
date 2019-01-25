@@ -7,8 +7,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import '../model/collection.dart';
-import '../event/event-bus.dart';
-import '../event/event-model.dart';
+import '../event/event_bus.dart';
+import '../event/event_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:core';
 
@@ -27,7 +27,7 @@ class _WebViewPageState extends State<WebViewPage> {
   CollectionControlModel _collectionControl = new CollectionControlModel();
 
   void showInSnackBar(String value) {
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,

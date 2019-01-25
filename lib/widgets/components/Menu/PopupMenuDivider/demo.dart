@@ -13,7 +13,7 @@ class PopupMenuDividerDemo extends StatelessWidget {
 
 
     void showInSnackBar(String value) {
-    Fluttertoast.showToast(
+    Fluttertoast.instance.showToast(
         msg: value,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
