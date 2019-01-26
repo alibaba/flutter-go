@@ -1,70 +1,30 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../../../../common/widget_demo.dart';
-import '../../../../../components/markdown.dart';
+import 'demo.dart';
 
 const String intro = """
-# 说明
+### **简介**
 
 > 具有某个单一样式的文本显示的widget组件, 显示支持一行或者多行. 默认样式会继承层级最为接近的 *DefaultStyle* 
 当然, 你也可以重新他的样式 将 *DefaultStyle.inherit 设置为 false*
 
-# 示例代码
+是最基本的文本显示组件
 
-``` dart
-Text(
-  'Hello, World ! How are you?',
-  textAlign: TextAlign.center,
-  overflow: TextOverflow.ellipsis,
-  style: TextStyle(fontWeight: FontWeight.bold),
-)
-```
+### **基本用法**
+在这里介绍一下他的基本属性说明.
 
-# 示例显示
+- data	Text显示的文本，必填参数	String
+- textAlign	文本的对齐方式,可以选择左对齐、右对齐还是居中对齐	TextAlign
+- maxLines	文本显示的最大行数	int
+- overflow	文本显示的截断方式	TextOverflow
+- textScaleFactor	文本的缩放比例	double
+- style	用于指定文本显示的样式如颜色、字体、粗细、背景等
 
+
+### **基本示例**
 
 """;
 
-const String leftDesc = """
-# 示例代码
-
-
-``` dart
-// 左侧布局示例
-Text(
-  "Hello, World! I'm start from left?",
-  textAlign: TextAlign.left,
-  overflow: TextOverflow.ellipsis,
-  style: TextStyle(fontWeight: FontWeight.bold, inherit: true),
-),
-```
-# 示例显示
-""";
-
-const String RichDesc = """
-
-# 复杂文本显示
-
-使用 Text.rich 构造函数，Text 组件可以显示具有不同样式的 TextSpan 段落。下面的示例显示每个单词具有不同样式的“Hello beautiful world”。
-
-```
-Text.rich(
-  TextSpan(
-    text: 'Hello', // default text style
-    children: <TextSpan>[
-      TextSpan(text: ' beautiful ', style: TextStyle(fontStyle: FontStyle.italic)),
-      TextSpan(text: 'world', style: TextStyle(fontWeight: FontWeight.bold)),
-    ],
-  ),
-)
-```
-""";
-
-const Map<String, String> markDesc = {
-  "intro": intro,
-  "left": leftDesc,
-  "rich": RichDesc
-};
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Text/Text';
   _Demo createState() => _Demo();
@@ -79,38 +39,10 @@ class _Demo extends State<Demo> {
       title: "Text",
       docUrl: 'flutter/widgets/Text-class.html',
       codeUrl: 'elements/Form/Text/Text/index.dart',
-      contentList: [new Column(
-        children: <Widget>[
-          MarkdownBody(markDesc['intro']),
-          Text(
-            'Hello, World! How are you?',
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          MarkdownBody(markDesc['left']),
-          Container(
-            width: 750.0,
-            color: Color(0xFF0096ef),
-            child: Text(
-              "Hello, World! I'm start from left?",
-              textAlign: TextAlign.left,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: Color(0xffffffff)),
-            ),
-          ),
-          MarkdownBody( markDesc['rich']),
-          Text.rich(
-            TextSpan(
-              text: 'Hello', // default text style
-              children: <TextSpan>[
-                TextSpan(text: ' beautiful ', style: TextStyle(fontStyle: FontStyle.italic)),
-                TextSpan(text: 'world', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-          )
-        ],
-      )]
+      contentList: [
+        intro,
+        TextDemo(),
+      ]
     );
   }
 }
