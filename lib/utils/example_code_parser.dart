@@ -9,7 +9,7 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import '../routers/application.dart';
+import 'package:flutter_go/routers/application.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
