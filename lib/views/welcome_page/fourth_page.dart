@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_go/components/fourth_page_feature/page_dragger.dart';
-import 'package:flutter_go/components/fourth_page_feature/page_reveal.dart';
-import 'package:flutter_go/components/fourth_page_feature/pager_indicator.dart';
-import 'package:flutter_go/components/fourth_page_feature/pages.dart';
+import 'package:flutter_go/views/fourth_page/page_dragger.dart';
+import 'package:flutter_go/views/fourth_page/page_reveal.dart';
+import 'package:flutter_go/views/fourth_page/pager_indicator.dart';
+import 'package:flutter_go/views/fourth_page/pages.dart';
 
 class FourthPage extends StatefulWidget {
   @override

@@ -7,7 +7,7 @@
  * tartget: CupertinoPageRoute 的示例
  */
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as demoBox;
 
 const String content0 = '''

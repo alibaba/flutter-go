@@ -9,7 +9,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_go/common/icon_names.dart' as icon_names;
+import 'package:flutter_go/resources/icon_names.dart' as icon_names;
 
 /*
 * CupertinoIcons 默认的实例

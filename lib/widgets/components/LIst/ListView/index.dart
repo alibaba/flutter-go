@@ -6,7 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: ListView 的示例
  */
-import '../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';

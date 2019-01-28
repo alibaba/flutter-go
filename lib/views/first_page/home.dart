@@ -12,16 +12,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'first_page.dart';
-import 'widget_page.dart';
+import 'package:flutter_go/views/first_page/first_page.dart';
+import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
-import 'collection_page.dart';
-import '../routers/application.dart';
-import '../common/provider.dart';
-import '../model/widget.dart';
-import '../widgets/index.dart';
+import 'package:flutter_go/views/collection_page/collection_page.dart';
+import 'package:flutter_go/routers/application.dart';
+import 'package:flutter_go/utils//provider.dart';
+import 'package:flutter_go/model/widget.dart';
+import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
-import '../common/widget_name_to_icon.dart';
+import 'package:flutter_go/resources/widget_name_to_icon.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 

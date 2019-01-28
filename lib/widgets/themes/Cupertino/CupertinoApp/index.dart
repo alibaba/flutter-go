@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-07 15:52:45
  */
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as demoBox;
 
 const String content0 = '''

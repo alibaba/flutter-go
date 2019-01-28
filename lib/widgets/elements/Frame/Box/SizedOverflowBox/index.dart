@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-08 15:55:31 
  */
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as sizeBox;
 
 // const String _Text = """### **SizeBox简介**
