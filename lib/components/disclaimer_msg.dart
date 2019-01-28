@@ -5,11 +5,10 @@
  * Time: 下午9:19
  * email: zhu.yan@alibaba-inc.com
  */
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-//import 'package:flutter_rookie_book/model/collection_general.dart';
-//import 'package:flutter_rookie_book/model/collection_general.dart';
+import 'dart:async';
 
 const disclaimerText1 =
     '\r\r\r\r\r\r本APP属于个人的非赢利性开源项目，以供开源社区使用，凡本APP转载的所有的文章 、图片、音频、视频文件等资料的版权归版权所有人所有，本APP采用的非本站原创文章及图片等内容无法一一和版权者联系，如果本网所选内容的文章作者及编辑认为其作品不宜上网供大家浏览，或不应无偿使用请及时用电子邮件或电话通知我们，以迅速采取适当措施，避免给双方造成不必要的经济损失。';
