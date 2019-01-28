@@ -7,7 +7,7 @@
  * tartget: FirstPageItem
  */
 
-import '../common/Util.dart';
+import 'package:flutter_go/utils/util.dart';
 
 class FirstPageItem {
   bool hot;

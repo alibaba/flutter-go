@@ -157,12 +157,12 @@ class WidgetName2Icon {
     "CupertinoPopupSurface":Icons.center_focus_weak,
     "CupertinoScrollbar": Icons.fullscreen,
     "CupertinoSlider": Icons.switch_camera,
-    "CupertinoSegmentedControl": Icons.radio_button_checked,
+    "CupertinoSegmentedControl": Icons.business_center,
     "CupertinoSliverNavigationBar": Icons.subtitles,
-    "CupertinoSwitch": Icons.check_box,
+    "CupertinoSwitch": Icons.radio_button_checked,
     "CupertinoTabBar": Icons.tab,
-    "CupertinoTabScaffold": Icons.tab,
-    "CupertinoTabView": Icons.table_chart,
+    "CupertinoTabScaffold": Icons.crop_original,
+    "CupertinoTabView": Icons.tablet,
     "CupertinoTimerPicker": Icons.timer
   };
 }

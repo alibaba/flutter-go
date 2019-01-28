@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-08 16:00:14
  */
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String Text0 = """### **简介**

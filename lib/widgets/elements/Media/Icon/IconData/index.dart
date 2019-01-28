@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'demo.dart';
 
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 
 const Text = '''
 ### **简介**

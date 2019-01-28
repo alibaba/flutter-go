@@ -6,7 +6,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/cate_card.dart';
-import '../model/cat.dart';
+import 'package:flutter_go/model/cat.dart';
 
 class WidgetPage extends StatefulWidget {
   final db;
