@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:flutter_go/common/widget_demo.dart';
-=======
+
 import 'package:flutter_go/components/widget_demo.dart';
->>>>>>> acfe8f6ed8390dc540a1082bba09f887030e69aa
+
 import 'demo.dart';
 const Text0 = '''
 ### **简介**

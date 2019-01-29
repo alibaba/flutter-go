@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '../../../../../common/widget_demo.dart';
-import 'demo.dart';
-=======
-//import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import '../../../../../components/markdown.dart';
->>>>>>> acfe8f6ed8390dc540a1082bba09f887030e69aa
+import 'demo.dart';
 
 const String intro = """
 ### **简介**
