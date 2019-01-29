@@ -5,6 +5,7 @@
  * @Last Modified time: 2018-12-27 15:39:35
  */
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class PopupMenuButtonDemo extends StatefulWidget {
   _PopupMenuButtonDemoState createState() => _PopupMenuButtonDemoState();
@@ -19,11 +20,18 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
   void showMenuSelection(String value) {
     if (<String>[_simpleValue1, _simpleValue2, _simpleValue3].contains(value))
       _simpleValue = value;
-       Scaffold.of(context).showSnackBar(new SnackBar(
-                content: new Text('You selected: $value')));
+    showInSnackBar('You selected: $value');
   }
 
-
+    void showInSnackBar(String value) {
+    Fluttertoast.showToast(
+        msg: value,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white);
+  }
 
   @override
   void initState() {

@@ -1,6 +1,6 @@
 
 import 'dart:async';
-import 'package:flutter_go/utils/sql.dart';
+import '../common/sql.dart';
 
 abstract class CatInterface{
     int get id;

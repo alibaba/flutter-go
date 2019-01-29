@@ -6,7 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: AppBar 的示例
  */
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../common/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 
@@ -48,7 +48,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'AppBar',
-      codeUrl: 'components/Bar/AppBar/demo.dart',
+      codeUrl: 'componentss/Bar/AppBar/demo.dart',
       contentList: [allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/material/AppBar-class.html',
     );

@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_go/widgets/components/LIst/AnimatedList/model.dart';
+import './model.dart';
 
 class AnimatedListFullDefault extends StatefulWidget {
   AnimatedListFullDefault({Key key, this.parent}) : super(key: key);

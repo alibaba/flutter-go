@@ -6,7 +6,7 @@
  * email: zhu.yan@alibaba-inc.com
  * tartget: BottomNavigationBarItem 的示例
  */
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../common/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 
@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'BottomNavigationBarItem',
-      codeUrl: 'components/Navigation/BottomNavigationBarItem/demo.dart',
+      codeUrl: 'components/Bar/BottomNavigationBarItem/demo.dart',
       contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );

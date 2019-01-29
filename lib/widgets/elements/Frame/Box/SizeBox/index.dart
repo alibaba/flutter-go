@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-08 15:55:46 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../../common/widget_demo.dart';
 import './demo.dart' as sizeBox;
 
 class Demo extends StatefulWidget {

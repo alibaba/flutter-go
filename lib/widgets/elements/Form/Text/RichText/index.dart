@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '../../../../../common/widget_demo.dart';
-=======
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter_go/components/widget_demo.dart';
->>>>>>> acfe8f6ed8390dc540a1082bba09f887030e69aa
-import 'demo.dart';
-const String intro = """
-### **简介**
+import '../../../../../common/widget_demo.dart';
 
-> 具有复杂样式的文本显示组件
+const String intro = """
+# 富文本显示
 
 在富文本使用多个不同风格的widget显示文本。要显示的文本使用TextSpan对象树来描述，每个对象都有一个用于该子树的关联样式。文本可能会跨越多行，也可能全部显示在同一行上，具体取决于布局约束。
 
+# 示例代码
+
+```
+RichText(
+  text: TextSpan(
+    text: 'Hello ',
+    style: DefaultTextStyle.of(context).style,
+    children: <TextSpan>[
+      TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+      TextSpan(text: ' world!'),
+    ],
+  ),
+)
+```
+
+# 示例示例
+
+""";
+const String diff = """
+# RichText 与 Text.rich 对比
+
 无论是Text或者Text.rich, 查看源代码发现. 都是由RichText构建出来
 
-RichText的源码展示
+## 源码展示
 
 ```
 // Text 源码
@@ -34,14 +49,12 @@ RichText的源码展示
     return result;
   }
 ```
-### **基本实例**
-
+待补充...
 """;
-const String diff = """
-
-
-""";
-
+const Map<String, String> markDesc = {
+  'intro': intro,
+  'diff': diff
+};
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Text/RichText';
   _Demo createState() => _Demo();
@@ -53,10 +66,27 @@ class _Demo extends State<Demo> {
     return WidgetDemo(
       title: 'Rich Text',
       docUrl: 'https://docs.flutter.io/flutter/widgets/RichText-class.html',
-      codeUrl: 'elements/Form/Text/RichText/index.dart',
-      contentList: [
-        intro,
-        RichTextDemo(),
-      ]);
+      codeUrl: '',
+      contentList: [new Column(
+        children: <Widget>[
+          MarkdownBody(data: markDesc['intro']),
+          Container(
+            color: Color(0xff000000),
+            width: 750.0,
+            child:  RichText(
+              text: TextSpan(
+                text: 'Hello ',
+//                style: TextStyle(fontWeight: FontWeight.normal, inherit: true, fontSize: 44),
+                children: <TextSpan>[
+                  TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xfffffc42))),
+                  TextSpan(text: ' world!', style: TextStyle(fontStyle: FontStyle.italic)),
+                ],
+              ),
+            ),
+          ),
+          MarkdownBody(data: markDesc['diff']),
+        ],
+      ),
+    ]);
   }
 }

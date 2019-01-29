@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-12-27 15:37:04
  */
 import 'package:flutter/material.dart';
-//import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CheckedPopupMenuItemDemo extends StatefulWidget {
   _CheckedPopupMenuItemDemoState createState() =>
@@ -26,8 +26,19 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
     _checkedValues = <String>[_checkedValue3];
   }
 
+  void showInSnackBar(String value){
+    Fluttertoast.showToast(
+        msg: value,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white
+    );
+  }
 
   bool isChecked(String value) => _checkedValues.contains(value);
+
 
   void showCheckedMenuSelections(String value){
     if(_checkedValues.contains(value)){
@@ -35,9 +46,7 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
     }else{
       _checkedValues.add(value);
     }
-   
-    Scaffold.of(context).showSnackBar(new SnackBar(
-                content: new Text('Checked $_checkedValues')));
+    showInSnackBar('Checked $_checkedValues');
   }
 
   @override

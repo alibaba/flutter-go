@@ -45,12 +45,6 @@ class _BottomNavigationBarFullDefault extends State {
             title: new Text("List"), icon: new Icon(Icons.list)),
         BottomNavigationBarItem(
             title: new Text("Message"), icon: new Icon(Icons.message)),
-        BottomNavigationBarItem(
-            title: new Text("add"), icon: new Icon(Icons.add)),
-        BottomNavigationBarItem(
-            title: new Text("menu"), icon: new Icon(Icons.menu)),
-        BottomNavigationBarItem(
-            title: new Text("other"), icon: new Icon(Icons.devices_other)),
 
       ],
     );

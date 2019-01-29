@@ -7,7 +7,7 @@
  * target: FloatingActionButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/FloatingActionButton-class.html
  */
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../../common/widget_demo.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 

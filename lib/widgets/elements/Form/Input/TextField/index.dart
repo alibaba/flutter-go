@@ -8,7 +8,7 @@
  * 对应文档地址:https://docs.flutter.io/flutter/material/TextField-class.html
  */
 
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../../common/widget_demo.dart';
 import 'package:flutter/material.dart';
 import './text_field_demo.dart';
 

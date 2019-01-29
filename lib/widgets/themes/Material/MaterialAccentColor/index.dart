@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_go/components/widget_demo.dart';
+import 'package:flutter_go/common/widget_demo.dart';
 import 'package:flutter_go/widgets/themes/Material/MaterialColor/demo.dart';
 
 const Text0 = '''

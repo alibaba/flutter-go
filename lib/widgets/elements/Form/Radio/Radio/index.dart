@@ -8,7 +8,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../../common/widget_demo.dart';
 import 'demo.dart';
 const content1 = """
 # Radio

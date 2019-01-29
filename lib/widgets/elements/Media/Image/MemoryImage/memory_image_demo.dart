@@ -20,6 +20,7 @@ class _MemoryImageDemoState extends State<MemoryImageDemo> {
     super.initState();
     rootBundle.load('assets/images/food01.jpeg').then((data) {
       if (mounted) {
+        print(data);
         setState(() {
           bytes = data.buffer.asUint8List();
         });

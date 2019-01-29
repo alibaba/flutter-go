@@ -96,6 +96,7 @@ class PopupMenuButtonCustom extends StatelessWidget {
       : super();
   @override
   Widget build(BuildContext context) {
+    print('onSelected1:${widget.options}');
     final String selectStr = widget.options['defaultSelect'];
     return PopupMenuButton(
         //如果提供，则用于此按钮的widget。

@@ -7,7 +7,7 @@
  * target: FlatButton 的示例
  * 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
  */
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../../common/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 

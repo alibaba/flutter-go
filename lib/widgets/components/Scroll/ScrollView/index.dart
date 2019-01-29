@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-12-14 20:36:57
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_go/components/widget_demo.dart';
+import '../../../../common/widget_demo.dart';
 import './demo.dart';
 
 
