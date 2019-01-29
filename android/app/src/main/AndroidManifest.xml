@@ -16,7 +16,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="菜鸟手册"
+        android:label="flutter go"
         android:icon="@drawable/logo">
         <activity
             android:name=".MainActivity"

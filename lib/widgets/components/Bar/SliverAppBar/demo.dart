@@ -48,7 +48,7 @@ class SliverAppBarLessDefault extends StatelessWidget {
     }
     return new SizedBox(
         height: 500.0,
-        child:NestedScrollView(
+        child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(

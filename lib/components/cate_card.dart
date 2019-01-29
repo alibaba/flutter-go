@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/cat.dart';
-import '../common/widget_name_to_icon.dart';
+import '../resources/widget_name_to_icon.dart';
 import '../components/widget_item_container.dart';
 
 class CateCard extends StatefulWidget {

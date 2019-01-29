@@ -6,7 +6,7 @@
  */
 
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './fade_in_image_demo.dart';
 
 

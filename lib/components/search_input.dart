@@ -18,13 +18,14 @@ class MaterialSearchResult<T> extends StatelessWidget {
     this.onTap
   }) : super(key: key);
 
-  final T value;
+  final String value;
   final VoidCallback onTap;
   final String text;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
+
     return new InkWell(
       onTap: this.onTap,
       child: new Container(
@@ -32,8 +33,8 @@ class MaterialSearchResult<T> extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 10.0),
         child: new Row(
           children: <Widget>[
-            new Container(width: 30.0, child: new Icon(icon)) ?? null,
-            new Expanded(child: new Text(text, style: Theme.of(context).textTheme.subhead)),
+            new Container(width: 30.0, margin: EdgeInsets.only(right: 10), child: new Icon(icon)) ?? null,
+            new Expanded(child: new Text(value, style: Theme.of(context).textTheme.subhead)),
             new Text(text, style: Theme.of(context).textTheme.subhead)
           ],
         ),

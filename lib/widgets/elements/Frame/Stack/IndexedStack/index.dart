@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String _stackText0 = """### **简介**
@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
       title: 'IndexedStack',
       // desc: _desc,
       codeUrl:
-          'https://github.com/alibaba-paimai-frontend/flutter-common-widgets-app/blob/dev/sanlu-0.0.4/lib/widgets/elements/Frame/Stack/IndexedStack/demo.dart',
+          'elements/Frame/Stack/IndexedStack/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/IndexedStack-class.html',
       contentList: [
         _stackText0,

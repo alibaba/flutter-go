@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-01-08 17:37:42
  */
 import 'dart:async';
-import '../common/sql.dart';
+import 'package:flutter_go/utils/sql.dart';
 
 abstract class CollectionInterface {
   String get name;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String _stackText0 = """### **简介**
@@ -41,7 +41,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'Stack',
       codeUrl:
-          'https://github.com/alibaba-paimai-frontend/flutter-common-widgets-app/blob/dev/sanlu-0.0.4/lib/widgets/elements/Frame/Stack/Stack/demo.dart',
+          'elements/Frame/Stack/Stack/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/Stack-class.html',
       contentList: [
         _stackText0,

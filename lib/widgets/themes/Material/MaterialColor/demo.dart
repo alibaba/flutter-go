@@ -204,7 +204,7 @@ class ColorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1000.0,
+      height: 400.0,
       child: DefaultTabController(
         length: allPalettes.length,
         child: Scaffold(
