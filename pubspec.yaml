@@ -72,9 +72,9 @@ flutter:
     - lib/widgets/components/Grid/GridTile/demo.dart
     - lib/widgets/components/Grid/GridTileBar/demo.dart
     - lib/widgets/components/Grid/GridView/demo.dart
-    - lib/widgets/components/LIst/AnimatedList/demo.dart
-    - lib/widgets/components/LIst/ListBody/demo.dart
-    - lib/widgets/components/LIst/ListView/demo.dart
+    - lib/widgets/components/List/AnimatedList/demo.dart
+    - lib/widgets/components/List/ListBody/demo.dart
+    - lib/widgets/components/List/ListView/demo.dart
     - lib/widgets/components/Menu/CheckedPopupMenuItem/demo.dart
     - lib/widgets/components/Menu/DropdownMenuItem/demo.dart
     - lib/widgets/components/Menu/PopupMenuButton/demo.dart
@@ -164,12 +164,24 @@ flutter:
     - lib/widgets/themes/Material/MaterialColor/demo.dart
     - lib/widgets/themes/Material/MaterialPageRoute/demo.dart
     - lib/widgets/themes/Material/MergeableMaterialItem/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoApp/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoButton/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoColors/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoIcons/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoNavigationBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageRoute/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageScaffold/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPicker/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPopupSurface/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
-    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSliverNavigationBar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTabScaffold/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTimerPicker/demo.dart
     - assets/app.db
     - assets/images/
     - assets/fonts/
