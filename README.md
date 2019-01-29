@@ -8,7 +8,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB1q1GVB4naK1RjSZFtXXbC2VXa-195-198.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB1Hy1FEzDpK1RjSZFrXXa78VXa-386-384.png" width="200px">
 
 iphone下载地址:
 暂无
