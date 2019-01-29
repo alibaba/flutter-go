@@ -11,7 +11,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ## 开发规范
 > 由于类似 javascript, java, object-c,等开发者的语言习惯不同而产生歧义，我们依据官方提供的 [dart 语言规范](https://www.dartlang.org) 定制。
 
-[<< FlutterGo 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+[<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## Release安装包下载地址
 
