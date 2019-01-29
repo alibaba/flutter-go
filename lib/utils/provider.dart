@@ -59,7 +59,6 @@ class Provider {
     //Get a location using getDatabasesPath
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'flutter.db');
-
     try {
       db = await openDatabase(path);
     } catch (e) {

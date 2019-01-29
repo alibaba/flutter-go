@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-12-08 20:48:28
  */
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './memory_image_demo.dart';
 
 const String _contentText0 = '''

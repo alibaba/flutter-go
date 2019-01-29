@@ -6,7 +6,7 @@
  * email: sanfan.hx@alibaba-inc.com
  * tartget:  xxx
  */
-import '../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import 'package:flutter/material.dart';
 import 'demo.dart';
 

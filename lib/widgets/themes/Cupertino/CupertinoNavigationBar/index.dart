@@ -7,7 +7,7 @@
  * tartget: CupertinoNavigationBar 的示例
  */
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as demoBox;
 
 const String content0 = '''
@@ -46,7 +46,7 @@ class _DemoState extends State<Demo> {
         demoBox.CupertinoNavigationBarFullDefault(),
         SizedBox(height:50)
       ],
-      title: 'CupertinoApp',
+      title: 'CupertinoNavigationBar',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html',
       codeUrl: '/themes/Cupertino/CupertinoNavigationBar/demo.dart',
     );

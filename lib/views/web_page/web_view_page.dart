@@ -6,10 +6,9 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import '../model/collection.dart';
-import '../event/event-bus.dart';
-import '../event/event-model.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_go/model/collection.dart';
+import 'package:flutter_go/event/event_bus.dart';
+import 'package:flutter_go/event/event_model.dart';
 import 'dart:core';
 
 class WebViewPage extends StatefulWidget {
@@ -23,26 +22,18 @@ class WebViewPage extends StatefulWidget {
 class _WebViewPageState extends State<WebViewPage> {
   bool _hasCollected = false;
   String _router = '';
-  var  _collectionIcons;
+  var _collectionIcons;
   CollectionControlModel _collectionControl = new CollectionControlModel();
 
-  void showInSnackBar(String value) {
-    Fluttertoast.showToast(
-        msg: value,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
-        backgroundColor: Colors.grey,
-        textColor: Colors.white);
-  }
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   void initState() {
     super.initState();
-    _collectionControl.getRouterByName(Uri.encodeComponent(widget.title.trim())).then((list) {
-      
+    _collectionControl
+        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
+        .then((list) {
       list.forEach((item) {
-        if(widget.title.trim() == item['name']){
+        if (widget.title.trim() == item['name']) {
           _router = item['router'];
         }
       });
@@ -58,13 +49,15 @@ class _WebViewPageState extends State<WebViewPage> {
   _getCollection() {
     if (_hasCollected) {
       // 删除操作
-      _collectionControl.deleteByName(Uri.encodeComponent(widget.title.trim())).then((result) {
+      _collectionControl
+          .deleteByName(Uri.encodeComponent(widget.title.trim()))
+          .then((result) {
         if (result > 0 && this.mounted) {
           setState(() {
             _hasCollected = false;
           });
-          showInSnackBar('已取消收藏');
-
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('已取消收藏')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, _router, true));
@@ -76,7 +69,9 @@ class _WebViewPageState extends State<WebViewPage> {
     } else {
       // 插入操作
       _collectionControl
-          .insert(Collection(name:Uri.encodeComponent(widget.title.trim()) , router: widget.url))
+          .insert(Collection(
+              name: Uri.encodeComponent(widget.title.trim()),
+              router: widget.url))
           .then((result) {
         if (this.mounted) {
           setState(() {
@@ -87,8 +82,8 @@ class _WebViewPageState extends State<WebViewPage> {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, _router, false));
           }
-
-          showInSnackBar('收藏成功');
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('收藏成功')));
         }
       });
     }
@@ -101,21 +96,26 @@ class _WebViewPageState extends State<WebViewPage> {
     } else {
       _collectionIcons = Icons.favorite_border;
     }
-    return WebviewScaffold(
-      url: widget.url,
+    return Scaffold(
+       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
           new IconButton(
             tooltip: 'goBack home',
             onPressed: _getCollection,
-            icon: Icon(_collectionIcons,),
+            icon: Icon(
+              _collectionIcons,
+            ),
           ),
         ],
       ),
-      withZoom: false,
-      withLocalStorage: true,
-      withJavascript: true,
+      body: WebviewScaffold(
+        url: widget.url,
+        withZoom: false,
+        withLocalStorage: true,
+        withJavascript: true,
+      ),
     );
   }
 }

@@ -25,7 +25,6 @@ dependencies:
   sqflite: ^0.12.1
   flutter_markdown: ^0.2.0
   url_launcher: ^4.0.1
-  fluttertoast: ^2.2.2
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
   dio: ^1.0.6
@@ -174,17 +173,18 @@ flutter:
     - assets/app.db
     - assets/images/
     - assets/fonts/
-    - lib/common/example_code_parser.dart
-    - lib/common/syntax_highlighter.dart
+    - lib/utils/example_code_parser.dart
+    - lib/utils/syntax_highlighter.dart
 
   fonts:
   - family: FlamanteRoma
     fonts:
     - asset: assets/fonts/Flamante-Roma-Medium.ttf
-    - asset: assets/fonts/Lato-Bold.ttf
     - asset: assets/fonts/Flamante-Roma-MediumItalic.ttf
-      style: italic
 
+  - family: LatoBold
+    fonts:
+    - asset: assets/fonts/Lato-Bold.ttf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

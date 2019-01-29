@@ -3,7 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
-import 'common/provider.dart';
+import 'package:flutter_go/utils/provider.dart';
 
 import 'views/welcome_page/index.dart';
 

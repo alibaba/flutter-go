@@ -7,6 +7,7 @@ class WidgetItemContainer extends StatelessWidget {
   final int columnCount; //一行几个
   final List<dynamic> categories;
   final bool isWidgetPoint;
+
   // 所有的可用demos;
   final List widgetDemosList = new WidgetDemoList().getDemos();
 
@@ -50,6 +51,7 @@ class WidgetItemContainer extends StatelessWidget {
                 index: addI,
                 totalCount: length,
                 rowLength: columnCount,
+                textSize: isWidgetPoint ? 'middle' : 'small',
               ),
             ),
           );

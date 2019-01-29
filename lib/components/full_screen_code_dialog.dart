@@ -5,8 +5,8 @@
  * @Last Modified time: 2019-01-14 14:42:00
  */
 import 'package:flutter/material.dart';
-import 'example_code_parser.dart';
-import 'syntax_highlighter.dart';
+import 'package:flutter_go/utils/example_code_parser.dart';
+import 'package:flutter_go/utils/syntax_highlighter.dart';
 
 class FullScreenCodeDialog extends StatefulWidget {
   const FullScreenCodeDialog({this.filePath});

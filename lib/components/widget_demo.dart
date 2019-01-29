@@ -9,9 +9,8 @@ import '../routers/routers.dart';
 import '../components/markdown.dart';
 import '../model/collection.dart';
 import '../widgets/index.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import '../event/event-bus.dart';
-import '../event/event-model.dart';
+import '../event/event_bus.dart';
+import '../event/event_model.dart';
 import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
@@ -27,8 +26,7 @@ class WidgetDemo extends StatefulWidget {
       @required this.contentList,
       @required this.codeUrl,
       @required this.docUrl,
-      this.bottomNaviBar
-      })
+      this.bottomNaviBar})
       : super(key: key);
 
   _WidgetDemoState createState() => _WidgetDemoState();
@@ -40,17 +38,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
   var _collectionIcons;
   List widgetDemosList = new WidgetDemoList().getDemos();
   String _router = '';
-
-  void showInSnackBar(String value) {
-    Fluttertoast.showToast(
-        msg: value,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
-        backgroundColor: Colors.grey,
-        textColor: Colors.white);
-  }
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> _buildContent() {
     List<Widget> _list = [
@@ -99,8 +87,8 @@ class _WidgetDemoState extends State<WidgetDemo> {
           setState(() {
             _hasCollected = false;
           });
-          showInSnackBar('已取消收藏');
-
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('已取消收藏')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, _router, true));
@@ -124,19 +112,21 @@ class _WidgetDemoState extends State<WidgetDemo> {
                 .fire(CollectionEvent(widget.title, _router, false));
           }
 
-          showInSnackBar('收藏成功');
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('收藏成功')));
         }
       });
     }
   }
 
-  void _selectValue(value){
-    if(value == 'doc'){
+  void _selectValue(value) {
+    if (value == 'doc') {
       // _launchURL(widget.docUrl);
-      Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(widget.title)} Doc&&url=${Uri.encodeComponent(widget.docUrl)}');
-    }else if(value =='code'){
-      Application.router.navigateTo(context, '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
-      
+      Application.router.navigateTo(context,
+          '${Routes.webViewPage}?title=${Uri.encodeComponent(widget.title)} Doc&&url=${Uri.encodeComponent(widget.docUrl)}');
+    } else if (value == 'code') {
+      Application.router.navigateTo(context,
+          '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
     }
   }
 
@@ -148,57 +138,63 @@ class _WidgetDemoState extends State<WidgetDemo> {
       _collectionIcons = Icons.favorite_border;
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: <Widget>[
-          new IconButton(
-            tooltip: 'goBack home',
-            onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/home'));
-            },
-            icon: Icon(Icons.home),
-          ),
-          new IconButton(
-            tooltip: 'collection',
-            onPressed: _getCollection,
-            icon: Icon(_collectionIcons),
-          ),
-          PopupMenuButton<String>(
-            onSelected: _selectValue,
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                  const PopupMenuItem<String>(
-                    value: 'doc',
-                    child: ListTile(
-                      leading: Icon(Icons.library_books,size: 22.0,),
-                      title: Text('查看文档'),
+        key: _scaffoldKey,
+        appBar: AppBar(
+          title: Text(widget.title),
+          actions: <Widget>[
+            new IconButton(
+              tooltip: 'goBack home',
+              onPressed: () {
+                Navigator.popUntil(context, ModalRoute.withName('/home'));
+              },
+              icon: Icon(Icons.home),
+            ),
+            new IconButton(
+              tooltip: 'collection',
+              onPressed: _getCollection,
+              icon: Icon(_collectionIcons),
+            ),
+            PopupMenuButton<String>(
+              onSelected: _selectValue,
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                    const PopupMenuItem<String>(
+                      value: 'doc',
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.library_books,
+                          size: 22.0,
+                        ),
+                        title: Text('查看文档'),
+                      ),
                     ),
-                  ),
-                  const PopupMenuDivider(),
-                  const PopupMenuItem<String>(
-                    value: 'code',
-                    child: ListTile(
-                      leading: Icon(Icons.code,size: 22.0,),
-                      title: Text('查看Demo'),
+                    const PopupMenuDivider(),
+                    const PopupMenuItem<String>(
+                      value: 'code',
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.code,
+                          size: 22.0,
+                        ),
+                        title: Text('查看Demo'),
+                      ),
                     ),
-                  ),
-                ],
-          ),
-        ],
-      ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.all(0.0),
-          children: <Widget>[
-            Column(
-              children: _buildContent(),
+                  ],
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: (widget.bottomNaviBar is Widget) ? widget
-          .bottomNaviBar : null
-    );
+        body: Container(
+          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+          child: ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(0.0),
+            children: <Widget>[
+              Column(
+                children: _buildContent(),
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar:
+            (widget.bottomNaviBar is Widget) ? widget.bottomNaviBar : null);
   }
 }
