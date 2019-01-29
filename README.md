@@ -4,7 +4,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
 ## 版本更新历史
-> 展示重要的提交更新内容
+> 按时间顺序,展示重要的提交更新内容。
 
 [地址](https://github.com/alibaba/flutter-go/blob/develop/CHANGE-LOG.md)
 
@@ -50,7 +50,7 @@ flutter优点主要包括：
 
 ### app 预览
 
-<img src="https://img.alicdn.com/tfs/TB1MoiNExTpK1RjSZFGXXcHqFXa-362-751.gif" width=200> <img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1WJNuBmzqK1RjSZPcXXbTepXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
+<img src="https://img.alicdn.com/tfs/TB1MoiNExTpK1RjSZFGXXcHqFXa-362-751.gif" width=200> <img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
 
 ### Core Team
 
