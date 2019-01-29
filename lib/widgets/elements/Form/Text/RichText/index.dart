@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
 const String intro = """
