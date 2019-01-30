@@ -12,6 +12,12 @@ Android download URL:
 Iphone download URL:
 No
 
+## Development Environment
+This Project need latest package, please update regularly.
+
+- dart(version: 2.0.0)
+- flutter(version: v1.1.10)
+
 ### Background
 
 #### What is Flutter?

@@ -13,6 +13,13 @@ android下载地址:
 iphone下载地址:
 暂无
 
+## 基础环境
+本项目环境持续更新. 请定期更新各依赖包.
+
+- dart(version: 2.0.0)
+- flutter(version: v1.1.10)
+
+
 ### 背景
 
 #### Flutter 是什么?
