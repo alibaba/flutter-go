@@ -72,9 +72,11 @@ flutter:
     - lib/widgets/components/Grid/GridTile/demo.dart
     - lib/widgets/components/Grid/GridTileBar/demo.dart
     - lib/widgets/components/Grid/GridView/demo.dart
-    - lib/widgets/components/LIst/AnimatedList/demo.dart
-    - lib/widgets/components/LIst/ListBody/demo.dart
-    - lib/widgets/components/LIst/ListView/demo.dart
+    - lib/widgets/components/Grid/GridPaper/demo.dart
+    - lib/widgets/components/Grid/SliverGrid/demo.dart
+    - lib/widgets/components/List/AnimatedList/demo.dart
+    - lib/widgets/components/List/ListBody/demo.dart
+    - lib/widgets/components/List/ListView/demo.dart
     - lib/widgets/components/Menu/CheckedPopupMenuItem/demo.dart
     - lib/widgets/components/Menu/DropdownMenuItem/demo.dart
     - lib/widgets/components/Menu/PopupMenuButton/demo.dart
@@ -130,6 +132,8 @@ flutter:
     - lib/widgets/elements/Frame/Box/SizeBox/demo.dart
     - lib/widgets/elements/Frame/Box/SizedOverflowBox/demo.dart
     - lib/widgets/elements/Frame/Box/TextBox/demo.dart
+    - lib/widgets/elements/Form/Text/Text/demo.dart
+    - lib/widgets/elements/Form/Text/RichText/index.dart
     - lib/widgets/elements/Frame/Box/UnconstrainedBox/demo.dart
     - lib/widgets/elements/Frame/Expanded/Expanded/expanded_demo.dart
     - lib/widgets/elements/Frame/Layout/Center/demo.dart

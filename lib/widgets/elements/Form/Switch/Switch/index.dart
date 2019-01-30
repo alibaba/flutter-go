@@ -83,7 +83,7 @@ class _Demo extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Switch',
-      codeUrl: '',
+      codeUrl: 'elements/Form/Switch/Switch/demo.dart',
       contentList: [
         contentA,
         SwitchDemo(),

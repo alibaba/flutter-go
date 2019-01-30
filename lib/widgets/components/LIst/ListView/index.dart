@@ -67,7 +67,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'ListView',
-      codeUrl: '/componentss/List/ListView/demo.dart',
+      codeUrl: 'components/List/ListView/demo.dart',
       contentList: [allCheckboxs(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/ListView-class.html',
     );
