@@ -17,22 +17,7 @@ const contentA = '''
 
 
 ### **基本用法**
-
-```
-new Switch(
-    value: isChecked,
-    activeColor: Colors.blue,     // 激活时原点颜色
-    onChanged: (bool val) {
-        this.setState(() {
-            this.isChecked = !this.isChecked;
-        });
-    },
-)
-```
-
-### **基本实例**
-
-@SwitchDemo
+通常用于Bool值参数的设置.
 ''';
 
 
@@ -60,18 +45,6 @@ const contentC = '''
 
 ''';
 
-const contentD = '''
-
-```
-activeTrackColor:Colors.green,
-inactiveThumbColor: Colors.black,
-inactiveThumbImage: NetworkImage('https://flutter.io/images/homepage/header-illustration.png'),
-activeThumbImage: NetworkImage(
-    "https://flutter.io/images/homepage/screenshot-2.png"
-),
-inactiveTrackColor: Colors.yellow,
-```
-''';
 
 class Demo extends StatefulWidget {
   static const String routeName = 'elements/Form/Switch/Switch';
@@ -83,15 +56,14 @@ class _Demo extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Switch',
-      codeUrl: '',
+      codeUrl: '/elements/Form/Switch/Switch/demo.dart',
       contentList: [
         contentA,
         SwitchDemo(),
         contentB,
         SwitchHighDemo(),
         contentC,
-        SwitchTypesDemo(),
-        contentD
+        SwitchTypesDemo()
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/Switch-class.html',
     );

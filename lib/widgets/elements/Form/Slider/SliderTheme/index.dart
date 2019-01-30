@@ -21,32 +21,7 @@ const contentA = '''
 
 > 通过更改sliderTheme.data, 修改Slider总体样式
 
-基本属性参考以下代码: 
-
-```
-new SliderTheme(
-  data: SliderThemeData({
-    @required Color activeTrackColor,
-    @required Color inactiveTrackColor,
-    @required Color disabledActiveTrackColor,
-    @required Color disabledInactiveTrackColor,
-    @required Color activeTickMarkColor,
-    @required Color inactiveTickMarkColor,
-    @required Color disabledActiveTickMarkColor,
-    @required Color disabledInactiveTickMarkColor,
-    @required Color thumbColor,
-    @required Color disabledThumbColor,
-    @required Color overlayColor,
-    @required Color valueIndicatorColor,
-    @required SliderComponentShape thumbShape,
-    @required SliderComponentShape valueIndicatorShape,
-    @required ShowValueIndicator showValueIndicator,
-    @required TextStyle valueIndicatorTextStyle
-  }),
-  child: anyWidgetContain(Slider) // 用来包含slider的widget容器窗口
-),
-
-```
+具体属性, 请查阅: SliderThemeData.data.
 
 ### **基本实例**
 

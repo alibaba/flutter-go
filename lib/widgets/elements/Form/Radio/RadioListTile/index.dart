@@ -11,28 +11,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
 const content1 = """
-# RadioListTile
+### **简介**
 > material design 风格的单选按钮附加文字label
 
 点击文字的同时 , 将会出发 Radio的点击效果.
 
 功能同 @Radio
 
-# 示例显示
-""";
-
-const content2 = """
-# 基本用法
-
-``` dart
-RadioListTile(
-  title: const Text('title'),
-  value: value,
-  groupValue: groupValue,
-  onChanged:onChange
-)
-```
-
+### **基本用法**
+Radio是单选框，和checkbox一样本身不包含状态，当groupValue = value时代表选中状态
 """;
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/RadioListTile/index';
@@ -45,8 +32,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       contentList: [
         content1,
-        new DemoA(),
-        content2
+        new DemoA()
       ],
       title: 'RadioListTile',
       docUrl: 'https://docs.flutter.io/flutter/material/RadioListTile-class.html',
