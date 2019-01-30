@@ -19,8 +19,8 @@ class _Demo extends State<SnackBarActionDemo> {
       return new Center(
         child: new Column(
           children: <Widget>[
-            new GestureDetector(
-              onTap: () {
+            new RaisedButton(
+              onPressed: () {
                 final snackBar = new SnackBar(
                   content: new Text('这是一个SnackBar, 右侧有SnackBarAction, 3秒后消失'),
                   backgroundColor:Color(0xffc91b3a),
@@ -39,8 +39,8 @@ class _Demo extends State<SnackBarActionDemo> {
              
               child: new Text('点我显示有action的SnackBar'),
             ),
-            new GestureDetector(
-              onTap: () async {
+            new RaisedButton(
+              onPressed: () async {
                 final snackBar = new SnackBar(
                   content: new Text('右侧无SnackBarAction, 3秒后消失'),
                   backgroundColor:Color(0xffc91b3a),
