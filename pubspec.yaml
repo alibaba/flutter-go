@@ -159,6 +159,10 @@ flutter:
     - lib/widgets/elements/Media/Image/paintImage/paint_image_demo.dart
     - lib/widgets/elements/Media/Image/precacheImage/precache_image_demo.dart
     - lib/widgets/elements/Media/Image/RawImage/raw_image_demo.dart
+    - lib/widgets/elements/Media/Canvas/Canvas/demo.dart
+    - lib/widgets/elements/Media/Canvas/CircleProgressBarPainter/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterPath/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterSketch/demo.dart
     - lib/widgets/themes/Material/MaterialApp/demo.dart
     - lib/widgets/themes/Material/MaterialButton/demo.dart
     - lib/widgets/themes/Material/MaterialColor/demo.dart

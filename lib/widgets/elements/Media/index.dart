@@ -6,10 +6,12 @@
  */
 import 'Image/index.dart' as Image;
 import 'Icon/index.dart' as Icon;
+import 'Canvas/index.dart' as Canvas;
 
 List getWidgets() {
   List result = [];
   result.addAll(Image.widgetPoints);
   result.addAll(Icon.widgetPoints);
+  result.addAll(Canvas.widgetPoints);
   return result;
 }
