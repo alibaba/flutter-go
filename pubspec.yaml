@@ -168,12 +168,24 @@ flutter:
     - lib/widgets/themes/Material/MaterialColor/demo.dart
     - lib/widgets/themes/Material/MaterialPageRoute/demo.dart
     - lib/widgets/themes/Material/MergeableMaterialItem/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoApp/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoButton/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoColors/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoIcons/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoNavigationBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageRoute/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageScaffold/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPicker/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPopupSurface/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
-    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSliverNavigationBar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTabScaffold/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTimerPicker/demo.dart
     - assets/app.db
     - assets/images/
     - assets/fonts/

@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoIcons',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html',
-      codeUrl: 'themes/Cupertino/CupertinoColor/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoIcons/demo.dart'
     );
   }
 }
