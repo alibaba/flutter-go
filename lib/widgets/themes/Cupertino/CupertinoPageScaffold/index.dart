@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoPageScaffold',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoPageScaffold/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoPageScaffold/demo.dart',
     );
   }
 }

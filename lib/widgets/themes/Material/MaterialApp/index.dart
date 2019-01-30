@@ -47,7 +47,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'MaterialApp',
       docUrl: 'https://docs.flutter.io/flutter/material/MaterialApp-class.html',
-      codeUrl: '../main.dart',
+      codeUrl: 'themes/Material/MaterialApp/demo.dart',
     );
   }
 }

@@ -47,7 +47,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoApp',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoApp-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoApp/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoApp/demo.dart',
     );
   }
 }

@@ -35,7 +35,7 @@ class _DemoState extends State<Demo> {
           content1,
           // LinearProgressIndicatorDemo(),
         ],
-        codeUrl: '/components/Progress/RefreshProgressIndicator/demo.dart',
+        codeUrl: 'components/Progress/RefreshProgressIndicator/demo.dart',
         docUrl:'https://docs.flutter.io/flutter/material/RefreshProgressIndicator-class.html',
         title: 'RefreshProgressIndicator');
   }
