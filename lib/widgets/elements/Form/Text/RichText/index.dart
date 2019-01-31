@@ -67,7 +67,7 @@ class _Demo extends State<Demo> {
       title: 'Rich Text',
       docUrl: 'https://docs.flutter.io/flutter/widgets/RichText-class.html',
       codeUrl: '',
-      contentList: [new Column(
+      contentList: [ Column(
         children: <Widget>[
           MarkdownBody(data: markDesc['intro']),
           RichTextDemo(),

@@ -40,17 +40,17 @@ class _BottomNavigationBarFullDefault extends State {
       fixedColor: Colors.deepPurple, // 如果 type 类型为 fixed，则通过 fixedColor 设置选中 item 的颜色
       items: <BottomNavigationBarItem> [
         BottomNavigationBarItem(
-            title: new Text("Home"), icon: new Icon(Icons.home)),
+            title:  Text("Home"), icon:  Icon(Icons.home)),
         BottomNavigationBarItem(
-            title: new Text("List"), icon: new Icon(Icons.list)),
+            title:  Text("List"), icon:  Icon(Icons.list)),
         BottomNavigationBarItem(
-            title: new Text("Message"), icon: new Icon(Icons.message)),
+            title:  Text("Message"), icon:  Icon(Icons.message)),
         BottomNavigationBarItem(
-            title: new Text("add"), icon: new Icon(Icons.add)),
+            title:  Text("add"), icon:  Icon(Icons.add)),
         BottomNavigationBarItem(
-            title: new Text("menu"), icon: new Icon(Icons.menu)),
+            title:  Text("menu"), icon:  Icon(Icons.menu)),
         BottomNavigationBarItem(
-            title: new Text("other"), icon: new Icon(Icons.devices_other)),
+            title:  Text("other"), icon:  Icon(Icons.devices_other)),
 
       ],
     );

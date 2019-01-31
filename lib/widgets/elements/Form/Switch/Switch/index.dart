@@ -19,7 +19,7 @@ const contentA = '''
 ### **基本用法**
 
 ```
-new Switch(
+ Switch(
     value: isChecked,
     activeColor: Colors.blue,     // 激活时原点颜色
     onChanged: (bool val) {

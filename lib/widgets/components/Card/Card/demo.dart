@@ -50,9 +50,9 @@ class CardLessDefault extends StatelessWidget {
       margin:EdgeInsets.all(20.0),
       //  margin: EdgeInsetsDirectional.only(bottom: 30.0, top: 30.0, start: 30.0),// 边距
       semanticContainer:true, // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个child，但该child可以是Row，Column或其他包含子级列表的widget
-//      shape:new Border.all(
+//      shape: Border.all(
 //          color: Colors.indigo, width: 1.0, style: BorderStyle.solid), // 卡片材质的形状，以及边框
-      shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)), // 圆角
+      shape:RoundedRectangleBorder(borderRadius:  BorderRadius.circular(20.0)), // 圆角
       //borderRadius: BorderRadius.all(Radius.circular(8.0)),
       child: Column( //card里面的子控件
         mainAxisSize: MainAxisSize.min,

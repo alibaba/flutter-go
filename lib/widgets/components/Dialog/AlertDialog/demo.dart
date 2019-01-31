@@ -122,12 +122,12 @@ class _Demo extends State<AlertDialogDemo> {
     );
   }
   Widget build(BuildContext context) {
-    return new RaisedButton(
-        padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return  RaisedButton(
+        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child: new Text(
+        child:  Text(
           '点我显示 AlertDialog',
-          style: new TextStyle(
+          style:  TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),

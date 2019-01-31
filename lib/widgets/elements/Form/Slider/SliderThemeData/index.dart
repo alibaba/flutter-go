@@ -63,7 +63,7 @@ class _Demo extends State<Demo> {
       codeUrl: 'elements/Form/Slider/SliderThemeData/demo.dart',
       contentList: [
         contentA,
-        new SliderThemeDemo()
+         SliderThemeDemo()
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/SliderThemeData-class.html',
     );

@@ -21,20 +21,20 @@ class BottomNavigationBarItemLessDefault extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new SizedBox(
+    return  SizedBox(
         height: 100,
         child: Scaffold(
-          bottomNavigationBar: new BottomNavigationBar(items: [
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.laptop_chromebook),
-                title: new Text("主页"),
+          bottomNavigationBar:  BottomNavigationBar(items: [
+             BottomNavigationBarItem(
+                icon:  Icon(Icons.laptop_chromebook),
+                title:  Text("主页"),
                 backgroundColor: Colors.red
             ),
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.list), title: new Text("分类"),backgroundColor: Colors.grey),
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.local_grocery_store), title: new Text("购物车")),
-            new BottomNavigationBarItem(icon: new Icon(Icons.person), title: new Text("我的"))
+             BottomNavigationBarItem(
+                icon:  Icon(Icons.list), title:  Text("分类"),backgroundColor: Colors.grey),
+             BottomNavigationBarItem(
+                icon:  Icon(Icons.local_grocery_store), title:  Text("购物车")),
+             BottomNavigationBarItem(icon:  Icon(Icons.person), title:  Text("我的"))
           ],
             //onTap: onTap,
             //currentIndex: page
@@ -46,13 +46,13 @@ class BottomNavigationBarItemLessDefault extends StatelessWidget {
 
 //backgroundColor: Colors.grey,
 //
-////      body: new PageView(
+////      body:  PageView(
 ////
 ////          children: [
-////            new Index(),
-////            new Classify(),
-////            new Shopping(),
-////            new Myself()
+////             Index(),
+////             Classify(),
+////             Shopping(),
+////             Myself()
 ////          ],
 ////
 ////          controller: pageController,

@@ -24,7 +24,7 @@ const contentA = '''
 基本属性参考以下代码: 
 
 ```
-new SliderTheme(
+ SliderTheme(
   data: SliderThemeData({
     @required Color activeTrackColor,
     @required Color inactiveTrackColor,
@@ -67,7 +67,7 @@ class _Demo extends State<Demo> {
       codeUrl: 'elements/Form/Slider/SliderTheme/demo.dart',
       contentList: [
         contentA,
-        new SliderThemeDemo(),
+         SliderThemeDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/SliderTheme-class.html',
     );

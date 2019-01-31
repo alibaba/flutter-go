@@ -15,7 +15,7 @@ class AnimatedListFullDefault extends StatefulWidget {
 * AnimatedList 默认的实例,有状态
 * */
 class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
-  final GlobalKey<AnimatedListState> _listKey = new GlobalKey<AnimatedListState>();
+  final GlobalKey<AnimatedListState> _listKey =  GlobalKey<AnimatedListState>();
   ListModel<int> _list;
   int _selectedItem;
   int _nextItem; // The next item inserted when the user presses the '+' button.
@@ -26,7 +26,7 @@ class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
     if (widget.parent is State) {
       widget.parent.animatedList = this; // 修改父级的对象引用
     }
-    _list = new ListModel<int>(
+    _list =  ListModel<int>(
       listKey: _listKey,
       initialItems: <int>[0, 1, 2],
       removedItemBuilder: _buildRemovedItem,
@@ -50,7 +50,7 @@ class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
   }
 
   Widget _buildItem(BuildContext context, int index, Animation<double> animation) {
-    return new CardItem(
+    return  CardItem(
       animation: animation,
       item: _list[index],
       selected: _selectedItem == _list[index],
@@ -63,7 +63,7 @@ class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
   }
 
   Widget _buildRemovedItem(int item, BuildContext context, Animation<double> animation) {
-    return new CardItem(
+    return  CardItem(
       animation: animation,
       item: item,
       selected: false,
@@ -107,20 +107,20 @@ class CardItem extends StatelessWidget {
     TextStyle textStyle = Theme.of(context).textTheme.display1;
     if (selected)
       textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
-    return new Padding(
+    return  Padding(
       padding: const EdgeInsets.all(2.0),
-      child: new SizeTransition(
+      child:  SizeTransition(
         axis: Axis.vertical,
         sizeFactor: animation,
-        child: new GestureDetector(
+        child:  GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: onTap,
-          child: new SizedBox(
+          child:  SizedBox(
             height: 128.0,
-            child: new Card(
+            child:  Card(
               color: Colors.primaries[item % Colors.primaries.length],
-              child: new Center(
-                child: new Text('Item $item', style: textStyle),
+              child:  Center(
+                child:  Text('Item $item', style: textStyle),
               ),
             ),
           ),

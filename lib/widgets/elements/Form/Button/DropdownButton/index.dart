@@ -62,7 +62,7 @@ class _DemoState extends State<Demo> {
  */
 Widget allDropdownButtons(BuildContext context,_DemoState that){
   return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
+    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(
         //mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -87,14 +87,14 @@ Widget allDropdownButtons(BuildContext context,_DemoState that){
 * 带align的text
 * */
 Widget textAlignBar(String txt){
-  //style: new TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return new Align(
+  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
+  return  Align(
       alignment: FractionalOffset.centerLeft,
       child: Column(
           children: <Widget>[
             SizedBox(height: 20.0),
             MarkdownBody(data: txt)
-            //new Text(txt, style: new TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
+            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
           ])
   );
 }

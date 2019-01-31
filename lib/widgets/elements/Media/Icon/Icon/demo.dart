@@ -14,7 +14,7 @@ class IconDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new Icon(
+      child:  Icon(
         Icons.favorite,
         color: this.curColor,
         size: 30.0,

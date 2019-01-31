@@ -45,7 +45,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       contentList: [
         content1,
-        new DemoA(),
+         DemoA(),
         content2
       ],
       title: 'RadioListTile',

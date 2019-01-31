@@ -25,7 +25,7 @@ const content2 = """
 # 基本用法
 
 ```
-new Radio(
+ Radio(
     value: value,
     groupValue: groupValue, //当value和groupValue一致的时候则选中
     onChanged: (T){
@@ -45,7 +45,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       contentList: [
         content1,
-        new RadioADemo(),
+         RadioADemo(),
         content2
       ],
       title: 'Radio',

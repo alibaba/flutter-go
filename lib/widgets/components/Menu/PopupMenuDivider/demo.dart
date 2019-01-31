@@ -13,7 +13,7 @@ class PopupMenuDividerDemo extends StatefulWidget {
 class _PopupMenuDividerDemoState extends State<PopupMenuDividerDemo> {
   void showInSnackBar(String value) {
     Scaffold.of(context)
-        .showSnackBar(new SnackBar(content: new Text('You selected: $value')));
+        .showSnackBar( SnackBar(content:  Text('You selected: $value')));
   }
 
   @override

@@ -28,7 +28,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'MaterialAccentColor',
-      codeUrl: 'elements/themes/Material/MaterialAccentColor',
+      codeUrl: 'themes/Material/MaterialAccentColor',
       docUrl:
           'https://docs.flutter.io/flutter/material/MaterialAccentColor-class.html',
       contentList: [
