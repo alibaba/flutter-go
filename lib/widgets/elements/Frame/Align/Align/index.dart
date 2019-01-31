@@ -40,10 +40,10 @@ class _DemoState extends State<Demo> {
   }
 
   Column _alignCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
         SizedBox(height: 10.0),
-        new Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             AlignAlignment(Alignment.center, 'center'),
@@ -51,7 +51,7 @@ class _DemoState extends State<Demo> {
           ],
         ),
         SizedBox(height: 10.0),
-        new Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             AlignAlignment(Alignment.centerRight, 'centerRight'),
@@ -60,7 +60,7 @@ class _DemoState extends State<Demo> {
           ],
         ),
         SizedBox(height: 10.0),
-        new Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             AlignAlignment(Alignment.topLeft, 'topLeft'),
@@ -71,11 +71,11 @@ class _DemoState extends State<Demo> {
         SizedBox(height: 10.0),
         MarkdownBody(data: _flatText1),
         Container(
-          margin: new EdgeInsets.only(top: 20.0, bottom: 20.0),
+          margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xffe91e63),
-          child: new Align(
+          child:  Align(
             alignment: Alignment.topLeft,
-            child: new Text(
+            child:  Text(
               "Align",
               style: TextStyle(color: Color(0xffffffff)),
             ),

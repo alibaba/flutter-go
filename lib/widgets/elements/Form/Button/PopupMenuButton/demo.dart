@@ -71,8 +71,8 @@ class PopupMenuButtonDefault extends StatelessWidget {
         child: Text('点我试试'),
         onSelected: (String value) {},
         itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              new PopupMenuItem(value: "选项一的内容", child: new Text("选项一")),
-              new PopupMenuItem(value: "选项二的内容", child: new Text("选项二"))
+               PopupMenuItem(value: "选项一的内容", child:  Text("选项一")),
+               PopupMenuItem(value: "选项二的内容", child:  Text("选项二"))
             ]);
   }
 
@@ -82,8 +82,8 @@ class PopupMenuButtonDefault extends StatelessWidget {
         icon: Icon(Icons.menu),
         onSelected: (String value) {},
         itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              new PopupMenuItem(value: "选项一的内容", child: new Text("选项一")),
-              new PopupMenuItem(value: "选项二的内容", child: new Text("选项二"))
+               PopupMenuItem(value: "选项一的内容", child:  Text("选项一")),
+               PopupMenuItem(value: "选项二的内容", child:  Text("选项二"))
             ]);
   }
 }
@@ -116,10 +116,10 @@ class PopupMenuButtonCustom extends StatelessWidget {
         initialValue:selectStr,
         // 按下按钮时调用以创建要在菜单中显示的项目。
         itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-          new PopupMenuItem(value: "选项一的内容", child: new Text("选项一")),
-          new PopupMenuItem(value: "选项二的内容", child: new Text("选项二")),
-          new PopupMenuItem(value: "选项三的内容", child: new Text("选项三")),
-          new PopupMenuItem(value: "选项四的内容", child: new Text("选项四"))
+           PopupMenuItem(value: "选项一的内容", child:  Text("选项一")),
+           PopupMenuItem(value: "选项二的内容", child:  Text("选项二")),
+           PopupMenuItem(value: "选项三的内容", child:  Text("选项三")),
+           PopupMenuItem(value: "选项四的内容", child:  Text("选项四"))
         ],
         // 应用于弹出菜单按钮的偏移量(x,y)。
         offset:Offset(0.0,50.0),
@@ -134,7 +134,7 @@ class PopupMenuButtonCustom extends StatelessWidget {
           });
         },
         // 默认情况下匹配IconButton的8 dps填充。在某些情况下，特别是在此按钮作为列表项的尾随元素出现的情况下，能够将填充设置为零是有用的。
-        padding:new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0.0, right: 0.0),
+        padding: EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0.0, right: 0.0),
         //描述按下按钮时将发生的操作的文本。
         tooltip:'这是信息'
     );

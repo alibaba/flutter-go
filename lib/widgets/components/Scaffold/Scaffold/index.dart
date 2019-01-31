@@ -56,7 +56,7 @@ class _DemoState extends State<Demo> {
       codeUrl: 'components/Scaffold/Scaffold/demo.dart',
       contentList: [
         _Text0,
-        new ScaffoldDemo(),
+         ScaffoldDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/Scaffold-class.html',
     );

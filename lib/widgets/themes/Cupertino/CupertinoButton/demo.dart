@@ -35,7 +35,7 @@ class _CupertinoButtonFullDefault extends State {
       },
       pressedOpacity:0.5,// 按下后的按钮不透明度
       color:CupertinoColors.darkBackgroundGray,
-      child: new Text('CupertinoButton'),
+      child:  Text('CupertinoButton'),
     );
   }
 }

@@ -21,7 +21,7 @@ class DecoratedBoxCreate extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
         //设置图片内容
-        image: new DecorationImage(
+        image:  DecorationImage(
             fit: BoxFit.cover,
             image: ExactAssetImage('assets/images/food01.jpeg')),
         //外宽边框，可以不设置
@@ -46,7 +46,7 @@ class DecoratedBoxCreateTwo extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
         //设置图片内容
-        image: new DecorationImage(
+        image:  DecorationImage(
             fit: BoxFit.cover,
             image: ExactAssetImage('assets/images/food01.jpeg')),
         //根据传入的不同大小，呈现图片效弧度不同，
@@ -67,7 +67,7 @@ class DecoratedBoxCreateShape extends StatelessWidget {
       position: DecorationPosition.background,
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
-        image: new DecorationImage(
+        image:  DecorationImage(
             fit: BoxFit.cover,
             image: ExactAssetImage('assets/images/food01.jpeg')),
         border: Border.all(

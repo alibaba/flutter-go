@@ -30,8 +30,8 @@ class _AppBarLessDefaultComplex extends State with SingleTickerProviderStateMixi
   @override
   void initState() {
     super.initState();
-    _scrollViewController = new ScrollController();
-    _tabController = new TabController(vsync: this, length: 6);// 和下面的 TabBar.tabs 数量对应
+    _scrollViewController =  ScrollController();
+    _tabController =  TabController(vsync: this, length: 6);// 和下面的 TabBar.tabs 数量对应
   }
 
   @override
@@ -46,26 +46,26 @@ class _AppBarLessDefaultComplex extends State with SingleTickerProviderStateMixi
     // 如果省略了 leading ，但 AppBar 在带有 Drawer 的 Scaffold 中，则会插入一个 button 以打开 Drawer。
     // 否则，如果最近的 Navigator 具有任何先前的 router ，则会插入BackButton。
     // 这种行为可以通过设置来关闭automaticallyImplyLeading 为false。在这种情况下，空的 leading widget 将导致 middle/title widget 拉伸开始。
-    return new SizedBox(
+    return  SizedBox(
       height: 500,
-      child:new AppBar( // 大量配置属性参考 SliverAppBar 示例
-        title: new Text('title'),
-        leading: new Icon(Icons.home),
+      child: AppBar( // 大量配置属性参考 SliverAppBar 示例
+        title:  Text('title'),
+        leading:  Icon(Icons.home),
         backgroundColor: Colors.amber[500],
         centerTitle: true,
         actions: <Widget>[
-          new IconButton(
-              icon: new Icon(Icons.add_alarm),
+           IconButton(
+              icon:  Icon(Icons.add_alarm),
               tooltip: 'Add Alarm',
               onPressed: () {
                 // do nothing
               }),
-          new PopupMenuButton<String>(
+           PopupMenuButton<String>(
               itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-                new PopupMenuItem<String>(
-                    value: "price", child: new Text('Sort by price')),
-                new PopupMenuItem<String>(
-                    value: "time", child: new Text('Sort by time')),
+                 PopupMenuItem<String>(
+                    value: "price", child:  Text('Sort by price')),
+                 PopupMenuItem<String>(
+                    value: "time", child:  Text('Sort by time')),
               ],
               onSelected: (String action) {
                 switch (action) {
@@ -78,16 +78,16 @@ class _AppBarLessDefaultComplex extends State with SingleTickerProviderStateMixi
                 }
               })
         ],
-        bottom: new TabBar(
+        bottom:  TabBar(
           isScrollable: true,
           controller: _tabController,
           tabs: <Widget>[
-            new Tab(text: "Tabs 1"),
-            new Tab(text: "Tabs 2"),
-            new Tab(text: "Tabs 3"),
-            new Tab(text: "Tabs 4"),
-            new Tab(text: "Tabs 5"),
-            new Tab(text: "Tabs 6"),
+             Tab(text: "Tabs 1"),
+             Tab(text: "Tabs 2"),
+             Tab(text: "Tabs 3"),
+             Tab(text: "Tabs 4"),
+             Tab(text: "Tabs 5"),
+             Tab(text: "Tabs 6"),
           ],
         ),
       ),
@@ -107,7 +107,7 @@ class AppBarLessDefaultSimple extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return new SizedBox(
+      return  SizedBox(
           height: 200,
           child:AppBar(
             title: Text('My Fancy Dress'),

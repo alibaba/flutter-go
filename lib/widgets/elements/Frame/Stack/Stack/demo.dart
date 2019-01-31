@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
  * LastUpdateTime: 2018/11/22
  * LastUpdateBy: xj.deng
  *
- * Describle:Align描述
+ * Describle:stack描述
  */
 class StackDefault extends StatelessWidget {
   const StackDefault() : super();
@@ -16,19 +16,19 @@ class StackDefault extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        new Stack(
+         Stack(
           //fit :定义如何设置non-positioned节点尺寸
           fit: StackFit.loose,
           overflow: Overflow.clip,
           textDirection: TextDirection.ltr,
           alignment: Alignment.center,
           children: [
-            new Container(
-              color: new Color(0xfff48fb1),
+             Container(
+              color:  Color(0xfff48fb1),
               width: 100.0,
               height: 50.0,
             ),
-            new Text("stack demo",
+             Text("stack demo",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                     fontSize: 20.0,
@@ -49,22 +49,22 @@ class StackDefault2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        new Stack(
+         Stack(
           //fit :定义如何设置non-positioned节点尺寸
           fit: StackFit.loose,
           overflow: Overflow.clip,
           textDirection: TextDirection.ltr,
           alignment: Alignment.center,
           children: [
-            new Text("stack demo",
+             Text("stack demo",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 5.0,
                     color: Colors.white)),
-            new Container(
-              color: new Color(0xfff48fb1),
+             Container(
+              color:  Color(0xfff48fb1),
               width: 100.0,
               height: 50.0,
             ),
@@ -80,32 +80,32 @@ class StackPositioned extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Stack(
+    return  Stack(
       alignment: Alignment.center,
       children: <Widget>[
-        new Positioned(
-            child: new Icon(
+         Positioned(
+            child:  Icon(
           Icons.monetization_on,
           size: 40.0,
           color: Colors.yellow[300],
         )),
-        new Positioned(
+         Positioned(
             left: 40.0,
-            child: new Icon(
+            child:  Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
             )),
-        new Positioned(
+         Positioned(
             left: 60.0,
-            child: new Icon(
+            child:  Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
             )),
-        new Positioned(
+         Positioned(
             left: 80.0,
-            child: new Icon(
+            child:  Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
@@ -120,12 +120,12 @@ class StackLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Stack(
+    return  Stack(
       overflow: Overflow.visible,
       alignment: const Alignment(0.2, 0.6),
       children: <Widget>[
         CircleAvatar(
-          backgroundColor: new Color(0xfff48fb1),
+          backgroundColor:  Color(0xfff48fb1),
           radius: 140.0,
         ),
         Container(

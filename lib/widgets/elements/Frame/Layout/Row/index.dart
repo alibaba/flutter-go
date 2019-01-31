@@ -49,7 +49,7 @@ class _DemoState extends State<Demo> {
   }
 
   Column _rowCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
         RowLayoutCreate(),
         Row(
