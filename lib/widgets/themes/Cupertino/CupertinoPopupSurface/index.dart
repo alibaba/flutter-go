@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoPopupSurface',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoPopupSurface/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoPopupSurface/demo.dart',
     );
   }
 }

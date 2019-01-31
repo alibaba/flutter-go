@@ -38,7 +38,7 @@ class _Demo extends State<Demo> {
     return WidgetDemo(
       title: "Text",
       docUrl: 'flutter/widgets/Text-class.html',
-      codeUrl: 'elements/Form/Text/Text/index.dart',
+      codeUrl: 'elements/Form/Text/Text/demo.dart',
       contentList: [
         intro,
         TextDemo(),

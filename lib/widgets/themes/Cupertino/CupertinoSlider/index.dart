@@ -27,7 +27,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoSlider',
-      codeUrl: '/themes/Cupertino/CupertinoSlider/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoSlider/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoSlider-class.html',
       contentList: [
         Text0,

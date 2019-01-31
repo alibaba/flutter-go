@@ -42,7 +42,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoTabView',
-      codeUrl: '/themes/Cupertino/CupertinoTabView/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoTabView/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html',
       contentList: [
         Text0,
