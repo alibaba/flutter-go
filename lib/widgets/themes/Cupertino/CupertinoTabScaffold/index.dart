@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
+
 import 'demo.dart';
 const Text0 = '''
 ### **简介**
@@ -38,7 +39,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoTabScaffold',
-      codeUrl: '/themes/Cupertino/CupertinoTabScaffold/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoTabScaffold/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoTabScaffold-class.html',
       contentList: [
         Text0,

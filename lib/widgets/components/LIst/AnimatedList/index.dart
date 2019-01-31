@@ -32,7 +32,7 @@ const String _Text1 =
 
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/components//List/AnimatedList';
+  static const String routeName = '/components/List/AnimatedList';
 
   @override
   _DemoState createState() => _DemoState();

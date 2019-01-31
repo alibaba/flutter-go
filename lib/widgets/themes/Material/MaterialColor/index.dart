@@ -36,7 +36,7 @@ class _DemoState extends State<Demo> {
         ColorDemo(),
       ],
       title: "MaterialColor",
-      codeUrl: 'Material/MaterialColor/demo.dart',
+      codeUrl: 'themes/Material/MaterialColor/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MaterialColor-class.html',
     );

@@ -3,15 +3,31 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
+## 版本更新历史
+> 按时间顺序,展示重要的提交更新内容。
+
+[地址](https://github.com/alibaba/flutter-go/blob/develop/CHANGE-LOG.md)
+
+## 开发规范
+> 由于类似 javascript, java, object-c,等开发者的语言习惯不同而产生歧义，我们依据官方提供的 [dart 语言规范](https://www.dartlang.org) 定制。
+
+[<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## Release安装包下载地址
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB1q1GVB4naK1RjSZFtXXbC2VXa-195-198.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB1Hy1FEzDpK1RjSZFrXXa78VXa-386-384.png" width="200px">
 
 iphone下载地址:
 暂无
+
+## 基础环境
+本项目环境持续更新. 请定期更新各依赖包.
+
+- dart(version: 2.0.0)
+- flutter(version: v1.1.10)
+
 
 ### 背景
 
@@ -41,7 +57,7 @@ flutter优点主要包括：
 
 ### app 预览
 
-<img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1WJNuBmzqK1RjSZPcXXbTepXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
+<img src="https://img.alicdn.com/tfs/TB1MoiNExTpK1RjSZFGXXcHqFXa-362-751.gif" width=200> <img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1MtdSBjDpK1RjSZFrXXa78VXa-345-717.gif" width=200>
 
 ### Core Team
 
@@ -79,66 +95,3 @@ flutter优点主要包括：
 
 Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
-
-## 更新日志
-
-#### 2019-1-24
-  - [x] 功能：更新小部件的图标
-  - [x] 功能：添加CupertinoTimerPickerDemo
-  - [x] 调试：消除警告
-  - [x] 修复：关于手册图标更换
-  - [x] 添加：文案描述
-  - [x] 添加：CupertinoPicker，CupertinoPopupSurface
-#### 2019-1-23
-  - [x] 修复: 导航栏home返回报错
-  - [x] 修复：收集错误
-  - [x] 添加：CupertinoNavigationBar CupertinoPageRoute CupertinoPageScaffold
-#### 2019-1-22
-  - [x] 功能：在Allsimon拉请求中添加英文简介
-#### 2019-1-21
-  - [x] 功能：Cupertino的子项
-#### 2019-1-20
-  - [x] 功能：CupertinoSwitch演示
-  - [x] 功能：为搜索列表加入图标
-  - [x] 功能：CupertinoSliverRefreshControl演示
-  - [x] 功能：CupertinoSliverNavigationBar演示
-#### 2019-1-18
-  - [x] 更新：SharedPreferences保存数据和android设备布局溢出
-  - [x] 功能：添加CupertinoScrollbar演示
-  - [x] 功能：第四页暂时用欢迎页替代。后期再开发
-#### 2019-1-17
-  - [x] 添加：+许可证
-#### 2019-1-16
-  - [x] 转换：将README翻译为En语言环境
-  - [x] 功能：CupertinoScrollbar演示
-#### 2019-1-14
-  - [x] 添加：增加手册页面
-  - [x] 功能：文字演示
-  - [x] 重构：修改过的图标
-  - [x] 重构：文档，文章，组件收藏，新增webView
-  - [x] 重构：修改过的演示
-  - [x] 重构：代码视图
-  - [x] 更新：版本 和readme.md
-  - [x] 修改：添加代码视图
-  - [x] 功能：添加搜索历史记录板
-  - [x] 修改：列出加标头错误
-#### 2019-1-15
-  - [x] 功能：welcomepage
-#### 2019-1-13
-  - [x] 添加：一些输入描述
-  - [x] 功能：加入GridPaper＆SliverGrid
-  - [x] 重构：修改db
-  - [x] 重构：删除数据库 TabBarView
-  - [x] 添加：网格视图
-  - [x] 修改：checkbosListTile 错误
-  - [x] 修改：自动提示文案
-  - [x] 功能：增加免责声明，声明组件，自动弹出，左上角入口
-  - [x] 重构：整理数据库初始逻辑，判断数据库完整性，判断是否存在已知的cat，widget，collection 三张表。
-  - [x] 修复：DialogDemo，无法关闭的问题
-#### 2019-1-12
-  - [x] 修复：icon没有，但内容有的，组件，给补充了icon
-  - [x] 修改：1.整理文件 2.修正分析
-  - [x] 更新：flutter_rookie_book => flutter_go
-  - [x] 更新：更新SearchInput文件名=> search_input
-  - [x] 修改：文件名称的大小写规范
-  - [x] 修改：修正bottomNavigationBar iconButton警告

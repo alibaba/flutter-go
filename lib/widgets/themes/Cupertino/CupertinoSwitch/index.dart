@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
+
 import 'demo.dart';
 const Text0 = '''
 ### **简介**
@@ -24,7 +25,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoSlider',
-      codeUrl: '/themes/Cupertino/CupertinoSwitch/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoSwitch/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoSwitch-class.html',
       contentList: [
         Text0,

@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliverAppBar',
-      codeUrl: 'componentss/Bar/SliverAppBar/demo.dart',
+      codeUrl: 'components/Bar/SliverAppBar/demo.dart',
       contentList:[allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/SliverAppBar-class.html',
     );
