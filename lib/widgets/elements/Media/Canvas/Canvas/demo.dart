@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
+import 'dart:math';
 import 'package:flutter/services.dart' show rootBundle;
 
 CustomPaint graph;
@@ -191,6 +192,44 @@ class DrawPainter extends CustomPainter {
         final dst = Rect.fromLTWH(0.0, 0.0, size.width, size.height);
         canvas.drawImageRect(image, src, dst, painter);
         break;
+      case 'drawStar':
+        var rect = Offset.zero & size;
+        /// 背景颜色
+        canvas.drawRect(rect, Paint()..color = Color(0xFF000000));
+        /// 绘制星形
+        canvas.drawPath(MathTools().regularStarPath(5, 30, Offset(50.0, 50.0)), painter..color = Colors.red);
+        /// 绘制多边形
+        canvas.save();// save之后，可以调用Canvas的平移、放缩、旋转、错切、裁剪等操作
+        canvas.translate(0, 100);
+        canvas.scale(1.2,1.2);
+        canvas.drawPath(MathTools().nStarPath(4, 30, 30, Offset(40.0, 50.0)), painter);
+        canvas.restore();// 用来恢复Canvas之前保存的状态。防止save后对Canvas执行的操作对后续的绘制有影响
+        /// 绘制旋转星形
+        canvas.save();// save之后，可以调用Canvas的平移、放缩、旋转、错切、裁剪等操作
+        canvas.translate(150, 50);
+        canvas.rotate(50 * pi / 180);
+        canvas.drawPath(MathTools().regularStarPath(5, 30, Offset(0,0)), painter..color = Colors.green);
+        canvas.restore();// 用来恢复Canvas之前保存的状态。防止save后对Canvas执行的操作对后续的绘制有影响
+        /// 绘制变形星形
+        canvas.save();// save之后，可以调用Canvas的平移、放缩、旋转、错切、裁剪等操作
+        canvas.translate(80, 100);
+        canvas.skew(0.5,0.2);
+        canvas.drawPath(MathTools().regularStarPath(6, 30,Offset(50,50)), painter..color = Colors.lime);
+        canvas.restore();// 用来恢复Canvas之前保存的状态。防止save后对Canvas执行的操作对后续的绘制有影响
+
+        /// 绘制matrix星形
+        canvas.translate(250, 0);
+        Float64List matrix = Float64List.fromList(const <double>[
+          // careful, this is in _column_-major order
+          0.7,  -0.7, 0.0, 0.0,
+          0.7,   0.7,  0.0, 0.0,
+          0.7,   0.0,     1.0, 0.0,
+          -70.697, 98.057,  0.0, 1.0,
+        ]);
+        canvas.transform(matrix);
+        canvas.drawPath(MathTools().regularStarPath(5, 30,Offset(50,50)), painter..color = Colors.blue);
+
+        break;
     }
     //canvas.drawColor(Colors.red, BlendMode.colorDodge);
   }
@@ -199,5 +238,82 @@ class DrawPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
+  }
+}
+
+class MathTools {
+  static MathTools _mathTools;
+  static bool _flag;
+
+  factory MathTools(){
+    if (_flag == null) {
+      _flag = true;
+    }
+    if (_flag) {
+      _mathTools = new MathTools._internal();
+      _flag = false;
+    }
+    return _mathTools;
+  }
+  MathTools._internal();
+  ///
+  ///画正n角星的路径:
+  ///
+  ///@param num 角数
+  ///@param R   外接圆半径
+  ///@return 画正n角星的路径
+  ///
+  Path regularStarPath(int num, double R, Offset xy) {
+    double degA, degB;
+    if (num % 2 == 1) {
+      //奇数和偶数角区别对待
+      degA = 360 / num / 2 / 2;
+      degB = 180 - degA - 360 / num / 2;
+    } else {
+      degA = 360 / num / 2;
+      degB = 180 - degA - 360 / num / 2;
+    }
+    double r = R * sin(_rad(degA)) / sin(_rad(degB));
+    return nStarPath(num, R, r, xy);
+  }
+
+  ///
+  ///画正n边形的路径
+  ///
+  ///@param num 边数
+  ///@param R   外接圆半径
+  ///@return 画正n边形的路径
+  ///
+  Path regularPolygonPath(int num, double R, Offset xy) {
+    double r = R * cos(_rad(360 / num / 2)); //!!一点解决
+    return nStarPath(num, R, r, xy);
+  }
+
+  ///
+  ///n角星路径
+  ///
+  ///@param num 几角星
+  ///@param R   外接圆半径
+  ///@param r   内接圆半径
+  ///@return n角星路径
+  ///
+  Path nStarPath(int num, double R, double r, Offset xy) {
+    Path path = new Path();
+    double perDeg = 360 / num; //尖角的度数
+    double degA = perDeg / 2 / 2;
+    double degB = 360 / (num - 1) / 2 - degA / 2 + degA;
+
+    path.moveTo(cos(_rad(degA)) * R + xy.dx, (-sin(_rad(degA)) * R + xy.dy));
+    for (int i = 0; i < num; i++) {
+      path.lineTo(
+          cos(_rad(degA + perDeg * i)) * R + xy.dx, -sin(_rad(degA + perDeg * i)) * R + xy.dy);
+      path.lineTo(
+          cos(_rad(degB + perDeg * i)) * r + xy.dx, -sin(_rad(degB + perDeg * i)) * r + xy.dy);
+    }
+    path.close();
+    return path;
+  }
+  double _rad(double deg) {
+    return deg * pi / 180;
   }
 }

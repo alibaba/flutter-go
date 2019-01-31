@@ -193,8 +193,6 @@ flutter:
     - assets/app.db
     - assets/images/
     - assets/fonts/
-    - lib/utils/example_code_parser.dart
-    - lib/utils/syntax_highlighter.dart
 
   fonts:
   - family: FlamanteRoma

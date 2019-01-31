@@ -9,9 +9,6 @@ const Text = '''
 ''';
 const Text1 = '''
 ### **基本用法**
-- 它可以使用“平移”、“缩放”、“旋转”、“倾斜”和“变换”方法进行修改;
-- 可以使用 clipRect、clipCorrect 和 clipPath 方法进行修改;
-- 可以使用由 save、savelayer和 restore 方法管理的堆栈来保存和还原当前的转换和剪辑。
 - 以下是绘制点，线，面的基本用法
 ''';
 
@@ -52,6 +49,13 @@ const Text9 = '''
 > 绘制图片到canvas
 ''';
 
+const Text10 = '''
+> 绘制一个星形
+- 它可以使用“平移”、“缩放”、“旋转”、“倾斜”和“变换”方法进行修改;
+- 可以使用 clipRect、clipCorrect 和 clipPath 方法进行修改;
+- 可以使用由 save、savelayer和 restore 方法管理的堆栈来保存和还原当前的转换和剪辑。
+''';
+
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Media/﻿Canvas/PainterPath';
 
@@ -82,7 +86,9 @@ class _DemoState extends State<Demo> {
         Text8,
         demoBoxs.CustomViewPage(type:'drawDRRect'),
         Text9,
-        demoBoxs.CustomViewPage(type:'drawImage')
+        demoBoxs.CustomViewPage(type:'drawImage'),
+        Text10,
+        demoBoxs.CustomViewPage(type:'drawStar'),
       ],
       docUrl: 'https://docs.flutter.io/flutter/dart-ui/Canvas-class.html',
     );
