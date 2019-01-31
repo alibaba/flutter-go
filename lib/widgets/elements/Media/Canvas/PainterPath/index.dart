@@ -36,7 +36,7 @@ const Text5 = '''
 
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/element/Media/﻿Canvas/﻿Canvas';
+  static const String routeName = '/element/Media/﻿Canvas/PainterPath';
 
   _DemoState createState() => _DemoState();
 }
