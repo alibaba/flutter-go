@@ -62,7 +62,7 @@ class RawMaterialButtonCustom extends StatelessWidget {
         splashColor: _randomColor(),
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
-        padding: new EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+        padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         //高亮时候的阴影
         highlightElevation: 10.0,
         // 按钮材质的形状

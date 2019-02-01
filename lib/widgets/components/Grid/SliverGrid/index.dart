@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliverGrid',
-      codeUrl: 'components/Grid/GridPaper/demo.dart',
+      codeUrl: 'components/Grid/SliverGrid/demo.dart',
       contentList: [
         _Text0,
         SliverGridDemo(),

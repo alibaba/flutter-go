@@ -29,12 +29,12 @@ class ConstrainedBoxCreate extends StatelessWidget {
             maxWidth: 300.0,
             maxHeight: 50.0,
           ),
-          child: new Container(
+          child:  Container(
             margin: const EdgeInsets.only(left: 20.0, right: 20.0),
             //child 宽高超过制定限制范围失效，效果宽/高=100/20区域
             width: currWidth,
             height: 250.0,
-            child: new Text(
+            child:  Text(
               describe,
               style: TextStyle(color: Colors.white),
             ),

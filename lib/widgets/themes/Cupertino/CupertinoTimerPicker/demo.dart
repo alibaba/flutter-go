@@ -16,7 +16,7 @@ class CupertinoTimerPickerDemo extends StatefulWidget {
 
 class _Demo extends State<CupertinoTimerPickerDemo> {
   int index = 0;
-  Duration timer = new Duration(minutes: 50);
+  Duration timer =  Duration(minutes: 50);
 
   Widget _buildBottomPicker(Widget picker) {
     return Container(

@@ -21,7 +21,36 @@ const contentA = '''
 
 > 通过更改sliderTheme.data, 修改Slider总体样式
 
+<<<<<<< HEAD
 具体属性, 请查阅: SliderThemeData.data.
+=======
+基本属性参考以下代码: 
+
+```
+ SliderTheme(
+  data: SliderThemeData({
+    @required Color activeTrackColor,
+    @required Color inactiveTrackColor,
+    @required Color disabledActiveTrackColor,
+    @required Color disabledInactiveTrackColor,
+    @required Color activeTickMarkColor,
+    @required Color inactiveTickMarkColor,
+    @required Color disabledActiveTickMarkColor,
+    @required Color disabledInactiveTickMarkColor,
+    @required Color thumbColor,
+    @required Color disabledThumbColor,
+    @required Color overlayColor,
+    @required Color valueIndicatorColor,
+    @required SliderComponentShape thumbShape,
+    @required SliderComponentShape valueIndicatorShape,
+    @required ShowValueIndicator showValueIndicator,
+    @required TextStyle valueIndicatorTextStyle
+  }),
+  child: anyWidgetContain(Slider) // 用来包含slider的widget容器窗口
+),
+
+```
+>>>>>>> ccb5c9e42883b23266fb95b9caf4e958d817ff48
 
 ### **基本实例**
 
@@ -42,7 +71,7 @@ class _Demo extends State<Demo> {
       codeUrl: 'elements/Form/Slider/SliderTheme/demo.dart',
       contentList: [
         contentA,
-        new SliderThemeDemo(),
+         SliderThemeDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/SliderTheme-class.html',
     );

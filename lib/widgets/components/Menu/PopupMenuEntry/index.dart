@@ -34,7 +34,7 @@ class _DemoState extends State<Demo> {
         PopupMenuDividerDemo()
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/PopupMenuEntry-class.html',
-      codeUrl: 'components/Menu/PopupMenuEntry/demo.dart',
+      codeUrl: 'components/Menu/PopupMenuDivider/demo.dart',
       title: 'PopupMenuEntry',
     );
   }

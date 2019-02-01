@@ -42,12 +42,12 @@ class _Demo extends State<DialogDemo> {
     );
   }
   Widget build(BuildContext context) {
-    return new RaisedButton(
-        padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return  RaisedButton(
+        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child: new Text(
+        child:  Text(
           '点我显示 Dialog',
-          style: new TextStyle(
+          style:  TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -108,14 +108,14 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
     );
   }
   Widget build(BuildContext context) {
-    return new Column(
+    return  Column(
       children: <Widget>[
-        new RaisedButton(
-          padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+         RaisedButton(
+          padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
           //padding
-          child: new Text(
+          child:  Text(
           '点我显示Dialog',
-          style: new TextStyle(
+          style:  TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),

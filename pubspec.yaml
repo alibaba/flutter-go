@@ -72,9 +72,11 @@ flutter:
     - lib/widgets/components/Grid/GridTile/demo.dart
     - lib/widgets/components/Grid/GridTileBar/demo.dart
     - lib/widgets/components/Grid/GridView/demo.dart
-    - lib/widgets/components/LIst/AnimatedList/demo.dart
-    - lib/widgets/components/LIst/ListBody/demo.dart
-    - lib/widgets/components/LIst/ListView/demo.dart
+    - lib/widgets/components/Grid/GridPaper/demo.dart
+    - lib/widgets/components/Grid/SliverGrid/demo.dart
+    - lib/widgets/components/List/AnimatedList/demo.dart
+    - lib/widgets/components/List/ListBody/demo.dart
+    - lib/widgets/components/List/ListView/demo.dart
     - lib/widgets/components/Menu/CheckedPopupMenuItem/demo.dart
     - lib/widgets/components/Menu/DropdownMenuItem/demo.dart
     - lib/widgets/components/Menu/PopupMenuButton/demo.dart
@@ -125,11 +127,11 @@ flutter:
     - lib/widgets/elements/Frame/Box/Fittedbox/demo.dart
     - lib/widgets/elements/Frame/Box/LimitedBox/demo.dart
     - lib/widgets/elements/Frame/Box/OverflowBox/demo.dart
-    - lib/widgets/elements/Frame/Box/RenderBox/demo.dart
     - lib/widgets/elements/Frame/Box/RotatedBox/demo.dart
     - lib/widgets/elements/Frame/Box/SizeBox/demo.dart
     - lib/widgets/elements/Frame/Box/SizedOverflowBox/demo.dart
-    - lib/widgets/elements/Frame/Box/TextBox/demo.dart
+    - lib/widgets/elements/Form/Text/Text/demo.dart
+    - lib/widgets/elements/Form/Text/RichText/index.dart
     - lib/widgets/elements/Frame/Box/UnconstrainedBox/demo.dart
     - lib/widgets/elements/Frame/Expanded/Expanded/expanded_demo.dart
     - lib/widgets/elements/Frame/Layout/Center/demo.dart
@@ -159,23 +161,37 @@ flutter:
     - lib/widgets/elements/Media/Image/paintImage/paint_image_demo.dart
     - lib/widgets/elements/Media/Image/precacheImage/precache_image_demo.dart
     - lib/widgets/elements/Media/Image/RawImage/raw_image_demo.dart
+    - lib/widgets/elements/Media/Canvas/Canvas/demo.dart
+    - lib/widgets/elements/Media/Canvas/CircleProgressBarPainter/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterPath/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterSketch/demo.dart
     - lib/widgets/themes/Material/MaterialApp/demo.dart
     - lib/widgets/themes/Material/MaterialButton/demo.dart
     - lib/widgets/themes/Material/MaterialColor/demo.dart
     - lib/widgets/themes/Material/MaterialPageRoute/demo.dart
     - lib/widgets/themes/Material/MergeableMaterialItem/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoApp/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoButton/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoColors/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoIcons/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoNavigationBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageRoute/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPageScaffold/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPicker/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoPopupSurface/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
-    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
     - lib/widgets/elements/Form/Switch/Switch/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoSliverNavigationBar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabBar/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTabScaffold/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
+    - lib/widgets/themes/Cupertino/CupertinoTimerPicker/demo.dart
     - assets/app.db
     - assets/images/
     - assets/fonts/
-    - lib/utils/example_code_parser.dart
-    - lib/utils/syntax_highlighter.dart
 
   fonts:
   - family: FlamanteRoma

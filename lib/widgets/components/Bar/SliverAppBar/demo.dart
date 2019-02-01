@@ -44,9 +44,9 @@ class SliverAppBarLessDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     for (int i = 0; i < 20; i++) {
-      listData.add(new ListItem("我是测试标题$i", Icons.cake));
+      listData.add( ListItem("我是测试标题$i", Icons.cake));
     }
-    return new SizedBox(
+    return  SizedBox(
         height: 500.0,
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -89,7 +89,7 @@ class SliverAppBarLessDefault extends StatelessWidget {
   //            SliverPersistentHeader(
   //                delegate: _SliverAppBarDelegate(
   //                  TabBar(
-  //                    controller: new TabController(length: 2, vsync: this),
+  //                    controller:  TabController(length: 2, vsync: this),
   //                    labelColor: Colors.black87,
   //                    unselectedLabelColor: Colors.grey,
   //                    tabs: [
@@ -101,10 +101,10 @@ class SliverAppBarLessDefault extends StatelessWidget {
             ];
         },
       body: Center(
-        child: new ListView.builder(
+        child:  ListView.builder(
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) {
-            return new ListItemWidget(listData[index]);
+            return  ListItemWidget(listData[index]);
           },
           itemCount: listData.length,
         ),
@@ -127,10 +127,10 @@ class ListItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new InkWell(
-      child: new ListTile(
-        leading: new Icon(listItem.iconData),
-        title: new Text(listItem.title),
+    return  InkWell(
+      child:  ListTile(
+        leading:  Icon(listItem.iconData),
+        title:  Text(listItem.title),
       ),
       onTap: () {},
     );

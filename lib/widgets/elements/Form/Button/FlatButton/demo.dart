@@ -101,9 +101,9 @@ class FlatButtonCustom extends StatelessWidget {
         splashColor: Colors.deepPurple,
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
-        padding: new EdgeInsets.only(
+        padding:  EdgeInsets.only(
             bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
-        shape: (shape is ShapeBorder) ? shape : new Border.all(
+        shape: (shape is ShapeBorder) ? shape :  Border.all(
           // 设置边框样式
           color: Colors.grey,
           width: 2.0,

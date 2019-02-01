@@ -41,7 +41,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoPageRoute',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPageRoute-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoPageRoute/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoPageRoute/demo.dart',
     );
   }
 }

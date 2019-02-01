@@ -10,12 +10,9 @@
 import 'package:flutter/material.dart';
 
 
-class AlertDialogDemo extends StatefulWidget {
-  _Demo createState() => _Demo();
-}
+class AlertDialogDemo extends StatelessWidget{
+  // _Demo createState() => _Demo();
 
-class _Demo extends State<AlertDialogDemo> {
-  
   void showAlertDialog(BuildContext context) {
     showDialog<void>(
       context: context,
@@ -122,12 +119,12 @@ class _Demo extends State<AlertDialogDemo> {
     );
   }
   Widget build(BuildContext context) {
-    return new RaisedButton(
-        padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return  RaisedButton(
+        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child: new Text(
+        child:  Text(
           '点我显示 AlertDialog',
-          style: new TextStyle(
+          style:  TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -141,3 +138,8 @@ class _Demo extends State<AlertDialogDemo> {
       });
   }
 }
+
+// class _Demo extends State<AlertDialogDemo> {
+  
+  
+// }
