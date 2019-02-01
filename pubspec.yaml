@@ -124,7 +124,7 @@ flutter:
     - lib/widgets/elements/Frame/Align/Align/demo.dart
     - lib/widgets/elements/Frame/Box/ConstrainedBox/demo.dart
     - lib/widgets/elements/Frame/Box/DecoratedBox/demo.dart
-    - lib/widgets/elements/Frame/Box/Fittedbox/demo.dart
+    - lib/widgets/elements/Frame/Box/FittedBox/demo.dart
     - lib/widgets/elements/Frame/Box/LimitedBox/demo.dart
     - lib/widgets/elements/Frame/Box/OverflowBox/demo.dart
     - lib/widgets/elements/Frame/Box/RotatedBox/demo.dart
