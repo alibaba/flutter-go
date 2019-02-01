@@ -181,6 +181,7 @@ flutter:
     - lib/widgets/themes/Cupertino/CupertinoPopupSurface/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
+    - lib/widgets/elements/Form/Switch/Switch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSliverNavigationBar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart
