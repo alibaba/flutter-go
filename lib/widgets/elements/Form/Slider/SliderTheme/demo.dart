@@ -17,8 +17,8 @@ class SliderThemeDemo extends StatefulWidget {
 class _SliderThemeDemo extends State<SliderThemeDemo> {
   double value = 0.0;
   Widget build(BuildContext context) {
-    return new Container(
-      child: new SliderTheme(
+    return  Container(
+      child:  SliderTheme(
         data: SliderTheme.of(context).copyWith(
 //                activeTickMarkColor:Colors.yellowAccent,
           activeTrackColor: Colors.yellowAccent,//实际进度的颜色
@@ -26,21 +26,21 @@ class _SliderThemeDemo extends State<SliderThemeDemo> {
           thumbColor: Colors.black,//滑块中心的颜色
           inactiveTrackColor:Colors.red,//默 认进度条的颜色
           valueIndicatorColor: Colors.blue,//提示进度的气派的背景色
-          valueIndicatorTextStyle: new TextStyle(//提示气泡里面文字的样式
+          valueIndicatorTextStyle:  TextStyle(//提示气泡里面文字的样式
             color: Colors.white,
           ),
           inactiveTickMarkColor:Colors.blue,//divisions对进度线分割后 断续线中间间隔的颜色
           overlayColor: Colors.pink,//滑块边缘颜色
         ),
-        child: new Container(
+        child:  Container(
           width: 340.0,
           margin: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
-          child: new Row(
+          child:  Row(
             children: <Widget>[
-              new Text('0.0'),
-              new Expanded(
+               Text('0.0'),
+               Expanded(
                 flex: 1,
-                child: new Slider(
+                child:  Slider(
                   value: value,
                   label: '$value',
                   divisions: 10,
@@ -53,7 +53,7 @@ class _SliderThemeDemo extends State<SliderThemeDemo> {
                   max: 100.0,
                 ),
               ),
-              new Text('100.0'),
+               Text('100.0'),
             ],
           ),
         ),

@@ -6,7 +6,7 @@ class UnconstrainedBoxDemo extends StatelessWidget {
     return UnconstrainedBox(
       constrainedAxis: Axis.vertical,
       textDirection: TextDirection.rtl,
-      child: new Row(
+      child:  Row(
         children: <Widget>[
           Container(
             width: 100.0,

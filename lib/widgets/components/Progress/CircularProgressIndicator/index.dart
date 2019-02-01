@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
           content1,
           CircularDemo(),
         ],
-        codeUrl: '/components/Progress/CircularProgressIndicator/demo.dart',
+        codeUrl: 'components/Progress/CircularProgressIndicator/demo.dart',
         docUrl:
             'https://docs.flutter.io/flutter/material/LinearProgressIndicator-class.html',
         title: 'CircularProgressIndicator');

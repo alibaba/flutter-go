@@ -13,7 +13,7 @@ import 'dart:io';
 
 class FileImageDemo extends StatefulWidget {
   @override
-  _FileImageDemoState createState() => new _FileImageDemoState();
+  _FileImageDemoState createState() =>  _FileImageDemoState();
 }
 
 class _FileImageDemoState extends State<FileImageDemo> {
@@ -31,10 +31,10 @@ class _FileImageDemoState extends State<FileImageDemo> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        new Center(
+         Center(
           child: _image == null
-              ? new Text('您还未选择任何图片.')
-              : new Image.file(_image,scale: 0.5,fit: BoxFit.cover,),
+              ?  Text('您还未选择任何图片.')
+              :  Image.file(_image,scale: 0.5,fit: BoxFit.cover,),
         ),
         FlatButton(
           onPressed: getImage,

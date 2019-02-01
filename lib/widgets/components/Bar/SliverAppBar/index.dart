@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliverAppBar',
-      codeUrl: 'componentss/Bar/SliverAppBar/demo.dart',
+      codeUrl: 'components/Bar/SliverAppBar/demo.dart',
       contentList:[allDomes(context, this)],
       docUrl: 'https://docs.flutter.io/flutter/widgets/SliverAppBar-class.html',
     );
@@ -54,7 +54,7 @@ class _DemoState extends State<Demo> {
  */
 Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
+    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(
         //mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -71,7 +71,7 @@ Widget allDomes(BuildContext context, _DemoState that) {
 * 带align的text
 * */
 Widget textAlignBar(String txt) {
-  return new Align(
+  return  Align(
       alignment: FractionalOffset.centerLeft,
       child: Column(
           children: <Widget>[

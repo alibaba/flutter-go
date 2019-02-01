@@ -76,7 +76,10 @@ class _DemoState extends State<Demo> {
           ),
         ),
         SizedBox(height: 20),
-        SizedBox(height: 50,child: Text("宽高都大于最大限制"),),
+        SizedBox(
+          height: 50,
+          child: Text("宽高都大于最大限制"),
+        ),
         Container(
           width: 100.0,
           height: 100.0,
@@ -90,7 +93,6 @@ class _DemoState extends State<Demo> {
             curalignment: Alignment.center,
           ),
         ),
-
       ],
     );
   }

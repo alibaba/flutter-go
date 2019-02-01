@@ -9,7 +9,7 @@ class WidgetNotFound extends StatelessWidget {
             title: Text("widget not found"),
           ),
           body: Container(
-              child: new Text("widget not found")
+              child:  Text("widget not found")
           )
       );
     }

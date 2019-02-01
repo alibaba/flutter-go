@@ -24,7 +24,7 @@ class _Demo extends State<DemoA> {
   }
   Widget build(BuildContext context) {
 
-    return new Column(
+    return  Column(
       children: <Widget>[
         RadioListTile<String>(
           title: const Text('A'),

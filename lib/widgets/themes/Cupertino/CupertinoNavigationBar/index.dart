@@ -48,7 +48,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoNavigationBar',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoNavigationBar/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoNavigationBar/demo.dart',
     );
   }
 }

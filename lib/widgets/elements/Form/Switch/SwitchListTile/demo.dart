@@ -18,7 +18,7 @@ class SwitchListTileDemo extends StatefulWidget {
 class _Demo extends State<SwitchListTileDemo> {
   bool _lights = false;
   Widget build(BuildContext context) {
-    return new SwitchListTile(
+    return  SwitchListTile(
       title: const Text('Lights'),
       value: _lights,
       onChanged: (bool value) { setState(() { _lights = value; }); },

@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
         MaterialButtonDemo(),
       ],
       title: 'MaterialButton',
-      codeUrl: 'Material/MaterialButton/demo.dart',
+      codeUrl: 'themes/Material/MaterialButton/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MaterialButton-class.html',
     );

@@ -20,6 +20,7 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
 
   @override
   void didChangeDependencies() {
+    print('widget.filePath=======${widget.filePath}');
     getExampleCode(context,'${widget.filePath}', DefaultAssetBundle.of(context))
         .then<void>((String code) {
       if (mounted) {

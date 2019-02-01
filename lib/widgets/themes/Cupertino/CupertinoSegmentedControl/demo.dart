@@ -16,7 +16,7 @@ class CupertinoSegmentedControlDemo extends StatefulWidget {
 class _Demo extends State<CupertinoSegmentedControlDemo> {
   String value = 'a';
   Widget build(BuildContext context) {
-    return new CupertinoSegmentedControl(
+    return  CupertinoSegmentedControl(
       onValueChanged: (v) {
         this.setState(() {
            value = v;

@@ -32,7 +32,7 @@ const String _Text1 =
 
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/components//List/AnimatedList';
+  static const String routeName = '/components/List/AnimatedList';
 
   @override
   _DemoState createState() => _DemoState();
@@ -58,7 +58,7 @@ class _DemoState extends State<Demo> {
  */
 Widget allDemoBoxs(BuildContext context, _DemoState that) {
   return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
+    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(
         //mainAxisSize: MainAxisSize.max,
           children: <Widget>[

@@ -16,7 +16,7 @@ class CupertinoSliderDemo extends StatefulWidget {
 class _Demo extends State<CupertinoSliderDemo> {
   double value = 0.0;
   Widget build(BuildContext context) {
-    return new CupertinoSlider(
+    return  CupertinoSlider(
       value: value,//实际进度的位置
       min: 0.0,
       max: 100.0,
