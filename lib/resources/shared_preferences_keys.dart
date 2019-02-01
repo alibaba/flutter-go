@@ -7,22 +7,24 @@
  * tartget:  xxx
  */
 
-enum DateType {
-  Int,
-  Double,
-  Bool,
-  String,
-  Dynamic
-}
+//enum DateType {
+//  Int,
+//  Double,
+//  Bool,
+//  String,
+//  Dynamic
+//}
 
-class spKey {
-  String name;
-  DateType type;
-
-  spKey({this.name, this.type});
-}
+//class spKey {
+//  String name;
+//  DateType type;
+//
+//  spKey({this.name, this.type});
+//}
 
 class sharedPreferencesKeys {
-  static spKey loginWelcome = spKey(name: 'loginWelcone', type: DateType.Bool);
+  /// boolean
+  /// 用于欢迎页面. 只有第一次访问才会显示. 或者手动将这个值设为false
+  static String showWelcome = 'loginWelcone';
 }
 

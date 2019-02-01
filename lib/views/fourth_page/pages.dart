@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../routers/application.dart';
 import '../../routers/routers.dart';
+import '../../utils/shared_preferences.dart';
 
 final pages = [
   new PageViewModel(
@@ -30,7 +31,7 @@ final pages = [
 class Page extends StatelessWidget {
   final PageViewModel viewModel;
   final double percentVisible;
-
+  SpUtil sp;
   Page({
     this.viewModel,
     this.percentVisible = 1.0,
@@ -43,8 +44,10 @@ class Page extends StatelessWidget {
   Widget creatButton(
       BuildContext context, String txt, IconData iconName, String type) {
     return RaisedButton.icon(
-        onPressed: () {
+        onPressed: () async {
           if (type == 'start') {
+            await SpUtil.getInstance()
+              ..putBool(sharedPreferencesKeys.showWelcome, false);
             _goHomePage(context);
           } else if (type == 'goGithub') {
             Application.router.navigateTo(context,
