@@ -151,9 +151,8 @@ class _CupertinoAppFullDefault extends State {
               backgroundColor: CupertinoColors.destructiveRed,
               middle: Text('这里是标题', style: TextStyle(color: Colors.white)),
             ),
-            child: Center(
-                child: Text('这里是内容', style: TextStyle(color: Colors.black))),
-            backgroundColor: CupertinoColors.extraLightBackgroundGray,
+            child: Center(child: Text('这里是内容', style: TextStyle(color: Colors.black))),
+            backgroundColor: CupertinoColors.inactiveGray,
           );
         });
   }
