@@ -47,7 +47,7 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
   Widget _buildMenu(List<Widget> children) {
     return Container(
       decoration: BoxDecoration(
-        color: CupertinoTheme.of(context).scaffoldBackgroundColor,
+        color:CupertinoColors.inactiveGray,
         border: const Border(
           top: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
           bottom: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
@@ -265,12 +265,10 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
 //          previousPageTitle: 'Cupertino'
 //          ),
           child: DefaultTextStyle(
-          style: CupertinoTheme.of(context).textTheme.textStyle,
+          style: TextStyle(),
           child: DecoratedBox(
           decoration: BoxDecoration(
-          color: CupertinoTheme.of(context).brightness == Brightness.light
-          ? CupertinoColors.extraLightBackgroundGray
-              : CupertinoColors.darkBackgroundGray,
+          color: CupertinoColors.inactiveGray
           ),
           child: ListView(
             children: <Widget>[

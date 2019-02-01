@@ -32,7 +32,7 @@ class Demo extends StatefulWidget {
 }
 
 class _Demo extends State<Demo> {
-  Color c = CupertinoColors.darkBackgroundGray;
+  Color c = CupertinoColors.activeBlue;
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliderThemeData',

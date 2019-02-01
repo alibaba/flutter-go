@@ -102,7 +102,7 @@ class _CupertinoNavigationBarFullDefault extends State {
         middle: Text('Title'),// 放置在导航栏的中间。通常是标题或分段控件
         trailing: Icon(CupertinoIcons.share),// 放置在导航栏的末尾。通常在页面上执行其他操作，例如搜索或编辑功能
         actionsForegroundColor:CupertinoColors.white,// 用于 导航栏中前导和尾随小部件的文本和图标的默认颜色。
-        backgroundColor:CupertinoColors.activeOrange,// 导航栏的背景颜色。如果它包含透明度，标签栏将自动对其背后的内容产生模糊效果
+        backgroundColor:CupertinoColors.activeGreen,// 导航栏的背景颜色。如果它包含透明度，标签栏将自动对其背后的内容产生模糊效果
         border:Border( // 边框样式
           bottom: BorderSide(color: CupertinoColors.inactiveGray, width: 1.0),
         ),
