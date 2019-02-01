@@ -63,7 +63,7 @@ flutter:
     - lib/widgets/components/Chip/ChipThemeData/demo.dart
     - lib/widgets/components/Chip/ChoiceChip/demo.dart
     - lib/widgets/components/Chip/FilterChip/demo.dart
-    - lib/widgets/components/Chip/inputChip/demo.dart
+    - lib/widgets/components/Chip/InputChip/demo.dart
     - lib/widgets/components/Chip/RawChip/demo.dart
     - lib/widgets/components/Dialog/AboutDialog/demo.dart
     - lib/widgets/components/Dialog/AlertDialog/demo.dart
