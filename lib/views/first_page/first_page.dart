@@ -17,7 +17,7 @@ class FirstPage extends StatefulWidget {
 }
 
 class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin{
-  Future<SharedPreferences> _prefs=SharedPreferences.getInstance();
+  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<bool> _unKnow;
 
   @override
