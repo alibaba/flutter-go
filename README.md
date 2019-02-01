@@ -26,7 +26,7 @@ iphone下载地址:
 本项目环境持续更新. 请定期更新各依赖包.
 
 - dart(version: 2.0.0)
-- flutter(version: v1.1.10)
+- flutter(version: v1.0.0)
 
 
 ### 背景
