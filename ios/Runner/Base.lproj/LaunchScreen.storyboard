@@ -24,8 +24,10 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
                                 <rect key="frame" x="0.0" y="0.0" width="1080" height="1920"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1920" id="OLo-sE-hO2"/>
                                     <constraint firstAttribute="height" constant="1920" id="YT6-bb-oIb"/>
                                     <constraint firstAttribute="width" constant="1080" id="n6M-3x-zje"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1080" id="qQn-AH-FYP"/>
                                 </constraints>
                             </imageView>
                         </subviews>
