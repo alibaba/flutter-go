@@ -7,15 +7,22 @@
  * tartget:  xxx
  */
 
-import 'package:flutter/material.dart';
-
-class Demo extends StatefulWidget {
-  _Demo createState() => _Demo();
+enum DateType {
+  Int,
+  Double,
+  Bool,
+  String,
+  Dynamic
 }
 
-class _Demo extends State<Demo> {
+class spKey {
+  String name;
+  DateType type;
 
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  spKey({this.name, this.type});
 }
+
+class sharedPreferencesKeys {
+  static spKey loginWelcome = spKey(name: 'loginWelcone', type: DateType.Bool);
+}
+

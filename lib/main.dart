@@ -4,13 +4,13 @@ import 'package:flutter/rendering.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
 import 'package:flutter_go/utils/provider.dart';
-
+import 'package:flutter_go/utils/shared_preferences.dart';
 import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 
 class MyApp extends StatelessWidget {
-  MyApp() {
+  MyApp()  {
     final router = new Router();
     Routes.configureRoutes(router);
     Application.router = router;
@@ -46,6 +46,7 @@ var db;
 void main() async {
   final provider = new Provider();
   await provider.init(true);
+  Application.sharePeferences =  await SpUtil.instance;
   db = Provider.db;
   runApp(new MyApp());
 }
