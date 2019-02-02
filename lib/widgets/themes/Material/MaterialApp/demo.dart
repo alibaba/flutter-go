@@ -10,9 +10,9 @@
 // class MaterialApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     return new MaterialApp(
+//     return  MaterialApp(
 //       title: 'title',
-//       theme: new ThemeData(
+//       theme:  ThemeData(
 //         primaryColor: Color(ThemeColor),
 //         backgroundColor: Color(0xFFEFEFEF),
 //         accentColor: Color(0xFF888888),
@@ -25,7 +25,7 @@
 //           size: 35.0,
 //         ),
 //       ),
-//       home: new MyHomePage(),
+//       home:  MyHomePage(),
 //       onGenerateRoute: Application.router.generator,
 //     );
 //   }

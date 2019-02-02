@@ -36,8 +36,8 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
       _checkedValues.add(value);
     }
    
-    Scaffold.of(context).showSnackBar(new SnackBar(
-                content: new Text('Checked $_checkedValues')));
+    Scaffold.of(context).showSnackBar( SnackBar(
+                content:  Text('Checked $_checkedValues')));
   }
 
   @override

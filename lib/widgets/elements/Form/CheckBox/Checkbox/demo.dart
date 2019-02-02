@@ -30,9 +30,11 @@ class _CheckboxDefault extends State {
         tristate:false,
         value: isChecked,
         onChanged: (bool bol) {
-          setState((){
-            isChecked = bol;
-          });
+          if(mounted) {
+            setState(() {
+              isChecked = bol;
+            });
+          }
         }
     );
   }
@@ -58,9 +60,11 @@ class CheckboxSelect extends StatelessWidget {
         tristate:false,
         value: parent.selectValue == this.index,
         onChanged: (bool bol) {
-          parent.setState((){
-            parent.selectValue = bol ? this.index : -1;
-          });
+          if(parent.mounted) {
+            parent.setState(() {
+              parent.selectValue = bol ? this.index : -1;
+            });
+          }
         }
     );
   }

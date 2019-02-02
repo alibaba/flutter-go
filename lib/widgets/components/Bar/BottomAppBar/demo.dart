@@ -21,7 +21,7 @@ class AppBarLessDefaultSimple extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new SizedBox(
+    return  SizedBox(
       height: 100,
       child: Scaffold(
         //appBar: AppBar(title: const Text('Bottom App Bar')),

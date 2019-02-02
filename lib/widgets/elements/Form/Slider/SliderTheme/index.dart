@@ -21,10 +21,13 @@ const contentA = '''
 
 > 通过更改sliderTheme.data, 修改Slider总体样式
 
+<<<<<<< HEAD
+具体属性, 请查阅: SliderThemeData.data.
+=======
 基本属性参考以下代码: 
 
 ```
-new SliderTheme(
+ SliderTheme(
   data: SliderThemeData({
     @required Color activeTrackColor,
     @required Color inactiveTrackColor,
@@ -47,6 +50,7 @@ new SliderTheme(
 ),
 
 ```
+>>>>>>> ccb5c9e42883b23266fb95b9caf4e958d817ff48
 
 ### **基本实例**
 
@@ -67,7 +71,7 @@ class _Demo extends State<Demo> {
       codeUrl: 'elements/Form/Slider/SliderTheme/demo.dart',
       contentList: [
         contentA,
-        new SliderThemeDemo(),
+         SliderThemeDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/SliderTheme-class.html',
     );

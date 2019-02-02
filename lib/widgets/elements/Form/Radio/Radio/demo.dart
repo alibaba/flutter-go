@@ -22,27 +22,27 @@ class _Demo extends State<RadioADemo> {
   }
   Widget build(BuildContext context) {
     return  (
-      new Container(
+       Container(
         alignment: Alignment.centerLeft,
-        child: new Column(
+        child:  Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            new Radio(
+             Radio(
                 value: 1,
                 groupValue: groupValue,//当value和groupValue一致的时候则选中
                 onChanged: (T){
                   onChange(T);
                 }
             ),
-            new Radio(
+             Radio(
                 value: 2,
                 groupValue: groupValue,
                 onChanged: (T){
                   onChange(T);
                 }
             ),
-            new Radio(
+             Radio(
                 value: 3,
                 groupValue: groupValue,
                 onChanged: (T){

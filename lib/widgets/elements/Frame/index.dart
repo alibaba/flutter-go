@@ -1,4 +1,4 @@
-import 'spacing/index.dart' as Spacing;
+import 'Spacing/index.dart' as Spacing;
 import 'Expanded/index.dart' as Expanded;
 
 // import 'Axis/index.dart' as Axis;

@@ -45,7 +45,7 @@ class _DemoState extends State<Demo> {
   }
 
   Column _decoratedBoxCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
         Container(
           height: 100.0,

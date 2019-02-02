@@ -49,7 +49,7 @@ class FloatingActionButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _onPressed = onPressed;
-    return new FloatingActionButton(
+    return  FloatingActionButton(
       // 子视图，一般为Icon，不推荐使用文字
       child: const Icon(Icons.refresh),
       // FAB的文字解释，FAB被长按时显示，也是无障碍功能
@@ -109,8 +109,8 @@ class FloatingActionButtonCustom2 extends StatelessWidget {
       foregroundColor: Colors.white,
       backgroundColor: Colors.amber,
       //如果不手动设置icon和text颜色,则默认使用foregroundColor颜色
-      icon: new Icon(Icons.flag,color: Colors.red),
-      label: new Text('FloatingActionButton.extended', maxLines: 1),
+      icon:  Icon(Icons.flag,color: Colors.red),
+      label:  Text('FloatingActionButton.extended', maxLines: 1),
     );
   }
 }

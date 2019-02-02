@@ -16,7 +16,7 @@ No
 This Project need latest package, please update regularly.
 
 - dart(version: 2.0.0)
-- flutter(version: v1.1.10)
+- flutter(version: v1.0.0)
 
 ### Background
 

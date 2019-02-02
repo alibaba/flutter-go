@@ -25,20 +25,19 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
   @override
   Widget build(BuildContext context) {
     items.add(
-        /**
-       * class MaterialSlice extends MergeableMaterialItem
-       */
-        new MaterialSlice(
-            key: new ValueKey<int>(currIndexNum),
-            child: new Column(children: <Widget>[
+
+        //class MaterialSlice extends MergeableMaterialItem
+         MaterialSlice(
+            key:  ValueKey<int>(currIndexNum),
+            child:  Column(children: <Widget>[
               // header,
-              new AnimatedCrossFade(
-                firstChild: new Container(
+               AnimatedCrossFade(
+                firstChild:  Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.green,
                 ),
-                secondChild: new Container(
+                secondChild:  Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.red,
@@ -57,8 +56,8 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
 
     return Column(
       children: <Widget>[
-        new MergeableMaterial(hasDividers: true, children: items),
-        new RaisedButton(
+         MergeableMaterial(hasDividers: true, children: items),
+         RaisedButton(
           child: Text("点击添加"),
           onPressed: () {
             _isChildExpanded();

@@ -25,7 +25,9 @@ class _CheckboxListTileStateDefault extends State {
     for (var i = 0; i < isChecks.length; i++) {
       isChecks[i] = value;
     }
-    setState(() => _value = value);
+    if(mounted) {
+      setState(() => _value = value);
+    }
   }
   bool isCheck=false;
   List<bool> isChecks=[false,false,false,false];
@@ -34,7 +36,7 @@ class _CheckboxListTileStateDefault extends State {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        new Center(
+         Center(
           child: CheckboxListTile(
             value: _value,
             selected:true,// 默认文字是否高亮
@@ -48,22 +50,24 @@ class _CheckboxListTileStateDefault extends State {
             activeColor: Colors.red, // 选中此复选框时要使用的颜色
           ),
         ),
-        new Center(
-          child: new CheckboxListTile(
+         Center(
+          child:  CheckboxListTile(
               value: isChecks[0],
-              title: new Text('选项1'),
+              title:  Text('选项1'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
               onChanged: (bool){
-                setState(() {
-                  isChecks[0]=bool;
-                });
+                if(mounted) {
+                  setState(() {
+                    isChecks[0] = bool;
+                  });
+                }
               }),
         ),
-        new Center(
-          child: new CheckboxListTile(
+         Center(
+          child:  CheckboxListTile(
               value: isChecks[1],
-              title: new Text('选项2'),
+              title:  Text('选项2'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
               onChanged: (bool){
@@ -72,10 +76,10 @@ class _CheckboxListTileStateDefault extends State {
                 });
               }),
         ),
-        new Center(
-          child: new CheckboxListTile(
+         Center(
+          child:  CheckboxListTile(
               value: isChecks[2],
-              title: new Text('选项3'),
+              title:  Text('选项3'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
               onChanged: (bool){
@@ -84,10 +88,10 @@ class _CheckboxListTileStateDefault extends State {
                 });
               }),
         ),
-        new Center(
-          child: new CheckboxListTile(
+         Center(
+          child:  CheckboxListTile(
               value: isChecks[3],
-              title: new Text('选项4'),
+              title:  Text('选项4'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
               onChanged: (bool){

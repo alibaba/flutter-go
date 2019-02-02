@@ -34,7 +34,7 @@ class _CupertinoPageScaffoldFullDefault extends State {
 
   Widget navigationBar(BuildContext context) {
     return CupertinoPageScaffold( // 进入程序后显示的第一个页面,传入的是一个Widget，但实际上这个Widget需要包裹一个Scaffold
-        backgroundColor:CupertinoColors.extraLightBackgroundGray,// 整个脚手架下面的 widget 的颜色
+        backgroundColor:CupertinoColors.inactiveGray,// 整个脚手架下面的 widget 的颜色
         navigationBar: CupertinoNavigationBar(
           leading: Icon(CupertinoIcons.back),// 放置在导航栏的开头。通常是正常页面的后退按钮或完整页面对话框的取消按钮
           middle: Text('这里是标题'),// 放置在导航栏的中间。通常是标题或分段控件
