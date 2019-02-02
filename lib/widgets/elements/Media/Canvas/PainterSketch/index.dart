@@ -23,7 +23,7 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: '﻿Canvas',
+      title: 'PainterSketch',
       codeUrl: 'elements/Media/Canvas/PainterSketch/demo.dart',
       contentList: [
         Text,
