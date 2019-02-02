@@ -21,9 +21,6 @@ const contentA = '''
 
 > 通过更改sliderTheme.data, 修改Slider总体样式
 
-<<<<<<< HEAD
-具体属性, 请查阅: SliderThemeData.data.
-=======
 基本属性参考以下代码: 
 
 ```
@@ -50,7 +47,6 @@ const contentA = '''
 ),
 
 ```
->>>>>>> ccb5c9e42883b23266fb95b9caf4e958d817ff48
 
 ### **基本实例**
 

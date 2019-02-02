@@ -46,10 +46,6 @@ const contentB = '''
 ### **高级用法**
 > 自定义Slider 样式
 
-<<<<<<< HEAD
-如果当前Slider样式 无法满足需求, 可以通过 **SliderTheme** 定制复杂样式
-
-=======
 如果当前Slider样式 无法满足需求, 可以通过 ** SliderTheme ** 定制复杂样式
 
 ```
@@ -69,7 +65,6 @@ const contentB = '''
 )
 
 ```
->>>>>>> ccb5c9e42883b23266fb95b9caf4e958d817ff48
 
 ### **基本实例**
 
