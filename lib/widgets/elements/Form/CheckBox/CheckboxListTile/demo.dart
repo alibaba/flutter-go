@@ -25,7 +25,9 @@ class _CheckboxListTileStateDefault extends State {
     for (var i = 0; i < isChecks.length; i++) {
       isChecks[i] = value;
     }
-    setState(() => _value = value);
+    if(mounted) {
+      setState(() => _value = value);
+    }
   }
   bool isCheck=false;
   List<bool> isChecks=[false,false,false,false];
@@ -55,9 +57,11 @@ class _CheckboxListTileStateDefault extends State {
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
               onChanged: (bool){
-                setState(() {
-                  isChecks[0]=bool;
-                });
+                if(mounted) {
+                  setState(() {
+                    isChecks[0] = bool;
+                  });
+                }
               }),
         ),
          Center(

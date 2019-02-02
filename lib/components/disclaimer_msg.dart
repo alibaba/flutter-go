@@ -33,11 +33,13 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   void refs(bool value) async {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
-    setState(() {
-      _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
-        return unKnow;
+    if (mounted) {
+      setState(() {
+        _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
+          return unKnow;
+        });
       });
-    });
+    }
   }
 
   @override
@@ -135,12 +137,12 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
                   tristate: false,
                   value: _valBool,
                   onChanged: (bool bol) {
-                    setState(() {
-                      _valBool = bol;
-                    });
-//                                refs(bol);
-                    Navigator.of(context)
-                        .pop(); // here I pop to avoid multiple Dialogs
+                    if(mounted) {
+                      setState(() {
+                        _valBool = bol;
+                      });
+                    }
+                    Navigator.of(context).pop(); // here I pop to avoid multiple Dialogs
                     showAlertDialog(context); //here i call the same function
                   }),
               Text('不再自动提示', style: TextStyle(fontSize: 14)),
