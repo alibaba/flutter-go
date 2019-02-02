@@ -30,9 +30,11 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
     final Offset xy = box.globalToLocal(detail.globalPosition);// 重要需要转换以下坐标位置
     Offset p = Offset(xy.dx, xy.dy - 60);
     //Offset p = Offset(detail.globalPosition.dx, detail.globalPosition.dy - 60);
-    setState(() {
-      nowPoints.add(p);
-    });
+    if (mounted) {
+      setState(() {
+        nowPoints.add(p);
+      });
+    }
   }
 
   void newGestureDetector(DragStartDetails detail) {
@@ -45,9 +47,11 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
     final Offset xy = box.globalToLocal(detail.globalPosition);// 重要需要转换以下坐标位置
     Offset p = Offset(xy.dx, xy.dy - 60);
     //Offset p = Offset(detail.globalPosition.dx, detail.globalPosition.dy - 60);
-    setState(() {
-      nowPoints.add(p);
-    });
+    if (mounted) {
+      setState(() {
+        nowPoints.add(p);
+      });
+    }
   }
 
   void changeColor (Color c){
@@ -55,10 +59,12 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
       LinePoints l = LinePoints(new List<Offset>.from(nowPoints), nowColor);
       lines.add(l);
     }
-    setState(() {
-      nowPoints.clear();
-      nowColor = c;
-    });
+    if (mounted) {
+      setState(() {
+        nowPoints.clear();
+        nowColor = c;
+      });
+    }
   }
 
   List<Color> colors = <Color>[
@@ -74,10 +80,12 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
     Colors.cyanAccent,];
 
   void _tapClear(){
-    setState(() {
-      lines.clear();
-      nowPoints.clear();
-    });
+    if (mounted) {
+      setState(() {
+        lines.clear();
+        nowPoints.clear();
+      });
+    }
   }
 
   @override

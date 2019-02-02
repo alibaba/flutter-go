@@ -61,7 +61,9 @@ class _ListRefreshState extends State<ListRefresh> {
   Future _getMoreData() async {
     if (!isLoading && _hasMore) {
       // 如果上一次异步请求数据完成 同时有数据可以加载
-      setState(() => isLoading = true);
+      if (mounted) {
+        setState(() => isLoading = true);
+      }
       //if(_hasMore){ // 还有数据可以拉新
       List newEntries = await mokeHttpRequest();
       //if (newEntries.isEmpty) {

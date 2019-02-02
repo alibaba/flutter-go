@@ -124,9 +124,11 @@ class DropdownButtonCustom extends StatelessWidget {
         value: selectItemValue,
         //下拉菜单item点击之后的回调
         onChanged: (T){
-          parent.setState((){
-            selectItemValue = T;
-          });
+          if (parent.mounted) {
+            parent.setState(() {
+              selectItemValue = T;
+            });
+          }
         },
         //设置阴影的高度
         elevation: 24,
