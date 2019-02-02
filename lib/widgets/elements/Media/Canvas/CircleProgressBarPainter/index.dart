@@ -23,7 +23,7 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: '﻿Canvas',
+      title: 'CircleProgressBarPainter',
       codeUrl: 'elements/Media/Canvas/CircleProgressBarPainter/demo.dart',
       contentList: [
         Text,
