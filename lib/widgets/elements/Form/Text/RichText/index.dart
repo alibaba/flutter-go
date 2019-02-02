@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
-import 'demo.dart';
+// import 'package:flutter_go/widgets/elements/Form/Text/RichText/demo.dart';
+import './demo.dart';
+
 const String intro = """
 ### **简介**
 
