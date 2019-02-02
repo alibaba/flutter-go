@@ -15,11 +15,11 @@ class FittedBoxDefault extends StatelessWidget {
   final BoxFit curfit;
   final String dec;
 
-  FittedBoxDefault({Key key,  this.curfit, this.dec});
+  FittedBoxDefault({Key key, this.curfit, this.dec});
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return  Column(
       children: <Widget>[
         Container(
           //外部有位置约束，内部大小设定失效，保持和外部约束一致

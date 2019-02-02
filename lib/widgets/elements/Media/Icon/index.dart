@@ -17,20 +17,20 @@ List<WidgetPoint> widgetPoints = [
     name: 'ImageIcon',
     routerName: ImageIcon.Demo.routeName,
     buildRouter: (BuildContext context) => ImageIcon.Demo(),
-  ), WidgetPoint(
+  ),
+  WidgetPoint(
     name: 'IconTheme',
     routerName: IconTheme.Demo.routeName,
     buildRouter: (BuildContext context) => IconTheme.Demo(),
   ),
-   WidgetPoint(
+  WidgetPoint(
     name: 'IconData',
     routerName: IconData.Demo.routeName,
     buildRouter: (BuildContext context) => IconData.Demo(),
   ),
-   WidgetPoint(
+  WidgetPoint(
     name: 'IconThemeData',
     routerName: IconThemeData.Demo.routeName,
     buildRouter: (BuildContext context) => IconThemeData.Demo(),
   ),
-  
 ];

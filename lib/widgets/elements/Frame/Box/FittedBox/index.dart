@@ -1,4 +1,3 @@
-
 /**
  * Author: xiaojia.dxj
  * Date: 2019-01-08
@@ -9,7 +8,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
-import './demo.dart' as fittedBox;
+import './demo.dart';
 
 const String Text0 = """
 ### **FittedBox**
@@ -53,18 +52,16 @@ class _DemoState extends State<Demo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            fittedBox.FittedBoxDefault(
-              /**
-               * 设置child写入布局期间分配空间
-               */
+            FittedBoxDefault(
+              //设置child写入布局期间分配空间
               curfit: BoxFit.contain,
               dec: 'contain',
             ),
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.fill,
               dec: 'fill',
             ),
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.cover,
               dec: 'cover',
             ),
@@ -76,11 +73,11 @@ class _DemoState extends State<Demo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.fitHeight,
               dec: 'fitHeight',
             ),
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.fitWidth,
               dec: 'fitWidth',
             ),
@@ -92,11 +89,11 @@ class _DemoState extends State<Demo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.none,
               dec: 'none',
             ),
-            fittedBox.FittedBoxDefault(
+            FittedBoxDefault(
               curfit: BoxFit.scaleDown,
               dec: 'scaleDown',
             ),

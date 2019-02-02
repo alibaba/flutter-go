@@ -29,11 +29,11 @@ class _MemoryImageDemoState extends State<MemoryImageDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final decoration = new BoxDecoration(
+    final decoration =  BoxDecoration(
       image: bytes == null
           ? null
-          : new DecorationImage(
-              image: new MemoryImage(bytes,scale: 1.0),
+          :  DecorationImage(
+              image:  MemoryImage(bytes,scale: 1.0),
             ),
     );
     return Container(

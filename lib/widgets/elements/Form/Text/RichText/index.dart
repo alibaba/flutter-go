@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
-// import 'package:flutter_go/widgets/elements/Form/Text/RichText/demo.dart';
-import './demo.dart';
-
+import 'package:flutter_go/widgets/elements/Form/Text/RichText/demo.dart';
 const String intro = """
 ### **简介**
 
@@ -13,32 +11,12 @@ const String intro = """
 
 无论是Text或者Text.rich, 查看源代码发现. 都是由RichText构建出来
 
-RichText的源码展示
 
-```
-// Text 源码
-@override
-  Widget build(BuildContext context) {
-      ...
-      Widget result = RichText(
-      ...
-    
-        style: effectiveTextStyle,
-        text: data,
-        children: textSpan != null ? <TextSpan>[textSpan] : null,
-      ),
-    );
-    ...
-    return result;
-  }
-```
-### **基本实例**
+### **基本用法**
+我们可以让一段文本通过使用不同的TextSpan显示不同的样式。比如我们让"Hello beautiful world"的每个单词都显示不同的样式.
 
 """;
-const String diff = """
 
-
-""";
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Text/RichText';

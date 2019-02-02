@@ -63,7 +63,7 @@ flutter:
     - lib/widgets/components/Chip/ChipThemeData/demo.dart
     - lib/widgets/components/Chip/ChoiceChip/demo.dart
     - lib/widgets/components/Chip/FilterChip/demo.dart
-    - lib/widgets/components/Chip/inputChip/demo.dart
+    - lib/widgets/components/Chip/InputChip/demo.dart
     - lib/widgets/components/Chip/RawChip/demo.dart
     - lib/widgets/components/Dialog/AboutDialog/demo.dart
     - lib/widgets/components/Dialog/AlertDialog/demo.dart
@@ -124,14 +124,12 @@ flutter:
     - lib/widgets/elements/Frame/Align/Align/demo.dart
     - lib/widgets/elements/Frame/Box/ConstrainedBox/demo.dart
     - lib/widgets/elements/Frame/Box/DecoratedBox/demo.dart
-    - lib/widgets/elements/Frame/Box/Fittedbox/demo.dart
+    - lib/widgets/elements/Frame/Box/FittedBox/demo.dart
     - lib/widgets/elements/Frame/Box/LimitedBox/demo.dart
     - lib/widgets/elements/Frame/Box/OverflowBox/demo.dart
-    - lib/widgets/elements/Frame/Box/RenderBox/demo.dart
     - lib/widgets/elements/Frame/Box/RotatedBox/demo.dart
     - lib/widgets/elements/Frame/Box/SizeBox/demo.dart
     - lib/widgets/elements/Frame/Box/SizedOverflowBox/demo.dart
-    - lib/widgets/elements/Frame/Box/TextBox/demo.dart
     - lib/widgets/elements/Form/Text/Text/demo.dart
     - lib/widgets/elements/Form/Text/RichText/index.dart
     - lib/widgets/elements/Frame/Box/UnconstrainedBox/demo.dart
@@ -163,6 +161,10 @@ flutter:
     - lib/widgets/elements/Media/Image/paintImage/paint_image_demo.dart
     - lib/widgets/elements/Media/Image/precacheImage/precache_image_demo.dart
     - lib/widgets/elements/Media/Image/RawImage/raw_image_demo.dart
+    - lib/widgets/elements/Media/Canvas/Canvas/demo.dart
+    - lib/widgets/elements/Media/Canvas/CircleProgressBarPainter/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterPath/demo.dart
+    - lib/widgets/elements/Media/Canvas/PainterSketch/demo.dart
     - lib/widgets/themes/Material/MaterialApp/demo.dart
     - lib/widgets/themes/Material/MaterialButton/demo.dart
     - lib/widgets/themes/Material/MaterialColor/demo.dart
@@ -179,6 +181,7 @@ flutter:
     - lib/widgets/themes/Cupertino/CupertinoPopupSurface/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoScrollbar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSegmentedControl/demo.dart
+    - lib/widgets/elements/Form/Switch/Switch/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSlider/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSliverNavigationBar/demo.dart
     - lib/widgets/themes/Cupertino/CupertinoSwitch/demo.dart

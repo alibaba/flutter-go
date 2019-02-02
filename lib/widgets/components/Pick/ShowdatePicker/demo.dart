@@ -14,8 +14,8 @@ class ShowDatePickerDemo extends StatefulWidget {
 }
 
 class _ShowDatePickerState extends State<ShowDatePickerDemo> {
-  DateTime _date = new DateTime.now();
-  TimeOfDay _time = new TimeOfDay.now();
+  DateTime _date =  DateTime.now();
+  TimeOfDay _time =  TimeOfDay.now();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -29,7 +29,7 @@ class _ShowDatePickerState extends State<ShowDatePickerDemo> {
       _date = picked;
     });
 
-    if (picked == null) _date = new DateTime.now();
+    if (picked == null) _date =  DateTime.now();
   }
 
   Future<void> _selectTime(BuildContext context) async {
@@ -40,23 +40,23 @@ class _ShowDatePickerState extends State<ShowDatePickerDemo> {
     setState(() {
       _time = picked;
     });
-    if (picked == null) _time = new TimeOfDay.now();
+    if (picked == null) _time =  TimeOfDay.now();
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return  Column(
       children: <Widget>[
-        new Text('日期选择'),
-        new RaisedButton(
-          child: new Text('date selected:${_date.toString()}'),
+         Text('日期选择'),
+         RaisedButton(
+          child:  Text('date selected:${_date.toString()}'),
           onPressed: () {
             _selectDate(context);
           },
         ),
-        new Text('时间选择'),
-        new RaisedButton(
-          child: new Text('date selected:${_time.toString()}'),
+         Text('时间选择'),
+         RaisedButton(
+          child:  Text('date selected:${_time.toString()}'),
           onPressed: () {
             _selectTime(context);
           },

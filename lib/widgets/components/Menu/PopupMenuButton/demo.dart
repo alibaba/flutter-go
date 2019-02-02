@@ -19,8 +19,8 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
   void showMenuSelection(String value) {
     if (<String>[_simpleValue1, _simpleValue2, _simpleValue3].contains(value))
       _simpleValue = value;
-       Scaffold.of(context).showSnackBar(new SnackBar(
-                content: new Text('You selected: $value')));
+       Scaffold.of(context).showSnackBar( SnackBar(
+                content:  Text('You selected: $value')));
   }
 
 

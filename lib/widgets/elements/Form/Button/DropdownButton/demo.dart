@@ -17,15 +17,15 @@ var selectItemValue;
 
 class DropdownButtonDefault extends StatelessWidget {
    List<DropdownMenuItem> generateItemList() {
-    final List<DropdownMenuItem> items = new List();
-    final DropdownMenuItem item1 = new DropdownMenuItem(
-        value: '张三', child: new Text('张三'));
-    final DropdownMenuItem item2 = new DropdownMenuItem(
-        value: '李四', child: new Text('李四'));
-    final DropdownMenuItem item3 = new DropdownMenuItem(
-        value: '王二', child: new Text('王二'));
-    final DropdownMenuItem item4 = new DropdownMenuItem(
-        value: '麻子', child: new Text('麻子'));
+    final List<DropdownMenuItem> items =  List();
+    final DropdownMenuItem item1 =  DropdownMenuItem(
+        value: '张三', child:  Text('张三'));
+    final DropdownMenuItem item2 =  DropdownMenuItem(
+        value: '李四', child:  Text('李四'));
+    final DropdownMenuItem item3 =  DropdownMenuItem(
+        value: '王二', child:  Text('王二'));
+    final DropdownMenuItem item4 =  DropdownMenuItem(
+        value: '麻子', child:  Text('麻子'));
     items.add(item1);
     items.add(item2);
     items.add(item3);
@@ -36,7 +36,7 @@ class DropdownButtonDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
-        hint: new Text('下拉菜单选择一个人名'),
+        hint:  Text('下拉菜单选择一个人名'),
         //设置这个value之后,选中对应位置的item，
         //再次呼出下拉菜单，会自动定位item位置在当前按钮显示的位置处
         value: selectItValue,
@@ -51,54 +51,54 @@ class DropdownButtonDefault extends StatelessWidget {
 }
 
 List<DropdownMenuItem> getListData(){
-  List<DropdownMenuItem> items=new List();
-  DropdownMenuItem dropdownMenuItem1=new DropdownMenuItem(
-    child:new Text('1'),
+  List<DropdownMenuItem> items= List();
+  DropdownMenuItem dropdownMenuItem1= DropdownMenuItem(
+    child: Text('1'),
     value: '1',
   );
   items.add(dropdownMenuItem1);
-  DropdownMenuItem dropdownMenuItem2=new DropdownMenuItem(
-    child:new Text('2'),
+  DropdownMenuItem dropdownMenuItem2= DropdownMenuItem(
+    child: Text('2'),
     value: '2',
   );
   items.add(dropdownMenuItem2);
-  DropdownMenuItem dropdownMenuItem3=new DropdownMenuItem(
-    child:new Text('3'),
+  DropdownMenuItem dropdownMenuItem3= DropdownMenuItem(
+    child: Text('3'),
     value: '3',
   );
   items.add(dropdownMenuItem3);
-  DropdownMenuItem dropdownMenuItem4=new DropdownMenuItem(
-    child:new Text('4'),
+  DropdownMenuItem dropdownMenuItem4= DropdownMenuItem(
+    child: Text('4'),
     value: '4',
   );
   items.add(dropdownMenuItem4);
-  DropdownMenuItem dropdownMenuItem5=new DropdownMenuItem(
-    child:new Text('5'),
+  DropdownMenuItem dropdownMenuItem5= DropdownMenuItem(
+    child: Text('5'),
     value: '5',
   );
   items.add(dropdownMenuItem5);
-  DropdownMenuItem dropdownMenuItem6=new DropdownMenuItem(
-    child:new Text('6'),
+  DropdownMenuItem dropdownMenuItem6= DropdownMenuItem(
+    child: Text('6'),
     value: '6',
   );
   items.add(dropdownMenuItem6);
-  DropdownMenuItem dropdownMenuItem7=new DropdownMenuItem(
-    child:new Text('7'),
+  DropdownMenuItem dropdownMenuItem7= DropdownMenuItem(
+    child: Text('7'),
     value: '7',
   );
   items.add(dropdownMenuItem7);
-  DropdownMenuItem dropdownMenuItem8=new DropdownMenuItem(
-    child:new Text('8'),
+  DropdownMenuItem dropdownMenuItem8= DropdownMenuItem(
+    child: Text('8'),
     value: '8',
   );
   items.add(dropdownMenuItem8);
-  DropdownMenuItem dropdownMenuItem9=new DropdownMenuItem(
-    child:new Text('9'),
+  DropdownMenuItem dropdownMenuItem9= DropdownMenuItem(
+    child: Text('9'),
     value: '9',
   );
   items.add(dropdownMenuItem9);
-  DropdownMenuItem dropdownMenuItem10=new DropdownMenuItem(
-    child:new Text('10'),
+  DropdownMenuItem dropdownMenuItem10= DropdownMenuItem(
+    child: Text('10'),
     value: '10',
   );
   items.add(dropdownMenuItem10);
@@ -124,9 +124,11 @@ class DropdownButtonCustom extends StatelessWidget {
         value: selectItemValue,
         //下拉菜单item点击之后的回调
         onChanged: (T){
-          parent.setState((){
-            selectItemValue = T;
-          });
+          if (parent.mounted) {
+            parent.setState(() {
+              selectItemValue = T;
+            });
+          }
         },
         //设置阴影的高度
         elevation: 24,

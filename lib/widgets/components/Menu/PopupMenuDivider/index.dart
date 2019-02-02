@@ -18,7 +18,7 @@ const String content0 = '''
 const String content1 = '''
 ### **基本用法**
 > 此widget通过调整Divider widget 来适应于弹出菜单中
-- 在 PopupMenuButton 中直接 new PopupMenuDivider() 即可
+- 在 PopupMenuButton 中直接  PopupMenuDivider() 即可
 ''';
 
 class Demo extends StatefulWidget {

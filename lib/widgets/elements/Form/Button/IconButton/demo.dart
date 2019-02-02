@@ -75,7 +75,7 @@ class IconButtonCustom extends StatelessWidget {
         iconSize:(Random.secure().nextInt(20)+20).toDouble(), // 随机大小
         // 按钮内部,墨汁飞溅的颜色,点击按钮时的渐变背景色，当你不设置高亮背景时才会看的更清楚
         splashColor: _randomColor(),
-        padding: new EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+        padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         // 描述按下按钮时将发生的操作的文本
         tooltip:'这是${ type.codePoint }信息',
         // IconButton 的点击事件
