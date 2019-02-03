@@ -39,9 +39,11 @@ class CustomViewPageState extends State<CustomViewPage>
   void initState() {
     super.initState();
     getImage("assets/images/painterImg.jpeg").then((data) {
-      setState(() {
-        image = data;
-      });
+      if (mounted) {
+        setState(() {
+          image = data;
+        });
+      }
     });
   }
 

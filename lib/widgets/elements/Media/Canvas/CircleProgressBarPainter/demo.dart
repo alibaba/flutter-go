@@ -30,7 +30,9 @@ class CustomViewPageState extends State<CustomViewPage>
     _doubleAnimation = Tween(begin: 0.0, end: 360.0).animate(_controller);
 
     _controller.addListener(() {
-      this.setState(() {});
+      if(mounted){
+        this.setState(() {});
+      }
     });
     onAnimationStart();
   }

@@ -43,16 +43,23 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
     if (_exampleCode == null) {
       body = const Center(child: CircularProgressIndicator());
     } else {
-      body = SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: RichText(
-            text: TextSpan(
+      Widget _codeWidget;
+      try{
+        DartSyntaxHighlighter(style).format(_exampleCode);
+        _codeWidget = RichText(
+          text: TextSpan(
                 style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
                 children: <TextSpan>[
                   DartSyntaxHighlighter(style).format(_exampleCode)
-                ]),
-          ),
+                ],),
+        );
+      }catch (err){
+        _codeWidget = Text(_exampleCode);
+      }
+      body = SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: _codeWidget,
         ),
       );
     }

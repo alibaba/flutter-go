@@ -108,7 +108,9 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
                   backgroundColor: CupertinoColors.white,// 所有子节点下面的背景颜色
                   useMagnifier:true,// 是否使用放大效果
                   onSelectedItemChanged: (int index) { // 当正中间选项改变时的回调
-                    setState(() => _selectedColorIndex = index);
+                    if (mounted) {
+                      setState(() => _selectedColorIndex = index);
+                    }
                   },
                   children: List<Widget>.generate(coolColorNames.length, (int index) {
                 return Center(child:
@@ -144,7 +146,9 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
               CupertinoTimerPicker(
                 initialTimerDuration: timer,
                 onTimerDurationChanged: (Duration newTimer) {
-                  setState(() => timer = newTimer);
+                  if (mounted) {
+                    setState(() => timer = newTimer);
+                  }
                 },
               ),
             );
@@ -176,7 +180,9 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
                 mode: CupertinoDatePickerMode.date,
                 initialDateTime: date,
                 onDateTimeChanged: (DateTime newDateTime) {
-                  setState(() => date = newDateTime);
+                  if (mounted) {
+                    setState(() => date = newDateTime);
+                  }
                 },
               ),
             );
@@ -206,7 +212,9 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
                 mode: CupertinoDatePickerMode.time,
                 initialDateTime: time,
                 onDateTimeChanged: (DateTime newDateTime) {
-                  setState(() => time = newDateTime);
+                  if (mounted) {
+                    setState(() => time = newDateTime);
+                  }
                 },
               ),
             );
@@ -236,7 +244,9 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
                 mode: CupertinoDatePickerMode.dateAndTime,
                 initialDateTime: dateTime,
                 onDateTimeChanged: (DateTime newDateTime) {
-                  setState(() => dateTime = newDateTime);
+                  if (mounted) {
+                    setState(() => dateTime = newDateTime);
+                  }
                 },
               ),
             );

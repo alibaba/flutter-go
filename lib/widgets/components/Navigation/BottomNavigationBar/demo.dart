@@ -25,9 +25,11 @@ class _BottomNavigationBarFullDefault extends State {
    int _currentIndex = 1;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+    if(mounted) {
+      setState(() {
+        _currentIndex = index;
+      });
+    }
   }
 
   @override

@@ -43,9 +43,11 @@ class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
   void remove() {
     if (_selectedItem != null) {
       _list.removeAt(_list.indexOf(_selectedItem));
-      setState(() {
-        _selectedItem = null;
-      });
+      if(mounted) {
+        setState(() {
+          _selectedItem = null;
+        });
+      }
     }
   }
 

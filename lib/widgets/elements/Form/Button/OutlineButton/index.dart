@@ -54,9 +54,11 @@ class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
   void setButtonShapeType(){
     String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    this.setState((){
-      buttonShapeType = _buttonShapeType;
-    });
+    if (mounted) {
+      this.setState(() {
+        buttonShapeType = _buttonShapeType;
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
