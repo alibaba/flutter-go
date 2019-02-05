@@ -1,5 +1,29 @@
 ## 更新日志
 
+
+#### 2019-2-5
+  - [x] 处理因为flutter版本导致的项目运行不起来
+  - [x] 更新readme, 加入开发日志, 与相关说明
+  - [x] 加入 首页欢迎效果图
+  - [x] refactor(整理richText的说明):
+  - [x] 解决一些页面的code演示打不开的问题
+  - [x] add:开发规范
+  - [x] add:版本更新历史链接
+  - [x] Update README.md
+  - [x] add:添加版本号
+  - [x] feat:添加代码开发规范
+  - [x] refactor(update: version & fiexed warns):
+  - [x] fix(solve conflict):
+  - [x] modify:toast and andrid apk label
+  - [x] Add:自动 pr 工具抓取器，抓取两周前至今的,提交数据，并去重
+  - [x] fix:fluttetToast backHome
+  - [x] fix:modified the style of toast && remote files
+  - [x] chore(删除tools/log.json):
+  - [x] 重构文件结构
+  - [x] 关于手册图标更换
+  - [x] 增加demo: CupertinoNavigationBar CupertinoPageRoute CupertinoPageScaffold CupertinoPicker，CupertinoPopupSurface CupertinoTimerPickerDemo
+
+
 #### 2019-1-24
   - [x] 功能：更新小部件的图标
   - [x] 功能：添加CupertinoTimerPickerDemo
