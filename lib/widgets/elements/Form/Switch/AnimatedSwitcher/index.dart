@@ -39,7 +39,7 @@ class _Demo extends State<Demo> {
       codeUrl: 'elements/Form/Switch/AnimatedSwitcher/demo.dart',
       contentList: [
         contentA,
-        new AnimatedSwitcherDemo()
+         AnimatedSwitcherDemo()
       ],
       docUrl: '',
     );

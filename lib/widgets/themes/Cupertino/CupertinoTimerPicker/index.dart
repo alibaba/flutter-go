@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoTimerPicker',
-      codeUrl: '/themes/Cupertino/CupertinoTimerPicker/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoTimerPicker/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoTimerPicker-class.html',
       contentList: [
         Text0,

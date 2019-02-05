@@ -11,28 +11,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
 const content1 = """
-# Radio
+### **简介**
 > material design 风格的单选按钮
 
 Radio widget 代表表单中的单选按钮, 当groupValue = value时代表组件被选中。
 
 在表单中, 单选按钮是表示一组互斥选项按钮中的一个。当一个按钮被选中，之前选中的按钮就变为非选中的。
 
-# 示例显示
-""";
-
-const content2 = """
-# 基本用法
-
-```
-new Radio(
-    value: value,
-    groupValue: groupValue, //当value和groupValue一致的时候则选中
-    onChanged: (T){
-      onChange(T);
-    }
-
-````
+### **基本用法**
+以下是Radio的属性主产明
+- activeColor → Color - 激活时的颜色。
+- groupValue → T - 选择组的值。
+- onChanged → ValueChanged - 改变时触发。
+- value → T - 单选的值。
 """;
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Radio/index';
@@ -46,7 +37,6 @@ class _DemoState extends State<Demo> {
       contentList: [
         content1,
         new RadioADemo(),
-        content2
       ],
       title: 'Radio',
       docUrl: 'https://docs.flutter.io/flutter/material/Radio-class.html',

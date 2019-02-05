@@ -54,9 +54,11 @@ class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
   void setButtonShapeType(){
     String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    this.setState((){
-      buttonShapeType = _buttonShapeType;
-    });
+    if (mounted) {
+      this.setState(() {
+        buttonShapeType = _buttonShapeType;
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class _DemoState extends State<Demo> {
 Widget allOutlineButtons(BuildContext context,_DemoState that){
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
   return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
+    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
       child: Column(
         //mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -136,16 +138,16 @@ Widget allOutlineButtons(BuildContext context,_DemoState that){
 //     context: context,
 //     builder: (BuildContext context) {
 //       return AlertDialog(
-//           title: new Text('提示'),
-//           content: new Text(name),
+//           title:  Text('提示'),
+//           content:  Text(name),
 //           actions: <Widget>[
-//             new FlatButton(
+//              FlatButton(
 //               // alert 的取消按钮
 //                 onPressed: () {
 //                   // 取消的事件
 //                   Navigator.of(context).pop(true);
 //                 },
-//                 child: new Text('取消'))
+//                 child:  Text('取消'))
 //           ]);
 //     }
 //   );
@@ -155,14 +157,14 @@ Widget allOutlineButtons(BuildContext context,_DemoState that){
 * 带align的text
 * */
 Widget textAlignBar(String txt){
-  //style: new TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return new Align(
+  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
+  return  Align(
       alignment: FractionalOffset.centerLeft,
       child: Column(
           children: <Widget>[
             SizedBox(height: 20.0),
             MarkdownBody(data: txt)
-            //new Text(txt, style: new TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
+            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
           ])
   );
 }
@@ -186,7 +188,7 @@ ShapeBorder drawShape(String type){
       break;
     case 'radius':
       return RoundedRectangleBorder(
-        side:new BorderSide( // 保留原来的边框样式
+        side: BorderSide( // 保留原来的边框样式
           width: borderWidth,
           color: _color,
           style: BorderStyle.solid,

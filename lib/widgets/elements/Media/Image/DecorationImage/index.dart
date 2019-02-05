@@ -38,7 +38,7 @@ class _DemoState extends State<Demo> {
         contentText1,
         DecorationImageDemo(),
       ],
-      codeUrl: 'elements/Media/Image/DecorationImage/index.dart?1542705856254',
+      codeUrl: 'elements/Media/Image/DecorationImage/decorationImage_demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/painting/DecorationImage-class.html',
       title: 'DecorationImage',

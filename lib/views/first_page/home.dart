@@ -17,7 +17,7 @@ import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/routers/application.dart';
-import 'package:flutter_go/utils//provider.dart';
+import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/model/widget.dart';
 import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';

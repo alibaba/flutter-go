@@ -34,7 +34,7 @@ class _DemoState extends State<Demo> {
         contentText1,
         NetworkImageDemo(),
       ],
-      codeUrl: '',
+      codeUrl: 'elements/Media/Image/NetworkImage/network_image_demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/painting/NetworkImage-class.html',
       title: 'NetworkImage',
     );

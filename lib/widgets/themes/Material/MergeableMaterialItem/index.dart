@@ -37,7 +37,7 @@ class _DemoState extends State<Demo> {
         MergeableMaterialItemDemo(),
       ],
       title: "MergeableMaterialItem",
-      codeUrl: 'Material/MergeableMaterialItem/demo.dart',
+      codeUrl: 'themes/Material/MergeableMaterialItem/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MergeableMaterialItem-class.html',
     );

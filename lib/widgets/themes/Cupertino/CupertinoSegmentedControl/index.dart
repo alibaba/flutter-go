@@ -32,7 +32,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CupertinoSegmentedControl',
-      codeUrl: '/themes/Cupertino/CupertinoSegmentedControl/demo.dart',
+      codeUrl: '/hemes/Cupertino/CupertinoSegmentedControl/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoSegmentedControl-class.html',
       contentList: [
         Text0,

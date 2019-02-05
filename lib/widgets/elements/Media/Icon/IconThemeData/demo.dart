@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 
 class IconThemeDemo extends StatelessWidget {
-  final Color curColor ;
+  final Color curColor;
   final double curOpacity;
 
   IconThemeDemo({Key key, this.curColor, this.curOpacity}) : super();
@@ -16,20 +16,20 @@ class IconThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new IconTheme(
+      child:  IconTheme(
         //opacity: 设置透明
-        data: new IconThemeData(
+        data:  IconThemeData(
           color: curColor,
           opacity: curOpacity,
         ),
-        child: new Icon(Icons.favorite),
+        child:  Icon(Icons.favorite),
       ),
     );
   }
 }
 
 class IconThemeDemo2 extends StatelessWidget {
-  final Color curColor ;
+  final Color curColor;
   final double curSize;
 
   IconThemeDemo2({Key key, this.curColor, this.curSize}) : super();
@@ -38,8 +38,8 @@ class IconThemeDemo2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       actions: <Widget>[
-        new IconTheme(
-            data: new IconThemeData(color: curColor, opacity: 1.0),
+         IconTheme(
+            data:  IconThemeData(color: curColor, opacity: 1.0),
             child: Row(
               children: <Widget>[
                 Icon(Icons.favorite_border),

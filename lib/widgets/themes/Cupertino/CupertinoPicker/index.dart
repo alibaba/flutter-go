@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'CupertinoPicker',
       docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html',
-      codeUrl: '/themes/Cupertino/CupertinoPicker/demo.dart',
+      codeUrl: 'themes/Cupertino/CupertinoPicker/demo.dart',
     );
   }
 }

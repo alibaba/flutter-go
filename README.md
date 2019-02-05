@@ -3,6 +3,15 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 > 帮助开发者快速上手 Flutter  **内部测试中，1.0 正式版将于 2月 20日 发布。**
 
+## 版本更新历史
+> 按时间顺序,展示重要的提交更新内容。
+
+[地址](https://github.com/alibaba/flutter-go/blob/develop/CHANGE-LOG.md)
+
+## 开发规范
+> 由于类似 javascript, java, object-c,等开发者的语言习惯不同而产生歧义，我们依据官方提供的 [dart 语言规范](https://www.dartlang.org) 定制。
+
+[<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## Release安装包下载地址
 
@@ -12,6 +21,13 @@ android下载地址:
 
 iphone下载地址:
 暂无
+
+## 基础环境
+本项目环境持续更新. 请定期更新各依赖包.
+
+- dart(version: 2.0.0)
+- flutter(version: v1.0.0)
+
 
 ### 背景
 
@@ -40,6 +56,7 @@ flutter优点主要包括：
 - 持续迭代 ‘追新’ 官方版本
 
 ### app 预览
+
 
 <img src="https://img.alicdn.com/tfs/TB1MoiNExTpK1RjSZFGXXcHqFXa-362-751.gif" width=200> <img src="https://img.alicdn.com/tfs/TB1oeicBhjaK1RjSZFAXXbdLFXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB1WJNuBmzqK1RjSZPcXXbTepXa-345-717.gif" width=200>  <img src="https://img.alicdn.com/tfs/TB13Xh3BkvoK1RjSZFNXXcxMVXa-345-717.gif" width=200>  
 

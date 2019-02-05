@@ -14,10 +14,9 @@ class Palette {
   final String name;
   final MaterialColor primary;
 
-  /*
-   * MaterialAccentColor：定义单一的色滴，颜色的阴影用索引表示，
-   * 索引比较小的颜色比较浅，较大的索引较暗
-   */
+  /// MaterialAccentColor：定义单一的色滴，颜色的阴影用索引表示，
+  /// 索引比较小的颜色比较浅，较大的索引较暗
+
   final MaterialAccentColor accent;
   final int
       threshold; // titles for indices > threshold are white, otherwise black

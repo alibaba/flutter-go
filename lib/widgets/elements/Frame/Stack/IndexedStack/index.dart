@@ -38,8 +38,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'IndexedStack',
       // desc: _desc,
-      codeUrl:
-          'elements/Frame/Stack/IndexedStack/demo.dart',
+      codeUrl: 'elements/Frame/Stack/IndexedStack/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/IndexedStack-class.html',
       contentList: [
         _stackText0,
@@ -50,20 +49,20 @@ class _DemoState extends State<Demo> {
   }
 
   Column _indexedStackCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
         SizedBox(
           height: 10.0,
         ),
-        new Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              color: new Color(0xffe91e63),
+              color:  Color(0xffe91e63),
               child: StackDefault(0),
             ),
             Container(
-              color: new Color(0xffe91e63),
+              color:  Color(0xffe91e63),
               child: StackDefault(1),
             )
           ],
@@ -71,7 +70,7 @@ class _DemoState extends State<Demo> {
         SizedBox(
           height: 10.0,
         ),
-        new Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             StackIndex(0),
@@ -91,7 +90,7 @@ class _DemoState extends State<Demo> {
                 onPressed: () {
                   _indexAdd();
                 },
-                icon: new Icon(Icons.adb),
+                icon:  Icon(Icons.adb),
                 label: Text("点击这里")),
             StackIndex(currIndex)
           ],

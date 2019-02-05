@@ -28,15 +28,15 @@ class _DemoState extends State<Demo> {
   }
 
   Column _sizeBoxCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
-        new Text("SizedBox",
+         Text("SizedBox",
             textAlign: TextAlign.right,
             style: TextStyle(
               fontSize: 28.0,
               fontWeight: FontWeight.bold,
             )),
-        new Row(
+         Row(
           children: <Widget>[
             sizeBox.SizeBoxDefault(),
             SizedBox(
