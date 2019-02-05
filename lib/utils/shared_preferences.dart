@@ -2,7 +2,7 @@
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 export 'package:flutter_go/resources/shared_preferences_keys.dart';
-///
+
 /// 用来做shared_preferences的存储
 class SpUtil {
   static SpUtil _instance;
@@ -20,7 +20,6 @@ class SpUtil {
   }
 
   static Future<SpUtil> getInstance() async  {
-    print("_instance>>$_instance");
     if (_instance == null) {
       _instance = new SpUtil._();
       await _instance._init();

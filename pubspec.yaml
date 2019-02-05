@@ -31,6 +31,7 @@ dependencies:
   flutter_webview_plugin: ^0.3.0+2
   # 日期格式化
   intl: 0.15.7
+  city_pickers: ^0.1.0
 
 dev_dependencies:
   flutter_test:
