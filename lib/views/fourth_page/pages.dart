@@ -27,11 +27,11 @@ final pages = [
     'assets/images/house.png',
   ),
 ];
+SpUtil sp;
 
 class Page extends StatelessWidget {
   final PageViewModel viewModel;
   final double percentVisible;
-  SpUtil sp;
   Page({
     this.viewModel,
     this.percentVisible = 1.0,
