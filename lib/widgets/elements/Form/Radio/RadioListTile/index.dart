@@ -14,7 +14,7 @@ const content1 = """
 ### **简介**
 > material design 风格的单选按钮附加文字label
 
-点击文字的同时 , 将会出发 Radio的点击效果.
+点击文字的同时 , 将会触发Radio的点击效果.
 
 功能同 @Radio
 
