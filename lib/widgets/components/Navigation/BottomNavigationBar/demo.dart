@@ -1,26 +1,22 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/27
- * Time: 下午6:27
- * email: zhu.yan@alibaba-inc.com
- * tartget: BottomNavigationBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/27
+/// Time: 下午6:27
+/// email: zhu.yan@alibaba-inc.com
+/// target: BottomNavigationBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* BottomNavigationBar 默认的实例
-* */
+
+/// BottomNavigationBar 默认的实例
 class BottomNavigationBarFullDefault extends StatefulWidget {
   const BottomNavigationBarFullDefault() : super();
   @override
   State<StatefulWidget> createState() => _BottomNavigationBarFullDefault();
 }
 
-/*
-* BottomNavigationBar 默认的实例,有状态
-* */
+
+/// BottomNavigationBar 默认的实例,有状态
 class _BottomNavigationBarFullDefault extends State {
    int _currentIndex = 1;
 

@@ -4,7 +4,7 @@
  * Date: 15/01/2019
  * Time: 22:23
  * email: sanfan.hx@alibaba-inc.com
- * tartget:  CupertinoSwitchDemo
+ * target:  CupertinoSwitchDemo
  */
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

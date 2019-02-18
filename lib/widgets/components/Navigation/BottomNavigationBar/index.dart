@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/27
- * Time: 下午6:28
- * email: zhu.yan@alibaba-inc.com
- * tartget: BottomNavigationBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/27
+/// Time: 下午6:28
+/// email: zhu.yan@alibaba-inc.com
+/// target: BottomNavigationBar 的示例
 
 import 'package:flutter/material.dart';
 import  'package:flutter_go/components/widget_demo.dart';
@@ -50,11 +48,10 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 BottomNavigationBar widget
- * context: 运行上下文
- * that: 指向有状态的 StatefulWidget
- */
+
+/// 所有的 BottomNavigationBar widget
+/// context: 运行上下文
+/// that: 指向有状态的 StatefulWidget
 Widget allDemoBoxs(BuildContext context, _DemoState that) {
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -75,9 +72,9 @@ Widget allDemoBoxs(BuildContext context, _DemoState that) {
   );
 }
 
-/*
-* 带align的text
-* */
+
+/// 带align的text
+
 Widget textAlignBar(String txt) {
   return  Align(
       alignment: FractionalOffset.centerLeft,

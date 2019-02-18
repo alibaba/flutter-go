@@ -1,17 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午2:57
- * email: zhu.yan@alibaba-inc.com
- * tartget: Card 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午2:57
+/// email: zhu.yan@alibaba-inc.com
+/// target: Card 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认Card的实例
-* */
+
+/// Checkbox 默认Card的实例
 class CardFullDefault extends StatefulWidget {
   const CardFullDefault() : super();
 
@@ -19,9 +16,8 @@ class CardFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CardFullDefault();
 }
 
-/*
-* Card 默认的实例,有状态
-* */
+
+/// Card 默认的实例,有状态
 class _CardFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -31,9 +27,7 @@ class _CardFullDefault extends State {
   }
 }
 
-/*
-* Card 默认的实例,无状态
-* */
+/// Card 默认的实例,无状态
 class CardLessDefault extends StatelessWidget {
   final widget;
   final parent;

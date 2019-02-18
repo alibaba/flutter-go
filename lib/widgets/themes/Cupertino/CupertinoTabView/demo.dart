@@ -4,7 +4,7 @@
  * Date: 20/01/2019
  * Time: 22:28
  * email: sanfan.hx@alibaba-inc.com
- * tartget:  CupertinoTabBar
+ * target:  CupertinoTabBar
  */
 
 import 'package:flutter/cupertino.dart';

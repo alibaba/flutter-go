@@ -1,19 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoApp 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoApp 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认按钮的实例
-* index 当前checkbox 的索引值
-* */
+/// CupertinoApp 的实例
 class CupertinoAppFullDefault extends StatefulWidget {
   const CupertinoAppFullDefault() : super();
 

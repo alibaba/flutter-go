@@ -1,18 +1,15 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: Checkbox 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: Checkbox 的示例
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认的实例
-* index 当前checkbox 的索引值
-*/
+/// Checkbox 默认的实例
+/// index 当前checkbox 的索引值
 class CheckboxDefault extends StatefulWidget{
   final int index;
   final parent;
@@ -40,10 +37,8 @@ class _CheckboxDefault extends State {
   }
 }
 
-/*
-* Checkbox 默认的实例
-* index 当前checkbox 的索引值
-*/
+/// Checkbox 默认的实例
+/// index 当前checkbox 的索引值
 class CheckboxSelect extends StatelessWidget {
   final int index;
   final widget;
