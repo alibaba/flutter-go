@@ -1,10 +1,11 @@
-/// Created with Android Studio.
-/// User: 一晟
-/// Date: 2018/11/22
-/// Time: 上午12:03
-/// email: zhu.yan@alibaba-inc.com
-/// target: IconButton 的示例
-
+/**
+ * Created with Android Studio.
+ * User: 一晟
+ * Date: 2018/11/22
+ * Time: 上午12:03
+ * email: zhu.yan@alibaba-inc.com
+ * tartget: IconButton 的示例
+ */
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -13,9 +14,10 @@ import 'package:flutter_go/resources/icon_names.dart';
 
 final  int len = IconNames.names.length;
 
-
-/// IconButton 默认按钮的实例
-/// isDisabled:是否是禁用，isDisabled 默认为true
+/*
+* IconButton 默认按钮的实例
+* isDisabled:是否是禁用，isDisabled 默认为true
+* */
 class IconButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -33,7 +35,9 @@ class IconButtonDefault extends StatelessWidget {
   }
 }
 
-/// IconButton 自定义的实例
+/*
+* IconButton 自定义的实例
+* */
 class IconButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
