@@ -4,7 +4,7 @@
  * Date: 07/01/2019
  * Time: 10:26
  * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
+ * target:  xxx
  */
 import 'package:flutter_go/components/widget_demo.dart';
 import 'package:flutter/material.dart';

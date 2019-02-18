@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2019/1/4
- * Time: 上午1:16
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlatButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/4
+/// Time: 上午1:16
+/// email: zhu.yan@alibaba-inc.com
+/// target: ListRefresh 的示例
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 

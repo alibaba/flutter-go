@@ -4,7 +4,7 @@
  * Date: 2019/1/5
  * Time: 下午10:20
  * email: zhu.yan@alibaba-inc.com
- * tartget: FirstPageItem
+ * target: FirstPageItem
  */
 
 import 'package:flutter_go/utils/util.dart';

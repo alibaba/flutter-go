@@ -4,7 +4,7 @@
  * Date: 16/01/2019
  * Time: 11:16
  * email: sanfan.hx@alibaba-inc.com
- * tartget:  app首页
+ * target:  app首页
  */
 
 

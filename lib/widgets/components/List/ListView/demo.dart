@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/31
- * Time: 下午2:27
- * email: zhu.yan@alibaba-inc.com
- * tartget: ListView 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/31
+/// Time: 下午2:27
+/// email: zhu.yan@alibaba-inc.com
+/// target: ListView 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* ListView 默认ListView的实例
-* */
+/// ListView 默认ListView的实例
 class ListViewFullDefault extends StatefulWidget {
   const ListViewFullDefault() : super();
 
@@ -19,9 +15,8 @@ class ListViewFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _ListViewFullDefault();
 }
 
-/*
-* ListView 默认的实例,有状态
-* */
+
+/// ListView 默认的实例,有状态
 class _ListViewFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -30,9 +25,8 @@ class _ListViewFullDefault extends State {
   }
 }
 
-/*
-* ListView 默认的实例,无状态
-* */
+
+/// ListView 默认的实例,无状态
 class ListViewLessDefault extends StatelessWidget {
   final widget;
   final parent;

@@ -1,12 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/24
- * Time: 下午5:25
- * email: zhu.yan@alibaba-inc.com
- * tartget: PopupMenusButton 的示例
- * 对应文档地址:https://docs.flutter.io/flutter/material/PopupMenuButton-class.html
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/24
+/// Time: 下午5:25
+/// email: zhu.yan@alibaba-inc.com
+/// target: PopupMenusButton 的示例
+/// 对应文档地址:https://docs.flutter.io/flutter/material/PopupMenuButton-class.html
 
 import 'package:flutter_go/components/widget_demo.dart';
 

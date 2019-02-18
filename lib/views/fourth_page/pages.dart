@@ -71,9 +71,10 @@ class Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
         width: double.infinity,
+        /// height:MediaQuery.of(context).size.height-200.0,
         color: viewModel.color,
         padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-        child: new Opacity(
+        child: Opacity(
           opacity: percentVisible,
           child:ListView(
             children: <Widget>[

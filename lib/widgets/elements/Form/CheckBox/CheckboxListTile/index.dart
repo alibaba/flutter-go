@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/23
- * Time: 下午6:07
- * email: zhu.yan@alibaba-inc.com
- * tartget: CheckboxListTile 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/23
+/// Time: 下午6:07
+/// email: zhu.yan@alibaba-inc.com
+/// target: CheckboxListTile 的示例
+
 import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
