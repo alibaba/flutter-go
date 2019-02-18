@@ -28,7 +28,7 @@ class SpUtil {
     return _instance;
   }
 
-  static bool _beforCheck() {
+  static bool _beforeCheck() {
     if (_spf == null) {
       return true;
     }
@@ -41,52 +41,52 @@ class SpUtil {
   }
 
   Set<String> getKeys() {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.getKeys();
   }
 
   get(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.get(key);
   }
 
   getString(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.getString(key);
   }
 
   Future<bool> putString(String key, String value) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.setString(key, value);
   }
 
   bool getBool(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.getBool(key);
   }
 
   Future<bool> putBool(String key, bool value) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.setBool(key, value);
   }
 
   int getInt(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.getInt(key);
   }
 
   Future<bool> putInt(String key, int value) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.setInt(key, value);
   }
 
   double getDouble(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.getDouble(key);
   }
 
   Future<bool> putDouble(String key, double value) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.setDouble(key, value);
   }
 
@@ -95,24 +95,24 @@ class SpUtil {
   }
 
   Future<bool> putStringList(String key, List<String> value) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.setStringList(key, value);
   }
 
   dynamic getDynamic(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.get(key);
   }
 
 
 
   Future<bool> remove(String key) {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.remove(key);
   }
 
   Future<bool> clear() {
-    if (_beforCheck()) return null;
+    if (_beforeCheck()) return null;
     return _spf.clear();
   }
 }

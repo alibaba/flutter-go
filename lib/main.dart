@@ -6,6 +6,7 @@ import 'routers/application.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/home.dart';
+import 'package:flutter_go/model/search_history.dart';
 import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     Application.router = router;
   }
   showWelcomePage() {
-    bool showWelcome = sp.getBool(sharedPreferencesKeys.showWelcome);
+    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
     if (showWelcome == null || showWelcome == true) {
       return WelcomePage();
     } else {
@@ -57,6 +58,7 @@ void main() async {
   final provider = new Provider();
   await provider.init(true);
   sp = await SpUtil.getInstance();
+  new SearchHistoryList(sp);
   db = Provider.db;
   runApp(new MyApp());
 }

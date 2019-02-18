@@ -47,7 +47,7 @@ class Page extends StatelessWidget {
         onPressed: () async {
           if (type == 'start') {
             await SpUtil.getInstance()
-              ..putBool(sharedPreferencesKeys.showWelcome, false);
+              ..putBool(SharedPreferencesKeys.showWelcome, false);
             _goHomePage(context);
           } else if (type == 'goGithub') {
             Application.router.navigateTo(context,
