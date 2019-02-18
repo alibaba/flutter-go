@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: OutlineButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: OutlineButton 的示例
 import 'package:flutter/material.dart';
 
-/*
-* OutlineButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+/// OutlineButton 默认按钮的实例
+/// isDisabled:是否是禁用，isDisabled 默认为true
 class FloatingActionButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -30,9 +26,7 @@ class FloatingActionButtonDefault extends StatelessWidget {
   }
 }
 
-/*
-* OutlineButton 自定义的实例
-* */
+/// OutlineButton 自定义的实例
 class FloatingActionButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
@@ -82,9 +76,7 @@ class FloatingActionButtonCustom extends StatelessWidget {
   }
 }
 
-/*
-* OutlineButton 自定义的实例2
-* */
+/// OutlineButton 自定义的实例2
 class FloatingActionButtonCustom2 extends StatelessWidget {
   final String txt;
   final Color color;

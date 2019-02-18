@@ -4,7 +4,7 @@
  * Date: 27/12/2018
  * Time: 14:40
  * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
+ * target:  xxx
  */
 
 import 'package:flutter/material.dart';

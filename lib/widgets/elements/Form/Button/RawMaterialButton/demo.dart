@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: RawMaterialButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: RawMaterialButton 的示例
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 

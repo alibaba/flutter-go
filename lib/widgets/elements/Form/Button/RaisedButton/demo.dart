@@ -1,18 +1,15 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: RaisedButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: RaisedButton 的示例
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-/*
-* RaisedButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+/// RaisedButton 默认按钮的实例
+/// isDisabled:是否是禁用，isDisabled 默认为true
 class RaisedButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -29,11 +26,9 @@ class RaisedButtonDefault extends StatelessWidget {
   }
 }
 
-/*
-* RaisedButton.icon 默认按钮的实例
-* Create a text button from a pair of widgets that serve as the button's icon and label
-* isDisabled:是否是禁用
-* */
+/// RaisedButton.icon 默认按钮的实例
+/// Create a text button from a pair of widgets that serve as the button's icon and label
+/// isDisabled:是否是禁用
 class RaisedButtonIconDefault extends StatelessWidget {
   final bool isDisabled;
   final IconData icon;
@@ -63,9 +58,8 @@ class RaisedButtonIconDefault extends StatelessWidget {
   }
 }
 
-/*
-* RaisedButton 自定义的实例
-* */
+
+/// RaisedButton 自定义的实例
 class RaisedButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
