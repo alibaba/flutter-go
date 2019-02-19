@@ -1,13 +1,10 @@
-/// Created with 菜鸟手册.
+/// Created with FlutterGo.
 /// User: 一晟
 /// Date: 2018/11/14
 /// Time: 下午4:31
 /// email: zhu.yan@alibaba-inc.com
 /// target: Checkbox 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/Checkbox-class.html
-
-import 'package:flutter_markdown/flutter_markdown.dart';
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
@@ -47,60 +44,42 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'Checkbox',
       codeUrl: 'elements/Form/CheckBox/Checkbox/demo.dart',
-      contentList: [allCheckboxs(context,this)],
+      contentList: allCheckboxs(context,this),
       docUrl: 'https://docs.flutter.io/flutter/material/Checkbox-class.html',
     );
   }
 }
 
  // 所有的 Checkbox 按钮
-Widget allCheckboxs(BuildContext context,_DemoState that){
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _checkboxText0),
-            textAlignBar(_checkboxText1),
-            Row(
-              mainAxisAlignment : MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children:[
-                checkbox.CheckboxDefault(that,0),
-                checkbox.CheckboxDefault(that,1),
-                checkbox.CheckboxDefault(that,2),
-                checkbox.CheckboxDefault(that,3),
-                checkbox.CheckboxDefault(that,4),
-              ],
-            ),
-            textAlignBar(_checkboxText2),
-            Row(
-              mainAxisAlignment : MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                checkbox.CheckboxSelect(context.widget,that,0),
-                checkbox.CheckboxSelect(context.widget,that,1),
-                checkbox.CheckboxSelect(context.widget,that,2),
-                checkbox.CheckboxSelect(context.widget,that,3),
-                checkbox.CheckboxSelect(context.widget,that,4),
-              ],
-            ),
-            SizedBox(width: 20.0), // 间距
-          ])
-  );
-}
-
-// 带align的text
-Widget textAlignBar(String txt){
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-          ])
-  );
+List allCheckboxs(BuildContext context,_DemoState that){
+  return [
+    _checkboxText0,
+    _checkboxText1,
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        checkbox.CheckboxDefault(that, 0),
+        checkbox.CheckboxDefault(that, 1),
+        checkbox.CheckboxDefault(that, 2),
+        checkbox.CheckboxDefault(that, 3),
+        checkbox.CheckboxDefault(that, 4),
+      ],
+    ),
+    _checkboxText2,
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        checkbox.CheckboxSelect(context.widget, that, 0),
+        checkbox.CheckboxSelect(context.widget, that, 1),
+        checkbox.CheckboxSelect(context.widget, that, 2),
+        checkbox.CheckboxSelect(context.widget, that, 3),
+        checkbox.CheckboxSelect(context.widget, that, 4),
+      ],
+    ),
+    SizedBox(width: 20.0), // 间距
+  ];
 }
 
 

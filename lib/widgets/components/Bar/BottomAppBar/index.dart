@@ -9,7 +9,6 @@ import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as BottomAppBarDemo;
 
 const String _Text0 =
@@ -38,7 +37,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'BottomAppBar',
       codeUrl: 'components/Bar/BottomAppBar/demo.dart',
-      contentList: [allDomes(context, this)],
+      contentList: allDomes(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/BottomAppBar-class.html',
     );
   }
@@ -47,20 +46,15 @@ class _DemoState extends State<Demo> {
 //  所有的 BottomAppBar widget
 //  context: 运行上下文
 //  that: 指向有状态的 StatefulWidget
-Widget allDomes(BuildContext context, _DemoState that) {
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _Text0),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text1),
-            SizedBox(height: 20.0), // 间距
-            BottomAppBarDemo.AppBarLessDefaultSimple(),
-            SizedBox(height: 20.0), // 间距
-          ])
-  );
+List allDomes(BuildContext context, _DemoState that) {
+  return [
+    _Text0,
+    SizedBox(height: 20.0), // 间距
+    _Text1,
+    SizedBox(height: 20.0), // 间距
+    BottomAppBarDemo.AppBarLessDefaultSimple(),
+    SizedBox(height: 20.0), // 间距
+  ];
 }
 
 

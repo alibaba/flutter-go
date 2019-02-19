@@ -5,8 +5,6 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: CheckboxListTile 的示例
 
-import 'package:flutter_markdown/flutter_markdown.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as CheckboxListTileDemo;
@@ -46,7 +44,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CheckboxListTile',
       codeUrl: 'elements/Form/CheckBox/CheckboxListTile/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: allCheckboxs(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/CheckboxListTile-class.html',
     );
   }
@@ -55,31 +53,15 @@ class _DemoState extends State<Demo> {
  // 所有的 CheckboxListTile widget
  // context: 运行上下文
  // that: 指向有状态的 StatefulWidget
-Widget allCheckboxs(BuildContext context, _DemoState that) {
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children:[
-            MarkdownBody(data: _CheckboxListTileText0),
-            textAlignBar(_CheckboxListTileText1),
-            CheckboxListTileDemo.CheckboxListTileDefault(context.widget,that),// CheckboxListTile 不能放在 Row 里...
-            textAlignBar(_CheckboxListTileText2),
-            CheckboxListTileDemo.CheckboxListTileStateDefault(),
-            SizedBox(height: 20.0),
-          ])
-  );
-}
-
-// 带align的text
-Widget textAlignBar(String txt) {
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-          ])
-  );
+List allCheckboxs(BuildContext context, _DemoState that) {
+  return [
+    _CheckboxListTileText0,
+    _CheckboxListTileText1,
+    CheckboxListTileDemo.CheckboxListTileDefault(context.widget, that),
+    // CheckboxListTile 不能放在 Row 里...
+    _CheckboxListTileText2,
+    CheckboxListTileDemo.CheckboxListTileStateDefault(),
+    SizedBox(height: 20.0),
+  ];
 }
 

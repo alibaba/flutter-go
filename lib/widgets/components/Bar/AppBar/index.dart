@@ -6,7 +6,6 @@
 /// target: AppBar 的示例
 
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 import './demo.dart' as AppBarDemo;
 import 'package:flutter_go/components/widget_demo.dart';
@@ -47,7 +46,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'AppBar',
       codeUrl: 'components/Bar/AppBar/demo.dart',
-      contentList: [allDomes(context, this)],
+      contentList: allDomes(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/AppBar-class.html',
     );
   }
@@ -56,36 +55,17 @@ class _DemoState extends State<Demo> {
 //  所有的 AppBar widget
 //  context: 运行上下文
 //  that: 指向有状态的 StatefulWidget
-Widget allDomes(BuildContext context, _DemoState that) {
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _Text0),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text1),
-            SizedBox(height: 20.0), // 间距
-            AppBarDemo.AppBarLessDefaultSimple(),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text2),
-            SizedBox(height: 20.0), // 间距
-            AppBarDemo.AppBarLessDefaultComplex(),
-            SizedBox(height: 20.0), // 间距
-          ])
-  );
+List allDomes(BuildContext context, _DemoState that) {
+  return [
+    _Text0,
+    SizedBox(height: 20.0), // 间距
+    _Text1,
+    SizedBox(height: 20.0), // 间距
+    AppBarDemo.AppBarLessDefaultSimple(),
+    SizedBox(height: 20.0), // 间距
+    _Text2,
+    SizedBox(height: 20.0), // 间距
+    AppBarDemo.AppBarLessDefaultComplex(),
+    SizedBox(height: 20.0), // 间距
+  ];
 }
-
-// 带align的text
-Widget textAlignBar(String txt) {
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-          ])
-  );
-}
-
-

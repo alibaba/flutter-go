@@ -1,5 +1,5 @@
 
- /// Created with 菜鸟手册.
+ /// Created with FlutterGo.
  /// User: 一晟
  /// Date: 2018/11/14
  /// Time: 下午4:31
@@ -7,15 +7,11 @@
  /// target: IconButton 的示例
  /// 对应文档地址:https://docs.flutter.io/flutter/material/IconButton-class.html
 
-
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'dart:math';
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as iconButton;
-
 
 const String _iconText0 =
 """### **简介**
@@ -58,66 +54,46 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'IconButton',
       codeUrl: 'elements/Form/Button/IconButton/demo.dart',
-      contentList: [ allIconButtons(context,this)],
+      contentList: allIconButtons(context,this),
       docUrl: 'https://docs.flutter.io/flutter/material/IconButton-class.html',
     );
   }
 }
 
 // 所有的 IconButton 按钮
-Widget allIconButtons(BuildContext context,_DemoState that){
+List allIconButtons(BuildContext context,_DemoState that){
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _iconText0),
-            textAlignBar(_iconText1),
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                iconButton.IconButtonDefault(),
-                SizedBox(width: 20.0), // 间距
-                iconButton.IconButtonDefault(false),
-              ],
-            ),
-            textAlignBar(_iconText2),
-            SizedBox(height: 10.0),
-            iconButton.IconButtonCustom('主要按钮',Colors.blue,buttonShape),
-            SizedBox(height: 10.0),
-            iconButton.IconButtonCustom('成功按钮',Colors.green,buttonShape),
-            SizedBox(height: 10.0),
-            iconButton.IconButtonCustom('信息按钮',Colors.grey,buttonShape),
-            SizedBox(height: 10.0),
-            iconButton.IconButtonCustom('警告按钮',Colors.orange,buttonShape),
-            SizedBox(height: 10.0),
-            iconButton.IconButtonCustom('危险按钮',Colors.pink,buttonShape),
-            SizedBox(height: 10.0),
-            RaisedButton(
-              // 文本内容
-                child: const Text('点击切换，图标按钮', semanticsLabel: 'FLAT BUTTON 1'),
-                onPressed: ()=> that.setButtonShapeType()),
-            SizedBox(height: 20.0)
-          ])
-  );
+  return [
+    _iconText0,
+    _iconText1,
+    ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        iconButton.IconButtonDefault(),
+        SizedBox(width: 20.0), // 间距
+        iconButton.IconButtonDefault(false),
+      ],
+    ),
+    _iconText2,
+    SizedBox(height: 10.0),
+    iconButton.IconButtonCustom('主要按钮', Colors.blue, buttonShape),
+    SizedBox(height: 10.0),
+    iconButton.IconButtonCustom('成功按钮', Colors.green, buttonShape),
+    SizedBox(height: 10.0),
+    iconButton.IconButtonCustom('信息按钮', Colors.grey, buttonShape),
+    SizedBox(height: 10.0),
+    iconButton.IconButtonCustom('警告按钮', Colors.orange, buttonShape),
+    SizedBox(height: 10.0),
+    iconButton.IconButtonCustom('危险按钮', Colors.pink, buttonShape),
+    SizedBox(height: 10.0),
+    RaisedButton(
+      // 文本内容
+        child: const Text('点击切换，图标按钮', semanticsLabel: 'FLAT BUTTON 1'),
+        onPressed: () => that.setButtonShapeType()),
+    SizedBox(height: 20.0)
+  ];
 }
-
-// 带align的text
-Widget textAlignBar(String txt){
-  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-          ])
-  );
-}
-
 
 // 绘制边框信息,比如是否有边框,是否是圆角
 ShapeBorder drawShape(String type){
@@ -153,7 +129,6 @@ ShapeBorder drawShape(String type){
       return null;
   }
 }
-
 
 // 取随机颜色
 Color _randomColor() {

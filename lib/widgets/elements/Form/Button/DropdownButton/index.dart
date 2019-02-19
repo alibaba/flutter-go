@@ -1,13 +1,10 @@
-/// Created with 菜鸟手册.
+/// Created with FlutterGo.
 /// User: 一晟
 /// Date: 2018/11/14
 /// Time: 下午4:31
 /// email: zhu.yan@alibaba-inc.com
 /// target: DropdownButton 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/DropdownButton-class.html
-
-
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
@@ -50,47 +47,28 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'DropdownButton',
       codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
-      contentList: [allDropdownButtons(context,this)],
+      contentList: allDropdownButtons(context,this),
       docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
   }
 }
 
 // 所有的 DropdownButton 按钮
-Widget allDropdownButtons(BuildContext context,_DemoState that){
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _dropdownText0),
-            textAlignBar(_dropdownText1),
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                dropdownButton.DropdownButtonDefault(),
-              ],
-            ),
-            textAlignBar(_dropdownText2),
-            SizedBox(height: 10.0),
-            dropdownButton.DropdownButtonCustom(context.widget,that),
-            SizedBox(height: 20.0)
-          ])
-  );
-}
-
-// 带align的text
-Widget textAlignBar(String txt){
-  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-          ])
-  );
+List allDropdownButtons(BuildContext context,_DemoState that){
+  return [
+    _dropdownText0,
+    _dropdownText1,
+    ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        dropdownButton.DropdownButtonDefault(),
+      ],
+    ),
+    _dropdownText2,
+    SizedBox(height: 10.0),
+    dropdownButton.DropdownButtonCustom(context.widget, that),
+    SizedBox(height: 20.0)
+  ];
 }
 
