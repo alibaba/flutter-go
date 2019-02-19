@@ -6,8 +6,8 @@
 /// target: Navigation 的示例
 
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'BottomNavigationBar/index.dart' as BottomNavigationBar;
 import 'BottomNavigationBarItem/index.dart' as BottomNavigationBarItem;
 

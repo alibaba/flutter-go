@@ -8,9 +8,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPageScaffold 默认的实例
-* */
+// CupertinoPageScaffold 默认的实例
 class CupertinoPageScaffoldFullDefault extends StatefulWidget {
   const CupertinoPageScaffoldFullDefault() : super();
 
@@ -18,9 +16,7 @@ class CupertinoPageScaffoldFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPageScaffoldFullDefault();
 }
 
-/*
-* CupertinoPageScaffold 默认的实例,有状态
-* */
+// CupertinoPageScaffold 默认的实例,有状态
 class _CupertinoPageScaffoldFullDefault extends State {
   @override
   Widget build(BuildContext context) {

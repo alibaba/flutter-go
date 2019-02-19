@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 > 用来选择范围性的数据
@@ -12,7 +13,6 @@ CupertinoSlider 是ios风格的Slide组件,用来选择连续性的或者非连�
 
 > 与 Slider 相同, 具体查看Slider组件
 ''';
-
 
 class Demo extends StatefulWidget {
   static const String routeName =

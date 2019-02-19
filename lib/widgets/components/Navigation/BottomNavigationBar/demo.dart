@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 
 
-/// BottomNavigationBar 默认的实例
+// BottomNavigationBar 默认的实例
 class BottomNavigationBarFullDefault extends StatefulWidget {
   const BottomNavigationBarFullDefault() : super();
   @override
@@ -16,7 +16,7 @@ class BottomNavigationBarFullDefault extends StatefulWidget {
 }
 
 
-/// BottomNavigationBar 默认的实例,有状态
+// BottomNavigationBar 默认的实例,有状态
 class _BottomNavigationBarFullDefault extends State {
    int _currentIndex = 1;
 

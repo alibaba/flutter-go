@@ -1,19 +1,19 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 07/01/2019
- * Time: 19:40
- * email: sanfan.hx@alibaba-inc.com
- * target:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 07/01/2019
+/// Time: 10:31
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import "package:flutter/material.dart";
+
 import '../../../model/widget.dart';
 import 'GridTile/index.dart' as GridTile;
 import 'GridView/index.dart' as GridView;
 import 'GridTileBar/index.dart' as GridTileBar;
 import 'GridPaper/index.dart' as GridPaper;
 import 'SliverGrid/index.dart' as SliverGrid;
+
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'GridTile',

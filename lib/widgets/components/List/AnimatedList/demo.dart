@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/widgets/components/List/AnimatedList/model.dart';
 
 class AnimatedListFullDefault extends StatefulWidget {

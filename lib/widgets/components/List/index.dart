@@ -6,8 +6,8 @@
 /// target: List 的示例
 
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'ListBody/index.dart' as ListBody;
 import 'ListView/index.dart' as ListView;
 import 'AnimatedList/index.dart' as AnimatedList;
