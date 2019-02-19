@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 
-
-
 class SwitchDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }

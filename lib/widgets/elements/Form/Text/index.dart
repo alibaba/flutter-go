@@ -1,7 +1,7 @@
-import '../../../../model/widget.dart';
 import "package:flutter/material.dart";
 
- import 'RichText/index.dart' as RichText;
+import '../../../../model/widget.dart';
+import 'RichText/index.dart' as RichText;
 import 'Text/index.dart' as Text;
 
 

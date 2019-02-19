@@ -1,6 +1,6 @@
-import '../../../../model/widget.dart';
 import "package:flutter/material.dart";
 
+import '../../../../model/widget.dart';
 import 'FlatButton/index.dart' as FlatButton;
 import 'RaisedButton/index.dart' as RaisedButton;
 import 'OutlineButton/index.dart' as OutlineButton;

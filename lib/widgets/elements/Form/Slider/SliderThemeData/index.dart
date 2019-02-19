@@ -6,9 +6,11 @@
  /// target:  xxx
 
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import  'demo.dart';
-import 'package:flutter/cupertino.dart';
+
 const contentA = '''
 ### **简介**
 > SliderTheme的data修饰属性 **SliderThemeData**

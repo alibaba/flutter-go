@@ -3,9 +3,9 @@
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-07 15:37:07
 
-import '../../../../model/widget.dart';
 import "package:flutter/material.dart";
 
+import '../../../../model/widget.dart';
 import './AssetImage/index.dart' as AssetImage;
 import './DecorationImage/index.dart' as DecorationImage;
 import './DecorationImagePainter/index.dart' as DecorationImagePainter;

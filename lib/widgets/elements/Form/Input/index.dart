@@ -6,9 +6,9 @@
 /// target: Input 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/RaisedButton-class.html
 
-import '../../../../model/widget.dart';
 import "package:flutter/material.dart";
 
+import '../../../../model/widget.dart';
 import './TextField/index.dart' as TextField;
 
 List<WidgetPoint> widgetPoints = [

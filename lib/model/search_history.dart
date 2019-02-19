@@ -96,7 +96,6 @@ class SearchHistoryList {
 
   @override
   String toString() {
-    // TODO: implement toString
     return this.toJson();
   }
 }
