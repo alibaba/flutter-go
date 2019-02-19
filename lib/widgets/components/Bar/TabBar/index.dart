@@ -56,7 +56,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'TabBar',
-      codeUrl: 'components/Bar/TabBar/index.dart',
+      codeUrl: 'components/Bar/TabBar/demo.dart',
       contentList: [
         _Text0,
         TabBarDemo()
