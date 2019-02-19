@@ -1,4 +1,5 @@
-package com.example.flutterrookiebook;
+package com.ali.fluttergo;
+
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
