@@ -5,21 +5,21 @@ import '../../routers/routers.dart';
 import '../../utils/shared_preferences.dart';
 
 final pages = [
-  new PageViewModel(
+  PageViewModel(
       const Color(0xFFcd344f),
       //'assets/mountain.png',
       'assets/images/p2.png',
       'FlutterGo是什么？',
       '【FlutterGo】 是由"阿里拍卖"前端团队几位 Flutter 粉丝，用业余时间开发的一款，用于 Flutter 教学帮助的App，这里没有高大尚的概念，只有一个一个亲历的尝试，用最直观的方式展示的 Flutter 官方demo',
       'assets/images/plane.png'),
-  new PageViewModel(
+  PageViewModel(
       const Color(0xFF638de3),
       //'assets/world.png',
       'assets/images/p1.png',
       'FLutterGo的背景',
       '🐢 官网文档示例较不够健全，不够直观\n🐞 运行widget demo要到处翻阅资料\n🐌 英文文档翻译生涩难懂，学习资料太少\n🚀 需要的效果不知道用哪个widget\n',
       'assets/images/calendar.png'),
-  new PageViewModel(
+  PageViewModel(
     const Color(0xFFFF682D),
     //'assets/home.png',
     'assets/images/p3.png',
@@ -57,56 +57,68 @@ class Page extends StatelessWidget {
         },
         elevation: 10.0,
         color: Colors.black26,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(20.0))),
         //如果不手动设置icon和text颜色,则默认使用foregroundColor颜色
-        icon: new Icon(iconName, color: Colors.white, size: 20.0),
-        label: new Text(
+        icon: Icon(iconName, color: Colors.white, size: 14.0),
+        label: Text(
           txt,
           maxLines: 1,
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+              color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700),
         ));
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-        width: double.infinity,
-        /// height:MediaQuery.of(context).size.height-200.0,
-        color: viewModel.color,
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-        child: Opacity(
-          opacity: percentVisible,
-          child:ListView(
-            children: <Widget>[
-              layout(context)
-            ],
+    return Stack(
+        //alignment: const Alignment(1.2, 0.6),
+        children: [
+          Container(
+              width: double.infinity,
+              /// height:MediaQuery.of(context).size.height-200.0,
+              color: viewModel.color,
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+              child: Opacity(
+                opacity: percentVisible,
+                child: ListView(
+                  children: <Widget>[
+                    layout(context),
+                  ],
+                ),
+              )
           ),
-        ));
+          Positioned(
+              right: -5.0,
+              top: 2.0,
+              child: creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub')
+          ),
+        ]
+    );
   }
 
   Column layout(BuildContext context) {
-    return new Column(
+    return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          new Transform(
-            transform: new Matrix4.translationValues(
+          Transform(
+            transform: Matrix4.translationValues(
                 0.0, 50.0 * (1.0 - percentVisible), 0.0),
-            child: new Padding(
-              padding: new EdgeInsets.only(top: 20.0, bottom: 10.0),
-              child: new Image.asset(viewModel.heroAssetPath,
+            child: Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 10.0),
+              child: Image.asset(viewModel.heroAssetPath,
                   width: 160.0, height: 160.0),
             ),
           ),
-          new Transform(
-            transform: new Matrix4.translationValues(
+          Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30.0 * (1.0 - percentVisible), 0.0),
-            child: new Padding(
-              padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
-              child: new Text(
+            child: Padding(
+              padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+              child: Text(
                 viewModel.title,
-                style: new TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'FlamanteRoma',
                   fontSize: 28.0,
@@ -114,15 +126,15 @@ class Page extends StatelessWidget {
               ),
             ),
           ),
-          new Transform(
-            transform: new Matrix4.translationValues(
+          Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30.0 * (1.0 - percentVisible), 0.0),
-            child: new Padding(
-              padding: new EdgeInsets.only(bottom: 10.0),
-              child: new Text(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 10.0),
+              child: Text(
                 viewModel.body,
                 textAlign: TextAlign.center,
-                style: new TextStyle(
+                style: TextStyle(
                   height: 1.2,
                   color: Colors.white,
                   fontFamily: 'FlamanteRomaItalic',
@@ -131,13 +143,13 @@ class Page extends StatelessWidget {
               ),
             ),
           ),
-          ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              creatButton(context, '开始使用', Icons.add_circle_outline, 'start'),
-              creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub'),
-            ],
-          )
+//          ButtonBar(
+//            alignment: MainAxisAlignment.center,
+//            children: <Widget>[
+//              creatButton(context, '开始使用', Icons.add_circle_outline, 'start'),
+//              creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub'),
+//            ],
+//          )
         ]);
   }
 }
