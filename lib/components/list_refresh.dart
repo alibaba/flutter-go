@@ -41,9 +41,7 @@ class _ListRefreshState extends State<ListRefresh> {
     });
   }
 
-  /*
-  * 回弹效果
-  * */
+//  回弹效果
   backElasticEffect() {
 //    double edge = 50.0;
 //    double offsetFromBottom = _scrollController.position.maxScrollExtent - _scrollController.position.pixels;
@@ -55,9 +53,7 @@ class _ListRefreshState extends State<ListRefresh> {
 //    }
   }
 
-  /*
-  * list探底，执行的具体事件
-  * */
+// list探底，执行的具体事件
   Future _getMoreData() async {
     if (!isLoading && _hasMore) {
       // 如果上一次异步请求数据完成 同时有数据可以加载
@@ -82,9 +78,7 @@ class _ListRefreshState extends State<ListRefresh> {
     }
   }
 
-  /*
-  * 伪装吐出新数据
-  * */
+// 伪装吐出新数据
   Future<List> mokeHttpRequest() async {
     if (widget.requestApi is Function) {
       final listObj = await widget.requestApi({'pageIndex': _pageIndex});
@@ -97,11 +91,8 @@ class _ListRefreshState extends State<ListRefresh> {
       });
     }
   }
-
-  /*
-  * 下拉加载的事件，清空之前list内容，取前X个
-  * 其实就是列表重置
-  * */
+// 下拉加载的事件，清空之前list内容，取前X个
+// 其实就是列表重置
   Future<Null> _handleRefresh() async {
     List newEntries = await mokeHttpRequest();
     if (this.mounted) {
@@ -115,9 +106,7 @@ class _ListRefreshState extends State<ListRefresh> {
     }
   }
 
-  /*
-  * 加载中的提示
-  * */
+// 加载中的提示
   Widget _buildLoadText() {
     return Container(
         child: Padding(
@@ -128,9 +117,7 @@ class _ListRefreshState extends State<ListRefresh> {
     ));
   }
 
-  /*
-  * 上提加载loading的widget,如果数据到达极限，显示没有更多
-  * */
+// 上提加载loading的widget,如果数据到达极限，显示没有更多
   Widget _buildProgressIndicator() {
     if (_hasMore) {
       return new Padding(
