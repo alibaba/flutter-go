@@ -413,9 +413,7 @@ class History extends StatefulWidget {
   _History  createState() => _History();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _History extends State<History> {
   SearchHistoryList searchHistoryList = new SearchHistoryList();
 

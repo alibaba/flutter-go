@@ -62,11 +62,11 @@ class CardLessDefault extends StatelessWidget {
               children: <Widget>[
                 FlatButton(
                   child: const Text('BUY TICKETS',style: TextStyle(color: Colors.black, fontSize: 14.0)),
-                  onPressed: () { /* ... */ },
+                  onPressed: () {  },
                 ),
                 FlatButton(
                   child: const Text('LISTEN',style: TextStyle(color: Colors.black, fontSize: 14.0)),
-                  onPressed: () { /* ... */ },
+                  onPressed: () {  },
                 ),
               ],
             ),
