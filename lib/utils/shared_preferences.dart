@@ -1,6 +1,8 @@
 
 import 'dart:async';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
 export 'package:flutter_go/resources/shared_preferences_keys.dart';
 
 /// 用来做shared_preferences的存储

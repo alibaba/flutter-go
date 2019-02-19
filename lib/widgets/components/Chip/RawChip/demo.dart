@@ -1,12 +1,9 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-20 20:30:36 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-21 11:23:21
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-20 20:30:36 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-21 11:23:21
 
 import 'package:flutter/material.dart';
-
 
 class FilterChipDemo extends StatefulWidget {
   _FilterChipDemoState createState() => _FilterChipDemoState();
@@ -43,7 +40,6 @@ Iterable<Widget> get _rawChipWidget sync*{
                        _lists.remove(value);
                        
                     });
-         
         },
         
       ),

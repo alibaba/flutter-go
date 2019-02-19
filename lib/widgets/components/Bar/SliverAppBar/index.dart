@@ -46,11 +46,9 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 SliverAppBar widget
- * context: 运行上下文
- * that: 指向有状态的 StatefulWidget
- */
+//  所有的 SliverAppBar widget
+//  context: 运行上下文
+//  that: 指向有状态的 StatefulWidget
 Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -66,9 +64,7 @@ Widget allDomes(BuildContext context, _DemoState that) {
   );
 }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt) {
   return  Align(
       alignment: FractionalOffset.centerLeft,

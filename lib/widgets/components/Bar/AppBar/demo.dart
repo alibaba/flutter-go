@@ -7,10 +7,9 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* 默认 AppBar 的实例
-* index 当前AppBar 的索引值
-* */
+// 默认 AppBar 的实例
+// index 当前AppBar 的索引值
+
 class AppBarLessDefaultComplex extends StatefulWidget {
   const AppBarLessDefaultComplex() : super();
 
@@ -18,9 +17,7 @@ class AppBarLessDefaultComplex extends StatefulWidget {
   State<StatefulWidget> createState() => _AppBarLessDefaultComplex();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _AppBarLessDefaultComplex extends State with SingleTickerProviderStateMixin {
   ScrollController _scrollViewController;
   TabController _tabController;
@@ -93,9 +90,9 @@ class _AppBarLessDefaultComplex extends State with SingleTickerProviderStateMixi
   }
 }
 
-/*
-* AppBar 默认的实例,无状态
-* */
+
+// AppBar 默认的实例,无状态
+
 class AppBarLessDefaultSimple extends StatelessWidget {
   final widget;
   final parent;

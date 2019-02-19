@@ -1,10 +1,10 @@
-/*
- * @Author: 一凨 
- * @Date: 2019-01-14 11:42:32 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 14:42:00
- */
+/// @Author: 一凨 
+/// @Date: 2019-01-14 11:42:32 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-14 14:42:00
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/utils/example_code_parser.dart';
 import 'package:flutter_go/utils/syntax_highlighter.dart';
 

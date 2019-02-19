@@ -1,5 +1,7 @@
-import 'package:dio/dio.dart';
 import 'dart:async';
+
+import 'package:dio/dio.dart';
+
 
 var dio = new Dio();
 

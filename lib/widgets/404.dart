@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class WidgetNotFound extends StatelessWidget {
 
     Widget build(BuildContext context) {

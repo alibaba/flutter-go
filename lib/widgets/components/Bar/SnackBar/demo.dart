@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* SnackBar 默认的实例,无状态
-* */
+// SnackBar 默认的实例,无状态
 class SnackBarLessDefault extends StatelessWidget {
   final widget;
   final parent;

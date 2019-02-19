@@ -6,8 +6,8 @@
 /// target: Card 的示例
 
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'Card/index.dart' as Card;
 
 List<WidgetPoint> widgetPoints = [
