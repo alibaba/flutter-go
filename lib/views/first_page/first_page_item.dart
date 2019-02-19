@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2019/1/5
- * Time: 下午10:20
- * email: zhu.yan@alibaba-inc.com
- * target: FirstPageItem
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/5
+/// Time: 下午10:20
+/// email: zhu.yan@alibaba-inc.com
+/// target: FirstPageItem
 
 import 'package:flutter_go/utils/util.dart';
 

@@ -5,11 +5,11 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: SnackBar 的示例
 
-import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as SnackBarDemo;
 
 const String _Text0 =
@@ -46,11 +46,9 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 SnackBar widget
- * context: 运行上下文
- * that: 指向有状态的 StatefulWidget
- */
+//  所有的 SnackBar widget
+//  context: 运行上下文
+//  that: 指向有状态的 StatefulWidget
 Widget allDomes(BuildContext context, _DemoState that) {
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -67,9 +65,7 @@ Widget allDomes(BuildContext context, _DemoState that) {
   );
 }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt) {
   return  Align(
       alignment: FractionalOffset.centerLeft,

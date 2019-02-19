@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 07/01/2019
- * Time: 10:31
- * email: sanfan.hx@alibaba-inc.com
- * target:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 07/01/2019
+/// Time: 10:31
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
 
-
 class AlertDialogDemo extends StatelessWidget{
-  // _Demo createState() => _Demo();
 
   void showAlertDialog(BuildContext context) {
     showDialog<void>(
@@ -139,7 +135,3 @@ class AlertDialogDemo extends StatelessWidget{
   }
 }
 
-// class _Demo extends State<AlertDialogDemo> {
-  
-  
-// }

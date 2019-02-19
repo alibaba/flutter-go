@@ -1,9 +1,10 @@
-/**
- * @author Nealyang
- * 
- * 新widget详情页模板
- */
+/// @author Nealyang
+/// 新widget详情页模板
+
+import 'dart:core';
+
 import 'package:flutter/material.dart';
+
 import '../routers/application.dart';
 import '../routers/routers.dart';
 import '../components/markdown.dart';
@@ -11,7 +12,6 @@ import '../model/collection.dart';
 import '../widgets/index.dart';
 import '../event/event_bus.dart';
 import '../event/event_model.dart';
-import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;

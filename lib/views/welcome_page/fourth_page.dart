@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/views/fourth_page/page_dragger.dart';
 import 'package:flutter_go/views/fourth_page/page_reveal.dart';
 import 'package:flutter_go/views/fourth_page/pager_indicator.dart';

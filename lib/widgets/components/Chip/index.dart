@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'Chip/index.dart' as Chip;
 import 'ChipTheme/index.dart' as ChipTheme;
 import 'ChipThemeData/index.dart' as ChipThemeData;
@@ -8,7 +8,6 @@ import 'ChoiceChip/index.dart' as ChoiceChip;
 import 'FilterChip/index.dart' as FilterChip;
 import 'InputChip/index.dart' as InputChip;
 import 'RawChip/index.dart' as RawChip;
-
 
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(

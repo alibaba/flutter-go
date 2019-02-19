@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* 默认 SliverAppBar 的实例
-* */
+// 默认 SliverAppBar 的实例
 class SliverAppBarFullDefault extends StatefulWidget {
   const SliverAppBarFullDefault() : super();
 
@@ -17,9 +15,7 @@ class SliverAppBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _SliverAppBarFullDefault();
 }
 
-/*
-* SliverAppBar 默认的实例,有状态
-* */
+// SliverAppBar 默认的实例,有状态
 class _SliverAppBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -29,9 +25,7 @@ class _SliverAppBarFullDefault extends State {
   }
 }
 
-/*
-* SliverAppBar 默认的实例,无状态
-* */
+// SliverAppBar 默认的实例,无状态
 class SliverAppBarLessDefault extends StatelessWidget {
 //  final widget;
 //  final parent;

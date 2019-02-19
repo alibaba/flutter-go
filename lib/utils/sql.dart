@@ -1,9 +1,8 @@
-import './provider.dart';
 import 'dart:async';
+
 import 'package:sqflite/sqflite.dart';
 
-
-
+import './provider.dart';
 
 class BaseModel{
   Database db;

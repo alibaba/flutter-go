@@ -1,5 +1,7 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+
 import '../model/story.dart';
 
 class HomeBanner extends StatefulWidget {
