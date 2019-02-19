@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
  /// Author: xiaojia.dxj
  /// Date: 2018/12/2
  /// Email: xiaojia.dxj@alibaba-inc.com
  /// LastUpdateTime: 2018/12/2
  /// LastUpdateBy: xj.deng
  /// Describle:FittedBox
+
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class FittedBoxDefault extends StatelessWidget {
   final BoxFit curfit;

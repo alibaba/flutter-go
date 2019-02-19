@@ -6,8 +6,10 @@
  /// target:  Radio相关
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const content1 = """
 ### **简介**
 > material design 风格的单选按钮附加文字label

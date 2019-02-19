@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../model/widget.dart';
 
+import '../../../../model/widget.dart';
 import './Table/index.dart' as Table;
 
 List<WidgetPoint> widgetPoints = [

@@ -6,7 +6,9 @@
 /// target: PainterPath 的示例
 
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
 CustomPaint graph;
 
 class CustomViewPage extends StatefulWidget {

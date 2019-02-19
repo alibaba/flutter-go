@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 
-
-
 class SwitchListTileDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }
