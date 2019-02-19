@@ -126,10 +126,8 @@ Widget allRaisedButtons(BuildContext context,_DemoState that){
   );
 }
 
-/*
-  * alert 弹框
-  * context:容器的父级
-  * */
+  // alert 弹框
+  // context:容器的父级
 // void _showMessage(String name, BuildContext context) {
 //   showDialog(
 //     // alert 的父级
