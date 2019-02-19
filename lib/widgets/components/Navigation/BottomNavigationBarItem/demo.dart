@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午10:00
- * email: zhu.yan@alibaba-inc.com
- * tartget: BottomNavigationBarItem 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午10:00
+/// email: zhu.yan@alibaba-inc.com
+/// target: BottomNavigationBarItem 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* BottomNavigationBarItem 默认的实例,无状态
-* */
+/// BottomNavigationBarItem 默认的实例,无状态
 class BottomNavigationBarItemLessDefault extends StatelessWidget {
   final widget;
   final parent;

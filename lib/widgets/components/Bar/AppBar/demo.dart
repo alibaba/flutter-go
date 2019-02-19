@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午7:33
- * email: zhu.yan@alibaba-inc.com
- * tartget: AppBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午7:33
+/// email: zhu.yan@alibaba-inc.com
+/// target: AppBar 的示例
 
 import 'package:flutter/material.dart';
 

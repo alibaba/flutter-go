@@ -11,9 +11,8 @@ class AnimatedListFullDefault extends StatefulWidget {
   _AnimatedListFullDefault createState() => _AnimatedListFullDefault();
 }
 
-/*
-* AnimatedList 默认的实例,有状态
-* */
+
+/// AnimatedList 默认的实例,有状态
 class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
   final GlobalKey<AnimatedListState> _listKey =  GlobalKey<AnimatedListState>();
   ListModel<int> _list;

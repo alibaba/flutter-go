@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午11:10
- * email: zhu.yan@alibaba-inc.com
- * tartget: ButtonBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午11:10
+/// email: zhu.yan@alibaba-inc.com
+/// target: ButtonBar 的示例
+
 import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
