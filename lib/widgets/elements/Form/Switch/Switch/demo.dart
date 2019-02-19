@@ -1,13 +1,11 @@
- /// Created with Android Studio.
- /// User: 三帆
- /// Date: 27/12/2018
- /// Time: 17:30
- /// email: sanfan.hx@alibaba-inc.com
- /// target:  xxx
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 27/12/2018
+/// Time: 17:30
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-
-
 
 class SwitchDemo extends StatefulWidget {
   _Demo createState() => _Demo();
