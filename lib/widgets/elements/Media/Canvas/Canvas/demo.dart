@@ -5,11 +5,13 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: Canvas 的示例
 
-import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 import 'dart:math';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 CustomPaint graph;

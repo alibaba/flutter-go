@@ -2,12 +2,13 @@
  /// @Date: 2018-12-08 17:47:25 
  /// @Last Modified by: 一凨
  /// @Last Modified time: 2018-12-08 20:09:32
+
 import 'dart:async';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'dart:typed_data';
-import 'dart:ui' as ui;
 
 class RawImageDemo extends StatefulWidget {
   _RawImageDemoState createState() => _RawImageDemoState();

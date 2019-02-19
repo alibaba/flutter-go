@@ -14,8 +14,8 @@ import 'package:flutter_go/resources/icon_names.dart';
 final  int len = IconNames.names.length;
 
 
-/// IconButton 默认按钮的实例
-/// isDisabled:是否是禁用，isDisabled 默认为true
+// IconButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 class IconButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -33,7 +33,7 @@ class IconButtonDefault extends StatelessWidget {
   }
 }
 
-/// IconButton 自定义的实例
+// IconButton 自定义的实例
 class IconButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
