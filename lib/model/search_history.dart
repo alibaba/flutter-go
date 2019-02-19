@@ -1,15 +1,17 @@
-//
-// Created with Android Studio.
-// User: 三帆
-// Date: 18/02/2019
-// Time: 14:19
-// email: sanfan.hx@alibaba-inc.com
-// tartget:  xxx
-//
+///
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 18/02/2019
+/// Time: 14:19
+/// email: sanfan.hx@alibaba-inc.com
+/// target: 搜索WidgetDemo中的历史记录model
+///
+
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
-import 'dart:convert';
+
 
 class SearchHistory {
   final String name;
@@ -24,7 +26,6 @@ class SearchHistoryList {
   static List<SearchHistory> _searchHistoryList = [];
 
   static SearchHistoryList _getInstance(SpUtil sp) {
-//    print("SearchHistoryList _getInstance ${_searchHistoryList} ${_instance==null}");
     if (_instance == null) {
       _sp = sp;
       String json = sp.get(SharedPreferencesKeys.searchHistory);
@@ -49,7 +50,6 @@ class SearchHistoryList {
   SearchHistoryList.fromJSON(String jsonData) {
     _searchHistoryList = [];
     if (jsonData == null) {
-
       return;
     }
     List jsonList = json.decode(jsonData);
@@ -76,7 +76,7 @@ class SearchHistoryList {
     print("_searchHistoryList> ${_searchHistoryList.length}");
     for (SearchHistory value in _searchHistoryList) {
       if (value.name == item.name) {
-        return ;
+        return;
       }
     }
     if (_searchHistoryList.length > _count) {
