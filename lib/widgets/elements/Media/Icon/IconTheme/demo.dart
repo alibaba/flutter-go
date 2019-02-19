@@ -1,9 +1,8 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-15 16:07:59 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-15 16:49:17
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018-12-15 16:07:59 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2018-12-15 16:49:17
 import 'package:flutter/material.dart';
 
 class IconThemeDemo extends StatelessWidget {

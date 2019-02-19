@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-/*
- * Author: xiaojia.dxj
- * Date: 2018/11/22
- * Email: xiaojia.dxj@alibaba-inc.com
- * LastUpdateTime: 2018/11/22
- * LastUpdateBy: xj.deng
- *
- * Describle:stack描述
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018/11/22
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// LastUpdateTime: 2018/11/22
+ /// LastUpdateBy: xj.deng
+ /// Describle:stack描述
+ 
 class StackDefault extends StatelessWidget {
   const StackDefault() : super();
 

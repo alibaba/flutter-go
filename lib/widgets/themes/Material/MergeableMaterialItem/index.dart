@@ -1,9 +1,8 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-07 16:36:43 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2019-01-08 14:12:32
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-07 16:36:43 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2019-01-08 14:12:32
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';

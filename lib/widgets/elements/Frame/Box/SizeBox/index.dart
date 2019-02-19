@@ -1,9 +1,10 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-08 15:55:46 
- * @Last Modified by:   xiaojia.dxj
- * @Last Modified time: 2019-01-08 15:55:46 
- */
+
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-08 15:55:46 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by:   xiaojia.dxj
+ /// Last Modified time: 2019-01-08 15:55:46 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as sizeBox;

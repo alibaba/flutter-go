@@ -1,14 +1,12 @@
 import 'package:flutter/widgets.dart';
 
-/*
- * Author: xiaojia.dxj
- * Date: 2018/11/22
- * Email: xiaojia.dxj@alibaba-inc.com
- * LastUpdateTime: 2018/11/22
- * LastUpdateBy: xj.deng
- *
- * Describle:Row
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018/11/22
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// LastUpdateTime: 2018/11/22
+ /// LastUpdateBy: xj.deng
+ /// Describle:Row
+ 
 class RowMainAxisAlignment extends StatelessWidget {
   ///> mainAxisAlignment属性
   /// - MainAxisAlignment.spaceEvenly/spaceAround/spaceBetween,

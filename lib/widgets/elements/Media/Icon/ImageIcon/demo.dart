@@ -1,9 +1,10 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-15 15:19:41 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-17 10:07:19
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018-12-15 15:19:41 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2018-12-17 10:07:19
+ 
+
 import 'package:flutter/material.dart';
 
 class ImageIconDemo extends StatelessWidget {
