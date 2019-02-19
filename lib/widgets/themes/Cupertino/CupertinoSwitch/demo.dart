@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 15/01/2019
- * Time: 22:23
- * email: sanfan.hx@alibaba-inc.com
- * target:  CupertinoSwitchDemo
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 15/01/2019
+/// Time: 22:23
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  CupertinoSwitchDemo
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 > IOS风格下用于展示一些用户可以选择的选项

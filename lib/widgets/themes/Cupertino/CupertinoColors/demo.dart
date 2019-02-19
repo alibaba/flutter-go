@@ -8,8 +8,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// Checkbox 默认按钮的实例
-/// index 当前checkbox 的索引值
+// Checkbox 默认按钮的实例
+// index 当前checkbox 的索引值
 class CupertinoColorsFullDefault extends StatefulWidget {
   const CupertinoColorsFullDefault() : super();
 
@@ -17,7 +17,7 @@ class CupertinoColorsFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoColorsFullDefault();
 }
 
-/// CupertinoColors 默认的实例,有状态
+// CupertinoColors 默认的实例,有状态
 class _CupertinoColorsFullDefault extends State {
 
   Widget setColorsView(cupertinoColors,String colorName){

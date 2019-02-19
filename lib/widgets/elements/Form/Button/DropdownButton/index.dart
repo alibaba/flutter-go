@@ -56,9 +56,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 DropdownButton 按钮
- */
+// 所有的 DropdownButton 按钮
 Widget allDropdownButtons(BuildContext context,_DemoState that){
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -82,9 +80,7 @@ Widget allDropdownButtons(BuildContext context,_DemoState that){
   );
 }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt){
   //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
   return  Align(

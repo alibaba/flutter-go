@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 > CupertinoScrollbar 是ios样式风格的滚动条

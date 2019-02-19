@@ -7,11 +7,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/resources/icon_names.dart' as icon_names;
 
-/*
-* CupertinoIcons 默认的实例
-* */
+// CupertinoIcons 默认的实例
 class CupertinoIconsFullDefault extends StatefulWidget {
   const CupertinoIconsFullDefault() : super();
 
@@ -19,9 +18,7 @@ class CupertinoIconsFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoIconsFullDefault();
 }
 
-/*
-* CupertinoIcons 默认的实例,有状态
-* */
+// CupertinoIcons 默认的实例,有状态
 class _CupertinoIconsFullDefault extends State {
 
   final colorsList = [];

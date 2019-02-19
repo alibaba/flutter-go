@@ -8,9 +8,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPageRoute 默认的实例
-* */
+// CupertinoPageRoute 默认的实例
 class CupertinoPageRouteFullDefault extends StatefulWidget {
   const CupertinoPageRouteFullDefault() : super();
 
@@ -18,9 +16,7 @@ class CupertinoPageRouteFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPageRouteFullDefault();
 }
 
-/*
-* CupertinoPageRoute 默认的实例,有状态
-* */
+// CupertinoPageRoute 默认的实例,有状态
 class _CupertinoPageRouteFullDefault extends State {
 
   Widget pageRoute(BuildContext context,int index){

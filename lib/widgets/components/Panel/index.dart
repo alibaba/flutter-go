@@ -1,11 +1,9 @@
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'ExpansionPanel/index.dart' as ExpansionPanel;
 import 'ExpansionPanelList/index.dart' as ExpansionPanelList;
 import 'ExpansionPanelRadio/index.dart' as ExpansionPanelRadio;
-
-
 
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
