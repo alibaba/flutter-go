@@ -166,24 +166,24 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   }
 
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
         onTap: () {
           showAlertDialog(context);
         },
         child: Stack(
           //alignment: const Alignment(1.6, 1.6),
           children: [
-            new Container(
+            Container(
               width: 90.0,
               alignment: Alignment.center,
-              decoration: new BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius:
-                    new BorderRadius.horizontal(right: Radius.circular(10)),
+                    BorderRadius.horizontal(right: Radius.circular(10)),
                 color: Colors.black45,
               ),
-              child: new Text(
+              child: Text(
                 '🔔 免责声明',
-                style: new TextStyle(
+                style: TextStyle(
                   fontSize: 14.0,
                   //fontWeight: FontWeight.bold,
                   color: Colors.white,

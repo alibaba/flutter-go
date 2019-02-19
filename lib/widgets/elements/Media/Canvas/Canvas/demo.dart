@@ -10,6 +10,7 @@ import 'dart:ui';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 import 'dart:math';
+import 'dart:async';
 import 'package:flutter/services.dart' show rootBundle;
 
 CustomPaint graph;
