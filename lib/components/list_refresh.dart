@@ -5,8 +5,9 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: ListRefresh 的示例
 
-import 'package:flutter/material.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 
 class ListRefresh extends StatefulWidget {
   final renderItem;

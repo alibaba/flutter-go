@@ -1,22 +1,17 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 07/01/2019
- * Time: 10:31
- * email: sanfan.hx@alibaba-inc.com
- * target:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 07/01/2019
+/// Time: 10:31
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-
 
 class GridTileDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }
 
 class _Demo extends State<GridTileDemo> {
-
-
   Widget build(BuildContext context) {
     return Container(
       height: 400,

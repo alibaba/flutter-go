@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 31/01/2019
- * Time: 18:13
- * email: sanfan.hx@alibaba-inc.com
- * target:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 31/01/2019
+/// Time: 18:13
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 //enum DateType {
 //  Int,

@@ -5,11 +5,10 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: Card 的示例
 
-import 'package:flutter_go/components/widget_demo.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as CardDemo;
 
 const String _Text0 =

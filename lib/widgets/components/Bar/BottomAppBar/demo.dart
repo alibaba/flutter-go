@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* AppBar 默认的实例,无状态
-* */
+// AppBar 默认的实例,无状态
 class AppBarLessDefaultSimple extends StatelessWidget {
   final widget;
   final parent;

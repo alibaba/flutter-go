@@ -6,8 +6,8 @@
 /// target: Bar 的示例
 
 import "package:flutter/material.dart";
-import '../../../model/widget.dart';
 
+import '../../../model/widget.dart';
 import 'SliverAppBar/index.dart' as SliverAppBar;
 import 'AppBar/index.dart' as AppBar;
 import 'BottomAppBar/index.dart' as BottomAppBar;

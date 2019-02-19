@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认FlexibleSpaceBar的实例
-* */
+// Checkbox 默认FlexibleSpaceBar的实例
 class FlexibleSpaceBarFullDefault extends StatefulWidget {
   const FlexibleSpaceBarFullDefault() : super();
 
@@ -17,9 +15,7 @@ class FlexibleSpaceBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _FlexibleSpaceBarFullDefault();
 }
 
-/*
-* FlexibleSpaceBar 默认的实例,有状态
-* */
+// FlexibleSpaceBar 默认的实例,有状态
 class _FlexibleSpaceBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -29,9 +25,7 @@ class _FlexibleSpaceBarFullDefault extends State {
   }
 }
 
-/*
-* FlexibleSpaceBar 默认的实例,无状态
-* */
+// FlexibleSpaceBar 默认的实例,无状态
 class FlexibleSpaceBarLessDefault extends StatelessWidget {
   final widget;
   final parent;

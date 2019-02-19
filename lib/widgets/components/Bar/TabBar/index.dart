@@ -1,14 +1,13 @@
-/**
- * Created with Android Studio.
- * User: sanfan.hx
- * Date: 2019/1/6
- * Time: 下午17:08
- * email: sanfan.hx@alibaba-inc.com
- * target: SnackBarAction 的示例
- */
-import 'package:flutter_go/components/widget_demo.dart';
+/// Created with Android Studio.
+/// User: sanfan.hx
+/// Date: 2019/1/6
+/// Time: 下午17:08
+/// email: sanfan.hx@alibaba-inc.com
+/// target: SnackBarAction 的示例
+
 import 'package:flutter/material.dart';
 
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String _Text0 = """

@@ -14,9 +14,7 @@ class TabBarDemo extends StatefulWidget {
   State<StatefulWidget> createState() => _TabBarDemo();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _TabBarDemo extends State with SingleTickerProviderStateMixin {
   ScrollController _scrollViewController;
   TabController _tabController;

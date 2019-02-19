@@ -1,15 +1,16 @@
-/*
- * @Author: 一凨 
- * @Date: 2019-01-14 17:44:47 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 19:47:14
- */
+/// @Author: 一凨 
+/// @Date: 2019-01-14 17:44:47 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-14 19:47:14
+
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+
 import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-import 'dart:core';
 
 class WebViewPage extends StatefulWidget {
   final String url;

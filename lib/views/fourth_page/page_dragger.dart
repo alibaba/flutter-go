@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/views/fourth_page/pager_indicator.dart';
 
 class PageDragger extends StatefulWidget {
