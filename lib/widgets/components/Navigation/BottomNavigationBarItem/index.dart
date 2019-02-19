@@ -9,7 +9,6 @@ import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as BottomNavigationBarItemDemo;
 
 const String _Text0 =
@@ -18,12 +17,10 @@ const String _Text0 =
 - material 的 BottomNavigationBar 或带有图标和标题的 iOS主题 CupertinoTabBar 中的交互式按钮;
 """;
 
-
 const String _Text1 =
 """### **基本用法**
 > 这个类很少单独使用。通常嵌入在上面的一个底部 bottom navigation widgets 中;
 """;
-
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Navigation/BottomNavigationBarItem';
@@ -38,7 +35,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'BottomNavigationBarItem',
       codeUrl: 'components/Navigation/BottomNavigationBarItem/demo.dart',
-      contentList: [allCheckboxs(context, this)],
+      contentList: allDomeBox(context, this),
       docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );
   }
@@ -48,33 +45,16 @@ class _DemoState extends State<Demo> {
 // 所有的 BottomNavigationBarItem widget
 // context: 运行上下文
 // that: 指向有状态的 StatefulWidget
-Widget allCheckboxs(BuildContext context, _DemoState that) {
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _Text0),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text1),
-            SizedBox(height: 20.0), // 间距
-            BottomNavigationBarItemDemo.BottomNavigationBarItemLessDefault(),
-            SizedBox(height: 20.0), // 间距
-          ])
-  );
+List allDomeBox(BuildContext context, _DemoState that) {
+  return [
+    _Text0,
+    SizedBox(height: 20.0), // 间距
+    _Text1,
+    SizedBox(height: 20.0), // 间距
+    BottomNavigationBarItemDemo.BottomNavigationBarItemLessDefault(),
+    SizedBox(height: 20.0), // 间距
+  ];
 }
 
-
-// 带align的text
-Widget textAlignBar(String txt) {
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-          ])
-  );
-}
 
 

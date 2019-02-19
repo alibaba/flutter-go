@@ -1,4 +1,4 @@
-/// Created with 菜鸟手册.
+/// Created with FlutterGo.
 /// User: 一晟
 /// Date: 2018/11/14
 /// Time: 下午4:31
@@ -6,11 +6,7 @@
 /// target: RaisedButton 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/RaisedButton-class.html
 
-
-import 'package:flutter_markdown/flutter_markdown.dart';
-
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as raisedButton;
@@ -65,102 +61,60 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'RaisedButton',
       codeUrl: 'elements/Form/Button/RaisedButton/demo.dart',
-      contentList: [allRaisedButtons(context,this)],
+      contentList: allRaisedButtons(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/RaisedButton-class.html',
     );
   }
 }
 
  // 所有的 RaisedButton 按钮
-Widget allRaisedButtons(BuildContext context,_DemoState that){
+List allRaisedButtons(BuildContext context,_DemoState that){
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _raisedText0),
-            textAlignBar(_raisedText1),
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                raisedButton.RaisedButtonDefault(),
-                SizedBox(width: 20.0), // 间距
-                raisedButton.RaisedButtonDefault(false),
-              ],
-            ),
-            textAlignBar(_raisedText2),
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceAround,
-              //mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                raisedButton.RaisedButtonIconDefault(),
-                raisedButton.RaisedButtonIconDefault(false),
-              ],
-            ),
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceAround,
-              //mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                raisedButton.RaisedButtonIconDefault(true, Icons.android),
-                raisedButton.RaisedButtonIconDefault(true, Icons.announcement),
-              ],
-            ),
-            textAlignBar(_raisedText3),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom('主要按钮',Colors.blue,buttonShape),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom('成功按钮',Colors.green,buttonShape),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom('信息按钮',Colors.grey,buttonShape),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom('警告按钮',Colors.orange,buttonShape),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom('危险按钮',Colors.pink,buttonShape),
-            SizedBox(height: 10.0),
-            raisedButton.RaisedButtonCustom( '点击切换，按钮的圆角', Colors.blue, buttonShape,
-                    () => that.setButtonShapeType()),
-            SizedBox(height: 20.0)
-          ])
-  );
-}
-
-  // alert 弹框
-  // context:容器的父级
-// void _showMessage(String name, BuildContext context) {
-//   showDialog(
-//     // alert 的父级
-//     context: context,
-//     builder: (BuildContext context) {
-//       return AlertDialog(
-//           title:  Text('提示'),
-//           content:  Text(name),
-//           actions: <Widget>[
-//              FlatButton(
-//               // alert 的取消按钮
-//                 onPressed: () {
-//                   // 取消的事件
-//                   Navigator.of(context).pop(true);
-//                 },
-//                 child:  Text('取消'))
-//           ]);
-//     }
-//   );
-// }
-
-// 带align的text
-Widget textAlignBar(String txt){
-  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-            // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-          ])
-  );
+  return [
+    _raisedText0,
+    _raisedText1,
+    ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        raisedButton.RaisedButtonDefault(),
+        SizedBox(width: 20.0), // 间距
+        raisedButton.RaisedButtonDefault(false),
+      ],
+    ),
+    _raisedText2,
+    ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+      //mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        raisedButton.RaisedButtonIconDefault(),
+        raisedButton.RaisedButtonIconDefault(false),
+      ],
+    ),
+    ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+      //mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        raisedButton.RaisedButtonIconDefault(true, Icons.android),
+        raisedButton.RaisedButtonIconDefault(true, Icons.announcement),
+      ],
+    ),
+    _raisedText3,
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('主要按钮', Colors.blue, buttonShape),
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('成功按钮', Colors.green, buttonShape),
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('信息按钮', Colors.grey, buttonShape),
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('警告按钮', Colors.orange, buttonShape),
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('危险按钮', Colors.pink, buttonShape),
+    SizedBox(height: 10.0),
+    raisedButton.RaisedButtonCustom('点击切换，按钮的圆角', Colors.blue, buttonShape,
+            () => that.setButtonShapeType()),
+    SizedBox(height: 20.0)
+  ];
 }
 
 // 绘制边框信息,比如是否有边框,是否是圆角

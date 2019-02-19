@@ -6,9 +6,9 @@
 /// target: BottomNavigationBar 的示例
 
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 import  'package:flutter_go/components/widget_demo.dart';
+
 import './demo.dart' as BottomNavigationBarDemo;
 
 const String _text0 =
@@ -41,7 +41,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'BottomNavigationBar',
       codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
-      contentList: [allDemoBoxs(context, this)],
+      contentList: allDemoBoxs(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
       bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
     );
@@ -52,37 +52,19 @@ class _DemoState extends State<Demo> {
 // 所有的 BottomNavigationBar widget
 // context: 运行上下文
 // that: 指向有状态的 StatefulWidget
-Widget allDemoBoxs(BuildContext context, _DemoState that) {
-  return Container(
-    //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _text0),
-            textAlignBar(_text1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                //BottomNavigationBarDemo.BottomNavigationBarFullDefault();
-              ],
-            ),
-            SizedBox(width: 20.0), // 间距
-          ])
-  );
-}
-
-
-// 带align的text
-Widget textAlignBar(String txt) {
-  return  Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-          ])
-  );
+List allDemoBoxs(BuildContext context, _DemoState that) {
+  return [
+    _text0,
+    _text1,
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        //BottomNavigationBarDemo.BottomNavigationBarFullDefault();
+      ],
+    ),
+    SizedBox(width: 20.0), // 间距
+  ];
 }
 
 

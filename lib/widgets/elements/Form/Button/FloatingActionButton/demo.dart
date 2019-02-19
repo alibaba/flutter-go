@@ -42,7 +42,7 @@ class FloatingActionButtonCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _onPressed = onPressed;
+    final _onPressed = (onPressed is Function) ? onPressed : ()=>{};
     return  FloatingActionButton(
       // 子视图，一般为Icon，不推荐使用文字
       child: const Icon(Icons.refresh),

@@ -1,13 +1,10 @@
-/// Created with 菜鸟手册.
+/// Created with FlutterGo.
 /// User: 一晟
 /// Date: 2018/11/14
 /// Time: 下午4:31
 /// email: zhu.yan@alibaba-inc.com
 /// target: FlatButton 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
-
-
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
@@ -51,21 +48,17 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'FlatButton',
       codeUrl: 'elements/Form/Button/FlatButton/demo.dart',
-      contentList: [allFlatButtons(context)],
+      contentList: allFlatButtons(context),
       docUrl: 'https://docs.flutter.io/flutter/material/FlatButton-class.html',
     );
   }
 }
 
  // 所有的 FlatButton 按钮
-Widget allFlatButtons(BuildContext context){
-  return Container(
-      //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-          //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _flatText0),
-            textAlignBar(_flatText1),
+List allFlatButtons(BuildContext context){
+  return [
+            _flatText0,
+            _flatText1,
             ButtonBar(
               alignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.max,
@@ -75,7 +68,7 @@ Widget allFlatButtons(BuildContext context){
                 flatButton.FlatButtonDefault(false),
               ],
             ),
-            textAlignBar(_flatText2),
+            _flatText2,
             ButtonBar(
               alignment: MainAxisAlignment.spaceAround,
               //mainAxisSize: MainAxisSize.min,
@@ -92,7 +85,7 @@ Widget allFlatButtons(BuildContext context){
                 flatButton.FlatButtonIconDefault(true, Icons.announcement),
               ],
             ),
-            textAlignBar(_flatText3),
+            _flatText3,
             //flatButton.FlatButtonCustom(context,'主要按钮',Colors.blue),
             flatButton.FlatButtonCustom('主要按钮',Colors.blue),
             SizedBox(height: 10.0),
@@ -108,8 +101,7 @@ Widget allFlatButtons(BuildContext context){
                  Border.all(color: Colors.brown, width: 5.0, style: BorderStyle.solid),
                     () => _showMessage('点击了 FLAT BUTTON ', context)),
             SizedBox(height: 20.0)
-          ])
-  );
+          ];
 }
 
   // alert 弹框
@@ -132,19 +124,5 @@ void _showMessage(String name, BuildContext context) {
                 child:  Text('取消'))
           ]);
     }
-  );
-}
-
-// 带align的text
-Widget textAlignBar(String txt){
-  //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return  Align(
-    alignment: FractionalOffset.centerLeft,
-    child: Column(
-      children: <Widget>[
-        SizedBox(height: 20.0),
-        MarkdownBody(data: txt)
-        // Text(txt, style:  TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-      ])
   );
 }
