@@ -1,9 +1,7 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-08 16:08:41 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-08 16:22:50
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-12-08 16:08:41 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-12-08 16:22:50
 import 'package:flutter/material.dart';
 
 class FadeInImageDemo extends StatelessWidget {

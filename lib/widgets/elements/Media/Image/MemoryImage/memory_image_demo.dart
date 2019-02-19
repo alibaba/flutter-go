@@ -1,13 +1,13 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-08 17:49:19 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-08 20:46:37
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-12-08 17:49:19 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-12-08 20:46:37
+
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'dart:typed_data';
+
 
 class MemoryImageDemo extends StatefulWidget {
   _MemoryImageDemoState createState() => _MemoryImageDemoState();

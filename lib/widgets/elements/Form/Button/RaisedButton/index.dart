@@ -6,11 +6,13 @@
 /// target: RaisedButton 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/RaisedButton-class.html
 
-import 'package:flutter_go/components/widget_demo.dart';
-import 'dart:math';
-import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as raisedButton;
 
 
@@ -69,9 +71,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 RaisedButton 按钮
- */
+ // 所有的 RaisedButton 按钮
 Widget allRaisedButtons(BuildContext context,_DemoState that){
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
   return Container(
@@ -151,9 +151,7 @@ Widget allRaisedButtons(BuildContext context,_DemoState that){
 //   );
 // }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt){
   //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
   return  Align(
@@ -167,9 +165,7 @@ Widget textAlignBar(String txt){
   );
 }
 
-/*
-* 绘制边框信息,比如是否有边框,是否是圆角
-* */
+// 绘制边框信息,比如是否有边框,是否是圆角
 ShapeBorder drawShape(String type){
   final Color _color = _randomColor();
   final borderWidth = Random.secure().nextInt(5).toDouble();
@@ -204,9 +200,7 @@ ShapeBorder drawShape(String type){
   }
 }
 
-/*
-* 取随机颜色
-* */
+// 取随机颜色
 Color _randomColor() {
   var red = Random.secure().nextInt(255);
   var greed = Random.secure().nextInt(255);

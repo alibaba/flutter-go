@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 14/01/2019
- * Time: 19:02
- * email: sanfan.hx@alibaba-inc.com
- * target:  xxx
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 14/01/2019
+ /// Time: 19:02
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  xxx
 
 import 'package:flutter/material.dart';
 

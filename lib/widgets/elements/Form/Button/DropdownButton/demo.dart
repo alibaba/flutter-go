@@ -7,10 +7,8 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* DropdownButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+// DropdownButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 var selectItValue;
 var selectItemValue;
 
@@ -104,9 +102,7 @@ List<DropdownMenuItem> getListData(){
   return items;
 }
 
-/*
-* DropdownButton 自定义的实例
-* */
+// DropdownButton 自定义的实例
 class DropdownButtonCustom extends StatelessWidget {
   final widget;
   final parent;

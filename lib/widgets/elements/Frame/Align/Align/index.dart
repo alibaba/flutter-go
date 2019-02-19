@@ -1,5 +1,5 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
@@ -35,7 +35,7 @@ class _DemoState extends State<Demo> {
       title: 'Align',
       codeUrl: "elements/Frame/Align/Align/demo.dart",
       docUrl: 'https://docs.flutter.io/flutter/widgets/Align-class.html',
-      contentList: [_flatText0, _alignCreate()],
+      contentList: [_flatText0, _alignCreate(),_flatText1,_alignCreates()],
     );
   }
 
@@ -69,8 +69,17 @@ class _DemoState extends State<Demo> {
           ],
         ),
         SizedBox(height: 10.0),
-        MarkdownBody(data: _flatText1),
-        Container(
+       
+        
+      ],
+    );
+  }
+}
+
+Column _alignCreates(){
+  return Column(
+    children: <Widget>[
+      Container(
           margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xffe91e63),
           child:  Align(
@@ -84,8 +93,7 @@ class _DemoState extends State<Demo> {
         AlignFactor(Alignment.topLeft, 2.0, 2.0, 'topleft'),
         AlignFactor(Alignment.topRight, null, null, 'topleft'),
         AlignFactor(Alignment.center, null, null, 'center'),
-        AlignFactor(Alignment.bottomLeft, null, null, 'bottomLeft'),
-      ],
-    );
-  }
+        AlignFactor(Alignment.bottomLeft, null, null, 'bottomLeft')
+    ],
+  );
 }

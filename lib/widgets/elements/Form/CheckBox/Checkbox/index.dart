@@ -6,11 +6,11 @@
 /// target: Checkbox 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/Checkbox-class.html
 
-import 'package:flutter_go/components/widget_demo.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+
 
 import 'package:flutter/material.dart';
-
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as checkbox;
 
 const String _checkboxText0 =
@@ -53,9 +53,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 Checkbox 按钮
- */
+ // 所有的 Checkbox 按钮
 Widget allCheckboxs(BuildContext context,_DemoState that){
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -92,9 +90,7 @@ Widget allCheckboxs(BuildContext context,_DemoState that){
   );
 }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt){
   return  Align(
       alignment: FractionalOffset.centerLeft,

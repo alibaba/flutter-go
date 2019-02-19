@@ -7,10 +7,8 @@
 
 import 'package:flutter/material.dart';
 
-/*
-* RaisedButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+// RaisedButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 class PopupMenuButtonDefault extends StatelessWidget {

@@ -1,14 +1,13 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 20/01/2019
- * Time: 22:28
- * email: sanfan.hx@alibaba-inc.com
- * target:  CupertinoTabBar
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 20/01/2019
+ /// Time: 22:28
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  CupertinoTabBar
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class TextDemo extends StatefulWidget {
   _Demo createState() => _Demo();

@@ -28,8 +28,8 @@ class FlatButtonDefault extends StatelessWidget {
 
 
 // FlatButton.icon 默认按钮的实例
-// * Create a text button from a pair of widgets that serve as the button's icon and label
-// * isDisabled:是否是禁用
+//  Create a text button from a pair of widgets that serve as the button's icon and label
+//  isDisabled:是否是禁用
 class FlatButtonIconDefault extends StatelessWidget {
   final bool isDisabled;
   final IconData icon;

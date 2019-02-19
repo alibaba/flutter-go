@@ -6,14 +6,13 @@
 /// target: FlatButton 的示例
 /// 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
 
-import 'package:flutter_go/components/widget_demo.dart';
-
-import 'package:flutter/material.dart';
 
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_go/components/widget_demo.dart';
+
 import './demo.dart' as flatButton;
-
-
 
 const String _flatText0 =
 """### **简介**
@@ -58,9 +57,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-/*
- * 所有的 FlatButton 按钮
- */
+ // 所有的 FlatButton 按钮
 Widget allFlatButtons(BuildContext context){
   return Container(
       //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
@@ -115,10 +112,8 @@ Widget allFlatButtons(BuildContext context){
   );
 }
 
-/*
-  * alert 弹框
-  * context:容器的父级
-  * */
+  // alert 弹框
+  // context:容器的父级
 void _showMessage(String name, BuildContext context) {
   showDialog(
     // alert 的父级
@@ -140,9 +135,7 @@ void _showMessage(String name, BuildContext context) {
   );
 }
 
-/*
-* 带align的text
-* */
+// 带align的text
 Widget textAlignBar(String txt){
   //style:  TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
   return  Align(

@@ -1,7 +1,7 @@
-/// @Author: 一凨 
-/// @Date: 2019-01-11 14:39:48 
-/// @Last Modified by: 一凨
-/// @Last Modified time: 2019-01-11 14:40:09
+/// Author: 一凨 
+/// Date: 2019-01-11 14:39:48 
+/// Last Modified by: 一凨
+/// Last Modified time: 2019-01-11 14:40:09
 
 import 'package:flutter/material.dart';
 
