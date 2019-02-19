@@ -56,11 +56,7 @@ class _DemoState extends State<Demo> {
   }
 }
 
-<<<<<<< HEAD
- // 所有的 DropdownButton 按钮
-=======
 // 所有的 DropdownButton 按钮
->>>>>>> 59253b7d99a8ef6fd83cd183d86e7416cf5a6235
 Widget allDropdownButtons(BuildContext context,_DemoState that){
   return Container(
     //padding:  EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
