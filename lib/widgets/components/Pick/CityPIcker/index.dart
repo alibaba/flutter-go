@@ -1,15 +1,15 @@
-//
-// Created with Android Studio.
-// User: 三帆
-// Date: 05/02/2019
-// Time: 22:06
-// email: sanfan.hx@alibaba-inc.com
-// target:  xxx
-//
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 05/02/2019
+/// Time: 22:06
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const String content0 = '''
 ### **简介**
 > 显示中国的省市县地区

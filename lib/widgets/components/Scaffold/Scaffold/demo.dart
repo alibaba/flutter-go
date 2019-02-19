@@ -14,9 +14,7 @@ class ScaffoldDemo extends StatefulWidget {
   State<StatefulWidget> createState() => _ScaffoldDemo();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _ScaffoldDemo extends State with SingleTickerProviderStateMixin {
   int count = 0;
 

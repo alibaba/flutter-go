@@ -1,11 +1,9 @@
-//
-// Created with Android Studio.
-// User: 三帆
-// Date: 05/02/2019
-// Time: 22:06
-// email: sanfan.hx@alibaba-inc.com
-// target:  xxx
-//
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 05/02/2019
+/// Time: 22:06
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
 import 'package:city_pickers/city_pickers.dart';
@@ -19,7 +17,7 @@ class _Demo extends State<CityPickerDemo> {
   show(context) async {
     Result temp  = await CityPickers.showCityPicker(
       context: context,
-//      locationCode: '640221',
+      // locationCode: '640221',
       height: 400,
     );
     setState(() {

@@ -1,9 +1,8 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-17 15:37:32 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-21 11:26:21
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-17 15:37:32 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-21 11:26:21
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';

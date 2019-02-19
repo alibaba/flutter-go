@@ -1,7 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 import 'package:meta/meta.dart';
+import 'package:flutter_go/resources/widget_name_to_icon.dart';
+import 'package:flutter_go/routers/application.dart';
+import '../model/search_history.dart';
 
 typedef String FormFieldFormatter<T>(T v);
 typedef bool MaterialSearchFilter<T>(T v, String c);
@@ -409,11 +413,9 @@ class History extends StatefulWidget {
   _History  createState() => _History();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _History extends State<History> {
- 
+  SearchHistoryList searchHistoryList = new SearchHistoryList();
 
   @override
   void initState() {
@@ -424,11 +426,68 @@ class _History extends State<History> {
   void dispose() {
     super.dispose();
   }
+  buildChips(BuildContext context) {
+    List<Widget> list = [];
+    List<SearchHistory> historyList = searchHistoryList.getList();
+    print("historyList> $historyList");
+    Color bgColor = Theme.of(context).primaryColor;
+    historyList.forEach((SearchHistory value) {
 
+      Widget icon = CircleAvatar(
+        backgroundColor: bgColor,
+        child: Text(
+          value.name.substring(0, 1),
+          style: TextStyle(color: Colors.white),
+        ),
+      );
+      if (WidgetName2Icon.icons[value.name] != null) {
+        icon = Icon(WidgetName2Icon.icons[value.name], size: 25);
+      }
+
+      list.add(
+        InkWell(
+          onTap: () {
+            Application.router.navigateTo(context, "${value.targetRouter}", transition: TransitionType.inFromRight);
+          },
+          child: Chip(
+            avatar: icon,
+            label: Text("${value.name}"),
+          ),
+        )
+      );
+    });
+    return list;
+  }
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: Text('这是一个即将完善的历史记录的面板'),
+    List<Widget> childList = buildChips(context);
+    if (childList.length == 0) {
+      return Center(
+        child: Text("当前历史面板为空"),
+      );
+    }
+    return Column(
+      children: <Widget>[
+        Container(
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.fromLTRB(12.0, 12, 12, 0),
+          child: InkWell(
+            onLongPress: () {
+              searchHistoryList.clear();
+            },
+            child: Text('历史搜索'),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 10),
+          alignment: Alignment.topLeft,
+          child: Wrap(
+            spacing: 6.0, // gap between adjacent chips
+            runSpacing: 0.0, // gap between lines
+            children: childList
+          ),
+        )
+      ],
     );
   }
 }

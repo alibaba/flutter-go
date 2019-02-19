@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 > ios-11风格下拥有一个较大标题块的导航栏目

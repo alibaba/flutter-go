@@ -8,7 +8,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// CupertinoApp 的实例
+// CupertinoApp 的实例
 class CupertinoAppFullDefault extends StatefulWidget {
   const CupertinoAppFullDefault() : super();
 
@@ -16,9 +16,7 @@ class CupertinoAppFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoAppFullDefault();
 }
 
-/*
-* CupertinoApp 默认的实例,有状态
-* */
+// CupertinoApp 默认的实例,有状态
 class _CupertinoAppFullDefault extends State {
   routerHandler(setting) {
     //setting.isInitialRoute; bool类型 是否初始路由

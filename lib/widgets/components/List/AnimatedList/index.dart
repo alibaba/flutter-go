@@ -5,10 +5,10 @@
 /// email: zhu.yan@alibaba-inc.com
 /// target: AnimatedList 的示例
 
-import 'package:flutter_go/components/widget_demo.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 
@@ -80,7 +80,7 @@ Widget allDemoBoxs(BuildContext context, _DemoState that) {
 }
 
 
-/// 演示辅助按钮
+// 演示辅助按钮
 Widget assistButtonLeft(that) {
   return FloatingActionButton(
     // 文本内容
@@ -96,7 +96,7 @@ Widget assistButtonLeft(that) {
 }
 
 
-/// 演示辅助按钮
+// 演示辅助按钮
 Widget assistButtonRight(that) {
   return FloatingActionButton(
     // 文本内容

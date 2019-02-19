@@ -9,6 +9,10 @@ import 'package:flutter/material.dart';
 
 // DropdownButton 默认按钮的实例
 // isDisabled:是否是禁用，isDisabled 默认为true
+<<<<<<< HEAD
+=======
+
+>>>>>>> 59253b7d99a8ef6fd83cd183d86e7416cf5a6235
 var selectItValue;
 var selectItemValue;
 

@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-/// BottomNavigationBarItem 默认的实例,无状态
+// BottomNavigationBarItem 默认的实例,无状态
 class BottomNavigationBarItemLessDefault extends StatelessWidget {
   final widget;
   final parent;
@@ -39,19 +39,3 @@ class BottomNavigationBarItemLessDefault extends StatelessWidget {
     );
   }
 }
-
-//backgroundColor: Colors.grey,
-//
-////      body:  PageView(
-////
-////          children: [
-////             Index(),
-////             Classify(),
-////             Shopping(),
-////             Myself()
-////          ],
-////
-////          controller: pageController,
-////          onPageChanged: onPageChanged
-////      ),
-//

@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 
-
 /// Checkbox 默认ListBody的实例
 class ListBodyFullDefault extends StatefulWidget {
   const ListBodyFullDefault() : super();

@@ -1,11 +1,9 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-17 13:16:29 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-17 13:43:01
- */
-import 'package:flutter/material.dart';
+/// @Author: 一凨 
+/// @Date: 2018-12-17 13:16:29 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-17 13:43:01
 
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class BoxScrollViewDemo extends StatelessWidget {

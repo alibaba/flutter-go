@@ -8,9 +8,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPopupSurface 默认的实例
-* */
+// CupertinoPopupSurface 默认的实例
 class CupertinoPopupSurfaceFullDefault extends StatefulWidget {
   const CupertinoPopupSurfaceFullDefault() : super();
 
@@ -18,9 +16,7 @@ class CupertinoPopupSurfaceFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPopupSurfaceFullDefault();
 }
 
-/*
-* CupertinoPopupSurface 默认的实例,有状态
-* */
+// CupertinoPopupSurface 默认的实例,有状态
 class _CupertinoPopupSurfaceFullDefault extends State {
   @override
   Widget build(BuildContext context) {

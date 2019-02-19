@@ -8,9 +8,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoNavigationBar 默认的实例
-* */
+// CupertinoNavigationBar 默认的实例
 class CupertinoNavigationBarFullDefault extends StatefulWidget {
   const CupertinoNavigationBarFullDefault() : super();
 
@@ -18,9 +16,7 @@ class CupertinoNavigationBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoNavigationBarFullDefault();
 }
 
-/*
-* CupertinoNavigationBar 默认的实例,有状态
-* */
+// CupertinoNavigationBar 默认的实例,有状态
 class _CupertinoNavigationBarFullDefault extends State {
 
   Widget build2(BuildContext context) {

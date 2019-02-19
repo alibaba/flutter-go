@@ -9,8 +9,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-/// Checkbox 默认按钮的实例
-/// index 当前checkbox 的索引值
+// Checkbox 默认按钮的实例
+// index 当前checkbox 的索引值
 class CupertinoButtonFullDefault extends StatefulWidget {
   const CupertinoButtonFullDefault() : super();
 
@@ -19,7 +19,7 @@ class CupertinoButtonFullDefault extends StatefulWidget {
 }
 
 
-/// CupertinoButton 默认的实例,有状态
+// CupertinoButton 默认的实例,有状态
 class _CupertinoButtonFullDefault extends State {
 
   @override
