@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_go/views/fourth_page/page_dragger.dart';
 import 'package:flutter_go/views/fourth_page/page_reveal.dart';
 import 'package:flutter_go/views/fourth_page/pager_indicator.dart';
@@ -19,13 +18,15 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
   int activeIndex = 0;
   SlideDirection slideDirection = SlideDirection.none;
   int nextPageIndex = 0;
+  int waitingNextPageIndex = -1;
+
   double slidePercent = 0.0;
 
   FourthPageState() {
     slideUpdateStream = new StreamController<SlideUpdate>();
 
     slideUpdateStream.stream.listen((SlideUpdate event) {
-      if(mounted) {
+      if (mounted) {
         setState(() {
           if (event.updateType == UpdateType.dragging) {
             slideDirection = event.direction;
@@ -56,7 +57,7 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
                 vsync: this,
               );
 
-              nextPageIndex = activeIndex;
+              waitingNextPageIndex = activeIndex;
             }
 
             animatedPageDragger.run();
@@ -64,7 +65,12 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
             slideDirection = event.direction;
             slidePercent = event.slidePercent;
           } else if (event.updateType == UpdateType.doneAnimating) {
-            activeIndex = nextPageIndex;
+            if (waitingNextPageIndex != -1) {
+              nextPageIndex = waitingNextPageIndex;
+              waitingNextPageIndex = -1;
+            } else {
+              activeIndex = nextPageIndex;
+            }
 
             slideDirection = SlideDirection.none;
             slidePercent = 0.0;
