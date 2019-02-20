@@ -17,7 +17,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutter go"
-        android:icon="@drawable/logo">
+        android:icon="@drawable/flutter_go_logo">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
