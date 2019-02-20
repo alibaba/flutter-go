@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:fluro/fluro.dart';
 import './widget_item.dart';
 import '../routers/application.dart';
 import '../widgets/index.dart';
@@ -43,10 +43,10 @@ class WidgetItemContainer extends StatelessWidget {
                         targetRouter = item.routerName;
                       }
                     });
-                    Application.router.navigateTo(context, "$targetRouter");
+                    Application.router.navigateTo(context, "$targetRouter", transition: TransitionType.inFromRight);
                   } else {
                     Application.router
-                        .navigateTo(context, "/category/${item.name}");
+                        .navigateTo(context, "/category/${item.name}", transition: TransitionType.inFromRight);
                   }
                 },
                 index: addI,
