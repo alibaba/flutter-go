@@ -145,7 +145,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
             new IconButton(
               tooltip: 'goBack home',
               onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/home'));
+                Navigator.popUntil(context, ModalRoute.withName('/'));
               },
               icon: Icon(Icons.home),
             ),
