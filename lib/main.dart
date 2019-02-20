@@ -8,7 +8,7 @@ import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/home.dart';
 import 'package:flutter_go/model/search_history.dart';
-import 'views/welcome_page/index.dart';
+//import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 SpUtil sp;
@@ -17,7 +17,9 @@ var db;
 class MyApp extends StatelessWidget {
   MyApp()  {
     final router = new Router();
+
     Routes.configureRoutes(router);
+
     Application.router = router;
   }
   showWelcomePage() {
@@ -32,7 +34,6 @@ class MyApp extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    showWelcomePage();
     return new MaterialApp(
       title: 'title',
       theme: new ThemeData(

@@ -1,6 +1,8 @@
 ## Flutter Go
 
-> Help developers get started quickly Flutter **In-house testing, the 1.0 official version will be released on February 20.**
+![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
+
+> Help developers get started quickly Flutter  **Flutter Go 1.0 Android has been released**
 
 
 ## Download URL
