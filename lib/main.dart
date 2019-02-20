@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    showWelcomePage();
     return new MaterialApp(
       title: 'title',
       theme: new ThemeData(
