@@ -21,12 +21,14 @@ class MyApp extends StatelessWidget {
     Application.router = router;
   }
   showWelcomePage() {
-    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
-    if (showWelcome == null || showWelcome == true) {
-      return WelcomePage();
-    } else {
-      return AppPage();
-    }
+    // 暂时关掉欢迎介绍
+    return AppPage();
+//    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
+//    if (showWelcome == null || showWelcome == true) {
+//      return WelcomePage();
+//    } else {
+//      return AppPage();
+//    }
   }
   @override
   Widget build(BuildContext context) {
