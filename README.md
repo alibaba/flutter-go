@@ -101,7 +101,7 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
 
 
 ## 团队招聘
-  ### 在冰封 半年之久 HC 终于解冻，目前 “ 阿里巴巴集团 ” 春招已经启动
+  ### 在冰封 半年之久 HC 终于解冻，目前 “ 阿里巴巴集团 ” 春季校园招已经启动。
 | 团队获取此消息后第一时间，赶紧通知，各位刚走出校园的千里马，走进阿里的机会来了！！！
  
  基本要求如下：
@@ -109,7 +109,9 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
  - 招收 2019年11月-2020年10月 毕业的同学
  - 本次校招行动共执行四周，到 4月12日结束
 
-#### 如果你有意向，又符合条件，请关注下面的招聘信息，强调一下是 2019年11月-2020年10月 的应届毕业生！！！
+### 强调一下这次是校招哦，如果你有意向，又符合 2019年11月-2020年10月 的应届毕业生条件，请关注下面的招聘信息。
+
+#### 
 
 <img src="https://img.alicdn.com/tfs/TB1mJ5tL7PoK1RjSZKbXXX1IXXa-748-879.png" width=500>
 
@@ -119,5 +121,5 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
 
 #### 最重要的部分来了，手机扫描下面二维码，即可进入简历投递系统
 
-<img src="https://img.alicdn.com/tfs/TB1POOuL7PoK1RjSZKbXXX1IXXa-169-166.jpg" width=500>
+<img src="https://img.alicdn.com/tfs/TB1POOuL7PoK1RjSZKbXXX1IXXa-169-166.jpg" width=300>
 
