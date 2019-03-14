@@ -121,5 +121,5 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
 
 #### 最重要的部分来了，手机扫描下面二维码，即可进入简历投递系统
 
-<img src="https://img.alicdn.com/tfs/TB1POOuL7PoK1RjSZKbXXX1IXXa-169-166.jpg" width=300>
+<img src="https://img.alicdn.com/tfs/TB1POOuL7PoK1RjSZKbXXX1IXXa-169-166.jpg" width=200>
 
