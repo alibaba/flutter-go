@@ -113,7 +113,7 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
 
 #### 强调一下这次是校招哦，如果你有意向，又符合 2019年11月-2020年10月 的应届毕业生条件，请关注下面的招聘信息。
 
-- 不符合，也没关系，可以推荐优秀的学弟，学妹，增进一下 “纯洁” 的同学感情 👫😎。
+- 不符合，也没关系，可以推荐优秀的学弟，学妹，增进一下 纯洁的同学感情 👫😎。
 
 <img src="https://img.alicdn.com/tfs/TB1mJ5tL7PoK1RjSZKbXXX1IXXa-748-879.png" width=500>
 
