@@ -100,8 +100,21 @@ Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend
 
 
 
-#### 团队招聘
- ##### 在冰封 半年之久 HC 终于解冻，目前 “ 阿里巴巴集团 ” 春招已经启动，团队第一时间，赶紧通知，各位刚走出校园的千里马，走进阿里的机会来了！！！
+## 团队招聘
+ ### 在冰封 半年之久 HC 终于解冻，目前 “ 阿里巴巴集团 ” 春招已经启动
+ | 团队获取此消息后第一时间，赶紧通知，各位刚走出校园的千里马，走进阿里的机会来了！！！
+ 
+ 基本要求如下：
+ 
  - 招收 2019年11月-2020年10月 毕业的同学
- - 本次校招行动共执行四周，到 4 月12日结束
+ - 本次校招行动共执行四周，到 4月12日结束
 
+ 如果你有意向又符合条件
+ 
+###（2019年11月-2020年10月 的应届毕业生）
+
+<img src="https://img.alicdn.com/tfs/TB1mJ5tL7PoK1RjSZKbXXX1IXXa-748-879.png" width=500>
+
+<img src="https://img.alicdn.com/tfs/TB1PhOrLYrpK1RjSZTEXXcWAVXa-748-794.png" width=500>
+
+<img src="https://img.alicdn.com/tfs/TB1FXOlLYPpK1RjSZFFXXa5PpXa-748-440.png" width=500>
