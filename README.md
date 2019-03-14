@@ -98,3 +98,10 @@ flutter优点主要包括：
 
 Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
+
+
+#### 团队招聘
+ ##### 在冰封 半年之久 HC 终于解冻，目前 “ 阿里巴巴集团 ” 春招已经启动，团队第一时间，赶紧通知，各位刚走出校园的千里马，走进阿里的机会来了！！！
+ - 招收 2019年11月-2020年10月 毕业的同学
+ - 本次校招行动共执行四周，到 4 月12日结束
+
