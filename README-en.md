@@ -9,7 +9,7 @@
 
 Android download URL:
 
-<img src="https://img.alicdn.com/tfs/TB1q1GVB4naK1RjSZFtXXbC2VXa-195-198.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB180.kOhYaK1RjSZFnXXa80pXa-442-420.png" width="200px">
 
 Iphone download URL:
 No
