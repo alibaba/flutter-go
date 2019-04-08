@@ -9,6 +9,12 @@
 .buildlog/
 .history
 .svn/
+.vscode
+.gradle
+.idea
+/local.properties
+.DS_Store
+/build
 
 # IntelliJ related
 *.iml
