@@ -1,9 +1,10 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-08 11:33:21 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2019-01-08 15:24:14
- */
+
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-08 11:33:21 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2019-01-08 15:24:14
+
 import 'package:flutter/material.dart';
 
 class MergeableMaterialItemDemo extends StatefulWidget {
@@ -25,20 +26,19 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
   @override
   Widget build(BuildContext context) {
     items.add(
-        /**
-       * class MaterialSlice extends MergeableMaterialItem
-       */
-        new MaterialSlice(
-            key: new ValueKey<int>(currIndexNum),
-            child: new Column(children: <Widget>[
+
+        //class MaterialSlice extends MergeableMaterialItem
+         MaterialSlice(
+            key:  ValueKey<int>(currIndexNum),
+            child:  Column(children: <Widget>[
               // header,
-              new AnimatedCrossFade(
-                firstChild: new Container(
+               AnimatedCrossFade(
+                firstChild:  Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.green,
                 ),
-                secondChild: new Container(
+                secondChild:  Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.red,
@@ -57,8 +57,8 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
 
     return Column(
       children: <Widget>[
-        new MergeableMaterial(hasDividers: true, children: items),
-        new RaisedButton(
+         MergeableMaterial(hasDividers: true, children: items),
+         RaisedButton(
           child: Text("点击添加"),
           onPressed: () {
             _isChildExpanded();

@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-11-16 15:09:12 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-08 20:48:28
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-11-16 15:09:12 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-12-08 20:48:28
+
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './memory_image_demo.dart';
 
 const String _contentText0 = '''
@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
       // desc: 'MemoryImage 使用介绍',
       docUrl: 'https://docs.flutter.io/flutter/painting/MemoryImage-class.html',
       codeUrl:
-          'elements/Media/Image/MemoryImage/index.dart?1542777213280',
+          'elements/Media/Image/MemoryImage/index.dart',
     );
   }
 }

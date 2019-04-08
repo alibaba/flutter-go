@@ -3,9 +3,10 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import './home_banner.dart';
 import '../model/story.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Pagination extends StatelessWidget {
   static final String routeName = '/material/page-selector';

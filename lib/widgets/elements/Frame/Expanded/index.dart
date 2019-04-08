@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../model/widget.dart';
+
+import 'package:flutter_go/model/widget.dart';
 
 import './Expanded/index.dart' as Expanded;
 

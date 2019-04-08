@@ -1,20 +1,15 @@
-/**
- * Created with 菜鸟手册.
- * User: 一晟
- * Date: 2018/11/14
- * Time: 下午4:31
- * email: zhu.yan@alibaba-inc.com
- * target: FlatButton 的示例
- * 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
- */
-import '../../../../../common/widget_demo.dart';
+/// Created with FlutterGo.
+/// User: 一晟
+/// Date: 2018/11/14
+/// Time: 下午4:31
+/// email: zhu.yan@alibaba-inc.com
+/// target: FlatButton 的示例
+/// 对应文档地址:https://docs.flutter.io/flutter/material/FlatButton-class.html
 
 import 'package:flutter/material.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as flatButton;
-
-
 
 const String _flatText0 =
 """### **简介**
@@ -53,23 +48,17 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'FlatButton',
       codeUrl: 'elements/Form/Button/FlatButton/demo.dart',
-      contentList: [allFlatButtons(context)],
+      contentList: allFlatButtons(context),
       docUrl: 'https://docs.flutter.io/flutter/material/FlatButton-class.html',
     );
   }
 }
 
-/*
- * 所有的 FlatButton 按钮
- */
-Widget allFlatButtons(BuildContext context){
-  return Container(
-      //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-          //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _flatText0),
-            textAlignBar(_flatText1),
+ // 所有的 FlatButton 按钮
+List allFlatButtons(BuildContext context){
+  return [
+            _flatText0,
+            _flatText1,
             ButtonBar(
               alignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.max,
@@ -79,7 +68,7 @@ Widget allFlatButtons(BuildContext context){
                 flatButton.FlatButtonDefault(false),
               ],
             ),
-            textAlignBar(_flatText2),
+            _flatText2,
             ButtonBar(
               alignment: MainAxisAlignment.spaceAround,
               //mainAxisSize: MainAxisSize.min,
@@ -96,7 +85,7 @@ Widget allFlatButtons(BuildContext context){
                 flatButton.FlatButtonIconDefault(true, Icons.announcement),
               ],
             ),
-            textAlignBar(_flatText3),
+            _flatText3,
             //flatButton.FlatButtonCustom(context,'主要按钮',Colors.blue),
             flatButton.FlatButtonCustom('主要按钮',Colors.blue),
             SizedBox(height: 10.0),
@@ -109,50 +98,31 @@ Widget allFlatButtons(BuildContext context){
             flatButton.FlatButtonCustom('危险按钮',Colors.pink),
             SizedBox(height: 10.0),
             flatButton.FlatButtonCustom('点击我试试！', Colors.red,
-                new Border.all(color: Colors.brown, width: 5.0, style: BorderStyle.solid),
+                 Border.all(color: Colors.brown, width: 5.0, style: BorderStyle.solid),
                     () => _showMessage('点击了 FLAT BUTTON ', context)),
             SizedBox(height: 20.0)
-          ])
-  );
+          ];
 }
 
-/*
-  * alert 弹框
-  * context:容器的父级
-  * */
+  // alert 弹框
+  // context:容器的父级
 void _showMessage(String name, BuildContext context) {
   showDialog(
     // alert 的父级
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-          title: new Text('提示'),
-          content: new Text(name),
+          title:  Text('提示'),
+          content:  Text(name),
           actions: <Widget>[
-            new FlatButton(
+             FlatButton(
               // alert 的取消按钮
                 onPressed: () {
                   // 取消的事件
                   Navigator.of(context).pop(true);
                 },
-                child: new Text('取消'))
+                child:  Text('取消'))
           ]);
     }
-  );
-}
-
-/*
-* 带align的text
-* */
-Widget textAlignBar(String txt){
-  //style: new TextStyle(fontSize: 15.5, height: 1.2),textAlign:TextAlign.left
-  return new Align(
-    alignment: FractionalOffset.centerLeft,
-    child: Column(
-      children: <Widget>[
-        SizedBox(height: 20.0),
-        MarkdownBody(data: txt)
-        //new Text(txt, style: new TextStyle(fontSize: 15.5,height: 1.2,color:Colors.blue),textAlign:TextAlign.left)
-      ])
   );
 }

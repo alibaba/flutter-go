@@ -1,14 +1,11 @@
-/**
- * Created with Android Studio.
- * User: sanfan.hx
- * Date: 2019/1/6
- * Time: 下午17:08
- * email: sanfan.hx@alibaba-inc.com
- * tartget: SnackBarAction 的示例
- */
+/// Created with Android Studio.
+/// User: sanfan.hx
+/// Date: 2019/1/6
+/// Time: 下午17:08
+/// email: sanfan.hx@alibaba-inc.com
+/// target: SnackBarAction 的示例
 
 import 'package:flutter/material.dart';
-
 
 class SnackBarActionDemo extends StatefulWidget {
   _Demo createState() => _Demo();
@@ -16,15 +13,15 @@ class SnackBarActionDemo extends StatefulWidget {
 
 class _Demo extends State<SnackBarActionDemo> {
   Widget build(BuildContext context) {
-      return new Center(
-        child: new Column(
+      return  Center(
+        child:  Column(
           children: <Widget>[
-            new GestureDetector(
-              onTap: () {
+            new RaisedButton(
+              onPressed: () {
                 final snackBar = new SnackBar(
                   content: new Text('这是一个SnackBar, 右侧有SnackBarAction, 3秒后消失'),
                   backgroundColor:Color(0xffc91b3a),
-                  action: new SnackBarAction( // 提示信息上添加一个撤消的按钮
+                  action:  SnackBarAction( // 提示信息上添加一个撤消的按钮
                     textColor:Colors.white,
                     label: '撤消',
                     onPressed: () {
@@ -37,10 +34,10 @@ class _Demo extends State<SnackBarActionDemo> {
                 Scaffold.of(context).showSnackBar(snackBar);
               },
              
-              child: new Text('点我显示有action的SnackBar'),
+              child:  Text('点我显示有action的SnackBar'),
             ),
-            new GestureDetector(
-              onTap: () async {
+            new RaisedButton(
+              onPressed: () async {
                 final snackBar = new SnackBar(
                   content: new Text('右侧无SnackBarAction, 3秒后消失'),
                   backgroundColor:Color(0xffc91b3a),
@@ -49,7 +46,7 @@ class _Demo extends State<SnackBarActionDemo> {
                 );
                 Scaffold.of(context).showSnackBar(snackBar);
               },
-              child: new Text('点我显示无SnackBarAction的SnackBar'),
+              child:  Text('点我显示无SnackBarAction的SnackBar'),
             ),
           ],
         )

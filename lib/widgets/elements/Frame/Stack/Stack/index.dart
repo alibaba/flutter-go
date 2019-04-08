@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String _stackText0 = """### **简介**
@@ -35,30 +36,28 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Stack',
-      codeUrl:
-          'elements/Frame/Stack/Stack/demo.dart',
+      codeUrl: 'elements/Frame/Stack/Stack/demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/Stack-class.html',
       contentList: [
         _stackText0,
         _stackCreate(),
         _stackText1,
-        new Container(
+         Container(
           width: 300.0,
           height: 100.0,
-          margin: new EdgeInsets.only(top: 10.0, bottom: 10.0),
-          color: new Color(0xffe91e63),
+          margin:  EdgeInsets.only(top: 10.0, bottom: 10.0),
+          color:  Color(0xffe91e63),
           child: StackPositioned(),
         ),
         _stackText2,
-        new Container(
+         Container(
           width: 200.0,
           height: 200.0,
-          color: new Color(0xffe91e63),
+          color:  Color(0xffe91e63),
           child: StackLayout(),
         ),
       ],
@@ -66,18 +65,18 @@ class _DemoState extends State<Demo> {
   }
 
   Column _stackCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
         Column(
           children: <Widget>[
-            new Container(
-              margin: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+             Container(
+              margin:  EdgeInsets.only(top: 10.0, bottom: 10.0),
               width: 300.0,
               height: 100.0,
               color: Color(0xffe91e63),
               child: StackDefault(),
             ),
-            new Container(
+             Container(
               width: 300.0,
               height: 100.0,
               color: Color(0xffe91e63),

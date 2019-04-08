@@ -1,14 +1,12 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 28/12/2018
- * Time: 15:48
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 28/12/2018
+ /// Time: 15:48
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  xxx
 import 'package:flutter/material.dart';
 
-import '../../../../../common/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import  'demo.dart';
 
 const contentA = '''

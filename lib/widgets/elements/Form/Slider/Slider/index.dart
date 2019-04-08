@@ -1,14 +1,13 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 20/12/2018
- * Time: 17:43
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 20/12/2018
+/// Time: 17:43
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import  'demo.dart';
 
 const contentA = '''
@@ -49,19 +48,19 @@ const contentB = '''
 如果当前Slider样式 无法满足需求, 可以通过 ** SliderTheme ** 定制复杂样式
 
 ```
-new SliderTheme(
+ SliderTheme(
   data: SliderTheme.of(context).copyWith(
     activeTrackColor: Colors.yellowAccent,//实际进度的颜色
     inactiveTickMarkColor:Colors.black
     thumbColor: Colors.black,//滑块中心的颜色
     inactiveTrackColor:Colors.red,//默 认进度条的颜色
     valueIndicatorColor: Colors.blue,//提示进度的气派的背景色
-    valueIndicatorTextStyle: new TextStyle(//提示气泡里面文字的样式
+    valueIndicatorTextStyle:  TextStyle(//提示气泡里面文字的样式
       color: Colors.white,
     ),
     inactiveTickMarkColor:Colors.blue,//divisions对进度线分割后 断续线中间间隔的颜色
     overlayColor: Colors.pink,//滑块边缘颜色
-  child: new Slider()
+  child:  Slider()
 )
 
 ```

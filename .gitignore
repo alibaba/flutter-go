@@ -1,6 +1,5 @@
 # Miscellaneous
 *.class
-*.lock
 *.log
 *.pyc
 *.swp
@@ -9,9 +8,18 @@
 .buildlog/
 .history
 .svn/
+*.lock
+.vscode
+.gradle
+.idea
+/local.properties
+.DS_Store
+/build
+.metadata
+
 
 # IntelliJ related
-*.iml
+
 *.ipr
 *.iws
 .idea/
@@ -26,7 +34,7 @@
 .packages
 .pub-cache/
 .pub/
-build/
+/build/
 
 # Android related
 **/android/**/gradle-wrapper.jar

@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-17 13:16:46 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-17 13:34:46
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-17 13:16:46 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-17 13:34:46
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String content0 = '''

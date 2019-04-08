@@ -1,5 +1,6 @@
-import '../../../../model/widget.dart';
 import "package:flutter/material.dart";
+
+import '../../../../model/widget.dart';
 import "Slider/index.dart" as Slider;
 import "SliderTheme/index.dart" as SliderTheme;
 import "SliderThemeData/index.dart" as SliderThemeData;

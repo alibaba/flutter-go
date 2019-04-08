@@ -1,18 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午10:38
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlexibleSpaceBar 的示例
- */
-
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午10:38
+/// email: zhu.yan@alibaba-inc.com
+/// target: FlexibleSpaceBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认FlexibleSpaceBar的实例
-* */
+// Checkbox 默认FlexibleSpaceBar的实例
 class FlexibleSpaceBarFullDefault extends StatefulWidget {
   const FlexibleSpaceBarFullDefault() : super();
 
@@ -20,9 +15,7 @@ class FlexibleSpaceBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _FlexibleSpaceBarFullDefault();
 }
 
-/*
-* FlexibleSpaceBar 默认的实例,有状态
-* */
+// FlexibleSpaceBar 默认的实例,有状态
 class _FlexibleSpaceBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -32,9 +25,7 @@ class _FlexibleSpaceBarFullDefault extends State {
   }
 }
 
-/*
-* FlexibleSpaceBar 默认的实例,无状态
-* */
+// FlexibleSpaceBar 默认的实例,无状态
 class FlexibleSpaceBarLessDefault extends StatelessWidget {
   final widget;
   final parent;

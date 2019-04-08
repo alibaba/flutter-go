@@ -1,16 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午10:38
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlexibleSpaceBar 的示例
- */
-import '../../../../common/widget_demo.dart';
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午10:38
+/// email: zhu.yan@alibaba-inc.com
+/// target: FlexibleSpaceBar 的示例
+ 
+import 'package:flutter_go/components/widget_demo.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
 import './demo.dart' as FlexibleSpaceBarDemo;
 
 const String _Text0 =
@@ -29,7 +27,7 @@ const String _Text1 =
 
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/components//Bar/FlexibleSpaceBar';
+  static const String routeName = '/components/Bar/FlexibleSpaceBar';
 
   @override
   _DemoState createState() => _DemoState();
@@ -41,30 +39,23 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'FlexibleSpaceBar',
       codeUrl: 'components/Bar/FlexibleSpaceBar/demo.dart',
-      contentList: [allDomes(context, this)],
+      contentList: allDomes(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/FlexibleSpaceBar-class.html',
     );
   }
 }
 
-/*
- * 所有的 FlexibleSpaceBar widget
- * context: 运行上下文
- * that: 指向有状态的 StatefulWidget
- */
-Widget allDomes(BuildContext context, _DemoState that) {
-  return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _Text0),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text1),
-            SizedBox(height: 20.0), // 间距
-            FlexibleSpaceBarDemo.FlexibleSpaceBarLessDefault(),
-            SizedBox(height: 20.0), // 间距
-          ])
-  );
+//  所有的 FlexibleSpaceBar widget
+//  context: 运行上下文
+//  that: 指向有状态的 StatefulWidget
+List allDomes(BuildContext context, _DemoState that) {
+  return [
+    _Text0,
+    SizedBox(height: 20.0), // 间距
+    _Text1,
+    SizedBox(height: 20.0), // 间距
+    FlexibleSpaceBarDemo.FlexibleSpaceBarLessDefault(),
+    SizedBox(height: 20.0), // 间距
+  ];
 }
 

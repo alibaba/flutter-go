@@ -1,11 +1,13 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-08 15:56:31 
- * @Last Modified by:   xiaojia.dxj
- * @Last Modified time: 2019-01-08 15:56:31 
- */
+
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-08 15:56:31 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by:   xiaojia.dxj
+ /// Last Modified time: 2019-01-08 15:56:31 
+
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as overflowBox;
 
 const String Text0 = """### **OverflowBox简介**
@@ -76,7 +78,10 @@ class _DemoState extends State<Demo> {
           ),
         ),
         SizedBox(height: 20),
-        SizedBox(height: 50,child: Text("宽高都大于最大限制"),),
+        SizedBox(
+          height: 50,
+          child: Text("宽高都大于最大限制"),
+        ),
         Container(
           width: 100.0,
           height: 100.0,
@@ -90,7 +95,6 @@ class _DemoState extends State<Demo> {
             curalignment: Alignment.center,
           ),
         ),
-
       ],
     );
   }

@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/31
- * Time: 下午2:42
- * email: zhu.yan@alibaba-inc.com
- * tartget: ListBody 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/31
+/// Time: 下午2:42
+/// email: zhu.yan@alibaba-inc.com
+/// target: ListBody 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认ListBody的实例
-* */
+/// Checkbox 默认ListBody的实例
 class ListBodyFullDefault extends StatefulWidget {
   const ListBodyFullDefault() : super();
 
@@ -19,9 +15,8 @@ class ListBodyFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _ListBodyFullDefault();
 }
 
-/*
-* ListBody 默认的实例,有状态
-* */
+
+/// ListBody 默认的实例,有状态
 class _ListBodyFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -31,9 +26,7 @@ class _ListBodyFullDefault extends State {
   }
 }
 
-/*
-* ListBody 默认的实例,无状态
-* */
+/// ListBody 默认的实例,无状态
 class ListBodyLessDefault extends StatelessWidget {
   final widget;
   final parent;

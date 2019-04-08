@@ -1,17 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午2:57
- * email: zhu.yan@alibaba-inc.com
- * tartget: Card 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午2:57
+/// email: zhu.yan@alibaba-inc.com
+/// target: Card 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* Checkbox 默认Card的实例
-* */
+
+/// Checkbox 默认Card的实例
 class CardFullDefault extends StatefulWidget {
   const CardFullDefault() : super();
 
@@ -19,9 +16,8 @@ class CardFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CardFullDefault();
 }
 
-/*
-* Card 默认的实例,有状态
-* */
+
+/// Card 默认的实例,有状态
 class _CardFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -31,9 +27,7 @@ class _CardFullDefault extends State {
   }
 }
 
-/*
-* Card 默认的实例,无状态
-* */
+/// Card 默认的实例,无状态
 class CardLessDefault extends StatelessWidget {
   final widget;
   final parent;
@@ -50,9 +44,9 @@ class CardLessDefault extends StatelessWidget {
       margin:EdgeInsets.all(20.0),
       //  margin: EdgeInsetsDirectional.only(bottom: 30.0, top: 30.0, start: 30.0),// 边距
       semanticContainer:true, // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个child，但该child可以是Row，Column或其他包含子级列表的widget
-//      shape:new Border.all(
+//      shape: Border.all(
 //          color: Colors.indigo, width: 1.0, style: BorderStyle.solid), // 卡片材质的形状，以及边框
-      shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)), // 圆角
+      shape:RoundedRectangleBorder(borderRadius:  BorderRadius.circular(20.0)), // 圆角
       //borderRadius: BorderRadius.all(Radius.circular(8.0)),
       child: Column( //card里面的子控件
         mainAxisSize: MainAxisSize.min,
@@ -68,11 +62,11 @@ class CardLessDefault extends StatelessWidget {
               children: <Widget>[
                 FlatButton(
                   child: const Text('BUY TICKETS',style: TextStyle(color: Colors.black, fontSize: 14.0)),
-                  onPressed: () { /* ... */ },
+                  onPressed: () {  },
                 ),
                 FlatButton(
                   child: const Text('LISTEN',style: TextStyle(color: Colors.black, fontSize: 14.0)),
-                  onPressed: () { /* ... */ },
+                  onPressed: () {  },
                 ),
               ],
             ),
