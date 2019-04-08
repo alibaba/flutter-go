@@ -8,6 +8,15 @@
 .buildlog/
 .history
 .svn/
+*.lock
+.vscode
+.gradle
+.idea
+/local.properties
+.DS_Store
+/build
+.metadata
+
 
 # IntelliJ related
 *.iml
