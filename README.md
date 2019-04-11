@@ -15,6 +15,8 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 [<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
+## 关于2019年的 Roadmap(由于flutter 未来的变化和策略的不确定，目前只规划到 2019上半年的为基准 ）
+
 ## Release安装包下载地址
 
 android下载地址:
@@ -97,34 +99,4 @@ flutter优点主要包括：
 </table>
 
 Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
-
-
----
-
-## 加个广告：团队招聘
-
-  ### 🔥《阿里巴巴集团春季校园招聘》已经启动。
-  
-- 团队获取此消息后第一时间，赶紧通知，各位刚走出校园的千里马，走进阿里的机会来了！！！
- 
- 基本要求如下：
- 
- - 招收 2019年11月-2020年10月 毕业的同学
- - 本次校招行动共执行四周，到 4月12日结束
-
-#### 🔔强调一下这次是校招哦！！！如果你有意向，又符合 2019年11月-2020年10月 的应届毕业生条件;
-
-- 不符合，也没关系，可以推荐优秀的学弟，学妹；增进一下“纯洁”的同学感情 👫😎。
-
-#### 请移步往下,关注我们《阿里拍卖团队》 的招聘信息。
-
-<img src="https://img.alicdn.com/tfs/TB1mJ5tL7PoK1RjSZKbXXX1IXXa-748-879.png" width=500>
-
-<img src="https://img.alicdn.com/tfs/TB1PhOrLYrpK1RjSZTEXXcWAVXa-748-794.png" width=500>
-
-<img src="https://img.alicdn.com/tfs/TB1FXOlLYPpK1RjSZFFXXa5PpXa-748-440.png" width=500>
-
-#### 最重要的部分来了，手机扫描下面二维码，即可进入简历投递系统
-
-<img src="https://img.alicdn.com/tfs/TB1POOuL7PoK1RjSZKbXXX1IXXa-169-166.jpg" width=200>
 
