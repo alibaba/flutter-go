@@ -15,8 +15,8 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 [<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
-## The Flutter-Go Roadmap for 2019 
-> 考虑到flutter 未来的变化和策略的可变性,roadmap 不排查有一定调整，但总体不会变化太大。
+## The Flutter-Go Roadmap（路线图） for 2019 
+> 考虑到 Flutter 未来的变化和策略的可变性, roadmap 不排除有一定调整，但总体不会变化太大。
 
 <img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
 
