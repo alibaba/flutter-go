@@ -32,6 +32,9 @@ dependencies:
   # 日期格式化
   intl: 0.15.7
   city_pickers: ^0.1.0
+  firebase_analytics: ^2.0.2+1
+  firebase_auth: ^0.8.3 #auth
+  firebase_core: ^0.3.0  # add dependency for Firebase Core
 
 dev_dependencies:
   flutter_test:
