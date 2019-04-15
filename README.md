@@ -25,7 +25,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB1vDGRQmzqK1RjSZFjXXblCFXa-430-424.png" width="200px">
+<img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
 
 iphone下载地址:
 暂无
