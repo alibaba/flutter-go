@@ -30,7 +30,7 @@ Flutter Go Pull Request 规范说明
 - 避免超大的 PR 提交
 	- 当 PR 的改动 **change** 超过1000行(暂定为1000)时, 请尽量拆分后进行提交.
 - 规范化的commit信息
-	- commit规范参照[develop规范](https://github.com/alibaba/flutter-go/blob/master/develop.md#commit-%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83)
+	- commit规范参照[develop规范](https://github.com/alibbaba/flutter-go/blob/master/develop.md#commit-%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83)
 	- commit列表, 请在提交PR之前做好整理, 避免出现一个功能点的多条commit.[如何整理commit](https://help.github.com/en/articles/using-git-rebase-on-the-command-line)
 
 # 如何提交PR
