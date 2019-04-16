@@ -1,7 +1,7 @@
 {
   "project_info": {
     "project_number": "1002138254102",
-    "firebase_url": "https://ali-flutter-go.firebaseio.com",
+    //"firebase_url": "https://ali-flutter-go.firebaseio.com",
     "project_id": "ali-flutter-go",
     "storage_bucket": "ali-flutter-go.appspot.com"
   },
