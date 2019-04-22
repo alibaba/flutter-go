@@ -7,7 +7,7 @@ description: flutter_go
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-#version: 0.0.5firebase_auth
+version: 0.0.5
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -32,9 +32,6 @@ dependencies:
   # 日期格式化
   intl: 0.15.7
   city_pickers: ^0.1.0
-  firebase_analytics: ^2.0.2+1
-  #firebase_auth: ^0.8.3 #auth
-  firebase_core: ^0.3.0  # add dependency for Firebase Core
 
 dev_dependencies:
   flutter_test:
