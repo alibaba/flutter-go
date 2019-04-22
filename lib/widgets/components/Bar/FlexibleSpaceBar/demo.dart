@@ -20,8 +20,8 @@ class _FlexibleSpaceBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
-      // ...  // 如果没有,就是不需要有状态的 StatefulWidget
-    );
+        // ...  // 如果没有,就是不需要有状态的 StatefulWidget
+        );
   }
 }
 

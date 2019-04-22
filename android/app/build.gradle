@@ -25,6 +25,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+
 android {
     compileSdkVersion 27
 
@@ -46,13 +53,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
 }
 
 flutter {
@@ -64,4 +78,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //firebase
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    //Crashlytics SDK
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    // 性能监控
+    ///implementation 'com.google.firebase:firebase-perf:16.2.3'
+    // 登陆
+    ////implementation 'com.google.firebase:firebase-auth:16.0.3'
 }
+//firebase
+apply plugin: 'com.google.gms.google-services'
+//Crashlytics SDK
+apply plugin: 'io.fabric'
+// 性能监控
+///apply plugin: 'com.google.firebase.firebase-perf'
