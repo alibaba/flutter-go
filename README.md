@@ -58,7 +58,7 @@ flutter优点主要包括：
 
 #### Flutter Go 的优势
 
-- 详解常用widget多达 **140+** 个
+- 详解常用 widget 多达 **140+** 个
 - 配套 Demo 详解 widget 常规用法
 - 集中整合 widget 案例，一个 APP 搞定所有常用 widget 的用法
 - 持续迭代 ‘追新’ 官方版本
