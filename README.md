@@ -102,5 +102,23 @@ flutter优点主要包括：
   </tbody>
 </table>
 
+### 版权说明
+- 感谢大家对 `flutter go` 的支持和下载,但近期发现，有类似直接被发布到苹果 app store 上的行为，并未注明真实来源，copyright 和 项目的 github 地址，以及开发者的版权相关信息（ 包括删除"首页栏的版权声明"和"关于我们"的行为 );
+
+- 上述行为，打击了 `flutter go` 开发者的积极性，同时干扰了 flutter go app 的正常发布渠道，基于 app 开源项目的发布特殊性，特更新 [LICENSE](LICENSE) 「 开源许可证 」,由 MIT 协议 更改为 BSD 协议, 同时建议不要随意发布到公共渠道的应用商店，影响官方 `flutter go` 的app版本迭代;
+
+- 大家可以继续放心的开源使用,但是要求注意和遵守以下许可前提:
+```
+    * 版权声明样式
+    //Copyright (c) 2018-present, Alibaba Group Holding Limited. All rights reserved.
+    
+    * 源代码的重新分发必须保留上述版权声明，条件清单和免责声明。
+    
+    * 二进制形式的再分发必须复制上述版权声明，此条件列表以及文档中的以下免责声明和/或随分发提供的其他材料。
+```
+- 由于本开源项目是供大家学习和交流 flutter 之用，里面耗费了开发人员大量的心血，精力和热情，请尊重开发者的劳动成果,以及相关许可证之规定;
+
+- 大家的互相信任，尊重与支持，才是开源社区前进的动力和来源.
+
 Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
