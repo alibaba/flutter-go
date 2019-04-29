@@ -20,14 +20,8 @@ class DecoratedBoxCreate extends StatelessWidget {
         color: const Color(0xff7c94b6),
         //设置图片内容
         image: DecorationImage(
-
-<<<<<<< HEAD
           ///fix:BoxFit.contain: 保持图片的比例，最大程度填充容器  BoxFit.fill:容器被图片完全填充，不在意图片比例，只填充整个容器
           ///fix:BoxFit.fitWidth：图片以宽被完全填充  BoxFit.fix:fixHigth:图片以高度完全填充
-=======
-            ///fix:BoxFit.contain: 保持图片的比例，最大程度填充容器  BoxFit.fill:容器被图片完全填充，不在意图片比例，只填充整个容器
-            ///fix:BoxFit.fitWidth：图片以宽被完全填充  BoxFit.fix:fixHigth:图片以高度完全填充
->>>>>>> develop
             fit: BoxFit.cover, //图片填充整个容器，按比例放大，多余部分被裁切
             image: ExactAssetImage('assets/images/food01.jpeg')),
         //外宽边框，可以不设置
@@ -97,11 +91,7 @@ class DecoratedBoxCreateShapes extends StatelessWidget {
       position: DecorationPosition.background,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-<<<<<<< HEAD
-          //渐变效果  线性渐变
-=======
             //渐变效果  线性渐变
->>>>>>> develop
             colors: [Colors.red, Colors.yellowAccent, Colors.lightGreenAccent]),
 //         color: const Color(0xff7c94b6),
         border: Border.all(
