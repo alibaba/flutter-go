@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ali.fluttergo</string>
+	<string>com.ali.paimai.fluttergo</string>
 	<key>PROJECT_ID</key>
 	<string>ali-flutter-go</string>
 	<key>STORAGE_BUCKET</key>

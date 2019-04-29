@@ -1,4 +1,4 @@
-package com.ali.fluttergo
+package com.ali.paimai.fluttergo
 
 import android.os.Bundle
 

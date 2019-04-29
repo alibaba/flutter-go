@@ -21,20 +21,20 @@ dependencies:
   cupertino_icons: ^0.1.2
   event_bus: ^1.0.1
   fluro: ^1.3.4
-  image_picker: ^0.4.10
-  sqflite: ^0.12.1
+  image_picker: ^0.6.0+1
+  sqflite: ^1.1.5
   flutter_markdown: ^0.2.0
-  url_launcher: ^4.0.1
+  url_launcher: ^5.0.2
   # 本地存储、收藏功能
-  shared_preferences: ^0.4.3
+  shared_preferences: ^0.5.2
   dio: ^1.0.6
   flutter_webview_plugin: ^0.3.0+2
   # 日期格式化
   intl: 0.15.7
-  city_pickers: ^0.1.0
+  city_pickers: ^0.0.1
   firebase_analytics: ^2.0.2+1
   #firebase_auth: ^0.8.3 #auth
-  firebase_core: ^0.3.0  # add dependency for Firebase Core
+#  firebase_core: ^0.3.4 # add dependency for Firebase Core
 
 dev_dependencies:
   flutter_test:

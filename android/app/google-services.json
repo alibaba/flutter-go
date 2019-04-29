@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1002138254102:android:00e8533fa0274183",
         "android_client_info": {
-          "package_name": "com.ali.fluttergo"
+          "package_name": "com.ali.paimai.fluttergo"
         }
       },
       "oauth_client": [
@@ -35,7 +35,7 @@
               "client_id": "1002138254102-qo9jp8c3lc69p9lclu0rtp5dmt1kulv7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.ali.fluttergo"
+                "bundle_id": "com.ali.paimai.fluttergo"
               }
             }
           ]

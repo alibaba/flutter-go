@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         body: showWelcomePage()
       ),
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
     );
