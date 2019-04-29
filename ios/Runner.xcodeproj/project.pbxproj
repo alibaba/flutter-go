@@ -525,9 +525,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ali.paimai.fluttergo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "FlutterGO-pm-develop";
+				PROVISIONING_PROFILE_SPECIFIER = "FlutterGO-alibaba-develop";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -553,9 +553,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ali.paimai.fluttergo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "FlutterGO-distribution_pm_ad_hoc";
+				PROVISIONING_PROFILE_SPECIFIER = FlutterGO_alibaba_distribution_ad_hoc;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
