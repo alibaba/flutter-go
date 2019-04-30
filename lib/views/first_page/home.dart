@@ -22,6 +22,13 @@ import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 
+import 'package:flutter_go/blocs/industry_main.dart';
+//import 'package:flutter_go/blocs/search_widget.dart';
+
+import 'main_page.dart';
+
+
+
 const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
@@ -117,16 +124,27 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
+  renderAppBar(BuildContext context,Widget widget) {
+    print('renderAppBar=====>>>>>>${controller.index}');
+    if(controller.index == 0) {
+      return null;
+    }
+    return AppBar(title: buildSearchInput(context));
+  }
+
   @override
   Widget build(BuildContext context) {
     var db = Provider.db;
 
     return new Scaffold(
-      appBar: new AppBar(title: buildSearchInput(context)),
+      appBar: renderAppBar(context,widget),
       body: new TabBarView(controller: controller, children: <Widget>[
-        new FirstPage(),
-        new WidgetPage(db),
-        new CollectionPage(),
+        //new FirstPage(),
+        //new IndustryPage(),
+        //new SearchWidget(),
+        MainPage(),
+        WidgetPage(db),
+        CollectionPage(),
         FourthPage()
       ]),
       bottomNavigationBar: Material(
