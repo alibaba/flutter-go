@@ -1,4 +1,5 @@
- /// Author: xiaojia.dxj
+ import 'package:flutter/material.dart';
+/// Author: xiaojia.dxj
  /// Date: 2018/11/22
  /// Email: xiaojia.dxj@alibaba-inc.com
  /// LastUpdateTime: 2018/11/22
@@ -91,4 +92,35 @@ class RowLayoutCreate extends StatelessWidget {
       ],
     );
   }
+}
+
+class RowExpanded extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+
+    return Row(
+      children: <Widget>[
+        ////填充数据
+        Expanded(child: new RaisedButton(
+            onPressed: (){
+            },
+            color: Color(0xfffce4ec),
+            child:new Text('flutter',style: TextStyle(color: Colors.white),)
+        ),),
+        Expanded(child: new RaisedButton(
+            onPressed: (){
+            },
+            color: Color(0xfff8bbd0),
+            child:new Text('Expanded',style: TextStyle(color: Colors.white),)
+        ),),
+        Expanded(child: new RaisedButton(
+            onPressed: (){
+            },
+            color: Color(0xfff48fb1),
+            child:new Text('flutter',style: TextStyle(color: Colors.white),)
+        ),),
+      ],
+    );
+  }
+
 }

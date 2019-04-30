@@ -15,3 +15,12 @@ class SuggestionFetch extends SuggestionEvent {
   @override
   String toString() => 'SuggestionFetch:获取关键字提示事件';
 }
+
+class SuggestionClearFetch extends SuggestionEvent {
+  final String query;
+
+  SuggestionClearFetch({this.query});
+
+  @override
+  String toString() => 'SuggestionClearFetch:清空界面';
+}

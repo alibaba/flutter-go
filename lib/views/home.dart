@@ -22,10 +22,7 @@ import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 
-import 'package:flutter_go/blocs/industry_main.dart';
-//import 'package:flutter_go/blocs/search_widget.dart';
-
-import 'main_page.dart';
+import './first_page/main_page.dart';
 
 
 
@@ -99,12 +96,14 @@ class _MyHomePageState extends State<AppPage>
     });
     searchHistoryList
         .add(SearchHistory(name: targetName, targetRouter: targetRouter));
-    print("searchHistoryList ${searchHistoryList.toString()}");
+    print("searchHistoryList1 ${searchHistoryList.toString()}");
+    print("searchHistoryList2 ${targetRouter}");
+    print("searchHistoryList3 ${widgetPoint.name}");
     Application.router.navigateTo(context, "$targetRouter");
   }
 
   Widget buildSearchInput(BuildContext context) {
-    return new SearchInput((value) async {
+      return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
 
@@ -114,7 +113,7 @@ class _MyHomePageState extends State<AppPage>
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                    onWidgetTap(item, context);
+                   onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -140,8 +139,6 @@ class _MyHomePageState extends State<AppPage>
       appBar: renderAppBar(context,widget),
       body: new TabBarView(controller: controller, children: <Widget>[
         //new FirstPage(),
-        //new IndustryPage(),
-        //new SearchWidget(),
         MainPage(),
         WidgetPage(db),
         CollectionPage(),

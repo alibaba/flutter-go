@@ -49,6 +49,13 @@ const String _Text0 = """
 - GridView.extent
 """;
 
+const Text1=""" 
+### 
+> SliverGridDelegateWithFixedCrossAxisCount
+
+gridDelegate: SliverGridDelegateWithFixedCrossAxisCount,实现网格
+""";
+
 
 
 class Demo extends StatefulWidget {
@@ -68,8 +75,10 @@ class _DemoState extends State<Demo> {
         _Text0,
         GridTileDemo(),
         SizedBox(
-          height: 100.0,
-        )
+          height: 10.0,
+        ),
+        Text1,
+        GridViewDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/GridView-class.html',
     );

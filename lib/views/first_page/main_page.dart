@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_wanandroid/common/component_index.dart';
-//import 'package:flutter_wanandroid/ui/pages/main_left_page.dart';
-//import 'package:flutter_wanandroid/ui/pages/page_index.dart';
-
+import 'package:flutter/cupertino.dart';
+import './first_page.dart';
+import './sub_page.dart';
 import './main_app_bar.dart';
+import './search_page.dart';
 
 class _Page {
   final String labelId;
@@ -12,10 +12,10 @@ class _Page {
 }
 
 final List<_Page> _allPages = <_Page>[
-   _Page('titleHome'),
-   _Page('titleHome'),
-   _Page('titleHome'),
-   _Page('titleHome'),
+   _Page('项目1'),
+   _Page('项目2'),
+   _Page('项目3'),
+   _Page('项目4'),
 ];
 
 class MainPage extends StatelessWidget {
@@ -40,10 +40,7 @@ class MainPage extends StatelessWidget {
                IconButton(
                   icon:  Icon(Icons.search),
                   onPressed: () {
-                   /// NavigatorUtil.pushPage(context,  SearchPage(),
-                        ///pageName: "SearchPage");
-                    // NavigatorUtil.pushPage(context,   TestPage());
-                    //  NavigatorUtil.pushPage(context,   DemoApp());
+                    pushPage(context, SearchPage(), pageName: "SearchPage");
                   })
             ],
           ),
@@ -55,12 +52,18 @@ class MainPage extends StatelessWidget {
   }
 }
 
+void pushPage(BuildContext context, Widget page, {String pageName}) {
+  if (context == null || page == null) return;
+  Navigator.push(context, CupertinoPageRoute<void>(builder: (ctx) => page));
+}
+
 class TabLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  TabBar(
       isScrollable: true,
-      labelPadding: EdgeInsets.all(12.0),
+      //labelPadding: EdgeInsets.all(12.0),
+      labelPadding: EdgeInsets.only(top: 12.0,left: 12.0,right:12.0),
       indicatorSize: TabBarIndicatorSize.label,
       tabs: _allPages
           .map((_Page page) =>
@@ -73,38 +76,29 @@ class TabLayout extends StatelessWidget {
 class TabBarViewLayout extends StatelessWidget {
   Widget buildTabView(BuildContext context, _Page page) {
     String labelId = page.labelId;
-//    switch (labelId) {
-//      case Ids.titleHome:
-//        //return HomePage(labelId: labelId);
-//        return ReposPage(labelId: labelId);
-//        break;
-//      case Ids.titleRepos:
-//        return ReposPage(labelId: labelId);
-//        break;
-//      case Ids.titleEvents:
-//        return EventsPage(labelId: labelId);
-//        break;
-//      case Ids.titleSystem:
-//        return SystemPage(labelId: labelId);
-//        break;
-//      default:
-//        return Container();
-//        break;
-//    }
-    return Container(
-        child: new ClipOval(
-          child: Image.network(
-          'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658',
-          scale: 5.0,
-        ),
-      )
-    );
+    switch (labelId) {
+      case '项目1':
+        return FirstPage();
+        break;
+      case '项目2':
+        return SubPage();
+        break;
+      case '项目3':
+        return SubPage();
+        break;
+      case '项目4':
+        return SubPage();
+        break;
+      default:
+        return Container();
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     print("TabBarViewLayout build.......");
-    return  TabBarView(
+    return TabBarView(
         children: _allPages.map((_Page page) {
       return buildTabView(context, page);
     }).toList());

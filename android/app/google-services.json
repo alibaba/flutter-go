@@ -1,42 +1,35 @@
 {
   "project_info": {
-    "project_number": "1002138254102",
-    //"firebase_url": "https://ali-flutter-go.firebaseio.com",
-    "project_id": "ali-flutter-go",
-    "storage_bucket": "ali-flutter-go.appspot.com"
+    "project_number": "611157827052",
+    "firebase_url": "https://alibaba-flutter-go.firebaseio.com",
+    "project_id": "alibaba-flutter-go",
+    "storage_bucket": "alibaba-flutter-go.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1002138254102:android:00e8533fa0274183",
+        "mobilesdk_app_id": "1:611157827052:android:c6129e5eff2f125d",
         "android_client_info": {
-          "package_name": "com.ali.fluttergo"
+          "package_name": "com.alibaba.fluttergo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1002138254102-2r4hs0mm1avp4p1qielecihnbugan693.apps.googleusercontent.com",
+          "client_id": "611157827052-iiuevj8qu56alpqh47v37j9sd4e40di7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFdL3GSwVDfejIq44pyOpiEBZ32dTGMVA"
+          "current_key": "AIzaSyA9chxDIuds7gmPQTJPpDpoXyN9rDTdvhU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1002138254102-2r4hs0mm1avp4p1qielecihnbugan693.apps.googleusercontent.com",
+              "client_id": "611157827052-iiuevj8qu56alpqh47v37j9sd4e40di7.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1002138254102-qo9jp8c3lc69p9lclu0rtp5dmt1kulv7.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.ali.fluttergo"
-              }
             }
           ]
         }
