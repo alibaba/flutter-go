@@ -26,13 +26,13 @@ dependencies:
   flutter_markdown: ^0.2.0
   url_launcher: ^5.0.2
   # 本地存储、收藏功能
-  shared_preferences: ^0.5.2
+  shared_preferences: ^0.4.3
   dio: ^1.0.6
   flutter_webview_plugin: ^0.3.4
   # 日期格式化
   intl: 0.15.7
   city_pickers: ^0.0.1
-  firebase_analytics: ^2.0.2+1
+  firebase_analytics: ^1.1.0
   #firebase_auth: ^0.8.3 #auth
   firebase_core: ^0.3.4 # add dependency for Firebase Core
 

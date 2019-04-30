@@ -77,7 +77,7 @@ packages:
       name: firebase_analytics
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1+2"
+    version: "1.2.0+1"
   firebase_core:
     dependency: "direct main"
     description:
@@ -185,7 +185,7 @@ packages:
       name: shared_preferences
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.2"
+    version: "0.4.3"
   sky_engine:
     dependency: transitive
     description: flutter
