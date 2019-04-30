@@ -12,12 +12,12 @@ import 'package:flutter_go/utils/net_utils.dart';
 
 // ValueKey<String> key;
 
-class FirstPage extends StatefulWidget {
+class SubPage extends StatefulWidget {
   @override
-  FirstPageState createState() => new FirstPageState();
+  SubPageState createState() => SubPageState();
 }
 
-class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin{
+class SubPageState extends State<SubPage> with AutomaticKeepAliveClientMixin{
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<bool> _unKnow;
   GlobalKey<DisclaimerMsgState> key;
@@ -80,8 +80,8 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     return result;
   }
 
-  /// 每个item的样式
   Widget makeCard(index,item){
+
     var myTitle = '${item.title}';
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
@@ -92,18 +92,18 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     return
       Column(
         children: <Widget>[
-          Stack(
-          //alignment: const FractionalOffset(0.9, 0.1),//方法一
-          children: <Widget>[
-              Pagination(),
-              Positioned(//方法二
-              top: 10.0,
-              left: 0.0,
-              child: DisclaimerMsg(key:key,pWidget:this)
-              ),
-            ]),
-          SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
-          SizedBox(height: 10),
+        Stack(
+        //alignment: const FractionalOffset(0.9, 0.1),//方法一
+        children: <Widget>[
+            Pagination(),
+            Positioned(//方法二
+            top: 10.0,
+            left: 0.0,
+            child: DisclaimerMsg(key:key,pWidget:this)
+            ),
+          ]),
+        SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
+        SizedBox(height: 10),
         ],
       );
 
@@ -114,23 +114,10 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     super.build(context);
     return new Column(
         children: <Widget>[
-//          new Stack(
-//            //alignment: const FractionalOffset(0.9, 0.1),//方法一
-//            children: <Widget>[
-//            Pagination(),
-//            Positioned(//方法二
-//              top: 10.0,
-//              left: 0.0,
-//              child: DisclaimerMsg(key:key,pWidget:this)
-//            ),
-//          ]),
-//          SizedBox(height: 2, child:Container(color: Theme.of(context).primaryColor)),
           new Expanded(
-            //child: new List(),
-            child: listComp.ListRefresh(getIndexListData,makeCard,headerView)
+            child: listComp.ListRefresh(getIndexListData,makeCard)
           )
         ]
-
     );
   }
 }
