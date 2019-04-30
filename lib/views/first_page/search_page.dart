@@ -130,7 +130,7 @@ class _SearchBarPageState extends State<SearchBarPage> {
   void dispose() {
     print('dispose');
     suggestion.dispatch(SuggestionClearFetch());
-    controller.dispose();
+    //controller.dispose();
     super.dispose();
   }
 
