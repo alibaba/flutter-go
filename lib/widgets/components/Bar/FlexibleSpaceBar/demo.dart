@@ -20,8 +20,8 @@ class _FlexibleSpaceBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
-      // ...  // 如果没有,就是不需要有状态的 StatefulWidget
-    );
+        // ...  // 如果没有,就是不需要有状态的 StatefulWidget
+        );
   }
 }
 
@@ -30,8 +30,7 @@ class FlexibleSpaceBarLessDefault extends StatelessWidget {
   final widget;
   final parent;
 
-  const FlexibleSpaceBarLessDefault([this.widget, this.parent])
-      : super();
+  const FlexibleSpaceBarLessDefault([this.widget, this.parent]) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,8 @@ class FlexibleSpaceBarLessDefault extends StatelessWidget {
         height: 300.0,
         child: Scaffold(
           body: NestedScrollView(
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
                 SliverAppBar(
                   expandedHeight: 150.0,
@@ -55,6 +55,13 @@ class FlexibleSpaceBarLessDefault extends StatelessWidget {
                       background: Image.network(
                         "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
                         fit: BoxFit.cover,
+
+                        /// 色彩叠加  UI可以理解为两个色彩涂层，在图片混合一个色层
+                        // color: Colors.redAccent,  //混合的颜色
+                        // colorBlendMode: BlendMode.darken,  //混合方式
+
+                        ///图片重复填充容器
+                        // repeat: ImageRepeat.repeat,
                       )),
                 ),
               ];
@@ -63,6 +70,6 @@ class FlexibleSpaceBarLessDefault extends StatelessWidget {
               child: Text("向上提拉 ⬆ 查看效果..."),
             ),
           ),
-        )
-    );
-}}
+        ));
+  }
+}

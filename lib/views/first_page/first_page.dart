@@ -40,8 +40,8 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
       /// 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
       _unKnow.then((bool value) {
          new Future.delayed(const Duration(seconds: 1),(){
-           if (!value) {
-            key.currentState.showAlertDialog(context);
+           if (!value && key.currentState is DisclaimerMsgState && key.currentState.showAlertDialog is Function) {
+             key.currentState.showAlertDialog(context);
            }
          });
       });
@@ -80,8 +80,8 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     return result;
   }
 
+  /// 每个item的样式
   Widget makeCard(index,item){
-
     var myTitle = '${item.title}';
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
@@ -92,18 +92,18 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     return
       Column(
         children: <Widget>[
-        Stack(
-        //alignment: const FractionalOffset(0.9, 0.1),//方法一
-        children: <Widget>[
-            Pagination(),
-            Positioned(//方法二
-            top: 10.0,
-            left: 0.0,
-            child: DisclaimerMsg(key:key,pWidget:this)
-            ),
-          ]),
-        SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
-        SizedBox(height: 10),
+          Stack(
+          //alignment: const FractionalOffset(0.9, 0.1),//方法一
+          children: <Widget>[
+              Pagination(),
+              Positioned(//方法二
+              top: 10.0,
+              left: 0.0,
+              child: DisclaimerMsg(key:key,pWidget:this)
+              ),
+            ]),
+          SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
+          SizedBox(height: 10),
         ],
       );
 

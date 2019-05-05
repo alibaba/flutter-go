@@ -1,7 +1,7 @@
 ///Author: xiaojia.dxj
-///Date: 2019-01-08 15:56:49 
+///Date: 2019-01-08 15:56:49
 ///Last Modified by:   xiaojia.dxj
-///Last Modified time: 2019-01-08 15:56:49 
+///Last Modified time: 2019-01-08 15:56:49
 ///email: xiaojia.dxj@alibaba-inc.com
 
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class _DemoState extends State<Demo> {
   }
 
   Column _decoratedBoxCreate() {
-    return  Column(
+    return Column(
       children: <Widget>[
         Container(
           height: 100.0,
@@ -68,6 +68,14 @@ class _DemoState extends State<Demo> {
           height: 100.0,
           width: 100.0,
           child: DecoratedBoxCreateShape(),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          child: DecoratedBoxCreateShapes(),
         )
       ],
     );
