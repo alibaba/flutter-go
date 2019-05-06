@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isShowPassWord = false;
   String username = '';
   String password = '';
+  bool isLoading = false;
 
 // 创建登录界面的TextForm
   Widget buildSignInTextForm() {
@@ -136,13 +138,32 @@ class _LoginPageState extends State<LoginPage> {
         // 利用key来获取widget的状态FormState,可以用过FormState对Form的子孙FromField进行统一的操作
         if (_signInFormKey.currentState.validate()) {
           // 如果输入都检验通过，则进行登录操作
-          Scaffold.of(context)
-              .showSnackBar(new SnackBar(content: new Text("执行登录操作")));
+          // Scaffold.of(context)
+          //     .showSnackBar(new SnackBar(content: new Text("执行登录操作")));
           //调用所有自孩子的save回调，保存表单内容
-          _signInFormKey.currentState.save();
+          doLogin();
         }
       },
     );
+  }
+
+  // 登陆操作
+  doLogin()  {
+    _signInFormKey.currentState.save();
+    setState(() {
+      isLoading = true;
+    });
+    DataUtils.doLogin({'username':username,'password':password}).then((result){
+      print(result.username);
+      setState(() {
+        isLoading = false;
+      });
+    }).catchError((onError){
+      print(onError);
+      setState(() {
+        isLoading = false;
+      });
+    });
   }
 
 // 点击控制密码是否显示
@@ -150,6 +171,23 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       isShowPassWord = !isShowPassWord;
     });
+  }
+
+  Widget buildLoading() {
+    if (isLoading) {
+      return Opacity(
+        opacity: .5,
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.85,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            color: Colors.black,
+          ),
+          child: SpinKitPouringHourglass(color: Colors.white),
+        ),
+      );
+    }
+    return Container();
   }
 
   @override
@@ -195,17 +233,7 @@ class _LoginPageState extends State<LoginPage> {
                     top: 0,
                     left: 0,
                     bottom: 0,
-                    child: Opacity(
-                      opacity: .5,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.85,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          color: Colors.black,
-                        ),
-                        child: SpinKitPouringHourglass(color: Colors.white),
-                      ),
-                    ),
+                    child: buildLoading(),
                   )
                 ],
               ),
