@@ -12,6 +12,7 @@ class Routes {
   static String widgetDemo = '/widget-demo';
   static String codeView = '/code-view';
   static String webViewPage = '/web-view-page';
+  static String loginPage = '/loginpage';
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
@@ -22,6 +23,7 @@ class Routes {
 
     router.define('/category/:type', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
+    router.define(loginPage, handler: loginPageHandler);
     router.define(codeView,handler:fullScreenCodeDialog);
     router.define(webViewPage,handler:webViewPageHand);
       widgetDemosList.forEach((demo) {

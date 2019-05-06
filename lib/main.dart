@@ -9,6 +9,7 @@ import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
+import 'package:flutter_go/views/login_page/login_page.dart';
 //import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
   }
   showWelcomePage() {
     // 暂时关掉欢迎介绍
-    return AppPage();
+    // return AppPage();
+    return LoginPage();
 //    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
 //    if (showWelcome == null || showWelcome == true) {
 //      return WelcomePage();

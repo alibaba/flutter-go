@@ -27,6 +27,7 @@ dependencies:
   url_launcher: ^5.0.2
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
+  flutter_spinkit: "^3.1.0"
   dio: ^1.0.6
   flutter_webview_plugin: ^0.3.4
   # 日期格式化
