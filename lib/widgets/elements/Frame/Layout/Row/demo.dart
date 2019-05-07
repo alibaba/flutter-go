@@ -1,9 +1,6 @@
-<<<<<<< HEAD
- /// Author: xiaojia.dxj
-=======
+
  import 'package:flutter/material.dart';
 /// Author: xiaojia.dxj
->>>>>>> develop
  /// Date: 2018/11/22
  /// Email: xiaojia.dxj@alibaba-inc.com
  /// LastUpdateTime: 2018/11/22

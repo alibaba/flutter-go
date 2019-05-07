@@ -5,11 +5,8 @@ import 'package:flutter_go/components/category.dart';
 import '../widgets/404.dart';
 import 'package:flutter_go/components/full_screen_code_dialog.dart';
 import 'package:flutter_go/views/web_page/web_view_page.dart';
-<<<<<<< HEAD
-import 'package:flutter_go/views/first_page/home.dart';
-=======
+
 import 'package:flutter_go/views/home.dart';
->>>>>>> develop
 
 // app的首页
 var homeHandler = new Handler(

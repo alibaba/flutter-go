@@ -7,11 +7,8 @@ description: flutter_go
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-<<<<<<< HEAD
-version: 0.0.5
-=======
+
 version: 1.0.0
->>>>>>> develop
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -28,16 +25,7 @@ dependencies:
   image_picker: ^0.6.0+1
   sqflite: ^1.1.5
   flutter_markdown: ^0.2.0
-<<<<<<< HEAD
-  url_launcher: ^4.0.1
-  # 本地存储、收藏功能
-  shared_preferences: ^0.4.3
-  dio: ^1.0.6
-  flutter_webview_plugin: ^0.3.0+2
-  # 日期格式化
-  intl: 0.15.7
-  city_pickers: ^0.1.0
-=======
+
   url_launcher: ^5.0.2
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
@@ -52,7 +40,6 @@ dependencies:
   flutter_bloc: ^0.11.1
   bloc: ^0.12.0
   html: ^0.14.0+2
->>>>>>> develop
 
 dev_dependencies:
   flutter_test:

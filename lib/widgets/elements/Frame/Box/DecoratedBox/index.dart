@@ -1,13 +1,8 @@
 ///Author: xiaojia.dxj
-<<<<<<< HEAD
-///Date: 2019-01-08 15:56:49 
-///Last Modified by:   xiaojia.dxj
-///Last Modified time: 2019-01-08 15:56:49 
-=======
+
 ///Date: 2019-01-08 15:56:49
 ///Last Modified by:   xiaojia.dxj
 ///Last Modified time: 2019-01-08 15:56:49
->>>>>>> develop
 ///email: xiaojia.dxj@alibaba-inc.com
 
 import 'package:flutter/material.dart';
@@ -52,11 +47,8 @@ class _DemoState extends State<Demo> {
   }
 
   Column _decoratedBoxCreate() {
-<<<<<<< HEAD
-    return  Column(
-=======
+
     return Column(
->>>>>>> develop
       children: <Widget>[
         Container(
           height: 100.0,

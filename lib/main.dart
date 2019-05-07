@@ -6,14 +6,10 @@ import 'routers/application.dart';
 
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
-<<<<<<< HEAD
-import 'package:flutter_go/views/first_page/home.dart';
-import 'package:flutter_go/model/search_history.dart';
-=======
+
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
->>>>>>> develop
 //import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
@@ -58,10 +54,8 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         body: showWelcomePage()
       ),
-<<<<<<< HEAD
-=======
+
       debugShowCheckedModeBanner: false,
->>>>>>> develop
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
     );
