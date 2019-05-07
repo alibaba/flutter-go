@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/views/home.dart';
+
+import 'package:flutter_go/model/user_info_cache.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,13 +15,39 @@ class _LoginPageState extends State<LoginPage> {
   FocusNode _emailFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
   FocusScopeNode _focusScopeNode = new FocusScopeNode();
+  UserInfoControlModel _userInfoControlModel = new UserInfoControlModel();
 
   GlobalKey<FormState> _signInFormKey = new GlobalKey();
+  TextEditingController _userNameEditingController =
+      new TextEditingController();
+  TextEditingController _passwordEditingController =
+      new TextEditingController();
 
   bool isShowPassWord = false;
   String username = '';
   String password = '';
   bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    try {
+      _userInfoControlModel.getAllInfo().then((list) {
+        if (list.length > 0) {
+          UserInfo _userInfo = list[0];
+          print('获取的数据：${_userInfo.username} ${_userInfo.password}');
+          setState(() {
+            _userNameEditingController.text = _userInfo.username;
+            _passwordEditingController.text = _userInfo.password;
+            username = _userInfo.username;
+            password = _userInfo.password;
+          });
+        }
+      });
+    } catch (err) {
+      print('读取用户本地存储的用户信息出错 $err');
+    }
+  }
 
 // 创建登录界面的TextForm
   Widget buildSignInTextForm() {
@@ -39,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.only(
                     left: 25, right: 25, top: 20, bottom: 20),
                 child: new TextFormField(
+                  controller: _userNameEditingController,
                   //关联焦点
                   focusNode: _emailFocusNode,
                   onEditingComplete: () {
@@ -79,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
                 child: new TextFormField(
+                  controller: _passwordEditingController,
                   focusNode: _passwordFocusNode,
                   decoration: new InputDecoration(
                     icon: new Icon(
@@ -148,17 +179,34 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   // 登陆操作
-  doLogin()  {
+  doLogin() {
     _signInFormKey.currentState.save();
     setState(() {
       isLoading = true;
     });
-    DataUtils.doLogin({'username':username,'password':password}).then((result){
-      print(result.username);
+    DataUtils.doLogin({'username': username, 'password': password})
+        .then((result) {
       setState(() {
         isLoading = false;
       });
-    }).catchError((onError){
+      try {
+        _userInfoControlModel.deleteAll().then((result) {
+          // print('删除结果：$result');
+          _userInfoControlModel
+              .insert(UserInfo(password: password, username: username))
+              .then((value) {
+            // print('存储成功:$value');
+            Navigator.of(context).pushAndRemoveUntil(
+                new MaterialPageRoute(builder: (context) => AppPage()),
+                (route) => route == null);
+          });
+        });
+      } catch (err) {
+        Navigator.of(context).pushAndRemoveUntil(
+            new MaterialPageRoute(builder: (context) => AppPage()),
+            (route) => route == null);
+      }
+    }).catchError((onError) {
       print(onError);
       setState(() {
         isLoading = false;

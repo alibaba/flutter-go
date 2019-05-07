@@ -1,4 +1,4 @@
-import 'dart:async';
+
 
 import 'package:sqflite/sqflite.dart';
 
@@ -29,6 +29,10 @@ class Sql extends BaseModel {
 
   Future<int> delete(String value,String key) async{
     return await this.db.delete(tableName,where:'$key = ?',whereArgs:[value]);
+  }
+
+  Future<int> deleteAll() async{
+    return await this.db.delete(tableName);
   }
 
   Future<List> getByCondition({Map<dynamic, dynamic> conditions}) async {

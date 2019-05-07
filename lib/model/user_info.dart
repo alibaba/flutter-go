@@ -16,8 +16,8 @@ class UserInfo {
   factory UserInfo.fromJson(Map<String, dynamic> json) {
     return UserInfo(
         avatarPic: json['avatar_pic'],
-        id: json['id'],
-        username: json['username'],
+        id: int.parse(json['id']),
+        username: json['name'],
         themeColor: json['theme_color'],
         urlName: json['url_name']);
   }
