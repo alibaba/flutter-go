@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "611157827052",
+    "firebase_url": "https://alibaba-flutter-go.firebaseio.com",
+    "project_id": "alibaba-flutter-go",
+    "storage_bucket": "alibaba-flutter-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611157827052:android:c6129e5eff2f125d",
+        "android_client_info": {
+          "package_name": "com.alibaba.fluttergo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611157827052-iiuevj8qu56alpqh47v37j9sd4e40di7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9chxDIuds7gmPQTJPpDpoXyN9rDTdvhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611157827052-iiuevj8qu56alpqh47v37j9sd4e40di7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

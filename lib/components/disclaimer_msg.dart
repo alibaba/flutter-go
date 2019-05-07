@@ -178,7 +178,11 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius:
+<<<<<<< HEAD
                     BorderRadius.horizontal(right: Radius.circular(10)),
+=======
+                BorderRadius.horizontal(right: Radius.circular(10)),
+>>>>>>> develop
                 color: Colors.black45,
               ),
               child: Text(

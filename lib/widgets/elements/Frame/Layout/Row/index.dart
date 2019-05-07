@@ -60,6 +60,8 @@ class _DemoState extends State<Demo> {
     return  Column(
       children: <Widget>[
         RowLayoutCreate(),
+        SizedBox(height: 10.0,),
+        RowExpanded(),
         Row(
           children: <Widget>[
             Expanded(

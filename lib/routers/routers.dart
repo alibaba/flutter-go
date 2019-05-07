@@ -1,6 +1,10 @@
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter_go/utils/analytics.dart' show analytics;
+>>>>>>> develop
 
 import '../widgets/index.dart';
 import './router_handler.dart';
@@ -26,6 +30,12 @@ class Routes {
       widgetDemosList.forEach((demo) {
         Handler handler = new Handler(
             handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+<<<<<<< HEAD
+=======
+              print('组件路由params=$params widgetsItem=${demo.routerName}');
+              analytics.logEvent(
+                  name: 'component', parameters: {'name': demo.routerName });
+>>>>>>> develop
               return demo.buildRouter(context);
       });
       router.define('${demo.routerName}', handler: handler);
