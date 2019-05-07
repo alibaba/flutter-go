@@ -186,6 +186,7 @@ class _LoginPageState extends State<LoginPage> {
     });
     DataUtils.doLogin({'username': username, 'password': password})
         .then((result) {
+      print(result);
       setState(() {
         isLoading = false;
       });

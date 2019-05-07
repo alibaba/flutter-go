@@ -3,7 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/home.dart';
@@ -33,6 +33,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _hasLogin = false;
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -40,16 +41,32 @@ class _MyAppState extends State<MyApp> {
     DataUtils.checkLogin().then((hasLogin) {
       setState(() {
         _hasLogin = hasLogin;
+        _isLoading = false;
       });
+    }).catchError((onError){
+      setState(() {
+        _hasLogin = true;
+        _isLoading = false;
+      });
+      print('身份信息验证失败:$onError');
     });
   }
 
   showWelcomePage() {
-    // 暂时关掉欢迎介绍
-    if (_hasLogin) {
-      return AppPage();
+    if (_isLoading) {
+      return Container(
+        color: const Color(ThemeColor),
+        child: Center(
+          child: SpinKitPouringHourglass(color: Colors.white),
+        ),
+      );
     } else {
-      return LoginPage();
+      // 判断是否已经登录
+      if (_hasLogin) {
+        return AppPage();
+      } else {
+        return LoginPage();
+      }
     }
   }
 
