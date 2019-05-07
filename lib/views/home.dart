@@ -89,12 +89,14 @@ class _MyHomePageState extends State<AppPage>
     });
     searchHistoryList
         .add(SearchHistory(name: targetName, targetRouter: targetRouter));
-    print("searchHistoryList ${searchHistoryList.toString()}");
+    print("searchHistoryList1 ${searchHistoryList.toString()}");
+    print("searchHistoryList2 ${targetRouter}");
+    print("searchHistoryList3 ${widgetPoint.name}");
     Application.router.navigateTo(context, "$targetRouter");
   }
 
   Widget buildSearchInput(BuildContext context) {
-    return new SearchInput((value) async {
+      return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
         return list
@@ -103,7 +105,7 @@ class _MyHomePageState extends State<AppPage>
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                    onWidgetTap(item, context);
+                   onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -112,6 +114,7 @@ class _MyHomePageState extends State<AppPage>
       }
     }, (value) {}, () {});
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +127,7 @@ class _MyHomePageState extends State<AppPage>
         currentIndex: _currentIndex,
         //修改 页面
         onTap: _ItemTapped,
-        //shifting :按钮点击移动效果,超过5个button不支持
+        //shifting :按钮点击移动效果
         //fixed：固定
         type: BottomNavigationBarType.fixed,
 
