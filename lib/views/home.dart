@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
+import 'package:flutter_go/views/first_page/main_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -42,7 +43,8 @@ class _MyHomePageState extends State<AppPage>
     {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
-    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)}
+    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
+//    {'text': '点击更新', 'icon': Icon(Icons.update)}
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -60,10 +62,11 @@ class _MyHomePageState extends State<AppPage>
       ));
     }
     list
-      ..add(FirstPage())
+      ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
+//      ..add(FourthPage());
   }
 
   @override
@@ -96,7 +99,7 @@ class _MyHomePageState extends State<AppPage>
   }
 
   Widget buildSearchInput(BuildContext context) {
-      return new SearchInput((value) async {
+    return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
         return list
@@ -105,7 +108,7 @@ class _MyHomePageState extends State<AppPage>
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                   onWidgetTap(item, context);
+                    onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -115,11 +118,18 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
+  renderAppBar(BuildContext context,Widget widget,int index) {
+    print('renderAppBar=====>>>>>>${index}');
+    if(index == 0) {
+      return null;
+    }
+    return AppBar(title: buildSearchInput(context));
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: buildSearchInput(context)),
+      appBar: renderAppBar(context,widget,_currentIndex),
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: myTabs,
