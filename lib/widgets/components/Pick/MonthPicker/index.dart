@@ -1,11 +1,11 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-17 15:37:16 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-17 17:06:34
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-17 15:37:16 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-17 17:06:34
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
 
 const String content0 = '''

@@ -1,14 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 28/12/2018
- * Time: 19:54
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 28/12/2018
+/// Time: 19:54
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
+
 import 'demo.dart';
 
 const contentA = '''
@@ -25,22 +25,18 @@ const contentA = '''
 
 ''';
 
-
 class Demo extends StatefulWidget {
   static const String routeName = 'elements/Form/Switch/AnimatedSwitcher';
+
   _Demo createState() => _Demo();
 }
 
 class _Demo extends State<Demo> {
-
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SwitchListTile',
       codeUrl: 'elements/Form/Switch/AnimatedSwitcher/demo.dart',
-      contentList: [
-        contentA,
-        new AnimatedSwitcherDemo()
-      ],
+      contentList: [contentA, AnimatedSwitcherDemo()],
       docUrl: '',
     );
   }

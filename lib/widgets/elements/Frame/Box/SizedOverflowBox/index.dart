@@ -1,12 +1,14 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-08 15:55:31 
- * @Last Modified by:   xiaojia.dxj
- * @Last Modified time: 2019-01-08 15:55:31 
- */
+
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-08 15:55:31 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by:   xiaojia.dxj
+ /// Last Modified time: 2019-01-08 15:55:31 
+ 
 import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
-import './demo.dart' as sizeBox;
+
+import 'package:flutter_go/components/widget_demo.dart';
+import './demo.dart';
 
 // const String _Text = """### **SizeBox简介**
 // > 常用的一个控件，设置具体尺寸。
@@ -53,47 +55,47 @@ class _DemoState extends State<Demo> {
   }
 
   Column _sizedOverflowBoxCreate() {
-    return new Column(
+    return  Column(
       children: <Widget>[
-        sizeBox.SizeBoxDefault(
+        SizeBoxDefault(
           curWidth: 200.0,
           curHeight: 50.0,
         ),
         SizedBox(height: 20.0),
         Container(
-          margin: new EdgeInsets.only(top: 10.0),
+          margin:  EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,
         ),
         Container(
-          margin: new EdgeInsets.only(top: 10.0),
+          margin:  EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           alignment: Alignment.topCenter,
           width: 200.0,
           height: 50.0,
-          child: sizeBox.SizeOverflowBoxDefault(
+          child: SizeOverflowBoxDefault(
             text: "SizeBox",
           ),
         ),
         Container(
-          margin: new EdgeInsets.only(top: 10.0),
+          margin:  EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,
-          child: sizeBox.SizeOverflowBoxDefault(
+          child: SizeOverflowBoxDefault(
             text: "box",
             curSizeWidth: 100.0,
             curSizeHeight: 20.0,
           ),
         ),
         Container(
-          margin: new EdgeInsets.only(top: 10.0),
+          margin:  EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,
           alignment: Alignment.center,
-          child: sizeBox.SizeOverflowBoxDefault(
+          child: SizeOverflowBoxDefault(
             text: "box",
             curSizeWidth: 100.0,
             curSizeHeight: 20.0,

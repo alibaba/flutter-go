@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 22/11/2018
- * Time: 19:37
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 22/11/2018
+ /// Time: 19:37
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  xxx
 
 import 'package:flutter/material.dart';
 
@@ -22,27 +20,27 @@ class _Demo extends State<RadioADemo> {
   }
   Widget build(BuildContext context) {
     return  (
-      new Container(
+       Container(
         alignment: Alignment.centerLeft,
-        child: new Column(
+        child:  Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            new Radio(
+             Radio(
                 value: 1,
                 groupValue: groupValue,//当value和groupValue一致的时候则选中
                 onChanged: (T){
                   onChange(T);
                 }
             ),
-            new Radio(
+             Radio(
                 value: 2,
                 groupValue: groupValue,
                 onChanged: (T){
                   onChange(T);
                 }
             ),
-            new Radio(
+             Radio(
                 value: 3,
                 groupValue: groupValue,
                 onChanged: (T){

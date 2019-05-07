@@ -1,7 +1,9 @@
 
 import 'dart:async';
-import '../common/sql.dart';
+
 import "package:flutter/material.dart";
+
+import 'package:flutter_go/utils/sql.dart';
 
 abstract class WidgetInterface {
   int get id;

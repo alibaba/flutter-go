@@ -1,12 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-22 21:01:42 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-27 14:53:04
- */
-import 'package:flutter/material.dart';
-import '../../../model/widget.dart';
+/// @Author: 一凨 
+/// @Date: 2018-12-22 21:01:42 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-27 14:53:04
 
+import 'package:flutter/material.dart';
+
+import '../../../model/widget.dart';
 import './CheckedPopupMenuItem/index.dart' as CheckedPopupMenuItem;
 import './DropdownMenuItem/index.dart' as DropdownMenuItem;
 import './PopupMenuButton/index.dart' as PopupMenuButton;

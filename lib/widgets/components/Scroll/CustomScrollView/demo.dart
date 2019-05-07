@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-20 13:40:58 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-20 14:06:31
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-20 13:40:58 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-20 14:06:31
+
 import 'package:flutter/material.dart';
-import './product_list.dart';
+
+import 'package:flutter_go/widgets/components/Scroll/CustomScrollView/product_list.dart';
 
 class CustomScrollViewDemo extends StatelessWidget {
   Widget _buildItem(BuildContext context, ProductItem product) {

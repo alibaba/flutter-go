@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-11-28 20:36:17 
- * @Last Modified by:   一凨 
- * @Last Modified time: 2018-11-28 20:36:17 
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-11-28 20:36:17 
+ /// @Last Modified by:   一凨 
+ /// @Last Modified time: 2018-11-28 20:36:17 
+
 import 'package:flutter/material.dart';
-import './product_list.dart';
+
+import 'package:flutter_go/widgets/components/Scroll/CustomScrollView/product_list.dart';
 
 class SliverPaddingDemo extends StatelessWidget {
 
@@ -48,12 +48,12 @@ class SliverPaddingDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new CustomScrollView(
+    return  CustomScrollView(
         shrinkWrap: true,
         slivers: <Widget>[
-          new SliverPadding(
+           SliverPadding(
             padding: const EdgeInsets.fromLTRB(50.0,10.0,20.0,0.0),
-            sliver: new SliverList(
+            sliver:  SliverList(
               delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
                 return _buildItem(context, products[index]);

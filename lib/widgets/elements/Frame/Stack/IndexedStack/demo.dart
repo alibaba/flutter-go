@@ -1,18 +1,16 @@
+ /// Author: xiaojia.dxj
+ /// Date: 2018/11/22
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// LastUpdateTime: 2018/11/22
+ /// LastUpdateBy: xj.deng
+ /// Describle:indexedStack
+
 import 'package:flutter/material.dart';
 
-/*
- * Author: xiaojia.dxj
- * Date: 2018/11/22
- * Email: xiaojia.dxj@alibaba-inc.com
- * LastUpdateTime: 2018/11/22
- * LastUpdateBy: xj.deng
- *
- * Describle:indexedStack
- */
 class StackDefault extends StatelessWidget {
   final int currIndex;
 
-  const StackDefault( this.currIndex) : super();
+  const StackDefault(this.currIndex) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +21,14 @@ class StackDefault extends StatelessWidget {
 //          backgroundImage: AssetImage('images/timg.jpeg'),
 //          radius: 100.0,
 //        ),
-//        new Image.asset(
+//         Image.asset(
 //          'images/timg.jpeg',
 //          width: 600.0,
 //          height: 240.0,
 //          fit: BoxFit.cover,
 //        ),
         CircleAvatar(
-          backgroundColor: new Color(0xfff48fb1),
+          backgroundColor:  Color(0xfff48fb1),
           radius: 40.0,
         ),
         Container(
@@ -54,34 +52,34 @@ class StackDefault extends StatelessWidget {
 class StackIndex extends StatelessWidget {
   final int currIndex;
 
-  const StackIndex( this.currIndex) : super();
+  const StackIndex(this.currIndex) : super();
 
   @override
   Widget build(BuildContext context) {
     return IndexedStack(
       index: currIndex,
       children: [
-        new Icon(
+         Icon(
           Icons.update,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-        new Icon(
+         Icon(
           Icons.access_alarm,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-        new Icon(
+         Icon(
           Icons.add_alarm,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-        new Icon(
+         Icon(
           Icons.access_time,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-        new Icon(
+         Icon(
           Icons.alarm_off,
           size: 40.0,
           color: Color(0xffe91e63),

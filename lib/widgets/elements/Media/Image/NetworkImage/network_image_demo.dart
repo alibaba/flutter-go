@@ -1,9 +1,8 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-08 17:20:37 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-08 17:35:36
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-12-08 17:20:37 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-12-08 17:35:36
+
 import 'package:flutter/material.dart';
 
 class NetworkImageDemo extends StatelessWidget {

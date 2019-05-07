@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-27 16:25:22 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-27 16:35:39
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-27 16:25:22 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-27 16:35:39
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String content0 = '''
@@ -39,7 +39,7 @@ class _DemoState extends State<Demo> {
         MaterialButtonDemo(),
       ],
       title: 'MaterialButton',
-      codeUrl: 'Material/MaterialButton/demo.dart',
+      codeUrl: 'themes/Material/MaterialButton/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MaterialButton-class.html',
     );

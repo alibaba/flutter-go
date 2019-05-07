@@ -1,12 +1,12 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlatButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: FlatButton 的示例
+
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // FlatButton 默认按钮的实例
@@ -29,8 +29,8 @@ class FlatButtonDefault extends StatelessWidget {
 
 
 // FlatButton.icon 默认按钮的实例
-// * Create a text button from a pair of widgets that serve as the button's icon and label
-// * isDisabled:是否是禁用
+//  Create a text button from a pair of widgets that serve as the button's icon and label
+//  isDisabled:是否是禁用
 class FlatButtonIconDefault extends StatelessWidget {
   final bool isDisabled;
   final IconData icon;
@@ -101,9 +101,9 @@ class FlatButtonCustom extends StatelessWidget {
         splashColor: Colors.deepPurple,
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
-        padding: new EdgeInsets.only(
+        padding:  EdgeInsets.only(
             bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
-        shape: (shape is ShapeBorder) ? shape : new Border.all(
+        shape: (shape is ShapeBorder) ? shape :  Border.all(
           // 设置边框样式
           color: Colors.grey,
           width: 2.0,

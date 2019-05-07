@@ -1,23 +1,21 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: IconButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: IconButton 的示例
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_go/common/icon_names.dart';
+import 'package:flutter_go/resources/icon_names.dart';
 
 
 final  int len = IconNames.names.length;
 
-/*
-* IconButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+
+// IconButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 class IconButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -35,9 +33,7 @@ class IconButtonDefault extends StatelessWidget {
   }
 }
 
-/*
-* IconButton 自定义的实例
-* */
+// IconButton 自定义的实例
 class IconButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
@@ -75,7 +71,7 @@ class IconButtonCustom extends StatelessWidget {
         iconSize:(Random.secure().nextInt(20)+20).toDouble(), // 随机大小
         // 按钮内部,墨汁飞溅的颜色,点击按钮时的渐变背景色，当你不设置高亮背景时才会看的更清楚
         splashColor: _randomColor(),
-        padding: new EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+        padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         // 描述按下按钮时将发生的操作的文本
         tooltip:'这是${ type.codePoint }信息',
         // IconButton 的点击事件

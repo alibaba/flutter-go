@@ -1,11 +1,11 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-29 15:04:51 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-29 15:07:16
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-29 15:04:51 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-29 15:07:16
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import '../PopupMenuDivider/demo.dart';
 
 const String content0 = '''
@@ -34,7 +34,7 @@ class _DemoState extends State<Demo> {
         PopupMenuDividerDemo()
       ],
       docUrl: "https://docs.flutter.io/flutter/material/PopupMenuItem-class.html",
-      codeUrl: 'components/Menu/PopupMenuEntry/demo.dart',
+      codeUrl: 'components/Menu/PopupMenuDivider/demo.dart',
       title: 'PopupMenuItem',
     );
   }

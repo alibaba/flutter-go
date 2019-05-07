@@ -1,5 +1,7 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+
 import '../model/story.dart';
 
 class HomeBanner extends StatefulWidget {
@@ -40,6 +42,18 @@ class _BannerState extends State<HomeBanner> {
     timer.cancel();
   }
 
+  /// pagination 的计数器
+  Widget _numberIndicator(BuildContext context, int index, int itemCount) {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.black45, borderRadius: BorderRadius.circular(20.0)),
+      margin: EdgeInsets.only(top: 10.0, right: 5.0),
+      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+      child: Text("${++index}/$itemCount",
+          style: TextStyle( color: Colors.white70, fontSize: 12.0, fontWeight:FontWeight.bold )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,6 +66,11 @@ class _BannerState extends State<HomeBanner> {
               onPageChanged: _onPageChanged,
               children: _buildItems(),),
             _buildIndicator(), // 下面的小点
+            Positioned(//方法二
+                top: 0.0,
+                right: 0.0,
+                child: _numberIndicator(context,virtualIndex,widget.bannerStories.length),
+            )
           ]),
     );
   }

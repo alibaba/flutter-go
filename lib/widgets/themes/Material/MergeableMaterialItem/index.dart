@@ -1,12 +1,12 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-07 16:36:43 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2019-01-08 14:12:32
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-07 16:36:43 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2019-01-08 14:12:32
 
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const String content0 = '''
@@ -37,7 +37,7 @@ class _DemoState extends State<Demo> {
         MergeableMaterialItemDemo(),
       ],
       title: "MergeableMaterialItem",
-      codeUrl: 'Material/MergeableMaterialItem/demo.dart',
+      codeUrl: 'themes/Material/MergeableMaterialItem/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MergeableMaterialItem-class.html',
     );

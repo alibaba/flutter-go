@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_go/common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
 const Text0 = '''
@@ -27,7 +28,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'MaterialPageRoute',
-      codeUrl: 'elements/themes/Material/MaterialPageRoute',
+      codeUrl: 'themes/Material/MaterialPageRoute/demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/material/MaterialPageRoute-class.html',
       contentList: [

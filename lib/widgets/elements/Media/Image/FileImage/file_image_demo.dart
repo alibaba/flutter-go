@@ -1,19 +1,17 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-08 16:20:17 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-08 17:18:39
- */
+ /// @Author: 一凨 
+ /// @Date: 2018-12-08 16:20:17 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-12-08 17:18:39
 
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 class FileImageDemo extends StatefulWidget {
   @override
-  _FileImageDemoState createState() => new _FileImageDemoState();
+  _FileImageDemoState createState() =>  _FileImageDemoState();
 }
 
 class _FileImageDemoState extends State<FileImageDemo> {
@@ -31,10 +29,10 @@ class _FileImageDemoState extends State<FileImageDemo> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        new Center(
+         Center(
           child: _image == null
-              ? new Text('您还未选择任何图片.')
-              : new Image.file(_image,scale: 0.5,fit: BoxFit.cover,),
+              ?  Text('您还未选择任何图片.')
+              :  Image.file(_image,scale: 0.5,fit: BoxFit.cover,),
         ),
         FlatButton(
           onPressed: getImage,

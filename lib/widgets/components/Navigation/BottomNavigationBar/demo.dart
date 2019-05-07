@@ -1,33 +1,31 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2018/12/27
- * Time: 下午6:27
- * email: zhu.yan@alibaba-inc.com
- * tartget: BottomNavigationBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/27
+/// Time: 下午6:27
+/// email: zhu.yan@alibaba-inc.com
+/// target: BottomNavigationBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* BottomNavigationBar 默认的实例
-* */
+
+// BottomNavigationBar 默认的实例
 class BottomNavigationBarFullDefault extends StatefulWidget {
   const BottomNavigationBarFullDefault() : super();
   @override
   State<StatefulWidget> createState() => _BottomNavigationBarFullDefault();
 }
 
-/*
-* BottomNavigationBar 默认的实例,有状态
-* */
+
+// BottomNavigationBar 默认的实例,有状态
 class _BottomNavigationBarFullDefault extends State {
    int _currentIndex = 1;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+    if(mounted) {
+      setState(() {
+        _currentIndex = index;
+      });
+    }
   }
 
   @override
@@ -40,11 +38,17 @@ class _BottomNavigationBarFullDefault extends State {
       fixedColor: Colors.deepPurple, // 如果 type 类型为 fixed，则通过 fixedColor 设置选中 item 的颜色
       items: <BottomNavigationBarItem> [
         BottomNavigationBarItem(
-            title: new Text("Home"), icon: new Icon(Icons.home)),
+            title:  Text("Home"), icon:  Icon(Icons.home)),
         BottomNavigationBarItem(
-            title: new Text("List"), icon: new Icon(Icons.list)),
+            title:  Text("List"), icon:  Icon(Icons.list)),
         BottomNavigationBarItem(
-            title: new Text("Message"), icon: new Icon(Icons.message)),
+            title:  Text("Message"), icon:  Icon(Icons.message)),
+        BottomNavigationBarItem(
+            title:  Text("add"), icon:  Icon(Icons.add)),
+        BottomNavigationBarItem(
+            title:  Text("menu"), icon:  Icon(Icons.menu)),
+        BottomNavigationBarItem(
+            title:  Text("other"), icon:  Icon(Icons.devices_other)),
 
       ],
     );

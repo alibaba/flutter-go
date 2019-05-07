@@ -1,9 +1,8 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-27 16:25:25 
- * @Last Modified by:   一凨 
- * @Last Modified time: 2018-12-27 16:25:25 
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-27 16:25:25 
+/// @Last Modified by:   一凨 
+/// @Last Modified time: 2018-12-27 16:25:25 
+
 import 'package:flutter/material.dart';
 
 const double kColorItemHeight = 48.0;
@@ -14,10 +13,9 @@ class Palette {
   final String name;
   final MaterialColor primary;
 
-  /*
-   * MaterialAccentColor：定义单一的色滴，颜色的阴影用索引表示，
-   * 索引比较小的颜色比较浅，较大的索引较暗
-   */
+  /// MaterialAccentColor：定义单一的色滴，颜色的阴影用索引表示，
+  /// 索引比较小的颜色比较浅，较大的索引较暗
+
   final MaterialAccentColor accent;
   final int
       threshold; // titles for indices > threshold are white, otherwise black
@@ -204,7 +202,7 @@ class ColorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1000.0,
+      height: 400.0,
       child: DefaultTabController(
         length: allPalettes.length,
         child: Scaffold(

@@ -1,11 +1,11 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-17 15:37:16 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-17 16:00:07
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-17 15:37:16 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-17 16:00:07
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 
 const String content0 = '''
 ### **简介**
@@ -35,7 +35,7 @@ class _DemoState extends State<Demo> {
           content1,
           // LinearProgressIndicatorDemo(),
         ],
-        codeUrl: '/components/Progress/RefreshProgressIndicator/demo.dart',
+        codeUrl: 'components/Progress/RefreshProgressIndicator/demo.dart',
         docUrl:'https://docs.flutter.io/flutter/material/RefreshProgressIndicator-class.html',
         title: 'RefreshProgressIndicator');
   }

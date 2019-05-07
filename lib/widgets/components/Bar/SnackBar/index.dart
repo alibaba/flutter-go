@@ -1,16 +1,12 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/2
- * Time: 上午12:06
- * email: zhu.yan@alibaba-inc.com
- * tartget: SnackBar 的示例
- */
-import '../../../../common/widget_demo.dart';
-
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/2
+/// Time: 上午12:06
+/// email: zhu.yan@alibaba-inc.com
+/// target: SnackBar 的示例
 import 'package:flutter/material.dart';
 
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as SnackBarDemo;
 
 const String _Text0 =
@@ -40,46 +36,23 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SnackBar',
-      codeUrl: 'componentss/Bar/SnackBar/demo.dart',
-      contentList: [allDomes(context, this)],
+      codeUrl: 'components/Bar/SnackBar/demo.dart',
+      contentList: allDomes(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/SnackBar-class.html',
     );
   }
 }
 
-/*
- * 所有的 SnackBar widget
- * context: 运行上下文
- * that: 指向有状态的 StatefulWidget
- */
-Widget allDomes(BuildContext context, _DemoState that) {
-  return Container(
-    //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-        //mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            MarkdownBody(data: _Text0),
-            SizedBox(height: 20.0), // 间距
-            MarkdownBody(data: _Text1),
-            SizedBox(height: 20.0), // 间距
-            SnackBarDemo.SnackBarLessDefault(),
-            SizedBox(height: 20.0), // 间距
-          ])
-  );
+//  所有的 SnackBar widget
+//  context: 运行上下文
+//  that: 指向有状态的 StatefulWidget
+List allDomes(BuildContext context, _DemoState that) {
+  return [
+    _Text0,
+    SizedBox(height: 20.0), // 间距
+    _Text1,
+    SizedBox(height: 20.0), // 间距
+    SnackBarDemo.SnackBarLessDefault(),
+    SizedBox(height: 20.0), // 间距
+  ];
 }
-
-/*
-* 带align的text
-* */
-Widget textAlignBar(String txt) {
-  return new Align(
-      alignment: FractionalOffset.centerLeft,
-      child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            MarkdownBody(data: txt)
-          ])
-  );
-}
-
-

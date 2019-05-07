@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-27 16:25:22 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-07 15:52:45
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-27 16:25:22 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-07 15:52:45
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 
 const String content0 = '''
 ### **简介**
@@ -47,7 +47,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'MaterialApp',
       docUrl: 'https://docs.flutter.io/flutter/material/MaterialApp-class.html',
-      codeUrl: '../main.dart',
+      codeUrl: 'themes/Material/MaterialApp/demo.dart',
     );
   }
 }

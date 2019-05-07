@@ -1,17 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/24
- * Time: 下午5:25
- * email: zhu.yan@alibaba-inc.com
- * tartget: PopupMenusButton 的示例
- * 对应文档地址:https://docs.flutter.io/flutter/material/PopupMenuButton-class.html
- */
-
-import '../../../../../common/widget_demo.dart';
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/24
+/// Time: 下午5:25
+/// email: zhu.yan@alibaba-inc.com
+/// target: PopupMenusButton 的示例
+/// 对应文档地址:https://docs.flutter.io/flutter/material/PopupMenuButton-class.html
 
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as popupMenuButton;
 
 const String _titleText0 = """
@@ -56,35 +53,30 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'PopupMenuButton',
       codeUrl: 'elements/Form/Button/RaisedButton/demo.dart',
-      contentList: [allPopupMenuButton(widget,this)],
+      contentList: allPopupMenuButton(widget,this),
       docUrl: 'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
     );
   }
 }
 
-Widget allPopupMenuButton(Demo widget,State parent){
-  return Container(
-      //padding: new EdgeInsets.only(bottom: 20.0, top: 20.0, left: 0, right: 0),
-      child: Column(
-      //mainAxisSize: MainAxisSize.max,
+List allPopupMenuButton(Demo widget, State parent) {
+  return [
+    _titleText0,
+    SizedBox(height: 20.0),
+    _titleText1,
+    Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        MarkdownBody(data: _titleText0),
-        SizedBox(height: 20.0),
-        MarkdownBody(data: _titleText1),
-        Row(
-          crossAxisAlignment:CrossAxisAlignment.center,
-          mainAxisAlignment:MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            popupMenuButton.PopupMenuButtonDefault('default1'),
-            popupMenuButton.PopupMenuButtonDefault('default2'),
-            popupMenuButton.PopupMenuButtonDefault('default3'),
-          ],
-        ),
-        SizedBox(height: 20.0),
-        MarkdownBody(data: _titleText2),
-        SizedBox(height: 20.0),
-        popupMenuButton.PopupMenuButtonCustom(widget,parent),
-        SizedBox(height: 40.0)
-      ]
-  ));
+        popupMenuButton.PopupMenuButtonDefault('default1'),
+        popupMenuButton.PopupMenuButtonDefault('default2'),
+        popupMenuButton.PopupMenuButtonDefault('default3'),
+      ],
+    ),
+    SizedBox(height: 20.0),
+    _titleText2,
+    SizedBox(height: 20.0),
+    popupMenuButton.PopupMenuButtonCustom(widget, parent),
+    SizedBox(height: 40.0)
+  ];
 }

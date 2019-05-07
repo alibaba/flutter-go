@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class WidgetNotFound extends StatelessWidget {
 
     Widget build(BuildContext context) {
@@ -9,7 +8,7 @@ class WidgetNotFound extends StatelessWidget {
             title: Text("widget not found"),
           ),
           body: Container(
-              child: new Text("widget not found")
+              child:  Text("widget not found")
           )
       );
     }

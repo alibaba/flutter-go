@@ -1,14 +1,9 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-10 20:34:18 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-22 21:25:40
- */
-// import 'Sc/index.dart' as Form;
-// import 'Frame/index.dart' as Frame;
-// import 'Media/index.dart' as Media;5
-import 'Scroll/index.dart' as Scroll;
+/// @Author: 一凨 
+/// @Date: 2018-12-10 20:34:18 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-22 21:25:40
 
+import 'Scroll/index.dart' as Scroll;
 import 'Pick/index.dart' as Pick;
 import 'Chip/index.dart' as Chip;
 import 'Panel/index.dart' as Panel;

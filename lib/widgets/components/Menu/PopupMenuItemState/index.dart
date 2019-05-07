@@ -1,11 +1,11 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-29 15:04:51 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-29 16:22:06
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-29 15:04:51 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-29 16:22:06
+
 import 'package:flutter/material.dart';
-import '../../../../common/widget_demo.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
 import '../PopupMenuDivider/demo.dart';
 
 const String content0 = '''

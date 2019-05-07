@@ -1,15 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2019/1/12
- * Time: 下午9:19
- * email: zhu.yan@alibaba-inc.com
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/12
+/// Time: 下午9:19
+/// email: zhu.yan@alibaba-inc.com
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-//import 'package:flutter_rookie_book/model/collection_general.dart';
-//import 'package:flutter_rookie_book/model/collection_general.dart';
 
 const disclaimerText1 =
     '\r\r\r\r\r\r本APP属于个人的非赢利性开源项目，以供开源社区使用，凡本APP转载的所有的文章 、图片、音频、视频文件等资料的版权归版权所有人所有，本APP采用的非本站原创文章及图片等内容无法一一和版权者联系，如果本网所选内容的文章作者及编辑认为其作品不宜上网供大家浏览，或不应无偿使用请及时用电子邮件或电话通知我们，以迅速采取适当措施，避免给双方造成不必要的经济损失。';
@@ -30,21 +29,25 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   var _valBool = false;
   var _readed = false;
 
-  Future<bool> refs(bool value) async {
+  //SharedPreferences 存储结果
+  void refs(bool value) async {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
-    setState(() {
-      _unKnow = prefs.setBool("disclaimer", unKnow).then((bool success) {
-        return unKnow;
+    if (mounted) {
+      setState(() {
+        _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
+          return unKnow;
+        });
       });
-    });
+    }
   }
 
   @override
   void initState() {
     super.initState();
+    //获取SharedPreferences 存储结果
     _unKnow = _prefs.then((SharedPreferences prefs) {
-      return (prefs.getBool('disclaimer') ?? false);
+      return (prefs.getBool('disclaimer::Boolean') ?? false);
     });
     _unKnow.then((bool value) {
       _valBool = value;
@@ -122,6 +125,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
       );
     }
 
+    //第一次读取
     return Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
         //crossAxisAlignment:CrossAxisAlignment.start,
         children: <Widget>[
@@ -133,12 +137,12 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
                   tristate: false,
                   value: _valBool,
                   onChanged: (bool bol) {
-                    setState(() {
-                      _valBool = bol;
-                    });
-//                                refs(bol);
-                    Navigator.of(context)
-                        .pop(); // here I pop to avoid multiple Dialogs
+                    if(mounted) {
+                      setState(() {
+                        _valBool = bol;
+                      });
+                    }
+                    Navigator.of(context).pop(); // here I pop to avoid multiple Dialogs
                     showAlertDialog(context); //here i call the same function
                   }),
               Text('不再自动提示', style: TextStyle(fontSize: 14)),
@@ -152,73 +156,34 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).primaryColor.withAlpha(800),
             onPressed: () {
-              if (_valBool) {
-                refs(_valBool);
-                _unKnow.then((bool value) {
-                  if (value) {
-                    Navigator.of(context).pop();
-                  }
-                });
-              }
+              // if (_valBool) {
+              refs(_valBool);
+              Navigator.of(context).pop();
+              // }
             },
           ),
-        ]
-//                SizedBox(
-//                  width:150,
-//                  height:55,
-//                  child: CheckboxListTile(
-//                      title: Text('不再显示',style:TextStyle(fontSize: 14)),
-//                      controlAffinity: ListTileControlAffinity.leading,
-//                      activeColor: Colors.red,
-//                      value: _valBool,
-//                      onChanged: (bool value) {
-//                        refs(value);
-//                        Navigator.of(context).pop(); // here I pop to avoid multiple Dialogs
-//                        showAlertDialog(context); //here i call the same function
-//                      }
-//                    )
-//                  //secondary: const Icon(Icons.hourglass_empty),
-//                ),
-//                Checkbox(
-//                  activeColor: Colors.red,
-//                  tristate:false,
-//                  value: _valBool,
-//                  onChanged: (bool bol) {
-//                    refs(bol);
-//                    Navigator.of(context).pop(); // here I pop to avoid multiple Dialogs
-//                    showAlertDialog(context); //here i call the same function
-//                  }
-//                ),
-//                Text('不再显示',style:TextStyle(fontSize: 14)),
-//                FlatButton(
-//                  child: Text('知道了',style:TextStyle(fontSize: 16,color: Colors.green)),
-//                  onPressed: () {
-//                    Navigator.of(context).pop();
-//                  },
-//                ),
-//              ],
-        );
+        ]);
   }
 
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
         onTap: () {
           showAlertDialog(context);
         },
         child: Stack(
           //alignment: const Alignment(1.6, 1.6),
           children: [
-            new Container(
+            Container(
               width: 90.0,
               alignment: Alignment.center,
-              decoration: new BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius:
-                    new BorderRadius.horizontal(right: Radius.circular(10)),
+                BorderRadius.horizontal(right: Radius.circular(10)),
                 color: Colors.black45,
               ),
-              child: new Text(
+              child: Text(
                 '🔔 免责声明',
-                style: new TextStyle(
+                style: TextStyle(
                   fontSize: 14.0,
                   //fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -227,63 +192,5 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
             ),
           ],
         ));
-  }
-
-//  Widget build2(BuildContext context) {
-//    return Container(
-//        padding: new EdgeInsets.all(0.0),
-//        alignment: Alignment.centerRight,
-//        child: FlatButton(
-//            //padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-//            child: new Text(
-//              '👉 APP免责声明',
-//              style: new TextStyle(
-//                fontSize: 12.0, //textsize
-//                color: Colors.black54, // textcolor
-//              ),
-//            ),
-//            //color: Theme.of(context).accentColor,
-//            color: Theme.of(context).accentColor,
-//            //elevation: 0.0,//shadow
-//            //splashColor: Colors.blueGrey,
-//            onPressed: () {
-//              showAlertDialog(context);
-//              //Toast.show(context: context, message: "👉 APP免责声明",cb:showAlertDialog);
-//            }));
-//  }
-}
-
-class Toast {
-  static void show(
-      {@required BuildContext context, @required String message, Function cb}) {
-    //创建一个OverlayEntry对象
-    OverlayEntry overlayEntry = new OverlayEntry(builder: (context) {
-      return new Positioned(
-          top: MediaQuery.of(context).size.height * 0.12,
-          right: 5.0,
-          child: RaisedButton(
-              padding: new EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-              child: new Text(
-                '👉 APP免责声明',
-                style: new TextStyle(
-                  fontSize: 14.0, //textsize
-                  color: Colors.black54, // textcolor
-                ),
-              ),
-              //color: Theme.of(context).accentColor,
-              color: Colors.red,
-              //elevation: 0.0,//shadow
-              //splashColor: Colors.blueGrey,
-              onPressed: () {
-                if (cb is Function) {
-                  cb(context);
-                }
-              }));
-    });
-    //往Overlay中插入插入OverlayEntry
-    Overlay.of(context).insert(overlayEntry);
-    new Future.delayed(Duration(seconds: 2)).then((value) {
-      //overlayEntry.remove();
-    });
   }
 }

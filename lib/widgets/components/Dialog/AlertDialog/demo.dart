@@ -1,21 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 07/01/2019
- * Time: 10:31
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 07/01/2019
+/// Time: 10:31
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
 
+class AlertDialogDemo extends StatelessWidget{
 
-class AlertDialogDemo extends StatefulWidget {
-  _Demo createState() => _Demo();
-}
-
-class _Demo extends State<AlertDialogDemo> {
-  
   void showAlertDialog(BuildContext context) {
     showDialog<void>(
       context: context,
@@ -122,12 +115,12 @@ class _Demo extends State<AlertDialogDemo> {
     );
   }
   Widget build(BuildContext context) {
-    return new RaisedButton(
-        padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return  RaisedButton(
+        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child: new Text(
+        child:  Text(
           '点我显示 AlertDialog',
-          style: new TextStyle(
+          style:  TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -141,3 +134,4 @@ class _Demo extends State<AlertDialogDemo> {
       });
   }
 }
+

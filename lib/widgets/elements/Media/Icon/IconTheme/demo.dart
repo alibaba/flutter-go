@@ -1,13 +1,12 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-15 16:07:59 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-15 16:49:17
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018-12-15 16:07:59 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2018-12-15 16:49:17
 import 'package:flutter/material.dart';
 
 class IconThemeDemo extends StatelessWidget {
-  final Color curColor ;
+  final Color curColor;
 
   IconThemeDemo({Key key, this.curColor}) : super();
 
@@ -15,17 +14,20 @@ class IconThemeDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       actions: <Widget>[
-        new IconTheme(
-            data: new IconThemeData(color: curColor, opacity: 3.0),
-            child: Container(
-                padding: EdgeInsets.all(20.0), child: Icon(Icons.equalizer))),
+         IconTheme(
+          data:  IconThemeData(color: curColor, opacity: 3.0),
+          child: Container(
+            padding: EdgeInsets.all(20.0),
+            child: Icon(Icons.equalizer),
+          ),
+        ),
       ],
     );
   }
 }
 
 class IconThemeDemo2 extends StatelessWidget {
-  final Color curColor ;
+  final Color curColor;
   final double curSize;
 
   IconThemeDemo2({Key key, this.curColor, this.curSize}) : super();
@@ -34,8 +36,8 @@ class IconThemeDemo2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       actions: <Widget>[
-        new IconTheme(
-            data: new IconThemeData(color: curColor, opacity: 3.0),
+         IconTheme(
+            data:  IconThemeData(color: curColor, opacity: 3.0),
             child: Row(
               children: <Widget>[
                 Icon(

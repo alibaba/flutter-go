@@ -1,14 +1,11 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 07/01/2019
- * Time: 10:31
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 07/01/2019
+/// Time: 10:31
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-
 
 class SliverGridDemo extends StatefulWidget {
   _Demo createState() => _Demo();
@@ -17,34 +14,34 @@ class SliverGridDemo extends StatefulWidget {
 class _Demo extends State<SliverGridDemo> {
 
   Widget showCustomScrollView() {
-    return new CustomScrollView(
+    return  CustomScrollView(
       slivers: <Widget>[
-        new SliverGrid(
-          gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
+         SliverGrid(
+          gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200.0,
             mainAxisSpacing: 10.0,
             crossAxisSpacing: 10.0,
             childAspectRatio: 4.0,
           ),
-          delegate: new SliverChildBuilderDelegate(
+          delegate:  SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-              return new Container(
+              return  Container(
                 alignment: Alignment.center,
                 color: Colors.cyan[100 * (index % 5)],
-                child: new Text('grid item $index'),
+                child:  Text('grid item $index'),
               );
             },
             childCount: 20,
           ),
         ),
-//        new SliverFixedExtentList(
+//         SliverFixedExtentList(
 //          itemExtent: 100.0,
-//          delegate: new SliverChildBuilderDelegate(
+//          delegate:  SliverChildBuilderDelegate(
 //                (BuildContext context, int index) {
-//              return new Container(
+//              return  Container(
 //                alignment: Alignment.center,
 //                color: Colors.lightBlue[100 * (index % 9)],
-//                child: new Text('list item $index'),
+//                child:  Text('list item $index'),
 //              );
 //            },
 //          ),

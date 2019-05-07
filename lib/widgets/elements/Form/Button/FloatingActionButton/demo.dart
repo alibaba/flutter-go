@@ -1,17 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: OutlineButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: OutlineButton 的示例
+
 import 'package:flutter/material.dart';
 
-/*
-* OutlineButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+// OutlineButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 class FloatingActionButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -30,9 +27,7 @@ class FloatingActionButtonDefault extends StatelessWidget {
   }
 }
 
-/*
-* OutlineButton 自定义的实例
-* */
+// OutlineButton 自定义的实例
 class FloatingActionButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;
@@ -48,8 +43,8 @@ class FloatingActionButtonCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _onPressed = onPressed;
-    return new FloatingActionButton(
+    final _onPressed = (onPressed is Function) ? onPressed : ()=>{};
+    return  FloatingActionButton(
       // 子视图，一般为Icon，不推荐使用文字
       child: const Icon(Icons.refresh),
       // FAB的文字解释，FAB被长按时显示，也是无障碍功能
@@ -82,9 +77,7 @@ class FloatingActionButtonCustom extends StatelessWidget {
   }
 }
 
-/*
-* OutlineButton 自定义的实例2
-* */
+// OutlineButton 自定义的实例2
 class FloatingActionButtonCustom2 extends StatelessWidget {
   final String txt;
   final Color color;
@@ -109,8 +102,8 @@ class FloatingActionButtonCustom2 extends StatelessWidget {
       foregroundColor: Colors.white,
       backgroundColor: Colors.amber,
       //如果不手动设置icon和text颜色,则默认使用foregroundColor颜色
-      icon: new Icon(Icons.flag,color: Colors.red),
-      label: new Text('FloatingActionButton.extended', maxLines: 1),
+      icon:  Icon(Icons.flag,color: Colors.red),
+      label:  Text('FloatingActionButton.extended', maxLines: 1),
     );
   }
 }

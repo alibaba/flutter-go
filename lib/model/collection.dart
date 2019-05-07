@@ -1,11 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2019-01-07 16:24:42 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-08 17:37:42
- */
+/// @Author: 一凨 
+/// @Date: 2019-01-07 16:24:42 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-08 17:37:42
+
 import 'dart:async';
-import '../common/sql.dart';
+
+import 'package:flutter_go/utils/sql.dart';
 
 abstract class CollectionInterface {
   String get name;

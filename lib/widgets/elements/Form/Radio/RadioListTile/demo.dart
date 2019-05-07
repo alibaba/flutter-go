@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 20/12/2018
- * Time: 14:32
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 20/12/2018
+ /// Time: 14:32
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  xxx
 
 import 'package:flutter/material.dart';
 
@@ -24,7 +22,7 @@ class _Demo extends State<DemoA> {
   }
   Widget build(BuildContext context) {
 
-    return new Column(
+    return  Column(
       children: <Widget>[
         RadioListTile<String>(
           title: const Text('A'),

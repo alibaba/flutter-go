@@ -1,13 +1,12 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-11-16 15:09:12 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-11-16 15:12:39
- */
-import 'package:flutter/material.dart';
-import '../../../../../common/widget_demo.dart';
-import './decorationImage_demo.dart';
+ /// @Author: 一凨 
+ /// @Date: 2018-11-16 15:09:12 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2018-11-16 15:12:39
 
+import 'package:flutter/material.dart';
+
+import 'package:flutter_go/components/widget_demo.dart';
+import './decorationImage_demo.dart';
 
 const contentText0 = '''
 ### **简介**
@@ -38,7 +37,7 @@ class _DemoState extends State<Demo> {
         contentText1,
         DecorationImageDemo(),
       ],
-      codeUrl: 'elements/Media/Image/DecorationImage/index.dart?1542705856254',
+      codeUrl: 'elements/Media/Image/DecorationImage/decorationImage_demo.dart',
       docUrl:
           'https://docs.flutter.io/flutter/painting/DecorationImage-class.html',
       title: 'DecorationImage',
