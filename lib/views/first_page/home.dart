@@ -127,6 +127,7 @@ class _MyHomePageState extends State<AppPage>
         //shifting :按钮点击移动效果,超过5个button不支持
         //fixed：固定
         type: BottomNavigationBarType.fixed,
+
         fixedColor: Color(0xFFC91B3A),
       ),
     );
