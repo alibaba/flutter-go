@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
+import 'package:flutter_go/views/first_page/main_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -60,7 +61,8 @@ class _MyHomePageState extends State<AppPage>
       ));
     }
     list
-      ..add(FirstPage())
+//      ..add(FirstPage())
+      ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -115,11 +117,18 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
+  renderAppBar(BuildContext context,Widget widget,int index) {
+    print('renderAppBar=====>>>>>>${index}');
+    if(index == 0) {
+      return null;
+    }
+    return AppBar(title: buildSearchInput(context));
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: buildSearchInput(context)),
+      appBar: renderAppBar(context,widget,_currentIndex),
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: myTabs,
