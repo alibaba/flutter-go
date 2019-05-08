@@ -38,10 +38,17 @@ class _MyHomePageState extends State<AppPage>
   List<Widget> list = List();
   int _currentIndex = 0;
   static List tabData = [
+<<<<<<< HEAD:lib/views/first_page/home.dart
 //    {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
+=======
+    {'text': '业界动态', 'icon': Icon(Icons.language)},
+    {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
+    {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
+    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)}
+>>>>>>> 9ecc52d0fca4f98a62f0624c19e9cea57c8b8111:lib/views/home.dart
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -59,8 +66,12 @@ class _MyHomePageState extends State<AppPage>
       ));
     }
     list
+<<<<<<< HEAD:lib/views/first_page/home.dart
 
 //      ..add(FirstPage())
+=======
+      ..add(FirstPage())
+>>>>>>> 9ecc52d0fca4f98a62f0624c19e9cea57c8b8111:lib/views/home.dart
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -96,11 +107,12 @@ class _MyHomePageState extends State<AppPage>
   }
 
   Widget buildSearchInput(BuildContext context) {
-    return new SearchInput((value) async {
+      return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
         return list
             .map((item) => new MaterialSearchResult<String>(
+<<<<<<< HEAD:lib/views/first_page/home.dart
           value: item.name,
           icon: WidgetName2Icon.icons[item.name] ?? null,
           text: 'widget',
@@ -108,6 +120,15 @@ class _MyHomePageState extends State<AppPage>
             onWidgetTap(item, context);
           },
         ))
+=======
+                  value: item.name,
+                  icon: WidgetName2Icon.icons[item.name] ?? null,
+                  text: 'widget',
+                  onTap: () {
+                   onWidgetTap(item, context);
+                  },
+                ))
+>>>>>>> 9ecc52d0fca4f98a62f0624c19e9cea57c8b8111:lib/views/home.dart
             .toList();
       } else {
         return null;
@@ -119,7 +140,11 @@ class _MyHomePageState extends State<AppPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+<<<<<<< HEAD:lib/views/first_page/home.dart
       appBar: AppBar(title: buildSearchInput(context)),
+=======
+      appBar: new AppBar(title: buildSearchInput(context)),
+>>>>>>> 9ecc52d0fca4f98a62f0624c19e9cea57c8b8111:lib/views/home.dart
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: myTabs,
