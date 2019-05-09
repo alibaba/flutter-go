@@ -38,6 +38,9 @@ dependencies:
   flutter_bloc: ^0.11.1
   bloc: ^0.12.0
   html: ^0.14.0+2
+  flutter_downloader: ^1.1.7
+  path_provider: ^1.1.0
+  permission_handler: ^3.0.0
 
 dev_dependencies:
   flutter_test:

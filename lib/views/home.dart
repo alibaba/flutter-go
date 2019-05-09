@@ -10,6 +10,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
+import 'package:flutter_go/views/update_test.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -24,6 +25,7 @@ import 'package:flutter_go/resources/widget_name_to_icon.dart';
 const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _MyHomePageState();
@@ -32,6 +34,7 @@ class AppPage extends StatefulWidget {
 
 class _MyHomePageState extends State<AppPage>
     with SingleTickerProviderStateMixin {
+
   SpUtil sp;
   WidgetControlModel widgetControl = new WidgetControlModel();
   SearchHistoryList searchHistoryList;
@@ -44,7 +47,7 @@ class _MyHomePageState extends State<AppPage>
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
-//    {'text': '点击更新', 'icon': Icon(Icons.update)}
+    {'text': '点击更新', 'icon': Icon(Icons.update)}
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -67,8 +70,10 @@ class _MyHomePageState extends State<AppPage>
       ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
-      ..add(FourthPage());
-//      ..add(FourthPage());
+      ..add(FourthPage())
+      ..add(UpdatePage(
+
+      ));
   }
 
   @override
@@ -120,9 +125,9 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
-  renderAppBar(BuildContext context,Widget widget,int index) {
+  renderAppBar(BuildContext context, Widget widget, int index) {
     print('renderAppBar=====>>>>>>${index}');
-    if(index == 0) {
+    if (index == 0) {
       return null;
     }
     return AppBar(title: buildSearchInput(context));
@@ -131,7 +136,7 @@ class _MyHomePageState extends State<AppPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: renderAppBar(context,widget,_currentIndex),
+      appBar: renderAppBar(context, widget, _currentIndex),
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: myTabs,
