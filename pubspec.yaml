@@ -41,6 +41,7 @@ dependencies:
   flutter_downloader: ^1.1.7
   path_provider: ^1.1.0
   permission_handler: ^3.0.0
+  open_file: ^2.0.1+2
 
 dev_dependencies:
   flutter_test:

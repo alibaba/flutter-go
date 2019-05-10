@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:open_file/open_file.dart';
 
 class UpdatePage extends StatefulWidget {
   @override
@@ -19,25 +20,41 @@ class _UpdatePageState extends State<UpdatePage> {
   void initState() {
     super.initState();
     FlutterDownloader.registerCallback((id, status, progress) async {
+      setState(() {
+        _currProgress = progress;
+      });
       print(
           "id:${id}===== status=======:${status}=====progress======:${progress}");
       // 当下载完成时，调用安装
       if (status == DownloadTaskStatus.complete) {
+
+        OpenFile.open(_localPath);
         FlutterDownloader.open(taskId: id);
+
       }
     });
-    _permissisonReady=false;
+    _permissisonReady = false;
     _prepare();
   }
 
   bool _isLoading;
   bool _permissisonReady;
   String _localPath;
+  int _currProgress = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(top: 20),
+          width: double.infinity,
+          height: 10.0,
+          child: new LinearProgressIndicator(
+            value: _currProgress / 100,
+            backgroundColor: Colors.red,
+          ),
+        ),
         Center(
           child: Text("现在是1.0.0",
               textAlign: TextAlign.center, style: TextStyle(fontSize: 20)),
@@ -48,7 +65,7 @@ class _UpdatePageState extends State<UpdatePage> {
               print("点击${_permissisonReady}");
               if (_permissisonReady) {
                 _requestDownload();
-              }else{
+              } else {
                 _checkPermission().then((hasGranted) {
                   setState(() {
                     _permissisonReady = hasGranted;
@@ -62,14 +79,13 @@ class _UpdatePageState extends State<UpdatePage> {
             ),
             color: Colors.red[800],
           ),
-        )
+        ),
       ],
     );
   }
 
   Future<Null> _prepare() async {
     _permissisonReady = await _checkPermission();
-    _localPath = (await _findLocalPath()) + '/Download';
   }
 
   //检查权限
@@ -115,6 +131,7 @@ class _UpdatePageState extends State<UpdatePage> {
   // 获取安装地址
   Future<String> get _apkLocalPath async {
     final directory = await getExternalStorageDirectory();
-    return directory.path.toString();
+    _localPath = directory.path.toString();
+    return _localPath;
   }
 }
