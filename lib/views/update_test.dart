@@ -9,6 +9,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:open_file/open_file.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UpdatePage extends StatefulWidget {
   @override
@@ -16,6 +17,9 @@ class UpdatePage extends StatefulWidget {
 }
 
 class _UpdatePageState extends State<UpdatePage> {
+  static const currUrl =
+      'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk';
+
   @override
   void initState() {
     super.initState();
@@ -27,10 +31,8 @@ class _UpdatePageState extends State<UpdatePage> {
           "id:${id}===== status=======:${status}=====progress======:${progress}");
       // 当下载完成时，调用安装
       if (status == DownloadTaskStatus.complete) {
-
         OpenFile.open(_localPath);
         FlutterDownloader.open(taskId: id);
-
       }
     });
     _permissisonReady = false;
@@ -80,8 +82,29 @@ class _UpdatePageState extends State<UpdatePage> {
             color: Colors.red[800],
           ),
         ),
+        Center(
+          child: FlatButton(
+            onPressed: () {
+              print("local===: _UpdateURL");
+              _UpdateURL();
+            },
+            child: Text(
+              "更新版本",
+              style: TextStyle(color: Colors.white),
+            ),
+            color: Colors.red[800],
+          ),
+        ),
       ],
     );
+  }
+
+  _UpdateURL() async {
+    if (await canLaunch(currUrl)) {
+      await launch(currUrl);
+    } else {
+      throw 'Could not launch $currUrl';
+    }
   }
 
   Future<Null> _prepare() async {
@@ -112,7 +135,8 @@ class _UpdatePageState extends State<UpdatePage> {
   void _requestDownload() async {
     final path = await _apkLocalPath;
     final taskId = await FlutterDownloader.enqueue(
-      url: 'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk',
+      url: currUrl,
+      fileName: "new_FlutterGo.apk",
       savedDir: path,
       showNotification: true,
       // show download progress in status bar (for Android)
@@ -121,15 +145,12 @@ class _UpdatePageState extends State<UpdatePage> {
     );
   }
 
-  Future _findLocalPath() async {
-    final directory = Theme.of(context).platform == TargetPlatform.android
-        ? await getExternalStorageDirectory()
-        : await getApplicationDocumentsDirectory();
-    return directory.path;
-  }
-
   // 获取安装地址
   Future<String> get _apkLocalPath async {
+//    final directory = widget.platform == TargetPlatform.android
+//        ? await getExternalStorageDirectory()
+//        : await getApplicationDocumentsDirectory();
+
     final directory = await getExternalStorageDirectory();
     _localPath = directory.path.toString();
     return _localPath;

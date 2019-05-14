@@ -16,14 +16,20 @@ SpUtil sp;
 var db;
 
 class MyApp extends StatelessWidget {
-  MyApp()  {
+  MyApp() {
     final router = new Router();
 
     Routes.configureRoutes(router);
 
     Application.router = router;
   }
-  showWelcomePage() {
+
+  showWelcomePage(context) {
+    //网络请求查看版本
+
+
+    final platform = Theme.of(context).platform;
+    print("platform:${platform}");
     // 暂时关掉欢迎介绍
     return AppPage();
 //    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
@@ -33,6 +39,7 @@ class MyApp extends StatelessWidget {
 //      return AppPage();
 //    }
   }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -50,16 +57,14 @@ class MyApp extends StatelessWidget {
           size: 35.0,
         ),
       ),
-      home: new Scaffold(
-        body: showWelcomePage()
-      ),
-      debugShowCheckedModeBanner: false,
+      home: new Scaffold(body: showWelcomePage(context)),
+      //debug  banner
+//      debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
     );
   }
 }
-
 
 void main() async {
   final provider = new Provider();
