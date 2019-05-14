@@ -14,6 +14,7 @@ class CupertinoSliverNavigationBarDemo extends StatefulWidget {
 
 class _Demo extends State<CupertinoSliverNavigationBarDemo> {
   double value = 0.0;
+  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: DecoratedBox(
