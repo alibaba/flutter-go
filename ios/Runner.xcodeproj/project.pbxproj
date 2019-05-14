@@ -528,6 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "FlutterGO-alibaba-develop";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -556,6 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = FlutterGO_alibaba_distribution_ad_hoc;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
