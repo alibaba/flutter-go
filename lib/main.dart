@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
     //网络请求查看版本
 
 
+
     final platform = Theme.of(context).platform;
     print("platform:${platform}");
     // 暂时关掉欢迎介绍
