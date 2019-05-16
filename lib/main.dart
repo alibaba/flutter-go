@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
@@ -37,15 +38,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _hasLogin = false;
   bool _isLoading = true;
-  String localVersion;
-  String currVersion;
 
   @override
   Future initState() {
     super.initState();
-
+    var platformAandroid =
+        (Theme.of(context).platform == TargetPlatform.android);
     DataUtils.checkVersion({'name': 'FlutterGo'}).then((bool) {
-      if (bool) {
+      print("返回值back ${bool}");
+      if (platformAandroid && bool) {
+        setState(() {});
         _UpdateURL();
       }
     }).catchError((onError) {
@@ -66,6 +68,16 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  _UpdateURL() async {
+    const currUrl =
+        'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk';
+    if (await canLaunch(currUrl)) {
+      await launch(currUrl);
+    } else {
+      throw 'Could not launch $currUrl';
+    }
+  }
+
   showWelcomePage() {
     if (_isLoading) {
       return Container(
@@ -81,16 +93,6 @@ class _MyAppState extends State<MyApp> {
       } else {
         return LoginPage();
       }
-    }
-  }
-
-  _UpdateURL() async {
-    const currUrl =
-        'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk';
-    if (await canLaunch(currUrl)) {
-      await launch(currUrl);
-    } else {
-      throw 'Could not launch $currUrl';
     }
   }
 
