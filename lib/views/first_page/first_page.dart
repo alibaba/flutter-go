@@ -57,7 +57,7 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     var  pageTotal = 0;
 
     try{
-      var response = await NetUtils.get(juejin_flutter, params: _param);
+      var response = await NetUtils.get(juejin_flutter, _param);
       responseList = response['d']['entrylist'];
       pageTotal = response['d']['total'];
       if (!(pageTotal is int) || pageTotal <= 0) {

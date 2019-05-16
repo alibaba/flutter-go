@@ -10,7 +10,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
-import 'package:flutter_go/views/update_test.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -47,7 +46,6 @@ class _MyHomePageState extends State<AppPage>
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
-    {'text': '点击更新', 'icon': Icon(Icons.update)}
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -65,15 +63,11 @@ class _MyHomePageState extends State<AppPage>
       ));
     }
     list
-
 //      ..add(FirstPage())
       ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
-      ..add(FourthPage())
-      ..add(UpdatePage(
-
-      ));
+      ..add(FourthPage());
   }
 
   @override
