@@ -21,14 +21,17 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 <img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
 
 
+
 ## Release安装包下载地址
 
 android下载地址:
 
 <img src="https://img.alicdn.com/tfs/TB1ylxGTMHqK1RjSZFgXXa7JXXa-436-432.png" width="200px">
 
-iphone下载地址:
-暂无
+iphone下载地址: AppStore上面进行搜索fluttego
+
+<img src="https://img.alicdn.com/tfs/TB1trMgV7PoK1RjSZKbXXX1IXXa-620-1343.png" width=200> <img src="https://img.alicdn.com/tfs/TB1w_MbV7voK1RjSZFDXXXY3pXa-620-1343.png" width=200> 
+
 
 ## 基础环境
 本项目环境持续更新. 请定期更新各依赖包.
