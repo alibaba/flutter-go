@@ -6,6 +6,7 @@ import '../widgets/404.dart';
 import 'package:flutter_go/components/full_screen_code_dialog.dart';
 import 'package:flutter_go/views/web_page/web_view_page.dart';
 import 'package:flutter_go/views/home.dart';
+import 'package:flutter_go/views/login_page/login_page.dart';
 
 // app的首页
 var homeHandler = new Handler(
@@ -25,6 +26,10 @@ var categoryHandler = new Handler(
 var widgetNotFoundHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return new WidgetNotFound();
+});
+var loginPageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return LoginPage();
 });
 
 var fullScreenCodeDialog = new Handler(
