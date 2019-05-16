@@ -12,10 +12,10 @@ class _Page {
 }
 
 final List<_Page> _allPages = <_Page>[
-   _Page('项目1'),
-   _Page('项目2'),
-   _Page('项目3'),
-   _Page('项目4'),
+  _Page('项目1'),
+  _Page('项目2'),
+  _Page('项目3'),
+  _Page('项目4'),
 ];
 
 class MainPage extends StatelessWidget {
@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
             centerTitle: true,
             title:  TabLayout(),
             actions: <Widget>[
-               IconButton(
+              IconButton(
                   icon:  Icon(Icons.search),
                   onPressed: () {
                     pushPage(context, SearchPage(), pageName: "SearchPage");
@@ -67,7 +67,7 @@ class TabLayout extends StatelessWidget {
       indicatorSize: TabBarIndicatorSize.label,
       tabs: _allPages
           .map((_Page page) =>
-              Tab(text: page.labelId))
+          Tab(text: page.labelId))
           .toList(),
     );
   }
@@ -100,7 +100,7 @@ class TabBarViewLayout extends StatelessWidget {
     print("TabBarViewLayout build.......");
     return TabBarView(
         children: _allPages.map((_Page page) {
-      return buildTabView(context, page);
-    }).toList());
+          return buildTabView(context, page);
+        }).toList());
   }
 }

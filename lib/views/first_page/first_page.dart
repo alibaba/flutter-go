@@ -26,24 +26,24 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
   bool get wantKeepAlive => true;
 
 
- @override
+  @override
   void initState() {
     super.initState();
     if (key == null) {
-       key = GlobalKey<DisclaimerMsgState>();
-       // key = const Key('__RIKEY1__');
+      key = GlobalKey<DisclaimerMsgState>();
+      // key = const Key('__RIKEY1__');
       //获取sharePre
-       _unKnow = _prefs.then((SharedPreferences prefs) {
-         return (prefs.getBool('disclaimer::Boolean') ?? false);
-       });
+      _unKnow = _prefs.then((SharedPreferences prefs) {
+        return (prefs.getBool('disclaimer::Boolean') ?? false);
+      });
 
       /// 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
       _unKnow.then((bool value) {
-         new Future.delayed(const Duration(seconds: 1),(){
-           if (!value && key.currentState is DisclaimerMsgState && key.currentState.showAlertDialog is Function) {
-             key.currentState.showAlertDialog(context);
-           }
-         });
+        new Future.delayed(const Duration(seconds: 1),(){
+          if (!value && key.currentState is DisclaimerMsgState && key.currentState.showAlertDialog is Function) {
+            key.currentState.showAlertDialog(context);
+          }
+        });
       });
     }
   }
@@ -57,7 +57,7 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
     var  pageTotal = 0;
 
     try{
-      var response = await NetUtils.get(juejin_flutter, params: _param);
+      var response = await NetUtils.get(juejin_flutter, _param);
       responseList = response['d']['entrylist'];
       pageTotal = response['d']['total'];
       if (!(pageTotal is int) || pageTotal <= 0) {
@@ -93,15 +93,15 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
       Column(
         children: <Widget>[
           Stack(
-          //alignment: const FractionalOffset(0.9, 0.1),//方法一
-          children: <Widget>[
-              Pagination(),
-              Positioned(//方法二
-              top: 10.0,
-              left: 0.0,
-              child: DisclaimerMsg(key:key,pWidget:this)
-              ),
-            ]),
+            //alignment: const FractionalOffset(0.9, 0.1),//方法一
+              children: <Widget>[
+                Pagination(),
+                Positioned(//方法二
+                    top: 10.0,
+                    left: 0.0,
+                    child: DisclaimerMsg(key:key,pWidget:this)
+                ),
+              ]),
           SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
           SizedBox(height: 10),
         ],
@@ -127,7 +127,7 @@ class FirstPageState extends State<FirstPage> with AutomaticKeepAliveClientMixin
 //          SizedBox(height: 2, child:Container(color: Theme.of(context).primaryColor)),
           new Expanded(
             //child: new List(),
-            child: listComp.ListRefresh(getIndexListData,makeCard,headerView)
+              child: listComp.ListRefresh(getIndexListData,makeCard,headerView)
           )
         ]
 
