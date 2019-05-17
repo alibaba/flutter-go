@@ -20,6 +20,7 @@ class _Demo extends State<CupertinoTabBarDemo> {
       index = _index;
     });
   }
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,

@@ -14,6 +14,7 @@ class CupertinoSwitchDemo extends StatefulWidget {
 
 class _Demo extends State<CupertinoSwitchDemo> {
   bool _lights = false;
+  @override
   Widget build(BuildContext context) {
     return MergeSemantics(
       child: ListTile(

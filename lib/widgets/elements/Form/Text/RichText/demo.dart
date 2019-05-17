@@ -12,7 +12,7 @@ class RichTextDemo extends StatefulWidget {
 }
 
 class _Demo extends State<RichTextDemo> {
-
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xff000000),
