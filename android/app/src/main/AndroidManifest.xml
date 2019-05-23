@@ -13,7 +13,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="fluttergo"
+        android:label="FlutterGo"
         android:icon="@mipmap/ic_launcher_logo">
         <activity
             android:name=".MainActivity"
