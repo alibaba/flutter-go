@@ -79,21 +79,21 @@ class _MyAppState extends State<MyApp> {
   }
 
   showWelcomePage() {
-    if (_isLoading) {
-      return Container(
-        color: const Color(ThemeColor),
-        child: Center(
-          child: SpinKitPouringHourglass(color: Colors.white),
-        ),
-      );
-    } else {
-      // 判断是否已经登录
-      if (_hasLogin) {
+//    if (_isLoading) {
+//      return Container(
+//        color: const Color(ThemeColor),
+//        child: Center(
+//          child: SpinKitPouringHourglass(color: Colors.white),
+//        ),
+//      );
+//    } else {
+//      // 判断是否已经登录
+//      if (_hasLogin) {
         return AppPage();
-      } else {
-        return LoginPage();
-      }
-    }
+//      } else {
+//        return LoginPage();
+//      }
+//    }
   }
 
   @override

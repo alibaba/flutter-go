@@ -42,7 +42,7 @@ class _MyHomePageState extends State<AppPage>
   List<Widget> list = List();
   int _currentIndex = 0;
   static List tabData = [
-    {'text': '业界动态', 'icon': Icon(Icons.language)},
+//    {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<AppPage>
     }
     list
 //      ..add(FirstPage())
-      ..add(MainPage())
+//      ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -120,10 +120,10 @@ class _MyHomePageState extends State<AppPage>
   }
 
   renderAppBar(BuildContext context, Widget widget, int index) {
-    print('renderAppBar=====>>>>>>${index}');
-    if (index == 0) {
-      return null;
-    }
+//    print('renderAppBar=====>>>>>>${index}');
+//    if (index == 0) {
+//      return null;
+//    }
     return AppBar(title: buildSearchInput(context));
   }
 
