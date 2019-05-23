@@ -24,6 +24,7 @@ import 'package:flutter_go/resources/widget_name_to_icon.dart';
 const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _MyHomePageState();
@@ -32,6 +33,7 @@ class AppPage extends StatefulWidget {
 
 class _MyHomePageState extends State<AppPage>
     with SingleTickerProviderStateMixin {
+
   SpUtil sp;
   WidgetControlModel widgetControl = new WidgetControlModel();
   SearchHistoryList searchHistoryList;
@@ -40,10 +42,10 @@ class _MyHomePageState extends State<AppPage>
   List<Widget> list = List();
   int _currentIndex = 0;
   static List tabData = [
-    {'text': '业界动态', 'icon': Icon(Icons.language)},
+//    {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
-    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)}
+    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -62,7 +64,7 @@ class _MyHomePageState extends State<AppPage>
     }
     list
 //      ..add(FirstPage())
-      ..add(MainPage())
+//      ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -98,7 +100,7 @@ class _MyHomePageState extends State<AppPage>
   }
 
   Widget buildSearchInput(BuildContext context) {
-      return new SearchInput((value) async {
+    return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
         return list
@@ -107,7 +109,7 @@ class _MyHomePageState extends State<AppPage>
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                   onWidgetTap(item, context);
+                    onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -117,18 +119,18 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
-  renderAppBar(BuildContext context,Widget widget,int index) {
-    print('renderAppBar=====>>>>>>${index}');
-    if(index == 0) {
-      return null;
-    }
+  renderAppBar(BuildContext context, Widget widget, int index) {
+//    print('renderAppBar=====>>>>>>${index}');
+//    if (index == 0) {
+//      return null;
+//    }
     return AppBar(title: buildSearchInput(context));
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: renderAppBar(context,widget,_currentIndex),
+      appBar: renderAppBar(context, widget, _currentIndex),
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: myTabs,
