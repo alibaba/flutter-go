@@ -13,6 +13,7 @@ class SwitchDemo extends StatefulWidget {
 
 class _Demo extends State<SwitchDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch(
       value: this.check,
@@ -31,6 +32,7 @@ class SwitchHighDemo extends StatefulWidget {
 
 class _SwitchHighDemo extends State<SwitchHighDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch.adaptive(
       value: this.check,
@@ -51,6 +53,7 @@ class SwitchTypesDemo extends StatefulWidget {
 
 class _SwitchTypesDemo extends State<SwitchTypesDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch(
       value: this.check,

@@ -25,7 +25,7 @@ class Demo extends StatefulWidget {
 }
 
 class _Demo extends State<Demo> {
-
+  @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Rich Text',

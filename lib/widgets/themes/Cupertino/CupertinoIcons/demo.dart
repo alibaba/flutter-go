@@ -70,7 +70,7 @@ class _CupertinoIconsFullDefault extends State {
       }
     }
   }
-
+  @override
   Widget build(BuildContext context) {
     return
       Align(
