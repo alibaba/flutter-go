@@ -180,13 +180,13 @@ class _LoginPageState extends State<LoginPage> {
 
   // 登陆操作
   doLogin() {
+    print("doLogin");
     _signInFormKey.currentState.save();
     setState(() {
       isLoading = true;
     });
     DataUtils.doLogin({'username': username, 'password': password})
         .then((result) {
-      print(result);
       setState(() {
         isLoading = false;
       });
@@ -208,7 +208,7 @@ class _LoginPageState extends State<LoginPage> {
             (route) => route == null);
       }
     }).catchError((onError) {
-      print(onError);
+      print('onError ${onError}');
       setState(() {
         isLoading = false;
       });

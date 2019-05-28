@@ -2,10 +2,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/analytics.dart' show analytics;
-
 import '../widgets/index.dart';
 import './router_handler.dart';
-
+import '../standard_pages/index.dart';
 class Routes {
   static String root = "/";
   static String home = "/home";
@@ -13,6 +12,7 @@ class Routes {
   static String codeView = '/code-view';
   static String webViewPage = '/web-view-page';
   static String loginPage = '/loginpage';
+  static String standardPage = '/standard-page/:id';
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
@@ -36,5 +36,10 @@ class Routes {
       });
       router.define('${demo.routerName}', handler: handler);
     });
+    router.define(standardPage,handler:standardPageHandler);
+//    router.define(webViewPage,handler:webViewPageHand);
+//    standardPages.forEach((String id, String md) => {
+//
+//    });
   }
 }

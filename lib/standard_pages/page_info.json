@@ -1,0 +1,19 @@
+[
+  {
+    "name": "这是一个标准页1",
+    "desc": "详细描述1, 不显示",
+    "auth": "sanfan",
+    "email": "sanfan.hx@alibaba-inc.com",
+    "type": "standard",
+    "id": "172ba42f_0520_401e_b568_ba3f7f6835e4"
+  },
+  {
+    "name": "这是一个标准页2",
+    "desc": "详细描述2, 不显示",
+    "auth": "hanxu",
+    "email": "sanfan.hx@alibaba-inc.com",
+    "type": "standard",
+    "id": "172ba42f_0520_401e_b568_ba7f7f6835e4",
+    "version": "123123"
+  }
+]

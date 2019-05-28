@@ -49,7 +49,7 @@ class CollectionControlModel {
     List list = await sql.getByCondition();
     List<Collection> resultList = [];
     list.forEach((item){
-      print(item);
+      print('collection item =>> $item');
       resultList.add(Collection.fromJSON(item));
     });
     return resultList;

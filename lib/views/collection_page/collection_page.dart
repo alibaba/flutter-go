@@ -48,6 +48,8 @@ class _CollectionPageState extends State<CollectionPage> {
       resultList.forEach((item) {
         _collectionList.add(item);
       });
+      _collectionList.add(Collection(name:'test', router: '/standard-page/123'));
+      print("_collectionList ${_collectionList}");
       if (this.mounted) {
         setState(() {
           _collectionList = _collectionList;
