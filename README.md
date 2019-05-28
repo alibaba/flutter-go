@@ -24,15 +24,15 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 ## Release安装包下载地址
 
-android下载地址:
+### android正式版，下载地址:
 
-华为市场已上线，华为应用市场搜索 "Fluttergo"，或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
+- 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
+<img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
 
-iphone下载地址: 
+### iphone正式版，下载地址: 
 
-AppStore 上面进行搜索 "Fluttego" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
-
-<img src="https://img.alicdn.com/tfs/TB1trMgV7PoK1RjSZKbXXX1IXXa-620-1343.png" width=200> <img src="https://img.alicdn.com/tfs/TB1w_MbV7voK1RjSZFDXXXY3pXa-620-1343.png" width=200> 
+- AppStore 上面进行搜索 "Fluttego" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
+<img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
 
 
 ## 基础环境
