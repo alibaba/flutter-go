@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2019-01-14 17:44:47 
+/// @Author: 一凨
+/// @Date: 2019-01-14 17:44:47
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-14 19:47:14
 
@@ -11,6 +11,7 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
+import 'package:flutter_go/api/api.dart';
 
 class WebViewPage extends StatefulWidget {
   final String url;
@@ -21,6 +22,7 @@ class WebViewPage extends StatefulWidget {
 }
 
 class _WebViewPageState extends State<WebViewPage> {
+  final flutterWebviewPlugin = new FlutterWebviewPlugin();
   bool _hasCollected = false;
   String _router = '';
   var _collectionIcons;
@@ -30,6 +32,24 @@ class _WebViewPageState extends State<WebViewPage> {
   @override
   void initState() {
     super.initState();
+    flutterWebviewPlugin.onUrlChanged.listen((String url) {
+      print('url change:$url');
+      if (url.indexOf('${Api.RedirectIp}loginSuccess') == 0) {
+        String loginName = url.substring(url.indexOf('=') + 1);
+        if (ApplicationEvent.event != null) {
+          ApplicationEvent.event.fire(UserGithubOAuthEvent(loginName, true));
+        }
+        flutterWebviewPlugin.close();
+        // 验证成功
+      } else if (url.indexOf('${Api.RedirectIp}loginFail') == 0) {
+        // 验证失败
+        if (ApplicationEvent.event != null) {
+          ApplicationEvent.event.fire(UserGithubOAuthEvent('', true));
+        }
+        flutterWebviewPlugin.close();
+      }
+      // if(url == '${Api.RedirectIp}loginSuccess')
+    });
     _collectionControl
         .getRouterByName(Uri.encodeComponent(widget.title.trim()))
         .then((list) {
@@ -98,7 +118,7 @@ class _WebViewPageState extends State<WebViewPage> {
       _collectionIcons = Icons.favorite_border;
     }
     return Scaffold(
-       key: _scaffoldKey,
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
