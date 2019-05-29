@@ -17,12 +17,12 @@ class NetUtils {
     var response;
 
     // 设置代理 便于本地 charles 抓包
-    // (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-    //     (HttpClient client) {
-    //   client.findProxy = (uri) {
-    //     return "PROXY 30.10.26.193:8888";
-    //   };
-    // };
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.findProxy = (uri) {
+        return "PROXY 30.10.29.190:8888";
+      };
+    };
 
     Directory documentsDir = await getApplicationDocumentsDirectory();
     String documentsPath = documentsDir.path;

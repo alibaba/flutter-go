@@ -29,6 +29,7 @@ dependencies:
   shared_preferences: ^0.4.3
   flutter_spinkit: "^3.1.0"
   path_provider: ^1.0.0
+  fluttertoast: ^3.1.0
   dio: ^2.0.15
   flutter_webview_plugin: ^0.3.4
   cookie_jar: ^1.0.0

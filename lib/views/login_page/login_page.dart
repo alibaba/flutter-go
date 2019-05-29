@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:event_bus/event_bus.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/views/home.dart';
+import 'package:flutter_go/event/event_bus.dart';
+import 'package:flutter_go/event/event_model.dart';
 
 import 'package:flutter_go/model/user_info_cache.dart';
+import 'package:flutter_go/routers/application.dart';
+import 'package:flutter_go/routers/routers.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,6 +18,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  _LoginPageState() {
+    final eventBus = new EventBus();
+    ApplicationEvent.event = eventBus;
+  }
+
   // 利用FocusNode和_focusScopeNode来控制焦点 可以通过FocusNode.of(context)来获取widget树中默认的_focusScopeNode
   FocusNode _emailFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
@@ -47,27 +59,53 @@ class _LoginPageState extends State<LoginPage> {
     } catch (err) {
       print('读取用户本地存储的用户信息出错 $err');
     }
+
+    ApplicationEvent.event.on<UserGithubOAuthEvent>().listen((event) {
+      if (event.isSuccess == true) {
+        print('请求接口');
+        //  oAuth 认证成功
+        setState(() {
+          isLoading = true;
+        });
+        DataUtils.getUserInfo({'loginName': event.loginName}).then((result) {
+          print(result);
+          setState(() {
+            isLoading = false;
+          });
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => AppPage()),
+              (route) => route == null);
+        }).catchError((onError) {
+          print('获取身份信息 error:::$onError');
+          setState(() {
+            isLoading = false;
+          });
+        });
+      }
+      print('这是接受到的 event ${event.isSuccess}  ${event.loginName}');
+      // _getList();
+    });
   }
 
 // 创建登录界面的TextForm
   Widget buildSignInTextForm() {
-    return new Container(
-      decoration: new BoxDecoration(
+    return Container(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
       width: MediaQuery.of(context).size.width * 0.8,
       height: 190,
       //  * Flutter提供了一个Form widget，它可以对输入框进行分组，然后进行一些统一操作，如输入内容校验、输入框重置以及输入内容保存。
-      child: new Form(
+      child: Form(
         key: _signInFormKey,
-        child: new Column(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.only(
                     left: 25, right: 25, top: 20, bottom: 20),
-                child: new TextFormField(
+                child: TextFormField(
                   controller: _userNameEditingController,
                   //关联焦点
                   focusNode: _emailFocusNode,
@@ -78,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
                     _focusScopeNode.requestFocus(_passwordFocusNode);
                   },
 
-                  decoration: new InputDecoration(
-                      icon: new Icon(
+                  decoration: InputDecoration(
+                      icon: Icon(
                         Icons.email,
                         color: Colors.black,
                       ),
                       hintText: "Github 登录名",
                       border: InputBorder.none),
-                  style: new TextStyle(fontSize: 16, color: Colors.black),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                   //验证
                   validator: (value) {
                     if (value.isEmpty) {
@@ -100,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            new Container(
+            Container(
               height: 1,
               width: MediaQuery.of(context).size.width * 0.75,
               color: Colors.grey[400],
@@ -108,18 +146,18 @@ class _LoginPageState extends State<LoginPage> {
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
-                child: new TextFormField(
+                child: TextFormField(
                   controller: _passwordEditingController,
                   focusNode: _passwordFocusNode,
-                  decoration: new InputDecoration(
-                    icon: new Icon(
+                  decoration: InputDecoration(
+                    icon: Icon(
                       Icons.lock,
                       color: Colors.black,
                     ),
                     hintText: "Github 登录密码",
                     border: InputBorder.none,
-                    suffixIcon: new IconButton(
-                      icon: new Icon(
+                    suffixIcon: IconButton(
+                      icon: Icon(
                         Icons.remove_red_eye,
                         color: Colors.black,
                       ),
@@ -128,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   //输入密码，需要用*****显示
                   obscureText: !isShowPassWord,
-                  style: new TextStyle(fontSize: 16, color: Colors.black),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "密码不可为空!";
@@ -142,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            new Container(
+            Container(
               height: 1,
               width: MediaQuery.of(context).size.width * 0.75,
               color: Colors.grey[400],
@@ -154,15 +192,15 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget buildSignInButton() {
-    return new GestureDetector(
-      child: new Container(
+    return GestureDetector(
+      child: Container(
         padding: EdgeInsets.only(left: 42, right: 42, top: 10, bottom: 10),
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             color: Theme.of(context).primaryColor),
-        child: new Text(
+        child: Text(
           "LOGIN",
-          style: new TextStyle(fontSize: 25, color: Colors.white),
+          style: TextStyle(fontSize: 25, color: Colors.white),
         ),
       ),
       onTap: () {
@@ -186,7 +224,9 @@ class _LoginPageState extends State<LoginPage> {
     });
     DataUtils.doLogin({'username': username, 'password': password})
         .then((result) {
-      print(result);
+        if(result.runtimeType == String){
+          throw result;
+        }
       setState(() {
         isLoading = false;
       });
@@ -198,20 +238,28 @@ class _LoginPageState extends State<LoginPage> {
               .then((value) {
             // print('存储成功:$value');
             Navigator.of(context).pushAndRemoveUntil(
-                new MaterialPageRoute(builder: (context) => AppPage()),
+                MaterialPageRoute(builder: (context) => AppPage()),
                 (route) => route == null);
           });
         });
       } catch (err) {
         Navigator.of(context).pushAndRemoveUntil(
-            new MaterialPageRoute(builder: (context) => AppPage()),
+            MaterialPageRoute(builder: (context) => AppPage()),
             (route) => route == null);
       }
-    }).catchError((onError) {
-      print(onError);
+    }).catchError((errorMsg) {
       setState(() {
         isLoading = false;
       });
+      Fluttertoast.showToast(
+        msg: errorMsg.toString(),
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        backgroundColor: Theme.of(context).primaryColor,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
     });
   }
 
@@ -275,7 +323,27 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       buildSignInTextForm(),
                       buildSignInButton(),
-                      SizedBox(height: 35.0),
+                      SizedBox(height: 15.0),
+                      new Container(
+                        height: 1,
+                        width: MediaQuery.of(context).size.width * 0.75,
+                        color: Colors.grey[400],
+                        margin: const EdgeInsets.only(bottom: 10.0),
+                      ),
+                      FlatButton(
+                        child: Text(
+                          'Github OAuth 认证',
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              decoration: TextDecoration.underline),
+                        ),
+                        onPressed: () {
+                          // _launchURL('https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo');
+
+                          Application.router.navigateTo(context,
+                              '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}');
+                        },
+                      )
                     ],
                   ),
                   Positioned(
