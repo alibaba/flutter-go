@@ -27,6 +27,7 @@ dependencies:
   url_launcher: ^5.0.2
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
+  share: ^0.6.1+1
   flutter_spinkit: "^3.1.0"
   path_provider: ^1.0.0
   fluttertoast: ^3.1.0

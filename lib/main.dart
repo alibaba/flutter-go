@@ -11,6 +11,7 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 //import 'views/welcome_page/index.dart';
 
@@ -34,18 +35,27 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _hasLogin = false;
   bool _isLoading = true;
+  UserInformation _userInfo;
 
   @override
   void initState() {
     super.initState();
     DataUtils.checkLogin().then((hasLogin) {
+      if (hasLogin.runtimeType == UserInformation) {
+        setState(() {
+          _hasLogin = true;
+          _isLoading = false;
+          _userInfo = hasLogin;
+        });
+      } else {
+        setState(() {
+          _hasLogin = hasLogin;
+          _isLoading = false;
+        });
+      }
+    }).catchError((onError) {
       setState(() {
-        _hasLogin = hasLogin;
-        _isLoading = false;
-      });
-    }).catchError((onError){
-      setState(() {
-        _hasLogin = true;
+        _hasLogin = false;
         _isLoading = false;
       });
       print('身份信息验证失败:$onError');
@@ -63,7 +73,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       // 判断是否已经登录
       if (_hasLogin) {
-        return AppPage();
+        return AppPage(_userInfo);
       } else {
         return LoginPage();
       }

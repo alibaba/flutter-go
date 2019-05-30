@@ -1,5 +1,5 @@
 class Api{
-  static const String BASE_URL = 'http://30.10.29.190:6001/';
+  static const String BASE_URL = 'http://30.10.25.17:6001/';
   // static const String BASE_URL = 'http://flutter-go.alibaba.net/';
 
   static const String DO_LOGIN = BASE_URL+'doLogin';//登陆

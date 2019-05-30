@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_go/views/first_page/drawer_page.dart';
 import './first_page.dart';
 import './sub_page.dart';
 import './main_app_bar.dart';
 import './search_page.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 class _Page {
   final String labelId;
@@ -19,6 +21,10 @@ final List<_Page> _allPages = <_Page>[
 ];
 
 class MainPage extends StatelessWidget {
+  final UserInformation userInfo;
+
+  MainPage({Key key, this.userInfo}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     print("MainPagess build......");
@@ -29,7 +35,7 @@ class MainPage extends StatelessWidget {
             leading: Container(
                 child: new ClipOval(
               child: Image.network(
-                'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658',
+                userInfo.avatarPic,
                 scale: 15.0,
               ),
             )),
@@ -44,17 +50,8 @@ class MainPage extends StatelessWidget {
             ],
           ),
           drawer: Drawer(
-            child: new ListView(
-              children: <Widget>[
-                new ListTile(
-                  title: new Text("欢迎"),
-                ),
-                new Divider(),
-                new ListTile(
-                    title: new Text("设置"),
-                    trailing: new Icon(Icons.settings),
-                    onTap: () {}),
-              ],
+            child: DrawerPage(
+              userInfo: userInfo,
             ),
           ),
           body: TabBarViewLayout(),
