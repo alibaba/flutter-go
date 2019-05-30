@@ -59,4 +59,6 @@ class UserInfoControlModel {
   Future deleteAll() async{
     return await sql.deleteAll();
   }
+
+
 }

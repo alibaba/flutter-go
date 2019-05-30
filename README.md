@@ -26,7 +26,9 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 android下载地址:
 
-<img src="https://img.alicdn.com/tfs/TB1ylxGTMHqK1RjSZFgXXa7JXXa-436-432.png" width="200px">
+
+华为市场已上线，master分支上面已上传【FlutterGo.apk】apk包，可点击下载
+
 
 iphone下载地址: AppStore上面进行搜索fluttego
 
