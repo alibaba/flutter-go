@@ -61,13 +61,13 @@ class _LoginPageState extends State<LoginPage> {
     }
 
     ApplicationEvent.event.on<UserGithubOAuthEvent>().listen((event) {
+      print('loginName:${event.loginName} token:${event.token} 1234567');
       if (event.isSuccess == true) {
         //  oAuth 认证成功
         setState(() {
           isLoading = true;
         });
-        DataUtils.getUserInfo({'loginName': event.loginName}).then((result) {
-          print(result);
+        DataUtils.getUserInfo({'loginName': event.loginName,'token':event.token}).then((result) {
           setState(() {
             isLoading = false;
           });

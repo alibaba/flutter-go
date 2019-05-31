@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:share/share.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 
 class DrawerPage extends StatefulWidget {
   final UserInformation userInfo;
@@ -83,7 +84,12 @@ class _DrawerPageState extends State<DrawerPage> {
             '反馈/建议',
             style: textStyle,
           ),
-          onTap: () {},
+          onTap: () {
+            DataUtils.feedback({'title':"这是客户端 FeedBack title","body":"这是客户端 FeedBack body"})
+            .then((result){
+              print(result);
+            });
+          },
         ),
         ListTile(
           leading: Icon(

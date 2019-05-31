@@ -45,6 +45,13 @@ class DataUtils {
     }
   }
 
+  // 一键反馈
+  static Future feedback(Map<String, String> params) async {
+    var response = await NetUtils.post(Api.FEEDBACK, params);
+    print(response);
+    return response;
+  }
+
   // 退出登陆
   static Future<bool> logout() async {
     var response = await NetUtils.get(Api.LOGOUT);
@@ -60,8 +67,8 @@ class DataUtils {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     var localVersion = packageInfo.version;
     //相同=0、大于=1、小于=-1
-//    localVersion = '0.0.2';
-//    currVersion = '1.0.6';
+    //    localVersion = '0.0.2';
+    //    currVersion = '1.0.6';
     if (currVersion.compareTo(localVersion) == 1) {
       return true;
     } else {

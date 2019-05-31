@@ -20,7 +20,7 @@ class NetUtils {
     // (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
     //     (HttpClient client) {
     //   client.findProxy = (uri) {
-    //     return "PROXY 30.10.25.17:8888";
+    //     return "PROXY 30.10.27.34:8888";
     //   };
     // };
 
@@ -28,7 +28,6 @@ class NetUtils {
     String documentsPath = documentsDir.path;
     var dir = new Directory("$documentsPath/cookies");
     await dir.create();
-    // print('documentPath:${dir.path}');
     dio.interceptors.add(CookieManager(PersistCookieJar(dir: dir.path)));
     if (params != null) {
       response = await dio.get(url, queryParameters: params);
@@ -39,6 +38,18 @@ class NetUtils {
   }
 
   static Future post(String url, Map<String, dynamic> params) async {
+        // 设置代理 便于本地 charles 抓包
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.findProxy = (uri) {
+        return "PROXY 30.10.27.34:8888";
+      };
+    };
+    Directory documentsDir = await getApplicationDocumentsDirectory();
+    String documentsPath = documentsDir.path;
+    var dir = new Directory("$documentsPath/cookies");
+    await dir.create();
+    dio.interceptors.add(CookieManager(PersistCookieJar(dir: dir.path)));
     var response = await dio.post(url, data: params);
     return response.data;
   }
