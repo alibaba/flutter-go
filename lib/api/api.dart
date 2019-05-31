@@ -11,4 +11,5 @@ class Api{
   static const String GET_USER_INFO = BASE_URL+'getUserInfo';//获取用户信息
 
   static const String RedirectIp = 'http://100.81.211.172/';
+  static const String VERSION = BASE_URL+'getAppVersion';//检查版本
 }

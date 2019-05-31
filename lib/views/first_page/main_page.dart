@@ -43,7 +43,7 @@ class MainPage extends StatelessWidget {
             title: TabLayout(),
             actions: <Widget>[
               IconButton(
-                  icon: Icon(Icons.search),
+                  icon:  Icon(Icons.search),
                   onPressed: () {
                     pushPage(context, SearchPage(), pageName: "SearchPage");
                   })
@@ -75,7 +75,10 @@ class TabLayout extends StatelessWidget {
       //labelPadding: EdgeInsets.all(12.0),
       labelPadding: EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
       indicatorSize: TabBarIndicatorSize.label,
-      tabs: _allPages.map((_Page page) => Tab(text: page.labelId)).toList(),
+      tabs: _allPages
+          .map((_Page page) =>
+          Tab(text: page.labelId))
+          .toList(),
     );
   }
 }
@@ -107,7 +110,7 @@ class TabBarViewLayout extends StatelessWidget {
     print("TabBarViewLayout build.......");
     return TabBarView(
         children: _allPages.map((_Page page) {
-      return buildTabView(context, page);
-    }).toList());
+          return buildTabView(context, page);
+        }).toList());
   }
 }
