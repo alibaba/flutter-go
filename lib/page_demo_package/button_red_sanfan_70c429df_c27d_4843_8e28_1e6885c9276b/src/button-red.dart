@@ -9,7 +9,7 @@ class _State extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("this is a cli init demo"),
+      child: Text("this is a cli init demo change haha"),
     );
   }
 }
