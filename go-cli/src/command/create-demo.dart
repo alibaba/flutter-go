@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:args/args.dart'; // 使用其中两个类ArgParser和ArgResults
 import 'package:dart_inquirer/dart_inquirer.dart';
 import 'package:args/command_runner.dart';
-import '../build/build_demo.dart';
+import '../build/build_demo_list.dart';
 import '../config.dart';
 import '../../utils/util.dart';
 

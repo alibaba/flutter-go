@@ -7,12 +7,15 @@
 // target:  xxx
 //
 
+
+import 'package:console/console.dart';
+
 class InvalidDemo implements Exception {
   final String details;
   InvalidDemo(this.details);
 
   @override
   String toString() {
-    return 'Invalid demo happends: $details';
+    return format('{color.red}Invalid demo happends:  $details {color.normal}');
   }
 }
