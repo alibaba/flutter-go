@@ -35,7 +35,7 @@ class MainPage extends StatelessWidget {
             leading: Container(
                 child: new ClipOval(
               child: Image.network(
-                userInfo.avatarPic,
+                userInfo.id == 0?'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658':userInfo.avatarPic,
                 scale: 15.0,
               ),
             )),

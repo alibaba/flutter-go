@@ -377,7 +377,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
-                                      builder: (context) => AppPage(UserInformation(id: 0,avatarPic: 'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658'))),
+                                      builder: (context) => AppPage(UserInformation(id: 0))),
                                   (route) => route == null);
                             },
                           )

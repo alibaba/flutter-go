@@ -25,6 +25,7 @@ import 'package:flutter_go/model/user_info.dart';
 const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
+  
   final UserInformation userInfo;
 
   AppPage(this.userInfo);
