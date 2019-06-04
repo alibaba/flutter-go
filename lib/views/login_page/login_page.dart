@@ -11,6 +11,7 @@ import 'package:flutter_go/event/event_model.dart';
 import 'package:flutter_go/model/user_info_cache.dart';
 import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -47,7 +48,6 @@ class _LoginPageState extends State<LoginPage> {
       _userInfoControlModel.getAllInfo().then((list) {
         if (list.length > 0) {
           UserInfo _userInfo = list[0];
-          print('获取的数据：${_userInfo.username} ${_userInfo.password}');
           setState(() {
             _userNameEditingController.text = _userInfo.username;
             _passwordEditingController.text = _userInfo.password;
@@ -61,19 +61,18 @@ class _LoginPageState extends State<LoginPage> {
     }
 
     ApplicationEvent.event.on<UserGithubOAuthEvent>().listen((event) {
+      print('loginName:${event.loginName} token:${event.token} 1234567');
       if (event.isSuccess == true) {
-        print('请求接口');
         //  oAuth 认证成功
         setState(() {
           isLoading = true;
         });
-        DataUtils.getUserInfo({'loginName': event.loginName}).then((result) {
-          print(result);
+        DataUtils.getUserInfo({'loginName': event.loginName,'token':event.token}).then((result) {
           setState(() {
             isLoading = false;
           });
           Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => AppPage()),
+              MaterialPageRoute(builder: (context) => AppPage(result)),
               (route) => route == null);
         }).catchError((onError) {
           print('获取身份信息 error:::$onError');
@@ -81,9 +80,16 @@ class _LoginPageState extends State<LoginPage> {
             isLoading = false;
           });
         });
+      } else {
+        Fluttertoast.showToast(
+            msg: '验证失败',
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1,
+            backgroundColor: Theme.of(context).primaryColor,
+            textColor: Colors.white,
+            fontSize: 16.0);
       }
-      print('这是接受到的 event ${event.isSuccess}  ${event.loginName}');
-      // _getList();
     });
   }
 
@@ -223,10 +229,10 @@ class _LoginPageState extends State<LoginPage> {
       isLoading = true;
     });
     DataUtils.doLogin({'username': username, 'password': password})
-        .then((result) {
-        if(result.runtimeType == String){
-          throw result;
-        }
+        .then((userResult) {
+      if (userResult.runtimeType == String) {
+        throw userResult;
+      }
       setState(() {
         isLoading = false;
       });
@@ -236,15 +242,15 @@ class _LoginPageState extends State<LoginPage> {
           _userInfoControlModel
               .insert(UserInfo(password: password, username: username))
               .then((value) {
-            // print('存储成功:$value');
+            print('存储成功:$value');
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => AppPage()),
+                MaterialPageRoute(builder: (context) => AppPage(userResult)),
                 (route) => route == null);
           });
         });
       } catch (err) {
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => AppPage()),
+            MaterialPageRoute(builder: (context) => AppPage(userResult)),
             (route) => route == null);
       }
     }).catchError((errorMsg) {
@@ -252,14 +258,13 @@ class _LoginPageState extends State<LoginPage> {
         isLoading = false;
       });
       Fluttertoast.showToast(
-        msg: errorMsg.toString(),
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
-        backgroundColor: Theme.of(context).primaryColor,
-        textColor: Colors.white,
-        fontSize: 16.0
-    );
+          msg: errorMsg.toString(),
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 1,
+          backgroundColor: Theme.of(context).primaryColor,
+          textColor: Colors.white,
+          fontSize: 16.0);
     });
   }
 
@@ -315,11 +320,28 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       SizedBox(height: 35.0),
-                      Image.asset(
-                        'assets/images/FlutterGo.png',
-                        fit: BoxFit.contain,
-                        width: 100.0,
-                        height: 100.0,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset(
+                            'assets/images/gitHub.png',
+                            fit: BoxFit.contain,
+                            width: 60.0,
+                            height: 60.0,
+                          ),
+                          Image.asset(
+                            'assets/images/arrow.png',
+                            fit: BoxFit.contain,
+                            width: 40.0,
+                            height: 30.0,
+                          ),
+                          Image.asset(
+                            'assets/images/FlutterGo.png',
+                            fit: BoxFit.contain,
+                            width: 60.0,
+                            height: 60.0,
+                          ),
+                        ],
                       ),
                       buildSignInTextForm(),
                       buildSignInButton(),
@@ -330,19 +352,36 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.grey[400],
                         margin: const EdgeInsets.only(bottom: 10.0),
                       ),
-                      FlatButton(
-                        child: Text(
-                          'Github OAuth 认证',
-                          style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              decoration: TextDecoration.underline),
-                        ),
-                        onPressed: () {
-                          // _launchURL('https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo');
-
-                          Application.router.navigateTo(context,
-                              '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}');
-                        },
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          FlatButton(
+                            child: Text(
+                              'Github OAuth 认证',
+                              style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  decoration: TextDecoration.underline),
+                            ),
+                            onPressed: () {
+                              Application.router.navigateTo(context,
+                                  '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}');
+                            },
+                          ),
+                          FlatButton(
+                            child: Text(
+                              '游客登录',
+                              style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  decoration: TextDecoration.underline),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (context) => AppPage(UserInformation(id: 0))),
+                                  (route) => route == null);
+                            },
+                          )
+                        ],
                       )
                     ],
                   ),

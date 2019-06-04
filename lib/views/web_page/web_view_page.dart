@@ -34,22 +34,37 @@ class _WebViewPageState extends State<WebViewPage> {
     super.initState();
     flutterWebviewPlugin.onUrlChanged.listen((String url) {
       print('url change:$url');
-      if (url.indexOf('${Api.RedirectIp}loginSuccess') == 0) {
-        String loginName = url.substring(url.indexOf('=') + 1);
-        if (ApplicationEvent.event != null) {
-          ApplicationEvent.event.fire(UserGithubOAuthEvent(loginName, true));
+      if (url.indexOf('loginSuccess') > -1) {
+        String urlQuery = url.substring(url.indexOf('?') + 1);
+        String loginName, token;
+        List<String> queryList = urlQuery.split('&');
+        for (int i = 0; i < queryList.length; i++) {
+          String queryNote = queryList[i];
+          int eqIndex = queryNote.indexOf('=');
+          if (queryNote.substring(0, eqIndex) == 'loginName') {
+            loginName = queryNote.substring(eqIndex + 1);
+          }
+          if (queryNote.substring(0, eqIndex) == 'accessToken') {
+            token = queryNote.substring(eqIndex + 1);
+          }
         }
+        if (ApplicationEvent.event != null) {
+          ApplicationEvent.event
+              .fire(UserGithubOAuthEvent(loginName, token, true));
+        }
+        print('ready close');
+        
         flutterWebviewPlugin.close();
         // 验证成功
       } else if (url.indexOf('${Api.RedirectIp}loginFail') == 0) {
         // 验证失败
         if (ApplicationEvent.event != null) {
-          ApplicationEvent.event.fire(UserGithubOAuthEvent('', true));
+          ApplicationEvent.event.fire(UserGithubOAuthEvent('', '', true));
         }
         flutterWebviewPlugin.close();
       }
-      // if(url == '${Api.RedirectIp}loginSuccess')
     });
+
     _collectionControl
         .getRouterByName(Uri.encodeComponent(widget.title.trim()))
         .then((list) {

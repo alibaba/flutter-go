@@ -20,10 +20,16 @@ import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
+  
+  final UserInformation userInfo;
+
+  AppPage(this.userInfo);
+
   @override
   State<StatefulWidget> createState() {
     return _MyHomePageState();
@@ -40,7 +46,7 @@ class _MyHomePageState extends State<AppPage>
   List<Widget> _list = List();
   int _currentIndex = 0;
   static List tabData = [
-//    {'text': '业界动态', 'icon': Icon(Icons.language)},
+    {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
@@ -62,7 +68,7 @@ class _MyHomePageState extends State<AppPage>
     }
     _list
 //      ..add(FirstPage())
-//      ..add(MainPage())
+      ..add(MainPage(userInfo: widget.userInfo))
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -118,10 +124,9 @@ class _MyHomePageState extends State<AppPage>
   }
 
   renderAppBar(BuildContext context, Widget widget, int index) {
-//    print('renderAppBar=====>>>>>>${index}');
-//    if (index == 0) {
-//      return null;
-//    }
+    if (index == 0) {
+      return null;
+    }
     return AppBar(title: buildSearchInput(context));
   }
 

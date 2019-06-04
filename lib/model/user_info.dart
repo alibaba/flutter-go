@@ -1,24 +1,25 @@
-class UserInfo {
+class UserInformation {
   String username;
   int id;
   String avatarPic;
   String themeColor;
-  String urlName;
 
-  UserInfo({
+  UserInformation({
     this.avatarPic,
     this.id,
     this.themeColor,
-    this.urlName,
     this.username,
   });
 
-  factory UserInfo.fromJson(Map<String, dynamic> json) {
-    return UserInfo(
+  factory UserInformation.fromJson(Map<String, dynamic> json) {
+    String name = json['name'];
+    if(json['name'] == null){
+      name = json['url_name'];
+    }
+    return UserInformation(
         avatarPic: json['avatar_pic'],
         id: int.parse(json['id']),
-        username: json['name'],
-        themeColor: json['theme_color'],
-        urlName: json['url_name']);
+        username: name,
+        themeColor: json['theme_color']);
   }
 }

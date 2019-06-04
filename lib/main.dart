@@ -1,10 +1,6 @@
-import 'dart:async';
-import 'dart:core';
-
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,6 +11,7 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 //import 'views/welcome_page/index.dart';
 
@@ -38,62 +35,49 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _hasLogin = false;
   bool _isLoading = true;
+  UserInformation _userInfo;
 
   @override
-  Future initState() {
+  void initState() {
     super.initState();
-    var platformAandroid =
-        (Theme.of(context).platform == TargetPlatform.android);
-    DataUtils.checkVersion({'name': 'FlutterGo'}).then((bool) {
-      print("返回值back ${bool}");
-      if (platformAandroid && bool) {
-        setState(() {});
-        _UpdateURL();
+    DataUtils.checkLogin().then((hasLogin) {
+      if (hasLogin.runtimeType == UserInformation) {
+        setState(() {
+          _hasLogin = true;
+          _isLoading = false;
+          _userInfo = hasLogin;
+        });
+      } else {
+        setState(() {
+          _hasLogin = hasLogin;
+          _isLoading = false;
+        });
       }
     }).catchError((onError) {
-      print('获取失败:$onError');
-    });
-
-    DataUtils.checkLogin().then((hasLogin) {
       setState(() {
-        _hasLogin = hasLogin;
-        _isLoading = false;
-      });
-    }).catchError((onError) {
-      setState(() {
-        _hasLogin = true;
+        _hasLogin = false;
         _isLoading = false;
       });
       print('身份信息验证失败:$onError');
     });
   }
 
-  _UpdateURL() async {
-    const currUrl =
-        'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk';
-    if (await canLaunch(currUrl)) {
-      await launch(currUrl);
-    } else {
-      throw 'Could not launch $currUrl';
-    }
-  }
-
   showWelcomePage() {
-//    if (_isLoading) {
-//      return Container(
-//        color: const Color(ThemeColor),
-//        child: Center(
-//          child: SpinKitPouringHourglass(color: Colors.white),
-//        ),
-//      );
-//    } else {
-//      // 判断是否已经登录
-//      if (_hasLogin) {
-        return AppPage();
-//      } else {
-//        return LoginPage();
-//      }
-//    }
+    if (_isLoading) {
+      return Container(
+        color: const Color(ThemeColor),
+        child: Center(
+          child: SpinKitPouringHourglass(color: Colors.white),
+        ),
+      );
+    } else {
+      // 判断是否已经登录
+      if (_hasLogin) {
+        return AppPage(_userInfo);
+      } else {
+        return LoginPage();
+      }
+    }
   }
 
   @override
@@ -114,7 +98,6 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       home: new Scaffold(body: showWelcomePage()),
-      //去掉debug logo
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
