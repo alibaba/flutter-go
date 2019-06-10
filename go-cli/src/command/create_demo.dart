@@ -1,8 +1,11 @@
 import 'dart:io';
 import 'package:args/args.dart'; // 使用其中两个类ArgParser和ArgResults
 import 'package:dart_inquirer/dart_inquirer.dart';
+import 'package:console/console.dart';
+import 'package:path/path.dart' as p;
 import 'package:args/command_runner.dart';
 import '../build/build_demo_list.dart';
+
 import '../config.dart';
 import '../../utils/util.dart';
 
@@ -17,11 +20,13 @@ class DemoDetail {
   String desc;
   String id;
   DemoDetail.fromJson(Map<dynamic, dynamic> json) {
-    name = json['name'];
-    author = json['author'];
-    email = json['email'];
-    desc = json['desc'];
-    id = json['id'] ?? generateDemoId();
+    name = json['name'].trim();
+    author = json['author'].trim();
+    email = json['email'].trim();
+    desc = json['desc'].trim();
+    id = json['id'] ?? generateId();
+
+
   }
 }
 // 同时，argResults也是ArgResults的实例
@@ -34,17 +39,17 @@ void createDemo() async {
     InputQuestion('desc', '请输入您demo的描述'),
   ];
 
-  Map answers = {};
+  Map<dynamic, dynamic> answers = {};
   // 获取初次信息
   Prompt prompt = Prompt(questions);
   DemoDetail demoDetail;
   answers = await prompt.execute();
+
   print(Seperator());
   print('您新增的组件信息如下');
   print(Seperator('='));
   prettyPrintJson(answers);
   print(Seperator('='));
-
 
   questions =[ConfirmQuestion('confirm', 'Is this the config you want ?')];
   prompt = Prompt(questions);
@@ -54,13 +59,13 @@ void createDemo() async {
   }
   demoDetail = DemoDetail.fromJson(answers);
 
-  var demoPath = '$TARGET_FILE_DIC/${demoDetail.name}_${demoDetail.author}_${demoDetail.id}';
+  var demoPath = '$TARGET_DEMO_DIC/${demoDetail.name}_${demoDetail.author}_${demoDetail.id}';
 
   // 创建root文件
   await createFile(demoPath);
   await createFile('$demoPath/src');
-  print("demoPath>>>> ${environmentVars['PWD']}/${demoPath}");
-  writeContent2Path('$demoPath/src/', '${demoDetail.name}.dart', """
+//  print("demoPath>>>> ${environmentVars['PWD']}/${demoPath}");
+  writeContent2Path('$demoPath/src/', 'index.dart', """
 import 'package:flutter/material.dart';
 
 class Demo extends StatefulWidget {
@@ -98,13 +103,19 @@ class _State extends State<Demo> {
 // desc:  ${demoDetail.desc}
 //
 
-import 'src/${demoDetail.name}.dart';
+import 'src/index.dart';
 
 var demoWidgets = [
   new Demo()
 ];
 
   """);
+//  format('{color.red}Invalid demo happends:  $details {color.normal}');
+  prettyPrintJson({
+    '新建的demo文件位于': p.absolute((demoPath)),
+    'demoId为': demoDetail.id,
+    'markdown中调用方式': '[demo:${demoDetail.id}]'
+  });
   buildDemoListJson();
 }
 

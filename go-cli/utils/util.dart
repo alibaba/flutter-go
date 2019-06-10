@@ -12,6 +12,11 @@ Future<bool> createFile(String path) async {
   await tempDic.createSync(recursive: true);
   return Future(() => true);
 }
+Future<String> readeFile(String path) async {
+  String content = await new File(path).readAsString();
+  return Future(() => content);
+}
+
 // 该文件调用的时候. 必须存在父级文件夹
 Future<void> writeContent2Path(String path,String fileName, String content) async {
   var file = File('$path/$fileName');
@@ -21,7 +26,7 @@ Future<void> writeContent2Path(String path,String fileName, String content) asyn
   await sink.close();
   return Future.value();
 }
-String generateDemoId() {
+String generateId() {
   int d = DateTime.now().millisecondsSinceEpoch;
   var random = new Random(1);
   var template = 'xxxxxxxx_xxxx_4xxx_yxxx_xxxxxxxxxxxx';
@@ -52,5 +57,8 @@ Future<List<FileSystemEntity>> readeDirChildren(String path, [bool recursive = f
     print('读取文件失败 ${e.toString()}');
     return Future(() => []);
   }
-
 }
+
+//void main() {
+//  readeFile('/Users/ontwo/Documents/ali/flutter/flutter-common-widgets-app/LICENSE');
+//}
