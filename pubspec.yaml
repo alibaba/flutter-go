@@ -200,6 +200,8 @@ flutter:
   - lib/widgets/themes/Cupertino/CupertinoTabScaffold/demo.dart
   - lib/widgets/themes/Cupertino/CupertinoTabView/demo.dart
   - lib/widgets/themes/Cupertino/CupertinoTimerPicker/demo.dart
+  - lib/page_demo_package/.demo.json
+  - lib/standard_pages/.pages.json
   - assets/app.db
   - assets/images/
   - assets/fonts/

@@ -121,9 +121,9 @@ packages:
   flutter_markdown:
     dependency: "direct main"
     description:
-      name: flutter_markdown
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../flutter_markdown"
+      relative: true
+    source: path
     version: "0.2.0"
   flutter_spinkit:
     dependency: "direct main"

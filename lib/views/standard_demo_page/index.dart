@@ -9,9 +9,15 @@
 
 import 'package:flutter/material.dart';
 import '../../components/widget_demo.dart';
+import 'dart:convert';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../standard_pages/index.dart';
 import '../../page_demo_package/index.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+
+import 'package:flutter_go/routers/application.dart';
 
 // ONLINE || LOCAL
 const Env = 'LOCAL' ;
@@ -27,13 +33,33 @@ class StandardView extends StatefulWidget {
 
 class _StandardView extends State<StandardView> {
   String markdownDesc = '# this is header';
+  String pageTitle = "XXX";
+  String author = '';
+  String email = '';
   StandardPages standardPage = new StandardPages();
   @override
   void initState() {
 
     super.initState();
+    getPagesInfo();
     this.getContent();
   }
+
+
+  Future<void> getPagesInfo() async {
+    String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
+    List jsonList = json.decode(jsonString);
+    Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id);
+    if (pageDetail != null) {
+      setState(() {
+        pageTitle = pageDetail['name'];
+        author = pageDetail['author'];
+        email = pageDetail['email'];
+      });
+    }
+
+  }
+
 
   String _getContentFromLocal() {
 
@@ -86,10 +112,12 @@ class _StandardView extends State<StandardView> {
   @override
   Widget build(BuildContext context) {
     return new WidgetDemo(
-      title: 'title',
+      title: pageTitle,
       codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
       contentList: [
-        buildMarkdown()
+        buildMarkdown(),
+        '创建者: $author',
+        '创建者: $email',
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );

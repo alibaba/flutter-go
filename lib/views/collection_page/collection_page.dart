@@ -48,7 +48,7 @@ class _CollectionPageState extends State<CollectionPage> {
       resultList.forEach((item) {
         _collectionList.add(item);
       });
-      _collectionList.add(Collection(name:'test', router: '/standard-page/page1_hanxu_172ba42f_0520_401e_b568_ba7f7f6835e4'));
+      _collectionList.add(Collection(name:'test', router: '/standard-page/facca78e_32ae_4241_9c8a_5c9e1f92b096'));
       print("_collectionList ${_collectionList}");
       if (this.mounted) {
         setState(() {
