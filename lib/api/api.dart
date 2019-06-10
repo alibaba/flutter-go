@@ -16,4 +16,12 @@ class Api{
   static const String FEEDBACK = BASE_URL+'auth/feedback';//建议反馈
 
   static  const String LOTOUT = BASE_URL+'logout';//退出登陆
+
+  static const String GET_ALL_COLLECTION = BASE_URL+'auth/getAllUserCollection';//获取全部收藏
+
+  static const String REMOVE_COLLECTION = BASE_URL+'auth/removeCollection';//移除收藏
+
+  static const String ADD_COLLECTION = BASE_URL+'auth/addCollection';//添加收藏
+  
+  static const String CHECK_COLLECTED = BASE_URL+'auth/checkCollected';//校验收藏
 }

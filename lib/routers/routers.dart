@@ -13,6 +13,8 @@ class Routes {
   static String codeView = '/code-view';
   static String webViewPage = '/web-view-page';
   static String loginPage = '/loginpage';
+  static String collectionPage = '/collection-page';
+  static String collectionFullPage = '/collection-full-page';
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
@@ -20,7 +22,8 @@ class Routes {
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
         });
     router.define(home, handler: homeHandler);
-
+    router.define(collectionPage,handler:collectionHandler);
+    router.define(collectionFullPage,handler:collectionFullHandler);
     router.define('/category/:type', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
     router.define(loginPage, handler: loginPageHandler);
