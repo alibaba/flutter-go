@@ -10,7 +10,8 @@
 import 'package:flutter/material.dart';
 import '../../components/widget_demo.dart';
 import 'dart:convert';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import '../../components/markdown.dart' as mdCopy;
+import '../../components/flutter_markdown/lib/flutter_markdown.dart';
 import '../../standard_pages/index.dart';
 import '../../page_demo_package/index.dart';
 import 'package:flutter/services.dart';
@@ -52,7 +53,7 @@ class _StandardView extends State<StandardView> {
     Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id);
     if (pageDetail != null) {
       setState(() {
-        pageTitle = pageDetail['name'];
+        pageTitle = pageDetail['title'] ?? '请加入title';
         author = pageDetail['author'];
         email = pageDetail['email'];
       });
@@ -95,14 +96,17 @@ class _StandardView extends State<StandardView> {
 
     return MarkdownBody(
         data: contentList[widget.id],
+        syntaxHighlighter:new mdCopy.HighLight(),
         demoBuilder: (Map<String, dynamic> attrs) {
           List<Widget> demo = demoObjects[attrs['id']];
           if (demo == null) {
+            String errString = "not found ${attrs['id']} in demo packages";
+            debugPrint(errString);
             demo = [
-              Text("none")
+              Text(errString)
             ];
           }
-          print(" demoObjects[attrs['id']]: ${ demoObjects[attrs['id']]}");
+
           return Column(
             children: demo
           );
@@ -116,8 +120,10 @@ class _StandardView extends State<StandardView> {
       codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
       contentList: [
         buildMarkdown(),
+        SizedBox(height: 30),
         '创建者: $author',
         '创建者: $email',
+        'id: ${widget.id}',
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
