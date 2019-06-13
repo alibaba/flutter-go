@@ -20,6 +20,7 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
       index = _index;
     });
   }
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,

@@ -101,7 +101,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
       // 插入操作
       _collectionControl
           .insert(Collection(name: widget.title, router: _router))
-          .then((result) {
+          .then((result) {  
         if (this.mounted) {
           setState(() {
             _hasCollected = true;
