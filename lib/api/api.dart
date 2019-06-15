@@ -10,3 +10,4 @@ class Api{
 
   static const String VERSION = BASE_URL+'getAppVersion';//检查版本
 }
+
