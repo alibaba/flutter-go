@@ -1,2 +1,0 @@
-require('./list');
-require('./demo');
