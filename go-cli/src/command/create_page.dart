@@ -26,12 +26,14 @@ ArgResults argResults; // 声明ArgResults类型的顶级变量，保存解析�
 class PageDetail {
   String name;
   String author;
+  String title;
   String email;
   String desc;
   String id;
   PageDetail.fromJson(Map<dynamic, dynamic> json) {
     name = json['name'];
     author = json['author'];
+    title = json['title'];
     email = json['email'];
     desc = json['desc'];
     id = json['id'] ?? generateId();
@@ -41,7 +43,8 @@ class PageDetail {
 void createPage() async {
   Map environmentVars = Platform.environment;
   List<Question> questions = [
-    InputQuestion('name', '请输入新增加的界面名称?'),
+    InputQuestion('name', '请输入文件名称?'),
+    InputQuestion('title', '请输入界面名称?'),
     InputQuestion('author', '请输入您的姓名(使用英文)'),
     InputQuestion('email', '请输入您的email地址'),
     InputQuestion('desc', '请输入您界面的简要'),
@@ -70,12 +73,13 @@ void createPage() async {
 
   // 创建root文件
   await createFile(demoPath);
-  print("demoPath>>>> ${environmentVars['PWD']}/${demoPath}");
+
+  pageMarkdown = await readeFile("${environmentVars['PWD']}/go-cli/utils/tpl.md");
+
   writeContent2Path('$demoPath/', 'index.dart', """
 String getMd() {
   return \"\"\"
   ${pageMarkdown}\"\"\";
-
 
 }
 """);
@@ -85,6 +89,7 @@ String getMd() {
   "name": "${pageDetail.name}",
   "screenShot": "",
   "author":"${pageDetail.author}",
+  "title":"${pageDetail.title}",
   "email": "${pageDetail.email}",
   "desc": "${pageDetail.desc}",
   "id": "${pageDetail.id}"
@@ -93,6 +98,11 @@ String getMd() {
 
   writeContent2Path('$demoPath/', 'index.md', pageMarkdown);
   buildPageListJson();
+  prettyPrintJson({
+    '界面位于': demoPath,
+    'Id': pageDetail.id,
+    '文件夹名称': '${pageDetail.name}_${pageDetail.author}_${pageDetail.id}'
+  });
 }
 
 
