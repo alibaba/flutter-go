@@ -9,7 +9,7 @@ class _State extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("this is flutter go init demo"),
+      child: RaisedButton(onPressed: () {}, child: Text('以下方式引入的demo'))
     );
   }
 }
