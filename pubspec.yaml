@@ -7,7 +7,7 @@ description: flutter_go
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.0.0
+version: 1.0.6
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -27,7 +27,6 @@ dependencies:
   # 本地存储、收藏功能
   shared_preferences: ^0.4.3
   flutter_spinkit: "^3.1.0"
-  path_provider: ^1.0.0
   dio: ^2.0.15
   flutter_webview_plugin: ^0.3.4
   cookie_jar: ^1.0.0
@@ -44,6 +43,11 @@ dependencies:
   meta: ^1.0.5
   string_scanner: ^1.0.0
   path: ^1.5.1
+  flutter_downloader: ^1.1.7
+  path_provider: ^1.1.0
+  permission_handler: ^3.0.0
+  open_file: ^2.0.1+2
+  package_info: ^0.4.0+3
 
 dev_dependencies:
   flutter_test:

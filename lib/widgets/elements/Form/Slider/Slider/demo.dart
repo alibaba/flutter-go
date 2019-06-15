@@ -14,7 +14,7 @@ class SliderDemo extends StatefulWidget {
 
 class _Demo extends State<SliderDemo> {
   double value = 0.0;
-
+  @override
   Widget build(BuildContext context) {
     return Slider(
       value: value,
@@ -42,7 +42,7 @@ class SliderThemeDemo extends StatefulWidget {
 
 class _SliderThemeDemo extends State<SliderThemeDemo> {
   double value = 0.0;
-
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: SliderTheme(

@@ -7,4 +7,6 @@ class Api{
   static const String CHECK_LOGIN = BASE_URL+'checkLogin';//验证登陆
   
   static const String LOGOUT = BASE_URL+'logout';//退出登陆
+
+  static const String VERSION = BASE_URL+'getAppVersion';//检查版本
 }

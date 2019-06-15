@@ -82,6 +82,7 @@ class _CupertinoNavigationBarFullDefault extends State {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: MediaQuery.of(context).size.height/1.5,
