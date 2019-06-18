@@ -12,6 +12,7 @@ import 'package:flutter_go/utils/analytics.dart' as Analytics;
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_jpush/flutter_jpush.dart';
 
 //import 'views/welcome_page/index.dart';
 
@@ -36,10 +37,61 @@ class _MyAppState extends State<MyApp> {
   bool _hasLogin = false;
   bool _isLoading = true;
   UserInformation _userInfo;
+  bool isConnected = false;
+  String registrationId;
+  List notificationList = [];
 
   @override
   void initState() {
     super.initState();
+    _startupJpush();
+
+    FlutterJPush.addConnectionChangeListener((bool connected) {
+      setState(() {
+        /// 是否连接，连接了才可以推送
+        print("连接状态改变:$connected");
+        this.isConnected = connected;
+        if (connected) {
+          //在启动的时候会去连接自己的服务器，连接并注册成功之后会返回一个唯一的设备号
+          FlutterJPush.getRegistrationID().then((String regId) {
+            print("主动获取设备号:$regId");
+            setState(() {
+              this.registrationId = regId;
+            });
+          });
+        }
+      });
+    });
+
+    FlutterJPush
+        .addReceiveNotificationListener((JPushNotification notification) {
+      setState(() {
+        /// 收到推送
+        print("收到推送提醒: $notification");
+        notificationList.add(notification);
+      });
+    });
+
+    FlutterJPush
+        .addReceiveOpenNotificationListener((JPushNotification notification) {
+      setState(() {
+        print("打开了推送提醒: $notification");
+
+        /// 打开了推送提醒
+        notificationList.add(notification);
+      });
+    });
+
+    FlutterJPush.addReceiveCustomMsgListener((JPushMessage msg) {
+      setState(() {
+        print("收到推送消息提醒: $msg");
+
+        /// 打开了推送提醒
+        notificationList.add(msg);
+      });
+    });
+
+
     DataUtils.checkLogin().then((hasLogin) {
       if (hasLogin.runtimeType == UserInformation) {
         setState(() {
@@ -104,6 +156,15 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
+void _startupJpush() async {
+  print("初始化jpush");
+  await FlutterJPush.startup();
+  print("初始化jpush成功");
+}
+
 
 void main() async {
   final provider = new Provider();
