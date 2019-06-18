@@ -47,6 +47,7 @@ dependencies:
   permission_handler: ^3.0.0
   open_file: ^2.0.1+2
   package_info: ^0.4.0+3
+  flutter_jpush: ^0.0.4
 
 dev_dependencies:
   flutter_test:

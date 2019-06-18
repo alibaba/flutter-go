@@ -125,6 +125,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.7"
+  flutter_jpush:
+    dependency: "direct main"
+    description:
+      name: flutter_jpush
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   flutter_markdown:
     dependency: "direct main"
     description:
@@ -213,7 +220,7 @@ packages:
       name: open_file
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   package_info:
     dependency: "direct main"
     description:
