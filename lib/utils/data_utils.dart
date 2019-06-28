@@ -2,6 +2,7 @@ import 'dart:async' show Future;
 
 import 'package:flutter_go/model/version.dart';
 import 'package:package_info/package_info.dart';
+import 'package:flutter_go/model/responseData.dart';
 
 import './net_utils.dart';
 import '../model/user_info.dart';
@@ -48,8 +49,14 @@ class DataUtils {
   // 一键反馈
   static Future feedback(Map<String, String> params) async {
     var response = await NetUtils.post(Api.FEEDBACK, params);
-    print(response);
-    return response;
+    ResponseData responseData=ResponseData.fromJson(response);
+    print("responseData:$responseData");
+    var status= responseData.status;
+    if(status==200){
+      return '成功';
+    }else{
+      return responseData.message;
+    }
   }
 
   // 退出登陆
