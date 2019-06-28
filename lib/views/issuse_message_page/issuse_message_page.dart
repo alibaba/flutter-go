@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:zefyr/zefyr.dart';
 import 'package:flutter_go/utils/data_utils.dart';
@@ -43,20 +45,25 @@ class _issuesMessagePageState extends State<issuesMessagePage> {
   _submit() {
     String mk = notusMarkdown.encode(_delta);
     if (_title.trim().isEmpty) {
-       Fluttertoast.showToast(msg: '标题不能为空',
-           toastLength: Toast.LENGTH_SHORT,
-           gravity: ToastGravity.CENTER,
-           timeInSecForIos: 1,
-           backgroundColor: Theme.of(context).primaryColor,
-           textColor: Colors.white,
-           fontSize: 16.0);
+      _show('标题不能为空');
     } else {
-      DataUtils.feedback({'title': _title, "body": mk}).then((result) {
-        print(result);
+      DataUtils.feedback({'title': _title, "body": mk},context).then((result) {
+        _show(result);
+        Navigator.maybePop(context);
       });
     }
   }
 
+  _show(String msgs){
+    Fluttertoast.showToast(
+        msg: msgs,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        backgroundColor: Theme.of(context).primaryColor,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

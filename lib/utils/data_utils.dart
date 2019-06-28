@@ -3,6 +3,7 @@ import 'dart:async' show Future;
 import 'package:fluro/fluro.dart';
 import 'package:flutter_go/model/version.dart';
 import 'package:package_info/package_info.dart';
+import 'package:flutter_go/model/responseData.dart';
 
 import './net_utils.dart';
 import '../model/user_info.dart';
