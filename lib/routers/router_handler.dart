@@ -9,12 +9,29 @@ import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_go/views/issuse_message_page/issuse_message_page.dart';
+import 'package:flutter_go/views/collection_page/collection_page.dart';
+import 'package:flutter_go/views/collection_page/collection_full_page.dart';
+
 
 // app的首页
 var homeHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
     return new AppPage(UserInformation(id: 0));
   },
+);
+
+var collectionFullHandler = new Handler(
+  handlerFunc: (BuildContext context,Map<String,List<String>> params){
+    bool hasLogined = params['hasLogin']?.first == 'true';
+    return CollectionFullPage(hasLogined: hasLogined);
+  }
+);
+
+var collectionHandler = new Handler(
+  handlerFunc: (BuildContext context,Map<String,List<String>> params){
+    bool hasLogined = params['hasLogin']?.first == 'true';
+    return CollectionPage(hasLogined: hasLogined);
+  }
 );
 
 var categoryHandler = new Handler(

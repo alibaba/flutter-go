@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:share/share.dart';
@@ -23,6 +24,44 @@ class _DrawerPageState extends State<DrawerPage> {
   void initState() {
     super.initState();
     hasLogin = this.widget.userInfo.id != 0;
+  }
+
+  void showLogoutDialog() {
+    if (hasLogin) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('确认退出登陆？'),
+              // content: Text('退出登陆后将没法进行'),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    // 退出登陆
+                    DataUtils.logout().then((result) {
+                      if (result) {
+                        setState(() {
+                          hasLogin = false;
+                        });
+                        Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.nativeModal,clearStack: true);
+                      }
+                    });
+                  },
+                  child: Text('确认',style: TextStyle(color:  Colors.red),),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('取消'),
+                )
+              ],
+            );
+          });
+    } else {
+      Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.native,clearStack: true);
+    }
   }
 
   @override
@@ -59,7 +98,9 @@ class _DrawerPageState extends State<DrawerPage> {
             '我的收藏',
             style: textStyle,
           ),
-          onTap: () {},
+          onTap: () {
+            Application.router.navigateTo(context, '${Routes.collectionFullPage}?hasLogin=${hasLogin.toString()}',transition: TransitionType.fadeIn);
+          },
         ),
         // new Divider(),
         ListTile(
@@ -92,9 +133,10 @@ class _DrawerPageState extends State<DrawerPage> {
               });
             } else {
               //No description provided.
-//              Application.router.navigateTo(context, '${Routes.loginPage}');
-              Application.router.navigateTo(context, '${Routes.issuesMessage}');
+              Application.router.navigateTo(context, '${Routes.loginPage}');
+            //  Application.router.navigateTo(context, '${Routes.issuesMessage}');
             }
+
           },
         ),
         ListTile(
@@ -131,21 +173,7 @@ class _DrawerPageState extends State<DrawerPage> {
             hasLogin ? '退出登陆' : '点击登录',
             style: textStyle,
           ),
-          onTap: () {
-            if (hasLogin) {
-              // 退出登陆
-              DataUtils.logout().then((result) {
-                if (result) {
-                  setState(() {
-                    hasLogin = false;
-                  });
-                  Application.router.navigateTo(context, '${Routes.loginPage}');
-                }
-              });
-            } else {
-              Application.router.navigateTo(context, '${Routes.loginPage}');
-            }
-          },
+          onTap: showLogoutDialog,
         ),
       ],
     );

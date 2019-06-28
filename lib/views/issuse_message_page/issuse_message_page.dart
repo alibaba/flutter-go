@@ -47,7 +47,7 @@ class _issuesMessagePageState extends State<issuesMessagePage> {
     if (_title.trim().isEmpty) {
       _show('标题不能为空');
     } else {
-      DataUtils.feedback({'title': _title, "body": mk}).then((result) {
+      DataUtils.feedback({'title': _title, "body": mk},context).then((result) {
         _show(result);
         Navigator.maybePop(context);
       });

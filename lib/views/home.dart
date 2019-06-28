@@ -70,7 +70,7 @@ class _MyHomePageState extends State<AppPage>
 //      ..add(FirstPage())
       ..add(MainPage(userInfo: widget.userInfo))
       ..add(WidgetPage(Provider.db))
-      ..add(CollectionPage())
+      ..add(CollectionPage(hasLogined: widget.userInfo.id != 0))
       ..add(FourthPage());
   }
 

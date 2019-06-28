@@ -1,5 +1,6 @@
 import 'dart:async' show Future;
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter_go/model/version.dart';
 import 'package:package_info/package_info.dart';
 import 'package:flutter_go/model/responseData.dart';
@@ -7,6 +8,8 @@ import 'package:flutter_go/model/responseData.dart';
 import './net_utils.dart';
 import '../model/user_info.dart';
 import 'package:flutter_go/api/api.dart';
+import 'package:flutter_go/routers/application.dart';
+import 'package:flutter_go/routers/routers.dart';
 
 class DataUtils {
   // 登陆获取用户信息
@@ -47,16 +50,13 @@ class DataUtils {
   }
 
   // 一键反馈
-  static Future feedback(Map<String, String> params) async {
+  static Future feedback(Map<String, String> params, context) async {
     var response = await NetUtils.post(Api.FEEDBACK, params);
-    ResponseData responseData=ResponseData.fromJson(response);
-    print("responseData:$responseData");
-    var status= responseData.status;
-    if(status==200){
-      return '成功';
-    }else{
-      return responseData.message;
+    // print(response);
+    if(response['status'] == 401 && response['message']=='请先登录'){
+      Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.nativeModal);
     }
+    return response;
   }
 
   // 退出登陆
