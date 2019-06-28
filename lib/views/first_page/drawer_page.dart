@@ -85,12 +85,16 @@ class _DrawerPageState extends State<DrawerPage> {
             style: textStyle,
           ),
           onTap: () {
-            DataUtils.feedback({
-              'title': "这是客户端 FeedBack title",
-              "body": "这是客户端 FeedBack body"
-            }).then((result) {
-              print(result);
-            });
+            if (hasLogin) {
+              //issue 未登陆状态 返回登陆页面
+              DataUtils.logout().then((result) {
+                Application.router.navigateTo(context, '${Routes.issuesMessage}');
+              });
+            } else {
+              //No description provided.
+//              Application.router.navigateTo(context, '${Routes.loginPage}');
+              Application.router.navigateTo(context, '${Routes.issuesMessage}');
+            }
           },
         ),
         ListTile(

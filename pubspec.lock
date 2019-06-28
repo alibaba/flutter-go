@@ -14,7 +14,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.8"
+    version: "2.1.0"
   bloc:
     dependency: "direct main"
     description:
@@ -105,7 +105,7 @@ packages:
       name: fluro
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -178,7 +178,7 @@ packages:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0+8"
+    version: "0.5.4+3"
   intl:
     dependency: "direct main"
     description:
@@ -206,7 +206,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.3+1"
+    version: "0.12.5"
   meta:
     dependency: transitive
     description:
@@ -214,6 +214,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
+  notus:
+    dependency: transitive
+    description:
+      name: notus
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   open_file:
     dependency: "direct main"
     description:
@@ -227,7 +234,7 @@ packages:
       name: package_info
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+3"
+    version: "0.4.0+4"
   path:
     dependency: transitive
     description:
@@ -248,7 +255,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   permission_handler:
     dependency: "direct main"
     description:
@@ -256,13 +263,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.0"
+  quill_delta:
+    dependency: transitive
+    description:
+      name: quill_delta
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   quiver:
     dependency: transitive
     description:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
+  quiver_hashcode:
+    dependency: transitive
+    description:
+      name: quiver_hashcode
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   rxdart:
     dependency: transitive
     description:
@@ -295,7 +316,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.4"
+    version: "1.5.5"
   sqflite:
     dependency: "direct main"
     description:
@@ -316,7 +337,7 @@ packages:
       name: stream_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.8"
+    version: "2.0.0"
   string_scanner:
     dependency: transitive
     description:
@@ -330,7 +351,7 @@ packages:
       name: synchronized
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.0+1"
   term_glyph:
     dependency: transitive
     description:
@@ -344,7 +365,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.4"
   typed_data:
     dependency: transitive
     description:
@@ -358,7 +379,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.2"
+    version: "5.0.3"
   vector_math:
     dependency: transitive
     description:
@@ -366,6 +387,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+  zefyr:
+    dependency: "direct main"
+    description:
+      name: zefyr
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
 sdks:
-  dart: ">=2.1.0 <3.0.0"
-  flutter: ">=1.2.1 <2.0.0"
+  dart: ">=2.2.0 <3.0.0"
+  flutter: ">=1.5.0 <2.0.0"
