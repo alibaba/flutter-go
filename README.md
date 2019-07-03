@@ -31,7 +31,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 ### iphone正式版，下载地址: 
 
-- AppStore 搜索 "Fluttego" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
+- AppStore 搜索 "Fluttergo" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
 <img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
 
 
