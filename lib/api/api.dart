@@ -9,5 +9,7 @@ class Api{
   static const String LOGOUT = BASE_URL+'logout';//退出登陆
 
   static const String VERSION = BASE_URL+'getAppVersion';//检查版本
+
+  static const String GET_WIDGET_TREE = BASE_URL + 'getCateList';//获取widget列表树
 }
 

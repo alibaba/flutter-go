@@ -50,4 +50,15 @@ class DataUtils {
       return false;
     }
   }
+  /// 获取widget列表处的树型数据
+  static Future<List> getWidgetTreeList() async {
+    var response = await NetUtils.get(Api.GET_WIDGET_TREE);
+
+    if (response['success']) {
+      return response['data'];
+    } else {
+      return [];
+    }
+
+  }
 }

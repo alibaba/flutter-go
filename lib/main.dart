@@ -15,6 +15,7 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/model/widget.dart';
 
 //import 'views/welcome_page/index.dart';
 
@@ -25,7 +26,6 @@ var db;
 class MyApp extends StatefulWidget {
   MyApp() {
     final router = new Router();
-
     Routes.configureRoutes(router);
 
     Application.router = router;
@@ -66,6 +66,7 @@ class _MyAppState extends State<MyApp> {
       });
       print('身份信息验证失败:$onError');
     });
+
   }
 
   _UpdateURL() async {
@@ -98,8 +99,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+//    WidgetTree.getCommonItemByPath([15, 17], Application.widgetTree);
     return new MaterialApp(
-      title: 'title',
+      title: 'titles',
       theme: new ThemeData(
         primaryColor: Color(ThemeColor),
         backgroundColor: Color(0xFFEFEFEF),
@@ -127,6 +129,11 @@ void main() async {
   await provider.init(true);
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
+  await DataUtils.getWidgetTreeList().then((List json) {
+    print("树型结构返回数据: $json");
+    Application.widgetTree = WidgetTree.buildWidgetTree(json);
+
+  });
   db = Provider.db;
   runApp(new MyApp());
 }

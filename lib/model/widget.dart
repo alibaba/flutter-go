@@ -5,6 +5,13 @@ import "package:flutter/material.dart";
 
 import 'package:flutter_go/utils/sql.dart';
 
+enum treeNode {
+  CategoryComponent,
+  WidgetLeaf
+}
+
+//typedef aaa
+
 abstract class WidgetInterface {
   int get id;
 
@@ -140,5 +147,184 @@ class WidgetControlModel {
     }).toList();
 
     return widgets;
+  }
+}
+// 抽象类
+abstract class CommonItem<T> {
+  int id;
+  String name;
+  int parentId;
+  String type;
+  List<CommonItem> children;
+  String token;
+
+  /// 父级节点, 存放整个CommonItem对象node = ! null
+  ///
+  CommonItem parent;
+  String toString() {
+    return "CommonItem {name: $name, type: $type, parentId: $parentId, token: $token, children长度 ${children}";
+  }
+
+  T getChild(String token);
+  T addChildren(Object item);
+  // 从children树中. 查找任意子节点
+  T find(String token, [CommonItem node]);
+}
+
+// tree的group树干
+class CategoryComponent extends CommonItem {
+  int id;
+  String name;
+  int parentId;
+  CommonItem parent;
+  String token;
+
+
+  List<CommonItem> children = [];
+
+  String type = 'category';
+
+  CategoryComponent({
+    @required this.id,
+    @required this.name,
+    @required this.parentId,
+    this.children,
+    this.parent
+  });
+  CategoryComponent.fromJson(Map json) {
+    this.id = int.parse(json['id']);
+    this.name = json['name'];
+    this.parentId = json['parentId'];
+    this.token = json['id'] + json['type'];
+  }
+  void addChildren(Object item) {
+    if (item is CategoryComponent) {
+      CategoryComponent cate = item;
+      cate.parent = this;
+      this.children.add(
+          cate
+      );
+    }
+    if (item is WidgetLeaf) {
+      WidgetLeaf widget = item;
+      widget.parent = this;
+      this.children.add(
+          widget
+      );
+    }
+  }
+  @override
+  CommonItem getChild(String token) {
+    return children.firstWhere((CommonItem item) => item.token == token, orElse: () => null);
+  }
+
+  @override
+  CommonItem find(String token, [CommonItem node]) {
+    CommonItem ret;
+    if (node !=null) {
+      if (node.token == token) {
+        return node;
+      } else {
+        // 循环到叶子节点, 返回 空
+        if (node.children == null) {
+          return null;
+        }
+        for (int i = 0; i < node.children.length; i++) {
+          CommonItem temp = this.find(token, node.children[i]);
+          if (temp != null) {
+            ret = temp;
+          }
+        }
+      }
+    } else {
+      ret = find(token, this);
+    }
+    return ret;
+  }
+}
+
+// 叶子节点
+class WidgetLeaf extends CommonItem {
+  int id;
+  String name;
+  int parentId;
+  String display; // 展示类型, 区分老的widget文件下的详情
+  String author; // 文档负责人
+  String path; // 路由地址
+  String pageId; // 界面ID
+  CommonItem parent;
+
+  String type = 'widget';
+  WidgetLeaf({
+    @required this.id,
+    @required this.name,
+    @required this.display,
+    this.author,
+    this.path,
+    this.pageId
+  });
+
+  WidgetLeaf.fromJson(Map json) {
+    this.id = int.parse(json['id']);
+    this.name = json['name'];
+    this.display = json['display'];
+    this.author = json['author'] ?? null;
+    this.path = json['path'] ?? null;
+    this.pageId = json['pageId'] ?? null;
+    this.token = json['id'] + json['type'];
+  }
+  @override
+  CommonItem getChild(String token) {
+    return null;
+  }
+  @override
+  addChildren(Object item) {
+    // TODO: implement addChildren
+    return null;
+  }
+
+  CommonItem find(String token, [CommonItem node]){
+    return null;
+  }
+}
+
+class WidgetTree {
+  static CategoryComponent buildWidgetTree(List json, [parent]){
+    CategoryComponent current;
+    if (parent != null) {
+      current = parent;
+    } else {
+      current = CategoryComponent(id: 0, name: 'root', parentId: null, children: []);
+    }
+    json.forEach((item) {
+
+      // 归属分类级别
+      if (['root', 'category'].indexOf(item['type']) != -1) {
+        CategoryComponent cate = CategoryComponent.fromJson(item);
+        if (cate.children != null) {
+          buildWidgetTree(item['children'], cate);
+        }
+        current.addChildren(cate);
+      } else {
+        // 归属最后一层叶子节点
+        WidgetLeaf cate = WidgetLeaf.fromJson(item);
+        current.addChildren(cate);
+      }
+    });
+    return current;
+  }
+  static CategoryComponent getCommonItemById(List<int> path, CategoryComponent root) {
+    print("getCommonItemByPath $path");
+    print("root $root");
+    CommonItem childLeaf;
+    int first = path.first;
+    path = path.sublist(1);
+    print("path:::: $path");
+    if (path.length >= 0) {
+//      childLeaf = root.getChild(path.first);
+    }
+
+
+    return childLeaf;
   }
 }

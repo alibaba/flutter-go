@@ -18,9 +18,9 @@ var homeHandler = new Handler(
 
 var categoryHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    String name = params["type"]?.first;
+    String ids = params["ids"]?.first;
 
-    return new CategoryHome(name);
+    return new CategoryHome(ids);
   },
 );
 

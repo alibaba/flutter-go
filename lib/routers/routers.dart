@@ -21,7 +21,7 @@ class Routes {
         });
     router.define(home, handler: homeHandler);
 
-    router.define('/category/:type', handler: categoryHandler);
+    router.define('/category/:ids', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
     router.define(loginPage, handler: loginPageHandler);
     router.define(codeView,handler:fullScreenCodeDialog);
