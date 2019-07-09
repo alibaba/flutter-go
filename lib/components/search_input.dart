@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/routers/application.dart';
+import 'package:meta/meta.dart';
+
 import '../model/search_history.dart';
 
 typedef String FormFieldFormatter<T>(T v);
