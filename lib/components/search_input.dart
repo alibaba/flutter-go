@@ -478,13 +478,15 @@ class _History extends State<History> {
             child: Text('历史搜索'),
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(left: 10),
-          alignment: Alignment.topLeft,
-          child: Wrap(
-            spacing: 6.0, // gap between adjacent chips
-            runSpacing: 0.0, // gap between lines
-            children: childList
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.only(left: 10),
+            alignment: Alignment.topLeft,
+            child: Wrap(
+              spacing: 6.0, // gap between adjacent chips
+              runSpacing: 0.0, // gap between lines
+              children: childList
+            ),
           ),
         )
       ],

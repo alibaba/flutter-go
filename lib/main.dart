@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
 //    } else {
 //      // 判断是否已经登录
 //      if (_hasLogin) {
-        return AppPage();
+    return AppPage();
 //      } else {
 //        return LoginPage();
 //      }
