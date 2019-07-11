@@ -30,20 +30,20 @@ class _WebViewPageState extends State<WebViewPage> {
   @override
   void initState() {
     super.initState();
-    _collectionControl
-        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
-        .then((list) {
-      list.forEach((item) {
-        if (widget.title.trim() == item['name']) {
-          _router = item['router'];
-        }
-      });
-      if (mounted) {
-        setState(() {
-          _hasCollected = list.length > 0;
-        });
-      }
-    });
+//    _collectionControl
+//        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
+//        .then((list) {
+//      list.forEach((item) {
+//        if (widget.title.trim() == item['name']) {
+//          _router = item['router'];
+//        }
+//      });
+//      if (mounted) {
+//        setState(() {
+//          _hasCollected = list.length > 0;
+//        });
+//      }
+//    });
   }
 
   // 点击收藏按钮

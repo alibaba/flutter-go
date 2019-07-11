@@ -55,14 +55,24 @@ class CollectionControlModel {
     return resultList;
   }
 
-  // 通过收藏名获取router
-  Future getRouterByName(String name) async {
-    List list = await sql.getByCondition(conditions: {'name': name});
+  /// 通过收藏名获取router
+  /// 因为名称很容易重复. 所以这里使用path router做唯一判断
+//  Future getRouterByName(String name) async {
+//    List list = await sql.getByCondition(conditions: {'name': name});
+//    return list;
+//  }
+
+  Future getRouterByUrl(String path) async {
+    List list = await sql.getByCondition(conditions: {'router': path});
     return list;
   }
 
   // 删除
   Future deleteByName(String name) async{
     return await sql.delete(name,'name');
+  }
+  // 通过path删除
+  Future deleteByPath(String path) async{
+    return await sql.delete(path,'router');
   }
 }

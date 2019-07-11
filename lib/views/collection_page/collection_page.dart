@@ -48,7 +48,6 @@ class _CollectionPageState extends State<CollectionPage> {
       resultList.forEach((item) {
         _collectionList.add(item);
       });
-      _collectionList.add(Collection(name:'test', router: '/standard-page/ee4feb8e_32ae_4241_9c8a_5c9e1f92b096'));
       print("_collectionList ${_collectionList}");
       if (this.mounted) {
         setState(() {
@@ -107,7 +106,8 @@ class _CollectionPageState extends State<CollectionPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          Uri.decodeComponent(_collectionList[index - 1].name),
+          _collectionList[index - 1].name,
+//          Uri.decodeComponent(_collectionList[index - 1].name),
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),

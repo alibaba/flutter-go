@@ -21,6 +21,31 @@ class WidgetItemContainer extends StatelessWidget {
       })
       : super(key: key);
 
+  /// 跳转goup
+  void tapToGroup(CategoryComponent cate, BuildContext context) {
+    Application.router
+        .navigateTo(context, "/category/${cate.token}", transition: TransitionType.inFromRight);
+  }
+
+  /// 跳转到老的widget界面
+  void tapToOldWidget(WidgetLeaf leaf, BuildContext context) {
+
+    String targetName = leaf.name;
+    String targetRouter = '/category/error/404';
+    widgetDemosList.forEach((item) {
+      if (item.name == targetName) {
+        targetRouter = item.routerName;
+      }
+    });
+    Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
+  }
+
+  /// 跳转到新的标准页
+  void tapToStandardPage(WidgetLeaf leaf, BuildContext context) {
+    String targetRouter = '/standard-page/${leaf.pageId}';
+    Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
+  }
+
   List<Widget> _buildColumns(context) {
     List<Widget> _listWidget = [];
     List<Widget> _listRows = [];
@@ -31,13 +56,30 @@ class WidgetItemContainer extends StatelessWidget {
         addI = innerI + i;
         if (addI < length) {
           CommonItem item = commonItems[addI];
+
+
           _listRows.add(
             Expanded(
               flex: 1,
               child: WidgetItem(
                 title: item.name,
                 onTap: () {
-                  if (item.type == 'widget') {
+                  String type = item.type;
+                  print("type>>>>$type");
+                  if (type == "category") {
+                    return tapToGroup(item as CategoryComponent, context);
+                  }
+                  if (type == "widget") {
+                    WidgetLeaf leaf = item as WidgetLeaf;
+
+                    if (leaf.display == "standard") {
+                      return tapToStandardPage(leaf, context);
+                    } else {
+                      return tapToOldWidget(leaf, context);
+                    }
+                  }
+//                  print("display $display");
+                  if (type == 'widget') {
                     WidgetLeaf _item = item;
                     String targetName = _item.name;
                     String targetRouter = '/category/error/404';
@@ -48,7 +90,6 @@ class WidgetItemContainer extends StatelessWidget {
                     });
                     print("targetRouter>>> $targetRouter");
 
-                    return Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
                   }
                   Application.router
                         .navigateTo(context, "/category/${item.token}", transition: TransitionType.inFromRight);
@@ -85,3 +126,4 @@ class WidgetItemContainer extends StatelessWidget {
     );
   }
 }
+
