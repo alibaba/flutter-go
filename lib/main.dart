@@ -27,7 +27,8 @@ class MyApp extends StatefulWidget {
   MyApp() {
     final router = new Router();
     Routes.configureRoutes(router);
-
+    // 这里设置项目环境
+    Application.env = ENV.DEV;
     Application.router = router;
   }
 
