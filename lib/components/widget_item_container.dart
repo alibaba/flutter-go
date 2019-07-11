@@ -65,7 +65,7 @@ class WidgetItemContainer extends StatelessWidget {
                 title: item.name,
                 onTap: () {
                   String type = item.type;
-                  print("type>>>>$type");
+
                   if (type == "category") {
                     return tapToGroup(item as CategoryComponent, context);
                   }
@@ -78,21 +78,9 @@ class WidgetItemContainer extends StatelessWidget {
                       return tapToOldWidget(leaf, context);
                     }
                   }
-//                  print("display $display");
-                  if (type == 'widget') {
-                    WidgetLeaf _item = item;
-                    String targetName = _item.name;
-                    String targetRouter = '/category/error/404';
-                    widgetDemosList.forEach((item) {
-                      if (item.name == targetName) {
-                        targetRouter = item.routerName;
-                      }
-                    });
-                    print("targetRouter>>> $targetRouter");
 
-                  }
                   Application.router
-                        .navigateTo(context, "/category/${item.token}", transition: TransitionType.inFromRight);
+                        .navigateTo(context, "/category/error/404", transition: TransitionType.inFromRight);
                 },
                 index: addI,
                 totalCount: length,

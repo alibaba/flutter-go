@@ -65,31 +65,17 @@ class _CategoryHome extends State<CategoryHome> {
   }
 
   void searchCatOrWidget() async {
-    print("searchCatOrWidget>>>");
     CommonItem widgetTree = Application.widgetTree;
-//    // 假设进入这个界面的parent一定存在
+     // 假设进入这个界面的parent一定存在
     CommonItem targetGroup = catHistory.last;
-//
-//
-//    // 继续搜索显示下一级depth: depth + 1, parentId: parentCat.id
-//    List<Cat> _categories =
-//        await catControl.getList(new Cat(parentId: parentCat.id));
-//    List<WidgetPoint> _widgetPoints = new List();
-//    if (_categories.isEmpty) {
-//      _widgetPoints =
-//          await widgetControl.getList(new WidgetPoint(catId: parentCat.id));
-//    }
-//
-    print("targetGroup >>> $targetGroup");
+
 
     this.setState(() {
       title = targetGroup.name;
-//      widgetPoints = targetGroup.children;
     });
   }
 
   void onCatgoryTap(CommonItem cat) {
-    print("onCatgoryTap: ${cat}");
     go(cat);
   }
 

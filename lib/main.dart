@@ -28,7 +28,7 @@ class MyApp extends StatefulWidget {
     final router = new Router();
     Routes.configureRoutes(router);
     // 这里设置项目环境
-    Application.env = ENV.DEV;
+    Application.env = ENV.PRODUCTION;
     Application.router = router;
   }
 
@@ -131,7 +131,6 @@ void main() async {
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
   await DataUtils.getWidgetTreeList().then((List json) {
-    print("树型结构返回数据: $json");
     Application.widgetTree = WidgetTree.buildWidgetTree(json);
 
   });

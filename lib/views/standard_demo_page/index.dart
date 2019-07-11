@@ -14,14 +14,10 @@ import '../../components/markdown.dart' as mdCopy;
 import '../../components/flutter_markdown/lib/flutter_markdown.dart';
 import '../../standard_pages/index.dart';
 import '../../page_demo_package/index.dart';
-import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/material.dart';
-
 import 'package:flutter_go/routers/application.dart';
 
 // ONLINE || LOCAL
-const Env = 'LOCAL' ;
+ENV env = Application.env;
 
 class StandardView extends StatefulWidget {
   final String id;
@@ -35,6 +31,7 @@ class StandardView extends StatefulWidget {
 class _StandardView extends State<StandardView> {
   String markdownDesc = '# this is header';
   String pageTitle = "XXX";
+
   String author = '';
   String email = '';
   StandardPages standardPage = new StandardPages();
@@ -42,11 +39,9 @@ class _StandardView extends State<StandardView> {
   void initState() {
 
     super.initState();
-    getPagesInfo();
-    this.getContent();
+    this.getDetail();
   }
-
-
+  // 本地调用的获取基本信息
   Future<void> getPagesInfo() async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
     List jsonList = json.decode(jsonString);
@@ -74,11 +69,14 @@ class _StandardView extends State<StandardView> {
     return Future(() => content);
   }
 
-  Future<String> getContent() async {
+  Future<String> getDetail() async {
     String conent = '';
-    if (Env == 'PRODUCTION') {
+    print("env:::: $env");
+
+    if (env == ENV.PRODUCTION) {
       conent = await _getContentOnline();
     } else {
+      getPagesInfo();
       conent = _getContentFromLocal();
     }
     setState(() {
