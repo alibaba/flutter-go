@@ -7,7 +7,7 @@ packages:
       name: args
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.5.1"
+    version: "1.5.2"
   async:
     dependency: transitive
     description:
@@ -77,7 +77,7 @@ packages:
       name: dio
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.6"
+    version: "2.1.7"
   event_bus:
     dependency: "direct main"
     description:
@@ -105,7 +105,7 @@ packages:
       name: fluro
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -125,6 +125,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.7"
+  flutter_jpush:
+    dependency: "direct main"
+    description:
+      name: flutter_jpush
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.4"
   flutter_markdown:
     dependency: "direct main"
     description:
@@ -171,7 +178,7 @@ packages:
       name: image_picker
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.6.0+8"
+    version: "0.6.0+10"
   intl:
     dependency: "direct main"
     description:
@@ -213,14 +220,14 @@ packages:
       name: open_file
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1+2"
+    version: "2.0.3"
   package_info:
     dependency: "direct main"
     description:
       name: package_info
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.0+3"
+    version: "0.4.0+4"
   path:
     dependency: transitive
     description:
@@ -323,7 +330,7 @@ packages:
       name: synchronized
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.0+1"
   term_glyph:
     dependency: transitive
     description:
@@ -351,7 +358,7 @@ packages:
       name: url_launcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.0.2"
+    version: "5.0.3"
   vector_math:
     dependency: transitive
     description:
@@ -361,4 +368,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.2.2 <3.0.0"
-  flutter: ">=1.2.1 <2.0.0"
+  flutter: ">=1.5.0 <2.0.0"
