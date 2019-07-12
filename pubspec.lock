@@ -14,7 +14,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.0"
+    version: "2.1.0"
   bloc:
     dependency: "direct main"
     description:
@@ -178,7 +178,7 @@ packages:
       name: image_picker
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.6.0+10"
+    version: "0.5.4+3"
   intl:
     dependency: "direct main"
     description:
@@ -214,6 +214,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6"
+  notus:
+    dependency: transitive
+    description:
+      name: notus
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   open_file:
     dependency: "direct main"
     description:
@@ -248,7 +255,7 @@ packages:
       name: pedantic
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.7.0"
+    version: "1.5.0"
   permission_handler:
     dependency: "direct main"
     description:
@@ -256,13 +263,27 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
+  quill_delta:
+    dependency: transitive
+    description:
+      name: quill_delta
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   quiver:
     dependency: transitive
     description:
       name: quiver
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.3"
+    version: "2.0.2"
+  quiver_hashcode:
+    dependency: transitive
+    description:
+      name: quiver_hashcode
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   rxdart:
     dependency: transitive
     description:
@@ -344,7 +365,7 @@ packages:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.2.5"
+    version: "0.2.4"
   typed_data:
     dependency: transitive
     description:
@@ -366,6 +387,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.8"
+  zefyr:
+    dependency: "direct main"
+    description:
+      name: zefyr
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
 sdks:
-  dart: ">=2.2.2 <3.0.0"
+  dart: ">=2.2.0 <3.0.0"
   flutter: ">=1.5.0 <2.0.0"
