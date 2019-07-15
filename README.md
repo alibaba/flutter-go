@@ -37,12 +37,8 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ## Release安装包下载地址
 
 android下载地址:
-
-<<<<<<< HEAD
-<img src="https://img.alicdn.com/tfs/TB180.kOhYaK1RjSZFnXXa80pXa-442-420.png" width="200px">
-=======
 <img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
->>>>>>> develop
+
 
 iphone下载地址:
 暂无
@@ -75,11 +71,7 @@ flutter优点主要包括：
 
 #### Flutter Go 的优势
 
-<<<<<<< HEAD
-- 详解常用widget多达 **140+** 个
-=======
 - 详解常用 widget 多达 **140+** 个
->>>>>>> develop
 - 配套 Demo 详解 widget 常规用法
 - 集中整合 widget 案例，一个 APP 搞定所有常用 widget 的用法
 - 持续迭代 ‘追新’ 官方版本
