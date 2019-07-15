@@ -24,15 +24,15 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 ## Release安装包下载地址
 
-android下载地址:
+### android正式版，下载地址:
 
+- 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
+<img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
 
-华为市场已上线，master分支上面已上传【FlutterGo.apk】apk包，可点击下载
+### iphone正式版，下载地址: 
 
-
-iphone下载地址: AppStore上面进行搜索fluttego
-
-<img src="https://img.alicdn.com/tfs/TB1trMgV7PoK1RjSZKbXXX1IXXa-620-1343.png" width=200> <img src="https://img.alicdn.com/tfs/TB1w_MbV7voK1RjSZFDXXXY3pXa-620-1343.png" width=200> 
+- AppStore 搜索 "Fluttergo" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
+<img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
 
 
 ## 基础环境
@@ -125,6 +125,4 @@ flutter优点主要包括：
 
 - 大家的互相信任，尊重与支持，才是开源社区前进的动力和来源.
 
-Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
-
-+++++++
+Powered by 阿里拍卖前端团队<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
