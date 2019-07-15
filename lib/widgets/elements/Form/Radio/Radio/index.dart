@@ -40,7 +40,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'Radio',
       docUrl: 'https://docs.flutter.io/flutter/material/Radio-class.html',
-      codeUrl: 'elements/Form/Radio/Radio/index.dart',
+      codeUrl: 'elements/Form/Radio/Radio/dome.dart',
     );
   }
 }
