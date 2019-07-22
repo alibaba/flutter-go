@@ -24,7 +24,6 @@ class MainPage extends StatelessWidget {
   final UserInformation userInfo;
 
   MainPage({Key key, this.userInfo}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     print("MainPagess build......");
@@ -51,7 +50,7 @@ class MainPage extends StatelessWidget {
           ),
           drawer: Drawer(
             child: DrawerPage(
-              userInfo: userInfo,
+              userInfo: userInfo
             ),
           ),
           body: TabBarViewLayout(),

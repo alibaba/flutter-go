@@ -8,7 +8,6 @@ import 'package:flutter_go/views/web_page/web_view_page.dart';
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/model/user_info.dart';
-import 'package:flutter_go/views/issuse_message_page/issuse_message_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/views/collection_page/collection_full_page.dart';
 
@@ -66,7 +65,7 @@ var webViewPageHand = new Handler(
       return new WebViewPage(url, title);
     });
 
-var issuesMessageHandler = new Handler(
-    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      return issuesMessagePage();
-    });
+// var issuesMessageHandler = new Handler(
+//     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+//       return issuesMessagePage();
+//     });

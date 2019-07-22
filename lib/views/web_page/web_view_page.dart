@@ -56,7 +56,7 @@ class _WebViewPageState extends State<WebViewPage> {
         
         flutterWebviewPlugin.close();
         // 验证成功
-      } else if (url.indexOf('${Api.RedirectIp}loginFail') == 0) {
+      } else if (url.indexOf('${Api.BASE_URL}loginFail') == 0) {
         // 验证失败
         if (ApplicationEvent.event != null) {
           ApplicationEvent.event.fire(UserGithubOAuthEvent('', '', true));
