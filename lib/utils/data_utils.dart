@@ -37,9 +37,13 @@ class DataUtils {
   // 验证登陆
   static Future checkLogin() async {
     var response = await NetUtils.get(Api.CHECK_LOGIN);
+    print('response: $response');
     try {
+      print('1111');
       if (response['success']) {
+        print('${response['success']}   ${response['data']}  response[succes]');
         UserInformation userInfo = UserInformation.fromJson(response['data']);
+        print('${response['data']} $userInfo');
         return userInfo;
       } else {
         return response['success'];
@@ -53,10 +57,28 @@ class DataUtils {
   static Future feedback(Map<String, String> params, context) async {
     var response = await NetUtils.post(Api.FEEDBACK, params);
     // print(response);
-    if(response['status'] == 401 && response['message']=='请先登录'){
-      Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.nativeModal);
+    if (response['status'] == 401 && response['message'] == '请先登录') {
+      Application.router.navigateTo(context, '${Routes.loginPage}',
+          transition: TransitionType.nativeModal);
     }
     return response;
+  }
+
+  //设置主题颜色
+  static Future<bool> setThemeColor(int color, context) async {
+    var response =
+        await NetUtils.post(Api.SET_THEMECOLOR, {'color': color.toString()});
+    if (response['status'] == 401 && response['message'] == '请先登录') {
+      Application.router.navigateTo(context, '${Routes.loginPage}',
+          transition: TransitionType.nativeModal);
+    }
+    return response['success'];
+  }
+
+  //获取主题颜色
+  static Future<String> getThemeColor() async {
+    var response = await NetUtils.get(Api.GET_THEMECOLOR);
+    return response['success'];
   }
 
   // 退出登陆

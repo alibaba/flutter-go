@@ -1,14 +1,27 @@
+import 'dart:async';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_go/components/single_theme_color.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:share/share.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
+import './search_page.dart';
+import 'package:flutter_go/event/event_bus.dart';
+import 'package:flutter_go/event/event_model.dart';
+import 'package:event_bus/event_bus.dart';
+
+const List<Map<String, dynamic>> defalutThemeColor = [
+  {'cnName': 'Flutter篮', 'value': 0xFF3391EA},
+  {'cnName': '拍卖红', 'value': 0xFFC91B3A},
+  {'cnName': '阿里橙', 'value': 0xFFF7852A},
+];
 
 class DrawerPage extends StatefulWidget {
   final UserInformation userInfo;
-
   DrawerPage({Key key, this.userInfo}) : super(key: key);
 
   @override
@@ -20,53 +33,100 @@ class _DrawerPageState extends State<DrawerPage> {
       TextStyle(fontSize: 16, fontWeight: FontWeight.w300);
   bool hasLogin;
 
+  _DrawerPageState() {
+    final eventBus = new EventBus();
+    ApplicationEvent.event = eventBus;
+  }
+
   @override
   void initState() {
     super.initState();
+    ApplicationEvent.event.on<UserSettingThemeColorEvent>().listen((event) {
+      print('接收到的 event ${event.settingThemeColor}');
+    });
     hasLogin = this.widget.userInfo.id != 0;
   }
 
-  void showLogoutDialog() {
-    if (hasLogin) {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('确认退出登陆？'),
-              // content: Text('退出登陆后将没法进行'),
-              actions: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    // 退出登陆
-                    DataUtils.logout().then((result) {
-                      if (result) {
-                        setState(() {
-                          hasLogin = false;
-                        });
-                        Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.nativeModal,clearStack: true);
-                      }
-                    });
-                  },
-                  child: Text('确认',style: TextStyle(color:  Colors.red),),
+  Future<AlertDialog> logoutDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('确认退出登陆？'),
+            // content: Text('退出登陆后将没法进行'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  // 退出登陆
+                  DataUtils.logout().then((result) {
+                    if (result) {
+                      Application.router.navigateTo(
+                          context, '${Routes.loginPage}',
+                          transition: TransitionType.native, clearStack: true);
+                    }
+                  });
+                },
+                child: Text(
+                  '确认',
+                  style: TextStyle(color: Colors.red),
                 ),
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('取消'),
-                )
-              ],
-            );
-          });
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('取消'),
+              )
+            ],
+          );
+        });
+  }
+
+  void showLogoutDialog(BuildContext context) {
+    if (hasLogin) {
+      logoutDialog(context);
     } else {
-      Application.router.navigateTo(context, '${Routes.loginPage}',transition:TransitionType.native,clearStack: true);
+      Application.router.navigateTo(context, '${Routes.loginPage}',
+          transition: TransitionType.native, clearStack: true);
     }
+  }
+
+  void pushPage(BuildContext context, Widget page, {String pageName}) {
+    if (context == null || page == null) return;
+    Navigator.push(context, CupertinoPageRoute<void>(builder: (ctx) => page));
+  }
+
+  Future<Dialog> buildSimpleDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                height: 300.0,
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisSize: MainAxisSize.max,
+                  children: buildThemeColorChildren(),
+                )),
+          );
+        });
+  }
+
+  List<Widget> buildThemeColorChildren() {
+    List<Widget> tempWidget = [];
+    for (var i = 0; i < defalutThemeColor.length; i++) {
+      tempWidget.add(SingleThemeColor(
+        themeColor: defalutThemeColor[i]['value'],
+        coloeName: defalutThemeColor[i]['cnName'],
+      ));
+    }
+    return tempWidget;
   }
 
   @override
   Widget build(BuildContext context) {
-    print(hasLogin);
     return ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
@@ -91,6 +151,19 @@ class _DrawerPageState extends State<DrawerPage> {
         // new Divider(),
         ListTile(
           leading: Icon(
+            Icons.search,
+            size: 27.0,
+          ),
+          title: Text(
+            '搜索',
+            style: textStyle,
+          ),
+          onTap: () {
+            pushPage(context, SearchPage(), pageName: "SearchPage");
+          },
+        ),
+        ListTile(
+          leading: Icon(
             Icons.favorite,
             size: 27.0,
           ),
@@ -99,21 +172,25 @@ class _DrawerPageState extends State<DrawerPage> {
             style: textStyle,
           ),
           onTap: () {
-            Application.router.navigateTo(context, '${Routes.collectionFullPage}?hasLogin=${hasLogin.toString()}',transition: TransitionType.fadeIn);
+            Application.router.navigateTo(context,
+                '${Routes.collectionFullPage}?hasLogin=${hasLogin.toString()}',
+                transition: TransitionType.fadeIn);
           },
         ),
         // new Divider(),
-        ListTile(
-          leading: Icon(
-            Icons.settings,
-            size: 27.0,
-          ),
-          title: Text(
-            '更多设置',
-            style: textStyle,
-          ),
-          onTap: () {},
-        ),
+        // ListTile(
+        //   leading: Icon(
+        //     Icons.settings,
+        //     size: 27.0,
+        //   ),
+        //   title: Text(
+        //     '主题色',
+        //     style: textStyle,
+        //   ),
+        //   onTap: () {
+        //     buildSimpleDialog(context);
+        //   },
+        // ),
         new Divider(),
 
         ListTile(
@@ -129,27 +206,27 @@ class _DrawerPageState extends State<DrawerPage> {
             if (hasLogin) {
               //issue 未登陆状态 返回登陆页面
               DataUtils.logout().then((result) {
-                Application.router.navigateTo(context, '${Routes.issuesMessage}');
+                Application.router
+                    .navigateTo(context, '${Routes.issuesMessage}');
               });
             } else {
               //No description provided.
               Application.router.navigateTo(context, '${Routes.loginPage}');
-            //  Application.router.navigateTo(context, '${Routes.issuesMessage}');
+              //  Application.router.navigateTo(context, '${Routes.issuesMessage}');
             }
-
           },
         ),
-        ListTile(
-          leading: Icon(
-            Icons.info,
-            size: 27.0,
-          ),
-          title: Text(
-            '关于 App',
-            style: textStyle,
-          ),
-          onTap: () {},
-        ),
+        // ListTile(
+        //   leading: Icon(
+        //     Icons.info,
+        //     size: 27.0,
+        //   ),
+        //   title: Text(
+        //     '关于 App',
+        //     style: textStyle,
+        //   ),
+        //   onTap: () {},
+        // ),
         ListTile(
           leading: Icon(
             Icons.share,
@@ -173,7 +250,10 @@ class _DrawerPageState extends State<DrawerPage> {
             hasLogin ? '退出登陆' : '点击登录',
             style: textStyle,
           ),
-          onTap: showLogoutDialog,
+          onTap: () {
+            showLogoutDialog(context);
+            // logoutDialog(context);
+          },
         ),
       ],
     );
