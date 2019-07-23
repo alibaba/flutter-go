@@ -13,10 +13,12 @@ import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_jpush/flutter_jpush.dart';
+import 'package:flutter_go/event/event_bus.dart';
+import 'package:flutter_go/event/event_model.dart';
+import 'package:event_bus/event_bus.dart';
 
 //import 'views/welcome_page/index.dart';
 
-const int ThemeColor = 0xFFC91B3A;
 SpUtil sp;
 var db;
 
@@ -40,6 +42,12 @@ class _MyAppState extends State<MyApp> {
   bool isConnected = false;
   String registrationId;
   List notificationList = [];
+  int themeColor = 0xFFC91B3A;
+
+  _MyAppState() {
+    final eventBus = new EventBus();
+    ApplicationEvent.event = eventBus;
+  }
 
   @override
   void initState() {
@@ -53,18 +61,23 @@ class _MyAppState extends State<MyApp> {
         this.isConnected = connected;
         if (connected) {
           //在启动的时候会去连接自己的服务器，连接并注册成功之后会返回一个唯一的设备号
-          FlutterJPush.getRegistrationID().then((String regId) {
-            print("主动获取设备号:$regId");
-            setState(() {
-              this.registrationId = regId;
+          try {
+            FlutterJPush.getRegistrationID().then((String regId) {
+              print("主动获取设备号:$regId");
+              setState(() {
+                this.registrationId = regId;
+              });
             });
-          });
+          } catch (error) {
+            print('主动获取设备号Error:$error');
+          }
+          ;
         }
       });
     });
 
-    FlutterJPush
-        .addReceiveNotificationListener((JPushNotification notification) {
+    FlutterJPush.addReceiveNotificationListener(
+        (JPushNotification notification) {
       setState(() {
         /// 收到推送
         print("收到推送提醒: $notification");
@@ -72,8 +85,8 @@ class _MyAppState extends State<MyApp> {
       });
     });
 
-    FlutterJPush
-        .addReceiveOpenNotificationListener((JPushNotification notification) {
+    FlutterJPush.addReceiveOpenNotificationListener(
+        (JPushNotification notification) {
       setState(() {
         print("打开了推送提醒: $notification");
 
@@ -91,13 +104,16 @@ class _MyAppState extends State<MyApp> {
       });
     });
 
-
     DataUtils.checkLogin().then((hasLogin) {
       if (hasLogin.runtimeType == UserInformation) {
         setState(() {
           _hasLogin = true;
           _isLoading = false;
           _userInfo = hasLogin;
+          // 设置初始化的主题色
+          // if (hasLogin.themeColor != 'default') {
+          //   themeColor = int.parse(hasLogin.themeColor);
+          // }
         });
       } else {
         setState(() {
@@ -112,12 +128,16 @@ class _MyAppState extends State<MyApp> {
       });
       print('身份信息验证失败:$onError');
     });
+
+    ApplicationEvent.event.on<UserSettingThemeColorEvent>().listen((event) {
+      print('接收到的 event $event');
+    });
   }
 
   showWelcomePage() {
     if (_isLoading) {
       return Container(
-        color: const Color(ThemeColor),
+        color: Color(this.themeColor),
         child: Center(
           child: SpinKitPouringHourglass(color: Colors.white),
         ),
@@ -137,7 +157,7 @@ class _MyAppState extends State<MyApp> {
     return new MaterialApp(
       title: 'title',
       theme: new ThemeData(
-        primaryColor: Color(ThemeColor),
+        primaryColor: Color(this.themeColor),
         backgroundColor: Color(0xFFEFEFEF),
         accentColor: Color(0xFF888888),
         textTheme: TextTheme(
@@ -145,7 +165,7 @@ class _MyAppState extends State<MyApp> {
           body1: TextStyle(color: Color(0xFF888888), fontSize: 16.0),
         ),
         iconTheme: IconThemeData(
-          color: Color(ThemeColor),
+          color: Color(this.themeColor),
           size: 35.0,
         ),
       ),
@@ -157,14 +177,11 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-
-
 void _startupJpush() async {
   print("初始化jpush");
   await FlutterJPush.startup();
   print("初始化jpush成功");
 }
-
 
 void main() async {
   final provider = new Provider();

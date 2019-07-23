@@ -22,7 +22,6 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/model/user_info.dart';
 
-const int ThemeColor = 0xFFC91B3A;
 
 class AppPage extends StatefulWidget {
   
@@ -57,6 +56,7 @@ class _MyHomePageState extends State<AppPage>
   @override
   void initState() {
     super.initState();
+    print('widget.userInfo    ${widget.userInfo}');
     initSearchHistory();
     for (int i = 0; i < tabData.length; i++) {
       _myTabs.add(BottomNavigationBarItem(
@@ -148,7 +148,7 @@ class _MyHomePageState extends State<AppPage>
         //fixed：固定
         type: BottomNavigationBarType.fixed,
 
-        fixedColor: Color(0xFFC91B3A),
+        fixedColor: Theme.of(context).primaryColor,
       ),
     );
   }

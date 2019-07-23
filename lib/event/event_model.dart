@@ -12,3 +12,8 @@ class UserGithubOAuthEvent{
   final bool isSuccess;
   UserGithubOAuthEvent(this.loginName,this.token,this.isSuccess);
 }
+
+class UserSettingThemeColorEvent{
+  final int settingThemeColor;
+  UserSettingThemeColorEvent(this.settingThemeColor);
+}

@@ -19,7 +19,7 @@ class NetUtils {
     // (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
     //     (HttpClient client) {
     //   client.findProxy = (uri) {
-    //     return "PROXY 30.10.24.185:8888";
+    //     return "PROXY 30.10.24.79:8889";
     //   };
     // };
 
@@ -41,7 +41,7 @@ class NetUtils {
     // (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
     //     (HttpClient client) {
     //   client.findProxy = (uri) {
-    //     return "PROXY 30.10.24.185:8888";
+    //     return "PROXY 30.10.24.79:8889";
     //   };
     // };
     Directory documentsDir = await getApplicationDocumentsDirectory();
