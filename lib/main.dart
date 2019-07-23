@@ -1,39 +1,102 @@
+import 'dart:async';
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'routers/routers.dart';
 import 'routers/application.dart';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
+import 'package:flutter_go/views/login_page/login_page.dart';
+import 'package:flutter_go/utils/data_utils.dart';
+
 //import 'views/welcome_page/index.dart';
 
 const int ThemeColor = 0xFFC91B3A;
 SpUtil sp;
 var db;
 
-class MyApp extends StatelessWidget {
-  MyApp()  {
+class MyApp extends StatefulWidget {
+  MyApp() {
     final router = new Router();
 
     Routes.configureRoutes(router);
 
     Application.router = router;
   }
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _hasLogin = false;
+  bool _isLoading = true;
+
+  @override
+  Future initState() {
+    super.initState();
+    var platformAandroid =
+        (Theme.of(context).platform == TargetPlatform.android);
+    DataUtils.checkVersion({'name': 'FlutterGo'}).then((bool) {
+      print("返回值back ${bool}");
+      if (platformAandroid && bool) {
+        setState(() {});
+        _UpdateURL();
+      }
+    }).catchError((onError) {
+      print('获取失败:$onError');
+    });
+
+    DataUtils.checkLogin().then((hasLogin) {
+      setState(() {
+        _hasLogin = hasLogin;
+        _isLoading = false;
+      });
+    }).catchError((onError) {
+      setState(() {
+        _hasLogin = true;
+        _isLoading = false;
+      });
+      print('身份信息验证失败:$onError');
+    });
+  }
+
+  _UpdateURL() async {
+    const currUrl =
+        'https://github.com/alibaba/flutter-go/raw/master/FlutterGo.apk';
+    if (await canLaunch(currUrl)) {
+      await launch(currUrl);
+    } else {
+      throw 'Could not launch $currUrl';
+    }
+  }
+
   showWelcomePage() {
-    // 暂时关掉欢迎介绍
-    return AppPage();
-//    bool showWelcome = sp.getBool(SharedPreferencesKeys.showWelcome);
-//    if (showWelcome == null || showWelcome == true) {
-//      return WelcomePage();
+//    if (_isLoading) {
+//      return Container(
+//        color: const Color(ThemeColor),
+//        child: Center(
+//          child: SpinKitPouringHourglass(color: Colors.white),
+//        ),
+//      );
 //    } else {
-//      return AppPage();
+//      // 判断是否已经登录
+//      if (_hasLogin) {
+        return AppPage();
+//      } else {
+//        return LoginPage();
+//      }
 //    }
   }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -61,7 +124,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 void main() async {
   final provider = new Provider();

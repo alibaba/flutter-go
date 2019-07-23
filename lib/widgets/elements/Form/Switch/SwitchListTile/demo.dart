@@ -13,6 +13,7 @@ class SwitchListTileDemo extends StatefulWidget {
 
 class _Demo extends State<SwitchListTileDemo> {
   bool _lights = false;
+  @override
   Widget build(BuildContext context) {
     return  SwitchListTile(
       title: const Text('Lights'),

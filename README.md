@@ -2,8 +2,6 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ## Flutter Go
 
 ![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
-<<<<<<< HEAD
-=======
 
 > 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
 
@@ -17,36 +15,27 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 [<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
-## The Flutter-Go Roadmap（路线图） for 2019 
-> 考虑到 Flutter 未来的变化和策略的可变性, roadmap 不排除有一定调整，但总体不会变化太大。
-
-<img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
->>>>>>> develop
-
-> 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
-
-## 版本更新历史
-> 按时间顺序,展示重要的提交更新内容。
-
-[地址](https://github.com/alibaba/flutter-go/blob/develop/CHANGE-LOG.md)
-
-## 开发规范
-> 由于类似 javascript, java, object-c,等开发者的语言习惯不同而产生歧义，我们依据官方提供的 [dart 语言规范](https://www.dartlang.org) 定制。
-
-[<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## Release安装包下载地址
 
-android下载地址:
+### android正式版，下载地址:
 
+- 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
+<img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
+
+### iphone正式版，下载地址: 
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <img src="https://img.alicdn.com/tfs/TB180.kOhYaK1RjSZFnXXa80pXa-442-420.png" width="200px">
 =======
 <img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
 >>>>>>> develop
+=======
+- AppStore 搜索 "Fluttergo" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
+<img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
+>>>>>>> dxj/master
 
-iphone下载地址:
-暂无
 
 ## 基础环境
 本项目环境持续更新. 请定期更新各依赖包.
@@ -142,5 +131,5 @@ flutter优点主要包括：
 
 - 大家的互相信任，尊重与支持，才是开源社区前进的动力和来源.
 
-Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
+Powered by 阿里拍卖前端团队<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 

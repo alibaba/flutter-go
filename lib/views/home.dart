@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
+import 'package:flutter_go/views/first_page/main_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -36,31 +37,32 @@ class _MyHomePageState extends State<AppPage>
   SearchHistoryList searchHistoryList;
   bool isSearch = false;
   String appBarTitle = tabData[0]['text'];
-  List<Widget> list = List();
+  List<Widget> _list = List();
   int _currentIndex = 0;
   static List tabData = [
-    {'text': '业界动态', 'icon': Icon(Icons.language)},
+//    {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
-    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)}
+    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
   ];
 
-  List<BottomNavigationBarItem> myTabs = [];
+  List<BottomNavigationBarItem> _myTabs = [];
 
   @override
   void initState() {
     super.initState();
     initSearchHistory();
     for (int i = 0; i < tabData.length; i++) {
-      myTabs.add(BottomNavigationBarItem(
+      _myTabs.add(BottomNavigationBarItem(
         icon: tabData[i]['icon'],
         title: Text(
           tabData[i]['text'],
         ),
       ));
     }
-    list
-      ..add(FirstPage())
+    _list
+//      ..add(FirstPage())
+//      ..add(MainPage())
       ..add(WidgetPage(Provider.db))
       ..add(CollectionPage())
       ..add(FourthPage());
@@ -96,7 +98,7 @@ class _MyHomePageState extends State<AppPage>
   }
 
   Widget buildSearchInput(BuildContext context) {
-      return new SearchInput((value) async {
+    return new SearchInput((value) async {
       if (value != '') {
         List<WidgetPoint> list = await widgetControl.search(value);
         return list
@@ -105,7 +107,7 @@ class _MyHomePageState extends State<AppPage>
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                   onWidgetTap(item, context);
+                    onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -115,18 +117,28 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
+  renderAppBar(BuildContext context, Widget widget, int index) {
+//    print('renderAppBar=====>>>>>>${index}');
+//    if (index == 0) {
+//      return null;
+//    }
+    return AppBar(title: buildSearchInput(context));
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: buildSearchInput(context)),
-      body: list[_currentIndex],
+      appBar: renderAppBar(context, widget, _currentIndex),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _list,
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        items: myTabs,
+        items: _myTabs,
         //高亮  被点击高亮
         currentIndex: _currentIndex,
         //修改 页面
-        onTap: _ItemTapped,
+        onTap: _itemTapped,
         //shifting :按钮点击移动效果
         //fixed：固定
         type: BottomNavigationBarType.fixed,
@@ -136,7 +148,7 @@ class _MyHomePageState extends State<AppPage>
     );
   }
 
-  void _ItemTapped(int index) {
+  void _itemTapped(int index) {
     setState(() {
       _currentIndex = index;
       appBarTitle = tabData[index]['text'];
