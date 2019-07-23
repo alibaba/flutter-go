@@ -48,7 +48,10 @@ dependencies:
   open_file: ^2.0.1+2
   package_info: ^0.4.0+3
   flutter_jpush: ^0.0.4
-  zefyr: ^0.5.0
+  zefyr:
+    path: ./zefyr
+
+
 
 dev_dependencies:
   flutter_test:
