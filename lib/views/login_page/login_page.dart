@@ -224,15 +224,13 @@ class _LoginPageState extends State<LoginPage> {
 
   // 登陆操作
   doLogin() {
+    print("doLogin");
     _signInFormKey.currentState.save();
     setState(() {
       isLoading = true;
     });
     DataUtils.doLogin({'username': username, 'password': password})
         .then((userResult) {
-      if (userResult.runtimeType == String) {
-        throw userResult;
-      }
       setState(() {
         isLoading = false;
       });

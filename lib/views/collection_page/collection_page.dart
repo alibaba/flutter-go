@@ -51,6 +51,7 @@ class _CollectionPageState extends State<CollectionPage> {
       resultList.forEach((item) {
         _collectionList.add(item);
       });
+      print("_collectionList ${_collectionList}");
       if (this.mounted) {
         setState(() {
           _collectionList = _collectionList;
@@ -108,7 +109,8 @@ class _CollectionPageState extends State<CollectionPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          Uri.decodeComponent(_collectionList[index - 1].name),
+          _collectionList[index - 1].name,
+//          Uri.decodeComponent(_collectionList[index - 1].name),
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),

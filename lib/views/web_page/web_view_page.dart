@@ -32,6 +32,7 @@ class _WebViewPageState extends State<WebViewPage> {
   @override
   void initState() {
     super.initState();
+
     flutterWebviewPlugin.onUrlChanged.listen((String url) {
       print('url change:$url');
       if (url.indexOf('loginSuccess') > -1) {
@@ -64,21 +65,21 @@ class _WebViewPageState extends State<WebViewPage> {
         flutterWebviewPlugin.close();
       }
     });
-
-    _collectionControl
-        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
-        .then((list) {
-      list.forEach((item) {
-        if (widget.title.trim() == item['name']) {
-          _router = item['router'];
-        }
-      });
-      if (mounted) {
-        setState(() {
-          _hasCollected = list.length > 0;
-        });
-      }
-    });
+// 这里 存放不使用 name 改成 url. 确定唯一性
+//    _collectionControl
+//        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
+//        .then((list) {
+//      list.forEach((item) {
+//        if (widget.title.trim() == item['name']) {
+//          _router = item['router'];
+//        }
+//      });
+//      if (mounted) {
+//        setState(() {
+//          _hasCollected = list.length > 0;
+//        });
+//      }
+//    });
   }
 
   // 点击收藏按钮

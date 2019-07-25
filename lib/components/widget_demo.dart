@@ -64,25 +64,29 @@ class _WidgetDemoState extends State<WidgetDemo> {
   @override
   void initState() {
     super.initState();
-    _collectionControl.getRouterByName(widget.title).then((list) {
-      widgetDemosList.forEach((item) {
-        if (item.name == widget.title) {
-          _router = item.routerName;
+    // 这里不能直接 使用 ` ModalRoute.of(context)` 会产生报错
+    Future.delayed(Duration.zero,() {
+      String currentPath = ModalRoute.of(context).settings.name;
+      _collectionControl.getRouterByUrl(currentPath).then((list) {
+        if (this.mounted) {
+          setState(() {
+            _hasCollected = list.length > 0;
+          });
         }
       });
-      if (this.mounted) {
-        setState(() {
-          _hasCollected = list.length > 0;
-        });
-      }
     });
+
   }
+
 
 // 点击收藏按钮
   _getCollection() {
+
+    String currentRouterPath = ModalRoute.of(context).settings.name;
+
     if (_hasCollected) {
       // 删除操作
-      _collectionControl.deleteByName(widget.title).then((result) {
+      _collectionControl.deleteByPath(currentRouterPath).then((result) {
         if (result > 0 && this.mounted) {
           setState(() {
             _hasCollected = false;
@@ -91,7 +95,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
               .showSnackBar(SnackBar(content: Text('已取消收藏')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, _router, true));
+                .fire(CollectionEvent(widget.title, currentRouterPath, true));
           }
           
           return;
@@ -101,7 +105,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
     } else {
       // 插入操作
       _collectionControl
-          .insert(Collection(name: widget.title, router: _router))
+          .insert(Collection(name: widget.title, router: currentRouterPath))
           .then((result) {  
         if (this.mounted) {
           setState(() {
@@ -110,7 +114,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
 
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, _router, false));
+                .fire(CollectionEvent(widget.title, currentRouterPath, false));
           }
 
           _scaffoldKey.currentState

@@ -69,8 +69,8 @@ class _MyHomePageState extends State<AppPage>
     _list
 //      ..add(FirstPage())
       ..add(MainPage(userInfo: widget.userInfo))
-      ..add(WidgetPage(Provider.db))
-      ..add(CollectionPage(hasLogined: widget.userInfo.id != 0))
+      ..add(WidgetPage())
+      ..add(CollectionPage())
       ..add(FourthPage());
   }
 
