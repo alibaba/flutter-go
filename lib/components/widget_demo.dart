@@ -93,6 +93,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, _router, true));
           }
+          
           return;
         }
         print('删除错误');

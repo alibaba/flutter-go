@@ -1,8 +1,7 @@
 /// @Author: 一凨
-/// @Date: 2019-01-08 17:12:58
-/// @Last Modified by: 一凨
-/// @Last Modified time: 2019-01-14 20:13:28
-
+/// @Date: 2019-06-05 14:01:03
+/// @Last Modified by:   一凨
+/// @Last Modified time: 2019-06-05 14:01:03
 import 'package:flutter/material.dart';
 import 'package:event_bus/event_bus.dart';
 
@@ -12,19 +11,20 @@ import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
 
-class CollectionPage extends StatefulWidget {
+class CollectionFullPage extends StatefulWidget {
   final bool hasLogined;
+  CollectionFullPage({Key key, this.hasLogined}) : super(key: key);
 
-  CollectionPage({Key key, this.hasLogined}) : super(key: key);
-
-  _CollectionPageState createState() => _CollectionPageState();
+  @override
+  _CollectionFullPageState createState() => _CollectionFullPageState();
 }
 
-class _CollectionPageState extends State<CollectionPage> {
-  _CollectionPageState() {
+class _CollectionFullPageState extends State<CollectionFullPage> {
+  _CollectionFullPageState() {
     final eventBus = new EventBus();
     ApplicationEvent.event = eventBus;
   }
+
   CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
@@ -39,12 +39,6 @@ class _CollectionPageState extends State<CollectionPage> {
     });
   }
 
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
   void _getList() {
     _collectionList.clear();
     _collectionControl.getAllCollection().then((resultList) {
@@ -57,6 +51,12 @@ class _CollectionPageState extends State<CollectionPage> {
         });
       }
     });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Widget _renderList(context, index) {
@@ -128,8 +128,8 @@ class _CollectionPageState extends State<CollectionPage> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
+
+  ListView buildContent(){
     if (_collectionList.length == 0) {
       return ListView(
         children: <Widget>[
@@ -150,6 +150,18 @@ class _CollectionPageState extends State<CollectionPage> {
       itemBuilder: _renderList,
       itemCount: _collectionList.length + 1,
       controller: _scrollController,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('我的收藏'),
+      ),
+      body: Container(
+        child: buildContent(),
+      ),
     );
   }
 }

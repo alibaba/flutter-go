@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_go/views/first_page/drawer_page.dart';
 import './first_page.dart';
 import './sub_page.dart';
 import './main_app_bar.dart';
 import './search_page.dart';
+import 'package:flutter_go/model/user_info.dart';
 
 class _Page {
   final String labelId;
@@ -19,23 +21,25 @@ final List<_Page> _allPages = <_Page>[
 ];
 
 class MainPage extends StatelessWidget {
+  final UserInformation userInfo;
+
+  MainPage({Key key, this.userInfo}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     print("MainPagess build......");
-    return  DefaultTabController(
+    return DefaultTabController(
         length: _allPages.length,
-        child:  Scaffold(
+        child: Scaffold(
           appBar: new MyAppBar(
             leading: Container(
                 child: new ClipOval(
-                  child: Image.network(
-                    'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658',
-                    scale: 15.0,
-                  ),
-                )
-            ),
+              child: Image.network(
+                userInfo.id == 0?'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658':userInfo.avatarPic,
+                scale: 15.0,
+              ),
+            )),
             centerTitle: true,
-            title:  TabLayout(),
+            title: TabLayout(),
             actions: <Widget>[
               IconButton(
                   icon:  Icon(Icons.search),
@@ -44,7 +48,12 @@ class MainPage extends StatelessWidget {
                   })
             ],
           ),
-          body:  TabBarViewLayout(),
+          drawer: Drawer(
+            child: DrawerPage(
+              userInfo: userInfo
+            ),
+          ),
+          body: TabBarViewLayout(),
 //          drawer:  Drawer(
 //            child:  MainLeftPage(),
 //          ),
@@ -60,10 +69,10 @@ void pushPage(BuildContext context, Widget page, {String pageName}) {
 class TabLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  TabBar(
+    return TabBar(
       isScrollable: true,
       //labelPadding: EdgeInsets.all(12.0),
-      labelPadding: EdgeInsets.only(top: 12.0,left: 12.0,right:12.0),
+      labelPadding: EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
       indicatorSize: TabBarIndicatorSize.label,
       tabs: _allPages
           .map((_Page page) =>
