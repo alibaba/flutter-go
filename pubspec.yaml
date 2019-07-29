@@ -51,7 +51,6 @@ dependencies:
   open_file: ^2.0.1+2
   package_info: ^0.4.0+3
   flutter_jpush: ^0.0.4
-  
 
 dev_dependencies:
   flutter_test:
@@ -59,7 +58,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 

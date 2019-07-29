@@ -5,9 +5,14 @@
 此项目遵循[贡献者行为准则](https://github.com/spring-projects/spring-framework/blob/master/CODE_OF_CONDUCT.adoc)。参与此项目即表示您同意遵守其条款.
 
 
+# 如何提PR
+
+PR的第一步就是提交issue，即提交你发现的BUG：
+
+
 您的 Pull Request 可能包含以下几种
 
-- 本项目逻辑代码的问题修复或者优化
+- 当前项目逻辑代码的问题修复或者优化
 - widget 示例的完善
 - widget 文档的完善与更新
 
