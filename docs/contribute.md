@@ -1,14 +1,15 @@
-Flutter Go Pull Request 规范说明
+# Flutter Go PR 规范说明
 
 # 贡献指南
 
 此项目遵循[贡献者行为准则](https://github.com/spring-projects/spring-framework/blob/master/CODE_OF_CONDUCT.adoc)。参与此项目即表示您同意遵守其条款.
 
+
 您的 Pull Request 可能包含以下几种
 
-- flutter go 逻辑代码的 bug
-- widget demo 优化完善
-- widget demo 文档的完善
+- 本项目逻辑代码的问题修复或者优化
+- widget 示例的完善
+- widget 文档的完善与更新
 
 
 # 文档与DEMO的完善

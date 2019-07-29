@@ -25,8 +25,6 @@ class Routes {
     router.define(home, handler: homeHandler);
     router.define(collectionPage,handler:collectionHandler);
     router.define(collectionFullPage,handler:collectionFullHandler);
-    router.define('/category/:type', handler: categoryHandler);
-
     router.define('/category/:ids', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
     router.define(loginPage, handler: loginPageHandler);
