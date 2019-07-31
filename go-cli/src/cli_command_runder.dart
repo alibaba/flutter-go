@@ -6,6 +6,7 @@ import './version.dart';
 import './command/create_demo.dart';
 import './command/create_page.dart';
 import './command/watch_md.dart';
+import './command/build.dart';
 
 
 
@@ -17,7 +18,7 @@ class _CommandRunner extends CommandRunner<int> {
         negatable: false, help: 'Prints the version of goCi.');
     addCommand(CreateDemoCommand());
     addCommand(CreatePageCommand());
-    addCommand(WatchCommand());
+    addCommand(Build());
 
   }
 

@@ -1,9 +1,21 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:mustache/mustache.dart';
 import 'package:path/path.dart' as p;
 import '../../utils/util.dart';
 import '../config.dart';
 import '../exception/demo.dart';
+
+
+String prettyJson(Map json) {
+  String res = "{";
+  json.forEach((k, v) {
+    res += (
+        "\t'$k': '$v'");
+  });
+  res +='}';
+  return res;
+}
 
 
 Future<List> buildPageListJson() async {
@@ -55,36 +67,49 @@ Future<List> buildPageListJson() async {
 }
 
 String renderPagesDart(List<Map<String, dynamic>> data) {
-  // 自定义前缀 避免出现数字非法字符等
-  String pre = "StandardPage";
-  String head = '';
-  String foot = """
+  print('data>>> $data');
+  var source = '''
+
+ {{# pages }}
+import '{{ name }}_{{ author }}_{{ id }}/index.dart' as StandardPage_{{ name }}_{{ id }};
+ {{/ pages }}
 class StandardPages {
   Map<String, String> standardPages;
   Map<String, String> getPages() {
     return {
-""";
-
-  for (int i = 0; i < data.length; i++) {
-    Map<String, dynamic> item = data[i];
-    String demoImportName = '${item['name']}_${item['id']}';
-    head += "import '${item['name']}_${item['author']}_${item['id']}/index.dart' as ${pre}_$demoImportName;\r\n";
-
-    foot += "\t\t\t'${item['id']}': ${pre}_${demoImportName}.getMd()";
-
-    if (i != data.length - 1) {
-      foot += ',\r\n';
-    }
-
-  }
-  foot += """\r
+      "0": "0" {{# pages }},
+     "{{ id }}" : StandardPage_{{ name }}_{{ id }}.getMd()
+       {{/ pages }}
     };
   }
-}
+  List<Map<String, String>> getLocalList() {
+    return [
+      {}{{# pages }},
+      { "id": "{{ id }}", "name": "{{ name }}", "email": "{{ email }}", "author": "{{ author }}"}
+      {{/ pages }}
+    ];
+  }
 
-  """;
+}
+	  
+	''';
+  var template = new Template(source, name: 'template-filename.html');
+
+
+//  print(prettyJson(data[0]));
+  // 自定义前缀 避免出现数字非法字符等
+  String pre = "StandardPage";
+  Map<String, List> formatData = {
+    "pages": data
+  };
+
+  var output = template.renderString(formatData);
+  print(output);
+
+
+//  }
+return output;
   
-  return head + foot;
 }
 Future<bool> checkPage(String path) async {
   List files = [

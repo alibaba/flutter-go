@@ -297,7 +297,6 @@ class WidgetTree {
       current = CategoryComponent(id: 0, name: 'root', parentId: null, children: []);
     }
     json.forEach((item) {
-
       // 归属分类级别
       if (['root', 'category'].indexOf(item['type']) != -1) {
         CategoryComponent cate = CategoryComponent.fromJson(item);

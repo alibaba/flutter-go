@@ -191,7 +191,10 @@ void main() async {
   new SearchHistoryList(sp);
   await DataUtils.getWidgetTreeList().then((List json) {
     Application.widgetTree = WidgetTree.buildWidgetTree(json);
+    if (Application.env == ENV.DEV) {
 
+    }
+    print("Application.widgetTree>>>> ${Application.widgetTree}");
   });
   db = Provider.db;
   runApp(new MyApp());
