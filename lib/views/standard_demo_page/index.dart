@@ -27,7 +27,6 @@ class StandardView extends StatefulWidget {
   _StandardView createState() => _StandardView();
 }
 
-
 class _StandardView extends State<StandardView> {
   String markdownDesc = '# this is header';
   String pageTitle = "XXX";
@@ -37,15 +36,17 @@ class _StandardView extends State<StandardView> {
   StandardPages standardPage = new StandardPages();
   @override
   void initState() {
-
     super.initState();
     this.getDetail();
   }
+
   // 本地调用的获取基本信息
   Future<void> getPagesInfo() async {
-    String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
+    String jsonString = await DefaultAssetBundle.of(context)
+        .loadString('lib/standard_pages/.pages.json');
     List jsonList = json.decode(jsonString);
-    Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id);
+    Map<String, dynamic> pageDetail =
+        jsonList.firstWhere((item) => item['id'] == widget.id);
     if (pageDetail != null) {
       setState(() {
         pageTitle = pageDetail['title'] ?? '请加入title';
@@ -53,16 +54,14 @@ class _StandardView extends State<StandardView> {
         email = pageDetail['email'];
       });
     }
-
   }
 
-
   String _getContentFromLocal() {
-
     String pageId = widget.id;
     Map<String, String> pagesList = standardPage.getPages();
     return pagesList[pageId];
   }
+
   Future<String> _getContentOnline() async {
     String content = 'online content';
 
@@ -79,12 +78,15 @@ class _StandardView extends State<StandardView> {
       getPagesInfo();
       conent = _getContentFromLocal();
     }
-    setState(() {
-      markdownDesc = conent;
-    });
+    if (this.mounted) {
+      setState(() {
+        markdownDesc = conent;
+      });
+    }
     return Future(() => conent);
 //    this.rebuild();
   }
+
   Widget buildMarkdown() {
     Map<String, String> contentList = new StandardPages().getPages();
 
@@ -94,23 +96,19 @@ class _StandardView extends State<StandardView> {
 
     return MarkdownBody(
         data: contentList[widget.id],
-        syntaxHighlighter:new mdCopy.HighLight(),
+        syntaxHighlighter: new mdCopy.HighLight(),
         demoBuilder: (Map<String, dynamic> attrs) {
           List<Widget> demo = demoObjects[attrs['id']];
           if (demo == null) {
             String errString = "not found ${attrs['id']} in demo packages";
             debugPrint(errString);
-            demo = [
-              Text(errString)
-            ];
+            demo = [Text(errString)];
           }
 
-          return Column(
-            children: demo
-          );
-        }
-    );
+          return Column(children: demo);
+        });
   }
+
   @override
   Widget build(BuildContext context) {
     return new WidgetDemo(
@@ -123,7 +121,8 @@ class _StandardView extends State<StandardView> {
         '创建者: $email',
         'id: ${widget.id}',
       ],
-      docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
   }
 }
