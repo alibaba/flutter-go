@@ -1,7 +1,6 @@
 class Api{
 //   static const String BASE_URL = 'http://flutter-go.alibaba.net/';
-  // static const String BASE_URL = 'https://flutter-go.pub/api/';
-  static const String BASE_URL = 'http://30.10.26.15:7001/';
+  static const String BASE_URL = 'https://flutter-go.pub/api/';
 
   static const String DO_LOGIN = BASE_URL+'doLogin';//登陆
 
