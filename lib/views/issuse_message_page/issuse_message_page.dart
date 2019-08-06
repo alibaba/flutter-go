@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:zefyr/zefyr.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:notus/convert.dart';
@@ -8,12 +9,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 
 
-class issuesMessagePage extends StatefulWidget {
+class IssuesMessagePage extends StatefulWidget {
   @override
-  _issuesMessagePageState createState() => _issuesMessagePageState();
+  _IssuesMessagePageState createState() => _IssuesMessagePageState();
 }
 
-class _issuesMessagePageState extends State<issuesMessagePage> {
+class _IssuesMessagePageState extends State<IssuesMessagePage> {
   final TextEditingController _controller = new TextEditingController();
   final ZefyrController _zefyrController = new ZefyrController(NotusDocument());
   final FocusNode _focusNode = new FocusNode();
@@ -50,7 +51,7 @@ class _issuesMessagePageState extends State<issuesMessagePage> {
       _show('标题不能为空');
     } else {
       DataUtils.feedback({'title': _title, "body": mk},context).then((result) {
-        _show(result);
+        _show('提交成功');
         Navigator.maybePop(context);
       });
     }
@@ -66,6 +67,22 @@ class _issuesMessagePageState extends State<issuesMessagePage> {
         textColor: Colors.white,
         fontSize: 16.0);
   }
+
+  Widget buildLoading() {
+      return Opacity(
+        opacity: .5,
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.85,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            color: Colors.black,
+          ),
+          child: SpinKitPouringHourglass(color: Colors.white),
+        ),
+      );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

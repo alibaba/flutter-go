@@ -30,7 +30,7 @@ class Routes {
     router.define(loginPage, handler: loginPageHandler);
     router.define(codeView,handler:fullScreenCodeDialog);
     router.define(webViewPage,handler:webViewPageHand);
-    // router.define(issuesMessage, handler: issuesMessageHandler);
+     router.define(issuesMessage, handler: issuesMessageHandler);
       widgetDemosList.forEach((demo) {
         Handler handler = new Handler(
             handlerFunc: (BuildContext context, Map<String, List<String>> params) {
