@@ -190,8 +190,8 @@ void main() async {
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
   await DataUtils.getWidgetTreeList().then((List json) {
+    if (json == null) return;
     Application.widgetTree = WidgetTree.buildWidgetTree(json);
-
   });
   db = Provider.db;
   runApp(new MyApp());

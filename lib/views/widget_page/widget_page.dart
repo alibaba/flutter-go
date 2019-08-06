@@ -42,7 +42,6 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   Widget buildGrid() {
     // 存放最后的widget
     List<Widget> tiles = [];
-    print("Application.widgetTree>>> ${Application.widgetTree}");
     Application.widgetTree.children.forEach((dynamic item) {
       tiles.add(new CateCard(category: item));
     });
