@@ -7,9 +7,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -69,8 +71,8 @@ class _MyHomePageState extends State<AppPage>
     _list
 //      ..add(FirstPage())
       ..add(MainPage(userInfo: widget.userInfo))
-      ..add(WidgetPage(Provider.db))
-      ..add(CollectionPage(hasLogined: widget.userInfo.id != 0))
+      ..add(WidgetPage())
+      ..add(CollectionPage())
       ..add(FourthPage());
   }
 
@@ -87,26 +89,21 @@ class _MyHomePageState extends State<AppPage>
   }
 
   void onWidgetTap(WidgetPoint widgetPoint, BuildContext context) {
-    List widgetDemosList = new WidgetDemoList().getDemos();
     String targetName = widgetPoint.name;
-    String targetRouter = '/category/error/404';
-    widgetDemosList.forEach((item) {
-      if (item.name == targetName) {
-        targetRouter = item.routerName;
-      }
-    });
     searchHistoryList
-        .add(SearchHistory(name: targetName, targetRouter: targetRouter));
+        .add(SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
-    print("searchHistoryList2 ${targetRouter}");
-    print("searchHistoryList3 ${widgetPoint.name}");
-    Application.router.navigateTo(context, "$targetRouter");
+    Application.router.navigateTo(
+              context, widgetPoint.routerName,
+              transition: TransitionType.inFromRight);
   }
 
   Widget buildSearchInput(BuildContext context) {
     return new SearchInput((value) async {
       if (value != '') {
-        List<WidgetPoint> list = await widgetControl.search(value);
+        print('value ::: $value');
+        // List<WidgetPoint> list = await widgetControl.search(value);
+        List<WidgetPoint> list = await DataUtils.searchWidget(value);
         return list
             .map((item) => new MaterialSearchResult<String>(
                   value: item.name,

@@ -10,7 +10,7 @@ import 'package:flutter_go/views/login_page/login_page.dart';
 import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/views/collection_page/collection_full_page.dart';
-
+import 'package:flutter_go/views/standard_demo_page/index.dart';
 
 // app的首页
 var homeHandler = new Handler(
@@ -35,9 +35,9 @@ var collectionHandler = new Handler(
 
 var categoryHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    String name = params["type"]?.first;
+    String ids = params["ids"]?.first;
 
-    return new CategoryHome(name);
+    return new CategoryHome(ids);
   },
 );
 
@@ -60,12 +60,15 @@ var fullScreenCodeDialog = new Handler(
 
 var webViewPageHand = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      String title = params['title']?.first;
-      String url = params['url']?.first;
-      return new WebViewPage(url, title);
-    });
+  String title = params['title']?.first;
+  String url = params['url']?.first;
+  return new WebViewPage(url, title);
+});
 
-// var issuesMessageHandler = new Handler(
-//     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-//       return issuesMessagePage();
-//     });
+
+var standardPageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    String id = params['id']?.first;
+    return StandardView(id: id);
+  }
+);

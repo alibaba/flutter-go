@@ -2,10 +2,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/analytics.dart' show analytics;
-
 import '../widgets/index.dart';
 import './router_handler.dart';
-
+import '../standard_pages/index.dart';
 class Routes {
   static String root = "/";
   static String home = "/home";
@@ -16,6 +15,7 @@ class Routes {
   static String issuesMessage='/issuesMessage';
   static String collectionPage = '/collection-page';
   static String collectionFullPage = '/collection-full-page';
+  static String standardPage = '/standard-page/:id';
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
@@ -25,7 +25,7 @@ class Routes {
     router.define(home, handler: homeHandler);
     router.define(collectionPage,handler:collectionHandler);
     router.define(collectionFullPage,handler:collectionFullHandler);
-    router.define('/category/:type', handler: categoryHandler);
+    router.define('/category/:ids', handler: categoryHandler);
     router.define('/category/error/404', handler: widgetNotFoundHandler);
     router.define(loginPage, handler: loginPageHandler);
     router.define(codeView,handler:fullScreenCodeDialog);
@@ -41,5 +41,10 @@ class Routes {
       });
       router.define('${demo.routerName}', handler: handler);
     });
+    router.define(standardPage,handler:standardPageHandler);
+//    router.define(webViewPage,handler:webViewPageHand);
+//    standardPages.forEach((String id, String md) => {
+//
+//    });
   }
 }

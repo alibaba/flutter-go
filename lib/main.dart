@@ -16,6 +16,7 @@ import 'package:flutter_jpush/flutter_jpush.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
 import 'package:event_bus/event_bus.dart';
+import 'package:flutter_go/model/widget.dart';
 
 //import 'views/welcome_page/index.dart';
 
@@ -25,9 +26,9 @@ var db;
 class MyApp extends StatefulWidget {
   MyApp() {
     final router = new Router();
-
     Routes.configureRoutes(router);
-
+    // 这里设置项目环境
+    Application.env = ENV.PRODUCTION;
     Application.router = router;
   }
 
@@ -128,7 +129,6 @@ class _MyAppState extends State<MyApp> {
       });
       print('身份信息验证失败:$onError');
     });
-
     ApplicationEvent.event.on<UserSettingThemeColorEvent>().listen((event) {
       print('接收到的 event $event');
     });
@@ -154,8 +154,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+//    WidgetTree.getCommonItemByPath([15, 17], Application.widgetTree);
     return new MaterialApp(
-      title: 'title',
+      title: 'titles',
       theme: new ThemeData(
         primaryColor: Color(this.themeColor),
         backgroundColor: Color(0xFFEFEFEF),
@@ -188,6 +189,10 @@ void main() async {
   await provider.init(true);
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
+  await DataUtils.getWidgetTreeList().then((List json) {
+    if (json == null) return;
+    Application.widgetTree = WidgetTree.buildWidgetTree(json);
+  });
   db = Provider.db;
   runApp(new MyApp());
 }

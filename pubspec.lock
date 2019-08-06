@@ -105,7 +105,7 @@ packages:
       name: fluro
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.0"
+    version: "1.5.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -124,7 +124,7 @@ packages:
       name: flutter_downloader
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.7"
+    version: "1.1.9"
   flutter_jpush:
     dependency: "direct main"
     description:
@@ -132,13 +132,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.4"
-  flutter_markdown:
-    dependency: "direct main"
-    description:
-      name: flutter_markdown
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -194,7 +187,7 @@ packages:
     source: hosted
     version: "1.0.7"
   markdown:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: markdown
       url: "https://pub.dartlang.org"
@@ -208,7 +201,7 @@ packages:
     source: hosted
     version: "0.12.5"
   meta:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: meta
       url: "https://pub.dartlang.org"
@@ -234,9 +227,9 @@ packages:
       name: package_info
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+4"
+    version: "0.4.0+6"
   path:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path
       url: "https://pub.dartlang.org"
@@ -248,7 +241,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.2"
+    version: "1.2.0"
   pedantic:
     dependency: transitive
     description:
@@ -297,7 +290,7 @@ packages:
       name: share
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.2"
+    version: "0.6.2+1"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -323,7 +316,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.6+1"
+    version: "1.1.6+3"
   stack_trace:
     dependency: transitive
     description:
@@ -339,7 +332,7 @@ packages:
     source: hosted
     version: "2.0.0"
   string_scanner:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: string_scanner
       url: "https://pub.dartlang.org"
@@ -379,7 +372,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.5"
+    version: "5.1.1"
   vector_math:
     dependency: transitive
     description:
@@ -396,4 +389,4 @@ packages:
     version: "0.0.1"
 sdks:
   dart: ">=2.2.2 <3.0.0"
-  flutter: ">=1.5.0 <2.0.0"
+  flutter: ">=1.6.0 <2.0.0"
