@@ -57,12 +57,11 @@ class DataUtils {
   // 一键反馈
   static Future feedback(Map<String, String> params, context) async {
     var response = await NetUtils.post(Api.FEEDBACK, params);
-    // print(response);
     if (response['status'] == 401 && response['message'] == '请先登录') {
       Application.router.navigateTo(context, '${Routes.loginPage}',
           transition: TransitionType.nativeModal);
     }
-    return response;
+    return response['success'];
   }
 
   //设置主题颜色
