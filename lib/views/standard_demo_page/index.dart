@@ -15,6 +15,13 @@ import '../../components/flutter_markdown/lib/flutter_markdown.dart';
 import '../../standard_pages/index.dart';
 import '../../page_demo_package/index.dart';
 import 'package:flutter_go/routers/application.dart';
+import 'package:flutter_go/utils/net_utils.dart';
+import 'package:flutter_go/components/loading.dart';
+
+const githubUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/standard_pages/';
+const PagesUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/standard_pages/.pages.json';
+const DemosUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/page_demo_package/.demo.json';
+
 
 // ONLINE || LOCAL
 ENV env = Application.env;
@@ -29,9 +36,9 @@ class StandardView extends StatefulWidget {
 
 
 class _StandardView extends State<StandardView> {
-  String markdownDesc = '# this is header';
-  String pageTitle = "XXX";
-
+  String markdownDesc = '';
+  String pageTitle = '';
+  bool isLoading = false;
   String author = '';
   String email = '';
   StandardPages standardPage = new StandardPages();
@@ -39,13 +46,15 @@ class _StandardView extends State<StandardView> {
   void initState() {
 
     super.initState();
-    this.getDetail();
+    this.getPageInfo();
   }
-  // 本地调用的获取基本信息
-  Future<void> getPagesInfo() async {
+
+  /// 本地调用的获取文章属性的基本信息
+  Future<void> localGetPagesAttrsInfo() async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
     List jsonList = json.decode(jsonString);
     Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id);
+
     if (pageDetail != null) {
       setState(() {
         pageTitle = pageDetail['title'] ?? '请加入title';
@@ -56,44 +65,85 @@ class _StandardView extends State<StandardView> {
 
   }
 
-
-  String _getContentFromLocal() {
+  /// 从本地获取基本文章信息
+  String localGetPagesMarkdown() {
 
     String pageId = widget.id;
     Map<String, String> pagesList = standardPage.getPages();
     return pagesList[pageId];
   }
-  Future<String> _getContentOnline() async {
+  Future<String> getContentOnline() async {
     String content = 'online content';
+    this.setState(() {
+      isLoading = true;
+    });
 
-    return Future(() => content);
+    List response = jsonDecode(await NetUtils.get(PagesUrl));
+
+
+
+    Map targetPage = response.firstWhere((page) => page['id'] == widget.id);
+    if (targetPage == null) {
+      setState(() {
+        isLoading = false;
+      });
+      return Future(() => '未获取界面相当信息');
+    }
+    setState(() {
+      pageTitle = targetPage['title'] ?? 'xxx';
+      author = targetPage['author'];
+      email = targetPage['email'];
+    });
+
+    String pageName = targetPage['name'] + "_" +targetPage['author']+ "_" +targetPage['id'];
+    String pageContent = await NetUtils.get(githubUrl + pageName + "/index.md");
+    setState(() {
+      isLoading = false;
+    });
+    return Future(() => pageContent);
   }
-
-  Future<String> getDetail() async {
+  /// 获取当面界面的相关信息. 需要区分环境
+  /// 本地环境下, 从本地获取 standard_pages的目录中互殴
+  /// 线上环境. 从github的api中获取
+  Future<String> getPageInfo() async {
     String conent = '';
     print("env:::: $env");
 
     if (env == ENV.PRODUCTION) {
-      conent = await _getContentOnline();
+      conent = await getContentOnline();
     } else {
-      getPagesInfo();
-      conent = _getContentFromLocal();
+      conent = localGetPagesMarkdown();
+      localGetPagesAttrsInfo();
     }
     setState(() {
       markdownDesc = conent;
     });
     return Future(() => conent);
-//    this.rebuild();
+  }
+  Widget buildFootInfo() {
+    if (!isLoading) {
+      return Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('创建者: $author'),
+            Text('邮箱: $email'),
+            Text('界面id: ${widget.id}')
+          ],
+        ),
+      );
+    }
+    return Container();
   }
   Widget buildMarkdown() {
-    Map<String, String> contentList = new StandardPages().getPages();
 
-    if (contentList[widget.id] == null) {
-      contentList[widget.id] = '';
+
+    if (markdownDesc == null) {
+      return null;
     }
 
     return MarkdownBody(
-        data: contentList[widget.id],
+        data: markdownDesc,
         syntaxHighlighter:new mdCopy.HighLight(),
         demoBuilder: (Map<String, dynamic> attrs) {
           List<Widget> demo = demoObjects[attrs['id']];
@@ -111,19 +161,24 @@ class _StandardView extends State<StandardView> {
         }
     );
   }
+
+
+
   @override
   Widget build(BuildContext context) {
     return new WidgetDemo(
       title: pageTitle,
-      codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
+//      codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
       contentList: [
+        NetLoadingDialog(
+          loading: isLoading,
+          outsideDismiss: false,
+        ),
         buildMarkdown(),
         SizedBox(height: 30),
-        '创建者: $author',
-        '创建者: $email',
-        'id: ${widget.id}',
+        buildFootInfo(),
+        SizedBox(height: 30)
       ],
-      docUrl: 'https://docs.flutter.io/flutter/material/DropdownButton-class.html',
     );
   }
 }

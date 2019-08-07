@@ -96,18 +96,14 @@ class StandardPages {
   var template = new Template(source, name: 'template-filename.html');
 
 
-//  print(prettyJson(data[0]));
   // 自定义前缀 避免出现数字非法字符等
-  String pre = "StandardPage";
   Map<String, List> formatData = {
     "pages": data
   };
 
-  var output = template.renderString(formatData);
-  print(output);
+  String output = template.renderString(formatData);
 
 
-//  }
 return output;
   
 }

@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import "package:flutter/material.dart";
-
+import "package:flutter_go/routers/application.dart";
 import 'package:flutter_go/utils/sql.dart';
 
 enum treeNode {
@@ -188,6 +188,7 @@ class CategoryComponent extends CommonItem {
     @required this.id,
     @required this.name,
     @required this.parentId,
+    this.type = 'categoryw',
     this.children,
     this.parent
   });
@@ -289,6 +290,7 @@ class WidgetLeaf extends CommonItem {
 }
 
 class WidgetTree {
+  // 构建树型结构
   static CategoryComponent buildWidgetTree(List json, [parent]){
     CategoryComponent current;
     if (parent != null) {
@@ -311,6 +313,41 @@ class WidgetTree {
       }
     });
     return current;
+  }
+
+  static insertDevPagesToList(List list, List devPages) {
+    List devChildren = [];
+    int index = 9999999;
+    if (Application.env == ENV.PRODUCTION) {
+      return list;
+    }
+    devPages.forEach((item) {
+      index++;
+      if (item['id'] != null) {
+        devChildren.add({
+          "id": index.toString(),
+          "name": item['name'],
+          "parentId": "99999999999",
+          "type": "widget",
+          "display": "standard",
+          "author": item['author'],
+          "pageId": item['id']
+        });
+      }
+    });
+    list.forEach((item) {
+      if (item['name'].toString().toUpperCase() == 'DEVELOPER') {
+        List children = item['children'];
+        children.insert(0, {
+          "id": "99999999999",
+          "name": "本地代码",
+          "parentId": int.parse(item['id']),
+          "type": "category",
+          "children": devChildren
+        });
+      }
+    });
+    return list;
   }
   static CategoryComponent getCommonItemById(List<int> path, CategoryComponent root) {
     print("getCommonItemByPath $path");

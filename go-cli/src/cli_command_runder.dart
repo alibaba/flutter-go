@@ -18,6 +18,7 @@ class _CommandRunner extends CommandRunner<int> {
         negatable: false, help: 'Prints the version of goCi.');
     addCommand(CreateDemoCommand());
     addCommand(CreatePageCommand());
+    addCommand(WatchCommand());
     addCommand(Build());
 
   }
