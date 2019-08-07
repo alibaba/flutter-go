@@ -1,9 +1,8 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-17 09:46:31 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-17 15:53:42
- */
+ /// Author: xiaojia.dxj
+ /// Date: 2018-12-17 09:46:31 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2018-12-17 15:53:42
 
 import 'package:flutter/material.dart';
 

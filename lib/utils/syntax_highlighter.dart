@@ -1,12 +1,7 @@
-/*
- * @Author: 一凨 
- * @Date: 2019-01-14 11:42:39 
- * @Last Modified by:   一凨 
- * @Last Modified time: 2019-01-14 11:42:39 
- */
-// Copyright 2016 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+/// @Author: 一凨 
+/// @Date: 2019-01-14 11:42:39 
+/// @Last Modified by:   一凨 
+/// @Last Modified time: 2019-01-14 11:42:39 
 
 import 'package:flutter/material.dart';
 import 'package:string_scanner/string_scanner.dart';

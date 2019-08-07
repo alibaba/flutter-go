@@ -1,12 +1,11 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-22 20:37:51 
- * @Last Modified by:   一凨 
- * @Last Modified time: 2018-12-22 20:37:51 
- */
-import 'package:flutter/material.dart';
-import '../../../model/widget.dart';
+/// @Author: 一凨 
+/// @Date: 2018-12-22 20:37:51 
+/// @Last Modified by:   一凨 
+/// @Last Modified time: 2018-12-22 20:37:51 
 
+import 'package:flutter/material.dart';
+
+import '../../../model/widget.dart';
 import './ScrollView/index.dart' as ScrollView;
 import './Scrollable/index.dart' as Scrollable;
 import './ScrollbarPainter/index.dart' as ScrollbarPainter;

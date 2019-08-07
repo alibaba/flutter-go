@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
 import 'package:flutter_go/widgets/elements/Form/Text/RichText/demo.dart';
+
 const String intro = """
 ### **简介**
 
@@ -24,7 +25,7 @@ class Demo extends StatefulWidget {
 }
 
 class _Demo extends State<Demo> {
-
+  @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Rich Text',

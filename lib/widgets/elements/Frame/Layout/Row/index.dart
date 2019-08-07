@@ -1,4 +1,12 @@
+ /// Author: xiaojia.dxj
+ /// Date: 2018/11/22
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// LastUpdateTime: 2018/11/22
+ /// LastUpdateBy: xj.deng
+ /// Describle:Row
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 
@@ -52,6 +60,8 @@ class _DemoState extends State<Demo> {
     return  Column(
       children: <Widget>[
         RowLayoutCreate(),
+        SizedBox(height: 10.0,),
+        RowExpanded(),
         Row(
           children: <Widget>[
             Expanded(

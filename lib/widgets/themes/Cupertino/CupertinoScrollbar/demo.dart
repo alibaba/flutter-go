@@ -1,21 +1,19 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 15/01/2019
- * Time: 22:23
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 15/01/2019
+/// Time: 22:23
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
-//import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class CupertinoScrollbarDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }
 
 class _Demo extends State<CupertinoScrollbarDemo> {
-
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
@@ -49,7 +47,7 @@ class NoCupertinoScrollbarDemo extends StatefulWidget {
 }
 
 class _NoCupertinoScrollbarDemo extends State<NoCupertinoScrollbarDemo> {
-
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[

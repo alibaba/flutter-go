@@ -1,18 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoPageScaffold 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoPageScaffold 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPageScaffold 默认的实例
-* */
+// CupertinoPageScaffold 默认的实例
 class CupertinoPageScaffoldFullDefault extends StatefulWidget {
   const CupertinoPageScaffoldFullDefault() : super();
 
@@ -20,9 +16,7 @@ class CupertinoPageScaffoldFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPageScaffoldFullDefault();
 }
 
-/*
-* CupertinoPageScaffold 默认的实例,有状态
-* */
+// CupertinoPageScaffold 默认的实例,有状态
 class _CupertinoPageScaffoldFullDefault extends State {
   @override
   Widget build(BuildContext context) {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>611157827052-0n777p43lrtr2dpo7gco5o3lffu7a7r4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.611157827052-0n777p43lrtr2dpo7gco5o3lffu7a7r4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDztt5Q9D7plAc8VqNtHumAci6BaoOiTg4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>611157827052</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alibaba.fluttergo</string>
+	<key>PROJECT_ID</key>
+	<string>alibaba-flutter-go</string>
+	<key>STORAGE_BUCKET</key>
+	<string>alibaba-flutter-go.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:611157827052:ios:c6129e5eff2f125d</string>
+	<key>DATABASE_URL</key>
+	<string>https://alibaba-flutter-go.firebaseio.com</string>
+</dict>
+</plist>

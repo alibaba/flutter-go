@@ -1,11 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 15/01/2019
- * Time: 22:23
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  CupertinoSwitchDemo
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 15/01/2019
+/// Time: 22:23
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  CupertinoSwitchDemo
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +14,7 @@ class CupertinoSwitchDemo extends StatefulWidget {
 
 class _Demo extends State<CupertinoSwitchDemo> {
   bool _lights = false;
+  @override
   Widget build(BuildContext context) {
     return MergeSemantics(
       child: ListTile(

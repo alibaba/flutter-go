@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoPageScaffold 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoPicker 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
-//import '../../gallery/demo.dart';
-//import 'cupertino_navigation_demo.dart' show coolColorNames;
 
 const double _kPickerSheetHeight = 216.0;
 const double _kPickerItemHeight = 32.0;

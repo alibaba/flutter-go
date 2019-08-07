@@ -1,18 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoNavigationBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoNavigationBar 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoNavigationBar 默认的实例
-* */
+// CupertinoNavigationBar 默认的实例
 class CupertinoNavigationBarFullDefault extends StatefulWidget {
   const CupertinoNavigationBarFullDefault() : super();
 
@@ -20,9 +16,7 @@ class CupertinoNavigationBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoNavigationBarFullDefault();
 }
 
-/*
-* CupertinoNavigationBar 默认的实例,有状态
-* */
+// CupertinoNavigationBar 默认的实例,有状态
 class _CupertinoNavigationBarFullDefault extends State {
 
   Widget build2(BuildContext context) {
@@ -88,6 +82,7 @@ class _CupertinoNavigationBarFullDefault extends State {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: MediaQuery.of(context).size.height/1.5,

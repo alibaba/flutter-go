@@ -1,9 +1,10 @@
-/**
- * @author Nealyang
- * 
- * 新widget详情页模板
- */
+/// @author Nealyang
+/// 新widget详情页模板
+
+import 'dart:core';
+
 import 'package:flutter/material.dart';
+
 import '../routers/application.dart';
 import '../routers/routers.dart';
 import '../components/markdown.dart';
@@ -11,7 +12,6 @@ import '../model/collection.dart';
 import '../widgets/index.dart';
 import '../event/event_bus.dart';
 import '../event/event_model.dart';
-import 'dart:core';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -101,7 +101,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
       // 插入操作
       _collectionControl
           .insert(Collection(name: widget.title, router: _router))
-          .then((result) {
+          .then((result) {  
         if (this.mounted) {
           setState(() {
             _hasCollected = true;
@@ -145,7 +145,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
             new IconButton(
               tooltip: 'goBack home',
               onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/home'));
+                Navigator.popUntil(context, ModalRoute.withName('/'));
               },
               icon: Icon(Icons.home),
             ),

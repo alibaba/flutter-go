@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_go/components/widget_demo.dart';
 
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 
@@ -26,7 +26,6 @@ const Text0 = '''
 
 ''';
 
-
 class Demo extends StatefulWidget {
   static const String routeName =
       '/element/themes/Cupertino/CupertinoTimerPicker';
@@ -41,11 +40,9 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CupertinoTimerPicker',
       codeUrl: 'themes/Cupertino/CupertinoTimerPicker/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoTimerPicker-class.html',
-      contentList: [
-        Text0,
-        CupertinoTimerPickerDemo()
-      ],
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoTimerPicker-class.html',
+      contentList: [Text0, CupertinoTimerPickerDemo()],
     );
   }
 }

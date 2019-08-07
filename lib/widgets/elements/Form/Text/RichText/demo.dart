@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 14/01/2019
- * Time: 19:02
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 14/01/2019
+/// Time: 19:02
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
 
@@ -14,7 +12,7 @@ class RichTextDemo extends StatefulWidget {
 }
 
 class _Demo extends State<RichTextDemo> {
-
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xff000000),

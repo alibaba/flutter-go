@@ -1,15 +1,11 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 27/12/2018
- * Time: 17:30
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 27/12/2018
+/// Time: 17:30
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  xxx
 
 import 'package:flutter/material.dart';
-
-
 
 class SwitchDemo extends StatefulWidget {
   _Demo createState() => _Demo();
@@ -17,6 +13,7 @@ class SwitchDemo extends StatefulWidget {
 
 class _Demo extends State<SwitchDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch(
       value: this.check,
@@ -35,6 +32,7 @@ class SwitchHighDemo extends StatefulWidget {
 
 class _SwitchHighDemo extends State<SwitchHighDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch.adaptive(
       value: this.check,
@@ -55,6 +53,7 @@ class SwitchTypesDemo extends StatefulWidget {
 
 class _SwitchTypesDemo extends State<SwitchTypesDemo> {
   bool check = false;
+  @override
   Widget build(BuildContext context) {
     return  Switch(
       value: this.check,

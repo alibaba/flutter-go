@@ -1,9 +1,10 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2019-01-08 11:33:21 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2019-01-08 15:24:14
- */
+
+ /// Author: xiaojia.dxj
+ /// Date: 2019-01-08 11:33:21 
+ /// Email: xiaojia.dxj@alibaba-inc.com
+ /// Last Modified by: xiaojia.dxj
+ /// Last Modified time: 2019-01-08 15:24:14
+
 import 'package:flutter/material.dart';
 
 class MergeableMaterialItemDemo extends StatefulWidget {

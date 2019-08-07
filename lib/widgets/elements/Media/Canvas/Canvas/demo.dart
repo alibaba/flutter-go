@@ -1,16 +1,17 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: Canvas 的示例
- */
-import 'package:flutter/material.dart';
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: Canvas 的示例
+
 import 'dart:ui';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 import 'dart:math';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 CustomPaint graph;

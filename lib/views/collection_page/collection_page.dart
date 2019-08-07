@@ -1,16 +1,17 @@
-/*
- * @Author: 一凨 
- * @Date: 2019-01-08 17:12:58 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 20:13:28
- */
+/// @Author: 一凨 
+/// @Date: 2019-01-08 17:12:58 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-14 20:13:28
+
 import 'package:flutter/material.dart';
+import 'package:event_bus/event_bus.dart';
+
 import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-import 'package:event_bus/event_bus.dart';
+
 
 class CollectionPage extends StatefulWidget {
   _CollectionPageState createState() => _CollectionPageState();

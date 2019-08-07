@@ -1,18 +1,17 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: RawMaterialButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: RawMaterialButton 的示例
+
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-/*
-* RawMaterialButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+// RawMaterialButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
+
 class RawMaterialButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
@@ -29,9 +28,7 @@ class RawMaterialButtonDefault extends StatelessWidget {
   }
 }
 
-/*
-* RawMaterialButton 自定义的实例
-* */
+// RawMaterialButton 自定义的实例
 class RawMaterialButtonCustom extends StatelessWidget {
   final String txt;
   final Color color;

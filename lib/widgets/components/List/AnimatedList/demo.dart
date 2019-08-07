@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/widgets/components/List/AnimatedList/model.dart';
 
 class AnimatedListFullDefault extends StatefulWidget {
@@ -11,9 +10,8 @@ class AnimatedListFullDefault extends StatefulWidget {
   _AnimatedListFullDefault createState() => _AnimatedListFullDefault();
 }
 
-/*
-* AnimatedList 默认的实例,有状态
-* */
+
+/// AnimatedList 默认的实例,有状态
 class _AnimatedListFullDefault extends State<AnimatedListFullDefault> {
   final GlobalKey<AnimatedListState> _listKey =  GlobalKey<AnimatedListState>();
   ListModel<int> _list;

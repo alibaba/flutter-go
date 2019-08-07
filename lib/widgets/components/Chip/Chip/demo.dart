@@ -1,9 +1,7 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-18 11:40:57 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 16:50:43
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-18 11:40:57 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2019-01-14 16:50:43
 
 import 'package:flutter/material.dart';
 

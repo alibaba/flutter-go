@@ -1,17 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/11/22
- * Time: 上午12:03
- * email: zhu.yan@alibaba-inc.com
- * tartget: DropdownButton 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/11/22
+/// Time: 上午12:03
+/// email: zhu.yan@alibaba-inc.com
+/// target: DropdownButton 的示例
+
 import 'package:flutter/material.dart';
 
-/*
-* DropdownButton 默认按钮的实例
-* isDisabled:是否是禁用，isDisabled 默认为true
-* */
+// DropdownButton 默认按钮的实例
+// isDisabled:是否是禁用，isDisabled 默认为true
 var selectItValue;
 var selectItemValue;
 
@@ -105,9 +102,7 @@ List<DropdownMenuItem> getListData(){
   return items;
 }
 
-/*
-* DropdownButton 自定义的实例
-* */
+// DropdownButton 自定义的实例
 class DropdownButtonCustom extends StatelessWidget {
   final widget;
   final parent;

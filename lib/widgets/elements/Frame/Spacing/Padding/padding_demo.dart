@@ -1,10 +1,9 @@
+ /// @Author: 一凨 
+ /// @Date: 2018-11-28 20:20:04 
+ /// @Last Modified by: 一凨
+ /// @Last Modified time: 2019-01-14 16:30:16
+
 import 'package:flutter/material.dart';
-/*
- * @Author: 一凨 
- * @Date: 2018-11-28 20:20:04 
- * @Last Modified by: 一凨
- * @Last Modified time: 2019-01-14 16:30:16
- */
 
 class PaddingDemo extends StatelessWidget {
   @override

@@ -1,10 +1,10 @@
-/*
- * @Author: 一凨 
- * @Date: 2018-12-15 16:25:36 
- * @Last Modified by: 一凨
- * @Last Modified time: 2018-12-15 19:38:18
- */
+/// @Author: 一凨 
+/// @Date: 2018-12-15 16:25:36 
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-15 19:38:18
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart';
 

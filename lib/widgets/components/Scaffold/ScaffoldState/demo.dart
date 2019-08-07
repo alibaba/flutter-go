@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/6
- * Time: 下午7:33
- * email: sanfann@alibaba-inc.com
- * tartget: TabBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/6
+/// Time: 下午7:33
+/// email: sanfann@alibaba-inc.com
+/// target: ScaffoldState 的示例
 
 import 'package:flutter/material.dart';
 
@@ -16,9 +14,7 @@ class ScaffoldStateDemo extends StatefulWidget {
   State<StatefulWidget> createState() => _ScaffoldStateDemo();
 }
 
-/*
-* AppBar 默认的实例,有状态
-* */
+// AppBar 默认的实例,有状态
 class _ScaffoldStateDemo extends State with SingleTickerProviderStateMixin {
 
   int count = 0;

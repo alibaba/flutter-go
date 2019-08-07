@@ -1,18 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoPageRoute 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoPageRoute 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPageRoute 默认的实例
-* */
+// CupertinoPageRoute 默认的实例
 class CupertinoPageRouteFullDefault extends StatefulWidget {
   const CupertinoPageRouteFullDefault() : super();
 
@@ -20,9 +16,7 @@ class CupertinoPageRouteFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPageRouteFullDefault();
 }
 
-/*
-* CupertinoPageRoute 默认的实例,有状态
-* */
+// CupertinoPageRoute 默认的实例,有状态
 class _CupertinoPageRouteFullDefault extends State {
 
   Widget pageRoute(BuildContext context,int index){

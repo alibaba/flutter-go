@@ -1,22 +1,22 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2018/12/27
- * Time: 下午2:50
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlatButton 的示例
- */
-import "package:flutter/material.dart";
-import '../../../model/widget.dart';
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2018/12/27
+/// Time: 下午2:50
+/// email: zhu.yan@alibaba-inc.com
+/// target: Bar 的示例
 
-import 'SliverAppBar/index.dart' as SliverAppBar;
+import "package:flutter/material.dart";
+
+import '../../../model/widget.dart';
 import 'AppBar/index.dart' as AppBar;
 import 'BottomAppBar/index.dart' as BottomAppBar;
-import 'FlexibleSpaceBar/index.dart' as FlexibleSpaceBar;
 import 'ButtonBar/index.dart' as ButtonBar;
+import 'FlexibleSpaceBar/index.dart' as FlexibleSpaceBar;
+import 'SliverAppBar/index.dart' as SliverAppBar;
 import 'SnackBar/index.dart' as SnackBar;
 import 'SnackBarAction/index.dart' as SnackBarAction;
 import 'TabBar/index.dart' as TabBar;
+
 
 
 List<WidgetPoint> widgetPoints = [

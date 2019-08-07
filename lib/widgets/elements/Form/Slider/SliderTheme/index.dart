@@ -1,13 +1,12 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 20/12/2018
- * Time: 17:43
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+ /// Created with Android Studio.
+ /// User: 三帆
+ /// Date: 20/12/2018
+ /// Time: 17:43
+ /// email: sanfan.hx@alibaba-inc.com
+ /// target:  xxx
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import  'demo.dart';
 
@@ -60,7 +59,7 @@ class Demo extends StatefulWidget {
 }
 
 class _Demo extends State<Demo> {
-
+  @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'SliderTheme',

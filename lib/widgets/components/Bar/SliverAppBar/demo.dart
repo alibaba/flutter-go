@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午4:11
- * email: zhu.yan@alibaba-inc.com
- * tartget: SliverAppBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午4:11
+/// email: zhu.yan@alibaba-inc.com
+/// target: SliverAppBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* 默认 SliverAppBar 的实例
-* */
+// 默认 SliverAppBar 的实例
 class SliverAppBarFullDefault extends StatefulWidget {
   const SliverAppBarFullDefault() : super();
 
@@ -19,9 +15,7 @@ class SliverAppBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _SliverAppBarFullDefault();
 }
 
-/*
-* SliverAppBar 默认的实例,有状态
-* */
+// SliverAppBar 默认的实例,有状态
 class _SliverAppBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -31,9 +25,7 @@ class _SliverAppBarFullDefault extends State {
   }
 }
 
-/*
-* SliverAppBar 默认的实例,无状态
-* */
+// SliverAppBar 默认的实例,无状态
 class SliverAppBarLessDefault extends StatelessWidget {
 //  final widget;
 //  final parent;

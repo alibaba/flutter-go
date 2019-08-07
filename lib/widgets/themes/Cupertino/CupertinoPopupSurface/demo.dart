@@ -1,18 +1,14 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoPopupSurface 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoPopupSurface 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/*
-* CupertinoPopupSurface 默认的实例
-* */
+// CupertinoPopupSurface 默认的实例
 class CupertinoPopupSurfaceFullDefault extends StatefulWidget {
   const CupertinoPopupSurfaceFullDefault() : super();
 
@@ -20,9 +16,7 @@ class CupertinoPopupSurfaceFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoPopupSurfaceFullDefault();
 }
 
-/*
-* CupertinoPopupSurface 默认的实例,有状态
-* */
+// CupertinoPopupSurface 默认的实例,有状态
 class _CupertinoPopupSurfaceFullDefault extends State {
   @override
   Widget build(BuildContext context) {

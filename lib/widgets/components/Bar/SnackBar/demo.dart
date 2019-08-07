@@ -1,18 +1,13 @@
-/**
-  * Created with Android Studio.
-  * User: ryan
-  * Date: 2019/1/2
-  * Time: 上午12:07
-  * email: zhu.yan@alibaba-inc.com
-  * tartget: SnackBar 的示例
-  */
-
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/2
+/// Time: 上午12:07
+/// email: zhu.yan@alibaba-inc.com
+/// target: SnackBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* SnackBar 默认的实例,无状态
-* */
+// SnackBar 默认的实例,无状态
 class SnackBarLessDefault extends StatelessWidget {
   final widget;
   final parent;

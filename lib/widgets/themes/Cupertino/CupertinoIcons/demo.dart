@@ -1,19 +1,16 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/20
- * Time: 上午11:34
- * email: zhu.yan@alibaba-inc.com
- * tartget: CupertinoIcons 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/20
+/// Time: 上午11:34
+/// email: zhu.yan@alibaba-inc.com
+/// target: CupertinoIcons 的示例
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/resources/icon_names.dart' as icon_names;
 
-/*
-* CupertinoIcons 默认的实例
-* */
+// CupertinoIcons 默认的实例
 class CupertinoIconsFullDefault extends StatefulWidget {
   const CupertinoIconsFullDefault() : super();
 
@@ -21,9 +18,7 @@ class CupertinoIconsFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _CupertinoIconsFullDefault();
 }
 
-/*
-* CupertinoIcons 默认的实例,有状态
-* */
+// CupertinoIcons 默认的实例,有状态
 class _CupertinoIconsFullDefault extends State {
 
   final colorsList = [];
@@ -75,7 +70,7 @@ class _CupertinoIconsFullDefault extends State {
       }
     }
   }
-
+  @override
   Widget build(BuildContext context) {
     return
       Align(

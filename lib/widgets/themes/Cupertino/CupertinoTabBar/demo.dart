@@ -1,11 +1,9 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 20/01/2019
- * Time: 22:28
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  CupertinoTabBar
- */
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 20/01/2019
+/// Time: 22:28
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  CupertinoTabBar
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +20,7 @@ class _Demo extends State<CupertinoTabBarDemo> {
       index = _index;
     });
   }
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,

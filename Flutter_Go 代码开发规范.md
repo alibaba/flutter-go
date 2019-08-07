@@ -279,7 +279,7 @@ void delete(String path) {
 
 ### 库的引用
 
-flutter go 中，导入lib下文件库，统一指定报名，避免过多的```../../```
+flutter go 中，导入lib下文件库，统一指定包名，避免过多的```../../```
 ```
 package:flutter_go/
 ```

@@ -1,12 +1,9 @@
-/*
- * @Author: xiaojia.dxj
- * @Date: 2018-12-20 13:32:22 
- * @Last Modified by: xiaojia.dxj
- * @Last Modified time: 2018-12-21 11:31:12
- */
+/// @Author: xiaojia.dxj
+/// @Date: 2018-12-20 13:32:22 
+/// @Last Modified by: xiaojia.dxj
+/// @Last Modified time: 2018-12-21 11:31:12
 
 import 'package:flutter/material.dart';
-
 
 class FilterChipDemo extends StatefulWidget {
   _FilterChipDemoState createState() => _FilterChipDemoState();

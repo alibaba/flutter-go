@@ -1,11 +1,4 @@
-/**
- * Created with Android Studio.
- * User: 三帆
- * Date: 15/01/2019
- * Time: 22:23
- * email: sanfan.hx@alibaba-inc.com
- * tartget:  xxx
- */
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +8,7 @@ class CupertinoSegmentedControlDemo extends StatefulWidget {
 
 class _Demo extends State<CupertinoSegmentedControlDemo> {
   String value = 'a';
+  @override
   Widget build(BuildContext context) {
     return  CupertinoSegmentedControl(
       onValueChanged: (v) {

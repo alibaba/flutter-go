@@ -1,17 +1,13 @@
-/**
- * Created with Android Studio.
- * User: ryan
- * Date: 2019/1/1
- * Time: 下午11:11
- * email: zhu.yan@alibaba-inc.com
- * tartget: ButtonBar 的示例
- */
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/1/1
+/// Time: 下午11:11
+/// email: zhu.yan@alibaba-inc.com
+/// target: ButtonBar 的示例
 
 import 'package:flutter/material.dart';
 
-/*
-* ButtonBar 默认的实例
-* */
+// ButtonBar 默认的实例
 class ButtonBarFullDefault extends StatefulWidget {
   const ButtonBarFullDefault() : super();
 
@@ -19,9 +15,7 @@ class ButtonBarFullDefault extends StatefulWidget {
   State<StatefulWidget> createState() => _ButtonBarFullDefault();
 }
 
-/*
-* ButtonBar 默认的实例,有状态
-* */
+// ButtonBar 默认的实例,有状态
 class _ButtonBarFullDefault extends State {
   @override
   Widget build(BuildContext context) {
@@ -31,9 +25,7 @@ class _ButtonBarFullDefault extends State {
   }
 }
 
-/*
-* ButtonBar 默认的实例,无状态
-* */
+// ButtonBar 默认的实例,无状态
 class ButtonBarLessDefault extends StatelessWidget {
   final widget;
   final parent;
