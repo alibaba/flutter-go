@@ -48,13 +48,13 @@ class _CollectionPageState extends State<CollectionPage> {
 
   void _getList() {
     _collectionList.clear();
-    DataUtils.getAllCollections(context).then((collectionList) {
-      if (this.mounted) {
-        setState(() {
-          _collectionList = collectionList;
-        });
-      }
-    });
+    // DataUtils.getAllCollections(context).then((collectionList) {
+    //   if (this.mounted) {
+    //     setState(() {
+    //       _collectionList = collectionList;
+    //     });
+    //   }
+    // });
   }
 
   Widget _renderList(context, index) {
