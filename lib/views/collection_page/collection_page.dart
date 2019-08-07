@@ -11,6 +11,7 @@ import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 
 class CollectionPage extends StatefulWidget {
   final bool hasLogined;
@@ -47,14 +48,10 @@ class _CollectionPageState extends State<CollectionPage> {
 
   void _getList() {
     _collectionList.clear();
-    _collectionControl.getAllCollection().then((resultList) {
-      resultList.forEach((item) {
-        _collectionList.add(item);
-      });
-      print("_collectionList ${_collectionList}");
+    DataUtils.getAllCollections(context).then((collectionList) {
       if (this.mounted) {
         setState(() {
-          _collectionList = _collectionList;
+          _collectionList = collectionList;
         });
       }
     });

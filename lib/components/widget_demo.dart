@@ -4,6 +4,7 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 
 import '../routers/application.dart';
 import '../routers/routers.dart';
@@ -37,7 +38,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
   CollectionControlModel _collectionControl = new CollectionControlModel();
   var _collectionIcons;
   List widgetDemosList = new WidgetDemoList().getDemos();
-  String _router = '';
+  String widgetType = 'old';
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> _buildContent() {
@@ -65,60 +66,66 @@ class _WidgetDemoState extends State<WidgetDemo> {
   void initState() {
     super.initState();
     // 这里不能直接 使用 ` ModalRoute.of(context)` 会产生报错
-    Future.delayed(Duration.zero,() {
+    Future.delayed(Duration.zero, () {
       String currentPath = ModalRoute.of(context).settings.name;
-      _collectionControl.getRouterByUrl(currentPath).then((list) {
+      if (currentPath.indexOf('/standard-page') == 0) {
+        widgetType = 'standard';
+      }
+      Map<String, String> params = {
+        'type': widgetType,
+        "url": currentPath,
+        "name": widget.title
+      };
+      DataUtils.checkCollected(params).then((result) {
         if (this.mounted) {
           setState(() {
-            _hasCollected = list.length > 0;
+            _hasCollected = result;
           });
         }
       });
     });
-
   }
-
 
 // 点击收藏按钮
   _getCollection() {
-
     String currentRouterPath = ModalRoute.of(context).settings.name;
-
+    Map<String, String> params = {
+      "type": widgetType,
+      "url": currentRouterPath,
+      "name": widget.title
+    };
     if (_hasCollected) {
       // 删除操作
-      _collectionControl.deleteByPath(currentRouterPath).then((result) {
-        if (result > 0 && this.mounted) {
-          setState(() {
-            _hasCollected = false;
-          });
+      DataUtils.removeCollected(params, context).then((result) {
+        if (result) {
           _scaffoldKey.currentState
               .showSnackBar(SnackBar(content: Text('已取消收藏')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, currentRouterPath, true));
           }
-          
-          return;
+          if (this.mounted) {
+            setState(() {
+              _hasCollected = false;
+            });
+          }
         }
-        print('删除错误');
       });
     } else {
       // 插入操作
-      _collectionControl
-          .insert(Collection(name: widget.title, router: currentRouterPath))
-          .then((result) {  
-        if (this.mounted) {
-          setState(() {
-            _hasCollected = true;
-          });
-
+      DataUtils.addCollected(params, context).then((result) {
+        if (result) {
+          if (this.mounted) {
+            setState(() {
+              _hasCollected = true;
+            });
+          }
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('收藏成功')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
                 .fire(CollectionEvent(widget.title, currentRouterPath, false));
           }
-
-          _scaffoldKey.currentState
-              .showSnackBar(SnackBar(content: Text('收藏成功')));
         }
       });
     }

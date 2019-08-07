@@ -34,7 +34,6 @@ class StandardView extends StatefulWidget {
   _StandardView createState() => _StandardView();
 }
 
-
 class _StandardView extends State<StandardView> {
   String markdownDesc = '';
   String pageTitle = '';
@@ -44,7 +43,6 @@ class _StandardView extends State<StandardView> {
   StandardPages standardPage = new StandardPages();
   @override
   void initState() {
-
     super.initState();
     this.getPageInfo();
   }
@@ -62,7 +60,6 @@ class _StandardView extends State<StandardView> {
         email = pageDetail['email'];
       });
     }
-
   }
 
   /// 从本地获取基本文章信息
@@ -73,6 +70,7 @@ class _StandardView extends State<StandardView> {
     return pagesList[pageId];
   }
   Future<String> getContentOnline() async {
+
     String content = 'online content';
     this.setState(() {
       isLoading = true;
@@ -115,9 +113,11 @@ class _StandardView extends State<StandardView> {
       conent = localGetPagesMarkdown();
       localGetPagesAttrsInfo();
     }
-    setState(() {
-      markdownDesc = conent;
-    });
+    if (this.mounted) {
+      setState(() {
+        markdownDesc = conent;
+      });
+    }
     return Future(() => conent);
   }
   Widget buildFootInfo() {
@@ -135,6 +135,7 @@ class _StandardView extends State<StandardView> {
     }
     return Container();
   }
+
   Widget buildMarkdown() {
 
 
@@ -150,18 +151,12 @@ class _StandardView extends State<StandardView> {
           if (demo == null) {
             String errString = "not found ${attrs['id']} in demo packages";
             debugPrint(errString);
-            demo = [
-              Text(errString)
-            ];
+            demo = [Text(errString)];
           }
 
-          return Column(
-            children: demo
-          );
-        }
-    );
+          return Column(children: demo);
+        });
   }
-
 
 
   @override

@@ -23,11 +23,14 @@ class Api{
 
   static const String ADD_COLLECTION = BASE_URL+'auth/addCollection';//添加收藏
   
-  static const String CHECK_COLLECTED = BASE_URL+'auth/checkCollected';//校验收藏
+  static const String CHECK_COLLECTED = BASE_URL+'checkCollected';//校验收藏
 
   static const String SET_THEMECOLOR = BASE_URL+'auth/setThemeColor';//设置主题颜色
 
   static const String GET_THEMECOLOR = BASE_URL +'/getThemeColor';//获取主题颜色
+
   static const String GET_WIDGET_TREE = 'http://flutter-go.alibaba.net/' + 'getCateList';//获取widget列表树
+
+  static const String SEARCH_WIDGET = BASE_URL+'searchWidget';//搜索组件
 }
 
