@@ -16,9 +16,6 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     print(widget.userInfo);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('个人中心'),
-      ),
       body: Container(
         child: DrawerPage(
           userInfo: widget.userInfo,
