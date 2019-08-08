@@ -17,6 +17,7 @@ dependencies:
   args: '^1.5.1'
   dart_inquirer: '^1.0.0'
   watcher: ^0.9.7+10
+  mustache: ^1.1.1
 
 dev_dependencies:
 

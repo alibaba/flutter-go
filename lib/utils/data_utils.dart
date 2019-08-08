@@ -109,7 +109,7 @@ class DataUtils {
   static Future<List> getWidgetTreeList() async {
     try {
       var response = await NetUtils.get(Api.GET_WIDGET_TREE);
-      print('组件树：$response');
+      print('组件树dddd：$response');
       if (response != null && response['success']) {
         return response['data'];
       } else {

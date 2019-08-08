@@ -17,7 +17,7 @@ import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter_go/model/widget.dart';
-
+import 'package:flutter_go/standard_pages/index.dart';
 //import 'views/welcome_page/index.dart';
 
 SpUtil sp;
@@ -28,7 +28,6 @@ class MyApp extends StatefulWidget {
     final router = new Router();
     Routes.configureRoutes(router);
     // 这里设置项目环境
-    Application.env = ENV.PRODUCTION;
     Application.router = router;
   }
 
@@ -189,10 +188,13 @@ void main() async {
   await provider.init(true);
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
+
   await DataUtils.getWidgetTreeList().then((List json) {
-    if (json == null) return;
-    Application.widgetTree = WidgetTree.buildWidgetTree(json);
+    List data = WidgetTree.insertDevPagesToList(json, StandardPages().getLocalList());
+    Application.widgetTree = WidgetTree.buildWidgetTree(data);
+    print("Application.widgetTree>>>> ${Application.widgetTree}");
   });
   db = Provider.db;
   runApp(new MyApp());
 }
+

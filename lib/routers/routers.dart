@@ -10,6 +10,7 @@ class Routes {
   static String home = "/home";
   static String widgetDemo = '/widget-demo';
   static String codeView = '/code-view';
+  static String githubCodeView = '/github-code-view';
   static String webViewPage = '/web-view-page';
   static String loginPage = '/loginpage';
   static String issuesMessage='/issuesMessage';
