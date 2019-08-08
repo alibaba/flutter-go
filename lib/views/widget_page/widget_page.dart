@@ -53,7 +53,6 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    print("build in widget page");
     return Container(
       color: Theme.of(context).backgroundColor,
       child: this.buildGrid(),
