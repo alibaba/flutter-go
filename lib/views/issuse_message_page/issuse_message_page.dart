@@ -46,10 +46,10 @@ class _IssuesMessagePageState extends State<IssuesMessagePage> {
   }
 
   _submit() {
-    String mk = notusMarkdown.encode(_delta);
     if (_title.trim().isEmpty) {
       _show('标题不能为空');
     } else {
+      String mk = (_delta==null)?'No description provided.':notusMarkdown.encode(_delta);
       DataUtils.feedback({'title': _title, "body": mk},context).then((result) {
         _show('提交成功');
         Navigator.maybePop(context);
