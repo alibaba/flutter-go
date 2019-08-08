@@ -29,7 +29,7 @@ class Api{
 
   static const String GET_THEMECOLOR = BASE_URL +'/getThemeColor';//获取主题颜色
 
-  static const String GET_WIDGET_TREE = 'http://flutter-go.alibaba.net/' + 'getCateList';//获取widget列表树
+  static const String GET_WIDGET_TREE = BASE_URL + 'getCateList';//获取widget列表树
 
   static const String SEARCH_WIDGET = BASE_URL+'searchWidget';//搜索组件
 }

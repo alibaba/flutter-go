@@ -193,10 +193,11 @@ class CategoryComponent extends CommonItem {
     this.parent
   });
   CategoryComponent.fromJson(Map json) {
-    this.id = int.parse(json['id']);
+    print(json['id'].runtimeType);
+    this.id = json['id'];
     this.name = json['name'];
     this.parentId = json['parentId'];
-    this.token = json['id'] + json['type'];
+    this.token = json['id'].toString() + json['type'];
   }
   void addChildren(Object item) {
     if (item is CategoryComponent) {
@@ -266,13 +267,13 @@ class WidgetLeaf extends CommonItem {
   });
 
   WidgetLeaf.fromJson(Map json) {
-    this.id = int.parse(json['id']);
+    this.id = json['id'];
     this.name = json['name'];
     this.display = json['display'];
     this.author = json['author'] ?? null;
     this.path = json['path'] ?? null;
     this.pageId = json['pageId'] ?? null;
-    this.token = json['id'] + json['type'];
+    this.token = json['id'].toString() + json['type'];
   }
   @override
   CommonItem getChild(String token) {
@@ -341,7 +342,7 @@ class WidgetTree {
         children.insert(0, {
           "id": "99999999999",
           "name": "本地代码",
-          "parentId": int.parse(item['id']),
+          "parentId": item['id'],
           "type": "category",
           "children": devChildren
         });
