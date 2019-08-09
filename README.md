@@ -22,7 +22,25 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 <img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
 
+## 运行方式
 
+- 查看一下版本号是否正确
+```dart
+  flutter --version
+```
+- 运行以下命令查看是否需要安装其它依赖项来完成安装
+```dart
+  flutter doctor
+```
+- 运行启动您的应用
+```dart
+  flutter packages get 
+  flutter run
+```
+
+- 如果有其他问题,请参考
+  - https://flutterchina.club/setup-macos/
+  - https://flutter.dev/docs/get-started/install/macos
 
 ## Release安装包下载地址
 
