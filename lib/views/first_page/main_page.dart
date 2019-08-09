@@ -70,53 +70,6 @@ void pushPage(BuildContext context, Widget page, {String pageName}) {
   Navigator.push(context, CupertinoPageRoute<void>(builder: (ctx) => page));
 }
 
-void showAlertDialog(BuildContext context) {
-  showDialog<void>(
-    context: context,
-    barrierDismissible: false, // user must tap button!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        //title: Text('免责声明'),
-        content: SingleChildScrollView(
-          child: ListBody(
-            children: <Widget>[
-              Container(
-                  padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 10.0),
-                  //width: 100,
-                  height: 35,
-                  child: Text('免责声明',
-                      style: TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w700)),
-                  decoration: BoxDecoration(
-                    //color: Colors.blue,
-                    image: DecorationImage(
-                        fit: BoxFit.fitWidth,
-                        image: AssetImage('assets/images/paimaiLogo.png')),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10.0),
-                    ),
-                    //alignment: Alignment.bottomRight,
-                  )),
-              SizedBox(height: 20),
-              Text('111111111'),
-              Text('222222222'),
-            ],
-          ),
-        ),
-        shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0)), // 圆角
-
-        actions: <Widget>[
-          new Container(
-            width: 250,
-           /// child: _create(),
-          )
-        ],
-      );
-    },
-  );
-}
-
 class TabLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -151,12 +104,6 @@ class TabBarViewLayout extends StatelessWidget {
     switch (labelIndex) {
       case 1:
         return FirstPage();
-        break;
-      case 2:
-        return Container(child:Text('1'));
-        break;
-      case 3:
-        return Container(child:Text('2'));
         break;
       default:
         return Container();
