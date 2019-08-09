@@ -155,7 +155,7 @@ class _DrawerPageState extends State<DrawerPage> {
             size: 27.0,
           ),
           title: Text(
-            '搜索',
+            '全网搜',
             style: textStyle,
           ),
           onTap: () {

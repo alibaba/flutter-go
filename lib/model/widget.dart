@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import "package:flutter/material.dart";
-
+import "package:flutter_go/routers/application.dart";
 import 'package:flutter_go/utils/sql.dart';
 
 enum treeNode {
@@ -188,14 +188,16 @@ class CategoryComponent extends CommonItem {
     @required this.id,
     @required this.name,
     @required this.parentId,
+    this.type = 'categoryw',
     this.children,
     this.parent
   });
   CategoryComponent.fromJson(Map json) {
-    this.id = int.parse(json['id']);
+    print(json['id'].runtimeType);
+    this.id = json['id'];
     this.name = json['name'];
     this.parentId = json['parentId'];
-    this.token = json['id'] + json['type'];
+    this.token = json['id'].toString() + json['type'];
   }
   void addChildren(Object item) {
     if (item is CategoryComponent) {
@@ -265,13 +267,13 @@ class WidgetLeaf extends CommonItem {
   });
 
   WidgetLeaf.fromJson(Map json) {
-    this.id = int.parse(json['id']);
+    this.id = json['id'];
     this.name = json['name'];
     this.display = json['display'];
     this.author = json['author'] ?? null;
     this.path = json['path'] ?? null;
     this.pageId = json['pageId'] ?? null;
-    this.token = json['id'] + json['type'];
+    this.token = json['id'].toString() + json['type'];
   }
   @override
   CommonItem getChild(String token) {
@@ -289,6 +291,7 @@ class WidgetLeaf extends CommonItem {
 }
 
 class WidgetTree {
+  // 构建树型结构
   static CategoryComponent buildWidgetTree(List json, [parent]){
     CategoryComponent current;
     if (parent != null) {
@@ -297,7 +300,6 @@ class WidgetTree {
       current = CategoryComponent(id: 0, name: 'root', parentId: null, children: []);
     }
     json.forEach((item) {
-
       // 归属分类级别
       if (['root', 'category'].indexOf(item['type']) != -1) {
         CategoryComponent cate = CategoryComponent.fromJson(item);
@@ -312,6 +314,41 @@ class WidgetTree {
       }
     });
     return current;
+  }
+
+  static insertDevPagesToList(List list, List devPages) {
+    List devChildren = [];
+    int index = 9999999;
+    if (Application.env == ENV.PRODUCTION) {
+      return list;
+    }
+    devPages.forEach((item) {
+      index++;
+      if (item['id'] != null) {
+        devChildren.add({
+          "id": index.toString(),
+          "name": item['name'],
+          "parentId": "99999999999",
+          "type": "widget",
+          "display": "standard",
+          "author": item['author'],
+          "pageId": item['id']
+        });
+      }
+    });
+    list.forEach((item) {
+      if (item['name'].toString().toUpperCase() == 'DEVELOPER') {
+        List children = item['children'];
+        children.insert(0, {
+          "id": "99999999999",
+          "name": "本地代码",
+          "parentId": item['id'],
+          "type": "category",
+          "children": devChildren
+        });
+      }
+    });
+    return list;
   }
   static CategoryComponent getCommonItemById(List<int> path, CategoryComponent root) {
     print("getCommonItemByPath $path");

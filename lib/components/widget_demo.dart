@@ -25,8 +25,8 @@ class WidgetDemo extends StatefulWidget {
       {Key key,
       @required this.title,
       @required this.contentList,
-      @required this.codeUrl,
-      @required this.docUrl,
+      this.codeUrl,
+      this.docUrl,
       this.bottomNaviBar})
       : super(key: key);
 
@@ -141,7 +141,38 @@ class _WidgetDemoState extends State<WidgetDemo> {
           '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
     }
   }
-
+  List<PopupMenuEntry<String>> buildPopupMenu() {
+    List<PopupMenuEntry<String>> comps = [];
+    if (widget.docUrl != null) {
+      comps.add(
+          PopupMenuItem<String>(
+            value: 'doc',
+            child: ListTile(
+              leading: Icon(
+                Icons.library_books,
+                size: 22.0,
+              ),
+              title: Text('查看文档'),
+            ),
+          )
+      );
+    }
+    if (widget.codeUrl != null) {
+      comps.add(
+          PopupMenuItem<String>(
+            value: 'code',
+            child: ListTile(
+              leading: Icon(
+                Icons.code,
+                size: 22.0,
+              ),
+              title: Text('查看Demo'),
+            ),
+          )
+      );
+    }
+    return comps;
+  }
   @override
   Widget build(BuildContext context) {
     if (_hasCollected) {
@@ -149,50 +180,34 @@ class _WidgetDemoState extends State<WidgetDemo> {
     } else {
       _collectionIcons = Icons.favorite_border;
     }
+    List<PopupMenuEntry<String>> menus = buildPopupMenu();
+    List<Widget> actions = [
+      new IconButton(
+        tooltip: 'goBack home',
+        onPressed: () {
+          Navigator.popUntil(context, ModalRoute.withName('/'));
+        },
+        icon: Icon(Icons.home),
+      ),
+      new IconButton(
+        tooltip: 'collection',
+        onPressed: _getCollection,
+        icon: Icon(_collectionIcons),
+      ),
+    ];
+    if (menus.length > 0) {
+      actions.add(
+          PopupMenuButton<String>(
+            onSelected: _selectValue,
+            itemBuilder: (BuildContext context) => menus,
+          )
+      );
+    }
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
           title: Text(widget.title),
-          actions: <Widget>[
-            new IconButton(
-              tooltip: 'goBack home',
-              onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/'));
-              },
-              icon: Icon(Icons.home),
-            ),
-            new IconButton(
-              tooltip: 'collection',
-              onPressed: _getCollection,
-              icon: Icon(_collectionIcons),
-            ),
-            PopupMenuButton<String>(
-              onSelected: _selectValue,
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                const PopupMenuItem<String>(
-                  value: 'doc',
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.library_books,
-                      size: 22.0,
-                    ),
-                    title: Text('查看文档'),
-                  ),
-                ),
-                const PopupMenuDivider(),
-                const PopupMenuItem<String>(
-                  value: 'code',
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.code,
-                      size: 22.0,
-                    ),
-                    title: Text('查看Demo'),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          actions: actions,
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
