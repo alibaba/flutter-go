@@ -57,3 +57,6 @@ lib/standard_pages/standard_for_slider_sanfan_8ab2b5c2_42ae_4241_9c8a_5c9e1f92b0
 ![](https://img.alicdn.com/tfs/TB1cHLZc.T1gK0jSZFhXXaAtVXa-1393-760.gif)
 
 
+## 引用Flutter 实例
+
+如何在markdown中引用flutter widget实例请参考: [WidgetDemo](https://github.com/alibaba/flutter-go/blob/beta/go-cli/utils/tpl.md)
