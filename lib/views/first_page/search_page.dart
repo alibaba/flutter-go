@@ -23,7 +23,7 @@ final _industryPage = Industry.IndustryPage(itemTitle: (state){
         ),
         subtitle: Text(state.res[index].source),
         onTap: () {
-          // 在这里对选中的结果进行解析，因为我目前是用golang实现的，所以就没贴代码了。
+          // 在这里对选中的结果进行解析
           print(state.res[index].source);
           final itemTitle = state.res[index].title;
           final itemUrl = state.res[index].source;
@@ -44,7 +44,7 @@ class SearchPage extends StatelessWidget {
     /// print('suggestion::${Industry.suggestion}');
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(double.infinity, 52), // 44 is the height
+        preferredSize: Size(double.infinity, 52), //  is the height
         child: AppBar(title: searchBarPage)
       ),
       //body: ProgressView(),
@@ -160,7 +160,7 @@ class _SearchBarPageState extends State<SearchBarPage> {
                                 controller: controller,
                                 decoration:  InputDecoration(
                                     contentPadding: EdgeInsets.only(top: 0.0),
-                                    hintText: '搜索全局flutter知识库',
+                                    hintText: '全网搜索 Flutter 相关知识库',
                                     hintStyle:TextStyle(fontSize: 12.0),
                                     border: InputBorder.none
                                 ),

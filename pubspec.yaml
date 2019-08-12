@@ -30,7 +30,7 @@ dependencies:
   flutter_spinkit: "^3.1.0"
   fluttertoast: ^3.1.0
   dio: ^2.0.15
-  flutter_webview_plugin: ^0.3.4
+  flutter_webview_plugin: ^0.3.5
   cookie_jar: ^1.0.0
   # 日期格式化
   intl: 0.15.7

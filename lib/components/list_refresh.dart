@@ -174,6 +174,7 @@ class _ListRefreshState extends State<ListRefresh> {
               return widget.renderItem(index, items[index]);
             }
           }
+          return null;
         },
         controller: _scrollController,
       ),
