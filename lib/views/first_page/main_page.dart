@@ -6,18 +6,24 @@ import './sub_page.dart';
 import './main_app_bar.dart';
 import './search_page.dart';
 import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_go/routers/application.dart' show Application;
+import 'package:flutter_go/routers/routers.dart' show Routes;
+
+DefaultTabController _tabController;
+TabBar _tabBar;
 
 class _Page {
   final String labelId;
+  final int labelIndex;
 
-  _Page(this.labelId);
+  _Page(this.labelId,this.labelIndex);
 }
 
 final List<_Page> _allPages = <_Page>[
-  _Page('项目1'),
-  _Page('项目2'),
-  _Page('项目3'),
-  _Page('项目4'),
+  _Page('热门资讯', 1),
+  _Page('FG-官网', 2),
+  _Page('FG-web版', 3),
+  ///_Page('项目4'),
 ];
 
 class MainPage extends StatelessWidget {
@@ -27,12 +33,12 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("MainPagess build......");
-    return DefaultTabController(
+    _tabController = DefaultTabController(
         length: _allPages.length,
         child: Scaffold(
-          appBar: new MyAppBar(
+          appBar:  MyAppBar(
             leading: Container(
-                child: new ClipOval(
+                child:  ClipOval(
               child: Image.network(
                 userInfo.id == 0?'https://hbimg.huabanimg.com/9bfa0fad3b1284d652d370fa0a8155e1222c62c0bf9d-YjG0Vt_fw658':userInfo.avatarPic,
                 scale: 15.0,
@@ -54,10 +60,8 @@ class MainPage extends StatelessWidget {
             ),
           ),
           body: TabBarViewLayout(),
-//          drawer:  Drawer(
-//            child:  MainLeftPage(),
-//          ),
         ));
+    return _tabController;
   }
 }
 
@@ -69,34 +73,37 @@ void pushPage(BuildContext context, Widget page, {String pageName}) {
 class TabLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TabBar(
+    _tabBar = TabBar(
       isScrollable: true,
       //labelPadding: EdgeInsets.all(12.0),
       labelPadding: EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
       indicatorSize: TabBarIndicatorSize.label,
-      tabs: _allPages
-          .map((_Page page) =>
-          Tab(text: page.labelId))
-          .toList(),
+      tabs: _allPages.map((_Page page) => Tab(text: page.labelId)).toList(),
+      onTap: (index) {
+        if (index == 1) {
+          DefaultTabController.of(context).animateTo(0);
+          Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go 官方网站')}&url=${Uri.encodeComponent('https://flutter-go.pub')}');
+        } else if (index == 2) {
+
+//          new Future.delayed(const Duration(seconds: 1),(){
+//            showAlertDialog(Application.globalContext);
+//          });
+
+         DefaultTabController.of(context).animateTo(0);
+          Application.router.navigateTo(context, '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go web版(H5)')}&url=${Uri.encodeComponent('https://flutter-go.pub/flutter_go_web')}');
+        }
+      }
     );
+    return _tabBar;
   }
 }
 
 class TabBarViewLayout extends StatelessWidget {
   Widget buildTabView(BuildContext context, _Page page) {
-    String labelId = page.labelId;
-    switch (labelId) {
-      case '项目1':
+    int labelIndex = page.labelIndex;
+    switch (labelIndex) {
+      case 1:
         return FirstPage();
-        break;
-      case '项目2':
-        return SubPage();
-        break;
-      case '项目3':
-        return SubPage();
-        break;
-      case '项目4':
-        return SubPage();
         break;
       default:
         return Container();

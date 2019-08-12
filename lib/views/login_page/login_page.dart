@@ -67,7 +67,9 @@ class _LoginPageState extends State<LoginPage> {
         setState(() {
           isLoading = true;
         });
-        DataUtils.getUserInfo({'loginName': event.loginName,'token':event.token}).then((result) {
+        DataUtils.getUserInfo(
+                {'loginName': event.loginName, 'token': event.token})
+            .then((result) {
           setState(() {
             isLoading = false;
           });
@@ -215,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
           // 如果输入都检验通过，则进行登录操作
           // Scaffold.of(context)
           //     .showSnackBar(new SnackBar(content: new Text("执行登录操作")));
-          //调用所有自孩子的save回调，保存表单内容
+          //调用所有自孩子��save回调，保存表单内容
           doLogin();
         }
       },
@@ -234,22 +236,33 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         isLoading = false;
       });
-      try {
-        _userInfoControlModel.deleteAll().then((result) {
-          // print('删除结果：$result');
-          _userInfoControlModel
-              .insert(UserInfo(password: password, username: username))
-              .then((value) {
-            print('存储成功:$value');
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => AppPage(userResult)),
-                (route) => route == null);
+      if (userResult.runtimeType == UserInformation) {
+        try {
+          _userInfoControlModel.deleteAll().then((result) {
+            // print('删除结果：$result');
+            _userInfoControlModel
+                .insert(UserInfo(password: password, username: username))
+                .then((value) {
+              print('存储成功:$value');
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => AppPage(userResult)),
+                  (route) => route == null);
+            });
           });
-        });
-      } catch (err) {
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => AppPage(userResult)),
-            (route) => route == null);
+        } catch (err) {
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => AppPage(userResult)),
+              (route) => route == null);
+        }
+      }else if(userResult.runtimeType == String){
+        Fluttertoast.showToast(
+          msg: userResult,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 1,
+          backgroundColor: Theme.of(context).primaryColor,
+          textColor: Colors.white,
+          fontSize: 16.0);
       }
     }).catchError((errorMsg) {
       setState(() {
@@ -375,7 +388,8 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
-                                      builder: (context) => AppPage(UserInformation(id: 0))),
+                                      builder: (context) =>
+                                          AppPage(UserInformation(id: 0))),
                                   (route) => route == null);
                             },
                           )

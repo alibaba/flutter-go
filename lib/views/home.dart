@@ -12,6 +12,7 @@ import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter_go/views/user_page/user_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -24,9 +25,7 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/model/user_info.dart';
 
-
 class AppPage extends StatefulWidget {
-  
   final UserInformation userInfo;
 
   AppPage(this.userInfo);
@@ -49,8 +48,9 @@ class _MyHomePageState extends State<AppPage>
   static List tabData = [
     {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
-    {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
+    {'text': '个人中心', 'icon': Icon(Icons.account_circle)},
+    
   ];
 
   List<BottomNavigationBarItem> _myTabs = [];
@@ -72,8 +72,8 @@ class _MyHomePageState extends State<AppPage>
 //      ..add(FirstPage())
       ..add(MainPage(userInfo: widget.userInfo))
       ..add(WidgetPage())
-      ..add(CollectionPage())
-      ..add(FourthPage());
+      ..add(FourthPage())
+      ..add(UserPage(userInfo: widget.userInfo));
   }
 
   @override
@@ -90,12 +90,11 @@ class _MyHomePageState extends State<AppPage>
 
   void onWidgetTap(WidgetPoint widgetPoint, BuildContext context) {
     String targetName = widgetPoint.name;
-    searchHistoryList
-        .add(SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
+    searchHistoryList.add(
+        SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
-    Application.router.navigateTo(
-              context, widgetPoint.routerName,
-              transition: TransitionType.inFromRight);
+    Application.router.navigateTo(context, widgetPoint.routerName,
+        transition: TransitionType.inFromRight);
   }
 
   Widget buildSearchInput(BuildContext context) {
@@ -121,10 +120,9 @@ class _MyHomePageState extends State<AppPage>
   }
 
   renderAppBar(BuildContext context, Widget widget, int index) {
-    if (index == 0) {
-      return null;
+    if (index == 1) {
+      return AppBar(title: buildSearchInput(context));
     }
-    return AppBar(title: buildSearchInput(context));
   }
 
   @override
