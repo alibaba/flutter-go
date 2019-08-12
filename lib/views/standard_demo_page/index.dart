@@ -46,7 +46,9 @@ class _StandardView extends State<StandardView> {
     super.initState();
     this.getPageInfo();
   }
-
+  didChangeDependencies() {
+    print("didChangeDependencies");
+  }
   /// 本地调用的获取文章属性的基本信息
   Future<void> localGetPagesAttrsInfo() async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
@@ -67,6 +69,7 @@ class _StandardView extends State<StandardView> {
 
     String pageId = widget.id;
     Map<String, String> pagesList = standardPage.getPages();
+    print('pagesList[pageId]>>> ${pagesList[pageId]}');
     return pagesList[pageId];
   }
   Future<String> getContentOnline() async {
@@ -141,6 +144,11 @@ class _StandardView extends State<StandardView> {
 
     if (markdownDesc == null) {
       return null;
+    } else {
+      if (Application.env == ENV.DEV) {
+        // 为了能在local改变的时候. 动态更新内容, getPageInfo只有初始化状态下会有效果
+        markdownDesc = localGetPagesMarkdown();
+      }
     }
 
     return MarkdownBody(

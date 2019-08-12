@@ -193,8 +193,12 @@ class CategoryComponent extends CommonItem {
     this.parent
   });
   CategoryComponent.fromJson(Map json) {
-    print(json['id'].runtimeType);
-    this.id = json['id'];
+    print('name: ${json['name']} id: ${json['id'].runtimeType}');
+    if (json['id'] != null && json['id'].runtimeType == String) {
+      this.id = int.parse(json['id']);
+    } else {
+      this.id = json['id'];
+    }
     this.name = json['name'];
     this.parentId = json['parentId'];
     this.token = json['id'].toString() + json['type'];
@@ -267,7 +271,11 @@ class WidgetLeaf extends CommonItem {
   });
 
   WidgetLeaf.fromJson(Map json) {
-    this.id = json['id'];
+    if (json['id'] != null && json['id'].runtimeType == String) {
+      this.id = int.parse(json['id']);
+    } else {
+      this.id = json['id'];
+    }
     this.name = json['name'];
     this.display = json['display'];
     this.author = json['author'] ?? null;

@@ -1,8 +1,11 @@
-# 标准的详情页
+# Slider Page
 
 您可以在这个界面中, 编写大多数的markdown文案, 他会在 **goCli watch** 下同步被编译成 **dart** 文件
 
 您可以通过goCli创建详情页所需要的demo
+
+
+
 
 ```
 goCLi createDemo

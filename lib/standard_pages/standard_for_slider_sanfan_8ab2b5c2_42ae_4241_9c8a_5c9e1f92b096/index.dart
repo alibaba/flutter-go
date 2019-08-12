@@ -1,8 +1,13 @@
-# 标准的详情页
+String getMd() {
+  return """
+  # Slider Page
 
 您可以在这个界面中, 编写大多数的markdown文案, 他会在 **goCli watch** 下同步被编译成 **dart** 文件
 
 您可以通过goCli创建详情页所需要的demo
+
+
+
 
 ```
 goCLi createDemo
@@ -49,4 +54,8 @@ goCLi createDemo
 
 调用效果:
 
-[demo:1a29aa8e_32ae_4241_9c8a_5c9e1f92b096]
+[demo:1a29aa8e_32ae_4241_9c8a_5c9e1f92b096]""";
+
+
+}
+  
