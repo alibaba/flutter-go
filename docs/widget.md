@@ -30,11 +30,10 @@ goCli createPage
 
 **name** 必须**英文开头**, 统一用小写的英文字母，数字和下划线的组合，不得包含汉字空格和特殊字符, 需要与文章内容相关
 
-**title** 可以为中文或者英文, 不可以使用特殊字符, 需要与文章内容相关
 
 **author** 可以为中文英文以及任意组合, 但是不得有歧义, 暴力, 辱骂等词汇, 否则可能会被拒绝合并
 
-**desc** 新增界面的简要描述, 需要对添加的界面进行简要描述, 方便后期搜索引擎采集
+**desc** 相关的简要描述, 需要对添加的组件或者界面进行简要描述, 方便后期搜索引擎采集
 
 **email** 创建者的邮箱
 
@@ -47,4 +46,14 @@ goCli createPage
   
 ## 编辑界面
 
-为了能动态的将**markdown**转化成**可识别**的内容, 需要在您项目中调用 **goCli watch**, 然后打开 **lib/standard_pages/standard_for_slider_sanfan_8ab2b5c2_42ae_4241_9c8a_5c9e1f92b096/index.md**,  
+为了能动态的将**markdown**转化成**可识别**的内容, 需要在您项目中调用 **goCli watch**, 然后可以编辑以下位置的md文件,  更改当前文件内容, 即可动态更新我们详情页的内容.
+
+```
+lib/standard_pages/standard_for_slider_sanfan_8ab2b5c2_42ae_4241_9c8a_5c9e1f92b096/index.md
+```
+
+参考:
+
+![](https://img.alicdn.com/tfs/TB1cHLZc.T1gK0jSZFhXXaAtVXa-1393-760.gif)
+
+
