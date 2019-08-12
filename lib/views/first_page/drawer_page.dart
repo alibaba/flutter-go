@@ -223,7 +223,7 @@ class _DrawerPageState extends State<DrawerPage> {
             style: textStyle,
           ),
           onTap: () {
-            Share.share('https://github.com/alibaba/flutter-go');
+            Share.share('https://flutter-go.pub/website/');
           },
         ),
         new Divider(),
