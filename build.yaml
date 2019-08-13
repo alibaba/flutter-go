@@ -1,0 +1,15 @@
+# See https://github.com/dart-lang/build/tree/master/build_web_compilers#configuration
+targets:
+  $default:
+    builders:
+      build_web_compilers|entrypoint:
+        # Avoid building the test directory.
+        generate_for: ['web/**.dart']
+        options:
+          dart2js_args:
+            - --no-source-maps
+            - -O4
+            - --fast-startup
+            - --minify
+            - --trust-primitives
+            - --trust-type-annotations

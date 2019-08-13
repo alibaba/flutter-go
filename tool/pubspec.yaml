@@ -1,0 +1,6 @@
+name: tool
+publish_to: none
+
+dependencies:
+  path: ^1.6.2
+
