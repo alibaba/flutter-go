@@ -22,7 +22,6 @@
 
 
 # 参与共建
-我们采用 **Pull Request(简称PR)** 的方式, 进行三方共建.
 
 关于如何提PR请先阅读以下文档
 
@@ -30,8 +29,6 @@
 - [dart 代码规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 - [如何使用go-cli 创建 Widget Page](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md)
 
-
- 
  
 # 贡献指南
 
