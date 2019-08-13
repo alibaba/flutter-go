@@ -13,13 +13,25 @@ about: something about page
 如果长时间未得到您的回复, 如果我们无法在某些环境上重现该问题, 并且您**超过7天未回复**, 我们可能会关 **闭掉issue**, 谢谢
 
 
-## Page 标题
-
-(例如: *"xx介绍页"*)
-
-## Page 增加或者更新的内容概括
 
 
+## 界面增加或者更新的内容概括
+
+## 界面数据
+
+例如:
+```
+{
+  "name": "standard_for_slider",
+  "screenShot": "",
+  "author":"sanfan",
+  "title":"slider组件",
+  "email": "hanxu@qq.com",
+  "desc": "slider, new Slider",
+  "id": "8ab2b5c2_42ae_4241_9c8a_5c9e1f92b096"
+}
+
+```
 ## Page 关联的 DEMO 信息
 
 例如:
@@ -33,9 +45,18 @@ about: something about page
   "email": "hanxu317@qq.com",
   "desc": "desc",
   "id": "ee4feb8e_32ae_4241_9c8a_5c9e1f92b096"
+},
+{
+  "name": "intor pag2e",
+  "screenShot": "",
+  "author":"sanfan",
+  "title":"介绍页",
+  "email": "hanxu317@qq.com",
+  "desc": "desc",
+  "id": "ee4feb8e_32ae_4241_9c8a_5c9e1f92b097"
 }
 ```
 
-## 引入第三方包的文件与版本号
+## 引入第三方包的文件与版本号(如果有引入, 请标明)
 
 

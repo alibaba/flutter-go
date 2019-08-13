@@ -193,7 +193,6 @@ class CategoryComponent extends CommonItem {
     this.parent
   });
   CategoryComponent.fromJson(Map json) {
-    print('name: ${json['name']} id: ${json['id'].runtimeType}');
     if (json['id'] != null && json['id'].runtimeType == String) {
       this.id = int.parse(json['id']);
     } else {
