@@ -9,7 +9,7 @@
 # 共建方式
 
 1. 共建组件
-  - 本次更新, 开放了 **Widget 内容收录** 的功能, 您需要通过 [goCli](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md) 工具编写markdown代码。
+  - 本次更新, 开放了 **Widget 内容收录** 的功能, 您需要通过 [goCli](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md)工具, 创建标准化组件，编写markdown代码。
   
   - 为了更好记录您的改动目的, 内容信息, 交流过程, 每一条PR都需要对应一条 **Issue**, 提交你发现的`BUG`或者想增加的`新功能`, 或者想要增加新的[共建组件](https://github.com/alibaba/flutter-go/blob/maseter/docs/widget.md), 
   
