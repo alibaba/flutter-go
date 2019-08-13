@@ -8,11 +8,17 @@
 
 # 共建方式
 
-1. 本次更新, 开放了 **Widget 内容收录** 的功能, 您可以通过 [goCli](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md) 工具编写markdown代码, 通过 **Pull Request** 的形式将您的文章内容, api描述, 组件使用方法等加入进我们的Widget界面.
+1. 共建组件
+  - 本次更新, 开放了 **Widget 内容收录** 的功能, 您需要通过 [goCli](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md) 工具编写markdown代码。
+  
+  - 然后通过 **Pull Request** 的形式将您的文章内容, api描述, 组件使用方法等加入进我们的Widget界面。
+  
+  - 为了更好记录您的改动目的, 内容信息, 交流过程, 每一条PR都需要对应一条 **Issue**, 即提交你发现的BUG或者想加入的功能, 或者想要加入的WidgetPage(共建组件), 选择你issue在类型。
+  
+![](https://img.alicdn.com/tfs/TB1r3LEbKL2gK0jSZFmXXc7iXXa-858-317.png)
 
-2. 您也可以将例如**日常bug.** **未来feature**等的功能性PR, 申请提交到我们的的主仓库.
-
-
+2. 提交文章和修改bug
+  - 您也可以将例如**日常bug.** **未来feature**等的功能性PR, 申请提交到我们的的主仓库。
 
 
 # 参与共建
@@ -24,9 +30,6 @@
 - [dart 代码规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 - [如何使用go-cli 创建 Widget Page](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md)
 
-为了更好记录您的改动目的, 内容信息, 交流过程, 每一条PR都需要对应一条 **Issue**, 即提交你发现的BUG 或者 想加入的功能, 或者想要加入的 Widget Page, 选择你issue在类型
-
-![](https://img.alicdn.com/tfs/TB1r3LEbKL2gK0jSZFmXXc7iXXa-858-317.png)
 
  
  
