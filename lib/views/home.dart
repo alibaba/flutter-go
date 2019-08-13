@@ -7,9 +7,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
+import 'package:fluro/fluro.dart';
+import 'package:flutter_go/views/user_page/user_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
@@ -20,10 +23,13 @@ import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
-
-const int ThemeColor = 0xFFC91B3A;
+import 'package:flutter_go/model/user_info.dart';
 
 class AppPage extends StatefulWidget {
+  final UserInformation userInfo;
+
+  AppPage(this.userInfo);
+
   @override
   State<StatefulWidget> createState() {
     return _MyHomePageState();
@@ -37,35 +43,37 @@ class _MyHomePageState extends State<AppPage>
   SearchHistoryList searchHistoryList;
   bool isSearch = false;
   String appBarTitle = tabData[0]['text'];
-  List<Widget> list = List();
+  List<Widget> _list = List();
   int _currentIndex = 0;
   static List tabData = [
     {'text': '业界动态', 'icon': Icon(Icons.language)},
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
-    {'text': '组件收藏', 'icon': Icon(Icons.favorite)},
-    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)}
+    {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
+    {'text': '个人中心', 'icon': Icon(Icons.account_circle)},
+    
   ];
 
-  List<BottomNavigationBarItem> myTabs = [];
+  List<BottomNavigationBarItem> _myTabs = [];
 
   @override
   void initState() {
     super.initState();
+    print('widget.userInfo    ${widget.userInfo}');
     initSearchHistory();
     for (int i = 0; i < tabData.length; i++) {
-      myTabs.add(BottomNavigationBarItem(
+      _myTabs.add(BottomNavigationBarItem(
         icon: tabData[i]['icon'],
         title: Text(
           tabData[i]['text'],
         ),
       ));
     }
-    list
+    _list
 //      ..add(FirstPage())
-      ..add(MainPage())
-      ..add(WidgetPage(Provider.db))
-      ..add(CollectionPage())
-      ..add(FourthPage());
+      ..add(MainPage(userInfo: widget.userInfo))
+      ..add(WidgetPage())
+      ..add(FourthPage())
+      ..add(UserPage(userInfo: widget.userInfo));
   }
 
   @override
@@ -81,33 +89,27 @@ class _MyHomePageState extends State<AppPage>
   }
 
   void onWidgetTap(WidgetPoint widgetPoint, BuildContext context) {
-    List widgetDemosList = new WidgetDemoList().getDemos();
     String targetName = widgetPoint.name;
-    String targetRouter = '/category/error/404';
-    widgetDemosList.forEach((item) {
-      if (item.name == targetName) {
-        targetRouter = item.routerName;
-      }
-    });
-    searchHistoryList
-        .add(SearchHistory(name: targetName, targetRouter: targetRouter));
+    searchHistoryList.add(
+        SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
-    print("searchHistoryList2 ${targetRouter}");
-    print("searchHistoryList3 ${widgetPoint.name}");
-    Application.router.navigateTo(context, "$targetRouter");
+    Application.router.navigateTo(context, widgetPoint.routerName,
+        transition: TransitionType.inFromRight);
   }
 
   Widget buildSearchInput(BuildContext context) {
-      return new SearchInput((value) async {
+    return new SearchInput((value) async {
       if (value != '') {
-        List<WidgetPoint> list = await widgetControl.search(value);
+        print('value ::: $value');
+        // List<WidgetPoint> list = await widgetControl.search(value);
+        List<WidgetPoint> list = await DataUtils.searchWidget(value);
         return list
             .map((item) => new MaterialSearchResult<String>(
                   value: item.name,
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
                   onTap: () {
-                   onWidgetTap(item, context);
+                    onWidgetTap(item, context);
                   },
                 ))
             .toList();
@@ -117,35 +119,36 @@ class _MyHomePageState extends State<AppPage>
     }, (value) {}, () {});
   }
 
-  renderAppBar(BuildContext context,Widget widget,int index) {
-    print('renderAppBar=====>>>>>>${index}');
-    if(index == 0) {
-      return null;
+  renderAppBar(BuildContext context, Widget widget, int index) {
+    if (index == 1) {
+      return AppBar(title: buildSearchInput(context));
     }
-    return AppBar(title: buildSearchInput(context));
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: renderAppBar(context,widget,_currentIndex),
-      body: list[_currentIndex],
+      appBar: renderAppBar(context, widget, _currentIndex),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _list,
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        items: myTabs,
+        items: _myTabs,
         //高亮  被点击高亮
         currentIndex: _currentIndex,
         //修改 页面
-        onTap: _ItemTapped,
+        onTap: _itemTapped,
         //shifting :按钮点击移动效果
         //fixed：固定
         type: BottomNavigationBarType.fixed,
 
-        fixedColor: Color(0xFFC91B3A),
+        fixedColor: Theme.of(context).primaryColor,
       ),
     );
   }
 
-  void _ItemTapped(int index) {
+  void _itemTapped(int index) {
     setState(() {
       _currentIndex = index;
       appBarTitle = tabData[index]['text'];
