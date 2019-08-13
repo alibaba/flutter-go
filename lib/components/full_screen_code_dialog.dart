@@ -9,9 +9,10 @@ import 'package:flutter_go/utils/example_code_parser.dart';
 import 'package:flutter_go/utils/syntax_highlighter.dart';
 
 class FullScreenCodeDialog extends StatefulWidget {
-  const FullScreenCodeDialog({this.filePath});
+  const FullScreenCodeDialog({this.filePath, this.remoteFilePath});
 
   final String filePath;
+  final String remoteFilePath;
   _FullScreenCodeDialogState createState() => _FullScreenCodeDialogState();
 }
 
