@@ -15,7 +15,7 @@ class _CheckedPopupMenuItemDemoState extends State<CheckedPopupMenuItemDemo> {
 
   final String _checkedValue1 = 'One';
   final String _checkedValue2 = 'Two';
-  final String _checkedValue3 = 'Three';
+  final String _checkedValue3 = 'Free';
   final String _checkedValue4 = 'Four';
 
   @override

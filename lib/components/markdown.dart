@@ -1,4 +1,4 @@
-import '../components/flutter_markdown/lib/flutter_markdown.dart' as md;
+import 'package:flutter_markdown/flutter_markdown.dart' as md;
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/utils/high_light_code.dart';

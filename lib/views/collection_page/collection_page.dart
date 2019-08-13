@@ -1,5 +1,5 @@
-/// @Author: 一凨
-/// @Date: 2019-01-08 17:12:58
+/// @Author: 一凨 
+/// @Date: 2019-01-08 17:12:58 
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-14 20:13:28
 
@@ -11,13 +11,9 @@ import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-import 'package:flutter_go/utils/data_utils.dart';
+
 
 class CollectionPage extends StatefulWidget {
-  final bool hasLogined;
-
-  CollectionPage({Key key, this.hasLogined}) : super(key: key);
-
   _CollectionPageState createState() => _CollectionPageState();
 }
 
@@ -48,13 +44,16 @@ class _CollectionPageState extends State<CollectionPage> {
 
   void _getList() {
     _collectionList.clear();
-    // DataUtils.getAllCollections(context).then((collectionList) {
-    //   if (this.mounted) {
-    //     setState(() {
-    //       _collectionList = collectionList;
-    //     });
-    //   }
-    // });
+    _collectionControl.getAllCollection().then((resultList) {
+      resultList.forEach((item) {
+        _collectionList.add(item);
+      });
+      if (this.mounted) {
+        setState(() {
+          _collectionList = _collectionList;
+        });
+      }
+    });
   }
 
   Widget _renderList(context, index) {
@@ -106,8 +105,7 @@ class _CollectionPageState extends State<CollectionPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          _collectionList[index - 1].name,
-//          Uri.decodeComponent(_collectionList[index - 1].name),
+          Uri.decodeComponent(_collectionList[index - 1].name),
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),

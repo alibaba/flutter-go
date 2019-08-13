@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 class WidgetName2Icon {
   static Map<String,dynamic> icons = {
-    "Developer": Icons.developer_mode,
-    "Standard": Icons.pages ,
     "Element":Icons.explicit,
     "Components":Icons.extension,
-    "Theme":Icons.filter_b_and_w,
+    "Themes":Icons.filter_b_and_w,
     "Form":Icons.table_chart,
     "Frame":Icons.aspect_ratio,
     "Media":Icons.subscriptions,

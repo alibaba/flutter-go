@@ -21,7 +21,7 @@ const String content1 = '''
 ''';
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/Themes/Material/MaterialColor';
+  static const String routeName = '/themes/Material/MaterialColor';
 
   _DemoState createState() => _DemoState();
 }

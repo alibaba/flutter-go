@@ -4,7 +4,6 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_go/utils/data_utils.dart';
 
 import '../routers/application.dart';
 import '../routers/routers.dart';
@@ -25,8 +24,8 @@ class WidgetDemo extends StatefulWidget {
       {Key key,
       @required this.title,
       @required this.contentList,
-      this.codeUrl,
-      this.docUrl,
+      @required this.codeUrl,
+      @required this.docUrl,
       this.bottomNaviBar})
       : super(key: key);
 
@@ -38,7 +37,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
   CollectionControlModel _collectionControl = new CollectionControlModel();
   var _collectionIcons;
   List widgetDemosList = new WidgetDemoList().getDemos();
-  String widgetType = 'old';
+  String _router = '';
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> _buildContent() {
@@ -65,67 +64,56 @@ class _WidgetDemoState extends State<WidgetDemo> {
   @override
   void initState() {
     super.initState();
-    // 这里不能直接 使用 ` ModalRoute.of(context)` 会产生报错
-    Future.delayed(Duration.zero, () {
-      String currentPath = ModalRoute.of(context).settings.name;
-      if (currentPath.indexOf('/standard-page') == 0) {
-        widgetType = 'standard';
-      }
-      Map<String, String> params = {
-        'type': widgetType,
-        "url": currentPath,
-        "name": widget.title
-      };
-      DataUtils.checkCollected(params).then((result) {
-        if (this.mounted) {
-          setState(() {
-            _hasCollected = result;
-          });
+    _collectionControl.getRouterByName(widget.title).then((list) {
+      widgetDemosList.forEach((item) {
+        if (item.name == widget.title) {
+          _router = item.routerName;
         }
       });
+      if (this.mounted) {
+        setState(() {
+          _hasCollected = list.length > 0;
+        });
+      }
     });
   }
 
 // 点击收藏按钮
   _getCollection() {
-    String currentRouterPath = ModalRoute.of(context).settings.name;
-    Map<String, String> params = {
-      "type": widgetType,
-      "url": currentRouterPath,
-      "name": widget.title
-    };
     if (_hasCollected) {
       // 删除操作
-      DataUtils.removeCollected(params, context).then((result) {
-        if (result) {
+      _collectionControl.deleteByName(widget.title).then((result) {
+        if (result > 0 && this.mounted) {
+          setState(() {
+            _hasCollected = false;
+          });
           _scaffoldKey.currentState
               .showSnackBar(SnackBar(content: Text('已取消收藏')));
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, currentRouterPath, true));
+                .fire(CollectionEvent(widget.title, _router, true));
           }
-          if (this.mounted) {
-            setState(() {
-              _hasCollected = false;
-            });
-          }
+          return;
         }
+        print('删除错误');
       });
     } else {
       // 插入操作
-      DataUtils.addCollected(params, context).then((result) {
-        if (result) {
-          if (this.mounted) {
-            setState(() {
-              _hasCollected = true;
-            });
-          }
-          _scaffoldKey.currentState
-              .showSnackBar(SnackBar(content: Text('收藏成功')));
+      _collectionControl
+          .insert(Collection(name: widget.title, router: _router))
+          .then((result) {  
+        if (this.mounted) {
+          setState(() {
+            _hasCollected = true;
+          });
+
           if (ApplicationEvent.event != null) {
             ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, currentRouterPath, false));
+                .fire(CollectionEvent(widget.title, _router, false));
           }
+
+          _scaffoldKey.currentState
+              .showSnackBar(SnackBar(content: Text('收藏成功')));
         }
       });
     }
@@ -141,38 +129,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
           '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
     }
   }
-  List<PopupMenuEntry<String>> buildPopupMenu() {
-    List<PopupMenuEntry<String>> comps = [];
-    if (widget.docUrl != null) {
-      comps.add(
-          PopupMenuItem<String>(
-            value: 'doc',
-            child: ListTile(
-              leading: Icon(
-                Icons.library_books,
-                size: 22.0,
-              ),
-              title: Text('查看文档'),
-            ),
-          )
-      );
-    }
-    if (widget.codeUrl != null) {
-      comps.add(
-          PopupMenuItem<String>(
-            value: 'code',
-            child: ListTile(
-              leading: Icon(
-                Icons.code,
-                size: 22.0,
-              ),
-              title: Text('查看Demo'),
-            ),
-          )
-      );
-    }
-    return comps;
-  }
+
   @override
   Widget build(BuildContext context) {
     if (_hasCollected) {
@@ -180,34 +137,50 @@ class _WidgetDemoState extends State<WidgetDemo> {
     } else {
       _collectionIcons = Icons.favorite_border;
     }
-    List<PopupMenuEntry<String>> menus = buildPopupMenu();
-    List<Widget> actions = [
-      new IconButton(
-        tooltip: 'goBack home',
-        onPressed: () {
-          Navigator.popUntil(context, ModalRoute.withName('/'));
-        },
-        icon: Icon(Icons.home),
-      ),
-      new IconButton(
-        tooltip: 'collection',
-        onPressed: _getCollection,
-        icon: Icon(_collectionIcons),
-      ),
-    ];
-    if (menus.length > 0) {
-      actions.add(
-          PopupMenuButton<String>(
-            onSelected: _selectValue,
-            itemBuilder: (BuildContext context) => menus,
-          )
-      );
-    }
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
           title: Text(widget.title),
-          actions: actions,
+          actions: <Widget>[
+            new IconButton(
+              tooltip: 'goBack home',
+              onPressed: () {
+                Navigator.popUntil(context, ModalRoute.withName('/'));
+              },
+              icon: Icon(Icons.home),
+            ),
+            new IconButton(
+              tooltip: 'collection',
+              onPressed: _getCollection,
+              icon: Icon(_collectionIcons),
+            ),
+            PopupMenuButton<String>(
+              onSelected: _selectValue,
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                    const PopupMenuItem<String>(
+                      value: 'doc',
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.library_books,
+                          size: 22.0,
+                        ),
+                        title: Text('查看文档'),
+                      ),
+                    ),
+                    const PopupMenuDivider(),
+                    const PopupMenuItem<String>(
+                      value: 'code',
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.code,
+                          size: 22.0,
+                        ),
+                        title: Text('查看Demo'),
+                      ),
+                    ),
+                  ],
+            ),
+          ],
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),

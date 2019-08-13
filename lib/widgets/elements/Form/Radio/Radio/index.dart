@@ -6,6 +6,7 @@
  /// target:  Radio相关
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/components/widget_demo.dart';
 import 'demo.dart';
 
@@ -25,7 +26,7 @@ Radio widget 代表表单中的单选按钮, 当groupValue = value时代表组�
 - value → T - 单选的值。
 """;
 class Demo extends StatefulWidget {
-  static const String routeName = '/element/Form/Radio/Radio';
+  static const String routeName = '/element/Form/Radio/index';
   _DemoState createState() => _DemoState();
 }
 
@@ -39,7 +40,7 @@ class _DemoState extends State<Demo> {
       ],
       title: 'Radio',
       docUrl: 'https://docs.flutter.io/flutter/material/Radio-class.html',
-      codeUrl: 'elements/Form/Radio/Radio/demo.dart',
+      codeUrl: 'elements/Form/Radio/Radio/index.dart',
     );
   }
 }

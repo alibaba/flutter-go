@@ -3,89 +3,56 @@ import 'package:fluro/fluro.dart';
 import './widget_item.dart';
 import '../routers/application.dart';
 import '../widgets/index.dart';
-import '../model/widget.dart';
 
 class WidgetItemContainer extends StatelessWidget {
   final int columnCount; //一行几个
-  final List<CommonItem> commonItems;
-//  final bool isWidgetPoint;
+  final List<dynamic> categories;
+  final bool isWidgetPoint;
 
   // 所有的可用demos;
   final List widgetDemosList = new WidgetDemoList().getDemos();
 
   WidgetItemContainer(
       {Key key,
-      @required this.commonItems,
+      @required this.categories,
       @required this.columnCount,
-//      @required this.isWidgetPoint
-      })
+      @required this.isWidgetPoint})
       : super(key: key);
-
-  /// 跳转goup
-  void tapToGroup(CategoryComponent cate, BuildContext context) {
-    Application.router
-        .navigateTo(context, "/category/${cate.token}", transition: TransitionType.inFromRight);
-  }
-
-  /// 跳转到老的widget界面
-  void tapToOldWidget(WidgetLeaf leaf, BuildContext context) {
-
-    String targetName = leaf.name;
-    String targetRouter = '/category/error/404';
-    widgetDemosList.forEach((item) {
-      if (item.name == targetName) {
-        targetRouter = item.routerName;
-      }
-    });
-    Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
-  }
-
-  /// 跳转到新的标准页
-  void tapToStandardPage(WidgetLeaf leaf, BuildContext context) {
-    String targetRouter = '/standard-page/${leaf.pageId}';
-    Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
-  }
 
   List<Widget> _buildColumns(context) {
     List<Widget> _listWidget = [];
     List<Widget> _listRows = [];
     int addI;
-    for (int i = 0, length = commonItems.length; i < length; i += columnCount) {
+    for (int i = 0, length = categories.length; i < length; i += columnCount) {
       _listRows = [];
       for (int innerI = 0; innerI < columnCount; innerI++) {
         addI = innerI + i;
         if (addI < length) {
-          CommonItem item = commonItems[addI];
-
-
+          dynamic item = categories[addI];
           _listRows.add(
             Expanded(
               flex: 1,
               child: WidgetItem(
                 title: item.name,
                 onTap: () {
-                  String type = item.type;
-
-                  if (type == "category") {
-                    return tapToGroup(item as CategoryComponent, context);
+                  if (isWidgetPoint) {
+                    String targetName = item.name;
+                    String targetRouter = '/category/error/404';
+                    widgetDemosList.forEach((item) {
+                      if (item.name == targetName) {
+                        targetRouter = item.routerName;
+                      }
+                    });
+                    Application.router.navigateTo(context, "$targetRouter", transition: TransitionType.inFromRight);
+                  } else {
+                    Application.router
+                        .navigateTo(context, "/category/${item.name}", transition: TransitionType.inFromRight);
                   }
-                  if (type == "widget") {
-                    WidgetLeaf leaf = item as WidgetLeaf;
-
-                    if (leaf.display == "standard") {
-                      return tapToStandardPage(leaf, context);
-                    } else {
-                      return tapToOldWidget(leaf, context);
-                    }
-                  }
-
-                  Application.router
-                        .navigateTo(context, "/category/error/404", transition: TransitionType.inFromRight);
                 },
                 index: addI,
                 totalCount: length,
                 rowLength: columnCount,
-                textSize: true ? 'middle' : 'small',
+                textSize: isWidgetPoint ? 'middle' : 'small',
               ),
             ),
           );
@@ -114,4 +81,3 @@ class WidgetItemContainer extends StatelessWidget {
     );
   }
 }
-
