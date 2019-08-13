@@ -34,7 +34,7 @@ class Demo extends StatefulWidget {
 class _Demo extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: 'AnimatedSwitcher',
+      title: 'SwitchListTile',
       codeUrl: 'elements/Form/Switch/AnimatedSwitcher/demo.dart',
       contentList: [contentA, AnimatedSwitcherDemo()],
       docUrl: '',

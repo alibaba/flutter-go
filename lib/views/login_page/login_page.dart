@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:event_bus/event_bus.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/views/home.dart';
-import 'package:flutter_go/event/event_bus.dart';
-import 'package:flutter_go/event/event_model.dart';
 
 import 'package:flutter_go/model/user_info_cache.dart';
-import 'package:flutter_go/routers/application.dart';
-import 'package:flutter_go/routers/routers.dart';
-import 'package:flutter_go/model/user_info.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,11 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  _LoginPageState() {
-    final eventBus = new EventBus();
-    ApplicationEvent.event = eventBus;
-  }
-
   // 利用FocusNode和_focusScopeNode来控制焦点 可以通过FocusNode.of(context)来获取widget树中默认的_focusScopeNode
   FocusNode _emailFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
@@ -48,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
       _userInfoControlModel.getAllInfo().then((list) {
         if (list.length > 0) {
           UserInfo _userInfo = list[0];
+          print('获取的数据：${_userInfo.username} ${_userInfo.password}');
           setState(() {
             _userNameEditingController.text = _userInfo.username;
             _passwordEditingController.text = _userInfo.password;
@@ -59,61 +47,27 @@ class _LoginPageState extends State<LoginPage> {
     } catch (err) {
       print('读取用户本地存储的用户信息出错 $err');
     }
-
-    ApplicationEvent.event.on<UserGithubOAuthEvent>().listen((event) {
-      print('loginName:${event.loginName} token:${event.token} 1234567');
-      if (event.isSuccess == true) {
-        //  oAuth 认证成功
-        setState(() {
-          isLoading = true;
-        });
-        DataUtils.getUserInfo(
-                {'loginName': event.loginName, 'token': event.token})
-            .then((result) {
-          setState(() {
-            isLoading = false;
-          });
-          Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => AppPage(result)),
-              (route) => route == null);
-        }).catchError((onError) {
-          print('获取身份信息 error:::$onError');
-          setState(() {
-            isLoading = false;
-          });
-        });
-      } else {
-        Fluttertoast.showToast(
-            msg: '验证失败',
-            toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.CENTER,
-            timeInSecForIos: 1,
-            backgroundColor: Theme.of(context).primaryColor,
-            textColor: Colors.white,
-            fontSize: 16.0);
-      }
-    });
   }
 
 // 创建登录界面的TextForm
   Widget buildSignInTextForm() {
-    return Container(
-      decoration: BoxDecoration(
+    return new Container(
+      decoration: new BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
       width: MediaQuery.of(context).size.width * 0.8,
       height: 190,
       //  * Flutter提供了一个Form widget，它可以对输入框进行分组，然后进行一些统一操作，如输入内容校验、输入框重置以及输入内容保存。
-      child: Form(
+      child: new Form(
         key: _signInFormKey,
-        child: Column(
+        child: new Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.only(
                     left: 25, right: 25, top: 20, bottom: 20),
-                child: TextFormField(
+                child: new TextFormField(
                   controller: _userNameEditingController,
                   //关联焦点
                   focusNode: _emailFocusNode,
@@ -124,14 +78,14 @@ class _LoginPageState extends State<LoginPage> {
                     _focusScopeNode.requestFocus(_passwordFocusNode);
                   },
 
-                  decoration: InputDecoration(
-                      icon: Icon(
+                  decoration: new InputDecoration(
+                      icon: new Icon(
                         Icons.email,
                         color: Colors.black,
                       ),
                       hintText: "Github 登录名",
                       border: InputBorder.none),
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: new TextStyle(fontSize: 16, color: Colors.black),
                   //验证
                   validator: (value) {
                     if (value.isEmpty) {
@@ -146,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Container(
+            new Container(
               height: 1,
               width: MediaQuery.of(context).size.width * 0.75,
               color: Colors.grey[400],
@@ -154,18 +108,18 @@ class _LoginPageState extends State<LoginPage> {
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
-                child: TextFormField(
+                child: new TextFormField(
                   controller: _passwordEditingController,
                   focusNode: _passwordFocusNode,
-                  decoration: InputDecoration(
-                    icon: Icon(
+                  decoration: new InputDecoration(
+                    icon: new Icon(
                       Icons.lock,
                       color: Colors.black,
                     ),
                     hintText: "Github 登录密码",
                     border: InputBorder.none,
-                    suffixIcon: IconButton(
-                      icon: Icon(
+                    suffixIcon: new IconButton(
+                      icon: new Icon(
                         Icons.remove_red_eye,
                         color: Colors.black,
                       ),
@@ -174,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   //输入密码，需要用*****显示
                   obscureText: !isShowPassWord,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: new TextStyle(fontSize: 16, color: Colors.black),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "密码不可为空!";
@@ -188,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Container(
+            new Container(
               height: 1,
               width: MediaQuery.of(context).size.width * 0.75,
               color: Colors.grey[400],
@@ -200,15 +154,15 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget buildSignInButton() {
-    return GestureDetector(
-      child: Container(
+    return new GestureDetector(
+      child: new Container(
         padding: EdgeInsets.only(left: 42, right: 42, top: 10, bottom: 10),
-        decoration: BoxDecoration(
+        decoration: new BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             color: Theme.of(context).primaryColor),
-        child: Text(
+        child: new Text(
           "LOGIN",
-          style: TextStyle(fontSize: 25, color: Colors.white),
+          style: new TextStyle(fontSize: 25, color: Colors.white),
         ),
       ),
       onTap: () {
@@ -217,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
           // 如果输入都检验通过，则进行登录操作
           // Scaffold.of(context)
           //     .showSnackBar(new SnackBar(content: new Text("执行登录操作")));
-          //调用所有自孩子��save回调，保存表单内容
+          //调用所有自孩子的save回调，保存表单内容
           doLogin();
         }
       },
@@ -226,56 +180,38 @@ class _LoginPageState extends State<LoginPage> {
 
   // 登陆操作
   doLogin() {
-    print("doLogin");
     _signInFormKey.currentState.save();
     setState(() {
       isLoading = true;
     });
     DataUtils.doLogin({'username': username, 'password': password})
-        .then((userResult) {
+        .then((result) {
+      print(result);
       setState(() {
         isLoading = false;
       });
-      if (userResult.runtimeType == UserInformation) {
-        try {
-          _userInfoControlModel.deleteAll().then((result) {
-            // print('删除结果：$result');
-            _userInfoControlModel
-                .insert(UserInfo(password: password, username: username))
-                .then((value) {
-              print('存储成功:$value');
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => AppPage(userResult)),
-                  (route) => route == null);
-            });
+      try {
+        _userInfoControlModel.deleteAll().then((result) {
+          // print('删除结果：$result');
+          _userInfoControlModel
+              .insert(UserInfo(password: password, username: username))
+              .then((value) {
+            // print('存储成功:$value');
+            Navigator.of(context).pushAndRemoveUntil(
+                new MaterialPageRoute(builder: (context) => AppPage()),
+                (route) => route == null);
           });
-        } catch (err) {
-          Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => AppPage(userResult)),
-              (route) => route == null);
-        }
-      }else if(userResult.runtimeType == String){
-        Fluttertoast.showToast(
-          msg: userResult,
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIos: 1,
-          backgroundColor: Theme.of(context).primaryColor,
-          textColor: Colors.white,
-          fontSize: 16.0);
+        });
+      } catch (err) {
+        Navigator.of(context).pushAndRemoveUntil(
+            new MaterialPageRoute(builder: (context) => AppPage()),
+            (route) => route == null);
       }
-    }).catchError((errorMsg) {
+    }).catchError((onError) {
+      print(onError);
       setState(() {
         isLoading = false;
       });
-      Fluttertoast.showToast(
-          msg: errorMsg.toString(),
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIos: 1,
-          backgroundColor: Theme.of(context).primaryColor,
-          textColor: Colors.white,
-          fontSize: 16.0);
     });
   }
 
@@ -331,70 +267,15 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       SizedBox(height: 35.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Image.asset(
-                            'assets/images/gitHub.png',
-                            fit: BoxFit.contain,
-                            width: 60.0,
-                            height: 60.0,
-                          ),
-                          Image.asset(
-                            'assets/images/arrow.png',
-                            fit: BoxFit.contain,
-                            width: 40.0,
-                            height: 30.0,
-                          ),
-                          Image.asset(
-                            'assets/images/FlutterGo.png',
-                            fit: BoxFit.contain,
-                            width: 60.0,
-                            height: 60.0,
-                          ),
-                        ],
+                      Image.asset(
+                        'assets/images/FlutterGo.png',
+                        fit: BoxFit.contain,
+                        width: 100.0,
+                        height: 100.0,
                       ),
                       buildSignInTextForm(),
                       buildSignInButton(),
-                      SizedBox(height: 15.0),
-                      new Container(
-                        height: 1,
-                        width: MediaQuery.of(context).size.width * 0.75,
-                        color: Colors.grey[400],
-                        margin: const EdgeInsets.only(bottom: 10.0),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          FlatButton(
-                            child: Text(
-                              'Github OAuth 认证',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor,
-                                  decoration: TextDecoration.underline),
-                            ),
-                            onPressed: () {
-                              Application.router.navigateTo(context,
-                                  '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}');
-                            },
-                          ),
-                          FlatButton(
-                            child: Text(
-                              '游客登录',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor,
-                                  decoration: TextDecoration.underline),
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          AppPage(UserInformation(id: 0))),
-                                  (route) => route == null);
-                            },
-                          )
-                        ],
-                      )
+                      SizedBox(height: 35.0),
                     ],
                   ),
                   Positioned(

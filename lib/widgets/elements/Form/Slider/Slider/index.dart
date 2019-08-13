@@ -70,7 +70,7 @@ const contentB = '''
 ''';
 
 class Demo extends StatefulWidget {
-  static const String routeName = 'element/form/Slider/Slider';
+  static const String routeName = 'elements/Form/Slider/Slider';
   _Demo createState() => _Demo();
 }
 

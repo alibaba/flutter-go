@@ -1,8 +1,6 @@
 Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md) | [中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md)
 ## Flutter Go
 
-# test
-
 ![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
 
 > 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
@@ -22,37 +20,17 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 <img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
 
-## 运行方式
 
-- 查看一下版本号是否正确
-```dart
-  flutter --version
-```
-- 运行以下命令查看是否需要安装其它依赖项来完成安装
-```dart
-  flutter doctor
-```
-- 运行启动您的应用
-```dart
-  flutter packages get 
-  flutter run
-```
-
-- 如果有其他问题,请参考
-  - https://flutterchina.club/setup-macos/
-  - https://flutter.dev/docs/get-started/install/macos
 
 ## Release安装包下载地址
 
-### android正式版，下载地址:
+android下载地址:
 
-- 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
-<img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
+<img src="https://img.alicdn.com/tfs/TB1ylxGTMHqK1RjSZFgXXa7JXXa-436-432.png" width="200px">
 
-### iphone正式版，下载地址: 
+iphone下载地址: AppStore上面进行搜索fluttego
 
-- AppStore 搜索 "Fluttergo" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
-<img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
+<img src="https://img.alicdn.com/tfs/TB1trMgV7PoK1RjSZKbXXX1IXXa-620-1343.png" width=200> <img src="https://img.alicdn.com/tfs/TB1w_MbV7voK1RjSZFDXXXY3pXa-620-1343.png" width=200> 
 
 
 ## 基础环境
@@ -145,5 +123,6 @@ flutter优点主要包括：
 
 - 大家的互相信任，尊重与支持，才是开源社区前进的动力和来源.
 
-Powered by 阿里拍卖前端团队<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
+Powered by [阿里拍卖前端团队](https://github.com/alibaba-paimai-frontend)<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
++++++++
