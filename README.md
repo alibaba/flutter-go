@@ -54,11 +54,9 @@ Precompiling executables... (12.0s)
   $ webdev build
 ```
 
-pub global activate --source path /Users/ryan/work/ali/github/flutter-project/@ali-flutter-go/tools/
-
 ### 通过上面操作基本就能运行，`flutter-go-web` 的界面
 
-### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 `trans2fw` 工具
+### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 [trans2fw](https://github.com/ryan730/trans2fw) 工具
 - 首先拷贝 native 版本下的lib 文件夹到当前目录, 并重命名如: lib-cp。
 
 - 安装 `trans2fw` 工具, 并注册程序
