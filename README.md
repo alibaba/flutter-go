@@ -9,6 +9,7 @@
 
 ### 使用前准备
 - [请了解 `Flutter-web` 官方说明](https://github.com/flutter/flutter_web/blob/master/README.md)
+- [请了解 `Flutter-web` 的迁移指南](https://github.com/flutter/flutter_web/blob/master/docs/migration_guide.md)
 
 ### 如何使用
 - git 拉取 `Flutter-go` 项目,并切换到 `web/flutter-go-web-0.0.1` 分支
@@ -54,9 +55,11 @@ Precompiling executables... (12.0s)
   $ webdev build
 ```
 
-### 通过上面操作基本就能运行，`flutter-go-web` 的界面
+#### 通过上面操作基本就能运行，`flutter-go-web` 的界面
 
-### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 [trans2fw](https://github.com/ryan730/trans2fw) 工具
+#### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 [trans2fw](https://github.com/ryan730/trans2fw) 工具。
+[trans2fw](https://github.com/ryan730/trans2fw) 是笔者开发的一个 自动化 flutter native 项目转化成 flutter-web 项目的工具。
+
 - 首先拷贝 native 版本下的lib 文件夹到当前目录, 并重命名如: lib-cp。
 
 - 安装 `trans2fw` 工具, 并注册程序
