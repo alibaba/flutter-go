@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter_web/material.dart';
 
 import '../routers/application.dart';

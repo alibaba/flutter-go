@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
-
-import '../model/cat.dart' show CatControlModel,Cat;
+import '../model/cat.dart' show CatControlModel, Cat;
 import '../resources/widget_name_to_icon.dart' show WidgetName2Icon;
 import '../components/widget_item_container.dart' show WidgetItemContainer;
 
@@ -29,7 +28,7 @@ class _CateCardState extends State<CateCard> {
     Cat childCateCondition = new Cat(parentId: parentId);
 
     List<Cat> list = await catControl.getList(childCateCondition);
-    if (list.isNotEmpty&&list.length>=1 && this.mounted) {
+    if (list.isNotEmpty && list.length >= 1 && this.mounted) {
       setState(() {
         _firstChildList = list;
       });
@@ -43,7 +42,7 @@ class _CateCardState extends State<CateCard> {
         //首字母转为大写
         widget.category.name.substring(0, 1),
         widget.category.name.substring(0, 1).toUpperCase());
-        
+
     return Container(
       width: screenWidth,
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -115,16 +114,14 @@ class _CateCardState extends State<CateCard> {
       // 下面的图片调用会报bug
       decoration: BoxDecoration(
         image: DecorationImage(
-          //image: AssetImage('images/paimaiLogo.png'),
-          image: AssetImage('assets/images/paimaiLogo.png'),
-          alignment: Alignment.bottomRight
-        ),
+            //image: AssetImage('images/paimaiLogo.png'),
+            image: AssetImage('assets/images/paimaiLogo.png'),
+            alignment: Alignment.bottomRight),
       ),
       child: WidgetItemContainer(
-        categories: this._firstChildList,
-        columnCount: 3,
-        isWidgetPoint:false
-      ),
+          categories: this._firstChildList,
+          columnCount: 3,
+          isWidgetPoint: false),
     );
   }
 }

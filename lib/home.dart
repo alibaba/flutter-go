@@ -19,7 +19,6 @@ import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart' show FourthPage;
 
 import 'package:flutter_go/routers/application.dart';
-//import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/model/widget.dart';
 import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
@@ -27,7 +26,6 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart' show WidgetPage;
 import 'package:flutter_go/views/collection_page/collection_page.dart' show CollectionPage;
-import 'package:flutter_go/components/cate_card.dart' show CateCard;
 
 const int ThemeColor = 0xFFC91B3A;
 

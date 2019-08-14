@@ -39,6 +39,7 @@ class NetUtils {
     // } else {
     //   response = await dio.get(url);
     // }
+    
     var newParams = new Map<String, String>();
     var paramString = '';
     params.forEach((k,v) =>{
@@ -48,10 +49,6 @@ class NetUtils {
 
     print('请求url:${url}${paramString}');
     response = await http.get('${url}${paramString}');
-
-    ////response = await jsonp.fetch(uri:'https://timeline-merger-ms.juejin.im/v1/get_tag_entry'+'?callback=?');
-    ///var response2 = html.HttpRequest.getString('https://api.github.com/');
-
     print(response.statusCode);
 
     if (response.statusCode == 200) {
@@ -68,7 +65,6 @@ class NetUtils {
   static Future post(String url, Map<String, dynamic> params) async {
     //var response = await dio.post(url, data: params);
     var response = await http.post(url);
-    //return response.data;
     return null;
   }
 }

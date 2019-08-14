@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_go/routers/hashRouter/route.dart' show SimpleRoute;
-import 'package:flutter_go/routers/application.dart' as Application;
 import 'home.dart' show Home;
 
 void main() => runApp(MyApp());
