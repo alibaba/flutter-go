@@ -55,6 +55,10 @@ Precompiling executables... (12.0s)
   $ webdev build
 ```
 
+- 线上展示地址
+  - [Flutter GO 官网](https://flutter-go.pub)
+  - [Flutter Go web 版本](https://flutter-go.pub/flutter_go_web/#FirstPage)
+
 #### 通过上面操作基本就能运行，`flutter-go-web` 的界面
 
 #### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 [trans2fw](https://github.com/ryan730/trans2fw) 工具。
