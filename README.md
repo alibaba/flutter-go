@@ -1,11 +1,11 @@
 ### 欢迎来到 `Flutter GO for web` 的代码库。
 ##### 此代码库是配合 [Flutter-web](https://github.com/flutter/flutter_web) 官方预览版, 而对 `Flutter Go` 项目做的 `web` 版本的移植。
 
-#### `Flutter的Web`支持尚不稳定。我们将此版本指定为技术预览版; 对 `Flutter Go native` 版本移植还原度大概在 80%左右。旨在帮助 `Flutter` 开发人员，快速熟悉 `Flutter-web` 官方的实践。
+##### `Flutter的Web`支持尚不稳定。我们将此版本指定为技术预览版; 对 `Flutter Go native` 版本移植还原度大概在 80%左右。旨在帮助 `Flutter` 开发人员，快速熟悉 `Flutter-web` 官方的实践。
 
-#### [在 `Flutter` 官方宣布Flutter暂时不会开发热更新（Code push）](https://github.com/flutter/flutter/issues/14330) 之后, `Flutter-web` 无疑是的动态更新代码最快捷的方式,虽然不是最佳方案,但是是最易用降级方案。
+##### [在 `Flutter` 官方宣布Flutter暂时不会开发热更新（Code push）](https://github.com/flutter/flutter/issues/14330) 之后, `Flutter-web` 无疑是的动态更新代码最快捷的方式,虽然不是最佳方案,但是是最易用降级方案。
 
-#### 通过 `Flutter-go-web` 版本的学习,可以快速，有效还原 `Flutter-go` native 版本。帮助开发者，对快速版本H5化,做一个样例展示，提供 `Flutter-web` 的能力演示。
+##### 通过 `Flutter-go-web` 版本的学习,可以快速，有效还原 `Flutter-go` native 版本。帮助开发者，对快速版本H5化,做一个样例展示，提供 `Flutter-web` 的能力演示。
 
 ### 使用前准备
 - [请了解 `Flutter-web` 官方说明](https://github.com/flutter/flutter_web/blob/master/README.md)
@@ -60,6 +60,8 @@ Precompiling executables... (12.0s)
   - [Flutter Go web 版本](https://flutter-go.pub/flutter_go_web/#FirstPage)
 
 #### 通过上面操作基本就能运行，`flutter-go-web` 的界面
+
+![https://github.com/alibaba/flutter-go/blob/web/flutter-go-web-0.0.1/assets/00_41_04__08_15_2019.jpg](https://github.com/alibaba/flutter-go/blob/web/flutter-go-web-0.0.1/assets/00_41_04__08_15_2019.jpg)
 
 #### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 [trans2fw](https://github.com/ryan730/trans2fw) 工具。
 [trans2fw](https://github.com/ryan730/trans2fw) 是笔者开发的一个 自动化 flutter native 项目转化成 flutter-web 项目的工具。
