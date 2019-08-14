@@ -1,75 +1,80 @@
-安装flutter_web构建工具
-要安装webdev包为Flutter for web提供构建工具的 包，请运行以下命令：
+### 欢迎来到 `Flutter GO for web` 的代码库。
+##### 此代码库是配合 [Flutter-web](https://github.com/flutter/flutter_web) 官方预览版, 而对 `Flutter Go` 项目做的 `web` 版本的移植。
 
-$ flutter packages pub global activate webdev
-确保$HOME/.pub-cache/bin目录 在您的路径中，然后您可以webdev直接从终端使用该命令。
+#### `Flutter的Web`支持尚不稳定。我们将此版本指定为技术预览版; 对 `Flutter Go native` 版本移植还原度大概在 80%左右。旨在帮助 `Flutter` 开发人员，快速熟悉 `Flutter-web` 官方的实践。
 
-注意：如果您在配置webdev直接运行时遇到问题，请尝试：
-flutter packages pub global run webdev [command]。
+#### [在 `Flutter` 官方宣布Flutter暂时不会开发热更新（Code push）](https://github.com/flutter/flutter/issues/14330) 之后, `Flutter-web` 无疑是的动态更新代码最快捷的方式,虽然不是最佳方案,但是是最易用降级方案。
 
-运行hello_world示例
-该示例存在于examples/hello_world存储库中。
+#### 通过 `Flutter-go-web` 版本的学习,可以快速，有效还原 `Flutter-go` native 版本。帮助开发者，对快速版本H5化,做一个样例展示，提供 `Flutter-web` 的能力演示。
 
-$ cd examples / hello_world /
-更新包。
+### 使用前准备
+- [请了解 `Flutter-web` 官方说明](https://github.com/flutter/flutter_web/blob/master/README.md)
 
-$ flutter包升级
-！flutter_web 0.0.0 from path ../../flutter_web 
-！flutter_web_ui 0.0.0 from path ../../flutter_web_ui 
-在hello_world中运行“flutter packages upgrade”... 5.0s
-如果成功，你就可以运行了！
+### 如何使用
+- git 拉取 `Flutter-go` 项目,并切换到 `web/flutter-go-web-0.0.1` 分支
+```dart
+  $ git clone https://github.com/alibaba/flutter-go.git flutter-go
 
-在本地构建并提供示例。
+  $ git checkout web/flutter-go-web-0.0.1
+```
 
-$ webdev serve 
-[INFO]生成构建脚本完成，耗时331ms 
-... 
-[INFO]建立新资产图完成，耗时1.4s 
-... 
-[INFO]运行构建完成，耗时27.9s 
-... 
-[INFO] 28.1后成功s有618个输出（3233个动作）
-在http：// localhost：8080上提供`web`
-在Chrome中打开http：// localhost：8080，您应该会Hello World在左上角看到红色文字。
+- 安装flutter_web构建工具
+```dart
+  $ flutter pub global activate webdev
+```
 
-获取（无状态）热重载 webdev
-要webdev与热重载一起使用，请在项目目录中运行以下命令：
+- 更新pub包
+```dart
+  $ pub get
 
-$ webdev serve --auto restart
-您会注意到````的相似输出，flutter packages pub run build_runner serve 但现在更改为您的应用程序代码应该导致在保存时快速刷新应用程序。
+  //... 
+  Resolving dependencies... 
+Warning: You are using these overridden dependencies:
+! flutter_web 0.0.0 from git https://github.com/flutter/flutter_web at 6cabfc in packages/flutter_web
+! flutter_web_test 0.0.0 from git https://github.com/flutter/flutter_web at 6cabfc in packages/flutter_web_test
+! flutter_web_ui 0.0.0 from git https://github.com/flutter/flutter_web at 6cabfc in packages/flutter_web_ui
+Got dependencies!
+Precompiling executables... (12.0s)
+```
 
-注意：该--hot-reload选项并不完美。如果发现意外行为，则可能需要手动刷新页面。
+- 开发模式,获取（无状态）热重载 webdev
+```dart
+  $ webdev serve --auto restart
 
-注意：该--hot-reload选项目前是“无状态”。重新加载时应用程序状态将丢失。我们希望在网上提供“有状态”的热重载 - 我们正积极致力于此！
+  [INFO] Building new asset graph completed, took 2.0s
+  [INFO] Checking for unexpected pre-existing outputs. completed, took 1ms
+  [INFO] Serving `web` on http://127.0.0.1:8080
+  [INFO] Running build completed, took 49.7s
+  [INFO] Caching finalized dependency graph completed, took 421ms
+  [INFO] Succeeded after 50.1s with 3309 outputs (9338 actions)
+```
 
-使用生产JavaScript编译器构建
-上面介绍的工作流程（可用于build_runner和webdev）使用Dart Dev Compiler，它专为快速，增量编译和简单调试而设计。
+- 发布模式,创建最终编译结果,这将创建一个build目录`index.html`，`main.dart.js`以及使用静态HTTP服务器运行应用程序所需的其余文件。
+```dart
+  $ webdev build
+```
 
-如果您想评估生产性能，浏览器兼容性和代码大小，可以启用我们的发布编译器 dart2js。
+pub global activate --source path /Users/ryan/work/ali/github/flutter-project/@ali-flutter-go/tools/
 
-要启用发布编译器，请传入--release标志（或只是-r）。
+### 通过上面操作基本就能运行，`flutter-go-web` 的界面
 
-$ webdev serve -r
-注意：此配置中的构建可能会更慢。
+### 为了对已有 `native` 工程快速生成 `flutter-web` 版本，可以使用 `trans2fw` 工具
+- 首先拷贝 native 版本下的lib 文件夹到当前目录, 并重命名如: lib-cp。
 
-如果您想生成输出到磁盘，我们建议您使用webdev。
+- 安装 `trans2fw` 工具, 并注册程序
+```dart
+  $ pub global activate trans2fw
+  $ pub global run trans2fw
+```
 
-$ webdev build
-这将创建一个build目录index.html，main.dart.js以及使用静态HTTP服务器运行应用程序所需的其余文件。
-
-要优化输出JavaScript，可以使用build.yaml项目根目录中的文件启用优化标志 ，其中包含以下内容：
-
-＃请参阅https://github.com/dart-lang/build/tree/master/build_web_compilers#configuration 
-目标：
-   $ default：
-     builders：
-       build_web_compilers | entrypoint：
-         generate_for：
-        - web / **。dart 
-        选项：
-           dart2js_args：
-            - --no-source-maps 
-            - -O4
-注意：该-O4选项启用了许多高级优化，这些优化可能会导致未经过全面测试的代码中的运行时错误。
-
-uglifyjs project/ali-flutter-go/build/main.dart.js -o project/ali-flutter-go/build/main.dart.js
+- 运行 `trans2fw` 工具,根据提示输入
+```dart
+$ trans2fw
+[✓] 请输入需要转换的文件目录(相对于项目目录): lib-cp
+[✓] 是否覆盖原有文件 ?  (y/N) y
+{path: lib-cp, cover: true}
+使用输入文件目录:lib-cp
+被转换的文件::lib-cp/Pagination.dart::32
+被转换的文件::lib-cp/homeBanner-copy-copy.dart::32
+...
+```
