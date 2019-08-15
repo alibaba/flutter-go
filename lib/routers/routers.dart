@@ -41,7 +41,8 @@ class Routes {
                   name: 'component', parameters: {'name': demo.routerName });
               return demo.buildRouter(context);
       });
-      router.define('${demo.routerName}', handler: handler);
+      String path = demo.routerName;
+      router.define('${path.toLowerCase()}', handler: handler);
     });
     router.define(standardPage,handler:standardPageHandler);
 //    router.define(webViewPage,handler:webViewPageHand);

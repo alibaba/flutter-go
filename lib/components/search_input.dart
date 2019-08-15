@@ -443,11 +443,12 @@ class _History extends State<History> {
       if (WidgetName2Icon.icons[value.name] != null) {
         icon = Icon(WidgetName2Icon.icons[value.name], size: 25);
       }
+      String targetRouter = value.targetRouter;
 
       list.add(
         InkWell(
           onTap: () {
-            Application.router.navigateTo(context, "${value.targetRouter}", transition: TransitionType.inFromRight);
+            Application.router.navigateTo(context, "${targetRouter.toLowerCase()}", transition: TransitionType.inFromRight);
           },
           child: Chip(
             avatar: icon,
