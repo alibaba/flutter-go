@@ -30,6 +30,7 @@ class Routes {
     router.define('/category/error/404', handler: widgetNotFoundHandler);
     router.define(loginPage, handler: loginPageHandler);
     router.define(codeView,handler:fullScreenCodeDialog);
+    router.define(githubCodeView,handler:githubCodeDialog);
     router.define(webViewPage,handler:webViewPageHand);
      router.define(issuesMessage, handler: issuesMessageHandler);
       widgetDemosList.forEach((demo) {

@@ -15,12 +15,14 @@ import '../../components/flutter_markdown/lib/flutter_markdown.dart';
 import '../../standard_pages/index.dart';
 import '../../page_demo_package/index.dart';
 import 'package:flutter_go/routers/application.dart';
+import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/utils/net_utils.dart';
 import 'package:flutter_go/components/loading.dart';
 
-const githubUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/standard_pages/';
-const PagesUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/standard_pages/.pages.json';
-const DemosUrl = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta/lib/page_demo_package/.demo.json';
+const githubHost = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta';
+const githubUrl = '$githubHost/lib/standard_pages/';
+const PagesUrl = '$githubHost/lib/standard_pages/.pages.json';
+const DemosUrl = '$githubHost/lib/page_demo_package/.demo.json';
 
 
 // ONLINE || LOCAL
@@ -53,7 +55,7 @@ class _StandardView extends State<StandardView> {
   Future<void> localGetPagesAttrsInfo() async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');
     List jsonList = json.decode(jsonString);
-    Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id);
+    Map<String, dynamic> pageDetail = jsonList.firstWhere((item) => item['id'] == widget.id, orElse: null);
 
     if (pageDetail != null) {
       setState(() {
@@ -69,12 +71,10 @@ class _StandardView extends State<StandardView> {
 
     String pageId = widget.id;
     Map<String, String> pagesList = standardPage.getPages();
-    print('pagesList[pageId]>>> ${pagesList[pageId]}');
+//    print('pagesList[pageId]>>> ${pagesList[pageId]}');
     return pagesList[pageId];
   }
   Future<String> getContentOnline() async {
-
-    String content = 'online content';
     this.setState(() {
       isLoading = true;
     });
@@ -123,6 +123,24 @@ class _StandardView extends State<StandardView> {
     }
     return Future(() => conent);
   }
+  void seeSourceCode(id) async {
+    List response;
+    try {
+      response = jsonDecode(await NetUtils.get(DemosUrl));
+    } catch (e) {
+      return alertDialog(msg: '请检查网络链接', title: '提示');
+    }
+
+    Map<String, dynamic> demoDetail = response.firstWhere((item) => item['id'] == id, orElse: null);
+    if (demoDetail == null) {
+      return null;
+    }
+
+      String remoteSouceCode = '$githubHost/lib/page_demo_package/${demoDetail['name']}_${demoDetail['author']}_${demoDetail['id']}/src/index.dart';
+      Application.router.navigateTo(context,
+          '${Routes.githubCodeView}?remotePath=${Uri.encodeComponent(remoteSouceCode)}');
+
+  }
   Widget buildFootInfo() {
     if (!isLoading) {
       return Container(
@@ -160,12 +178,45 @@ class _StandardView extends State<StandardView> {
             String errString = "not found ${attrs['id']} in demo packages";
             debugPrint(errString);
             demo = [Text(errString)];
+            return Column(children: demo);
+          } else {
+            return Column(
+              children: <Widget>[
+                Column(
+                  children: demo,
+                ),
+                Divider(
+                  color: Theme.of(context).primaryColor,
+                ),
+                InkWell(
+                  onTap: () {
+                    seeSourceCode(attrs['id']);
+                  },
+                  child: Text("查看源码", style: TextStyle(color: Theme.of(context).primaryColor)),
+                )
+              ],
+            ) ;
           }
-
-          return Column(children: demo);
         });
   }
-
+  alertDialog({String msg, String title}) {
+    showDialog<Null>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          title: new Text(title),
+          content: new SingleChildScrollView(
+            child: new ListBody(
+              children: <Widget>[
+                new Text(msg),
+              ],
+            ),
+          )
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

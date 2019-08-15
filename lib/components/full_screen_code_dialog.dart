@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_go/utils/example_code_parser.dart';
 import 'package:flutter_go/utils/syntax_highlighter.dart';
+import 'package:flutter_go/utils/net_utils.dart';
 
 class FullScreenCodeDialog extends StatefulWidget {
   const FullScreenCodeDialog({this.filePath, this.remoteFilePath});
@@ -22,17 +23,31 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
   @override
   void didChangeDependencies() {
     print('widget.filePath=======${widget.filePath}');
-    getExampleCode(context,'${widget.filePath}', DefaultAssetBundle.of(context))
-        .then<void>((String code) {
-      if (mounted) {
-        setState(() {
-          _exampleCode = code ?? 'Example code not found';
-        });
-      }
-    });
+    if (widget.filePath != null) {
+      getExampleCode(context,'${widget.filePath}', DefaultAssetBundle.of(context))
+          .then<void>((String code) {
+        if (mounted) {
+          setState(() {
+            _exampleCode = code ?? 'Example code not found';
+          });
+        }
+      });
+    }
+    if (widget.remoteFilePath != null) {
+      getRemotePathCode(widget.remoteFilePath);
+    }
+
     super.didChangeDependencies();
   }
 
+  getRemotePathCode(path) async {
+    String response = await NetUtils.get(path);
+    if (mounted) {
+      setState(() {
+        _exampleCode = response ?? 'Example code not found';
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     final SyntaxHighlighterStyle style =

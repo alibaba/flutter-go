@@ -79,7 +79,7 @@ class _WidgetDemoState extends State<WidgetDemo> {
       DataUtils.checkCollected(params).then((result) {
         if (this.mounted) {
           setState(() {
-            _hasCollected = result;
+            _hasCollected = result ?? null;
           });
         }
       });
