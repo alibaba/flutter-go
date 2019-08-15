@@ -15,7 +15,6 @@ Future<List> buildDemoListJson() async {
     //FileSystemEntityType有三个常量：
     //Directory、FILE、LINK、NOT_FOUND
     //FileSystemEntity.isFile .isLink .isDerectory可用于判断类型
-    Uri url = entity.uri;
     if (await FileSystemEntity.isDirectory(entity.path)) {
       try {
         await checkDemo(entity.path);
@@ -77,7 +76,7 @@ Future<bool> checkDemo(String path) async {
     '.demo.json',
     'src/'
   ];
-  bool success = true;
+
   for (String name in files) {
     bool isDic = name.indexOf('/') != -1;
     bool isExist ;

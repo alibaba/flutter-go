@@ -188,7 +188,7 @@ class DataUtils {
           "name": json['name'],
           "cnName": json['name'],
           "routerName": routerName,
-          "catId": int.parse(json['parentId'])
+          "catId": json['parentId'].runtimeType == String ? int.parse(json['parentId']) : json['parentId']
         };
         list.add(WidgetPoint.fromJSON(tempMap));
       }

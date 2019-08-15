@@ -1,11 +1,13 @@
 Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md) | [中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md)
 ## Flutter Go
 
-# test
-
 ![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
 
 > 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
+
+## 三方共建说明
+ 
+由于 **flutter** 内容更新较快. 我们无法更快的丰富项目的内容. 如果您愿意为国内flutter的发展与学习贡献自己的力量, 请参考我们的 [共建说明](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md), 我们会将共建者的头像姓名贡献至我们的官网. 
 
 ## 版本更新历史
 > 按时间顺序,展示重要的提交更新内容。

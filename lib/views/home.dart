@@ -93,7 +93,8 @@ class _MyHomePageState extends State<AppPage>
     searchHistoryList.add(
         SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
-    Application.router.navigateTo(context, widgetPoint.routerName,
+    String targetRouter = widgetPoint.routerName;
+    Application.router.navigateTo(context, targetRouter.toLowerCase(),
         transition: TransitionType.inFromRight);
   }
 
