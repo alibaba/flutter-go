@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/rendering.dart';
 import 'routers/routers.dart';
-import 'routers/application.dart';
+import 'routers/application.dart' show Application;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
@@ -19,6 +19,7 @@ import 'package:event_bus/event_bus.dart';
 import 'package:flutter_go/model/widget.dart';
 import 'package:flutter_go/standard_pages/index.dart';
 //import 'views/welcome_page/index.dart';
+import 'package:flutter_go/utils/net_utils.dart';
 
 SpUtil sp;
 var db;
@@ -47,6 +48,19 @@ class _MyAppState extends State<MyApp> {
   _MyAppState() {
     final eventBus = new EventBus();
     ApplicationEvent.event = eventBus;
+  }
+
+  /// 服务端控制是否显示业界动态
+  Future _reqsMainPageIsOpen() async {
+    const reqs = 'https://flutter-go.pub/api/isInfoOpen';
+    var response;
+    try{
+      response = await NetUtils.get(reqs, {});
+      print('response-${response}');
+    }catch(e){
+      print('response-${e}');
+    }
+    return response;
   }
 
   @override
@@ -128,6 +142,16 @@ class _MyAppState extends State<MyApp> {
       });
       print('身份信息验证失败:$onError');
     });
+
+    /// 服务端控制是否显示业界动态
+    _reqsMainPageIsOpen().then((res){
+      //{status: 200, data: {isOpen: true}, success: true}
+      if(res['status'] == 200 && res['success'] ==true && res['data'] is Map && res['data']['isOpen'] == true) {
+        Application.pageIsOpen = false;
+        print('是否需要展开【业界动态】${Application.pageIsOpen}');
+      }
+    });
+
     ApplicationEvent.event.on<UserSettingThemeColorEvent>().listen((event) {
       print('接收到的 event $event');
     });
