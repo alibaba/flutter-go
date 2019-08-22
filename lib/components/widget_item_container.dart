@@ -86,7 +86,8 @@ class WidgetItemContainer extends StatelessWidget {
                 index: addI,
                 totalCount: length,
                 rowLength: columnCount,
-                textSize: true ? 'middle' : 'small',
+                /// textSize: true ? 'middle' : 'small',
+                textSize: 'middle'
               ),
             ),
           );

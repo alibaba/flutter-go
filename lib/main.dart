@@ -56,9 +56,9 @@ class _MyAppState extends State<MyApp> {
     var response;
     try{
       response = await NetUtils.get(reqs, {});
-      print('response-${response}');
+       print('response-$response');
     }catch(e){
-      print('response-${e}');
+      print('response-$e');
     }
     return response;
   }
@@ -85,7 +85,6 @@ class _MyAppState extends State<MyApp> {
           } catch (error) {
             print('主动获取设备号Error:$error');
           }
-          ;
         }
       });
     });

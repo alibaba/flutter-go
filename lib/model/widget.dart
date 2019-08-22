@@ -162,7 +162,7 @@ abstract class CommonItem<T> {
   ///
   CommonItem parent;
   String toString() {
-    return "CommonItem {name: $name, type: $type, parentId: $parentId, token: $token, children长度 ${children}";
+    return "CommonItem {name: $name, type: $type, parentId: $parentId, token: $token, children长度 $children";
   }
 
   T getChild(String token);
@@ -361,7 +361,7 @@ class WidgetTree {
     print("getCommonItemByPath $path");
     print("root $root");
     CommonItem childLeaf;
-    int first = path.first;
+    /// int first = path.first;
     path = path.sublist(1);
     print("path:::: $path");
     if (path.length >= 0) {

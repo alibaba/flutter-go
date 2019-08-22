@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../routers/application.dart';
-import '../model/cat.dart';
+/// import '../model/cat.dart';
 import '../model/widget.dart';
 import '../widgets/index.dart';
 import '../components/widget_item_container.dart';
@@ -65,7 +65,7 @@ class _CategoryHome extends State<CategoryHome> {
   }
 
   void searchCatOrWidget() async {
-    CommonItem widgetTree = Application.widgetTree;
+    /// CommonItem widgetTree = Application.widgetTree;
      // 假设进入这个界面的parent一定存在
     CommonItem targetGroup = catHistory.last;
 

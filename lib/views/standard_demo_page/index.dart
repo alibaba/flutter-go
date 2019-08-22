@@ -48,9 +48,10 @@ class _StandardView extends State<StandardView> {
     super.initState();
     this.getPageInfo();
   }
-  didChangeDependencies() {
-    print("didChangeDependencies");
-  }
+
+//  didChangeDependencies() {
+//    print("didChangeDependencies");
+//  }
   /// 本地调用的获取文章属性的基本信息
   Future<void> localGetPagesAttrsInfo() async {
     String jsonString = await DefaultAssetBundle.of(context).loadString('lib/standard_pages/.pages.json');

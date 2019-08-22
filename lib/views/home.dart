@@ -6,20 +6,20 @@
 /// target:  app首页
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+/// import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
-import 'package:flutter_go/views/first_page/first_page.dart';
+/// import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_go/views/user_page/user_page.dart';
 import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
-import 'package:flutter_go/views/collection_page/collection_page.dart';
+/// import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/routers/application.dart';
-import 'package:flutter_go/utils/provider.dart';
+/// import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/model/widget.dart';
-import 'package:flutter_go/widgets/index.dart';
+/// import 'package:flutter_go/widgets/index.dart';
 import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';

@@ -27,6 +27,7 @@ class _ScrollMetricsDemoState extends State<ScrollMetricsDemo> {
             });
             print("BottomEdge: ${notification.metrics.extentAfter == 0}");
             //return true; //放开此行注释后，进度条将失效
+            return false;
           },
           child: Stack(
             alignment: Alignment.center,
