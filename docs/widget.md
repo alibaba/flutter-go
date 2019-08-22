@@ -1,6 +1,30 @@
 # 如何在Widget新增界面
 
-阅读文档前, 请先阅读 go-cli 文档
+## 安装goCli
+
+获取最新flutterGo代码分之后. 在项目下会有 **go-cli** 的文件夹.
+
+首先进入该文件夹并安装go-cli所需要的依赖
+
+```
+cd go-cli
+pub get
+```
+
+然后使用pub global命令将文件包注册到全局
+
+```
+pub global activate --source  path  /{your project absolute path}/flutter-go/go-cli
+
+```
+
+使用pub global list命令查看全局包列表 如果看到有 **goCli 1.0.0**则证明安装成功
+
+```
+goCli 1.0.0 at path "/{youpath}/flutter-go/go-cli"
+
+```
+
 
 在Widget列表页, 我们设有一个组, 名叫 **Developer**, 这个分组的作用是用来展示第三方作者提交的内容. 正常情况下会显示以下内容
 
