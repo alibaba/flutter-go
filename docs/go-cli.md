@@ -1,4 +1,4 @@
-# GoCli 说明
+# GoCli 使用说明
 
 ## 安装
 
@@ -27,29 +27,26 @@ goCli 1.0.0 at path "/{youpath}/flutter-go/go-cli"
 
 
 
+### 命令: goCli createPage
 
+初始化并创建一个Widget详情页, 通常来说. 当我们需要在 **WIDGET 界面**下. 新加入一个Widget页, 执行该条命令, 会根据您的输入, 自动在本项目中创建对应的文件夹, 并记录相关配置信息, 在创建的目录中, 您可以通过编写markdown代码, 进行文章内容的编写.
 
+![](https://img.alicdn.com/tfs/TB1ea5TdkL0gK0jSZFxXXXWHVXa-948-254.png)
 
-## 固定命令
-
-### goCli createPage
-
-初始化并创建一个Widget详情页, 通常来说. 当我们需要在Widget Tab下. 新加入一个界面内容, 执行该条命令, 会根据您的输入, 自动在本项目中创建对应的文件夹, 并记录相关配置信息, 在创建的目录中, 您可以通过编写markdown代码, 进行文章内容的编写.
-
-### goCli createDemo
+### 命令: goCli createDemo
 
 初始化并创建一个可实例化的Widget Demo(实例块), 按照在命令行中的提示, 输入我们的相关信息, 我们会创建一个 关于demo 的文件夹. 并会得到一个唯一的 **ID**. 我们可以通过这条ID,在我们的markdown代码中, 进行直接调用. 
-
+![](https://img.alicdn.com/tfs/TB1lAqVdhD1gK0jSZFyXXciOVXa-1070-206.png)
 例如:
 
 ```
-[demo: 1a29aa8e_32ae_4241_9c8a_5c9e1f92b096]
+[demo:1a29aa8e_32ae_4241_9c8a_5c9e1f92b096]
 ```
 
-### goCli build
+### 命令: goCli build
 
 将本地的界面与实例资源进行打包开成统一的独立的入口. 在拉取flutter-go的项目代码后. 需要执行当前命令. 否则会报错.
-
+![](https://img.alicdn.com/tfs/TB1gAWRdXP7gK0jSZFjXXc5aXXa-988-116.png)
 
 ### goCli watch
 

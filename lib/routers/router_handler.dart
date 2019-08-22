@@ -59,6 +59,15 @@ var fullScreenCodeDialog = new Handler(
       );
     });
 
+
+var githubCodeDialog = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      String path = params['remotePath']?.first;
+      return new FullScreenCodeDialog(
+        remoteFilePath: path,
+      );
+    });
+
 var webViewPageHand = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   String title = params['title']?.first;

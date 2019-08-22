@@ -5,11 +5,12 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 > 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
 
-## 共建说明
 
-由于 **Flutter 版本迭代速度较快**,迭代产生的内容较多, 而我们**人力有限**无法更加全面快速的支持Flutter Go的日常维护迭代, 无论您是上学的学生, 还是已经进入社会工作, 如果您对flutter go的共建感兴趣, 欢迎您来参与本项目的共建. [共建说明](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
+## 三方共建说明
+ 
+由于 **flutter** 内容更新较快. 我们无法更快的丰富项目的内容. 如果您愿意为国内flutter的发展与学习贡献自己的力量, 请参考我们的 [共建说明](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md), 我们会将共建者的头像姓名贡献至我们的官网. 
 
-**凡是参与共建的成员. 我们会将您的头像与github个人地址收纳进我们的官方网站中.**
+
 
 ## 版本更新历史
 > 按时间顺序,展示重要的提交更新内容。

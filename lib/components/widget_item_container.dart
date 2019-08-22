@@ -35,6 +35,7 @@ class WidgetItemContainer extends StatelessWidget {
     widgetDemosList.forEach((item) {
       if (item.name == targetName) {
         targetRouter = item.routerName;
+        targetRouter = targetRouter.toLowerCase();
       }
     });
     Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);

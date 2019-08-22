@@ -15,6 +15,7 @@ class Application {
   static TabController controller;
   static SpUtil sharePeference;
   static CategoryComponent widgetTree;
+  static bool pageIsOpen = false;
 
   static Map<String, String> github = {
     'widgetsURL':'https://github.com/alibaba/flutter-go/blob/develop/lib/widgets/',

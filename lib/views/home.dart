@@ -42,24 +42,32 @@ class _MyHomePageState extends State<AppPage>
   WidgetControlModel widgetControl = new WidgetControlModel();
   SearchHistoryList searchHistoryList;
   bool isSearch = false;
-  String appBarTitle = tabData[0]['text'];
+
   List<Widget> _list = List();
   int _currentIndex = 0;
-  static List tabData = [
-    {'text': '业界动态', 'icon': Icon(Icons.language)},
+  List tabData = [
     {'text': 'WIDGET', 'icon': Icon(Icons.extension)},
     {'text': '关于手册', 'icon': Icon(Icons.import_contacts)},
     {'text': '个人中心', 'icon': Icon(Icons.account_circle)},
-    
+    //https://flutter-go.pub/api/isInfoOpen
   ];
-
   List<BottomNavigationBarItem> _myTabs = [];
+  String appBarTitle;
 
   @override
   void initState() {
     super.initState();
     print('widget.userInfo    ${widget.userInfo}');
     initSearchHistory();
+
+    if(Application.pageIsOpen == true){// 是否展开业界动态
+      tabData.insert(0, {'text': '业界动态', 'icon': Icon(Icons.language)});
+      _list
+      //..add(FirstPage())
+        ..add(MainPage(userInfo: widget.userInfo));
+    }
+    appBarTitle = tabData[0]['text'];
+
     for (int i = 0; i < tabData.length; i++) {
       _myTabs.add(BottomNavigationBarItem(
         icon: tabData[i]['icon'],
@@ -68,12 +76,10 @@ class _MyHomePageState extends State<AppPage>
         ),
       ));
     }
-    _list
-//      ..add(FirstPage())
-      ..add(MainPage(userInfo: widget.userInfo))
-      ..add(WidgetPage())
-      ..add(FourthPage())
-      ..add(UserPage(userInfo: widget.userInfo));
+      _list
+        ..add(WidgetPage())
+        ..add(FourthPage())
+        ..add(UserPage(userInfo: widget.userInfo));
   }
 
   @override
@@ -93,7 +99,8 @@ class _MyHomePageState extends State<AppPage>
     searchHistoryList.add(
         SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
-    Application.router.navigateTo(context, widgetPoint.routerName,
+    String targetRouter = widgetPoint.routerName;
+    Application.router.navigateTo(context, targetRouter.toLowerCase(),
         transition: TransitionType.inFromRight);
   }
 
@@ -120,7 +127,9 @@ class _MyHomePageState extends State<AppPage>
   }
 
   renderAppBar(BuildContext context, Widget widget, int index) {
-    if (index == 1) {
+    if (index == 1 && Application.pageIsOpen == true) {
+      return AppBar(title: buildSearchInput(context));
+    }else if(index == 0 && Application.pageIsOpen == false){
       return AppBar(title: buildSearchInput(context));
     }
   }

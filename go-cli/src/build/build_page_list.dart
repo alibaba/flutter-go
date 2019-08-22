@@ -67,7 +67,6 @@ Future<List> buildPageListJson() async {
 }
 
 String renderPagesDart(List<Map<String, dynamic>> data) {
-  print('data>>> $data');
   var source = '''
 
  {{# pages }}
