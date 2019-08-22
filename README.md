@@ -7,7 +7,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 ## 共建说明
 
-由于 **Flutter 版本迭代速度较快**,迭代产生的内容较多, 而我们**人力有限**无法更加全面快速的支持Flutter Go的日常维护迭代, 无论您是上学的学生, 还是已经进入社会工作, 如果您对flutter go的共建感兴趣, 欢迎您来参与本项目的共建. 
+由于 **Flutter 版本迭代速度较快**,迭代产生的内容较多, 而我们**人力有限**无法更加全面快速的支持Flutter Go的日常维护迭代, 无论您是上学的学生, 还是已经进入社会工作, 如果您对flutter go的共建感兴趣, 欢迎您来参与本项目的共建. [共建说明](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
 
 **凡是参与共建的成员. 我们会将您的头像与github个人地址收纳进我们的官方网站中.**
 
