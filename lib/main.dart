@@ -147,7 +147,7 @@ class _MyAppState extends State<MyApp> {
     _reqsMainPageIsOpen().then((res){
       //{status: 200, data: {isOpen: true}, success: true}
       if(res['status'] == 200 && res['success'] ==true && res['data'] is Map && res['data']['isOpen'] == true) {
-        Application.pageIsOpen = false;
+        Application.pageIsOpen = true;
         print('是否需要展开【业界动态】${Application.pageIsOpen}');
       }
     });
