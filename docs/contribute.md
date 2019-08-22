@@ -28,7 +28,7 @@
 
 - [如何向仓库提交 Pull Request](https://github.com/alibaba/flutter-go/blob/master/docs/push-pr.md)
 - [dart 代码规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
-- [如何使用go-cli 创建 Widget Page](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md)
+- [如何使用go-cli 创建 Widget Page](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
 
 
  
