@@ -18,7 +18,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 - [x] [ `Flutter Go Widget` 的 `pull request`  提交规范（第三方共建）](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
 
-- [x] 用户中心 (专属用户个人`widget`案例)
+- [x] 用户中心 (专属个人的`widget`案例)
 	- 用户登录（通过`GitHub`账户）
 	- 收藏个人组件（保存到远端）
 - [x] [ `go-cli` 工具 ](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
