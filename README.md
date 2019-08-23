@@ -89,8 +89,17 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ## 基础环境
 本项目环境持续更新. 请定期更新各依赖包.
 
-- dart(version: 2.0.0)
-- flutter(version: v1.0.0)
+```dart
+// 运行如下命令
+flutter --version
+dart --version
+pub --version
+
+// 正确环境如下
+// Flutter (Channel beta, v1.7.8)
+// Dart VM version: 2.4.0
+// Pub 2.4.0
+```
 
 
 ### 背景
