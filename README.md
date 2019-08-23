@@ -20,7 +20,10 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 - [x] 用户中心 (专属个人的`widget`案例)
 	- 用户登录（通过`GitHub`账户）
+	- 全网搜索 （全网搜索 `Flutter` 资讯)
 	- 收藏个人组件（保存到远端）
+	- 反馈建议 （APP 在线 `ISSUES`）
+	- 分享链接 （APP分享）
 - [x] [ `go-cli` 工具 ](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
 	-  `Flutter Go` 的 `pull request` 工具
 	-  [命令行 生成 `Flutter Go Widget` 标准公共模版](https://github.com/alibaba/flutter-go/blob/beta/docs/widget.md)
