@@ -22,6 +22,7 @@ class _BannerState extends State<HomeBanner> {
   int realIndex = 1;
   PageController controller;
   Timer timer;
+  int lastPage=1;
 
   @override
   void initState() {
@@ -32,6 +33,27 @@ class _BannerState extends State<HomeBanner> {
       controller.animateToPage(realIndex + 1,
           duration: Duration(milliseconds: 300),
           curve: Curves.linear);
+    });
+
+    controller.addListener(() {
+      var res = (controller.page - lastPage).abs();
+//      setState(() {});
+      int count = widget.bannerStories.length;
+
+      if (res > (0.95)) {
+        if (realIndex == 0) {
+          controller.jumpToPage( widget.bannerStories.length);
+          virtualIndex = count - 1;
+        } else if (realIndex ==  widget.bannerStories.length + 1) {
+          virtualIndex = 0;
+          controller.jumpToPage(1);
+        } else {
+          virtualIndex = realIndex - 1;
+        }
+
+        setState(() {
+        });
+      }
     });
   }
 
@@ -67,9 +89,9 @@ class _BannerState extends State<HomeBanner> {
               children: _buildItems(),),
             _buildIndicator(), // 下面的小点
             Positioned(//方法二
-                top: 0.0,
-                right: 0.0,
-                child: _numberIndicator(context,virtualIndex,widget.bannerStories.length),
+              top: 0.0,
+              right: 0.0,
+              child: _numberIndicator(context,virtualIndex,widget.bannerStories.length),
             )
           ]),
     );
@@ -102,7 +124,7 @@ class _BannerState extends State<HomeBanner> {
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-         Image.network(story.image, fit: BoxFit.cover),
+          Image.network(story.image, fit: BoxFit.cover),
           _buildItemTitle(story.title), // 内容文字,大意
         ],),);
   }
@@ -141,18 +163,20 @@ class _BannerState extends State<HomeBanner> {
   }
 
   _onPageChanged(int index) {
+    lastPage = realIndex;
+
     realIndex = index;
-    int count = widget.bannerStories.length;
-    if (index == 0) {
-      virtualIndex = count - 1;
-      controller.jumpToPage(count);
-    } else if (index == count + 1) {
-      virtualIndex = 0;
-      controller.jumpToPage(1);
-    } else {
-      virtualIndex = index - 1;
-    }
-    setState(() {});
+//    int count = widget.bannerStories.length;
+//    if (index == 0) {
+//      virtualIndex = count - 1;
+//      controller.jumpToPage(count);
+//    } else if (index == count + 1) {
+//      virtualIndex = 0;
+//      controller.jumpToPage(1);
+//    } else {
+//      virtualIndex = index - 1;
+//    }
+//    setState(() {});
   }
 }
 
