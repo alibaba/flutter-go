@@ -57,6 +57,10 @@ class _MyAppState extends State<MyApp> {
     try{
       response = await NetUtils.get(reqs, {});
        print('response-$response');
+      if(response['status'] == 200 && response['success'] ==true && response['data'] is Map && response['data']['isOpen'] == true) {
+        Application.pageIsOpen = true;
+        print('是否需要展开【业界动态】${Application.pageIsOpen}');
+      }
     }catch(e){
       print('response-$e');
     }
@@ -66,6 +70,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    _reqsMainPageIsOpen();
     _startupJpush();
 
     FlutterJPush.addConnectionChangeListener((bool connected) {
@@ -140,15 +145,6 @@ class _MyAppState extends State<MyApp> {
         _isLoading = false;
       });
       print('身份信息验证失败:$onError');
-    });
-
-    /// 服务端控制是否显示业界动态
-    _reqsMainPageIsOpen().then((res){
-      //{status: 200, data: {isOpen: true}, success: true}
-      if(res['status'] == 200 && res['success'] ==true && res['data'] is Map && res['data']['isOpen'] == true) {
-        Application.pageIsOpen = true;
-        print('是否需要展开【业界动态】${Application.pageIsOpen}');
-      }
     });
 
     ApplicationEvent.event.on<UserSettingThemeColorEvent>().listen((event) {
