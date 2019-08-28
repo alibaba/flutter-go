@@ -1,11 +1,44 @@
+# Flutter Go
 Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md) | [中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md)
-## Flutter Go
-
-# test
 
 ![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
 
-> 帮助开发者快速上手 Flutter  **Flutter Go 1.0 Android版已正式发布**
+> 一个帮助开发者快速上手的 `APP`
+
+## 最新动态
+### 🔥 `Flutter Go 2.0` 即将发布
+> Flutter Go 2.0 秉承年初发布的 [The Flutter-Go Roadmap（路线图） for 2019](https://github.com/alibaba/flutter-go#the-flutter-go-roadmap%E8%B7%AF%E7%BA%BF%E5%9B%BE-for-2019) 已经做了新版本的迭代，新版本如下新功能:
+
+<h6>注：✔是本次发布内容</h6>
+
+- [x] [ `Flutter Go` 官方网站 ](https://flutter-go.pub/website/) (官方消息，发布，学习)
+- [x] [ `Flutter Go web` 版本](https://github.com/alibaba/flutter-go/tree/web/flutter-go-web-0.0.1) (web 版本学习帮助)
+    - [线上预览版 ](https://flutter-go.pub/flutter_go_web/)
+    - [项目地址 ](https://github.com/alibaba/flutter-go/tree/web/flutter-go-web-0.0.1)
+
+- [x] [ `Flutter Go Widget` 的 `pull request`  提交规范（第三方共建）](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
+
+- [x] 用户中心 (专属个人的`widget`案例)
+	- 用户登录（通过`GitHub`账户）
+	- 全网搜索 （全网搜索 `Flutter` 资讯)
+	- 收藏个人组件（保存到远端）
+	- 反馈建议 （APP 在线 `ISSUES`）
+	- 分享链接 （APP分享）
+- [x] [ `go-cli` 工具 ](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
+	-  `Flutter Go` 的 `pull request` 工具
+	-  [命令行 生成 `Flutter Go Widget` 标准公共模版](https://github.com/alibaba/flutter-go/blob/beta/docs/widget.md)
+	-  `markdown` 模版动态化生成（合并到master分支后）
+- [x] ` Flutter Go ` 官方 `APP` 版本自动升级
+- [ ] 多端模版同步( pc端，native端同步 )
+- [ ] `Flutter Go` store
+
+
+
+## 三方共建说明
+ 
+由于 **flutter** 内容更新较快. 我们无法更快的丰富项目的内容. 如果您愿意为国内flutter的发展与学习贡献自己的力量, 请参考我们的 [共建说明](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md), 我们会将共建者的头像姓名贡献至我们的官网. 
+
+
 
 ## 版本更新历史
 > 按时间顺序,展示重要的提交更新内容。
@@ -47,6 +80,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ### android正式版，下载地址:
 
 - 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
+- [直接 apk 文件下载](https://github.com/alibaba/flutter-go/releases/download/0.0.5/app-release.apk)
 <img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
 
 ### iphone正式版，下载地址: 
@@ -58,8 +92,17 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ## 基础环境
 本项目环境持续更新. 请定期更新各依赖包.
 
-- dart(version: 2.0.0)
-- flutter(version: v1.0.0)
+```dart
+// 运行如下命令
+flutter --version
+dart --version
+pub --version
+
+// 正确环境如下
+// Flutter (Channel beta, v1.7.8)
+// Dart VM version: 2.4.0
+// Pub 2.4.0
+```
 
 
 ### 背景

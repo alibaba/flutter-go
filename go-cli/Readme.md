@@ -34,6 +34,7 @@ goCli 1.0.0 at path "/{youpath}/flutter-go/go-cli"
 - createDemo   新增flutter go demo.
 - createPage   新增flutter go page.
 - watch        动态生成文档与demo相关
+- build        生成文档与demo相关
 
 ### createDemo
 

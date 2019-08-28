@@ -162,7 +162,7 @@ abstract class CommonItem<T> {
   ///
   CommonItem parent;
   String toString() {
-    return "CommonItem {name: $name, type: $type, parentId: $parentId, token: $token, children长度 ${children}";
+    return "CommonItem {name: $name, type: $type, parentId: $parentId, token: $token, children长度 $children";
   }
 
   T getChild(String token);
@@ -193,8 +193,11 @@ class CategoryComponent extends CommonItem {
     this.parent
   });
   CategoryComponent.fromJson(Map json) {
-    print(json['id'].runtimeType);
-    this.id = json['id'];
+    if (json['id'] != null && json['id'].runtimeType == String) {
+      this.id = int.parse(json['id']);
+    } else {
+      this.id = json['id'];
+    }
     this.name = json['name'];
     this.parentId = json['parentId'];
     this.token = json['id'].toString() + json['type'];
@@ -267,7 +270,11 @@ class WidgetLeaf extends CommonItem {
   });
 
   WidgetLeaf.fromJson(Map json) {
-    this.id = json['id'];
+    if (json['id'] != null && json['id'].runtimeType == String) {
+      this.id = int.parse(json['id']);
+    } else {
+      this.id = json['id'];
+    }
     this.name = json['name'];
     this.display = json['display'];
     this.author = json['author'] ?? null;
@@ -354,7 +361,7 @@ class WidgetTree {
     print("getCommonItemByPath $path");
     print("root $root");
     CommonItem childLeaf;
-    int first = path.first;
+    /// int first = path.first;
     path = path.sublist(1);
     print("path:::: $path");
     if (path.length >= 0) {

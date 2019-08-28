@@ -35,6 +35,7 @@ class WidgetItemContainer extends StatelessWidget {
     widgetDemosList.forEach((item) {
       if (item.name == targetName) {
         targetRouter = item.routerName;
+        targetRouter = targetRouter.toLowerCase();
       }
     });
     Application.router.navigateTo(context, targetRouter, transition: TransitionType.inFromRight);
@@ -85,7 +86,8 @@ class WidgetItemContainer extends StatelessWidget {
                 index: addI,
                 totalCount: length,
                 rowLength: columnCount,
-                textSize: true ? 'middle' : 'small',
+                /// textSize: true ? 'middle' : 'small',
+                textSize: 'middle'
               ),
             ),
           );

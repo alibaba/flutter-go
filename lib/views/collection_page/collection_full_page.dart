@@ -26,7 +26,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
     ApplicationEvent.event = eventBus;
   }
 
-  CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
   var _icons;
@@ -58,6 +58,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
   }
 
   Widget _renderList(context, index) {
+
     if (index == 0) {
       return Container(
         height: 40.0,
@@ -85,6 +86,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
     } else {
       _icons = Icons.extension;
     }
+    String targetRouter = _collectionList[index - 1].router;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
       margin: const EdgeInsets.only(bottom: 7.0),
@@ -106,7 +108,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          Uri.decodeComponent(_collectionList[index - 1].name),
+          _collectionList[index - 1].name,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),
@@ -114,17 +116,8 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
           Application.router.navigateTo(
-              context, _collectionList[index - 1].router,
+              context, targetRouter.toLowerCase(),
               transition: TransitionType.inFromRight);
-
-          // if (_collectionList[index - 1].router.contains('http')) {
-          //   // 注意这里title已经转义过了
-          //   Application.router.navigateTo(context,
-          //       '${Routes.webViewPage}?title=${_collectionList[index - 1].name}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
-          // } else {
-          //   Application.router
-          //       .navigateTo(context, "${_collectionList[index - 1].router}");
-          // }
         },
       ),
     );
