@@ -137,6 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (value.isEmpty) {
                       return "登录名不可为空!";
                     }
+                    return ' ';
                   },
                   onSaved: (value) {
                     setState(() {
@@ -179,6 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (value == null || value.isEmpty) {
                       return "密码不可为空!";
                     }
+                    return '';
                   },
                   onSaved: (value) {
                     setState(() {

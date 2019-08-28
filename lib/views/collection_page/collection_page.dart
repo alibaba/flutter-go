@@ -11,7 +11,7 @@ import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-import 'package:flutter_go/utils/data_utils.dart';
+/// import 'package:flutter_go/utils/data_utils.dart';
 
 class CollectionPage extends StatefulWidget {
   final bool hasLogined;
@@ -26,7 +26,7 @@ class _CollectionPageState extends State<CollectionPage> {
     final eventBus = new EventBus();
     ApplicationEvent.event = eventBus;
   }
-  CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
   var _icons;

@@ -24,6 +24,7 @@ class _ScrollPhysicsDemoState extends State<ScrollPhysicsDemo> {
                 setState(() {
                   _currentPage = _pageController.page;
                 });
+                return false;
               },
               child: PageView.custom(
                 physics: const PageScrollPhysics(
