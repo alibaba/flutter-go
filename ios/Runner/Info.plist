@@ -47,7 +47,7 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>测试选择图片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>获取相处</string>
+	<string>获取相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

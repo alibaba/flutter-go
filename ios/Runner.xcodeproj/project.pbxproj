@@ -32,16 +32,11 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		FA240D7922F2857D003025F3 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0115F22F1B9DF0016E673 /* Flutter.framework */; };
 		FA240D7A22F2857D003025F3 /* Flutter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0115F22F1B9DF0016E673 /* Flutter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA240D7B22F28581003025F3 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0116122F1B9DF0016E673 /* App.framework */; };
 		FA240D7C22F28581003025F3 /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0116122F1B9DF0016E673 /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FAD0116422F1B9DF0016E673 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FAD0115E22F1B9DF0016E673 /* Debug.xcconfig */; };
 		FAD0116522F1B9DF0016E673 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0115F22F1B9DF0016E673 /* Flutter.framework */; };
-		FAD0116622F1B9DF0016E673 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FAD0116022F1B9DF0016E673 /* Release.xcconfig */; };
 		FAD0116722F1B9DF0016E673 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD0116122F1B9DF0016E673 /* App.framework */; };
 		FAD0116822F1B9DF0016E673 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD0116222F1B9DF0016E673 /* AppFrameworkInfo.plist */; };
-		FAD0116922F1B9DF0016E673 /* Generated.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FAD0116322F1B9DF0016E673 /* Generated.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,8 +103,6 @@
 				17DB4C25EDB98B3648015B9E /* libPods-Runner.a in Frameworks */,
 				FAD0116722F1B9DF0016E673 /* App.framework in Frameworks */,
 				FAD0116522F1B9DF0016E673 /* Flutter.framework in Frameworks */,
-				FA240D7922F2857D003025F3 /* Flutter.framework in Frameworks */,
-				FA240D7B22F28581003025F3 /* App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +241,7 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "The Chromium Authors";
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
@@ -286,7 +279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD0116622F1B9DF0016E673 /* Release.xcconfig in Resources */,
 				0828E4A0220692B500A59437 /* iPad Landscape.png in Resources */,
 				0828E4A1220692B500A59437 /* iPhone XR Portrait.png in Resources */,
 				0828E49F220692B500A59437 /* iPhone XS Max Landscape.png in Resources */,
@@ -302,12 +294,10 @@
 				0828E497220692B500A59437 /* iPhone X_XS Landscape.png in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				0828E4A52206936100A59437 /* Images.xcassets in Resources */,
-				FAD0116922F1B9DF0016E673 /* Generated.xcconfig in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 				0828E49B220692B500A59437 /* iPad Landscape@2x.png in Resources */,
 				0828E495220692B500A59437 /* iPhone Portrait-Retina 4.png in Resources */,
 				0828E498220692B500A59437 /* iPhone XS Max Portrait.png in Resources */,
-				FAD0116422F1B9DF0016E673 /* Debug.xcconfig in Resources */,
 				94722E5C22511D3600F63900 /* GoogleService-Info.plist in Resources */,
 				0828E496220692B500A59437 /* iPad Portrait.png in Resources */,
 				0828E49C220692B500A59437 /* iPhone Landscape-Retina HD 5.5.png in Resources */,
@@ -570,7 +560,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -601,7 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.fluttergo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
