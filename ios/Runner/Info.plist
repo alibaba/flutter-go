@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>获取多媒体</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>获取定位权限</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>语音识别</string>
+	<key>NSMotionUsageDescription</key>
+	<string>获取读写权限</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>日历权限</string>
+	<key>NSContactsUsageDescription</key>
+	<string>获取通讯录</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>测试获取位置</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -33,7 +47,7 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>测试选择图片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>获取相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
