@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_go/views/first_page/drawer_page.dart';
 import './first_page.dart';
-import './sub_page.dart';
+/// import './sub_page.dart';
 import './main_app_bar.dart';
 import './search_page.dart';
 import 'package:flutter_go/model/user_info.dart';

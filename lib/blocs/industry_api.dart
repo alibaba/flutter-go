@@ -1,16 +1,14 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2019/4/28
- * Time: 3:20 PM
- * email: zhu.yan@alibaba-inc.com
- * tartget: FlatButton 的示例
- */
+//
+// Created with Android Studio.
+// User: 一晟
+// Date: 2019/4/28
+// Time: 3:20 PM
+// email: zhu.yan@alibaba-inc.com
+// tartget: FlatButton 的示例
+//
 import 'dart:async';
 import 'package:dio/dio.dart';
-import 'dart:convert';
 import 'package:html/parser.dart' show parse;
-import './industry_model.dart';
 import './search_result.dart';
 
 var dio = new Dio();

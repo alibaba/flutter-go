@@ -87,15 +87,17 @@ class SearchBarPage extends StatefulWidget{
 
 final TextEditingController controller = TextEditingController();
 var that;
+var loading;
 class _SearchBarPageState extends State<SearchBarPage> {
   @override
   void initState() {
     super.initState();
     that = this;
+    loading = false;
   }
 
   Timer _resultsTimer;
-  bool _loading = false;
+
   String oldKey;
   /// 防抖函数
   Future getResultsDebounced(String text) async {
@@ -106,12 +108,12 @@ class _SearchBarPageState extends State<SearchBarPage> {
     if (text == '' || !mounted) {
       return;
     }
-    _loading = true;
+    loading = true;
     if (_resultsTimer != null && _resultsTimer.isActive) {
       _resultsTimer.cancel();
     }
     _resultsTimer = new Timer(new Duration(milliseconds: 400), () async {
-      _loading = true;
+      loading = true;
       if(mounted){
         suggestion.dispatch(SuggestionFetch(query: text));
       }
@@ -121,7 +123,7 @@ class _SearchBarPageState extends State<SearchBarPage> {
 
 
   void onSearchTextChanged(String text){
-    print('onSearchTextChanged:${text}');
+    print('onSearchTextChanged:$text');
     //suggestion.dispatch(SuggestionFetch(query: text));
     getResultsDebounced(text);
   }

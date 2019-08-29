@@ -100,4 +100,17 @@ lib/standard_pages/standard_for_slider_sanfan_8ab2b5c2_42ae_4241_9c8a_5c9e1f92b0
 
 ## 引用Flutter 实例
 
-如何在页面中引用flutter widget实例请参考: [WidgetDemo](https://github.com/alibaba/flutter-go/blob/beta/go-cli/utils/tpl.md)
+
+如何在页面中引用flutter widget实例请参考: [WidgetDemo](https://github.com/alibaba/flutter-go/blob/master/go-cli/utils/tpl.md)
+
+
+
+## 申请合并master
+
+当我们的本地功能调试没有问题. 想要申请合并到主分支时.需要按以下流程进行
+
+1.新建issue, 按照widget page类型模板, 填写需要的相关数据
+
+![](https://img.alicdn.com/tfs/TB1YMkCdUH1gK0jSZSyXXXtlpXa-805-354.png)
+
+2.创建pr, 标题简要描述界面内容. 内容框填写issueID 例如 "#12" 

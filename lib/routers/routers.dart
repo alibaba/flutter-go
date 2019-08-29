@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/analytics.dart' show analytics;
 import '../widgets/index.dart';
 import './router_handler.dart';
-import '../standard_pages/index.dart';
+/// import '../standard_pages/index.dart';
 class Routes {
   static String root = "/";
   static String home = "/home";
@@ -20,9 +20,10 @@ class Routes {
 
   static void configureRoutes(Router router) {
     List widgetDemosList = new WidgetDemoList().getDemos();
-    router.notFoundHandler = new Handler(
-        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-        });
+//    router.notFoundHandler = new Handler(
+//      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+//      }
+//    );
     router.define(home, handler: homeHandler);
     router.define(collectionPage,handler:collectionHandler);
     router.define(collectionFullPage,handler:collectionFullHandler);
@@ -32,19 +33,19 @@ class Routes {
     router.define(codeView,handler:fullScreenCodeDialog);
     router.define(githubCodeView,handler:githubCodeDialog);
     router.define(webViewPage,handler:webViewPageHand);
-     router.define(issuesMessage, handler: issuesMessageHandler);
-      widgetDemosList.forEach((demo) {
-        Handler handler = new Handler(
-            handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-              print('组件路由params=$params widgetsItem=${demo.routerName}');
-              analytics.logEvent(
-                  name: 'component', parameters: {'name': demo.routerName });
-              return demo.buildRouter(context);
-      });
+    router.define(issuesMessage, handler: issuesMessageHandler);
+    router.define(standardPage,handler:standardPageHandler);
+    widgetDemosList.forEach((demo) {
+      Handler handler = new Handler(
+          handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+            print('组件路由params=$params widgetsItem=${demo.routerName}');
+            analytics.logEvent(
+                name: 'component', parameters: {'name': demo.routerName });
+            return demo.buildRouter(context);
+          });
       String path = demo.routerName;
       router.define('${path.toLowerCase()}', handler: handler);
     });
-    router.define(standardPage,handler:standardPageHandler);
 //    router.define(webViewPage,handler:webViewPageHand);
 //    standardPages.forEach((String id, String md) => {
 //

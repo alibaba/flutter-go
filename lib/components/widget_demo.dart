@@ -9,7 +9,7 @@ import 'package:flutter_go/utils/data_utils.dart';
 import '../routers/application.dart';
 import '../routers/routers.dart';
 import '../components/markdown.dart';
-import '../model/collection.dart';
+/// import '../model/collection.dart';
 import '../widgets/index.dart';
 import '../event/event_bus.dart';
 import '../event/event_model.dart';
@@ -35,7 +35,7 @@ class WidgetDemo extends StatefulWidget {
 
 class _WidgetDemoState extends State<WidgetDemo> {
   bool _hasCollected = false;
-  CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = new CollectionControlModel();
   var _collectionIcons;
   List widgetDemosList = new WidgetDemoList().getDemos();
   String widgetType = 'old';

@@ -26,7 +26,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
     ApplicationEvent.event = eventBus;
   }
 
-  CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
   var _icons;
