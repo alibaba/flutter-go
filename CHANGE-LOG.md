@@ -1,6 +1,155 @@
 ## 更新日志
 
-
+#### 8/28/2019
+  - [x]更新index.md
+  - [x]更新index.dart
+#### 5/28/2019
+  - [x]更改：异步主控
+  - [x] modfiy:应用商店
+  - [x]添加家庭脚手架
+#### 8/22/2019
+  - [x] Modify: web view 方法回退
+  - [x]更新contrib.md
+#### 8/12/2019
+  - [x]更新：doc＆tpl
+  - [x]更新tpl.md
+  - [x] 添加登陆错误提醒
+#### 3/11/2019
+  - [x]更新README-en.md
+#### 8/15/2019
+  - [x]更新：路由器路径
+  - [x] ci
+  - [x]更新：查看远程代码
+  - [x] 整理文件
+#### 8/13/2019
+  - [x]修改
+  - [x] Modfiy：
+  - [x]更新：页面问题模板
+#### 7/29/2019
+  - [x]删除.github没有使用文件
+  - [x] docs（更新：pr模板）：
+  - [x] del：没有使用文件
+  - [x] docs（添加关于问题的小部件）：
+  - [x] 迁移位置
+  - [x]更新：模板
+  - [x] update: 处理合并导致的总理2
+#### 8/7/2019
+  - [x]修复bug
+  - [x]删除get collection
+  - [x] update: 完成markdown动态更新
+#### 8/8/2019
+  - [x] bottomBar 添加个人中心
+  - [x] ios project.pbxproj
+  - [x] 修改 ios 配置文件
+  - [x] update: 临时增加code-review页
+#### 8/6/2019
+  - [x] issuse消息
+  - [x] 个人中心、收藏、搜索
+#### 2/1/2019
+  - [x] feat：添加android启动画面
+  - [x] docs(更新Readme中环境信息):
+  - [x] feat(首页欢迎图, 加入第一次访问判断.):
+  - [x] update: ios启动图描述
+  - [x]修复：yaml
+  - [x]修复：mtl buidl apk测试
+  - [x]添加sp
+  - [x] fix(解决由于flutter 版本问题导致的报错):
+  - [x]修复：回来
+  - [x]修复：包错误
+  - [x] fix：修改github包名失败并测试
+  - [x] fix：在修改包名之前构建
+  - [x] readme错误
+  - [x] 标题错误，跳转错误
+#### 7/11/2019
+  - [x] update: 迁移新老数据结构与收藏
+  - [x] update: 增加环境配置. 挂载在application静态属性上
+  - [x] update: 修改文章
+#### 4/8/2019
+  - [x]由androidstudio扑动项目开关ios或android
+  - [x] android权限
+  - [x]删除额外的文件
+#### 6/15/2019
+  - [x] 删除node相关
+  - [x] update: 完善demo
+  - [x] update: 界面增加title属性
+  - [x] add: cli使用说明
+#### 6/11/2019
+  - [x] update: 替换markdown包引入方式
+  - [x] add: 加入标准page模板
+  - [x] 加入标准page
+  - [x] 加入初始化demo
+  - [x] 引入三方flutter_markdown gi
+#### 6/10/2019
+  - [x] 添加收藏功能
+  - [x] update: 标准化代码.
+  - [x] goCli 完成90%
+#### 6/4/2019
+  - [x] 加入初始gocli
+  - [x]添加页面演示
+  - [x] 增加page的统一入口
+  - [x]添加演示包
+  - [x] 退出登陆、feedback 测试
+#### 5/30/2019
+  - [x]修复应用名称错误
+#### 5/23/2019
+  - [x]删除firstPage
+  - [x] Test：测试分支
+  - [x]将'Free'改为'Three'
+  - [x]张字'自由'变成'三'
+#### 5/14/2019
+  - [x]更新版本
+#### 5/9/2019
+  - [x]测试版
+#### 5/7/2019
+  - [x] cookie 校验
+  - [x]修改home.dart底部选项卡
+  - [x] 登陆
+  - [x]修改底部标签
+  - [x]删除ios文件
+  - [x]添加apk
+  - [x] Login 登陆界面
+#### 4/30/2019
+  - [x] Add:二期开发-重构首页布局
+  - [x] gradle 4.10.2 包添加AndroidX配置
+#### 2/19/2019
+  - [x] packagename
+  - [x] refactor:按照代码规范调整import 文件
+  - [x] update: 规范
+  - [x] fix:修复TabBar demo
+  - [x] refactor: 根据规范重构代码
+  - [x] refactor:按照代码规范调整markdow解析
+  - [x] refactor(规范化代码):
+  - [x] refactor:按规范修改代码、注释等
+  - [x] refactor:根据规范，重构代码
+  - [x]修改代码注释
+  - [x] refactor:按照代码规范调整注释文件
+#### 4/29/2019
+  - [x]测试app商店
+  - [x] 修改bug
+#### 4/26/2019
+  - [x]更改LICENSE日期
+  - [x] 变更许可
+  - [x]更改许可证
+#### 4/22/2019
+  - [x] 格式化
+  - [x] Delete:删除 .gradle 文件夹
+#### 4/17/2019
+  - [x] gridView 网格效果 图片流
+  - [x] 添加渐变效果/网络图片覆盖图层渲染/图片填充
+#### 4/12/2019
+  - [x]添加：doc路线图
+#### 4/1/2019
+  - [x]删除新兵
+  - [x]招募新人
+#### 3/31/2019
+  - [x] 增加模板
+  - [x]创建pull_request_template.md
+  - [x]删除.github
+  - [x]创建.github
+#### 2/20/2019
+  - [x] 更新跳转页方式
+  - [x]修改徽标
+  - [x] fix(解决返回首页报错的问题):
 #### 2019-2-5
   - [x] 处理因为flutter版本导致的项目运行不起来
   - [x] 更新readme, 加入开发日志, 与相关说明
