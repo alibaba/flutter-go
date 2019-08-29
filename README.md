@@ -80,8 +80,8 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 ### android正式版，下载地址:
 
 - 华为市场已上线，华为应用市场搜索 "Fluttergo"或者直接[点击下载](https://appstore.huawei.com/search/fluttergo)
-- [直接 apk 文件下载](https://github.com/alibaba/flutter-go/releases/download/0.0.5/app-release.apk)
-<img src="https://img.alicdn.com/tfs/TB1LbEYarys3KVjSZFnXXXFzpXa-378-380.jpg" width=200> 
+- [直接 apk 文件下载](https://github.com/alibaba/flutter-go/blob/master/android/app/release/app-release.apk)
+
 
 ### iphone正式版，下载地址: 
 
