@@ -388,11 +388,7 @@ class _LoginPageState extends State<LoginPage> {
                                   decoration: TextDecoration.underline),
                             ),
                             onPressed: () {
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          AppPage(UserInformation(id: 0))),
-                                  (route) => route == null);
+                              Application.router.navigateTo(context, Routes.home, clearStack: true);
                             },
                           )
                         ],
