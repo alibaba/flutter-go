@@ -1,7 +1,5 @@
-import 'dart:io';
 import 'package:args/args.dart'; // 使用其中两个类ArgParser和ArgResults
 import 'package:dart_inquirer/dart_inquirer.dart';
-import 'package:console/console.dart';
 import 'package:path/path.dart' as p;
 import 'package:args/command_runner.dart';
 import '../build/build_demo_list.dart';
@@ -31,7 +29,7 @@ class DemoDetail {
 }
 // 同时，argResults也是ArgResults的实例
 void createDemo() async {
-  Map environmentVars = Platform.environment;
+
   List<Question> questions = [
     InputQuestion('name', '请输入新增加的demo名称?'),
     InputQuestion('author', '请输入您的姓名(使用英文)'),

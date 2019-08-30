@@ -1,55 +1,35 @@
-# Flutter Go PR 规范说明
+# Flutter Go 共建
 
+# 共建说明
+
+由于 **Flutter 版本迭代速度较快**,产生的内容较多, 而我们**人力有限**无法更加全面快速的支持Flutter Go的日常维护迭代, 如果您对flutter go的共建感兴趣, 欢迎您来参与本项目的共建. 
+
+**凡是参与共建的成员. 我们会将您的头像与github个人地址收纳进我们的官方网站中.**
+
+# 共建方式
+
+1. 共建组件
+  - 本次更新, 开放了 **Widget 内容收录** 的功能, 您需要通过 [goCli](https://github.com/alibaba/flutter-go/blob/master/docs/go-cli.md)工具, 创建标准化组件，编写markdown代码。
+  
+  - 为了更好记录您的改动目的, 内容信息, 交流过程, 每一条PR都需要对应一条 **Issue**, 提交你发现的`BUG`或者想增加的`新功能`, 或者想要增加新的[共建组件](https://github.com/alibaba/flutter-go/blob/maseter/docs/widget.md), 
+  
+  - 首先选择你的`issue`在类型，然后通过 **Pull Request** 的形式将文章内容, api描述, 组件使用方法等加入进我们的Widget界面。
+  
+  ![](https://img.alicdn.com/tfs/TB1r3LEbKL2gK0jSZFmXXc7iXXa-858-317.png)
+
+2. 提交文章和修改bug
+  - 您也可以将例如**日常bug.** **未来feature**等的功能性PR, 申请提交到我们的的主仓库。
+
+
+# 参与共建
+
+关于如何提PR请先阅读以下文档
+
+- [如何向仓库提交 Pull Request](https://github.com/alibaba/flutter-go/blob/master/docs/push-pr.md)
+- [dart 代码规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+- [如何使用go-cli 创建 Widget Page](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
+
+ 
 # 贡献指南
 
 此项目遵循[贡献者行为准则](https://github.com/spring-projects/spring-framework/blob/master/CODE_OF_CONDUCT.adoc)。参与此项目即表示您同意遵守其条款.
-
-
-您的 Pull Request 可能包含以下几种
-
-- 本项目逻辑代码的问题修复或者优化
-- widget 示例的完善
-- widget 文档的完善与更新
-
-
-# 文档与DEMO的完善
-一个widget的demo实例与文档说明, 由以下目录构成, 我们以**/lib/widgets/components/Tab/Tab**组件举例, 在此文件目录下构建您的demo运行即可看到效果
-
-- index.dart
-- demo.dart
-
-
-
-# 撰写 Pull Request
-
-为了更好的将 *flutter* 的各种使用方法分享给大家, 我们欢迎第三方提交个人Pull Request(简称为PR)到开源仓库中. 提交的PR需要满足以下规则:
-
-- PR 的提交名称, 请使用有意义可以理解的词汇, 否则我们请直接关闭它.
-	- 例如: 增加了XX功能, 优化..., 修复在 XX 状态下对 XX 的异常处理
-- PR 只能被提交合并到 *develop* 分支, 被提交到master的 PR, 我们将会直接关闭.
-- PR 的描述区,需要描述本次改动的主要内容, 以及为什么要如此改动.
-- 避免超大的 PR 提交
-	- 当 PR 的改动 **change** 超过1000行(暂定为1000)时, 请尽量拆分后进行提交.
-- 规范化的commit信息
-	- commit规范参照[develop规范](https://github.com/alibbaba/flutter-go/blob/master/develop.md#commit-%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83)
-	- commit列表, 请在提交PR之前做好整理, 避免出现一个功能点的多条commit.[如何整理commit](https://help.github.com/en/articles/using-git-rebase-on-the-command-line)
-
-# 如何提交PR
-* fork项目到自己仓库
-* git clone （您的仓库地址）到本地
-* 建立上游源
-    * git remote add upStream git@github.com:alibaba/flutter-go.git
-    * 创建开发分支（非必须）
-    * git checkout -b develop
-* 修改提交代码
-    * git status
-    * git add .
-    * git commit -m 'feat: message'
-    * git push origin develop
-* 同步代码
-    * git fetch upstream
-    * git merge upstream/develop
-    * git push origin develop
-* 提交PR
-    * 到自己github仓库对应fork的项目下new pull request
-

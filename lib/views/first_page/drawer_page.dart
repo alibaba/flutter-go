@@ -155,7 +155,7 @@ class _DrawerPageState extends State<DrawerPage> {
             size: 27.0,
           ),
           title: Text(
-            '搜索',
+            '全网搜',
             style: textStyle,
           ),
           onTap: () {
@@ -205,28 +205,14 @@ class _DrawerPageState extends State<DrawerPage> {
           onTap: () {
             if (hasLogin) {
               //issue 未登陆状态 返回登陆页面
-              DataUtils.logout().then((result) {
-                Application.router
-                    .navigateTo(context, '${Routes.issuesMessage}');
-              });
+              Application.router.navigateTo(context, '${Routes.issuesMessage}');
             } else {
               //No description provided.
               Application.router.navigateTo(context, '${Routes.loginPage}');
-              //  Application.router.navigateTo(context, '${Routes.issuesMessage}');
+
             }
           },
         ),
-        // ListTile(
-        //   leading: Icon(
-        //     Icons.info,
-        //     size: 27.0,
-        //   ),
-        //   title: Text(
-        //     '关于 App',
-        //     style: textStyle,
-        //   ),
-        //   onTap: () {},
-        // ),
         ListTile(
           leading: Icon(
             Icons.share,
@@ -237,7 +223,7 @@ class _DrawerPageState extends State<DrawerPage> {
             style: textStyle,
           ),
           onTap: () {
-            Share.share('https://github.com/alibaba/flutter-go');
+            Share.share('https://flutter-go.pub/website/');
           },
         ),
         new Divider(),

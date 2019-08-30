@@ -18,12 +18,7 @@ import 'dart:async';
 
 void watch() {
   Timer _changeTimer;
-  List<Map<String, String>> config = [
-    {
-      "type": "demo",
-      "path": '$TARGET_DEMO_DIC'
-    }
-  ];
+
   List<String> demoIgnore = [
     '.demo.json',
     'index.dart',

@@ -8,7 +8,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-import 'package:flutter_go/model/collection.dart';
+/// import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
 import 'package:flutter_go/api/api.dart';
@@ -23,12 +23,9 @@ class WebViewPage extends StatefulWidget {
 
 class _WebViewPageState extends State<WebViewPage> {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
-  bool _hasCollected = false;
-  String _router = '';
-  var _collectionIcons;
-  CollectionControlModel _collectionControl = new CollectionControlModel();
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     super.initState();
@@ -54,7 +51,7 @@ class _WebViewPageState extends State<WebViewPage> {
               .fire(UserGithubOAuthEvent(loginName, token, true));
         }
         print('ready close');
-        
+
         flutterWebviewPlugin.close();
         // 验证成功
       } else if (url.indexOf('${Api.BASE_URL}loginFail') == 0) {
@@ -65,87 +62,14 @@ class _WebViewPageState extends State<WebViewPage> {
         flutterWebviewPlugin.close();
       }
     });
-// 这里 存放不使用 name 改成 url. 确定唯一性
-//    _collectionControl
-//        .getRouterByName(Uri.encodeComponent(widget.title.trim()))
-//        .then((list) {
-//      list.forEach((item) {
-//        if (widget.title.trim() == item['name']) {
-//          _router = item['router'];
-//        }
-//      });
-//      if (mounted) {
-//        setState(() {
-//          _hasCollected = list.length > 0;
-//        });
-//      }
-//    });
-  }
-
-  // 点击收藏按钮
-  _getCollection() {
-    if (_hasCollected) {
-      // 删除操作
-      _collectionControl
-          .deleteByName(Uri.encodeComponent(widget.title.trim()))
-          .then((result) {
-        if (result > 0 && this.mounted) {
-          setState(() {
-            _hasCollected = false;
-          });
-          _scaffoldKey.currentState
-              .showSnackBar(SnackBar(content: Text('已取消收藏')));
-          if (ApplicationEvent.event != null) {
-            ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, _router, true));
-          }
-          return;
-        }
-        print('删除错误');
-      });
-    } else {
-      // 插入操作
-      _collectionControl
-          .insert(Collection(
-              name: Uri.encodeComponent(widget.title.trim()),
-              router: widget.url))
-          .then((result) {
-        if (this.mounted) {
-          setState(() {
-            _hasCollected = true;
-          });
-
-          if (ApplicationEvent.event != null) {
-            ApplicationEvent.event
-                .fire(CollectionEvent(widget.title, _router, false));
-          }
-          _scaffoldKey.currentState
-              .showSnackBar(SnackBar(content: Text('收藏成功')));
-        }
-      });
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_hasCollected) {
-      _collectionIcons = Icons.favorite;
-    } else {
-      _collectionIcons = Icons.favorite_border;
-    }
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(widget.title),
-        actions: <Widget>[
-          new IconButton(
-            tooltip: 'goBack home',
-            onPressed: _getCollection,
-            icon: Icon(
-              _collectionIcons,
-            ),
-          ),
-        ],
       ),
       body: WebviewScaffold(
         url: widget.url,

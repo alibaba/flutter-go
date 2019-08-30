@@ -29,8 +29,9 @@ class _Demo extends State<CupertinoSliverNavigationBarDemo> {
               trailing: Icon(Icons.perm_camera_mic)
             ),
             CupertinoSliverRefreshControl(
-              onRefresh: () {
-              },
+//              onRefresh: () {
+//
+//              },
             ),
             SliverSafeArea(
                 top: false, // Top safe area is consumed by the navigation bar.

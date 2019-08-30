@@ -11,6 +11,7 @@ import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_go/views/collection_page/collection_page.dart';
 import 'package:flutter_go/views/collection_page/collection_full_page.dart';
 import 'package:flutter_go/views/standard_demo_page/index.dart';
+import 'package:flutter_go/views/issuse_message_page/issuse_message_page.dart';
 
 // app的首页
 var homeHandler = new Handler(
@@ -58,6 +59,15 @@ var fullScreenCodeDialog = new Handler(
       );
     });
 
+
+var githubCodeDialog = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      String path = params['remotePath']?.first;
+      return new FullScreenCodeDialog(
+        remoteFilePath: path,
+      );
+    });
+
 var webViewPageHand = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   String title = params['title']?.first;
@@ -72,3 +82,9 @@ var standardPageHandler = new Handler(
     return StandardView(id: id);
   }
 );
+
+
+var issuesMessageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      return IssuesMessagePage();
+    });

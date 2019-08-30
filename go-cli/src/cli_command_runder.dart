@@ -2,10 +2,11 @@ import 'dart:async';
 
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
-import './version.dart';
+//import './version.dart';
 import './command/create_demo.dart';
 import './command/create_page.dart';
 import './command/watch_md.dart';
+import './command/build.dart';
 
 
 
@@ -18,6 +19,7 @@ class _CommandRunner extends CommandRunner<int> {
     addCommand(CreateDemoCommand());
     addCommand(CreatePageCommand());
     addCommand(WatchCommand());
+    addCommand(Build());
 
   }
 

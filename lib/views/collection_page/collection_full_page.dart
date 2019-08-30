@@ -4,12 +4,13 @@
 /// @Last Modified time: 2019-06-05 14:01:03
 import 'package:flutter/material.dart';
 import 'package:event_bus/event_bus.dart';
+import 'package:fluro/fluro.dart';
 
 import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/routers/application.dart';
-import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
+import 'package:flutter_go/utils/data_utils.dart';
 
 class CollectionFullPage extends StatefulWidget {
   final bool hasLogined;
@@ -25,7 +26,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
     ApplicationEvent.event = eventBus;
   }
 
-  CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = new CollectionControlModel();
   List<Collection> _collectionList = [];
   ScrollController _scrollController = new ScrollController();
   var _icons;
@@ -41,13 +42,10 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
 
   void _getList() {
     _collectionList.clear();
-    _collectionControl.getAllCollection().then((resultList) {
-      resultList.forEach((item) {
-        _collectionList.add(item);
-      });
+    DataUtils.getAllCollections(context).then((collectionList) {
       if (this.mounted) {
         setState(() {
-          _collectionList = _collectionList;
+          _collectionList = collectionList;
         });
       }
     });
@@ -60,6 +58,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
   }
 
   Widget _renderList(context, index) {
+
     if (index == 0) {
       return Container(
         height: 40.0,
@@ -73,7 +72,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
             SizedBox(
               width: 5.0,
             ),
-            Text('模拟器重新运行会丢失收藏'),
+            Text('常用的组件都可以收藏在这里哦'),
           ],
         ),
       );
@@ -87,6 +86,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
     } else {
       _icons = Icons.extension;
     }
+    String targetRouter = _collectionList[index - 1].router;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
       margin: const EdgeInsets.only(bottom: 7.0),
@@ -108,28 +108,22 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          Uri.decodeComponent(_collectionList[index - 1].name),
+          _collectionList[index - 1].name,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(fontSize: 17.0),
         ),
         trailing:
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
-          if (_collectionList[index - 1].router.contains('http')) {
-            // 注意这里title已经转义过了
-            Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${_collectionList[index - 1].name}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
-          } else {
-            Application.router
-                .navigateTo(context, "${_collectionList[index - 1].router}");
-          }
+          Application.router.navigateTo(
+              context, targetRouter.toLowerCase(),
+              transition: TransitionType.inFromRight);
         },
       ),
     );
   }
 
-
-  ListView buildContent(){
+  ListView buildContent() {
     if (_collectionList.length == 0) {
       return ListView(
         children: <Widget>[
