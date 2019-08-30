@@ -23,7 +23,7 @@ class SuggestionBloc extends Bloc<SuggestionEvent, SuggestionState> {
       try {
         yield SuggestionLoading();
         final res = await api.suggestion(event.query);
-        print('res====>${res}');
+        // print('res====>${res}');
         yield SuggestionLoaded(res: res);
       } catch (_) {
         yield SuggestionError();

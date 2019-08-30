@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../model/cat.dart';
 import '../resources/widget_name_to_icon.dart';
 import '../components/widget_item_container.dart';
+import '../model/widget.dart';
 
 class CateCard extends StatefulWidget {
-  final Cat category;
+  final CategoryComponent category;
   CateCard({@required this.category});
   @override
   _CateCardState createState() => _CateCardState();
@@ -13,28 +13,15 @@ class CateCard extends StatefulWidget {
 
 class _CateCardState extends State<CateCard> {
   // 一级菜单目录下的二级Cat集合
-  List<Cat> _firstChildList = new List();
-  CatControlModel catControl = new CatControlModel();
+  List<CommonItem> _firstChildList;
 
   @override
   void initState() {
     super.initState();
-    getFirstChildCategoriesByParentId();
+    _firstChildList = widget.category.children;
   }
 
-  // 获取一层目录下的二级内容
-  getFirstChildCategoriesByParentId() async {
-    int parentId = widget.category.id;
-    // 构建查询条件
-    Cat childCateCondition = new Cat(parentId: parentId);
 
-    List<Cat> list = await catControl.getList(childCateCondition);
-    if (list.isNotEmpty&&list.length>=1 && this.mounted) {
-      setState(() {
-        _firstChildList = list;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +30,6 @@ class _CateCardState extends State<CateCard> {
         //首字母转为大写
         widget.category.name.substring(0, 1),
         widget.category.name.substring(0, 1).toUpperCase());
-        
     return Container(
       width: screenWidth,
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -119,9 +105,8 @@ class _CateCardState extends State<CateCard> {
         ),
       ),
       child: WidgetItemContainer(
-        categories: this._firstChildList,
-        columnCount: 3,
-        isWidgetPoint:false
+        commonItems: this._firstChildList,
+        columnCount: 3
       ),
     );
   }
