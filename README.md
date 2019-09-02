@@ -48,6 +48,8 @@ Precompiling executables... (12.0s)
   [INFO] Succeeded after 50.1s with 3309 outputs (9338 actions)
 ```
 
+- 浏览器打开 http://127.0.0.1:8080
+
 - 发布模式,创建最终编译结果,这将创建一个build目录`index.html`，`main.dart.js`以及使用静态HTTP服务器运行应用程序所需的其余文件。
 ```dart
   $ webdev build
