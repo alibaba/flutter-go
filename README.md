@@ -14,9 +14,7 @@
 ### 如何使用
 - git 拉取 `Flutter-go` 项目,并切换到 `web/flutter-go-web-0.0.1` 分支
 ```dart
-  $ git clone https://github.com/alibaba/flutter-go.git flutter-go
-
-  $ git checkout web/flutter-go-web-0.0.1
+git clone -b web/flutter-go-web-0.0.1 https://github.com/alibaba/flutter-go.git flutter-go-web
 ```
 
 - 安装flutter_web构建工具
