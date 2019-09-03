@@ -4,6 +4,7 @@
 /// @Last Modified time: 2019-01-14 14:42:00
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_go/utils/example_code_parser.dart';
 import 'package:flutter_go/utils/syntax_highlighter.dart';
@@ -30,6 +31,31 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
       }
     });
     super.didChangeDependencies();
+  }
+
+  void showCopySuccess(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            height: 100,
+            padding: EdgeInsets.symmetric(vertical: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text('复制成功！'),
+                RaisedButton(
+                  child: Text('确定'),
+                  onPressed: () => Navigator.pop(context),
+                )
+              ],
+            ),
+          ),
+        );
+      }
+    );
   }
 
   @override
@@ -76,6 +102,14 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
               }),
           title: const Text('Example code'),
         ),
-        body: body);
+        body: GestureDetector(
+          child: body,
+          onLongPress: () {
+            Clipboard.setData(new ClipboardData(text: _exampleCode)).then((value) {
+              showCopySuccess(context);
+            });
+          },
+        )
+      );
   }
 }
