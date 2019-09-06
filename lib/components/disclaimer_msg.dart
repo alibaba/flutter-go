@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 const disclaimerText1 =
     '\r\r\r\r\r\r本APP属于个人的非赢利性开源项目，以供开源社区使用，凡本APP转载的所有的文章 、图片、音频、视频文件等资料的版权归版权所有人所有，本APP采用的非本站原创文章及图片等内容无法一一和版权者联系，如果本网所选内容的文章作者及编辑认为其作品不宜上网供大家浏览，或不应无偿使用请及时用电子邮件或电话通知我们，以迅速采取适当措施，避免给双方造成不必要的经济损失。';
 const disclaimerText2 =
@@ -22,7 +23,6 @@ class DisclaimerMsg extends StatefulWidget {
   DisclaimerMsgState createState() => DisclaimerMsgState();
 }
 
-
 class DisclaimerMsgState extends State<DisclaimerMsg> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<bool> _unKnow;
@@ -32,14 +32,11 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   void refs(bool value) async {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
-    _valBool = value;
-    _readed = value;
     if (mounted) {
       setState(() {
-        _unKnow =
-            prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
-              return unKnow;
-            });
+        _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
+          return unKnow;
+        });
       });
     }
   }
@@ -194,36 +191,23 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
           //alignment: const Alignment(1.6, 1.6),
           children: [
             Container(
-                padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 10.0),
-                //width: 100,
-                height: 35,
-                child: Text('免责声明',
-                    style:
-                    TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-                decoration: BoxDecoration(
-                  //color: Colors.blue,
-                  image: DecorationImage(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('assets/images/paimaiLogo.png')),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10.0),
-                  ),
-                  //alignment: Alignment.bottomRight,
-                )),
-            SizedBox(height: 20),
-            Text(disclaimerText1),
-            Text(disclaimerText2),
+              width: 90.0,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.horizontal(right: Radius.circular(10)),
+                color: Colors.black45,
+              ),
+              child: Text(
+                '🔔 免责声明',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  //fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
-        ),
-      ),
-      shape: RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(20.0)), // 圆角
-
-      actions: <Widget>[
-        new Container(
-          width: 250,
-          child: _create(),
-        )
-      ],
-    );
-  }}
+        ));
+  }
+}
