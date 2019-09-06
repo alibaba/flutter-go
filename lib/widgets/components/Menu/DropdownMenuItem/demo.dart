@@ -11,7 +11,7 @@ class DropdownMenuItemDemo extends StatefulWidget {
 
 class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
 
-    String dropdown1Value = 'Free';
+  String dropdown1Value = 'Three';
   String dropdown2Value;
   String dropdown3Value = 'Four';
 
@@ -32,7 +32,7 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                   dropdown1Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((String value) {
+              items: <String>['One', 'Two', 'Three', 'Four'].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -53,7 +53,7 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                   dropdown2Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((String value) {
+              items: <String>['One', 'Two', 'Three', 'Four'].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -74,7 +74,7 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                 });
               },
               items: <String>[
-                  'One', 'Two', 'Free', 'Four', 'Can', 'I', 'Have', 'A', 'Little',
+                  'One', 'Two', 'Three', 'Four', 'Can', 'I', 'Have', 'A', 'Little',
                   'Bit', 'More', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
                  ]
                 .map<DropdownMenuItem<String>>((String value) {

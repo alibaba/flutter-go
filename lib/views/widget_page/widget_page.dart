@@ -6,28 +6,28 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/cate_card.dart';
-import 'package:flutter_go/model/cat.dart';
+
+import 'package:flutter_go/routers/application.dart';
+
 
 class WidgetPage extends StatefulWidget {
-  final db;
-  final CatControlModel catModel;
-  WidgetPage(this.db)
-      : catModel = new CatControlModel(),
-        super();
+
+
+
 
   @override
-  SecondPageState createState() => new SecondPageState(catModel);
+  SecondPageState createState() => new SecondPageState();
 }
 
 class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMixin{
-  CatControlModel catModel;
-  SecondPageState(this.catModel) : super();
+
+  SecondPageState() : super();
 
   TextEditingController controller;
   String active = 'test';
   String data = '无';
 
-  List<Cat> categories = [];
+
 
   @override
     bool get wantKeepAlive => true;
@@ -35,25 +35,16 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   @override
   void initState() { 
     super.initState();
-    renderCats();
   }
 
-  void renderCats() {
-    catModel.getList().then((List data) {
-      if (data.isNotEmpty) {
-        setState(() {
-          categories = data;
-        });
-      }
-    });
-  }
+
 
   Widget buildGrid() {
     // 存放最后的widget
     List<Widget> tiles = [];
-    for (Cat item in categories) {
+    Application.widgetTree.children.forEach((dynamic item) {
       tiles.add(new CateCard(category: item));
-    }
+    });
     return new ListView(
       children: tiles,
     );
@@ -62,11 +53,6 @@ class SecondPageState extends State<WidgetPage> with AutomaticKeepAliveClientMix
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    if (categories.length == 0) {
-      return ListView(
-        children: <Widget>[new Container()],
-      );
-    }
     return Container(
       color: Theme.of(context).backgroundColor,
       child: this.buildGrid(),
