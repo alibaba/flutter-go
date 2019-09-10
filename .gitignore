@@ -17,8 +17,6 @@
 /build
 .metadata
 
-ios/*
-
 # IntelliJ related
 *.iml
 *.ipr
