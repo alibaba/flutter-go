@@ -9,7 +9,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 const disclaimerText1 =
     '\r\r\r\r\r\r本APP属于个人的非赢利性开源项目，以供开源社区使用，凡本APP转载的所有的文章 、图片、音频、视频文件等资料的版权归版权所有人所有，本APP采用的非本站原创文章及图片等内容无法一一和版权者联系，如果本网所选内容的文章作者及编辑认为其作品不宜上网供大家浏览，或不应无偿使用请及时用电子邮件或电话通知我们，以迅速采取适当措施，避免给双方造成不必要的经济损失。';
 const disclaimerText2 =
@@ -23,6 +22,7 @@ class DisclaimerMsg extends StatefulWidget {
   DisclaimerMsgState createState() => DisclaimerMsgState();
 }
 
+
 class DisclaimerMsgState extends State<DisclaimerMsg> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<bool> _unKnow;
@@ -33,11 +33,14 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   void refs(bool value) async {
     final SharedPreferences prefs = await _prefs;
     final bool unKnow = value;
+    _valBool = value;
+    _readed = value;
     if (mounted) {
       setState(() {
-        _unKnow = prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
-          return unKnow;
-        });
+        _unKnow =
+            prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
+              return unKnow;
+            });
       });
     }
   }
@@ -60,110 +63,14 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        return AlertDialog(
-          //title: Text('免责声明'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Container(
-                    padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 10.0),
-                    //width: 100,
-                    height: 35,
-                    child: Text('免责声明',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w700)),
-                    decoration: BoxDecoration(
-                      //color: Colors.blue,
-                      image: DecorationImage(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage('assets/images/paimaiLogo.png')),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10.0),
-                      ),
-                      //alignment: Alignment.bottomRight,
-                    )),
-                SizedBox(height: 20),
-                Text(disclaimerText1),
-                Text(disclaimerText2),
-              ],
-            ),
-          ),
-          shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(20.0)), // 圆角
-
-          actions: <Widget>[
-            new Container(
-              width: 250,
-              child: _create(),
-            )
-          ],
-        );
+        return DisclaimerMsgDialog(_valBool, _readed, (b){
+          refs(b);
+        });
       },
     );
   }
 
-  Row _create() {
-    //已读
-    if (_readed) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          FlatButton(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text('已阅读知晓',
-                style: TextStyle(fontSize: 16, color: Colors.white)),
-            //可点击
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          SizedBox(
-            width: 10.0,
-          )
-        ],
-      );
-    }
 
-    //第一次读取
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //crossAxisAlignment:CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Checkbox(
-                  activeColor: Theme.of(context).primaryColor,
-                  tristate: false,
-                  value: _valBool,
-                  onChanged: (bool bol) {
-                    if(mounted) {
-                      setState(() {
-                        _valBool = bol;
-                      });
-                    }
-                    Navigator.of(context).pop(); // here I pop to avoid multiple Dialogs
-                    showAlertDialog(context); //here i call the same function
-                  }),
-              Text('不再自动提示', style: TextStyle(fontSize: 14)),
-            ],
-          ),
-          FlatButton(
-            child: Text('知道了',
-                style: TextStyle(fontSize: 16, color: Colors.white)),
-            //可点击
-            color: _valBool
-                ? Theme.of(context).primaryColor
-                : Theme.of(context).primaryColor.withAlpha(800),
-            onPressed: () {
-              // if (_valBool) {
-              refs(_valBool);
-              Navigator.of(context).pop();
-              // }
-            },
-          ),
-        ]);
-  }
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -178,7 +85,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius:
-                    BorderRadius.horizontal(right: Radius.circular(10)),
+                BorderRadius.horizontal(right: Radius.circular(10)),
                 color: Colors.black45,
               ),
               child: Text(
@@ -194,3 +101,150 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
         ));
   }
 }
+
+
+class DisclaimerMsgDialog extends StatefulWidget {
+
+  final bool valBool;
+  final bool readed;
+  final ValueChanged<bool> onValueChanged;
+
+
+  DisclaimerMsgDialog(this.valBool, this.readed, this.onValueChanged);
+
+  @override
+  _DisclaimerMsgDialogState createState() => _DisclaimerMsgDialogState();
+}
+
+class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
+
+  bool readBool;
+
+
+  @override
+  void initState() {
+    super.initState();
+    readBool = widget.valBool;
+  }
+
+
+
+  Row _create() {
+    //已读
+    if (widget.readed) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          FlatButton(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text('已阅读知晓',
+                style: TextStyle(fontSize: 16, color: Colors.white)),
+            //可点击
+            color: Theme
+                .of(context)
+                .primaryColor,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          SizedBox(
+            width: 10.0,
+          )
+        ],
+      );
+    }
+
+    /// 选中状态更新，并返回数据
+    checkChanged(){
+      if (mounted) {
+        setState(() {
+          readBool = !readBool;
+        });
+      }
+    }
+
+    //第一次读取
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //crossAxisAlignment:CrossAxisAlignment.start,
+        children: <Widget>[
+          GestureDetector(
+            onTap: (){
+              checkChanged();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Checkbox(
+                    activeColor: Theme
+                        .of(context)
+                        .primaryColor,
+                    tristate: false,
+                    value: readBool,
+                    onChanged: (bool bol) {
+                      checkChanged();
+                    }),
+                Text('不再自动提示', style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ),
+          FlatButton(
+            child: Text('知道了',
+                style: TextStyle(fontSize: 16, color: Colors.white)),
+            //可点击
+            color: readBool
+                ? Theme
+                .of(context)
+                .primaryColor
+                : Theme
+                .of(context)
+                .primaryColor
+                .withAlpha(800),
+            onPressed: () {
+              widget.onValueChanged(readBool);
+              Navigator.of(context).pop();
+            },
+          ),
+        ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      //title: Text('免责声明'),
+      content: SingleChildScrollView(
+        child: ListBody(
+          children: <Widget>[
+            Container(
+                padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 10.0),
+                //width: 100,
+                height: 35,
+                child: Text('免责声明',
+                    style:
+                    TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                decoration: BoxDecoration(
+                  //color: Colors.blue,
+                  image: DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage('assets/images/paimaiLogo.png')),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                  //alignment: Alignment.bottomRight,
+                )),
+            SizedBox(height: 20),
+            Text(disclaimerText1),
+            Text(disclaimerText2),
+          ],
+        ),
+      ),
+      shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(20.0)), // 圆角
+
+      actions: <Widget>[
+        new Container(
+          width: 250,
+          child: _create(),
+        )
+      ],
+    );
+  }}
