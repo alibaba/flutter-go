@@ -34,7 +34,7 @@ const String _textFieldText2 = """### **进阶用法**
 """;
 
 class Demo extends StatefulWidget {
-  static const String routeName = 'elements/Form/Input/TextField';
+  static const String routeName = 'element/Form/Input/TextField';
 
   @override
   _DemoState createState() => _DemoState();
