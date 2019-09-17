@@ -203,6 +203,7 @@ void _startupJpush() async {
 }
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final provider = new Provider();
   await provider.init(true);
   sp = await SpUtil.getInstance();
