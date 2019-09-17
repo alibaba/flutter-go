@@ -24,8 +24,8 @@ import 'package:flutter_go/components/search_input.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/model/user_info.dart';
-// 临时修复引入
-import '../widgets/elements/Form/Input/TextField/index.dart' as TextField;
+
+
 
 class AppPage extends StatefulWidget {
   final UserInformation userInfo;
@@ -99,10 +99,6 @@ class _MyHomePageState extends State<AppPage>
   void onWidgetTap(WidgetPoint widgetPoint, BuildContext context) {
     String targetName = widgetPoint.name;
     String targetRouter = widgetPoint.routerName;
-    // 临时修复TextField路径问题
-    if(widgetPoint.name == 'TextField'){
-       targetRouter = TextField.Demo.routeName;
-    }
     searchHistoryList.add(
         SearchHistory(name: targetName, targetRouter: targetRouter));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
