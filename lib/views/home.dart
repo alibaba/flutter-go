@@ -25,6 +25,8 @@ import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
 import 'package:flutter_go/model/user_info.dart';
 
+
+
 class AppPage extends StatefulWidget {
   final UserInformation userInfo;
 
@@ -96,10 +98,10 @@ class _MyHomePageState extends State<AppPage>
 
   void onWidgetTap(WidgetPoint widgetPoint, BuildContext context) {
     String targetName = widgetPoint.name;
-    searchHistoryList.add(
-        SearchHistory(name: targetName, targetRouter: widgetPoint.routerName));
-    print("searchHistoryList1 ${searchHistoryList.toString()}");
     String targetRouter = widgetPoint.routerName;
+    searchHistoryList.add(
+        SearchHistory(name: targetName, targetRouter: targetRouter));
+    print("searchHistoryList1 ${searchHistoryList.toString()}");
     Application.router.navigateTo(context, targetRouter.toLowerCase(),
         transition: TransitionType.inFromRight);
   }
