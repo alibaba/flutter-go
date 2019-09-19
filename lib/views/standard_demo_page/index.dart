@@ -19,7 +19,7 @@ import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/utils/net_utils.dart';
 import 'package:flutter_go/components/loading.dart';
 
-const githubHost = 'https://raw.githubusercontent.com/alibaba/flutter-go/beta';
+const githubHost = 'https://raw.githubusercontent.com/alibaba/flutter-go/master';
 const githubUrl = '$githubHost/lib/standard_pages/';
 const PagesUrl = '$githubHost/lib/standard_pages/.pages.json';
 const DemosUrl = '$githubHost/lib/page_demo_package/.demo.json';
