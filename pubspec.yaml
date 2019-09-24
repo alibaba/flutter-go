@@ -53,6 +53,7 @@ dependencies:
   flutter_jpush: ^0.0.4
   zefyr:
     path: ./zefyr
+  pull_to_refresh: ^1.5.6
 
 
 dev_dependencies:
