@@ -109,7 +109,7 @@ lib/standard_pages/standard_for_slider_sanfan_8ab2b5c2_42ae_4241_9c8a_5c9e1f92b0
 
 当我们的本地功能调试没有问题. 想要申请合并到主分支时.需要按以下流程进行
 
-1.新建issue, 按照widget page类型模板, 填写需要的相关数据
+1.新建issue, 按照page about类型模板, 填写需要的相关数据
 
 ![](https://img.alicdn.com/tfs/TB1YMkCdUH1gK0jSZSyXXXtlpXa-805-354.png)
 
