@@ -6,7 +6,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 > 一个帮助开发者快速上手的 `APP`
 
 ## 最新动态
-### 🔥 `Flutter Go 2.0` 即将发布
+### 🔥 `Flutter Go 2.0` 发布
 > Flutter Go 2.0 秉承年初发布的 [The Flutter-Go Roadmap（路线图） for 2019](https://github.com/alibaba/flutter-go#the-flutter-go-roadmap%E8%B7%AF%E7%BA%BF%E5%9B%BE-for-2019) 已经做了新版本的迭代，新版本如下新功能:
 
 <h6>注：✔是本次发布内容</h6>
