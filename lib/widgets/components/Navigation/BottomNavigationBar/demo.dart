@@ -36,6 +36,8 @@ class _BottomNavigationBarFullDefault extends State {
       currentIndex: _currentIndex, // 当前所高亮的按钮index
       onTap: _onItemTapped, // 点击里面的按钮的回调函数，参数为当前点击的按钮 index
       fixedColor: Colors.deepPurple, // 如果 type 类型为 fixed，则通过 fixedColor 设置选中 item 的颜色
+      selectedFontSize: 12.0,
+      unselectedFontSize: 12.0,
       items: <BottomNavigationBarItem> [
         BottomNavigationBarItem(
             title:  Text("Home"), icon:  Icon(Icons.home)),
