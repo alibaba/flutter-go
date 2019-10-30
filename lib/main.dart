@@ -6,7 +6,6 @@ import 'routers/application.dart' show Application;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
-
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
@@ -204,7 +203,7 @@ void _startupJpush() async {
 }
 
 void main() async {
-//  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   final provider = new Provider();
   await provider.init(true);
   sp = await SpUtil.getInstance();

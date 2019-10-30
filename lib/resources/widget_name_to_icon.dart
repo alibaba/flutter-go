@@ -5,7 +5,7 @@ class WidgetName2Icon {
     "Standard": Icons.pages ,
     "Element":Icons.explicit,
     "Components":Icons.extension,
-    "Themes":Icons.filter_b_and_w,
+    "Theme":Icons.filter_b_and_w,
     "Form":Icons.table_chart,
     "Frame":Icons.aspect_ratio,
     "Media":Icons.subscriptions,

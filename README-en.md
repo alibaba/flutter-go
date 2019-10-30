@@ -16,15 +16,7 @@
     - [online preview ](https://flutter-go.pub/flutter_go_web/)
     - [resource ](https://github.com/alibaba/flutter-go/tree/web/flutter-go-web-0.0.1)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<img src="https://img.alicdn.com/tfs/TB180.kOhYaK1RjSZFnXXa80pXa-442-420.png" width="200px">
-=======
-<img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
->>>>>>> develop
-=======
 - [x] [ `Flutter Go Widget` `pull request` rules ( the third )](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
->>>>>>> dxj/master
 
 - [x] user center (yourself `widget`)
 	- login (with `GitHub`)

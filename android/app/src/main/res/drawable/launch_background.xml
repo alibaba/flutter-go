@@ -6,11 +6,6 @@
     <!-- You can insert your own image assets here -->
     <item>
         <bitmap
-<<<<<<< HEAD
-            android:gravity="center"
-            android:src="@mipmap/splash" />
-=======
             android:src="@drawable/splash" />
->>>>>>> develop
     </item>
 </layer-list>

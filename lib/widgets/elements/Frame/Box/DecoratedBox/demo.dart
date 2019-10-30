@@ -19,11 +19,9 @@ class DecoratedBoxCreate extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
         //设置图片内容
-
         image: DecorationImage(
-
-            ///fix:BoxFit.contain: 保持图片的比例，最大程度填充容器  BoxFit.fill:容器被图片完全填充，不在意图片比例，只填充整个容器
-            ///fix:BoxFit.fitWidth：图片以宽被完全填充  BoxFit.fix:fixHigth:图片以高度完全填充
+          ///fix:BoxFit.contain: 保持图片的比例，最大程度填充容器  BoxFit.fill:容器被图片完全填充，不在意图片比例，只填充整个容器
+          ///fix:BoxFit.fitWidth：图片以宽被完全填充  BoxFit.fix:fixHigth:图片以高度完全填充
             fit: BoxFit.cover, //图片填充整个容器，按比例放大，多余部分被裁切
             image: ExactAssetImage('assets/images/food01.jpeg')),
         //外宽边框，可以不设置
@@ -48,7 +46,6 @@ class DecoratedBoxCreateTwo extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
         //设置图片内容
-
         image: DecorationImage(
             fit: BoxFit.cover,
             image: ExactAssetImage('assets/images/food01.jpeg')),

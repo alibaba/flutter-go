@@ -50,9 +50,6 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 [<< Flutter Go 开发规范第一版 >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 ## The Flutter-Go Roadmap（路线图） for 2019 
 > 考虑到 Flutter 未来的变化和策略的可变性, roadmap 不排除有一定调整，但总体不会变化太大。
 
@@ -77,7 +74,6 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 - 如果有其他问题,请参考
   - https://flutterchina.club/setup-macos/
   - https://flutter.dev/docs/get-started/install/macos
->>>>>>> dxj/master
 
 ## Release安装包下载地址
 
@@ -89,30 +85,8 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 
 ### iphone正式版，下载地址: 
 
-
-<img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
-
 - AppStore 搜索 "Fluttergo" 或者直接[点击下载](https://itunes.apple.com/cn/app/flutter-go/id1462026296?mt=8)
 <img src="https://img.alicdn.com/tfs/TB1PygPaBWD3KVjSZFsXXcqkpXa-380-376.jpg" width=200> 
-
-## The Flutter-Go Roadmap（路线图） for 2019 
-> 考虑到 Flutter 未来的变化和策略的可变性, roadmap 不排除有一定调整，但总体不会变化太大。
-
-<img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
-
-
-
-## Release安装包下载地址
-
-android下载地址:
-
-
-华为市场已上线，master分支上面已上传【FlutterGo.apk】apk包，可点击下载
-
-
-iphone下载地址: AppStore上面进行搜索fluttego
-
-<img src="https://img.alicdn.com/tfs/TB1trMgV7PoK1RjSZKbXXX1IXXa-620-1343.png" width=200> <img src="https://img.alicdn.com/tfs/TB1w_MbV7voK1RjSZFDXXXY3pXa-620-1343.png" width=200> 
 
 
 ## 基础环境
