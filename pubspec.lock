@@ -5,107 +5,177 @@ packages:
     dependency: transitive
     description:
       name: args
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.5.2"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.1"
+>>>>>>> master
   async:
     dependency: transitive
     description:
       name: async
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "2.2.0"
   bloc:
     dependency: "direct main"
     description:
       name: bloc
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.12.0"
   boolean_selector:
     dependency: transitive
     description:
       name: boolean_selector
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.0.4"
   charcode:
     dependency: transitive
     description:
       name: charcode
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.1.2"
   city_pickers:
     dependency: "direct main"
     description:
       name: city_pickers
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.0.4"
   collection:
     dependency: transitive
     description:
       name: collection
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.14.11"
   cookie_jar:
     dependency: "direct main"
     description:
       name: cookie_jar
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.1"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+>>>>>>> master
   csslib:
     dependency: transitive
     description:
       name: csslib
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.16.1"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
+>>>>>>> master
   cupertino_icons:
     dependency: "direct main"
     description:
       name: cupertino_icons
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.1.2"
   dio:
     dependency: "direct main"
     description:
       name: dio
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.13"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.3"
+>>>>>>> master
   event_bus:
     dependency: "direct main"
     description:
       name: event_bus
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.1.0"
   firebase_analytics:
     dependency: "direct main"
     description:
       name: firebase_analytics
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.2.0+1"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.3.4"
   fluro:
     dependency: "direct main"
     description:
       name: fluro
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.5.1"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
+>>>>>>> master
   flutter:
     dependency: "direct main"
     description: flutter
@@ -115,13 +185,18 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_bloc
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.11.1"
   flutter_downloader:
     dependency: "direct main"
     description:
       name: flutter_downloader
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.9"
@@ -132,11 +207,27 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.4"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.7"
+  flutter_markdown:
+    dependency: "direct main"
+    description:
+      name: flutter_markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
+>>>>>>> master
   flutter_spinkit:
     dependency: "direct main"
     description:
       name: flutter_spinkit
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "3.1.0"
   flutter_test:
@@ -148,6 +239,7 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_webview_plugin
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.3.5"
@@ -158,31 +250,51 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
+>>>>>>> master
   html:
     dependency: "direct main"
     description:
       name: html
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.14.0+2"
   image_picker:
     dependency: "direct main"
     description:
       name: image_picker
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.5.4+3"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.0+3"
+>>>>>>> master
   intl:
     dependency: "direct main"
     description:
       name: intl
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.15.7"
   lpinyin:
     dependency: transitive
     description:
       name: lpinyin
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.7"
@@ -191,12 +303,23 @@ packages:
     description:
       name: markdown
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.7"
+  markdown:
+    dependency: transitive
+    description:
+      name: markdown
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "2.0.3"
   matcher:
     dependency: transitive
     description:
       name: matcher
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.12.5"
@@ -214,17 +337,36 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.3"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.5"
+  meta:
+    dependency: transitive
+    description:
+      name: meta
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.6"
+>>>>>>> master
   open_file:
     dependency: "direct main"
     description:
       name: open_file
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1+2"
+>>>>>>> master
   package_info:
     dependency: "direct main"
     description:
       name: package_info
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.0+6"
@@ -233,26 +375,47 @@ packages:
     description:
       name: path
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0+3"
+  path:
+    dependency: transitive
+    description:
+      name: path
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.6.2"
   path_provider:
     dependency: "direct main"
     description:
       name: path_provider
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
+>>>>>>> master
   pedantic:
     dependency: transitive
     description:
       name: pedantic
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.7.0"
   permission_handler:
     dependency: "direct main"
     description:
       name: permission_handler
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.2.2"
@@ -263,10 +426,16 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
+>>>>>>> master
   quiver:
     dependency: transitive
     description:
       name: quiver
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
@@ -277,10 +446,16 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3"
+>>>>>>> master
   rxdart:
     dependency: transitive
     description:
       name: rxdart
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.21.0"
@@ -291,11 +466,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.6.2+1"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.21.0"
+>>>>>>> master
   shared_preferences:
     dependency: "direct main"
     description:
       name: shared_preferences
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.4.3"
   sky_engine:
@@ -307,27 +491,42 @@ packages:
     dependency: transitive
     description:
       name: source_span
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.5.5"
   sqflite:
     dependency: "direct main"
     description:
       name: sqflite
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6+3"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.5"
+>>>>>>> master
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.9.3"
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
@@ -336,47 +535,82 @@ packages:
     description:
       name: string_scanner
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  string_scanner:
+    dependency: transitive
+    description:
+      name: string_scanner
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.0.4"
   synchronized:
     dependency: transitive
     description:
       name: synchronized
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0+1"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+>>>>>>> master
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.1.0"
   test_api:
     dependency: transitive
     description:
       name: test_api
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "0.2.5"
   typed_data:
     dependency: transitive
     description:
       name: typed_data
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
+=======
+      url: "https://pub.dartlang.org"
+>>>>>>> master
     source: hosted
     version: "1.1.6"
   url_launcher:
     dependency: "direct main"
     description:
       name: url_launcher
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.1.2"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.2"
+>>>>>>> master
   vector_math:
     dependency: transitive
     description:
       name: vector_math
+<<<<<<< HEAD
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.8"
@@ -390,3 +624,11 @@ packages:
 sdks:
   dart: ">=2.2.2 <3.0.0"
   flutter: ">=1.6.0 <2.0.0"
+=======
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.8"
+sdks:
+  dart: ">=2.2.2 <3.0.0"
+  flutter: ">=1.2.1 <2.0.0"
+>>>>>>> master

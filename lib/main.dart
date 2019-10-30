@@ -6,6 +6,7 @@ import 'routers/application.dart' show Application;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
+
 import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/model/search_history.dart';
 import 'package:flutter_go/utils/analytics.dart' as Analytics;
@@ -188,7 +189,14 @@ class _MyAppState extends State<MyApp> {
           size: 35.0,
         ),
       ),
+<<<<<<< HEAD
+      home: new Scaffold(
+        body: showWelcomePage()
+      ),
+
+=======
       home: new Scaffold(body: showWelcomePage()),
+>>>>>>> dxj/master
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],

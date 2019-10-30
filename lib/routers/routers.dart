@@ -1,6 +1,7 @@
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_go/utils/analytics.dart' show analytics;
 import '../widgets/index.dart';
 import './router_handler.dart';

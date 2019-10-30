@@ -1,24 +1,105 @@
-## Flutter Go
+# Flutter Go
+[中文简体](https://github.com/alibaba/flutter-go/blob/master/README.md) | Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.md)
 
 ![https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png](https://img.alicdn.com/tfs/TB1OJkeHNYaK1RjSZFnXXa80pXa-229-229.png)
 
-> Help developers get started quickly Flutter  **Flutter Go 1.0 Android has been released**
+> Help developers get started quickly Flutter
 
+## News
+### 🔥 `Flutter Go 2.0` released
+> Flutter Go 2.0 according to [The Flutter-Go Roadmap for 2019](https://github.com/alibaba/flutter-go#the-flutter-go-roadmap%E8%B7%AF%E7%BA%BF%E5%9B%BE-for-2019) beginning of the year, the new feature is:
 
-## Download URL
+<h6>mark：✔ is this version</h6>
 
-Android download URL:
+- [x] [ `Flutter Go` website ](https://flutter-go.pub/website/) (news，publish，learn)
+- [x] [ `Flutter Go web` ](https://github.com/alibaba/flutter-go/tree/web/flutter-go-web-0.0.1) (web version to learn)
+    - [online preview ](https://flutter-go.pub/flutter_go_web/)
+    - [resource ](https://github.com/alibaba/flutter-go/tree/web/flutter-go-web-0.0.1)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<img src="https://img.alicdn.com/tfs/TB180.kOhYaK1RjSZFnXXa80pXa-442-420.png" width="200px">
+=======
 <img src="https://img.alicdn.com/tfs/TB1jGgfQ7voK1RjSZFNXXcxMVXa-438-426.png" width="200px">
+>>>>>>> develop
+=======
+- [x] [ `Flutter Go Widget` `pull request` rules ( the third )](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md)
+>>>>>>> dxj/master
 
-Iphone download URL:
-No
+- [x] user center (yourself `widget`)
+	- login (with `GitHub`)
+	- search (search about `Flutter`)
+	- favorite component (save online)
+	- issues (APP online `ISSUES`)
+	- favorite (APP favorite)
+- [x] [ `go-cli` tool ](https://github.com/alibaba/flutter-go/blob/master/docs/widget.md)
+	-  `Flutter Go` `pull request` tools
+	-  [ build `Flutter Go Widget` standard template with terminal ](https://github.com/alibaba/flutter-go/blob/beta/docs/widget.md)
+	-  `markdown` template (when merge master breach)
+- [x] ` Flutter Go `  `APP` auto upgrade
+- [ ] template sync ( pc, native )
+- [ ] `Flutter Go` store
+
+## Third part build
+
+Because the content of ** flutter ** is updated faster, we can't enrich the content of the project faster, If you are willing to contribute to the development and learning of flutter, please see the [build instructions](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md) before you start, we will put the builder's avatar and nick to the websit.
+
+## Logs
+
+[resource](https://github.com/alibaba/flutter-go/blob/develop/CHANGE-LOG.md)
+
+## Development specification
+> we are based on the official [dart language specification](https://www.dartlang.org)。
+
+[<< Flutter Go development specification >>](https://github.com/alibaba/flutter-go/blob/develop/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+
+## The Flutter-Go Roadmap for 2019
+> Considering Flutter's future changes and strategy variability, roadmap does not rule out some adjustments, but overall it will not change much.
+
+<img src="https://img.alicdn.com/tfs/TB19UahQQzoK1RjSZFlXXai4VXa-1500-1106.png" width="600px">
+
+## How to use
+
+- checkout version
+```dart
+  flutter --version
+```
+- run doctor
+```dart
+  flutter doctor
+```
+- start app
+```dart
+  flutter packages get
+  flutter run
+```
+
+- other issues
+  - https://flutterchina.club/setup-macos/
+  - https://flutter.dev/docs/get-started/install/macos
+
+## Release
+
+### Android:
+
+- [Download](https://github.com/alibaba/flutter-go/blob/master/android/app/release/app-release.apk)
+
+### Ios:
+
+- AppStore search "Fluttergo"
 
 ## Development Environment
 This Project need latest package, please update regularly.
 
-- dart(version: 2.0.0)
-- flutter(version: v1.0.0)
+```dart
+flutter --version
+dart --version
+pub --version
+
+// Flutter (Channel beta, v1.7.8)
+// Dart VM version: 2.4.0
+// Pub 2.4.0
+```
 
 ### Background
 

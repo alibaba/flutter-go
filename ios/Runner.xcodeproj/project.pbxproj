@@ -298,7 +298,14 @@
 				0828E49B220692B500A59437 /* iPad Landscape@2x.png in Resources */,
 				0828E495220692B500A59437 /* iPhone Portrait-Retina 4.png in Resources */,
 				0828E498220692B500A59437 /* iPhone XS Max Portrait.png in Resources */,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+				FAD0116422F1B9DF0016E673 /* Debug.xcconfig in Resources */,
+>>>>>>> master
 				94722E5C22511D3600F63900 /* GoogleService-Info.plist in Resources */,
+>>>>>>> dxj/master
 				0828E496220692B500A59437 /* iPad Portrait.png in Resources */,
 				0828E49C220692B500A59437 /* iPhone Landscape-Retina HD 5.5.png in Resources */,
 			);

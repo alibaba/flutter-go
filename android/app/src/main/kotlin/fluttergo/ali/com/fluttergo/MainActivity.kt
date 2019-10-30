@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+package com.ali.fluttergo
+=======
 package com.alibaba.fluttergo
+>>>>>>> develop
 
 import android.os.Bundle
 
