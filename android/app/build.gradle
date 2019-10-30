@@ -59,7 +59,22 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.alibaba.fluttergo",
+                JPUSH_APPKEY : "62eb07d227d1f11dd7fa6239", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default",
+        ]
+
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a','x86', 'x86_64', 'mips'//, 'arm64-v8a'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+
     }
+
+
 
     signingConfigs {
         release {
@@ -94,6 +109,8 @@ dependencies {
     ///implementation 'com.google.firebase:firebase-perf:16.2.3'
     // 登陆
     ////implementation 'com.google.firebase:firebase-auth:16.0.3'
+
+
 }
 //firebase
 apply plugin: 'com.google.gms.google-services'

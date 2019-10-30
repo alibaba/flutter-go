@@ -1,10 +1,10 @@
-/**
- * Created with Android Studio.
- * User: 一晟
- * Date: 2019/4/28
- * Time: 3:35 PM
- * email: zhu.yan@alibaba-inc.com
- */
+///
+/// Created with Android Studio.
+/// User: 一晟
+/// Date: 2019/4/28
+/// Time: 3:35 PM
+/// email: zhu.yan@alibaba-inc.com
+///
 abstract class SuggestionEvent {}
 
 class SuggestionFetch extends SuggestionEvent {
