@@ -189,14 +189,7 @@ class _MyAppState extends State<MyApp> {
           size: 35.0,
         ),
       ),
-<<<<<<< HEAD
-      home: new Scaffold(
-        body: showWelcomePage()
-      ),
-
-=======
       home: new Scaffold(body: showWelcomePage()),
->>>>>>> dxj/master
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
