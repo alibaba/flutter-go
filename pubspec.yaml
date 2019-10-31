@@ -51,8 +51,8 @@ dependencies:
   open_file: ^2.0.1+2
   package_info: ^0.4.0+3
   flutter_jpush: ^0.0.4
-  zefyr:
-    path: ./zefyr
+  zefyr: ^0.8.0
+#    path: ./zefyr
   pull_to_refresh: ^1.5.6
 
 

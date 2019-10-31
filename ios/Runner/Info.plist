@@ -17,23 +17,37 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Apple音乐</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>测试所用相机权限</string>
 	<key>NSCameraUsageDescription</key>
 	<string>测试拍照</string>
+	<key>NSContactsUsageDescription</key>
+	<string>测试所用用户权限</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>测试所用地理权限</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>测试所用位置权限</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>测试麦克风</string>
+	<key>NSMotionUsageDescription</key>
+	<string>测试所用内存权限</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>测试选择图片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>测试所用照片权限</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>测试所用语音识别权限</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -53,5 +67,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>测试所用音乐权限</string>
 </dict>
 </plist>
