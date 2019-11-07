@@ -76,6 +76,7 @@ class _WebViewPageState extends State<WebViewPage> {
         withZoom: false,
         withLocalStorage: true,
         withJavascript: true,
+        hidden: true,
       ),
     );
   }
