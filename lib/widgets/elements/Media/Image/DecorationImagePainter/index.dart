@@ -1,7 +1,7 @@
- /// @Author: 一凨 
- /// @Date: 2018-11-16 15:09:12 
- /// @Last Modified by:   一凨 
- /// @Last Modified time: 2018-11-16 15:09:12 
+/// @Author: 一凨
+/// @Date: 2018-11-16 15:09:12
+/// @Last Modified by:   一凨
+/// @Last Modified time: 2018-11-16 15:09:12
 
 import 'package:flutter/material.dart';
 
@@ -20,11 +20,11 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-       contentList: [],
-       docUrl: 'https://docs.flutter.io/flutter/painting/DecorationImagePainter-class.html',
-       codeUrl: 'elements/Media/Image/DecorationImagePainter/decoration_image_painter_demo.dart',
-       title:'DecorationImagePainter'
-    );
+        contentList: [],
+        docUrl:
+            'https://docs.flutter.io/flutter/painting/DecorationImagePainter-class.html',
+        codeUrl:
+            'elements/Media/Image/DecorationImagePainter/decoration_image_painter_demo.dart',
+        title: 'DecorationImagePainter');
   }
 }
-

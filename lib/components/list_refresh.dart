@@ -14,7 +14,8 @@ class ListRefresh extends StatefulWidget {
   final requestApi;
   final headerView;
 
-  const ListRefresh([this.requestApi, this.renderItem, this.headerView]) : super();
+  const ListRefresh([this.requestApi, this.renderItem, this.headerView])
+      : super();
 
   @override
   State<StatefulWidget> createState() => _ListRefreshState();
@@ -91,6 +92,7 @@ class _ListRefreshState extends State<ListRefresh> {
       });
     }
   }
+
 // 下拉加载的事件，清空之前list内容，取前X个
 // 其实就是列表重置
   Future<Null> _handleRefresh() async {
@@ -158,9 +160,9 @@ class _ListRefreshState extends State<ListRefresh> {
         itemCount: items.length + 1,
         itemBuilder: (context, index) {
           if (index == 0 && index != items.length) {
-            if(widget.headerView is Function){
+            if (widget.headerView is Function) {
               return widget.headerView();
-            }else {
+            } else {
               return Container(height: 0);
             }
           }

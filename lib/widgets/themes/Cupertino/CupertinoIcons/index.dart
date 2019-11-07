@@ -31,14 +31,10 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      contentList: [
-        content0,
-        content1,
-        demoBox.CupertinoIconsFullDefault()
-      ],
-      title: 'CupertinoIcons',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html',
-      codeUrl: 'themes/Cupertino/CupertinoIcons/demo.dart'
-    );
+        contentList: [content0, content1, demoBox.CupertinoIconsFullDefault()],
+        title: 'CupertinoIcons',
+        docUrl:
+            'https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html',
+        codeUrl: 'themes/Cupertino/CupertinoIcons/demo.dart');
   }
 }

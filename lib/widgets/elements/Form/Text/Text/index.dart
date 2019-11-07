@@ -32,19 +32,16 @@ class Demo extends StatefulWidget {
 }
 
 class _Demo extends State<Demo> {
-  onButtonTap() {
-
-  }
+  onButtonTap() {}
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: "Text",
-      docUrl: 'flutter/widgets/Text-class.html',
-      codeUrl: 'elements/Form/Text/Text/demo.dart',
-      contentList: [
-        intro,
-        TextDemo(),
-      ]
-    );
+        title: "Text",
+        docUrl: 'flutter/widgets/Text-class.html',
+        codeUrl: 'elements/Form/Text/Text/demo.dart',
+        contentList: [
+          intro,
+          TextDemo(),
+        ]);
   }
 }

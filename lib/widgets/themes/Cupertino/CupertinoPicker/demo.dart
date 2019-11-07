@@ -8,15 +8,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
-
 const double _kPickerSheetHeight = 216.0;
 const double _kPickerItemHeight = 32.0;
 
 const List<String> coolColorNames = <String>[
-  'Sarcoline', 'Coquelicot', 'Smaragdine', 'Mikado', 'Glaucous', 'Wenge',
-  'Fulvous', 'Xanadu', 'Falu', 'Eburnean', 'Amaranth', 'Australien',
-  'Banan', 'Falu', 'Gingerline', 'Incarnadine', 'Labrador', 'Nattier',
-  'Pervenche', 'Sinoper', 'Verditer', 'Watchet', 'Zaffre',
+  'Sarcoline',
+  'Coquelicot',
+  'Smaragdine',
+  'Mikado',
+  'Glaucous',
+  'Wenge',
+  'Fulvous',
+  'Xanadu',
+  'Falu',
+  'Eburnean',
+  'Amaranth',
+  'Australien',
+  'Banan',
+  'Falu',
+  'Gingerline',
+  'Incarnadine',
+  'Labrador',
+  'Nattier',
+  'Pervenche',
+  'Sinoper',
+  'Verditer',
+  'Watchet',
+  'Zaffre',
 ];
 
 class CupertinoPickerDemo extends StatefulWidget {
@@ -43,7 +61,7 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
   Widget _buildMenu(List<Widget> children) {
     return Container(
       decoration: BoxDecoration(
-        color:CupertinoColors.inactiveGray,
+        color: CupertinoColors.inactiveGray,
         border: const Border(
           top: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
           bottom: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
@@ -88,7 +106,7 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
 
   Widget _buildColorPicker(BuildContext context) {
     final FixedExtentScrollController scrollController =
-    FixedExtentScrollController(initialItem: _selectedColorIndex);
+        FixedExtentScrollController(initialItem: _selectedColorIndex);
 
     return GestureDetector(
       onTap: () async {
@@ -97,23 +115,26 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
           builder: (BuildContext context) {
             return _buildBottomPicker(
               CupertinoPicker(
-                  magnification:1.0, // 整体放大率
-                  //offAxisFraction:10.0,// 球面效果的透视系数,消失点位置
-                  scrollController: scrollController,// 用于读取和控制当前项的FixedxtentScrollController
-                  itemExtent: _kPickerItemHeight,// 所以子节点 统一高度
-                  backgroundColor: CupertinoColors.white,// 所有子节点下面的背景颜色
-                  useMagnifier:true,// 是否使用放大效果
-                  onSelectedItemChanged: (int index) { // 当正中间选项改变时的回调
-                    if (mounted) {
-                      setState(() => _selectedColorIndex = index);
-                    }
-                  },
-                  children: List<Widget>.generate(coolColorNames.length, (int index) {
-                return Center(child:
-                Text(coolColorNames[index]),
-                );
-              }),
-            ),
+                magnification: 1.0, // 整体放大率
+                //offAxisFraction:10.0,// 球面效果的透视系数,消失点位置
+                scrollController:
+                    scrollController, // 用于读取和控制当前项的FixedxtentScrollController
+                itemExtent: _kPickerItemHeight, // 所以子节点 统一高度
+                backgroundColor: CupertinoColors.white, // 所有子节点下面的背景颜色
+                useMagnifier: true, // 是否使用放大效果
+                onSelectedItemChanged: (int index) {
+                  // 当正中间选项改变时的回调
+                  if (mounted) {
+                    setState(() => _selectedColorIndex = index);
+                  }
+                },
+                children:
+                    List<Widget>.generate(coolColorNames.length, (int index) {
+                  return Center(
+                    child: Text(coolColorNames[index]),
+                  );
+                }),
+              ),
             );
           },
         );
@@ -123,9 +144,7 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
           const Text('Favorite Color'),
           Text(
             coolColorNames[_selectedColorIndex],
-            style: const TextStyle(
-                color: CupertinoColors.inactiveGray
-            ),
+            style: const TextStyle(color: CupertinoColors.inactiveGray),
           ),
         ],
       ),
@@ -156,8 +175,8 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
           const Text('Countdown Timer'),
           Text(
             '${timer.inHours}:'
-                '${(timer.inMinutes % 60).toString().padLeft(2,'0')}:'
-                '${(timer.inSeconds % 60).toString().padLeft(2,'0')}',
+            '${(timer.inMinutes % 60).toString().padLeft(2, '0')}:'
+            '${(timer.inSeconds % 60).toString().padLeft(2, '0')}',
             style: const TextStyle(color: CupertinoColors.inactiveGray),
           ),
         ],
@@ -185,15 +204,13 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
           },
         );
       },
-      child: _buildMenu(
-          <Widget>[
-            const Text('Date'),
-            Text(
-              DateFormat.yMMMMd().format(date),
-              style: const TextStyle(color: CupertinoColors.inactiveGray),
-            ),
-          ]
-      ),
+      child: _buildMenu(<Widget>[
+        const Text('Date'),
+        Text(
+          DateFormat.yMMMMd().format(date),
+          style: const TextStyle(color: CupertinoColors.inactiveGray),
+        ),
+      ]),
     );
   }
 
@@ -264,32 +281,28 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height:MediaQuery.of(context).size.height,
-        child:CupertinoPageScaffold(
+        height: MediaQuery.of(context).size.height,
+        child: CupertinoPageScaffold(
 //        navigationBar: CupertinoNavigationBar(
 //          middle: const Text('Picker'),
 //          previousPageTitle: 'Cupertino'
 //          ),
           child: DefaultTextStyle(
-          style: TextStyle(),
-          child: DecoratedBox(
-          decoration: BoxDecoration(
-          color: CupertinoColors.inactiveGray
-          ),
-          child: ListView(
-            children: <Widget>[
-              const Padding(padding: EdgeInsets.only(top: 32.0)),
-              _buildColorPicker(context),
-              _buildCountdownTimerPicker(context),
-              _buildDatePicker(context),
-              _buildTimePicker(context),
-              _buildDateAndTimePicker(context),
-              ],
+            style: TextStyle(),
+            child: DecoratedBox(
+              decoration: BoxDecoration(color: CupertinoColors.inactiveGray),
+              child: ListView(
+                children: <Widget>[
+                  const Padding(padding: EdgeInsets.only(top: 32.0)),
+                  _buildColorPicker(context),
+                  _buildCountdownTimerPicker(context),
+                  _buildDatePicker(context),
+                  _buildTimePicker(context),
+                  _buildDateAndTimePicker(context),
+                ],
+              ),
             ),
           ),
-        ),
-      )
-    );
-
+        ));
   }
 }

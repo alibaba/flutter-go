@@ -22,8 +22,6 @@ const String _Text0 = """
 如下实例中, 第一个是item便是GridTile组件构成. 包含header, body, footer;
 """;
 
-
-
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Grid/GridTile';
 

@@ -21,19 +21,20 @@ class _CupertinoPopupSurfaceFullDefault extends State {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: MediaQuery.of(context).size.height/5,
-        child: cupertinoPopupSurfaceBar(context)
-    );
+        height: MediaQuery.of(context).size.height / 5,
+        child: cupertinoPopupSurfaceBar(context));
   }
 
   Widget cupertinoPopupSurfaceBar(BuildContext context) {
     return CupertinoPopupSurface(
-      isSurfacePainted:false,
+      isSurfacePainted: false,
       child: Container(
           color: CupertinoColors.inactiveGray,
           alignment: Alignment.center,
-          child: Text('这里是内容', style: TextStyle(color: Colors.white))
-      ), // 应用程序默认路由,（Navigator.defaultRouteName，即/）
+          child: Text('这里是内容',
+              style: TextStyle(
+                  color: Colors
+                      .white))), // 应用程序默认路由,（Navigator.defaultRouteName，即/）
     );
   }
 }

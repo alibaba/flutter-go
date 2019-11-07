@@ -46,18 +46,18 @@ class _DemoState extends State<Demo> {
         _stackText0,
         _stackCreate(),
         _stackText1,
-         Container(
+        Container(
           width: 300.0,
           height: 100.0,
-          margin:  EdgeInsets.only(top: 10.0, bottom: 10.0),
-          color:  Color(0xffe91e63),
+          margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
+          color: Color(0xffe91e63),
           child: StackPositioned(),
         ),
         _stackText2,
-         Container(
+        Container(
           width: 200.0,
           height: 200.0,
-          color:  Color(0xffe91e63),
+          color: Color(0xffe91e63),
           child: StackLayout(),
         ),
       ],
@@ -65,18 +65,18 @@ class _DemoState extends State<Demo> {
   }
 
   Column _stackCreate() {
-    return  Column(
+    return Column(
       children: <Widget>[
         Column(
           children: <Widget>[
-             Container(
-              margin:  EdgeInsets.only(top: 10.0, bottom: 10.0),
+            Container(
+              margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
               width: 300.0,
               height: 100.0,
               color: Color(0xffe91e63),
               child: StackDefault(),
             ),
-             Container(
+            Container(
               width: 300.0,
               height: 100.0,
               color: Color(0xffe91e63),

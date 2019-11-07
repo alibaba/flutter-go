@@ -15,7 +15,7 @@ class CityPickerDemo extends StatefulWidget {
 class _Demo extends State<CityPickerDemo> {
   String _result;
   show(context) async {
-    Result temp  = await CityPickers.showCityPicker(
+    Result temp = await CityPickers.showCityPicker(
       context: context,
       // locationCode: '640221',
       height: 400,
@@ -28,15 +28,15 @@ class _Demo extends State<CityPickerDemo> {
   Widget build(BuildContext context) {
     return Center(
         child: Column(
-          children: <Widget>[
-            Text("result: ${_result.toString()}"),
-            RaisedButton(
-              onPressed: () {this.show(context);
-              },
-              child: Text("select"),
-            ),
-          ],
-        )
-    );
+      children: <Widget>[
+        Text("result: ${_result.toString()}"),
+        RaisedButton(
+          onPressed: () {
+            this.show(context);
+          },
+          child: Text("select"),
+        ),
+      ],
+    ));
   }
 }

@@ -14,18 +14,18 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  var _usernameController =  TextEditingController();
-  var _emailController =  TextEditingController();
+  var _usernameController = TextEditingController();
+  var _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Padding(
-          child:  Text(
+          child: Text(
             "账号登录",
             textAlign: TextAlign.center,
-            style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           padding: EdgeInsets.only(bottom: 10.0),
         ),
@@ -37,11 +37,11 @@ class _FirstPageState extends State<FirstPage> {
           decoration: InputDecoration(labelText: "email"),
           controller: _emailController,
         ),
-         RaisedButton(
+        RaisedButton(
           child: Text("点击跳转"),
           onPressed: () {
-            var route =  MaterialPageRoute(
-              builder: (BuildContext context) =>  SecondPage(
+            var route = MaterialPageRoute(
+              builder: (BuildContext context) => SecondPage(
                   value: User(
                       account: _usernameController.text,
                       email: _emailController.text)),
@@ -65,21 +65,21 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar:  AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text("MaterialPageRoute2"),
       ),
-      body:  Container(
-        child:  Center(
+      body: Container(
+        child: Center(
           child: Column(
             children: <Widget>[
               Container(
                   padding: EdgeInsets.only(top: 30.0),
-                  child:  Text("登陆成功！！！",
+                  child: Text("登陆成功！！！",
                       style: TextStyle(
                           fontSize: 28, fontWeight: FontWeight.bold))),
               Padding(
-                child:  Text(
+                child: Text(
                   'account:${widget.value.account}',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -87,7 +87,7 @@ class _SecondPageState extends State<SecondPage> {
                 padding: EdgeInsets.only(bottom: 20.0, top: 40.0),
               ),
               Padding(
-                child:  Text(
+                child: Text(
                   'email:${widget.value.email}',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

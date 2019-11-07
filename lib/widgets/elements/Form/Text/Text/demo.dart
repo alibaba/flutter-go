@@ -17,6 +17,6 @@ class _Demo extends State<TextDemo> {
   Duration timer = new Duration(minutes: 50);
   @override
   Widget build(BuildContext context) {
-    return  Text("i'm a text");
+    return Text("i'm a text");
   }
 }

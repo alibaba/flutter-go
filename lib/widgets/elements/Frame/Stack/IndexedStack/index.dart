@@ -1,9 +1,9 @@
- /// Author: xiaojia.dxj
- /// Date: 2019-01-08 15:57:00
- /// Email: xiaojia.dxj@alibaba-inc.com 
- /// Last Modified by: xiaojia.dxj
- /// Last Modified time: 2019-01-08 16:00:14
- 
+/// Author: xiaojia.dxj
+/// Date: 2019-01-08 15:57:00
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// Last Modified by: xiaojia.dxj
+/// Last Modified time: 2019-01-08 16:00:14
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
@@ -56,20 +56,20 @@ class _DemoState extends State<Demo> {
   }
 
   Column _indexedStackCreate() {
-    return  Column(
+    return Column(
       children: <Widget>[
         SizedBox(
           height: 10.0,
         ),
-         Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              color:  Color(0xffe91e63),
+              color: Color(0xffe91e63),
               child: StackDefault(0),
             ),
             Container(
-              color:  Color(0xffe91e63),
+              color: Color(0xffe91e63),
               child: StackDefault(1),
             )
           ],
@@ -77,7 +77,7 @@ class _DemoState extends State<Demo> {
         SizedBox(
           height: 10.0,
         ),
-         Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             StackIndex(0),
@@ -97,7 +97,7 @@ class _DemoState extends State<Demo> {
                 onPressed: () {
                   _indexAdd();
                 },
-                icon:  Icon(Icons.adb),
+                icon: Icon(Icons.adb),
                 label: Text("点击这里")),
             StackIndex(currIndex)
           ],

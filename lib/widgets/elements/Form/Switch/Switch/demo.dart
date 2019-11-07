@@ -15,7 +15,7 @@ class _Demo extends State<SwitchDemo> {
   bool check = false;
   @override
   Widget build(BuildContext context) {
-    return  Switch(
+    return Switch(
       value: this.check,
       onChanged: (bool val) {
         this.setState(() {
@@ -34,9 +34,9 @@ class _SwitchHighDemo extends State<SwitchHighDemo> {
   bool check = false;
   @override
   Widget build(BuildContext context) {
-    return  Switch.adaptive(
+    return Switch.adaptive(
       value: this.check,
-      activeColor: Colors.blue,     // 激活时原点颜色
+      activeColor: Colors.blue, // 激活时原点颜色
       onChanged: (bool val) {
         this.setState(() {
           this.check = !this.check;
@@ -46,7 +46,6 @@ class _SwitchHighDemo extends State<SwitchHighDemo> {
   }
 }
 
-
 class SwitchTypesDemo extends StatefulWidget {
   _SwitchTypesDemo createState() => _SwitchTypesDemo();
 }
@@ -55,16 +54,16 @@ class _SwitchTypesDemo extends State<SwitchTypesDemo> {
   bool check = false;
   @override
   Widget build(BuildContext context) {
-    return  Switch(
+    return Switch(
       value: this.check,
-      activeTrackColor:Colors.green,
+      activeTrackColor: Colors.green,
       inactiveThumbColor: Colors.black,
-      inactiveThumbImage: NetworkImage('https://flutter.io/images/homepage/header-illustration.png'),
-      activeThumbImage: NetworkImage(
-          "https://flutter.io/images/homepage/screenshot-2.png"
-      ),
+      inactiveThumbImage: NetworkImage(
+          'https://flutter.io/images/homepage/header-illustration.png'),
+      activeThumbImage:
+          NetworkImage("https://flutter.io/images/homepage/screenshot-2.png"),
       inactiveTrackColor: Colors.yellow,
-      activeColor: Colors.blue,     // 激活时原点颜色
+      activeColor: Colors.blue, // 激活时原点颜色
       onChanged: (bool val) {
         this.setState(() {
           this.check = !this.check;

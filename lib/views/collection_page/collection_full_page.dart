@@ -58,7 +58,6 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
   }
 
   Widget _renderList(context, index) {
-
     if (index == 0) {
       return Container(
         height: 40.0,
@@ -115,8 +114,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
         trailing:
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
-          Application.router.navigateTo(
-              context, targetRouter.toLowerCase(),
+          Application.router.navigateTo(context, targetRouter.toLowerCase(),
               transition: TransitionType.inFromRight);
         },
       ),

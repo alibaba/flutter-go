@@ -11,30 +11,30 @@ import 'package:flutter/material.dart';
 
 /// Checkbox 默认的实例
 /// index 当前checkbox 的索引值
-class CheckboxDefault extends StatefulWidget{
+class CheckboxDefault extends StatefulWidget {
   final int index;
   final parent;
   const CheckboxDefault([this.parent, this.index = -1]) : super();
   @override
-  State<StatefulWidget> createState() =>_CheckboxDefault();
+  State<StatefulWidget> createState() => _CheckboxDefault();
 }
+
 class _CheckboxDefault extends State {
-  bool isChecked=false;
+  bool isChecked = false;
   Color color = _randomColor(); // 注意和下面的 StatelessWidget 里的 _randomColor 区别
   @override
   Widget build(BuildContext context) {
     return Checkbox(
         activeColor: color,
-        tristate:false,
+        tristate: false,
         value: isChecked,
         onChanged: (bool bol) {
-          if(mounted) {
+          if (mounted) {
             setState(() {
               isChecked = bol;
             });
           }
-        }
-    );
+        });
   }
 }
 
@@ -45,24 +45,22 @@ class CheckboxSelect extends StatelessWidget {
   final widget;
   final parent;
 
-  const CheckboxSelect([this.widget,this.parent, this.index = -1])
-      : super();
+  const CheckboxSelect([this.widget, this.parent, this.index = -1]) : super();
 
   @override
   Widget build(BuildContext context) {
     Color color = _randomColor();
     return Checkbox(
         activeColor: color,
-        tristate:false,
+        tristate: false,
         value: parent.selectValue == this.index,
         onChanged: (bool bol) {
-          if(parent.mounted) {
+          if (parent.mounted) {
             parent.setState(() {
               parent.selectValue = bol ? this.index : -1;
             });
           }
-        }
-    );
+        });
   }
 }
 

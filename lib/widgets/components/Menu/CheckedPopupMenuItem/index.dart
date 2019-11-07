@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-22 21:01:45 
+/// @Author: 一凨
+/// @Date: 2018-12-22 21:01:45
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-22 21:26:54
 
@@ -23,7 +23,7 @@ const String content1 = '''
 ''';
 
 class Demo extends StatefulWidget {
-   static const String routeName = '/components/Menu/CheckedPopupMenuItem';
+  static const String routeName = '/components/Menu/CheckedPopupMenuItem';
   _DemoState createState() => _DemoState();
 }
 
@@ -32,7 +32,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       codeUrl: 'components/Menu/CheckedPopupMenuItem/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/material/CheckedPopupMenuItem-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/CheckedPopupMenuItem-class.html',
       title: 'CheckedPopupMenuItem',
       contentList: [
         content0,

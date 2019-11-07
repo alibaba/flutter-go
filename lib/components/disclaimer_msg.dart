@@ -22,7 +22,6 @@ class DisclaimerMsg extends StatefulWidget {
   DisclaimerMsgState createState() => DisclaimerMsgState();
 }
 
-
 class DisclaimerMsgState extends State<DisclaimerMsg> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<bool> _unKnow;
@@ -39,8 +38,8 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
       setState(() {
         _unKnow =
             prefs.setBool("disclaimer::Boolean", unKnow).then((bool success) {
-              return unKnow;
-            });
+          return unKnow;
+        });
       });
     }
   }
@@ -63,14 +62,12 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        return DisclaimerMsgDialog(_valBool, _readed, (b){
+        return DisclaimerMsgDialog(_valBool, _readed, (b) {
           refs(b);
         });
       },
     );
   }
-
-
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -85,7 +82,7 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius:
-                BorderRadius.horizontal(right: Radius.circular(10)),
+                    BorderRadius.horizontal(right: Radius.circular(10)),
                 color: Colors.black45,
               ),
               child: Text(
@@ -102,13 +99,10 @@ class DisclaimerMsgState extends State<DisclaimerMsg> {
   }
 }
 
-
 class DisclaimerMsgDialog extends StatefulWidget {
-
   final bool valBool;
   final bool readed;
   final ValueChanged<bool> onValueChanged;
-
 
   DisclaimerMsgDialog(this.valBool, this.readed, this.onValueChanged);
 
@@ -117,17 +111,13 @@ class DisclaimerMsgDialog extends StatefulWidget {
 }
 
 class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
-
   bool readBool;
-
 
   @override
   void initState() {
     super.initState();
     readBool = widget.valBool;
   }
-
-
 
   Row _create() {
     //已读
@@ -140,9 +130,7 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
             child: Text('已阅读知晓',
                 style: TextStyle(fontSize: 16, color: Colors.white)),
             //可点击
-            color: Theme
-                .of(context)
-                .primaryColor,
+            color: Theme.of(context).primaryColor,
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -155,7 +143,7 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
     }
 
     /// 选中状态更新，并返回数据
-    checkChanged(){
+    checkChanged() {
       if (mounted) {
         setState(() {
           readBool = !readBool;
@@ -168,16 +156,14 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
         //crossAxisAlignment:CrossAxisAlignment.start,
         children: <Widget>[
           GestureDetector(
-            onTap: (){
+            onTap: () {
               checkChanged();
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Checkbox(
-                    activeColor: Theme
-                        .of(context)
-                        .primaryColor,
+                    activeColor: Theme.of(context).primaryColor,
                     tristate: false,
                     value: readBool,
                     onChanged: (bool bol) {
@@ -192,13 +178,8 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
                 style: TextStyle(fontSize: 16, color: Colors.white)),
             //可点击
             color: readBool
-                ? Theme
-                .of(context)
-                .primaryColor
-                : Theme
-                .of(context)
-                .primaryColor
-                .withAlpha(800),
+                ? Theme.of(context).primaryColor
+                : Theme.of(context).primaryColor.withAlpha(800),
             onPressed: () {
               widget.onValueChanged(readBool);
               Navigator.of(context).pop();
@@ -220,7 +201,7 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
                 height: 35,
                 child: Text('免责声明',
                     style:
-                    TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
                 decoration: BoxDecoration(
                   //color: Colors.blue,
                   image: DecorationImage(
@@ -247,4 +228,5 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
         )
       ],
     );
-  }}
+  }
+}

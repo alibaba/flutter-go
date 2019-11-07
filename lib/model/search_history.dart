@@ -12,7 +12,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 
-
 class SearchHistory {
   final String name;
   final String targetRouter;

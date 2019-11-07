@@ -1,13 +1,14 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+
 /// Author: xiaojia.dxj
- /// Date: 2018/11/22
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// LastUpdateTime: 2018/11/22
- /// LastUpdateBy: xj.deng
- /// Describle:Row
+/// Date: 2018/11/22
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// LastUpdateTime: 2018/11/22
+/// LastUpdateBy: xj.deng
+/// Describle:Row
 
 import 'package:flutter/widgets.dart';
- 
+
 class RowMainAxisAlignment extends StatelessWidget {
   //> mainAxisAlignment属性
   // - MainAxisAlignment.spaceEvenly/spaceAround/spaceBetween,
@@ -34,7 +35,7 @@ class RowMainAxisAlignment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: status,
       children: <Widget>[
         Container(
@@ -62,29 +63,29 @@ class RowLayoutCreate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
+          margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xfffce4ec),
           width: 60.0,
           height: 50.0,
         ),
         Container(
-          margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
+          margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xfff8bbd0),
           width: 60.0,
           height: 50.0,
         ),
         Container(
-          margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
+          margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xfff48fb1),
           width: 60.0,
           height: 50.0,
         ),
         Container(
-          margin:  EdgeInsets.only(top: 20.0, bottom: 20.0),
+          margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
           color: Color(0xfff06292),
           width: 60.0,
           height: 50.0,
@@ -94,33 +95,40 @@ class RowLayoutCreate extends StatelessWidget {
   }
 }
 
-class RowExpanded extends StatelessWidget{
+class RowExpanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Row(
       children: <Widget>[
         ////填充数据
-        Expanded(child: new RaisedButton(
-            onPressed: (){
-            },
-            color: Color(0xfffce4ec),
-            child:new Text('flutter',style: TextStyle(color: Colors.white),)
-        ),),
-        Expanded(child: new RaisedButton(
-            onPressed: (){
-            },
-            color: Color(0xfff8bbd0),
-            child:new Text('Expanded',style: TextStyle(color: Colors.white),)
-        ),),
-        Expanded(child: new RaisedButton(
-            onPressed: (){
-            },
-            color: Color(0xfff48fb1),
-            child:new Text('flutter',style: TextStyle(color: Colors.white),)
-        ),),
+        Expanded(
+          child: new RaisedButton(
+              onPressed: () {},
+              color: Color(0xfffce4ec),
+              child: new Text(
+                'flutter',
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
+        Expanded(
+          child: new RaisedButton(
+              onPressed: () {},
+              color: Color(0xfff8bbd0),
+              child: new Text(
+                'Expanded',
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
+        Expanded(
+          child: new RaisedButton(
+              onPressed: () {},
+              color: Color(0xfff48fb1),
+              child: new Text(
+                'flutter',
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
       ],
     );
   }
-
 }

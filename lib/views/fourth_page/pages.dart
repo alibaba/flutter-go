@@ -58,7 +58,8 @@ class Page extends StatelessWidget {
         elevation: 10.0,
         color: Colors.black26,
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(20.0))),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(left: Radius.circular(20.0))),
         //如果不手动设置icon和text颜色,则默认使用foregroundColor颜色
         icon: Icon(iconName, color: Colors.white, size: 14.0),
         label: Text(
@@ -76,6 +77,7 @@ class Page extends StatelessWidget {
         children: [
           Container(
               width: double.infinity,
+
               /// height:MediaQuery.of(context).size.height-200.0,
               color: viewModel.color,
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -86,15 +88,13 @@ class Page extends StatelessWidget {
                     layout(context),
                   ],
                 ),
-              )
-          ),
+              )),
           Positioned(
               right: -5.0,
               top: 2.0,
-              child: creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub')
-          ),
-        ]
-    );
+              child: creatButton(
+                  context, 'GitHub', Icons.arrow_forward, 'goGithub')),
+        ]);
   }
 
   Column layout(BuildContext context) {

@@ -1,10 +1,9 @@
+/// Author: xiaojia.dxj
+/// Date: 2019-01-08 15:55:31
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// Last Modified by:   xiaojia.dxj
+/// Last Modified time: 2019-01-08 15:55:31
 
- /// Author: xiaojia.dxj
- /// Date: 2019-01-08 15:55:31 
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// Last Modified by:   xiaojia.dxj
- /// Last Modified time: 2019-01-08 15:55:31 
- 
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
@@ -55,7 +54,7 @@ class _DemoState extends State<Demo> {
   }
 
   Column _sizedOverflowBoxCreate() {
-    return  Column(
+    return Column(
       children: <Widget>[
         SizeBoxDefault(
           curWidth: 200.0,
@@ -63,13 +62,13 @@ class _DemoState extends State<Demo> {
         ),
         SizedBox(height: 20.0),
         Container(
-          margin:  EdgeInsets.only(top: 10.0),
+          margin: EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,
         ),
         Container(
-          margin:  EdgeInsets.only(top: 10.0),
+          margin: EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           alignment: Alignment.topCenter,
           width: 200.0,
@@ -79,7 +78,7 @@ class _DemoState extends State<Demo> {
           ),
         ),
         Container(
-          margin:  EdgeInsets.only(top: 10.0),
+          margin: EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,
@@ -90,7 +89,7 @@ class _DemoState extends State<Demo> {
           ),
         ),
         Container(
-          margin:  EdgeInsets.only(top: 10.0),
+          margin: EdgeInsets.only(top: 10.0),
           color: Color(0xffd81b60),
           width: 200.0,
           height: 50.0,

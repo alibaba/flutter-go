@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class RawMaterialButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const RawMaterialButtonDefault([ this.isDisabled = true])
+  const RawMaterialButtonDefault([this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -36,21 +36,21 @@ class RawMaterialButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const RawMaterialButtonCustom(
-      [ this.txt = '自定义按钮',
-       this.color = Colors.blueAccent,
-       this.shape,
-       this.onPressed])
+      [this.txt = '自定义按钮',
+      this.color = Colors.blueAccent,
+      this.shape,
+      this.onPressed])
       : super();
 
   @override
   Widget build(BuildContext context) {
     final _onPressed = onPressed;
-    final _fontSize = (Random.secure().nextInt(10)+15).toDouble();
+    final _fontSize = (Random.secure().nextInt(10) + 15).toDouble();
     return RawMaterialButton(
         // 使用Material.textStyle为按钮的子项定义默认文本样式。
-        textStyle:TextStyle(color: _randomColor(),fontSize: _fontSize),
+        textStyle: TextStyle(color: _randomColor(), fontSize: _fontSize),
         // 定义形状和高程的动画更改的持续时间
-        animationDuration:Duration(seconds: 1),
+        animationDuration: Duration(seconds: 1),
         // 文本内容
         child: Text(txt, semanticsLabel: 'FLAT BUTTON 2'),
         // 高亮时的背景色
@@ -59,7 +59,8 @@ class RawMaterialButtonCustom extends StatelessWidget {
         splashColor: _randomColor(),
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
-        padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+        padding:
+            EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         //高亮时候的阴影
         highlightElevation: 10.0,
         // 按钮材质的形状

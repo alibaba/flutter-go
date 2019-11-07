@@ -30,7 +30,6 @@ const String _Text1 = """
 注意事项: 当前弹出的dialog并非是一个单纯的组件, 而是一个新路由界面, 如果我想通过操作dialog中的内容, 直接使用setState触发的是原界面中的状态 
 """;
 
-
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Dialog/Dialog';
 
@@ -44,12 +43,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'Dialog',
       codeUrl: 'components/Dialog/Dialog/demo.dart',
-      contentList: [
-        _Text0,
-        DialogDemo(),
-        _Text1,
-        DialogMoreDemo()
-      ],
+      contentList: [_Text0, DialogDemo(), _Text1, DialogMoreDemo()],
       docUrl: 'https://docs.flutter.io/flutter/material/Dialog-class.html',
     );
   }

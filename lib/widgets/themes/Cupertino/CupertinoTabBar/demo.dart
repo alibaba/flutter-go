@@ -20,13 +20,15 @@ class _Demo extends State<CupertinoTabBarDemo> {
       index = _index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,
       child: Scaffold(
           appBar: AppBar(title: const Text('CupertinoTabBarDemo')),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           body: Center(
             child: Text('CupertinoTabBarDemo in bottom'),
           ),
@@ -42,11 +44,9 @@ class _Demo extends State<CupertinoTabBarDemo> {
                 icon: Icon(Icons.add),
               ),
               BottomNavigationBarItem(
-                  title: Text("2"),
-                  icon: Icon(Icons.delete)
-              )],
-          )
-      ),
+                  title: Text("2"), icon: Icon(Icons.delete))
+            ],
+          )),
     );
   }
 }

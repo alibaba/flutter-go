@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 class RaisedButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const RaisedButtonDefault([ this.isDisabled = true])
+  const RaisedButtonDefault([this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -34,7 +34,7 @@ class RaisedButtonIconDefault extends StatelessWidget {
   final IconData icon;
 
   const RaisedButtonIconDefault(
-      [ this.isDisabled = true,  this.icon = Icons.add_circle])
+      [this.isDisabled = true, this.icon = Icons.add_circle])
       : super();
 
   Color _randomColor() {
@@ -58,7 +58,6 @@ class RaisedButtonIconDefault extends StatelessWidget {
   }
 }
 
-
 // RaisedButton 自定义的实例
 class RaisedButtonCustom extends StatelessWidget {
   final String txt;
@@ -67,10 +66,10 @@ class RaisedButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const RaisedButtonCustom(
-      [ this.txt = '自定义按钮',
-       this.color = Colors.blueAccent,
-       this.shape,
-       this.onPressed])
+      [this.txt = '自定义按钮',
+      this.color = Colors.blueAccent,
+      this.shape,
+      this.onPressed])
       : super();
 
   @override
@@ -99,10 +98,10 @@ class RaisedButtonCustom extends StatelessWidget {
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
         padding:
-             EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+            EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         shape: (shape is ShapeBorder)
             ? shape
-            :  Border.all(
+            : Border.all(
                 // 设置边框样式
                 color: Colors.grey,
                 width: 2.0,

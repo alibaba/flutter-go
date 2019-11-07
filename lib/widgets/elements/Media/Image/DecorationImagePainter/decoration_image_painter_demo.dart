@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 class DecorationImagePainterDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
 
 // class ImagePainter extends CustomPainter{
-
 
 //   Future<ui.Image> getImage(String path) async {
 //     ByteData data = await rootBundle.load(path);

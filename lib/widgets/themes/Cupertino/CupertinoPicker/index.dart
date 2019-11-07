@@ -35,10 +35,11 @@ class _DemoState extends State<Demo> {
         content0,
         content1,
         demoBox.CupertinoPickerDemo(),
-        SizedBox(height:50)
+        SizedBox(height: 50)
       ],
       title: 'CupertinoPicker',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html',
       codeUrl: 'themes/Cupertino/CupertinoPicker/demo.dart',
     );
   }

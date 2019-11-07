@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 
 import 'demo.dart';
+
 const Text0 = '''
 ### **简介**
 > ios风格下底部导航组件.
@@ -20,10 +21,8 @@ const Text0 = '''
 本人试了很多次. 也没有发现这个Blur Effect是怎么触发的, 如果有人了解, 欢迎提PR.
 ''';
 
-
 class Demo extends StatefulWidget {
-  static const String routeName =
-      '/element/themes/Cupertino/CupertinoTabBar';
+  static const String routeName = '/element/themes/Cupertino/CupertinoTabBar';
 
   @override
   State<StatefulWidget> createState() => _DemoState();
@@ -35,11 +34,9 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CupertinoTabBar',
       codeUrl: 'themes/Cupertino/CupertinoTabBar/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoTabBar-class.html',
-      contentList: [
-        Text0,
-        CupertinoTabBarDemo()
-      ],
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoTabBar-class.html',
+      contentList: [Text0, CupertinoTabBarDemo()],
     );
   }
 }

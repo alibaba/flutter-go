@@ -13,20 +13,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as rawMaterialButton;
 
-const String _rawMaterialText0 =
-"""### **简介**
+const String _rawMaterialText0 = """### **简介**
 > RawMaterial button “RawMaterial 按钮”
 - 基于 Semantics，Material 和InkWell 小部件创建按钮;
 - 此类不使用当前 Theme 或 ButtonTheme 来计算未指定参数的默认值。它旨在用于自定义 Material button，可选择包含主题或特定于应用程序源的默认值;
 """;
 
-const String _rawMaterialText1 =
-"""### **基本用法**
+const String _rawMaterialText1 = """### **基本用法**
 > 参数的默认的 button 和禁用 button
 """;
 
-const String _rawMaterialText2 =
-"""### **进阶用法**
+const String _rawMaterialText2 = """### **进阶用法**
 > 更改项参数的自定义
 """;
 
@@ -39,28 +36,29 @@ class Demo extends StatefulWidget {
 
 class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
-  void setButtonShapeType(){
+  void setButtonShapeType() {
     //String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    if( mounted ) {
+    if (mounted) {
       this.setState(() {
         //buttonShapeType = _buttonShapeType;
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'RawMaterialButton',
       codeUrl: 'elements/Form/Button/RawMaterialButton/demo.dart',
-      contentList: allRawMaterialButtons(context,this),
-      docUrl: 'https://docs.flutter.io/flutter/material/RawMaterialButton-class.html',
+      contentList: allRawMaterialButtons(context, this),
+      docUrl:
+          'https://docs.flutter.io/flutter/material/RawMaterialButton-class.html',
     );
   }
 }
 
-
 // 所有的 RawMaterialButton 按钮
-List allRawMaterialButtons(BuildContext context,_DemoState that){
+List allRawMaterialButtons(BuildContext context, _DemoState that) {
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
   return [
     _rawMaterialText0,
@@ -88,20 +86,19 @@ List allRawMaterialButtons(BuildContext context,_DemoState that){
     SizedBox(height: 10.0),
     rawMaterialButton.RawMaterialButtonCustom('危险按钮', Colors.pink, buttonShape),
     SizedBox(height: 10.0),
-    rawMaterialButton.RawMaterialButtonCustom(
-        '点击切换，观察字体变化', Colors.blue, buttonShape,
-            () => that.setButtonShapeType()),
+    rawMaterialButton.RawMaterialButtonCustom('点击切换，观察字体变化', Colors.blue,
+        buttonShape, () => that.setButtonShapeType()),
     SizedBox(height: 20.0)
   ];
 }
 
 // 绘制边框信息,比如是否有边框,是否是圆角
-ShapeBorder drawShape(String type){
+ShapeBorder drawShape(String type) {
   final Color _color = _randomColor();
   final borderWidth = Random.secure().nextInt(5).toDouble();
   final radiusWidth = Random.secure().nextInt(50).toDouble();
 
-  switch(type){
+  switch (type) {
     case 'border':
       return Border.all(
         // 设置边框样式
@@ -112,7 +109,8 @@ ShapeBorder drawShape(String type){
       break;
     case 'radius':
       return RoundedRectangleBorder(
-        side: BorderSide( // 保留原来的边框样式
+        side: BorderSide(
+          // 保留原来的边框样式
           width: borderWidth,
           color: _color,
           style: BorderStyle.solid,
@@ -137,4 +135,3 @@ Color _randomColor() {
   var blue = Random.secure().nextInt(255);
   return Color.fromARGB(255, red, greed, blue);
 }
-

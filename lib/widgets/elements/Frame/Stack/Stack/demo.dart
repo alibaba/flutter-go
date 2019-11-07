@@ -1,10 +1,10 @@
- /// Author: xiaojia.dxj
- /// Date: 2018/11/22
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// LastUpdateTime: 2018/11/22
- /// LastUpdateBy: xj.deng
- /// Describle:stack描述
- 
+/// Author: xiaojia.dxj
+/// Date: 2018/11/22
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// LastUpdateTime: 2018/11/22
+/// LastUpdateBy: xj.deng
+/// Describle:stack描述
+
 import 'package:flutter/material.dart';
 
 class StackDefault extends StatelessWidget {
@@ -14,19 +14,19 @@ class StackDefault extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-         Stack(
+        Stack(
           //fit :定义如何设置non-positioned节点尺寸
           fit: StackFit.loose,
           overflow: Overflow.clip,
           textDirection: TextDirection.ltr,
           alignment: Alignment.center,
           children: [
-             Container(
-              color:  Color(0xfff48fb1),
+            Container(
+              color: Color(0xfff48fb1),
               width: 100.0,
               height: 50.0,
             ),
-             Text("stack demo",
+            Text("stack demo",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                     fontSize: 20.0,
@@ -47,22 +47,22 @@ class StackDefault2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-         Stack(
+        Stack(
           //fit :定义如何设置non-positioned节点尺寸
           fit: StackFit.loose,
           overflow: Overflow.clip,
           textDirection: TextDirection.ltr,
           alignment: Alignment.center,
           children: [
-             Text("stack demo",
+            Text("stack demo",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 5.0,
                     color: Colors.white)),
-             Container(
-              color:  Color(0xfff48fb1),
+            Container(
+              color: Color(0xfff48fb1),
               width: 100.0,
               height: 50.0,
             ),
@@ -78,32 +78,32 @@ class StackPositioned extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
+    return Stack(
       alignment: Alignment.center,
       children: <Widget>[
-         Positioned(
-            child:  Icon(
+        Positioned(
+            child: Icon(
           Icons.monetization_on,
           size: 40.0,
           color: Colors.yellow[300],
         )),
-         Positioned(
+        Positioned(
             left: 40.0,
-            child:  Icon(
+            child: Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
             )),
-         Positioned(
+        Positioned(
             left: 60.0,
-            child:  Icon(
+            child: Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
             )),
-         Positioned(
+        Positioned(
             left: 80.0,
-            child:  Icon(
+            child: Icon(
               Icons.monetization_on,
               size: 40.0,
               color: Colors.yellow[600],
@@ -118,12 +118,12 @@ class StackLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
+    return Stack(
       overflow: Overflow.visible,
       alignment: const Alignment(0.2, 0.6),
       children: <Widget>[
         CircleAvatar(
-          backgroundColor:  Color(0xfff48fb1),
+          backgroundColor: Color(0xfff48fb1),
           radius: 140.0,
         ),
         Container(

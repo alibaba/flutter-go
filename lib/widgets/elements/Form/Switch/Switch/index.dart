@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
-import  'demo.dart';
+import 'demo.dart';
 
 const contentA = '''
 ### **简介**
@@ -19,7 +19,6 @@ const contentA = '''
 通常用于Bool值参数的设置.
 
 ''';
-
 
 const contentB = '''
 
@@ -44,7 +43,6 @@ const contentC = '''
 下面是自定义, 更改了以上属性的实例
 
 ''';
-
 
 class Demo extends StatefulWidget {
   static const String routeName = 'elements/Form/Switch/Switch';

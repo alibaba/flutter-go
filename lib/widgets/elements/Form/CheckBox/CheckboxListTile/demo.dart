@@ -23,78 +23,80 @@ class _CheckboxListTileStateDefault extends State {
     for (var i = 0; i < isChecks.length; i++) {
       isChecks[i] = value;
     }
-    if(mounted) {
+    if (mounted) {
       setState(() => _value = value);
     }
   }
-  bool isCheck=false;
-  List<bool> isChecks=[false,false,false,false];
+
+  bool isCheck = false;
+  List<bool> isChecks = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-         Center(
+        Center(
           child: CheckboxListTile(
             value: _value,
-            selected:true,// 默认文字是否高亮
+            selected: true, // 默认文字是否高亮
             onChanged: _valueChanged,
-            dense: false,// 文字是否对齐 图标高度
-            isThreeLine: false,// 文字是否三行显示
-            title:  Text('全部'), // 主标题
-            controlAffinity: ListTileControlAffinity.trailing, // 将控件放在何处相对于文本,leading 按钮显示在文字后面,platform,trailing 按钮显示在文字前面
-            subtitle:  Text('勾选下列全部结果'), // 标题下方显示的副标题
-            secondary:  Icon(Icons.archive), // 从复选框显示在磁贴另一侧的小组件
+            dense: false, // 文字是否对齐 图标高度
+            isThreeLine: false, // 文字是否三行显示
+            title: Text('全部'), // 主标题
+            controlAffinity: ListTileControlAffinity
+                .trailing, // 将控件放在何处相对于文本,leading 按钮显示在文字后面,platform,trailing 按钮显示在文字前面
+            subtitle: Text('勾选下列全部结果'), // 标题下方显示的副标题
+            secondary: Icon(Icons.archive), // 从复选框显示在磁贴另一侧的小组件
             activeColor: Colors.red, // 选中此复选框时要使用的颜色
           ),
         ),
-         Center(
-          child:  CheckboxListTile(
+        Center(
+          child: CheckboxListTile(
               value: isChecks[0],
-              title:  Text('选项1'),
+              title: Text('选项1'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
-              onChanged: (bool){
-                if(mounted) {
+              onChanged: (bool) {
+                if (mounted) {
                   setState(() {
                     isChecks[0] = bool;
                   });
                 }
               }),
         ),
-         Center(
-          child:  CheckboxListTile(
+        Center(
+          child: CheckboxListTile(
               value: isChecks[1],
-              title:  Text('选项2'),
+              title: Text('选项2'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
-              onChanged: (bool){
+              onChanged: (bool) {
                 setState(() {
-                  isChecks[1]=bool;
+                  isChecks[1] = bool;
                 });
               }),
         ),
-         Center(
-          child:  CheckboxListTile(
+        Center(
+          child: CheckboxListTile(
               value: isChecks[2],
-              title:  Text('选项3'),
+              title: Text('选项3'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
-              onChanged: (bool){
+              onChanged: (bool) {
                 setState(() {
-                  isChecks[2]=bool;
+                  isChecks[2] = bool;
                 });
               }),
         ),
-         Center(
-          child:  CheckboxListTile(
+        Center(
+          child: CheckboxListTile(
               value: isChecks[3],
-              title:  Text('选项4'),
+              title: Text('选项4'),
               activeColor: _value ? Colors.red : Colors.green,
               controlAffinity: ListTileControlAffinity.platform,
-              onChanged: (bool){
+              onChanged: (bool) {
                 setState(() {
-                  isChecks[3]=bool;
+                  isChecks[3] = bool;
                 });
               }),
         )
@@ -107,8 +109,7 @@ class _CheckboxListTileStateDefault extends State {
 class CheckboxListTileDefault extends StatelessWidget {
   final widget;
   final parant;
-  const CheckboxListTileDefault ([this.widget,this.parant])
-      : super();
+  const CheckboxListTileDefault([this.widget, this.parant]) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -116,10 +117,10 @@ class CheckboxListTileDefault extends StatelessWidget {
       title: Text('一个简单的例子'),
       activeColor: Colors.red,
       value: widget.valBool['val'],
-        onChanged: (bool value) {
-          parant.setState(()=> widget.valBool['val'] = value);
-        },
-        secondary: const Icon(Icons.hourglass_empty),
+      onChanged: (bool value) {
+        parant.setState(() => widget.valBool['val'] = value);
+      },
+      secondary: const Icon(Icons.hourglass_empty),
     );
   }
 }

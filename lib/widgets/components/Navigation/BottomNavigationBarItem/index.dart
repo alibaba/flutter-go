@@ -11,19 +11,18 @@ import 'package:flutter/material.dart';
 
 import './demo.dart' as BottomNavigationBarItemDemo;
 
-const String _Text0 =
-"""### **简介**
+const String _Text0 = """### **简介**
 > BottomNavigationBarItem “底部导航应用栏”
 - material 的 BottomNavigationBar 或带有图标和标题的 iOS主题 CupertinoTabBar 中的交互式按钮;
 """;
 
-const String _Text1 =
-"""### **基本用法**
+const String _Text1 = """### **基本用法**
 > 这个类很少单独使用。通常嵌入在上面的一个底部 bottom navigation widgets 中;
 """;
 
 class Demo extends StatefulWidget {
-  static const String routeName = '/components/Navigation/BottomNavigationBarItem';
+  static const String routeName =
+      '/components/Navigation/BottomNavigationBarItem';
 
   @override
   _DemoState createState() => _DemoState();
@@ -36,11 +35,11 @@ class _DemoState extends State<Demo> {
       title: 'BottomNavigationBarItem',
       codeUrl: 'components/Navigation/BottomNavigationBarItem/demo.dart',
       contentList: allDomeBox(context, this),
-      docUrl: 'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/widgets/BottomNavigationBarItem-class.html',
     );
   }
 }
-
 
 // 所有的 BottomNavigationBarItem widget
 // context: 运行上下文
@@ -55,6 +54,3 @@ List allDomeBox(BuildContext context, _DemoState that) {
     SizedBox(height: 20.0), // 间距
   ];
 }
-
-
-

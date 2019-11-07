@@ -22,7 +22,6 @@ const String _Text0 = """
 
 """;
 
-
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Bar/SnackBarAction';
 
@@ -40,7 +39,8 @@ class _DemoState extends State<Demo> {
         _Text0,
         SnackBarDemo.SnackBarActionDemo(),
       ],
-      docUrl: 'https://docs.flutter.io/flutter/material/SnackBarAction-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/SnackBarAction-class.html',
     );
   }
 }

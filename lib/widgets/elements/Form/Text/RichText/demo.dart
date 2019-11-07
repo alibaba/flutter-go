@@ -17,12 +17,16 @@ class _Demo extends State<RichTextDemo> {
     return Container(
       color: Color(0xff000000),
       width: 750.0,
-      child:  RichText(
+      child: RichText(
         text: TextSpan(
           text: 'Hello ',
           children: <TextSpan>[
-            TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xfffffc42))),
-            TextSpan(text: ' world!', style: TextStyle(fontStyle: FontStyle.italic)),
+            TextSpan(
+                text: 'bold',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: Color(0xfffffc42))),
+            TextSpan(
+                text: ' world!', style: TextStyle(fontStyle: FontStyle.italic)),
           ],
         ),
       ),

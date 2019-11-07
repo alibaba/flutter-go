@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import './industry_bloc.dart';
+
 /// import './industry_event.dart';
 import './industry_state.dart';
 
@@ -15,7 +16,7 @@ final SuggestionBloc suggestion = SuggestionBloc();
 
 class IndustryPage extends StatefulWidget {
   final Function itemTitle;
-  IndustryPage({Key key,this.itemTitle}) : super(key: key);
+  IndustryPage({Key key, this.itemTitle}) : super(key: key);
 
   @override
   _IndustryState createState() => _IndustryState();
@@ -40,15 +41,13 @@ class _IndustryState extends State<IndustryPage> {
         return Center(
           child: Text('没有适合的结果,更换查询条件试试'),
         );
-      }else {
+      } else {
         if (widget.itemTitle is Function) {
           return widget.itemTitle(state);
         }
       }
     }
-    return Center(
-        child: Text('没有适合的结果,更换查询条件试试')
-    );
+    return Center(child: Text('没有适合的结果,更换查询条件试试'));
   }
 
   @override
@@ -59,7 +58,7 @@ class _IndustryState extends State<IndustryPage> {
           Expanded(
             child: BlocBuilder(
               bloc: suggestion,
-              builder: (BuildContext context, SuggestionState state){
+              builder: (BuildContext context, SuggestionState state) {
                 /// print('BlocBuilder----${state}');
                 return renderItem(state);
               },
