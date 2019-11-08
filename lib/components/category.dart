@@ -43,15 +43,6 @@ class _CategoryHome extends State<CategoryHome> {
     searchCatOrWidget();
   }
 
-  Future<bool> back() {
-//    if (catHistory.length == 1) {
-//      return Future<bool>.value(true);
-//    }
-//    catHistory.removeLast();
-//    searchCatOrWidget();
-    return Future<bool>.value(true);
-  }
-
   void go(CommonItem cat) {
     catHistory.add(cat);
     searchCatOrWidget();
@@ -93,17 +84,10 @@ class _CategoryHome extends State<CategoryHome> {
       appBar: AppBar(
         title: Text("$title"),
       ),
-      body: WillPopScope(
-        onWillPop: () {
-          return back();
-        },
-
-        child: ListView(
-          children: <Widget>[
-            _buildContent(),
-          ],
-        ),
-        // child: Container(color: Colors.blue,child: Text('123'),),
+      body: ListView(
+        children: <Widget>[
+          _buildContent(),
+        ],
       ),
     );
   }
