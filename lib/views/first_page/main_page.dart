@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_go/views/first_page/drawer_page.dart';
@@ -84,16 +85,22 @@ class TabLayout extends StatelessWidget {
         onTap: (index) {
           if (index == 1) {
             DefaultTabController.of(context).animateTo(0);
-            Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go 官方网站')}&url=${Uri.encodeComponent('https://flutter-go.pub')}');
+            Application.router.navigateTo(
+              context,
+              '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go 官方网站')}&url=${Uri.encodeComponent('https://flutter-go.pub')}',
+              transition: TransitionType.nativeModal,
+            );
           } else if (index == 2) {
 //          new Future.delayed(const Duration(seconds: 1),(){
 //            showAlertDialog(Application.globalContext);
 //          });
 
             DefaultTabController.of(context).animateTo(0);
-            Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go web版(H5)')}&url=${Uri.encodeComponent('https://flutter-go.pub/flutter_go_web')}');
+            Application.router.navigateTo(
+              context,
+              '${Routes.webViewPage}?title=${Uri.encodeComponent('Flutter Go web版(H5)')}&url=${Uri.encodeComponent('https://flutter-go.pub/flutter_go_web')}',
+              transition: TransitionType.nativeModal,
+            );
           }
         });
     return _tabBar;

@@ -36,15 +36,21 @@ class WidgetItemContainer extends StatelessWidget {
         targetRouter = targetRouter.toLowerCase();
       }
     });
-    Application.router.navigateTo(context, targetRouter,
-        transition: TransitionType.native);
+    Application.router.navigateTo(
+      context,
+      targetRouter,
+      transition: TransitionType.native,
+    );
   }
 
   /// 跳转到新的标准页
   void tapToStandardPage(WidgetLeaf leaf, BuildContext context) {
     String targetRouter = '/standard-page/${leaf.pageId}';
-    Application.router.navigateTo(context, targetRouter,
-        transition: TransitionType.native);
+    Application.router.navigateTo(
+      context,
+      targetRouter,
+      transition: TransitionType.native,
+    );
   }
 
   List<Widget> _buildColumns(context) {

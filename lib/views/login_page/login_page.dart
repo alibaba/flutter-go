@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:event_bus/event_bus.dart';
@@ -376,8 +377,11 @@ class _LoginPageState extends State<LoginPage> {
                                   decoration: TextDecoration.underline),
                             ),
                             onPressed: () {
-                              Application.router.navigateTo(context,
-                                  '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}');
+                              Application.router.navigateTo(
+                                context,
+                                '${Routes.webViewPage}?title=Github&url=${Uri.encodeComponent("https://github.com/login/oauth/authorize?client_id=cfe4795e76382ae8a5bd&scope=user,public_repo")}',
+                                transition: TransitionType.nativeModal,
+                              );
                             },
                           ),
                           FlatButton(
@@ -389,8 +393,11 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             onPressed: () {
                               Application.router.navigateTo(
-                                  context, Routes.home,
-                                  clearStack: true);
+                                context,
+                                Routes.home,
+                                clearStack: true,
+                                transition: TransitionType.nativeModal,
+                              );
                             },
                           )
                         ],
