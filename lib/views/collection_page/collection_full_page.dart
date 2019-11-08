@@ -115,7 +115,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
             Icon(Icons.keyboard_arrow_right, color: Colors.grey, size: 30.0),
         onTap: () {
           Application.router.navigateTo(context, targetRouter.toLowerCase(),
-              transition: TransitionType.inFromRight);
+              transition: TransitionType.native);
         },
       ),
     );
