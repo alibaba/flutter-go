@@ -93,8 +93,8 @@ class Page extends StatelessWidget {
           Positioned(
               right: -5.0,
               top: paddingTop + 2.0,
-              child: creatButton(
-                  context, 'GitHub', Icons.arrow_forward, 'goGithub')),
+              child: creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub')
+          ),
         ]);
   }
 
