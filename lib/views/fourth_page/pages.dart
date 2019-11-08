@@ -72,6 +72,7 @@ class Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final paddingTop = MediaQuery.of(context).padding.top;
     return Stack(
         //alignment: const Alignment(1.2, 0.6),
         children: [
@@ -91,7 +92,7 @@ class Page extends StatelessWidget {
               )),
           Positioned(
               right: -5.0,
-              top: 2.0,
+              top: paddingTop + 2.0,
               child: creatButton(
                   context, 'GitHub', Icons.arrow_forward, 'goGithub')),
         ]);
