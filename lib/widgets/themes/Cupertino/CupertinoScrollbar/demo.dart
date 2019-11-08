@@ -22,7 +22,8 @@ class _Demo extends State<CupertinoScrollbarDemo> {
                 height: 300,
                 child: ListView.custom(
                   scrollDirection: Axis.vertical,
-                  childrenDelegate:SliverChildBuilderDelegate((BuildContext context, int index) {
+                  childrenDelegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
                     return Container(
                       height: 50.0,
                       alignment: Alignment.center,
@@ -30,9 +31,7 @@ class _Demo extends State<CupertinoScrollbarDemo> {
                       child: Text('list item $index'),
                     );
                   }, childCount: 10),
-                )
-            )
-        ),
+                ))),
         Center(
           child: Text("CupertinoScrollbar效果"),
         )
@@ -40,7 +39,6 @@ class _Demo extends State<CupertinoScrollbarDemo> {
     );
   }
 }
-
 
 class NoCupertinoScrollbarDemo extends StatefulWidget {
   _NoCupertinoScrollbarDemo createState() => _NoCupertinoScrollbarDemo();
@@ -55,7 +53,8 @@ class _NoCupertinoScrollbarDemo extends State<NoCupertinoScrollbarDemo> {
             height: 300,
             child: ListView.custom(
               scrollDirection: Axis.vertical,
-              childrenDelegate:SliverChildBuilderDelegate((BuildContext context, int index) {
+              childrenDelegate:
+                  SliverChildBuilderDelegate((BuildContext context, int index) {
                 return Container(
                   height: 50.0,
                   alignment: Alignment.center,
@@ -63,8 +62,7 @@ class _NoCupertinoScrollbarDemo extends State<NoCupertinoScrollbarDemo> {
                   child: Text('list item $index'),
                 );
               }, childCount: 10),
-            )
-        ),
+            )),
         Center(
           child: Text("无CupertinoScrollbar效果"),
         )

@@ -10,7 +10,6 @@ import 'FloatingActionButton/index.dart' as FloatingActionButton;
 import 'RawMaterialButton/index.dart' as RawMaterialButton;
 import 'DropdownButton/index.dart' as DropdownButton;
 
-
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'FlatButton',

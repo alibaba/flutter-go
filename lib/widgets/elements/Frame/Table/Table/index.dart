@@ -15,6 +15,7 @@ const contentDesc1 = '''
 - 表格中行的大小是根据列行数和宽度计算的来，控制列宽可以使用 columnWidth 属性
 - 注意，Table中每一行的列数需要一致，否则报错
 ''';
+
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Frame/Table/Table';
   _DemoState createState() => _DemoState();
@@ -25,8 +26,7 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'Table',
-      codeUrl:
-          'elements/Frame/Table/Table/table_demo.dart',
+      codeUrl: 'elements/Frame/Table/Table/table_demo.dart',
       contentList: [
         contentDesc0,
         contentDesc1,

@@ -22,7 +22,7 @@ List<WidgetPoint> widgetPoints = [
     routerName: Container.Demo.routeName,
     buildRouter: (BuildContext context) => Container.Demo(),
   ),
-   WidgetPoint(
+  WidgetPoint(
     name: 'Center',
     routerName: Center.Demo.routeName,
     buildRouter: (BuildContext context) => Center.Demo(),

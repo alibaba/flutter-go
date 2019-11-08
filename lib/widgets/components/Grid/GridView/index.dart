@@ -49,14 +49,12 @@ const String _Text0 = """
 - GridView.extent
 """;
 
-const Text1=""" 
+const Text1 = """ 
 ### 
 > SliverGridDelegateWithFixedCrossAxisCount
 
 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount,实现网格
 """;
-
-
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Grid/GridView';

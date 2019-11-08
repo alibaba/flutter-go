@@ -20,7 +20,7 @@ class SizeOverflowBoxDefault extends StatelessWidget {
         color: Color(0xfff06292),
         width: 50.0,
         height: 50.0,
-        child:  Text(
+        child: Text(
           text,
           style: TextStyle(color: Colors.white),
         ),

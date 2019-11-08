@@ -6,7 +6,6 @@ import 'Layout/index.dart' as Layout;
 import 'Stack/index.dart' as Stack;
 import 'Box/index.dart' as Box;
 
-
 List getWidgets() {
   List result = [];
   result.addAll(Spacing.widgetPoints);

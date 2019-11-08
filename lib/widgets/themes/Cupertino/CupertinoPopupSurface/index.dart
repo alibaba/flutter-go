@@ -4,7 +4,7 @@
 /// Time: 下午10:57
 /// email: zhu.yan@alibaba-inc.com
 /// target: CupertinoPopupSurface 的示例
- 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as demoBox;
@@ -33,10 +33,11 @@ class _DemoState extends State<Demo> {
         content0,
         content1,
         demoBox.CupertinoPopupSurfaceFullDefault(),
-        SizedBox(height:50)
+        SizedBox(height: 50)
       ],
       title: 'CupertinoPopupSurface',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html',
       codeUrl: 'themes/Cupertino/CupertinoPopupSurface/demo.dart',
     );
   }

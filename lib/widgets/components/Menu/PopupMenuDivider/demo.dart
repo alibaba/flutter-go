@@ -1,7 +1,7 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-27 15:45:26 
-/// @Last Modified by:   一凨 
-/// @Last Modified time: 2018-12-27 15:45:26 
+/// @Author: 一凨
+/// @Date: 2018-12-27 15:45:26
+/// @Last Modified by:   一凨
+/// @Last Modified time: 2018-12-27 15:45:26
 
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class PopupMenuDividerDemo extends StatefulWidget {
 class _PopupMenuDividerDemoState extends State<PopupMenuDividerDemo> {
   void showInSnackBar(String value) {
     Scaffold.of(context)
-        .showSnackBar( SnackBar(content:  Text('You selected: $value')));
+        .showSnackBar(SnackBar(content: Text('You selected: $value')));
   }
 
   @override

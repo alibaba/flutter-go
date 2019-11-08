@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-15 19:44:12 
+/// @Author: 一凨
+/// @Date: 2018-12-15 19:44:12
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-15 20:33:47
 
@@ -36,7 +36,8 @@ class _DemoState extends State<Demo> {
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'ScrollMetrics',
-      docUrl: 'https://docs.flutter.io/flutter/widgets/ScrollMetrics-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/widgets/ScrollMetrics-class.html',
       codeUrl: 'components/Scroll/ScrollMetrics/demo.dart',
       contentList: [
         content0,

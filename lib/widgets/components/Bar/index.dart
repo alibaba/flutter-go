@@ -17,8 +17,6 @@ import 'SnackBar/index.dart' as SnackBar;
 import 'SnackBarAction/index.dart' as SnackBarAction;
 import 'TabBar/index.dart' as TabBar;
 
-
-
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'AppBar',

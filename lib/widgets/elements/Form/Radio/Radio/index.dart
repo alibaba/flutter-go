@@ -1,9 +1,9 @@
- /// Created with Android Studio.
- /// User: 三帆
- /// Date: 22/11/2018
- /// Time: 19:17
- /// email: sanfan.hx@alibaba-inc.com
- /// target:  Radio相关
+/// Created with Android Studio.
+/// User: 三帆
+/// Date: 22/11/2018
+/// Time: 19:17
+/// email: sanfan.hx@alibaba-inc.com
+/// target:  Radio相关
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
@@ -24,6 +24,7 @@ Radio widget 代表表单中的单选按钮, 当groupValue = value时代表组�
 - onChanged → ValueChanged - 改变时触发。
 - value → T - 单选的值。
 """;
+
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Radio/Radio';
   _DemoState createState() => _DemoState();

@@ -1,9 +1,9 @@
 /// Author: xiaojia.dxj
- /// Date: 2018/11/22
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// LastUpdateTime: 2018/11/22
- /// LastUpdateBy: xj.deng
- /// Describle:Align描述
+/// Date: 2018/11/22
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// LastUpdateTime: 2018/11/22
+/// LastUpdateBy: xj.deng
+/// Describle:Align描述
 
 import 'package:flutter/widgets.dart';
 
@@ -11,17 +11,17 @@ class AlignAlignment extends StatelessWidget {
   final Alignment status;
   final String dec;
 
-  const AlignAlignment( this.status,  this.dec) : super();
+  const AlignAlignment(this.status, this.dec) : super();
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       color: Color(0xffd81b60),
       width: 90.0,
       height: 50.0,
-      child:  Align(
+      child: Align(
         alignment: status,
-        child:  Text(
+        child: Text(
           dec,
           style: TextStyle(fontSize: 12.0, color: Color(0xffffffff)),
         ),
@@ -36,16 +36,15 @@ class AlignFactor extends StatelessWidget {
   final double hFactor;
   final String dec;
 
-  const AlignFactor( this.status,  this.wFactor,
-       this.hFactor,  this.dec)
+  const AlignFactor(this.status, this.wFactor, this.hFactor, this.dec)
       : super();
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      margin:  EdgeInsets.only(top: 10.0, bottom: 10.0),
+    return Container(
+      margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
       color: Color(0xffd81b60),
-      child:  Align(
+      child: Align(
         alignment: status,
         widthFactor: wFactor,
         heightFactor: hFactor,

@@ -12,6 +12,7 @@ import 'package:html/parser.dart' show parse;
 import './search_result.dart';
 
 var dio = new Dio();
+
 //class Api2 {
 //  /// 关键字提示（起点）
 //  Future<List<String>> suggestion(String query) async {
@@ -42,9 +43,11 @@ class Api {
 //    http.Response response = await http.get(
 //        "https://www.qidian.com/ajax/Search/AutoComplete?siteid=1&query=$query");
     /// var response = await dio.get("https://www.qidian.com/ajax/Search/AutoComplete?siteid=1&query=$query", data: {});
-    var response = await dio.get("https://www.so.com/s?ie=utf-8&q=$query flutter");
+    var response =
+        await dio.get("https://www.so.com/s?ie=utf-8&q=$query flutter");
     var document = parse(response.data);
     var app = document.querySelectorAll('.res-title a');
+
     ///print('1=====>${query}');
     ///print('2=====>${response.data}');
     ////print('3=====>${app}');
@@ -59,7 +62,7 @@ class Api {
       );
     });
 
-    return Future.delayed(Duration(seconds:2), () {
+    return Future.delayed(Duration(seconds: 2), () {
       return res;
     });
     //return suggestion;

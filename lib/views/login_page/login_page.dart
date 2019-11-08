@@ -256,15 +256,15 @@ class _LoginPageState extends State<LoginPage> {
               MaterialPageRoute(builder: (context) => AppPage(userResult)),
               (route) => route == null);
         }
-      }else if(userResult.runtimeType == String){
+      } else if (userResult.runtimeType == String) {
         Fluttertoast.showToast(
-          msg: userResult,
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIos: 1,
-          backgroundColor: Theme.of(context).primaryColor,
-          textColor: Colors.white,
-          fontSize: 16.0);
+            msg: userResult,
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1,
+            backgroundColor: Theme.of(context).primaryColor,
+            textColor: Colors.white,
+            fontSize: 16.0);
       }
     }).catchError((errorMsg) {
       setState(() {
@@ -388,7 +388,9 @@ class _LoginPageState extends State<LoginPage> {
                                   decoration: TextDecoration.underline),
                             ),
                             onPressed: () {
-                              Application.router.navigateTo(context, Routes.home, clearStack: true);
+                              Application.router.navigateTo(
+                                  context, Routes.home,
+                                  clearStack: true);
                             },
                           )
                         ],

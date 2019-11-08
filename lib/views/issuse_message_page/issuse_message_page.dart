@@ -6,8 +6,6 @@ import 'package:flutter_go/utils/data_utils.dart';
 import 'package:notus/convert.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-
-
 class IssuesMessagePage extends StatefulWidget {
   @override
   _IssuesMessagePageState createState() => _IssuesMessagePageState();
@@ -48,15 +46,17 @@ class _IssuesMessagePageState extends State<IssuesMessagePage> {
     if (_title.trim().isEmpty) {
       _show('标题不能为空');
     } else {
-      String mk = (_delta==null)?'No description provided.':notusMarkdown.encode(_delta);
-      DataUtils.feedback({'title': _title, "body": mk},context).then((result) {
+      String mk = (_delta == null)
+          ? 'No description provided.'
+          : notusMarkdown.encode(_delta);
+      DataUtils.feedback({'title': _title, "body": mk}, context).then((result) {
         _show('提交成功');
         Navigator.maybePop(context);
       });
     }
   }
 
-  _show(String msgs){
+  _show(String msgs) {
     Fluttertoast.showToast(
         msg: msgs,
         toastLength: Toast.LENGTH_SHORT,
@@ -68,19 +68,18 @@ class _IssuesMessagePageState extends State<IssuesMessagePage> {
   }
 
   Widget buildLoading() {
-      return Opacity(
-        opacity: .5,
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.85,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            color: Colors.black,
-          ),
-          child: SpinKitPouringHourglass(color: Colors.white),
+    return Opacity(
+      opacity: .5,
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.85,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          color: Colors.black,
         ),
-      );
+        child: SpinKitPouringHourglass(color: Colors.white),
+      ),
+    );
   }
-
 
   @override
   Widget build(BuildContext context) {

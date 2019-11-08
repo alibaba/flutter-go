@@ -31,13 +31,10 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      contentList: [
-        content0,
-        content1,
-        demoBox.CupertinoButtonFullDefault()
-      ],
+      contentList: [content0, content1, demoBox.CupertinoButtonFullDefault()],
       title: 'CupertinoButton',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html',
       codeUrl: 'themes/Cupertino/CupertinoButton/demo.dart',
     );
   }

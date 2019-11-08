@@ -7,20 +7,17 @@
 
 import 'package:flutter/material.dart';
 
-import  'package:flutter_go/components/widget_demo.dart';
+import 'package:flutter_go/components/widget_demo.dart';
 
 import './demo.dart' as BottomNavigationBarDemo;
 
-const String _text0 =
-"""### **简介**
+const String _text0 = """### **简介**
 > BottomNavigationBar “底部导航栏”
 - 显示在应用程序底部的导航栏,由文本标签，图标或两者形式的多个项目组成;
 - 它提供了应用程序顶级视图之间的快速导航;
 """;
 
-
-const String _text1 =
-"""### **基本用法**
+const String _text1 = """### **基本用法**
 > BottomNavigationBar 底部导航栏通常与Scaffold结合使用
 - 它作为 Scaffold.bottomNavigationBar 参数;
 - BottomNavigationBar 3-5个之间个底部按钮数量是合理的，理论上 icon 大小合适，可以支持更多;
@@ -40,15 +37,15 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
-      title: 'BottomNavigationBar',
-      codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
-      contentList: allDemoBoxs(context, this),
-      docUrl: 'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
-      bottomNaviBar:BottomNavigationBarDemo.BottomNavigationBarFullDefault()
-    );
+        title: 'BottomNavigationBar',
+        codeUrl: 'components/Navigation/BottomNavigationBar/demo.dart',
+        contentList: allDemoBoxs(context, this),
+        docUrl:
+            'https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html',
+        bottomNaviBar:
+            BottomNavigationBarDemo.BottomNavigationBarFullDefault());
   }
 }
-
 
 // 所有的 BottomNavigationBar widget
 // context: 运行上下文
@@ -67,5 +64,3 @@ List allDemoBoxs(BuildContext context, _DemoState that) {
     SizedBox(width: 20.0), // 间距
   ];
 }
-
-

@@ -20,12 +20,8 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-
   @override
   Widget build(BuildContext context) {
-    return new Container(
-        color: Colors.white,
-        child: FourthPage()
-    );
+    return new Container(color: Colors.white, child: FourthPage());
   }
 }

@@ -16,8 +16,8 @@ class SuggestionBloc extends Bloc<SuggestionEvent, SuggestionState> {
   @override
   SuggestionState get initialState => SuggestionUninitialized();
   @override
-  Stream<SuggestionState> mapEventToState(SuggestionEvent event)async* {
-  //Stream<SuggestionState> mapEventToState(SuggestionState currentState, SuggestionEvent event,) async* {
+  Stream<SuggestionState> mapEventToState(SuggestionEvent event) async* {
+    //Stream<SuggestionState> mapEventToState(SuggestionState currentState, SuggestionEvent event,) async* {
     if (event is SuggestionFetch) {
       //print('event==>${event}');
       try {

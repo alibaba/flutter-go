@@ -8,8 +8,4 @@
 
 import 'src/index.dart';
 
-var demoWidgets = [
-  new Demo()
-];
-
-  
+var demoWidgets = [new Demo()];

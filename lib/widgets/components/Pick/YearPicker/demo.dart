@@ -1,5 +1,5 @@
 /// @Author: xiaojia.dxj
-/// @Date: 2018-12-17 15:37:32 
+/// @Date: 2018-12-17 15:37:32
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-11 15:17:26
 
@@ -13,7 +13,7 @@ class YearPickerDemo extends StatefulWidget {
 }
 
 class _YearPickerDemoState extends State<YearPickerDemo> {
-  DateTime _date =  DateTime.now();
+  DateTime _date = DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -27,16 +27,16 @@ class _YearPickerDemoState extends State<YearPickerDemo> {
       _date = picked;
     });
 
-    if (picked == null) _date =  DateTime.now();
+    if (picked == null) _date = DateTime.now();
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: <Widget>[
-         Text('日期选择'),
-         RaisedButton(
-          child:  Text('date selected:${_date.toString()}'),
+        Text('日期选择'),
+        RaisedButton(
+          child: Text('date selected:${_date.toString()}'),
           onPressed: () {
             _selectDate(context);
           },

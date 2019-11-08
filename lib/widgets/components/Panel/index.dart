@@ -21,5 +21,4 @@ List<WidgetPoint> widgetPoints = [
     routerName: ExpansionPanelList.Demo.routeName,
     buildRouter: (BuildContext context) => ExpansionPanelList.Demo(),
   ),
-
 ];

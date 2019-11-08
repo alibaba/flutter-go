@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-20 14:19:26 
+/// @Author: 一凨
+/// @Date: 2018-12-20 14:19:26
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-22 20:50:36
 
@@ -46,9 +46,9 @@ class _NestedScrollViewDemoState extends State<NestedScrollViewDemo>
                 flexibleSpace: Container(
                   child: Image.asset(
                     'assets/images/timg.jpeg',
-                     width: double.infinity,
-                     repeat: ImageRepeat.repeat,
-                     height: double.infinity,
+                    width: double.infinity,
+                    repeat: ImageRepeat.repeat,
+                    height: double.infinity,
                   ),
                 ),
                 bottom: TabBar(
@@ -118,16 +118,16 @@ class PageTwo extends StatelessWidget {
     return ListView.builder(
       itemExtent: 250.0,
       itemBuilder: (context, index) => Container(
-            padding: EdgeInsets.all(10.0),
-            child: Material(
-              elevation: 4.0,
-              borderRadius: BorderRadius.circular(5.0),
-              color: index % 2 == 0 ? Colors.cyan : Colors.deepOrange,
-              child: Center(
-                child: Text(index.toString()),
-              ),
-            ),
+        padding: EdgeInsets.all(10.0),
+        child: Material(
+          elevation: 4.0,
+          borderRadius: BorderRadius.circular(5.0),
+          color: index % 2 == 0 ? Colors.cyan : Colors.deepOrange,
+          child: Center(
+            child: Text(index.toString()),
           ),
+        ),
+      ),
     );
   }
 }

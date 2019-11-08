@@ -1,11 +1,10 @@
-
- /// Created with FlutterGo.
- /// User: 一晟
- /// Date: 2018/11/14
- /// Time: 下午4:31
- /// email: zhu.yan@alibaba-inc.com
- /// target: IconButton 的示例
- /// 对应文档地址:https://docs.flutter.io/flutter/material/IconButton-class.html
+/// Created with FlutterGo.
+/// User: 一晟
+/// Date: 2018/11/14
+/// Time: 下午4:31
+/// email: zhu.yan@alibaba-inc.com
+/// target: IconButton 的示例
+/// 对应文档地址:https://docs.flutter.io/flutter/material/IconButton-class.html
 
 import 'dart:math';
 
@@ -14,20 +13,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as iconButton;
 
-const String _iconText0 =
-"""### **简介**
+const String _iconText0 = """### **简介**
 > Icon button “图标按钮”
 - IconButton widget上的图片，通过填充颜色（墨水）来对触摸作出反应;
 """;
 
-const String _iconText1 =
-"""### **基本用法**
+const String _iconText1 = """### **基本用法**
 > 参数的默认的按钮和禁用按钮
 - 图标按钮通常在AppBar.actions字段中使用，但它们也可以在许多其他地方使用;
 - 如果您尝试更改按钮的颜色并且没有任何效果，请检查您是否正在传递非null onPressed处理程序;""";
 
-const String _iconText2 =
-"""### **进阶用法**
+const String _iconText2 = """### **进阶用法**
 > 更改项参数的自定义,比如:边框，点击效果，内容文字,颜色,圆角等;
 - 如果可能，图标按钮的命中区域的大小至少为48.0像素，与实际的iconSize无关，以满足 Material Design规范中的触摸目标大小要求。的对准控制图标本身如何定位命中区域内;
 - ** 长按可弹出 tip 文字 **
@@ -42,27 +38,29 @@ class Demo extends StatefulWidget {
 
 class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
-  void setButtonShapeType(){
-    String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    if(mounted) {
+  void setButtonShapeType() {
+    String _buttonShapeType =
+        (buttonShapeType == 'border') ? 'radius' : 'border';
+    if (mounted) {
       this.setState(() {
         buttonShapeType = _buttonShapeType;
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'IconButton',
       codeUrl: 'elements/Form/Button/IconButton/demo.dart',
-      contentList: allIconButtons(context,this),
+      contentList: allIconButtons(context, this),
       docUrl: 'https://docs.flutter.io/flutter/material/IconButton-class.html',
     );
   }
 }
 
 // 所有的 IconButton 按钮
-List allIconButtons(BuildContext context,_DemoState that){
+List allIconButtons(BuildContext context, _DemoState that) {
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
   return [
     _iconText0,
@@ -89,7 +87,7 @@ List allIconButtons(BuildContext context,_DemoState that){
     iconButton.IconButtonCustom('危险按钮', Colors.pink, buttonShape),
     SizedBox(height: 10.0),
     RaisedButton(
-      // 文本内容
+        // 文本内容
         child: const Text('点击切换，图标按钮', semanticsLabel: 'FLAT BUTTON 1'),
         onPressed: () => that.setButtonShapeType()),
     SizedBox(height: 20.0)
@@ -97,12 +95,12 @@ List allIconButtons(BuildContext context,_DemoState that){
 }
 
 // 绘制边框信息,比如是否有边框,是否是圆角
-ShapeBorder drawShape(String type){
+ShapeBorder drawShape(String type) {
   final Color _color = _randomColor();
   final borderWidth = Random.secure().nextInt(5).toDouble();
   final radiusWidth = Random.secure().nextInt(50).toDouble();
 
-  switch(type){
+  switch (type) {
     case 'border':
       return Border.all(
         // 设置边框样式
@@ -113,7 +111,8 @@ ShapeBorder drawShape(String type){
       break;
     case 'radius':
       return RoundedRectangleBorder(
-        side: BorderSide( // 保留原来的边框样式
+        side: BorderSide(
+          // 保留原来的边框样式
           width: borderWidth,
           color: _color,
           style: BorderStyle.solid,
@@ -138,4 +137,3 @@ Color _randomColor() {
   var blue = Random.secure().nextInt(255);
   return Color.fromARGB(255, red, greed, blue);
 }
-

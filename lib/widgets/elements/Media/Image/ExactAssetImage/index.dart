@@ -1,7 +1,7 @@
- /// @Author: 一凨 
- /// @Date: 2018-12-08 13:29:34 
- /// @Last Modified by: 一凨
- /// @Last Modified time: 2018-12-08 14:12:21
+/// @Author: 一凨
+/// @Date: 2018-12-08 13:29:34
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-08 14:12:21
 
 import 'package:flutter/material.dart';
 
@@ -36,9 +36,11 @@ class _DemoState extends State<Demo> {
         contentText1,
         ExactAssetImageDemo(),
       ],
-      title:'ExactAssetImage',
-      codeUrl: 'elements/Media/Image/ExactAssetImage/exact_asset_image_demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/painting/ExactAssetImage-class.html',
+      title: 'ExactAssetImage',
+      codeUrl:
+          'elements/Media/Image/ExactAssetImage/exact_asset_image_demo.dart',
+      docUrl:
+          'https://docs.flutter.io/flutter/painting/ExactAssetImage-class.html',
     );
   }
 }

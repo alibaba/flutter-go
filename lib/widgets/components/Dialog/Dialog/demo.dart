@@ -12,39 +12,38 @@ class DialogDemo extends StatefulWidget {
 }
 
 class _Demo extends State<DialogDemo> {
-
   void showAlertDialog(BuildContext context) {
     showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return Dialog(
-          child: Container(
-            height: 100,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Text('我是一个dialog'),
-                RaisedButton(
-                  child: Text('取消'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                )
-              ],
-            ),
-          )
-        );
+            child: Container(
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Text('我是一个dialog'),
+              RaisedButton(
+                child: Text('取消'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ),
+        ));
       },
     );
   }
+
   Widget build(BuildContext context) {
-    return  RaisedButton(
-        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return RaisedButton(
+        padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child:  Text(
+        child: Text(
           '点我显示 Dialog',
-          style:  TextStyle(
+          style: TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -59,7 +58,6 @@ class _Demo extends State<DialogDemo> {
   }
 }
 
-
 class DialogMoreDemo extends StatefulWidget {
   _DialogMoreDemo createState() => _DialogMoreDemo();
 }
@@ -68,11 +66,10 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
   int value = 0;
   void showCommonDialog(BuildContext context) {
     showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (context) {
-        return StatefulBuilder(
-          builder: (context, state) {
+        context: context,
+        barrierDismissible: false, // user must tap button!
+        builder: (context) {
+          return StatefulBuilder(builder: (context, state) {
             return Dialog(
               child: Container(
                 height: 150,
@@ -86,47 +83,43 @@ class _DialogMoreDemo extends State<DialogMoreDemo> {
                           value += 1;
                         });
                       },
-                      child:  Text("我是一个Dialog, 点我更新value: $value"),
+                      child: Text("我是一个Dialog, 点我更新value: $value"),
                     ),
                     RaisedButton(
                       onPressed: () {
-                       Navigator.of(context).pop();
+                        Navigator.of(context).pop();
                       },
-                      child:  Text("取消"),
+                      child: Text("取消"),
                     )
                   ],
                 ),
               ),
-
             );
-          }
-        );
-      }
-    );
+          });
+        });
   }
+
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: <Widget>[
-         RaisedButton(
-          padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-          //padding
-          child:  Text(
-          '点我显示Dialog',
-          style:  TextStyle(
-            fontSize: 18.0, //textsize
-            color: Colors.white, // textcolor
-          ),
-          ),
-          color: Theme.of(context).accentColor,
-          elevation: 4.0,
-          //shadow
-          splashColor: Colors.blueGrey,
-          onPressed: () {
-            showCommonDialog(context);
-          }
-        )
+        RaisedButton(
+            padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+            //padding
+            child: Text(
+              '点我显示Dialog',
+              style: TextStyle(
+                fontSize: 18.0, //textsize
+                color: Colors.white, // textcolor
+              ),
+            ),
+            color: Theme.of(context).accentColor,
+            elevation: 4.0,
+            //shadow
+            splashColor: Colors.blueGrey,
+            onPressed: () {
+              showCommonDialog(context);
+            })
       ],
     );
   }
 }
-

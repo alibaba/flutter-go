@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 
-
 class SliderDemo extends StatefulWidget {
   _Demo createState() => _Demo();
 }

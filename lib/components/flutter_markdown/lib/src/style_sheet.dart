@@ -7,45 +7,45 @@ import 'package:flutter/material.dart';
 /// Defines which [TextStyle] objects to use for which Markdown elements.
 class MarkdownStyleSheet {
   /// Creates an explicit mapping of [TextStyle] objects to Markdown elements.
-  MarkdownStyleSheet({
-    this.a,
-    this.p,
-    this.code,
-    this.h1,
-    this.h2,
-    this.h3,
-    this.h4,
-    this.h5,
-    this.h6,
-    this.em,
-    this.strong,
-    this.blockquote,
-    this.img,
-    this.blockSpacing,
-    this.listIndent,
-    this.blockquotePadding,
-    this.blockquoteDecoration,
-    this.codeblockPadding,
-    this.codeblockDecoration,
-    this.horizontalRuleDecoration,
-    this.textScaleFactor = 1.0
-  }) : _styles = <String, TextStyle>{
-    'a': a,
-    'p': p,
-    'li': p,
-    'code': code,
-    'pre': p,
-    'h1': h1,
-    'h2': h2,
-    'h3': h3,
-    'h4': h4,
-    'h5': h5,
-    'h6': h6,
-    'em': em,
-    'strong': strong,
-    'blockquote': blockquote,
-    'img': img,
-  };
+  MarkdownStyleSheet(
+      {this.a,
+      this.p,
+      this.code,
+      this.h1,
+      this.h2,
+      this.h3,
+      this.h4,
+      this.h5,
+      this.h6,
+      this.em,
+      this.strong,
+      this.blockquote,
+      this.img,
+      this.blockSpacing,
+      this.listIndent,
+      this.blockquotePadding,
+      this.blockquoteDecoration,
+      this.codeblockPadding,
+      this.codeblockDecoration,
+      this.horizontalRuleDecoration,
+      this.textScaleFactor = 1.0})
+      : _styles = <String, TextStyle>{
+          'a': a,
+          'p': p,
+          'li': p,
+          'code': code,
+          'pre': p,
+          'h1': h1,
+          'h2': h2,
+          'h3': h3,
+          'h4': h4,
+          'h5': h5,
+          'h6': h6,
+          'em': em,
+          'strong': strong,
+          'blockquote': blockquote,
+          'img': img,
+        };
 
   /// Creates a [MarkdownStyleSheet] from the [TextStyle]s in the provided [ThemeData].
   factory MarkdownStyleSheet.fromTheme(ThemeData theme) {
@@ -54,10 +54,9 @@ class MarkdownStyleSheet {
       a: const TextStyle(color: Colors.blue),
       p: theme.textTheme.body1,
       code: new TextStyle(
-        color: Colors.grey.shade700,
-        fontFamily: "monospace",
-        fontSize: theme.textTheme.body1.fontSize * 0.85
-      ),
+          color: Colors.grey.shade700,
+          fontFamily: "monospace",
+          fontSize: theme.textTheme.body1.fontSize * 0.85),
       h1: theme.textTheme.headline,
       h2: theme.textTheme.title,
       h3: theme.textTheme.subhead,
@@ -72,18 +71,15 @@ class MarkdownStyleSheet {
       listIndent: 32.0,
       blockquotePadding: 8.0,
       blockquoteDecoration: new BoxDecoration(
-        color: Colors.blue.shade100,
-        borderRadius: new BorderRadius.circular(2.0)
-      ),
+          color: Colors.blue.shade100,
+          borderRadius: new BorderRadius.circular(2.0)),
       codeblockPadding: 8.0,
       codeblockDecoration: new BoxDecoration(
-        color: Colors.grey.shade100,
-        borderRadius: new BorderRadius.circular(2.0)
-      ),
+          color: Colors.grey.shade100,
+          borderRadius: new BorderRadius.circular(2.0)),
       horizontalRuleDecoration: new BoxDecoration(
         border: new Border(
-          top: new BorderSide(width: 5.0, color: Colors.grey.shade300)
-        ),
+            top: new BorderSide(width: 5.0, color: Colors.grey.shade300)),
       ),
     );
   }
@@ -97,10 +93,9 @@ class MarkdownStyleSheet {
       a: const TextStyle(color: Colors.blue),
       p: theme.textTheme.body1,
       code: new TextStyle(
-        color: Colors.grey.shade700,
-        fontFamily: "monospace",
-        fontSize: theme.textTheme.body1.fontSize * 0.85
-      ),
+          color: Colors.grey.shade700,
+          fontFamily: "monospace",
+          fontSize: theme.textTheme.body1.fontSize * 0.85),
       h1: theme.textTheme.display3,
       h2: theme.textTheme.display2,
       h3: theme.textTheme.display1,
@@ -115,18 +110,15 @@ class MarkdownStyleSheet {
       listIndent: 32.0,
       blockquotePadding: 8.0,
       blockquoteDecoration: new BoxDecoration(
-        color: Colors.blue.shade100,
-        borderRadius: new BorderRadius.circular(2.0)
-      ),
+          color: Colors.blue.shade100,
+          borderRadius: new BorderRadius.circular(2.0)),
       codeblockPadding: 8.0,
       codeblockDecoration: new BoxDecoration(
-        color: Colors.grey.shade100,
-        borderRadius: new BorderRadius.circular(2.0)
-      ),
+          color: Colors.grey.shade100,
+          borderRadius: new BorderRadius.circular(2.0)),
       horizontalRuleDecoration: new BoxDecoration(
         border: new Border(
-          top: new BorderSide(width: 5.0, color: Colors.grey.shade300)
-        ),
+            top: new BorderSide(width: 5.0, color: Colors.grey.shade300)),
       ),
     );
   }
@@ -176,8 +168,9 @@ class MarkdownStyleSheet {
       blockquoteDecoration: blockquoteDecoration ?? this.blockquoteDecoration,
       codeblockPadding: codeblockPadding ?? this.codeblockPadding,
       codeblockDecoration: codeblockDecoration ?? this.codeblockDecoration,
-      horizontalRuleDecoration: horizontalRuleDecoration ?? this.horizontalRuleDecoration,
-      textScaleFactor : textScaleFactor ?? this.textScaleFactor,
+      horizontalRuleDecoration:
+          horizontalRuleDecoration ?? this.horizontalRuleDecoration,
+      textScaleFactor: textScaleFactor ?? this.textScaleFactor,
     );
   }
 
@@ -250,32 +243,30 @@ class MarkdownStyleSheet {
 
   @override
   bool operator ==(dynamic other) {
-    if (identical(this, other))
-      return true;
-    if (other.runtimeType != MarkdownStyleSheet)
-      return false;
+    if (identical(this, other)) return true;
+    if (other.runtimeType != MarkdownStyleSheet) return false;
     final MarkdownStyleSheet typedOther = other;
-    return typedOther.a == a
-        && typedOther.p == p
-        && typedOther.code == code
-        && typedOther.h1 == h1
-        && typedOther.h2 == h2
-        && typedOther.h3 == h3
-        && typedOther.h4 == h4
-        && typedOther.h5 == h5
-        && typedOther.h6 == h6
-        && typedOther.em == em
-        && typedOther.strong == strong
-        && typedOther.blockquote == blockquote
-        && typedOther.img == img
-        && typedOther.blockSpacing == blockSpacing
-        && typedOther.listIndent == listIndent
-        && typedOther.blockquotePadding == blockquotePadding
-        && typedOther.blockquoteDecoration == blockquoteDecoration
-        && typedOther.codeblockPadding == codeblockPadding
-        && typedOther.codeblockDecoration == codeblockDecoration
-        && typedOther.horizontalRuleDecoration == horizontalRuleDecoration
-        && typedOther.textScaleFactor == textScaleFactor;
+    return typedOther.a == a &&
+        typedOther.p == p &&
+        typedOther.code == code &&
+        typedOther.h1 == h1 &&
+        typedOther.h2 == h2 &&
+        typedOther.h3 == h3 &&
+        typedOther.h4 == h4 &&
+        typedOther.h5 == h5 &&
+        typedOther.h6 == h6 &&
+        typedOther.em == em &&
+        typedOther.strong == strong &&
+        typedOther.blockquote == blockquote &&
+        typedOther.img == img &&
+        typedOther.blockSpacing == blockSpacing &&
+        typedOther.listIndent == listIndent &&
+        typedOther.blockquotePadding == blockquotePadding &&
+        typedOther.blockquoteDecoration == blockquoteDecoration &&
+        typedOther.codeblockPadding == codeblockPadding &&
+        typedOther.codeblockDecoration == codeblockDecoration &&
+        typedOther.horizontalRuleDecoration == horizontalRuleDecoration &&
+        typedOther.textScaleFactor == textScaleFactor;
   }
 
   @override

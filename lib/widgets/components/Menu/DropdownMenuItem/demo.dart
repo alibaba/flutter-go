@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-27 14:05:32 
+/// @Author: 一凨
+/// @Date: 2018-12-27 14:05:32
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-27 14:05:52
 
@@ -10,12 +10,10 @@ class DropdownMenuItemDemo extends StatefulWidget {
 }
 
 class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
-
   String dropdown1Value = 'Three';
   String dropdown2Value;
   String dropdown3Value = 'Four';
 
-  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +30,8 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                   dropdown1Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Three', 'Four'].map<DropdownMenuItem<String>>((String value) {
+              items: <String>['One', 'Two', 'Three', 'Four']
+                  .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -53,7 +52,8 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                   dropdown2Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Three', 'Four'].map<DropdownMenuItem<String>>((String value) {
+              items: <String>['One', 'Two', 'Three', 'Four']
+                  .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -74,17 +74,30 @@ class _DropdownMenuItemDemoState extends State<DropdownMenuItemDemo> {
                 });
               },
               items: <String>[
-                  'One', 'Two', 'Three', 'Four', 'Can', 'I', 'Have', 'A', 'Little',
-                  'Bit', 'More', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
-                 ]
-                .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                })
-                .toList(),
-             ),
+                'One',
+                'Two',
+                'Three',
+                'Four',
+                'Can',
+                'I',
+                'Have',
+                'A',
+                'Little',
+                'Bit',
+                'More',
+                'Five',
+                'Six',
+                'Seven',
+                'Eight',
+                'Nine',
+                'Ten'
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ),
         ],
       ),

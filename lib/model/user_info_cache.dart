@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2019-01-07 16:24:42 
+/// @Author: 一凨
+/// @Date: 2019-01-07 16:24:42
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-08 17:37:42
 
@@ -18,8 +18,8 @@ class UserInfo implements UserInfoInterface {
 
   UserInfo({this.username, this.password});
 
-  factory UserInfo.fromJSON(Map json){
-    return UserInfo(username: json['username'],password: json['password']);
+  factory UserInfo.fromJSON(Map json) {
+    return UserInfo(username: json['username'], password: json['password']);
   }
 
   Object toMap() {
@@ -39,8 +39,8 @@ class UserInfoControlModel {
 
   // 插入新的缓存
   Future insert(UserInfo userInfo) {
-    var result =
-        sql.insert({'username': userInfo.username, 'password': userInfo.password});
+    var result = sql
+        .insert({'username': userInfo.username, 'password': userInfo.password});
     return result;
   }
 
@@ -48,7 +48,7 @@ class UserInfoControlModel {
   Future<List<UserInfo>> getAllInfo() async {
     List list = await sql.getByCondition();
     List<UserInfo> resultList = [];
-    list.forEach((item){
+    list.forEach((item) {
       print(item);
       resultList.add(UserInfo.fromJSON(item));
     });
@@ -56,9 +56,7 @@ class UserInfoControlModel {
   }
 
   // 清空表中数据
-  Future deleteAll() async{
+  Future deleteAll() async {
     return await sql.deleteAll();
   }
-
-
 }

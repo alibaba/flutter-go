@@ -12,7 +12,6 @@ const Text0 = '''
 > 该组件使用时. 必须做为含有slivers属性的滚动列表的子组件中,例如CustomScrollView
 ''';
 
-
 class Demo extends StatefulWidget {
   static const String routeName =
       '/element/themes/Cupertino/CupertinoSliverNavigationBar';
@@ -27,7 +26,8 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CupertinoSlider',
       codeUrl: 'themes/Cupertino/CupertinoSliverNavigationBar/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoSliverNavigationBar-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoSliverNavigationBar-class.html',
       contentList: [
         Text0,
         CupertinoSliverNavigationBarDemo(),

@@ -1,4 +1,3 @@
-
 // Created with Android Studio.
 // User: 三帆
 // Date: 31/01/2019
@@ -6,7 +5,6 @@
 // email: sanfan.hx@alibaba-inc.com
 // target:  xxx
 //
-
 
 //enum DateType {
 //  Int,
@@ -27,12 +25,12 @@ class SharedPreferencesKeys {
   /// boolean
   /// 用于欢迎页面. 只有第一次访问才会显示. 或者手动将这个值设为false
   static String showWelcome = 'loginWelcone';
-  /// json 
+
+  /// json
   /// 用于存放搜索页的搜索数据.
   /// [{
   ///  name: 'name'
-  ///  
+  ///
   /// }]
   static String searchHistory = 'searchHistory';
 }
-

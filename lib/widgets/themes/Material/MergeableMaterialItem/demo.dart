@@ -1,9 +1,8 @@
-
- /// Author: xiaojia.dxj
- /// Date: 2019-01-08 11:33:21 
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// Last Modified by: xiaojia.dxj
- /// Last Modified time: 2019-01-08 15:24:14
+/// Author: xiaojia.dxj
+/// Date: 2019-01-08 11:33:21
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// Last Modified by: xiaojia.dxj
+/// Last Modified time: 2019-01-08 15:24:14
 
 import 'package:flutter/material.dart';
 
@@ -28,17 +27,17 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
     items.add(
 
         //class MaterialSlice extends MergeableMaterialItem
-         MaterialSlice(
-            key:  ValueKey<int>(currIndexNum),
-            child:  Column(children: <Widget>[
+        MaterialSlice(
+            key: ValueKey<int>(currIndexNum),
+            child: Column(children: <Widget>[
               // header,
-               AnimatedCrossFade(
-                firstChild:  Container(
+              AnimatedCrossFade(
+                firstChild: Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.green,
                 ),
-                secondChild:  Container(
+                secondChild: Container(
                   height: 20.0,
                   width: 20.0,
                   color: Colors.red,
@@ -57,8 +56,8 @@ class _MergeableMaterialItemState extends State<MergeableMaterialItemDemo> {
 
     return Column(
       children: <Widget>[
-         MergeableMaterial(hasDividers: true, children: items),
-         RaisedButton(
+        MergeableMaterial(hasDividers: true, children: items),
+        RaisedButton(
           child: Text("点击添加"),
           onPressed: () {
             _isChildExpanded();

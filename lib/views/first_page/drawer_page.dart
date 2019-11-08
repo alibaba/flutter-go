@@ -209,7 +209,6 @@ class _DrawerPageState extends State<DrawerPage> {
             } else {
               //No description provided.
               Application.router.navigateTo(context, '${Routes.loginPage}');
-
             }
           },
         ),

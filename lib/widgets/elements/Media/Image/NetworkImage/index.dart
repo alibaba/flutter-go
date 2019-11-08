@@ -1,7 +1,7 @@
- /// @Author: 一凨 
- /// @Date: 2018-11-16 15:09:12 
- /// @Last Modified by: 一凨
- /// @Last Modified time: 2018-12-08 17:32:57
+/// @Author: 一凨
+/// @Date: 2018-11-16 15:09:12
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-08 17:32:57
 
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,8 @@ class _DemoState extends State<Demo> {
         NetworkImageDemo(),
       ],
       codeUrl: 'elements/Media/Image/NetworkImage/network_image_demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/painting/NetworkImage-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/painting/NetworkImage-class.html',
       title: 'NetworkImage',
     );
   }

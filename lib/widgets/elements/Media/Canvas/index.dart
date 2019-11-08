@@ -6,7 +6,6 @@ import 'Canvas/index.dart' as Canvas;
 import 'PainterPath/index.dart' as PainterPath;
 import 'CircleProgressBarPainter/index.dart' as CircleProgressBarPainter;
 
-
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'PainterSketch',

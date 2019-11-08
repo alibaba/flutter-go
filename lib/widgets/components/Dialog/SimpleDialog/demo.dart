@@ -12,22 +12,21 @@ class SimpleDialogDemo extends StatefulWidget {
 }
 
 class _Demo extends State<SimpleDialogDemo> {
-  
   void showAlertDialog(BuildContext context) {
     showDialog<Null>(
       context: context,
       builder: (BuildContext context) {
-        return  SimpleDialog(
-          title:  Text('选择'),
+        return SimpleDialog(
+          title: Text('选择'),
           children: <Widget>[
-             SimpleDialogOption(
-              child:  Text('选项 1'),
+            SimpleDialogOption(
+              child: Text('选项 1'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-             SimpleDialogOption(
-              child:  Text('选项 2'),
+            SimpleDialogOption(
+              child: Text('选项 2'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -37,13 +36,14 @@ class _Demo extends State<SimpleDialogDemo> {
       },
     );
   }
+
   Widget build(BuildContext context) {
-    return  RaisedButton(
-        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return RaisedButton(
+        padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child:  Text(
+        child: Text(
           'show SimpleDialog',
-          style:  TextStyle(
+          style: TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -54,7 +54,6 @@ class _Demo extends State<SimpleDialogDemo> {
         splashColor: Colors.blueGrey,
         onPressed: () {
           showAlertDialog(context);
-      });
+        });
   }
-
 }

@@ -33,8 +33,8 @@ class _CupertinoAppFullDefault extends State {
             (___, Animation<double> animation, ____, Widget child) {
           return FadeTransition(
             opacity: animation,
-            child:  ScaleTransition(
-              scale:  Tween<double>(begin: 0.5, end: 1.0).animate(animation),
+            child: ScaleTransition(
+              scale: Tween<double>(begin: 0.5, end: 1.0).animate(animation),
               child: child,
             ),
           );
@@ -144,7 +144,8 @@ class _CupertinoAppFullDefault extends State {
               backgroundColor: CupertinoColors.destructiveRed,
               middle: Text('这里是标题', style: TextStyle(color: Colors.white)),
             ),
-            child: Center(child: Text('这里是内容', style: TextStyle(color: Colors.black))),
+            child: Center(
+                child: Text('这里是内容', style: TextStyle(color: Colors.black))),
             backgroundColor: CupertinoColors.inactiveGray,
           );
         });
