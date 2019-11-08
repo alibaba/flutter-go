@@ -8,8 +8,7 @@ class HomeBanner extends StatefulWidget {
   final List<StoryModel> bannerStories;
   final OnTapBannerItem onTap;
 
-  HomeBanner(this.bannerStories, this.onTap, {Key key})
-      :super(key: key);
+  HomeBanner(this.bannerStories, this.onTap, {Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -27,11 +26,11 @@ class _BannerState extends State<HomeBanner> {
   void initState() {
     super.initState();
     controller = PageController(initialPage: realIndex);
-    timer = Timer.periodic(Duration(seconds: 5), (timer) { // 自动滚动
+    timer = Timer.periodic(Duration(seconds: 5), (timer) {
+      // 自动滚动
       /// print(realIndex);
       controller.animateToPage(realIndex + 1,
-          duration: Duration(milliseconds: 300),
-          curve: Curves.linear);
+          duration: Duration(milliseconds: 300), curve: Curves.linear);
     });
   }
 
@@ -50,7 +49,10 @@ class _BannerState extends State<HomeBanner> {
       margin: EdgeInsets.only(top: 10.0, right: 5.0),
       padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
       child: Text("${++index}/$itemCount",
-          style: TextStyle( color: Colors.white70, fontSize: 12.0, fontWeight:FontWeight.bold )),
+          style: TextStyle(
+              color: Colors.white70,
+              fontSize: 12.0,
+              fontWeight: FontWeight.bold)),
     );
   }
 
@@ -58,43 +60,45 @@ class _BannerState extends State<HomeBanner> {
   Widget build(BuildContext context) {
     return Container(
       height: 226.0,
-      child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: <Widget>[
-            PageView(
-              controller: controller,
-              onPageChanged: _onPageChanged,
-              children: _buildItems(),),
-            _buildIndicator(), // 下面的小点
-            Positioned(//方法二
-                top: 0.0,
-                right: 0.0,
-                child: _numberIndicator(context,virtualIndex,widget.bannerStories.length),
-            )
-          ]),
+      child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
+        PageView(
+          controller: controller,
+          onPageChanged: _onPageChanged,
+          children: _buildItems(),
+        ),
+        _buildIndicator(), // 下面的小点
+        Positioned(
+          //方法二
+          top: 0.0,
+          right: 0.0,
+          child: _numberIndicator(
+              context, virtualIndex, widget.bannerStories.length),
+        )
+      ]),
     );
   }
 
-  List<Widget> _buildItems() { // 排列轮播数组
+  List<Widget> _buildItems() {
+    // 排列轮播数组
     List<Widget> items = [];
     if (widget.bannerStories.length > 0) {
       // 头部添加一个尾部Item，模拟循环
       items.add(
           _buildItem(widget.bannerStories[widget.bannerStories.length - 1]));
       // 正常添加Item
-      items.addAll(
-          widget.bannerStories.map((story) => _buildItem(story)).toList(
-              growable: false));
+      items.addAll(widget.bannerStories
+          .map((story) => _buildItem(story))
+          .toList(growable: false));
       // 尾部
-      items.add(
-          _buildItem(widget.bannerStories[0]));
+      items.add(_buildItem(widget.bannerStories[0]));
     }
     return items;
   }
 
   Widget _buildItem(StoryModel story) {
     return GestureDetector(
-      onTap: () { // 按下
+      onTap: () {
+        // 按下
         if (widget.onTap != null) {
           widget.onTap(story);
         }
@@ -102,14 +106,17 @@ class _BannerState extends State<HomeBanner> {
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-         Image.network(story.image, fit: BoxFit.cover),
+          Image.network(story.image, fit: BoxFit.cover),
           _buildItemTitle(story.title), // 内容文字,大意
-        ],),);
+        ],
+      ),
+    );
   }
 
   Widget _buildItemTitle(String title) {
     return Container(
-      decoration: BoxDecoration( /// 背景的渐变色
+      decoration: BoxDecoration(
+        /// 背景的渐变色
         gradient: LinearGradient(
           begin: Alignment.bottomCenter,
           end: const Alignment(0.0, -0.8),
@@ -120,7 +127,10 @@ class _BannerState extends State<HomeBanner> {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 22.0, horizontal: 16.0),
         child: Text(
-          title, style: TextStyle(color: Colors.white, fontSize: 18.0),),),
+          title,
+          style: TextStyle(color: Colors.white, fontSize: 18.0),
+        ),
+      ),
     );
   }
 
@@ -136,8 +146,7 @@ class _BannerState extends State<HomeBanner> {
               color: i == virtualIndex ? Colors.white : Colors.grey)));
     }
     return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: indicators);
+        mainAxisAlignment: MainAxisAlignment.center, children: indicators);
   }
 
   _onPageChanged(int index) {

@@ -5,6 +5,7 @@ import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/model/version.dart';
 import 'package:flutter_go/model/widget.dart';
 import 'package:package_info/package_info.dart';
+
 /// import 'package:flutter_go/model/responseData.dart';
 
 import './net_utils.dart';
@@ -190,7 +191,9 @@ class DataUtils {
           "name": json['name'],
           "cnName": json['name'],
           "routerName": routerName,
-          "catId": json['parentId'].runtimeType == String ? int.parse(json['parentId']) : json['parentId']
+          "catId": json['parentId'].runtimeType == String
+              ? int.parse(json['parentId'])
+              : json['parentId']
         };
         list.add(WidgetPoint.fromJSON(tempMap));
       }

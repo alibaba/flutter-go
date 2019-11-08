@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:io';
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 //import './version.dart';
@@ -20,11 +20,18 @@ class _CommandRunner extends CommandRunner<int> {
     addCommand(CreatePageCommand());
     addCommand(WatchCommand());
     addCommand(Build());
-
   }
 
   @override
   Future<int> runCommand(ArgResults topLevelResults) async {
+    bool isProject = await Directory('./go-cli').exists();
+    // 防止用户在gocli下运行
+
+    if (!isProject) {
+      print("请在fluttergo项目根目录中运行,而不是go-cli目录中");
+      return 0;
+    }
+
     if (topLevelResults['version'] as bool) {
       return 0;
     }

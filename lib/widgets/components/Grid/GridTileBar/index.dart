@@ -26,8 +26,6 @@ const String _Text0 = """
 - trailing GridTileBar右侧的widgett, 通常我们用来做交互操作类的组件
 """;
 
-
-
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Grid/GridTileBar';
 

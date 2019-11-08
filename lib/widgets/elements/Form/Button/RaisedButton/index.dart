@@ -13,28 +13,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
 import './demo.dart' as raisedButton;
 
-
-const String _raisedText0 =
-"""### **简介**
+const String _raisedText0 = """### **简介**
 > Raised button “凸起按钮”
 - Raised button 基于  a Material widget 窗口widget，按下 button 时，Material.elevation 会增加;
 - 使用 Raised button 可将尺寸添加到大多数平面布局中;
 - 例如在复杂的内容列表中，或在宽阔的空间中。避免在已经提出的内容（例如对话框或卡片）上使用 Raised button;
 """;
 
-const String _raisedText1 =
-"""### **基本用法**
+const String _raisedText1 = """### **基本用法**
 > 参数的默认的 button 和禁用 button;
 - 如果onPressed回调为null，则该按钮将被禁用，不会对触摸做出反应，并且将按 disabledColor 属性而不是color属性指定的颜色进行着色;
 - 如果您尝试更改按钮的颜色并且没有任何效果，请检查您是否正在传递非null onPressed处理程序;""";
 
-
-const String _raisedText2 =
-"""### **进阶用法1**
+const String _raisedText2 = """### **进阶用法1**
 > RaisedButton.icon 的用方法，按钮图标和标签的widget创建文本按钮;""";
 
-const String _raisedText3 =
-"""### **进阶用法2**
+const String _raisedText3 = """### **进阶用法2**
 > 更改项参数的自定义,比如:边框，点击效果，内容文字,颜色,圆角等
 - 如果您想要 ink-splash  的墨水效果，但又不想使用按钮，请考虑直接使用InkWell;
 - Raised buttons 的最小尺寸为88.0×36.0，可以用 ButtonTheme 覆盖;
@@ -50,27 +44,30 @@ class Demo extends StatefulWidget {
 
 class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
-  void setButtonShapeType(){
-    String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    if(mounted) {
+  void setButtonShapeType() {
+    String _buttonShapeType =
+        (buttonShapeType == 'border') ? 'radius' : 'border';
+    if (mounted) {
       this.setState(() {
         buttonShapeType = _buttonShapeType;
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'RaisedButton',
       codeUrl: 'elements/Form/Button/RaisedButton/demo.dart',
       contentList: allRaisedButtons(context, this),
-      docUrl: 'https://docs.flutter.io/flutter/material/RaisedButton-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/RaisedButton-class.html',
     );
   }
 }
 
- // 所有的 RaisedButton 按钮
-List allRaisedButtons(BuildContext context,_DemoState that){
+// 所有的 RaisedButton 按钮
+List allRaisedButtons(BuildContext context, _DemoState that) {
   final ShapeBorder buttonShape = drawShape(that.buttonShapeType);
   return [
     _raisedText0,
@@ -114,18 +111,18 @@ List allRaisedButtons(BuildContext context,_DemoState that){
     raisedButton.RaisedButtonCustom('危险按钮', Colors.pink, buttonShape),
     SizedBox(height: 10.0),
     raisedButton.RaisedButtonCustom('点击切换，按钮的圆角', Colors.blue, buttonShape,
-            () => that.setButtonShapeType()),
+        () => that.setButtonShapeType()),
     SizedBox(height: 20.0)
   ];
 }
 
 // 绘制边框信息,比如是否有边框,是否是圆角
-ShapeBorder drawShape(String type){
+ShapeBorder drawShape(String type) {
   final Color _color = _randomColor();
   final borderWidth = Random.secure().nextInt(5).toDouble();
   final radiusWidth = Random.secure().nextInt(50).toDouble();
 
-  switch(type){
+  switch (type) {
     case 'border':
       return Border.all(
         // 设置边框样式
@@ -136,7 +133,8 @@ ShapeBorder drawShape(String type){
       break;
     case 'radius':
       return RoundedRectangleBorder(
-        side: BorderSide( // 保留原来的边框样式
+        side: BorderSide(
+          // 保留原来的边框样式
           width: borderWidth,
           color: _color,
           style: BorderStyle.solid,
@@ -161,4 +159,3 @@ Color _randomColor() {
   var blue = Random.secure().nextInt(255);
   return Color.fromARGB(255, red, greed, blue);
 }
-

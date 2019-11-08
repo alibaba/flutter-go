@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2019-01-14 11:42:32 
+/// @Author: 一凨
+/// @Date: 2019-01-14 11:42:32
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-14 14:42:00
 
@@ -24,7 +24,8 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
   void didChangeDependencies() {
     print('widget.filePath=======${widget.filePath}');
     if (widget.filePath != null) {
-      getExampleCode(context,'${widget.filePath}', DefaultAssetBundle.of(context))
+      getExampleCode(
+              context, '${widget.filePath}', DefaultAssetBundle.of(context))
           .then<void>((String code) {
         if (mounted) {
           setState(() {
@@ -48,6 +49,7 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final SyntaxHighlighterStyle style =
@@ -60,16 +62,17 @@ class _FullScreenCodeDialogState extends State<FullScreenCodeDialog> {
       body = const Center(child: CircularProgressIndicator());
     } else {
       Widget _codeWidget;
-      try{
+      try {
         DartSyntaxHighlighter(style).format(_exampleCode);
         _codeWidget = RichText(
           text: TextSpan(
-                style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
-                children: <TextSpan>[
-                  DartSyntaxHighlighter(style).format(_exampleCode)
-                ],),
+            style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
+            children: <TextSpan>[
+              DartSyntaxHighlighter(style).format(_exampleCode)
+            ],
+          ),
         );
-      }catch (err){
+      } catch (err) {
         _codeWidget = Text(_exampleCode);
       }
       body = SingleChildScrollView(

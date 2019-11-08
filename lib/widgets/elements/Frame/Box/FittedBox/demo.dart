@@ -1,9 +1,9 @@
- /// Author: xiaojia.dxj
- /// Date: 2018/12/2
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// LastUpdateTime: 2018/12/2
- /// LastUpdateBy: xj.deng
- /// Describle:FittedBox
+/// Author: xiaojia.dxj
+/// Date: 2018/12/2
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// LastUpdateTime: 2018/12/2
+/// LastUpdateBy: xj.deng
+/// Describle:FittedBox
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -16,7 +16,7 @@ class FittedBoxDefault extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: <Widget>[
         Container(
           //外部有位置约束，内部大小设定失效，保持和外部约束一致

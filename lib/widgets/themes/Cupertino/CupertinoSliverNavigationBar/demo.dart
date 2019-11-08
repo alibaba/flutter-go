@@ -18,43 +18,45 @@ class _Demo extends State<CupertinoSliverNavigationBarDemo> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: DecoratedBox(
-        decoration: const BoxDecoration(color: Color(0xFFEFEFF4)),
-        child: Container(
-          height: 600.0,
-          child: CustomScrollView(
-            slivers: <Widget>[
-            CupertinoSliverNavigationBar(
-              largeTitle: const Text('demo', maxLines: 1,),
-              previousPageTitle: 'Cupertino',
-              trailing: Icon(Icons.perm_camera_mic)
-            ),
-            CupertinoSliverRefreshControl(
+          decoration: const BoxDecoration(color: Color(0xFFEFEFF4)),
+          child: Container(
+            height: 600.0,
+            child: CustomScrollView(
+              slivers: <Widget>[
+                CupertinoSliverNavigationBar(
+                    largeTitle: const Text(
+                      'demo',
+                      maxLines: 1,
+                    ),
+                    previousPageTitle: 'Cupertino',
+                    trailing: Icon(Icons.perm_camera_mic)),
+                CupertinoSliverRefreshControl(
 //              onRefresh: () {
 //
 //              },
-            ),
-            SliverSafeArea(
-                top: false, // Top safe area is consumed by the navigation bar.
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                        (BuildContext context, int index) {
-                      return _ListItem(name: 'name$index',place: 'place$index', date: 'date',  called: true);
-                    },
-                    childCount: 20,
+                    ),
+                SliverSafeArea(
+                  top:
+                      false, // Top safe area is consumed by the navigation bar.
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                        return _ListItem(
+                            name: 'name$index',
+                            place: 'place$index',
+                            date: 'date',
+                            called: true);
+                      },
+                      childCount: 20,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        )
-      ),
+              ],
+            ),
+          )),
     );
   }
-
 }
-
-
-
 
 class _ListItem extends StatelessWidget {
   const _ListItem({
@@ -82,13 +84,13 @@ class _ListItem extends StatelessWidget {
             margin: EdgeInsets.only(top: 10),
             child: called
                 ? const Align(
-              alignment: Alignment.topCenter,
-              child: Icon(
-                CupertinoIcons.phone_solid,
-                color: CupertinoColors.inactiveGray,
-                size: 28.0,
-              ),
-            )
+                    alignment: Alignment.topCenter,
+                    child: Icon(
+                      CupertinoIcons.phone_solid,
+                      color: CupertinoColors.inactiveGray,
+                      size: 28.0,
+                    ),
+                  )
                 : null,
           ),
           Expanded(
@@ -98,7 +100,8 @@ class _ListItem extends StatelessWidget {
                   bottom: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
                 ),
               ),
-              padding: const EdgeInsets.only(left: 1.0, bottom: 9.0, right: 10.0),
+              padding:
+                  const EdgeInsets.only(left: 1.0, bottom: 9.0, right: 10.0),
               child: Row(
                 children: <Widget>[
                   Expanded(
@@ -138,10 +141,8 @@ class _ListItem extends StatelessWidget {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 9.0),
-                    child: Icon(
-                        CupertinoIcons.info,
-                        color: CupertinoColors.activeBlue
-                    ),
+                    child: Icon(CupertinoIcons.info,
+                        color: CupertinoColors.activeBlue),
                   ),
                 ],
               ),

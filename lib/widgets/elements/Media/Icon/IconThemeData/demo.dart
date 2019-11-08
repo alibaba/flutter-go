@@ -1,8 +1,8 @@
- /// Author: xiaojia.dxj
- /// Date: 2018-12-17 09:46:31 
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// Last Modified by: xiaojia.dxj
- /// Last Modified time: 2018-12-17 15:53:42
+/// Author: xiaojia.dxj
+/// Date: 2018-12-17 09:46:31
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// Last Modified by: xiaojia.dxj
+/// Last Modified time: 2018-12-17 15:53:42
 
 import 'package:flutter/material.dart';
 
@@ -15,13 +15,13 @@ class IconThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:  IconTheme(
+      child: IconTheme(
         //opacity: 设置透明
-        data:  IconThemeData(
+        data: IconThemeData(
           color: curColor,
           opacity: curOpacity,
         ),
-        child:  Icon(Icons.favorite),
+        child: Icon(Icons.favorite),
       ),
     );
   }
@@ -37,8 +37,8 @@ class IconThemeDemo2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       actions: <Widget>[
-         IconTheme(
-            data:  IconThemeData(color: curColor, opacity: 1.0),
+        IconTheme(
+            data: IconThemeData(color: curColor, opacity: 1.0),
             child: Row(
               children: <Widget>[
                 Icon(Icons.favorite_border),

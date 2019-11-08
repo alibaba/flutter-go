@@ -20,13 +20,14 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
       index = _index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
       child: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-          items: <BottomNavigationBarItem> [
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               title: Text("A"),
               icon: Icon(Icons.add),
@@ -42,9 +43,9 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
             routes: {
               '/': (context) {
                 return CupertinoPageScaffold(
-                    navigationBar: CupertinoNavigationBar(
-                      middle: Text('Page 1 of tabView $index'),
-                    ),
+                  navigationBar: CupertinoNavigationBar(
+                    middle: Text('Page 1 of tabView $index'),
+                  ),
                   child: Center(
                     child: Text('CupertinoTabView /'),
                   ),
@@ -63,9 +64,9 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
             },
             builder: (BuildContext context) {
               return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  middle: Text('Page 1 of tabView $index'),
-                ),
+                  navigationBar: CupertinoNavigationBar(
+                    middle: Text('Page 1 of tabView $index'),
+                  ),
                   child: Column(
                     children: <Widget>[
                       SizedBox(height: 100),
@@ -78,12 +79,12 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
                       CupertinoButton(
                         child: Text('Next page is home home page'),
                         onPressed: () {
-                          Navigator.of(context, rootNavigator: true).pushNamed('/home');
+                          Navigator.of(context, rootNavigator: true)
+                              .pushNamed('/home');
                         },
                       )
                     ],
-                  )
-              );
+                  ));
             },
           );
         },

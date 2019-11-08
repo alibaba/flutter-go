@@ -33,8 +33,8 @@ const String _titleText2 = """
 
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Form/Button/PopupMenuButton';
-  final Map<String,String> options = {'defaultSelect': '选项二的内容'};
-  final _DemoState self =  _DemoState();
+  final Map<String, String> options = {'defaultSelect': '选项二的内容'};
+  final _DemoState self = _DemoState();
 
   @override
   _DemoState createState() => self;
@@ -42,19 +42,22 @@ class Demo extends StatefulWidget {
 
 class _DemoState extends State<Demo> {
   String buttonShapeType = 'border'; // 边框类型
-  void setButtonShapeType(){
-    String _buttonShapeType = (buttonShapeType == 'border') ? 'radius' : 'border';
-    this.setState((){
+  void setButtonShapeType() {
+    String _buttonShapeType =
+        (buttonShapeType == 'border') ? 'radius' : 'border';
+    this.setState(() {
       buttonShapeType = _buttonShapeType;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'PopupMenuButton',
       codeUrl: 'elements/Form/Button/RaisedButton/demo.dart',
-      contentList: allPopupMenuButton(widget,this),
-      docUrl: 'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
+      contentList: allPopupMenuButton(widget, this),
+      docUrl:
+          'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
     );
   }
 }

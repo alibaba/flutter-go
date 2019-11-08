@@ -12,9 +12,8 @@ import 'package:flutter/material.dart';
 CustomPaint graph;
 
 class CustomViewPage extends StatefulWidget {
-  
   final String type;
-  CustomViewPage({this.type='simpleline'}) : super();
+  CustomViewPage({this.type = 'simpleline'}) : super();
 
   @override
   State<StatefulWidget> createState() => CustomViewPageState();
@@ -22,7 +21,6 @@ class CustomViewPage extends StatefulWidget {
 
 class CustomViewPageState extends State<CustomViewPage>
     with SingleTickerProviderStateMixin {
-
   @override
   void initState() {
     super.initState();
@@ -30,9 +28,7 @@ class CustomViewPageState extends State<CustomViewPage>
 
   @override
   Widget build(BuildContext context) {
-    graph = CustomPaint(
-        painter: DrawPainter(type:widget.type)
-    );
+    graph = CustomPaint(painter: DrawPainter(type: widget.type));
     return Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.width * 0.6,
@@ -40,9 +36,8 @@ class CustomViewPageState extends State<CustomViewPage>
         //padding: EdgeInsets.all(10.0),
         child: graph
         //child:Center(child: graph)
-    );
+        );
   }
-
 
   @override
   void reassemble() {
@@ -60,7 +55,7 @@ class DrawPainter extends CustomPainter {
   Paint painter;
   final type;
 
-  DrawPainter ({this.type}){
+  DrawPainter({this.type}) {
     //    Paint painter = Paint()
     //    ..color = Colors.blueAccent //画笔颜色
     //    ..strokeCap = StrokeCap.round //画笔笔触类型
@@ -79,6 +74,7 @@ class DrawPainter extends CustomPainter {
       ..strokeWidth = 5.0
       ..style = PaintingStyle.stroke;
   }
+
   ///Flutter中负责View绘制的地方，使用传递来的canvas和size即可完成对目标View的绘制
 
   @override
@@ -90,10 +86,14 @@ class DrawPainter extends CustomPainter {
     canvas.drawPath(path, painter);
   }
 
-  void drawThisPath(Canvas canvas, Size size, Path path,) {
-    switch(type) {
+  void drawThisPath(
+    Canvas canvas,
+    Size size,
+    Path path,
+  ) {
+    switch (type) {
       case 'simpleline':
-      //新建了一个path,然后将路径起始点移动到坐标(100,100)的位置
+        //新建了一个path,然后将路径起始点移动到坐标(100,100)的位置
         Path path = new Path()..moveTo(0.0, 0.0);
         path.lineTo(200.0, 200.0);
         canvas.drawPath(path, painter);
@@ -112,8 +112,9 @@ class DrawPainter extends CustomPainter {
         path.arcTo(rect1, 0.0, 3.14, false);
         canvas.drawPath(path, painter);
 
-        Rect rect2 = Rect.fromCircle(center: Offset(200.0, 100.0), radius: 60.0);
-        path.arcTo(rect2, 0.0, 3.14*2, true);
+        Rect rect2 =
+            Rect.fromCircle(center: Offset(200.0, 100.0), radius: 60.0);
+        path.arcTo(rect2, 0.0, 3.14 * 2, true);
         canvas.drawPath(path, painter);
         break;
       case 'Besizerline3':
@@ -123,9 +124,9 @@ class DrawPainter extends CustomPainter {
         path.cubicTo((width * 6) / 7, height / 9, (width * 13) / 13,
             (height * 2) / 5, width / 2, (height * 7) / 12);
         canvas.drawPath(path, painter
-          // ..style = PaintingStyle.fill
-          // ..color = Colors.red
-        );
+            // ..style = PaintingStyle.fill
+            // ..color = Colors.red
+            );
 
         Path path2 = new Path();
         path2.moveTo(width / 2, height / 4);
@@ -134,25 +135,29 @@ class DrawPainter extends CustomPainter {
         canvas.drawPath(path2, painter);
         break;
       case 'drawArc':
-      // 绘制圆弧
-      // Rect来确认圆弧的位置，还需要开始的弧度、结束的弧度、是否使用中心点绘制、以及paint弧度
+        // 绘制圆弧
+        // Rect来确认圆弧的位置，还需要开始的弧度、结束的弧度、是否使用中心点绘制、以及paint弧度
         const PI = 3.1415926;
-        Rect rect1 = Rect.fromCircle(center: Offset(size.width/2, 0.0), radius: 100.0);
-        canvas.drawArc(rect1, 0.0, PI / 2, false, painter ..color = Colors.pink);
+        Rect rect1 =
+            Rect.fromCircle(center: Offset(size.width / 2, 0.0), radius: 100.0);
+        canvas.drawArc(rect1, 0.0, PI / 2, false, painter..color = Colors.pink);
 
-        Rect rect2 = Rect.fromCircle(center: Offset(size.width/2, 150.0), radius: 100.0);
-        canvas.drawArc(rect2, 0.0, PI / 2, true, painter ..color = Colors.deepPurple);
+        Rect rect2 = Rect.fromCircle(
+            center: Offset(size.width / 2, 150.0), radius: 100.0);
+        canvas.drawArc(
+            rect2, 0.0, PI / 2, true, painter..color = Colors.deepPurple);
         break;
       case 'drawRRect':
-      /// fromPoints(Offset a, Offset b)
-      /// 使用左上和右下角坐标来确定矩形的大小和位置
-      /// fromCircle({ Offset center, double radius })
-      /// 使用圆的圆心点坐标和半径和确定外切矩形的大小和位置
-      /// fromLTRB(double left, double top, double right, double bottom)
-      /// 使用矩形左边的X坐标、矩形顶部的Y坐标、矩形右边的X坐标、矩形底部的Y坐标来确定矩形的大小和位置
-      /// fromLTWH(double left, double top, double width, double height)
-      /// 使用矩形左边的X坐标、矩形顶部的Y坐标矩形的宽高来确定矩形的大小和位置
-      // 用Rect构建一个边长50,中心点坐标为50,100的矩形
+
+        /// fromPoints(Offset a, Offset b)
+        /// 使用左上和右下角坐标来确定矩形的大小和位置
+        /// fromCircle({ Offset center, double radius })
+        /// 使用圆的圆心点坐标和半径和确定外切矩形的大小和位置
+        /// fromLTRB(double left, double top, double right, double bottom)
+        /// 使用矩形左边的X坐标、矩形顶部的Y坐标、矩形右边的X坐标、矩形底部的Y坐标来确定矩形的大小和位置
+        /// fromLTWH(double left, double top, double width, double height)
+        /// 使用矩形左边的X坐标、矩形顶部的Y坐标矩形的宽高来确定矩形的大小和位置
+        // 用Rect构建一个边长50,中心点坐标为50,100的矩形
         Rect rect1 = Rect.fromCircle(center: Offset(50.0, 50.0), radius: 50.0);
         Rect rect2 = Rect.fromCircle(center: Offset(200.0, 50.0), radius: 50.0);
         // 根据上面的矩形,构建一个圆角矩形
@@ -162,13 +167,15 @@ class DrawPainter extends CustomPainter {
         canvas.drawRRect(rrect2, painter);
         break;
       case 'drawDRRect':
-      //绘制两个矩形
-        Rect rect1 = Rect.fromCircle(center: Offset(size.width/2, 100.0), radius: 60.0);
-        Rect rect2 = Rect.fromCircle(center: Offset(size.width/2, 100.0), radius: 40.0);
+        //绘制两个矩形
+        Rect rect1 = Rect.fromCircle(
+            center: Offset(size.width / 2, 100.0), radius: 60.0);
+        Rect rect2 = Rect.fromCircle(
+            center: Offset(size.width / 2, 100.0), radius: 40.0);
         //分别绘制外部圆角矩形和内部的圆角矩形
         RRect outer = RRect.fromRectAndRadius(rect1, Radius.circular(30.0));
         RRect inner = RRect.fromRectAndRadius(rect2, Radius.circular(5.0));
-        canvas.drawDRRect(outer, inner, painter ..color = Colors.lime);
+        canvas.drawDRRect(outer, inner, painter..color = Colors.lime);
         break;
     }
   }

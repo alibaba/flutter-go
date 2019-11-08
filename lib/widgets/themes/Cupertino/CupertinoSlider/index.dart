@@ -15,8 +15,7 @@ CupertinoSlider 是ios风格的Slide组件,用来选择连续性的或者非连�
 ''';
 
 class Demo extends StatefulWidget {
-  static const String routeName =
-      '/element/themes/Cupertino/CupertinoSlider';
+  static const String routeName = '/element/themes/Cupertino/CupertinoSlider';
 
   @override
   State<StatefulWidget> createState() => _DemoState();
@@ -28,7 +27,8 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CupertinoSlider',
       codeUrl: 'themes/Cupertino/CupertinoSlider/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/cupertino/CupertinoSlider-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/cupertino/CupertinoSlider-class.html',
       contentList: [
         Text0,
         CupertinoSliderDemo(),

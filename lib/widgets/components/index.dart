@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-10 20:34:18 
+/// @Author: 一凨
+/// @Date: 2018-12-10 20:34:18
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-22 21:25:40
 
@@ -17,7 +17,6 @@ import 'Bar/index.dart' as Bar;
 import 'Dialog/index.dart' as Dialog;
 import 'Scaffold/index.dart' as Scaffold;
 import 'Grid/index.dart' as GridTile;
-
 
 List getWidgets() {
   List result = [];

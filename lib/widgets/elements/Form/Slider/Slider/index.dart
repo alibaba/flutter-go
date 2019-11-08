@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
-import  'demo.dart';
+import 'demo.dart';
 
 const contentA = '''
 ### **简介**
@@ -39,7 +39,6 @@ slider 用来选择连续性的或者非连续性的数据. 默认是在一段�
 ### **基本实例**
 
 ''';
-
 
 const contentB = '''
 ### **高级用法**
@@ -80,12 +79,7 @@ class _Demo extends State<Demo> {
     return WidgetDemo(
       title: 'Slider',
       codeUrl: 'elements/Form/Slider/Slider/demo.dart',
-      contentList: [
-        contentA,
-        SliderDemo(),
-        contentB,
-        SliderThemeDemo()
-      ],
+      contentList: [contentA, SliderDemo(), contentB, SliderThemeDemo()],
       docUrl: 'https://docs.flutter.io/flutter/material/Slider-class.html',
     );
   }

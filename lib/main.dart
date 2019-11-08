@@ -54,14 +54,17 @@ class _MyAppState extends State<MyApp> {
   Future _reqsMainPageIsOpen() async {
     const reqs = 'https://flutter-go.pub/api/isInfoOpen';
     var response;
-    try{
+    try {
       response = await NetUtils.get(reqs, {});
-       print('response-$response');
-      if(response['status'] == 200 && response['success'] ==true && response['data'] is Map && response['data']['isOpen'] == true) {
+      print('response-$response');
+      if (response['status'] == 200 &&
+          response['success'] == true &&
+          response['data'] is Map &&
+          response['data']['isOpen'] == true) {
         Application.pageIsOpen = true;
         print('是否需要展开【业界动态】${Application.pageIsOpen}');
       }
-    }catch(e){
+    } catch (e) {
       print('response-$e');
     }
     return response;
@@ -203,17 +206,18 @@ void _startupJpush() async {
 }
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final provider = new Provider();
   await provider.init(true);
   sp = await SpUtil.getInstance();
   new SearchHistoryList(sp);
 
   await DataUtils.getWidgetTreeList().then((List json) {
-    List data = WidgetTree.insertDevPagesToList(json, StandardPages().getLocalList());
+    List data =
+        WidgetTree.insertDevPagesToList(json, StandardPages().getLocalList());
     Application.widgetTree = WidgetTree.buildWidgetTree(data);
     print("Application.widgetTree>>>> ${Application.widgetTree}");
   });
   db = Provider.db;
   runApp(new MyApp());
 }
-

@@ -1,5 +1,5 @@
 import 'package:event_bus/event_bus.dart';
 
-class ApplicationEvent{
+class ApplicationEvent {
   static EventBus event;
 }

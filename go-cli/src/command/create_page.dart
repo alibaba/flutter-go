@@ -74,7 +74,7 @@ void createPage() async {
   // 创建root文件
   await createFile(demoPath);
 
-  pageMarkdown = await readeFile("${environmentVars['PWD']}/go-cli/utils/tpl.md");
+  pageMarkdown = await readeFile("go-cli/utils/tpl.md");
 
   writeContent2Path('$demoPath/', 'index.dart', """
 String getMd() {

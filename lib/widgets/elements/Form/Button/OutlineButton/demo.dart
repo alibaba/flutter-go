@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 class OutlineButtonDefault extends StatelessWidget {
   final bool isDisabled;
 
-  const OutlineButtonDefault([ this.isDisabled = true])
+  const OutlineButtonDefault([this.isDisabled = true])
       : assert(isDisabled != null),
         super();
 
@@ -35,7 +35,7 @@ class OutlineButtonIconDefault extends StatelessWidget {
   final IconData icon;
 
   const OutlineButtonIconDefault(
-      [ this.isDisabled = true,  this.icon = Icons.add_circle])
+      [this.isDisabled = true, this.icon = Icons.add_circle])
       : super();
 
   @override
@@ -60,10 +60,10 @@ class OutlineButtonCustom extends StatelessWidget {
   final VoidCallback onPressed;
 
   const OutlineButtonCustom(
-      [ this.txt = '自定义按钮',
-       this.color = Colors.blueAccent,
-       this.shape,
-       this.onPressed])
+      [this.txt = '自定义按钮',
+      this.color = Colors.blueAccent,
+      this.shape,
+      this.onPressed])
       : super();
 
   @override
@@ -73,12 +73,14 @@ class OutlineButtonCustom extends StatelessWidget {
         // 文本内容
         child: Text(txt, semanticsLabel: 'FLAT BUTTON 2'),
         // 边框的颜色,颜色也可以走主题色 Theme.of(context).primaryColor
-        borderSide: BorderSide(color: _randomColor(),width:Random.secure().nextInt(10).toDouble()),
+        borderSide: BorderSide(
+            color: _randomColor(),
+            width: Random.secure().nextInt(10).toDouble()),
         // 按钮颜色
         color: _randomColor(),
         // 按钮失效时边框颜色
         disabledBorderColor: Colors.red,
-        highlightedBorderColor:Colors.black54,
+        highlightedBorderColor: Colors.black54,
         // 高亮时的背景色
         highlightColor: Colors.yellow,
         // 失效时的背景色
@@ -94,7 +96,8 @@ class OutlineButtonCustom extends StatelessWidget {
         splashColor: _randomColor(),
         // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
         clipBehavior: Clip.antiAlias,
-        padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
+        padding:
+            EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
         //高亮时候的阴影
         highlightElevation: 10.0,
         shape: shape, // 在Outline 里只能设置圆角,边框用borderSide

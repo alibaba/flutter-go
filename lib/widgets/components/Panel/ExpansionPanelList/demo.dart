@@ -5,11 +5,7 @@
 import 'package:flutter/material.dart';
 
 @visibleForTesting
-enum Location {
-  Barbados,
-  Bahamas,
-  Bermuda
-}
+enum Location { Barbados, Bahamas, Bermuda }
 
 typedef DemoItemBodyBuilder<T> = Widget Function(DemoItem<T> item);
 typedef ValueToString<T> = String Function(T value);
@@ -18,12 +14,7 @@ typedef ValueToString<T> = String Function(T value);
 // https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/expansion_panels_demo.dart
 
 class DualHeaderWithHint extends StatelessWidget {
-  const DualHeaderWithHint({
-    this.name,
-    this.value,
-    this.hint,
-    this.showHint
-  });
+  const DualHeaderWithHint({this.name, this.value, this.hint, this.showHint});
 
   final String name;
   final String value;
@@ -37,7 +28,8 @@ class DualHeaderWithHint extends StatelessWidget {
       firstCurve: const Interval(0.0, 0.6, curve: Curves.fastOutSlowIn),
       secondCurve: const Interval(0.4, 1.0, curve: Curves.fastOutSlowIn),
       sizeCurve: Curves.fastOutSlowIn,
-      crossFadeState: isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+      crossFadeState:
+          isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
       duration: const Duration(milliseconds: 200),
     );
   }
@@ -47,47 +39,37 @@ class DualHeaderWithHint extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     final TextTheme textTheme = theme.textTheme;
 
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 2,
-          child: Container(
-            margin: const EdgeInsets.only(left: 24.0),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                name,
-                style: textTheme.body1.copyWith(fontSize: 15.0),
-              ),
+    return Row(children: <Widget>[
+      Expanded(
+        flex: 2,
+        child: Container(
+          margin: const EdgeInsets.only(left: 24.0),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              name,
+              style: textTheme.body1.copyWith(fontSize: 15.0),
             ),
           ),
         ),
-        Expanded(
+      ),
+      Expanded(
           flex: 3,
           child: Container(
-            margin: const EdgeInsets.only(left: 24.0),
-            child: _crossFade(
-              Text(value, style: textTheme.caption.copyWith(fontSize: 15.0)),
-              Text(hint, style: textTheme.caption.copyWith(fontSize: 15.0)),
-              showHint
-            )
-          )
-        )
-      ]
-    );
+              margin: const EdgeInsets.only(left: 24.0),
+              child: _crossFade(
+                  Text(value,
+                      style: textTheme.caption.copyWith(fontSize: 15.0)),
+                  Text(hint, style: textTheme.caption.copyWith(fontSize: 15.0)),
+                  showHint)))
+    ]);
   }
 }
 
-
 class DemoItem<T> {
-  DemoItem({
-    this.name,
-    this.value,
-    this.hint,
-    this.builder,
-    this.valueToString
-  }) : textController = TextEditingController(text: valueToString(value));
+  DemoItem({this.name, this.value, this.hint, this.builder, this.valueToString})
+      : textController = TextEditingController(text: valueToString(value));
 
   final String name;
   final String hint;
@@ -100,11 +82,10 @@ class DemoItem<T> {
   ExpansionPanelHeaderBuilder get headerBuilder {
     return (BuildContext context, bool isExpanded) {
       return DualHeaderWithHint(
-        name: name,
-        value: valueToString(value),
-        hint: hint,
-        showHint: isExpanded
-      );
+          name: name,
+          value: valueToString(value),
+          hint: hint,
+          showHint: isExpanded);
     };
   }
 
@@ -126,21 +107,21 @@ class _ExpansionPanelsDemoState extends State<ExpansionPanelsDemo> {
     super.initState();
 
     _demoItems = <DemoItem<dynamic>>[
-
       DemoItem<Location>(
-        name: 'Location',
-        value: Location.Bahamas,
-        hint: 'Select location',
-        valueToString: (Location location) => location.toString().split('.')[1],
-        builder: (DemoItem<Location> item) {
-          return Form(
-            child: Builder(
-              builder: (BuildContext context) {
-                return FormField<Location>(
-                    initialValue: item.value,
-                    onSaved: (Location result) { item.value = result; },
-                    builder: (FormFieldState<Location> field) {
-                      return Column(
+          name: 'Location',
+          value: Location.Bahamas,
+          hint: 'Select location',
+          valueToString: (Location location) =>
+              location.toString().split('.')[1],
+          builder: (DemoItem<Location> item) {
+            return Form(child: Builder(builder: (BuildContext context) {
+              return FormField<Location>(
+                  initialValue: item.value,
+                  onSaved: (Location result) {
+                    item.value = result;
+                  },
+                  builder: (FormFieldState<Location> field) {
+                    return Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -162,42 +143,36 @@ class _ExpansionPanelsDemoState extends State<ExpansionPanelsDemo> {
                             groupValue: field.value,
                             onChanged: field.didChange,
                           ),
-                        ]
-                      );
-                    }
-                  );
-              }
-            )
-          );
-        }
-      ),
+                        ]);
+                  });
+            }));
+          }),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-        child: SafeArea(
-          top: false,
-          bottom: false,
-          child: Container(
-            margin: const EdgeInsets.all(24.0),
-            child: ExpansionPanelList(
+    return SingleChildScrollView(
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: Container(
+          margin: const EdgeInsets.all(24.0),
+          child: ExpansionPanelList(
               expansionCallback: (int index, bool isExpanded) {
                 setState(() {
                   _demoItems[index].isExpanded = !isExpanded;
                 });
               },
-              children: _demoItems.map<ExpansionPanel>((DemoItem<dynamic> item) {
+              children:
+                  _demoItems.map<ExpansionPanel>((DemoItem<dynamic> item) {
                 return ExpansionPanel(
-                  isExpanded: true,
-                  headerBuilder: item.headerBuilder,
-                  body: item.build()
-                );
-              }).toList()
-            ),
-          ),
+                    isExpanded: true,
+                    headerBuilder: item.headerBuilder,
+                    body: item.build());
+              }).toList()),
         ),
-      );
+      ),
+    );
   }
 }

@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-27 14:43:50 
+/// @Author: 一凨
+/// @Date: 2018-12-27 14:43:50
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-27 15:44:31
 
@@ -40,7 +40,8 @@ class _DemoState extends State<Demo> {
         PopupMenuButtonDemo(),
       ],
       codeUrl: 'components/Menu/PopupMenuButton/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/PopupMenuButton-class.html',
       title: 'PopupMenuButton',
     );
   }

@@ -20,11 +20,10 @@ class CupertinoIconsFullDefault extends StatefulWidget {
 
 // CupertinoIcons 默认的实例,有状态
 class _CupertinoIconsFullDefault extends State {
-
   final colorsList = [];
   final List<Widget> widgetList = [];
 
-  Widget rowView(IconData itA,IconData itB){
+  Widget rowView(IconData itA, IconData itB) {
     //print('itA=====>${itA.fontPackage}');
     return Row(
       //mainAxisSize:MainAxisSize.max,
@@ -32,28 +31,30 @@ class _CupertinoIconsFullDefault extends State {
       //mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Expanded(
-          flex:1,
-          child: CupertinoButton(
-            padding: EdgeInsets.only(left: 0),
-            onPressed: () { },
-            child:FlatButton.icon(
-                label: Text('默认按钮', semanticsLabel: 'Add'),
-                icon:Icon(itA,
-                semanticLabel: 'Add',
-            ),
-            onPressed: () { },
-        ))),
-        Expanded(
-            flex:1,
+            flex: 1,
             child: CupertinoButton(
-                padding: EdgeInsets.zero,
-                onPressed: () { },
-                child:FlatButton.icon(
+                padding: EdgeInsets.only(left: 0),
+                onPressed: () {},
+                child: FlatButton.icon(
                   label: Text('默认按钮', semanticsLabel: 'Add'),
-                  icon:Icon(itB,
+                  icon: Icon(
+                    itA,
                     semanticLabel: 'Add',
                   ),
-                  onPressed: () { },
+                  onPressed: () {},
+                ))),
+        Expanded(
+            flex: 1,
+            child: CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {},
+                child: FlatButton.icon(
+                  label: Text('默认按钮', semanticsLabel: 'Add'),
+                  icon: Icon(
+                    itB,
+                    semanticLabel: 'Add',
+                  ),
+                  onPressed: () {},
                 ))),
       ],
     );
@@ -64,22 +65,21 @@ class _CupertinoIconsFullDefault extends State {
     super.initState();
 
     final names = icon_names.CupertinoIIconNames.names;
-    for(var i=0;i<names.length-2;i++){
-      if(i%2 == 0){
-        widgetList.add(rowView(names[i],names[i+1]));
+    for (var i = 0; i < names.length - 2; i++) {
+      if (i % 2 == 0) {
+        widgetList.add(rowView(names[i], names[i + 1]));
       }
     }
   }
+
   @override
   Widget build(BuildContext context) {
-    return
-      Align(
-          //alignment: Alignment.center,
-          //width: MediaQuery.of(context).size.width,
-          child:Column(
-          //verticalDirection: VerticalDirection.down,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: widgetList
-      ));
+    return Align(
+        //alignment: Alignment.center,
+        //width: MediaQuery.of(context).size.width,
+        child: Column(
+            //verticalDirection: VerticalDirection.down,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: widgetList));
   }
 }

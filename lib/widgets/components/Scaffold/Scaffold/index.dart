@@ -40,7 +40,6 @@ Scaffold 有下面几个主要属性：
 
 """;
 
-
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Scaffold/Scaffold';
 
@@ -56,7 +55,7 @@ class _DemoState extends State<Demo> {
       codeUrl: 'components/Scaffold/Scaffold/demo.dart',
       contentList: [
         _Text0,
-         ScaffoldDemo(),
+        ScaffoldDemo(),
       ],
       docUrl: 'https://docs.flutter.io/flutter/material/Scaffold-class.html',
     );

@@ -4,7 +4,6 @@ import '../../../../model/widget.dart';
 import 'Checkbox/index.dart' as Checkbox;
 import 'CheckboxListTile/index.dart' as CheckboxListTile;
 
-
 List<WidgetPoint> widgetPoints = [
   WidgetPoint(
     name: 'Checkbox',

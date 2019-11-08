@@ -72,7 +72,7 @@ class SearchHistoryList {
   }
 
   add(SearchHistory item) {
-    print("_searchHistoryList> ${_searchHistoryList.length}");
+    print("add item to serach history ${item.targetRouter}");
     for (SearchHistory value in _searchHistoryList) {
       if (value.name == item.name) {
         return;

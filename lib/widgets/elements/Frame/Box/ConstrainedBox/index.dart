@@ -1,7 +1,7 @@
 /// Author: xiaojia.dxj
-/// Date: 2019-01-08 15:56:53 
+/// Date: 2019-01-08 15:56:53
 /// Last Modified by:   xiaojia.dxj
-/// Last Modified time: 2019-01-08 15:56:53 
+/// Last Modified time: 2019-01-08 15:56:53
 /// email: xiaojia.dxj@alibaba-inc.com
 
 import 'package:flutter/material.dart';
@@ -61,7 +61,6 @@ class _DemoState extends State<Demo> {
           height: 10.0,
         ),
         ConstrainedBoxCreate(currWidth: 100, describe: "currWidth=minWidth"),
-
       ],
       docUrl:
           'https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html',

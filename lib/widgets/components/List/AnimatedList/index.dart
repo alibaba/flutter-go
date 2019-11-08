@@ -13,20 +13,16 @@ import './demo.dart';
 //var _AnimatedListFullDefault = AnimatedListDemo.AnimatedListFullDefault;
 GlobalKey globalKey = GlobalKey();
 
-const String _Text0 =
-"""### **简介**
+const String _Text0 = """### **简介**
 > AnimatedList “动画滚动容器”
 - 一个滚动容器，可在插入或移除项目时为其设置动画
 """;
 
-
-const String _Text1 =
-"""### **基本用法**
+const String _Text1 = """### **基本用法**
 > AnimatedList
 - AnimatedListState 可用于动态插入或删除项目。
 - 下面示例展示效果:点击+号增加 card, 点击 card 保持激活状态，再点击-号，减少 card。
 """;
-
 
 class Demo extends StatefulWidget {
   static const String routeName = '/components/List/AnimatedList';
@@ -47,7 +43,6 @@ class _DemoState extends State<Demo> {
     );
   }
 }
-
 
 /// 所有的 AnimatedList widget
 /// context: 运行上下文
@@ -73,33 +68,28 @@ List allDemoBoxs(BuildContext context, _DemoState that) {
   ];
 }
 
-
 // 演示辅助按钮
 Widget assistButtonLeft(that) {
   return FloatingActionButton(
-    // 文本内容
-      backgroundColor:Colors.red,
+      // 文本内容
+      backgroundColor: Colors.red,
       child: const Icon(Icons.add_circle_outline),
       heroTag: null, // 不加这个参数会黑屏...
       onPressed: () {
         //demo.insert();
         //print('${globalKey.currentState}');
         that.animatedList.insert();
-      }
-  );
+      });
 }
-
 
 // 演示辅助按钮
 Widget assistButtonRight(that) {
   return FloatingActionButton(
-    // 文本内容
-      backgroundColor:Colors.green,
+      // 文本内容
+      backgroundColor: Colors.green,
       child: const Icon(Icons.remove_circle_outline),
       heroTag: null, // 不加这个参数会黑屏...
       onPressed: () {
         that.animatedList.remove();
-      }
-  );
+      });
 }
-

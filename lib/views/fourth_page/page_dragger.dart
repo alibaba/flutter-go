@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:ui';
 
@@ -7,12 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_go/views/fourth_page/pager_indicator.dart';
 
 class PageDragger extends StatefulWidget {
-
   final canDragLeftToRight;
   final canDragRightToLeft;
 
   final StreamController<SlideUpdate> slideUpdateStream;
-
 
   PageDragger({
     this.canDragLeftToRight,
@@ -25,14 +22,13 @@ class PageDragger extends StatefulWidget {
 }
 
 class _PageDraggerState extends State<PageDragger> {
-
   static const FULL_TRANSTITION_PX = 300.0;
 
   Offset dragStart;
   SlideDirection slideDirection;
   double slidePercent = 0.0;
 
-  onDragStart(DragStartDetails details){
+  onDragStart(DragStartDetails details) {
     dragStart = details.globalPosition;
   }
 
@@ -49,28 +45,22 @@ class _PageDraggerState extends State<PageDragger> {
         slideDirection = SlideDirection.none;
       }
 
-      if (slideDirection != SlideDirection.none){
-      slidePercent = (dx / FULL_TRANSTITION_PX).abs().clamp(0.0, 1.0);
+      if (slideDirection != SlideDirection.none) {
+        slidePercent = (dx / FULL_TRANSTITION_PX).abs().clamp(0.0, 1.0);
       } else {
         slidePercent = 0.0;
       }
       widget.slideUpdateStream.add(
-          new SlideUpdate(
-          UpdateType.dragging,
-          slideDirection,
-          slidePercent
-      ));
+          new SlideUpdate(UpdateType.dragging, slideDirection, slidePercent));
     }
   }
 
-  onDragEnd(DragEndDetails details){
-    widget.slideUpdateStream.add(
-      new SlideUpdate(
+  onDragEnd(DragEndDetails details) {
+    widget.slideUpdateStream.add(new SlideUpdate(
       UpdateType.doneDragging,
       SlideDirection.none,
       0.0,
-      )
-    );
+    ));
 
     dragStart = null;
   }
@@ -78,15 +68,14 @@ class _PageDraggerState extends State<PageDragger> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onHorizontalDragStart: onDragStart ,
-      onHorizontalDragUpdate: onDragUpdate ,
-      onHorizontalDragEnd: onDragEnd ,
+      onHorizontalDragStart: onDragStart,
+      onHorizontalDragUpdate: onDragUpdate,
+      onHorizontalDragEnd: onDragEnd,
     );
   }
 }
 
-class AnimatedPageDragger{
-
+class AnimatedPageDragger {
   static const PERCENT_PER_MILLISECOND = 0.005;
 
   final slideDirection;
@@ -95,85 +84,67 @@ class AnimatedPageDragger{
   AnimationController completionAnimationController;
 
   AnimatedPageDragger({
-      this.slideDirection,
-      this.transitionGoal,
-      slidePercent,
-      StreamController<SlideUpdate> slideUpdateStream,
-      TickerProvider vsync,
+    this.slideDirection,
+    this.transitionGoal,
+    slidePercent,
+    StreamController<SlideUpdate> slideUpdateStream,
+    TickerProvider vsync,
   }) {
     final startSlidePercent = slidePercent;
     var endSlidePercent;
     var duration;
 
-    if ( transitionGoal == TransitionGoal.open){
+    if (transitionGoal == TransitionGoal.open) {
       endSlidePercent = 1.0;
 
       final slideRemaining = 1.0 - slidePercent;
 
       duration = new Duration(
-        milliseconds: (slideRemaining / PERCENT_PER_MILLISECOND).round()
-      );
-
+          milliseconds: (slideRemaining / PERCENT_PER_MILLISECOND).round());
     } else {
       endSlidePercent = 0.0;
       duration = new Duration(
-          milliseconds: (slidePercent / PERCENT_PER_MILLISECOND).round()
-      );
+          milliseconds: (slidePercent / PERCENT_PER_MILLISECOND).round());
     }
 
-    completionAnimationController = new AnimationController(
-        duration: duration,
-        vsync: vsync
-    )
-    ..addListener((){
-       slidePercent = lerpDouble(
-          startSlidePercent,
-          endSlidePercent,
-          completionAnimationController.value
-      );
+    completionAnimationController =
+        new AnimationController(duration: duration, vsync: vsync)
+          ..addListener(() {
+            slidePercent = lerpDouble(startSlidePercent, endSlidePercent,
+                completionAnimationController.value);
 
-      slideUpdateStream.add(
-        new SlideUpdate(
-        UpdateType.animating,
-        slideDirection,
-        slidePercent,
-        )
-      );
-
-    })
-
-    ..addStatusListener((AnimationStatus status){
-
-      if(status == AnimationStatus.completed){
-        slideUpdateStream.add(
-        new SlideUpdate(
-          UpdateType.doneAnimating,
-          slideDirection,
-          endSlidePercent,
-          )
-        );
-      }
-
-    });
-
+            slideUpdateStream.add(new SlideUpdate(
+              UpdateType.animating,
+              slideDirection,
+              slidePercent,
+            ));
+          })
+          ..addStatusListener((AnimationStatus status) {
+            if (status == AnimationStatus.completed) {
+              slideUpdateStream.add(new SlideUpdate(
+                UpdateType.doneAnimating,
+                slideDirection,
+                endSlidePercent,
+              ));
+            }
+          });
   }
 
-  run(){
+  run() {
     completionAnimationController.forward(from: 0.0);
   }
 
-  dispose(){
+  dispose() {
     completionAnimationController.dispose();
   }
-
 }
 
-enum TransitionGoal{
+enum TransitionGoal {
   open,
   close,
 }
 
-enum UpdateType{
+enum UpdateType {
   dragging,
   doneDragging,
   animating,
@@ -185,9 +156,5 @@ class SlideUpdate {
   final direction;
   final slidePercent;
 
-  SlideUpdate(
-      this.updateType,
-      this.direction,
-      this.slidePercent
-      );
+  SlideUpdate(this.updateType, this.direction, this.slidePercent);
 }

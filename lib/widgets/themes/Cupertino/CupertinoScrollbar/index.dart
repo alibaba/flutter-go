@@ -30,7 +30,8 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CupertinoScrollbar',
       codeUrl: 'themes/Cupertino/CupertinoScrollbar/demo.dart',
-      docUrl: 'https://docs.flutter.io/flutter/material/MaterialAccentColor-class.html',
+      docUrl:
+          'https://docs.flutter.io/flutter/material/MaterialAccentColor-class.html',
       contentList: [
         Text0,
         Text1,

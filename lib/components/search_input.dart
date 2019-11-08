@@ -16,13 +16,9 @@ typedef void OnSubmit(String value);
 
 ///搜索结果内容显示面板
 class MaterialSearchResult<T> extends StatelessWidget {
-  const MaterialSearchResult({
-    Key key,
-    this.value,
-    this.text,
-    this.icon,
-    this.onTap
-  }) : super(key: key);
+  const MaterialSearchResult(
+      {Key key, this.value, this.text, this.icon, this.onTap})
+      : super(key: key);
 
   final String value;
   final VoidCallback onTap;
@@ -31,7 +27,6 @@ class MaterialSearchResult<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return new InkWell(
       onTap: this.onTap,
       child: new Container(
@@ -39,8 +34,14 @@ class MaterialSearchResult<T> extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 10.0),
         child: new Row(
           children: <Widget>[
-            new Container(width: 30.0, margin: EdgeInsets.only(right: 10), child: new Icon(icon)) ?? null,
-            new Expanded(child: new Text(value, style: Theme.of(context).textTheme.subhead)),
+            new Container(
+                    width: 30.0,
+                    margin: EdgeInsets.only(right: 10),
+                    child: new Icon(icon)) ??
+                null,
+            new Expanded(
+                child: new Text(value,
+                    style: Theme.of(context).textTheme.subhead)),
             new Text(text, style: Theme.of(context).textTheme.subhead)
           ],
         ),
@@ -125,6 +126,7 @@ class _MaterialSearchState<T> extends State<MaterialSearch> {
   }
 
   Timer _resultsTimer;
+
   Future _getResultsDebounced() async {
     if (_results.length == 0) {
       setState(() {
@@ -165,6 +167,7 @@ class _MaterialSearchState<T> extends State<MaterialSearch> {
     super.dispose();
     _resultsTimer?.cancel();
   }
+
   Widget buildBody(List results) {
     if (_criteria.isEmpty) {
       return History();
@@ -172,16 +175,11 @@ class _MaterialSearchState<T> extends State<MaterialSearch> {
       return new Center(
           child: new Padding(
               padding: const EdgeInsets.only(top: 50.0),
-              child: new CircularProgressIndicator()
-          )
-      );
+              child: new CircularProgressIndicator()));
     }
     if (results.isNotEmpty) {
-      var content = new SingleChildScrollView(
-          child: new Column(
-            children: results
-          )
-      );
+      var content =
+          new SingleChildScrollView(child: new Column(children: results));
       return content;
     }
     return Center(child: Text("暂无数据"));
@@ -242,7 +240,7 @@ class _MaterialSearchState<T> extends State<MaterialSearch> {
               ],
       ),
       body: buildBody(results),
-      );
+    );
   }
 }
 
@@ -406,34 +404,35 @@ class SearchInput extends StatelessWidget {
 }
 // wigdet干掉.=> componets
 
-
 class History extends StatefulWidget {
   const History() : super();
 
   @override
-  _History  createState() => _History();
+  _History createState() => _History();
 }
 
 // AppBar 默认的实例,有状态
 class _History extends State<History> {
   SearchHistoryList searchHistoryList = new SearchHistoryList();
+  bool refreshFlag;
 
   @override
   void initState() {
     super.initState();
+    this.refreshFlag = true;
   }
 
   @override
   void dispose() {
     super.dispose();
   }
+
   buildChips(BuildContext context) {
     List<Widget> list = [];
     List<SearchHistory> historyList = searchHistoryList.getList();
     print("historyList> $historyList");
     Color bgColor = Theme.of(context).primaryColor;
     historyList.forEach((SearchHistory value) {
-
       Widget icon = CircleAvatar(
         backgroundColor: bgColor,
         child: Text(
@@ -446,20 +445,28 @@ class _History extends State<History> {
       }
       String targetRouter = value.targetRouter;
 
-      list.add(
-        InkWell(
-          onTap: () {
-            Application.router.navigateTo(context, "${targetRouter.toLowerCase()}", transition: TransitionType.inFromRight);
-          },
-          child: Chip(
-            avatar: icon,
-            label: Text("${value.name}"),
-          ),
-        )
-      );
+      list.add(InkWell(
+        onTap: () {
+          Application.router.navigateTo(
+              context, "${targetRouter.toLowerCase()}",
+              transition: TransitionType.inFromRight);
+        },
+        child: Chip(
+          avatar: icon,
+          label: Text("${value.name}"),
+        ),
+      ));
     });
     return list;
   }
+
+  _clearHistory() {
+    searchHistoryList.clear();
+    this.setState(() {
+      this.refreshFlag = !this.refreshFlag;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Widget> childList = buildChips(context);

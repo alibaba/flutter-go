@@ -34,7 +34,6 @@ const Text5 = '''
 > 三阶贝塞尔曲线
 ''';
 
-
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Media/﻿Canvas/PainterPath';
 
@@ -51,13 +50,13 @@ class _DemoState extends State<Demo> {
         Text,
         Text1,
         Text2,
-        demoBoxs.CustomViewPage(type:'simpleline'),
+        demoBoxs.CustomViewPage(type: 'simpleline'),
         Text3,
-        demoBoxs.CustomViewPage(type:'polyline'),
+        demoBoxs.CustomViewPage(type: 'polyline'),
         Text4,
-        demoBoxs.CustomViewPage(type:'Besizerline2'),
+        demoBoxs.CustomViewPage(type: 'Besizerline2'),
         Text5,
-        demoBoxs.CustomViewPage(type:'Besizerline3'),
+        demoBoxs.CustomViewPage(type: 'Besizerline3'),
       ],
       docUrl: 'https://docs.flutter.io/flutter/dart-ui/Paint-class.html',
     );

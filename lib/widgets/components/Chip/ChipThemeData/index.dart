@@ -1,5 +1,5 @@
 /// @Author: xiaojia.dxj
-/// @Date: 2018-12-18 15:14:03 
+/// @Date: 2018-12-18 15:14:03
 /// @Last Modified by: xiaojia.dxj
 /// @Last Modified time: 2018-12-18 17:38:56
 
@@ -32,7 +32,7 @@ class _DemoState extends State<Demo> {
         contentList: [
           content0,
           content1,
-         ChipThemeDemo(),
+          ChipThemeDemo(),
         ],
         codeUrl: 'components/Chip/ChipThemeData/demo.dart',
         docUrl:

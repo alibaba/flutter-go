@@ -11,15 +11,12 @@ import 'package:flutter/material.dart';
 
 import './demo.dart' as SliverAppBarDemo;
 
-const String _Text0 =
-"""### **简介**
+const String _Text0 = """### **简介**
 > SliverAppBar “应用栏”
 - 它类似于Android中的toolbar;
 """;
 
-
-const String _Text1 =
-"""### **基本用法**
+const String _Text1 = """### **基本用法**
 > 虽然基本相同，构造方法也是非常的简单，但是却不能直接使用它，由官方文档可以看到通常结合 ScrollView 来使用它;
 - AppBar 和 SliverAppBar 都是继承StatefulWidget 类，都代表 Toobar;
 - 二者的区别在于 AppBar 位置的固定的应用最上面的;而 SliverAppBar 是可以跟随内容滚动的;
@@ -57,4 +54,3 @@ List allDomes(BuildContext context, _DemoState that) {
     SliverAppBarDemo.SliverAppBarLessDefault()
   ];
 }
-

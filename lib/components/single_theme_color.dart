@@ -13,10 +13,11 @@ class SingleThemeColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        if(ApplicationEvent.event != null){
+      onTap: () {
+        if (ApplicationEvent.event != null) {
           print('fire ${this.themeColor}');
-          ApplicationEvent.event.fire(UserSettingThemeColorEvent(this.themeColor));
+          ApplicationEvent.event
+              .fire(UserSettingThemeColorEvent(this.themeColor));
           Navigator.of(context).pop();
         }
       },

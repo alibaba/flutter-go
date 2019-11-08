@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2019-01-07 16:24:42 
+/// @Author: 一凨
+/// @Date: 2019-01-07 16:24:42
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2019-01-08 17:37:42
 
@@ -18,8 +18,8 @@ class Collection implements CollectionInterface {
 
   Collection({this.name, this.router});
 
-  factory Collection.fromJSON(Map json){
-    return Collection(name: json['name'],router: json['router']);
+  factory Collection.fromJSON(Map json) {
+    return Collection(name: json['name'], router: json['router']);
   }
 
   Object toMap() {
@@ -48,7 +48,7 @@ class CollectionControlModel {
   Future<List<Collection>> getAllCollection() async {
     List list = await sql.getByCondition();
     List<Collection> resultList = [];
-    list.forEach((item){
+    list.forEach((item) {
       print('collection item =>> $item');
       resultList.add(Collection.fromJSON(item));
     });
@@ -68,11 +68,12 @@ class CollectionControlModel {
   }
 
   // 删除
-  Future deleteByName(String name) async{
-    return await sql.delete(name,'name');
+  Future deleteByName(String name) async {
+    return await sql.delete(name, 'name');
   }
+
   // 通过path删除
-  Future deleteByPath(String path) async{
-    return await sql.delete(path,'router');
+  Future deleteByPath(String path) async {
+    return await sql.delete(path, 'router');
   }
 }

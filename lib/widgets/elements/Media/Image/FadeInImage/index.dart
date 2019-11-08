@@ -1,13 +1,12 @@
- /// @Author: 一凨 
- /// @Date: 2018-12-08 14:26:00 
- /// @Last Modified by: 一凨
- /// @Last Modified time: 2018-12-08 16:10:55
+/// @Author: 一凨
+/// @Date: 2018-12-08 14:26:00
+/// @Last Modified by: 一凨
+/// @Last Modified time: 2018-12-08 16:10:55
 
 import 'package:flutter/material.dart';
 
 import 'package:flutter_go/components/widget_demo.dart';
 import './fade_in_image_demo.dart';
-
 
 const contentText0 = '''
 ### **简介**
@@ -25,7 +24,6 @@ const contentText1 = '''
 
 ''';
 
-
 class Demo extends StatefulWidget {
   static const String routeName = '/element/Media/Image/FadeInImage';
   _DemoState createState() => _DemoState();
@@ -37,7 +35,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       codeUrl: 'elements/Media/Image/FadeInImage/fade_in_image_demo.dart',
       docUrl: 'https://docs.flutter.io/flutter/widgets/FadeInImage-class.html',
-      title:'FadeInImage',
+      title: 'FadeInImage',
       contentList: [
         contentText0,
         contentText1,

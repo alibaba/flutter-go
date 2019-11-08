@@ -12,9 +12,9 @@ const Text1 = '''
 - canvas + Animation 实现一个 loading 效果;
 ''';
 
-
 class Demo extends StatefulWidget {
-  static const String routeName = '/element/Media/﻿Canvas/CircleProgressBarPainter';
+  static const String routeName =
+      '/element/Media/﻿Canvas/CircleProgressBarPainter';
 
   _DemoState createState() => _DemoState();
 }
@@ -25,13 +25,8 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       title: 'CircleProgressBarPainter',
       codeUrl: 'elements/Media/Canvas/CircleProgressBarPainter/demo.dart',
-      contentList: [
-        Text,
-        Text1,
-        demoBoxs.CustomViewPage()
-      ],
+      contentList: [Text, Text1, demoBoxs.CustomViewPage()],
       docUrl: 'https://docs.flutter.io/flutter/dart-ui/Canvas-class.html',
     );
   }
 }
-

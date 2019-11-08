@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class DefaultTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       padding: const EdgeInsets.all(30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start, //文本是起始端对齐
@@ -27,7 +27,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
         padding: const EdgeInsets.all(30.0),
         child: TextField(
           keyboardType: TextInputType.number,

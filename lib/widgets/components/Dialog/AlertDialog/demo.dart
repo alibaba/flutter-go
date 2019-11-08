@@ -7,8 +7,7 @@
 
 import 'package:flutter/material.dart';
 
-class AlertDialogDemo extends StatelessWidget{
-
+class AlertDialogDemo extends StatelessWidget {
   void showAlertDialog(BuildContext context) {
     showDialog<void>(
       context: context,
@@ -98,7 +97,6 @@ class AlertDialogDemo extends StatelessWidget{
                 Text('too long~~~'),
                 Text('too long~~~'),
                 Text('too long~~~'),
-
               ],
             ),
           ),
@@ -114,13 +112,14 @@ class AlertDialogDemo extends StatelessWidget{
       },
     );
   }
+
   Widget build(BuildContext context) {
-    return  RaisedButton(
-        padding:  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+    return RaisedButton(
+        padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
         //padding
-        child:  Text(
+        child: Text(
           '点我显示 AlertDialog',
-          style:  TextStyle(
+          style: TextStyle(
             fontSize: 18.0, //textsize
             color: Colors.white, // textcolor
           ),
@@ -131,7 +130,6 @@ class AlertDialogDemo extends StatelessWidget{
         splashColor: Colors.blueGrey,
         onPressed: () {
           showAlertDialog(context);
-      });
+        });
   }
 }
-

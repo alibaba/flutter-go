@@ -1,5 +1,5 @@
-/// @Author: 一凨 
-/// @Date: 2018-12-15 16:25:39 
+/// @Author: 一凨
+/// @Date: 2018-12-15 16:25:39
 /// @Last Modified by: 一凨
 /// @Last Modified time: 2018-12-15 19:36:43
 
@@ -14,7 +14,6 @@ const Duration _kScrollbarFadeDuration = Duration(milliseconds: 300);
 const Duration _kScrollbarTimeToFade = Duration(milliseconds: 600);
 
 class PaintDemo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(

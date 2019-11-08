@@ -21,23 +21,19 @@ const String content1 = '''
 - height 弹出层高度
 - context 上下文对象
 ''';
+
 class Demo extends StatefulWidget {
   static const String routeName = '/components/Pick/CityPicker';
   _Demo createState() => _Demo();
 }
 
 class _Demo extends State<Demo> {
-
   Widget build(BuildContext context) {
     return WidgetDemo(
       title: 'CityPicker',
       codeUrl: '',
       docUrl: '',
-      contentList: [
-        content0,
-        content1,
-        CityPickerDemo()
-      ],
+      contentList: [content0, content1, CityPickerDemo()],
     );
   }
 }

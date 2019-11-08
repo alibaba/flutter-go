@@ -20,13 +20,14 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
       index = _index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
       child: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-          items: <BottomNavigationBarItem> [
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               title: Text("1"),
               icon: Icon(Icons.add),
@@ -58,7 +59,9 @@ class _Demo extends State<CupertinoTabScaffoldDemo> {
                               child: Center(
                                 child: CupertinoButton(
                                   child: const Text('Back'),
-                                  onPressed: () { Navigator.of(context).pop(); },
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
                                 ),
                               ),
                             );

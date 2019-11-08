@@ -1,9 +1,9 @@
- /// Author: xiaojia.dxj
- /// Date: 2018/11/22
- /// Email: xiaojia.dxj@alibaba-inc.com
- /// LastUpdateTime: 2018/11/22
- /// LastUpdateBy: xj.deng
- /// Describle:indexedStack
+/// Author: xiaojia.dxj
+/// Date: 2018/11/22
+/// Email: xiaojia.dxj@alibaba-inc.com
+/// LastUpdateTime: 2018/11/22
+/// LastUpdateBy: xj.deng
+/// Describle:indexedStack
 
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class StackDefault extends StatelessWidget {
 //          fit: BoxFit.cover,
 //        ),
         CircleAvatar(
-          backgroundColor:  Color(0xfff48fb1),
+          backgroundColor: Color(0xfff48fb1),
           radius: 40.0,
         ),
         Container(
@@ -59,27 +59,27 @@ class StackIndex extends StatelessWidget {
     return IndexedStack(
       index: currIndex,
       children: [
-         Icon(
+        Icon(
           Icons.update,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-         Icon(
+        Icon(
           Icons.access_alarm,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-         Icon(
+        Icon(
           Icons.add_alarm,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-         Icon(
+        Icon(
           Icons.access_time,
           size: 40.0,
           color: Color(0xffe91e63),
         ),
-         Icon(
+        Icon(
           Icons.alarm_off,
           size: 40.0,
           color: Color(0xffe91e63),

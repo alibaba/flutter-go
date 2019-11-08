@@ -14,13 +14,13 @@ class UserInformation {
   factory UserInformation.fromJson(Map<String, dynamic> json) {
     print('fromJOSN $json   ${json['id'].runtimeType}');
     String name = json['name'];
-    int userId ;
-    if(json['name'] == null){
+    int userId;
+    if (json['name'] == null) {
       name = json['url_name'];
     }
-    if(json['id'].runtimeType == int){
+    if (json['id'].runtimeType == int) {
       userId = json['id'];
-    }else{
+    } else {
       userId = int.parse(json['id']);
     }
     return UserInformation(
