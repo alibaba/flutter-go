@@ -1,0 +1,45 @@
+analyzer:
+ strong-mode:
+  implicit-casts: false
+ errors:
+  avoid_returning_null_for_future: warning
+  cancel_subscriptions: warning
+  dead_code: warning
+  override_on_non_overriding_method: warning
+  unused_element: warning
+  unused_import: warning
+  avoid_empty_else: warning
+ exclude:
+  - test/**
+linter:
+  rules:
+    - camel_case_types
+    - library_names
+    - library_prefixes
+    - file_names
+    - package_names
+    - non_constant_identifier_names
+    - constant_identifier_names
+    - sort_pub_dependencies
+    - directives_ordering
+    - curly_braces_in_flow_control_structures
+    - slash_for_doc_comments
+    - package_api_docs
+    - public_member_api_docs
+    - comment_references
+    - prefer_adjacent_string_concatenation
+    - prefer_interpolation_to_compose_strings
+    - unnecessary_brace_in_string_interps
+    - prefer_collection_literals
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_for_elements_to_map_fromIterable
+    - avoid_function_literals_in_foreach_calls
+    - prefer_equal_for_default_values
+    - avoid_init_to_null
+    - unnecessary_getters_setters
+    - unnecessary_this
+    - prefer_initializing_formals
+    - unnecessary_new
+    - unnecessary_await_in_return
+    - avoid_void_async
