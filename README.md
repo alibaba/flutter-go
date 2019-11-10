@@ -29,7 +29,6 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 	-  [命令行 生成 `Flutter Go Widget` 标准公共模版](https://github.com/alibaba/flutter-go/blob/beta/docs/widget.md)
 	-  `markdown` 模版动态化生成（合并到master分支后）
 - [x] ` Flutter Go ` 官方 `APP` 版本自动升级
-- [x] 多端模版同步( pc端，native端同步 )
 - [x] `Flutter Go` store
 
 
