@@ -107,7 +107,7 @@ class _MyHomePageState extends State<AppPage>
         .add(SearchHistory(name: targetName, targetRouter: targetRouter));
     print("searchHistoryList1 ${searchHistoryList.toString()}");
     Application.router.navigateTo(context, targetRouter.toLowerCase(),
-        transition: TransitionType.inFromRight);
+        transition: TransitionType.native);
   }
 
   Widget buildSearchInput(BuildContext context) {

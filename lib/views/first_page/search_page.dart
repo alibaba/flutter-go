@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,8 +28,11 @@ final _industryPage = Industry.IndustryPage(itemTitle: (state) {
           print(state.res[index].source);
           final itemTitle = state.res[index].title;
           final itemUrl = state.res[index].source;
-          Application.router.navigateTo(context,
-              '${Routes.webViewPage}?title=${Uri.encodeComponent(itemTitle)}&url=${Uri.encodeComponent(itemUrl)}');
+          Application.router.navigateTo(
+            context,
+            '${Routes.webViewPage}?title=${Uri.encodeComponent(itemTitle)}&url=${Uri.encodeComponent(itemUrl)}',
+            transition: TransitionType.nativeModal,
+          );
         },
       );
     },

@@ -448,7 +448,7 @@ class _History extends State<History> {
         onTap: () {
           Application.router.navigateTo(
               context, "${targetRouter.toLowerCase()}",
-              transition: TransitionType.inFromRight);
+              transition: TransitionType.native);
         },
         child: Chip(
           avatar: icon,

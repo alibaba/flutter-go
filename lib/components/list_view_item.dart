@@ -1,3 +1,5 @@
+import 'package:fluro/fluro.dart';
+
 /// @Author: 一凨
 /// @Date: 2019-01-14 17:53:54
 /// @Last Modified by: 一凨
@@ -25,8 +27,11 @@ class ListViewItem extends StatelessWidget {
       child: ListTile(
         onTap: () {
           // _launchURL(itemUrl, context);
-          Application.router.navigateTo(context,
-              '${Routes.webViewPage}?title=${Uri.encodeComponent(itemTitle)}&url=${Uri.encodeComponent(itemUrl)}');
+          Application.router.navigateTo(
+            context,
+            '${Routes.webViewPage}?title=${Uri.encodeComponent(itemTitle)}&url=${Uri.encodeComponent(itemUrl)}',
+            transition: TransitionType.nativeModal,
+          );
         },
         title: Padding(
           child: Text(

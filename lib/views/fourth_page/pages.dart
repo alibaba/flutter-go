@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 import '../../routers/application.dart';
@@ -51,8 +52,11 @@ class Page extends StatelessWidget {
               ..putBool(SharedPreferencesKeys.showWelcome, false);
             _goHomePage(context);
           } else if (type == 'goGithub') {
-            Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${Uri.encodeComponent(txt)} Doc&&url=${Uri.encodeComponent("https://github.com/alibaba/flutter-go")}');
+            Application.router.navigateTo(
+              context,
+              '${Routes.webViewPage}?title=${Uri.encodeComponent(txt)} Doc&&url=${Uri.encodeComponent("https://github.com/alibaba/flutter-go")}',
+              transition: TransitionType.nativeModal,
+            );
           }
         },
         elevation: 10.0,
@@ -93,8 +97,12 @@ class Page extends StatelessWidget {
           Positioned(
               right: -5.0,
               top: paddingTop + 2.0,
-              child: creatButton(context, 'GitHub', Icons.arrow_forward, 'goGithub')
-          ),
+              child: creatButton(
+                context,
+                'GitHub',
+                Icons.arrow_forward,
+                'goGithub',
+              )),
         ]);
   }
 

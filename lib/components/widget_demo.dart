@@ -3,6 +3,7 @@
 
 import 'dart:core';
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 
@@ -136,11 +137,17 @@ class _WidgetDemoState extends State<WidgetDemo> {
   void _selectValue(value) {
     if (value == 'doc') {
       // _launchURL(widget.docUrl);
-      Application.router.navigateTo(context,
-          '${Routes.webViewPage}?title=${Uri.encodeComponent(widget.title)} Doc&&url=${Uri.encodeComponent(widget.docUrl)}');
+      Application.router.navigateTo(
+        context,
+        '${Routes.webViewPage}?title=${Uri.encodeComponent(widget.title)} Doc&&url=${Uri.encodeComponent(widget.docUrl)}',
+        transition: TransitionType.nativeModal,
+      );
     } else if (value == 'code') {
-      Application.router.navigateTo(context,
-          '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}');
+      Application.router.navigateTo(
+        context,
+        '${Routes.codeView}?filePath=${Uri.encodeComponent(widget.codeUrl)}',
+        transition: TransitionType.nativeModal,
+      );
     }
   }
 

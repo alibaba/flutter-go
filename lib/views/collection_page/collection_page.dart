@@ -1,3 +1,5 @@
+import 'package:fluro/fluro.dart';
+
 /// @Author: 一凨
 /// @Date: 2019-01-08 17:12:58
 /// @Last Modified by: 一凨
@@ -118,11 +120,17 @@ class _CollectionPageState extends State<CollectionPage> {
         onTap: () {
           if (_collectionList[index - 1].router.contains('http')) {
             // 注意这里title已经转义过了
-            Application.router.navigateTo(context,
-                '${Routes.webViewPage}?title=${_collectionList[index - 1].name}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}');
+            Application.router.navigateTo(
+              context,
+              '${Routes.webViewPage}?title=${_collectionList[index - 1].name}&url=${Uri.encodeComponent(_collectionList[index - 1].router)}',
+              transition: TransitionType.nativeModal,
+            );
           } else {
-            Application.router
-                .navigateTo(context, "${_collectionList[index - 1].router}");
+            Application.router.navigateTo(
+              context,
+              "${_collectionList[index - 1].router}",
+              transition: TransitionType.nativeModal,
+            );
           }
         },
       ),

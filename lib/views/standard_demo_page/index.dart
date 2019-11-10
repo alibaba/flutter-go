@@ -7,6 +7,7 @@
 // tartget:  xxx
 //
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import '../../components/widget_demo.dart';
 import 'dart:convert';
@@ -146,8 +147,11 @@ class _StandardView extends State<StandardView> {
 
     String remoteSouceCode =
         '$githubHost/lib/page_demo_package/${demoDetail['name']}_${demoDetail['author']}_${demoDetail['id']}/src/index.dart';
-    Application.router.navigateTo(context,
-        '${Routes.githubCodeView}?remotePath=${Uri.encodeComponent(remoteSouceCode)}');
+    Application.router.navigateTo(
+      context,
+      '${Routes.githubCodeView}?remotePath=${Uri.encodeComponent(remoteSouceCode)}',
+      transition: TransitionType.nativeModal,
+    );
   }
 
   Widget buildFootInfo() {
