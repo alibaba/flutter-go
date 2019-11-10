@@ -30,7 +30,7 @@ Language: [English](https://github.com/alibaba/flutter-go/blob/master/README-en.
 	-  `markdown` 模版动态化生成（合并到master分支后）
 - [x] ` Flutter Go ` 官方 `APP` 版本自动升级
 - [x] 多端模版同步( pc端，native端同步 )
-- [ ] `Flutter Go` store
+- [x] `Flutter Go` store
 
 
 
