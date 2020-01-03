@@ -191,5 +191,13 @@ Powered by 阿里拍卖前端团队<img src="https://img.alicdn.com/tfs/TB1foEhA
 
 ---
 ### 招聘信息
-目前，阿里拍卖的前端团队有新的HC(坑位),我们诚邀前端er为团队注入新鲜血液。具体招聘信息点击如下链接：
+- 目前（2020年1月），阿里拍卖的前端团队有新的HC(坑位),我们诚邀前端er为团队注入新鲜血液。
+- 具体招聘信息点击如下链接：
 https://mp.weixin.qq.com/s/JjzZMO_qqmz-IjsBClvYqw
+简历投递
+邮箱：yifeng.yl@alibaba-inc.com
+
+钉钉扫码直接连接
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/udZl15qqib0OaD86WS3NwoaWadpxicmZqf2JLT5KLOhkEA2uUSJ87XwCiaopFdfEibvMynZCFJ1dVNV5YSSoHsMHHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" width=278 height=357>
+
+
