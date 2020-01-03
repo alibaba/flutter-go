@@ -189,3 +189,7 @@ flutter优点主要包括：
 
 Powered by 阿里拍卖前端团队<img src="https://img.alicdn.com/tfs/TB1foEhAMHqK1RjSZJnXXbNLpXa-166-166.png" width=20 height=20>
 
+---
+### 招聘信息
+目前，阿里拍卖的前端团队有新的HC(坑位),我们诚邀前端er为团队注入新鲜血液。具体招聘信息点击如下链接：
+https://mp.weixin.qq.com/s/JjzZMO_qqmz-IjsBClvYqw
