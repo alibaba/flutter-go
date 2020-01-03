@@ -34,7 +34,7 @@
 
 ## Third part build
 
-Because the content of ** flutter ** is updated faster, we can't enrich the content of the project faster, If you are willing to contribute to the development and learning of flutter, please see the [build instructions](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md) before you start, we will put the builder's avatar and nick to the websit.
+Because the content of **flutter** is updated faster, we can't enrich the content of the project faster, If you are willing to contribute to the development and learning of flutter, please see the [build instructions](https://github.com/alibaba/flutter-go/blob/master/docs/contribute.md) before you start, we will put the builder's avatar and nick to the websit.
 
 ## Logs
 
