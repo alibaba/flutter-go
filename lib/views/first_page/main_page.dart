@@ -1,15 +1,16 @@
 import 'package:fluro/fluro.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_go/routers/application.dart' show Application;
+import 'package:flutter_go/routers/routers.dart' show Routes;
 import 'package:flutter_go/views/first_page/drawer_page.dart';
+
 import './first_page.dart';
 
 /// import './sub_page.dart';
 import './main_app_bar.dart';
 import './search_page.dart';
-import 'package:flutter_go/model/user_info.dart';
-import 'package:flutter_go/routers/application.dart' show Application;
-import 'package:flutter_go/routers/routers.dart' show Routes;
 
 DefaultTabController _tabController;
 TabBar _tabBar;
@@ -91,7 +92,7 @@ class TabLayout extends StatelessWidget {
               transition: TransitionType.nativeModal,
             );
           } else if (index == 2) {
-//          new Future.delayed(const Duration(seconds: 1),(){
+//          Future.delayed(const Duration(seconds: 1),(){
 //            showAlertDialog(Application.globalContext);
 //          });
 

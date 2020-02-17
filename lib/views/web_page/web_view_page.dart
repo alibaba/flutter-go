@@ -6,12 +6,12 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:flutter_go/api/api.dart';
 
 /// import 'package:flutter_go/model/collection.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-import 'package:flutter_go/api/api.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class WebViewPage extends StatefulWidget {
   final String url;
@@ -22,7 +22,7 @@ class WebViewPage extends StatefulWidget {
 }
 
 class _WebViewPageState extends State<WebViewPage> {
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 

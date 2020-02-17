@@ -75,7 +75,7 @@
 //  Future<List> mainList() async{
 //    List listJson =  await sql.getByCondition(conditions: {'parentId': 0});
 //    List<Cat> cats = listJson.map((json) {
-//        return new Cat.fromJSON(json);
+//        return Cat.fromJSON(json);
 //    }).toList();
 //    return cats;
 //  }
@@ -85,12 +85,12 @@
 //
 //
 //    if (cat == null) {
-//      cat = new Cat(depth: 1, parentId: 0);
+//      cat = Cat(depth: 1, parentId: 0);
 //    }
 //    // print("cat in getList ${cat.toMap()}");
 //    List listJson =  await sql.getByCondition(conditions: cat.toSqlCondition());
 //    List<Cat> cats = listJson.map((json) {
-//      return new Cat.fromJSON(json);
+//      return Cat.fromJSON(json);
 //    }).toList();
 //    return cats;
 //  }
@@ -101,7 +101,7 @@
 //    if (json.isEmpty) {
 //      return null;
 //    }
-//    return new Cat.fromJSON(json.first);
+//    return Cat.fromJSON(json.first);
 //  }
 //
 //}

@@ -14,7 +14,7 @@ class PainterSketchDome extends StatefulWidget {
   final String title;
 
   @override
-  _PainterSketchDomeState createState() => new _PainterSketchDomeState();
+  _PainterSketchDomeState createState() => _PainterSketchDomeState();
 }
 
 class _PainterSketchDomeState extends State<PainterSketchDome> {
@@ -36,7 +36,7 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
 
   void newGestureDetector(DragStartDetails detail) {
     if (nowPoints.length != 0) {
-      LinePoints l = LinePoints(new List<Offset>.from(nowPoints), nowColor);
+      LinePoints l = LinePoints(List<Offset>.from(nowPoints), nowColor);
       lines.add(l);
       nowPoints.clear();
     }
@@ -53,7 +53,7 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
 
   void changeColor(Color c) {
     if (nowPoints.length != 0) {
-      LinePoints l = LinePoints(new List<Offset>.from(nowPoints), nowColor);
+      LinePoints l = LinePoints(List<Offset>.from(nowPoints), nowColor);
       lines.add(l);
     }
     if (mounted) {
@@ -101,11 +101,11 @@ class _PainterSketchDomeState extends State<PainterSketchDome> {
     return SizedBox(
         width: MediaQuery.of(context).size.width * 0.9,
         height: MediaQuery.of(context).size.height * 0.6,
-        child: new Scaffold(
+        child: Scaffold(
           primary: false,
-          body: new Container(
+          body: Container(
             decoration: BoxDecoration(color: Colors.white),
-            child: new Flex(
+            child: Flex(
               direction: Axis.vertical,
               children: <Widget>[
                 Container(
@@ -152,7 +152,7 @@ class PaintCanvas extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint p = new Paint()
+    Paint p = Paint()
       ..color = Colors.redAccent
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 5.0;
@@ -201,10 +201,10 @@ class ColorPallet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new RawMaterialButton(
+    return RawMaterialButton(
         onPressed: onPressed,
         constraints: BoxConstraints(minWidth: 60.0, minHeight: 50.0),
-        child: new Container(
+        child: Container(
           margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
           width: 50.0,
           height: 50.0,

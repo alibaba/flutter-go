@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_go/components/widget_demo.dart';
+
 import 'demo.dart';
 
 const content1 = """
@@ -36,7 +37,7 @@ class _DemoState extends State<Demo> {
     return WidgetDemo(
       contentList: [
         content1,
-        new RadioADemo(),
+        RadioADemo(),
       ],
       title: 'Radio',
       docUrl: 'https://docs.flutter.io/flutter/material/Radio-class.html',

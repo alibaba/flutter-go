@@ -16,10 +16,10 @@ class _Demo extends State<SnackBarActionDemo> {
     return Center(
         child: Column(
       children: <Widget>[
-        new RaisedButton(
+        RaisedButton(
           onPressed: () {
-            final snackBar = new SnackBar(
-              content: new Text('这是一个SnackBar, 右侧有SnackBarAction, 3秒后消失'),
+            final snackBar = SnackBar(
+              content: Text('这是一个SnackBar, 右侧有SnackBarAction, 3秒后消失'),
               backgroundColor: Color(0xffc91b3a),
               action: SnackBarAction(
                 // 提示信息上添加一个撤消的按钮
@@ -36,10 +36,10 @@ class _Demo extends State<SnackBarActionDemo> {
           },
           child: Text('点我显示有action的SnackBar'),
         ),
-        new RaisedButton(
+        RaisedButton(
           onPressed: () async {
-            final snackBar = new SnackBar(
-              content: new Text('右侧无SnackBarAction, 3秒后消失'),
+            final snackBar = SnackBar(
+              content: Text('右侧无SnackBarAction, 3秒后消失'),
               backgroundColor: Color(0xffc91b3a),
               duration: Duration(seconds: 3), // 持续时间
               //animation,

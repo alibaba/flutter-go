@@ -1,32 +1,32 @@
-import 'package:flutter/material.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'routers/routers.dart';
-import 'routers/application.dart' show Application;
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_go/event/event_bus.dart';
+import 'package:flutter_go/event/event_model.dart';
+import 'package:flutter_go/model/search_history.dart';
+import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_go/model/widget.dart';
+import 'package:flutter_go/standard_pages/index.dart';
+import 'package:flutter_go/utils/analytics.dart' as Analytics;
+import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/utils/net_utils.dart';
 import 'package:flutter_go/utils/provider.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 import 'package:flutter_go/views/home.dart';
-import 'package:flutter_go/model/search_history.dart';
-import 'package:flutter_go/utils/analytics.dart' as Analytics;
 import 'package:flutter_go/views/login_page/login_page.dart';
-import 'package:flutter_go/utils/data_utils.dart';
-import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_jpush/flutter_jpush.dart';
-import 'package:flutter_go/event/event_bus.dart';
-import 'package:flutter_go/event/event_model.dart';
-import 'package:event_bus/event_bus.dart';
-import 'package:flutter_go/model/widget.dart';
-import 'package:flutter_go/standard_pages/index.dart';
-//import 'views/welcome_page/index.dart';
-import 'package:flutter_go/utils/net_utils.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'routers/application.dart' show Application;
+import 'routers/routers.dart';
 
 SpUtil sp;
 var db;
 
 class MyApp extends StatefulWidget {
   MyApp() {
-    final router = new Router();
+    final router = Router();
     Routes.configureRoutes(router);
     // 这里设置项目环境
     Application.router = router;
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
   int themeColor = 0xFFC91B3A;
 
   _MyAppState() {
-    final eventBus = new EventBus();
+    final eventBus = EventBus();
     ApplicationEvent.event = eventBus;
   }
 
@@ -176,9 +176,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 //    WidgetTree.getCommonItemByPath([15, 17], Application.widgetTree);
-    return new MaterialApp(
+    return MaterialApp(
       title: 'titles',
-      theme: new ThemeData(
+      theme: ThemeData(
         primaryColor: Color(this.themeColor),
         backgroundColor: Color(0xFFEFEFEF),
         accentColor: Color(0xFF888888),
@@ -191,7 +191,7 @@ class _MyAppState extends State<MyApp> {
           size: 35.0,
         ),
       ),
-      home: new Scaffold(body: showWelcomePage()),
+      home: Scaffold(body: showWelcomePage()),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
@@ -207,10 +207,10 @@ void _startupJpush() async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final provider = new Provider();
+  final provider = Provider();
   await provider.init(true);
   sp = await SpUtil.getInstance();
-  new SearchHistoryList(sp);
+  SearchHistoryList(sp);
 
   await DataUtils.getWidgetTreeList().then((List json) {
     List data =
@@ -219,5 +219,5 @@ void main() async {
     print("Application.widgetTree>>>> ${Application.widgetTree}");
   });
   db = Provider.db;
-  runApp(new MyApp());
+  runApp(MyApp());
 }

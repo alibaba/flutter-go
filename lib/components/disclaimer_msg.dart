@@ -219,10 +219,10 @@ class _DisclaimerMsgDialogState extends State<DisclaimerMsgDialog> {
         ),
       ),
       shape: RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(20.0)), // 圆角
+          borderRadius: BorderRadius.circular(20.0)), // 圆角
 
       actions: <Widget>[
-        new Container(
+        Container(
           width: 250,
           child: _create(),
         )

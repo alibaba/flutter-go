@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
+
 import './widget_item.dart';
+import '../model/widget.dart';
 import '../routers/application.dart';
 import '../widgets/index.dart';
-import '../model/widget.dart';
 
 class WidgetItemContainer extends StatelessWidget {
   final int columnCount; //一行几个
@@ -11,7 +12,7 @@ class WidgetItemContainer extends StatelessWidget {
 //  final bool isWidgetPoint;
 
   // 所有的可用demos;
-  final List widgetDemosList = new WidgetDemoList().getDemos();
+  final List widgetDemosList = WidgetDemoList().getDemos();
 
   WidgetItemContainer({
     Key key,

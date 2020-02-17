@@ -4,14 +4,12 @@
 /// Last Modified time: 2019-01-11 14:40:09
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_go/components/cate_card.dart';
-
 import 'package:flutter_go/routers/application.dart';
 
 class WidgetPage extends StatefulWidget {
   @override
-  SecondPageState createState() => new SecondPageState();
+  SecondPageState createState() => SecondPageState();
 }
 
 class SecondPageState extends State<WidgetPage>
@@ -34,9 +32,9 @@ class SecondPageState extends State<WidgetPage>
     // 存放最后的widget
     List<Widget> tiles = [];
     Application.widgetTree.children.forEach((dynamic item) {
-      tiles.add(new CateCard(category: item));
+      tiles.add(CateCard(category: item));
     });
-    return new ListView(
+    return ListView(
       children: tiles,
     );
   }

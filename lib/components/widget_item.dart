@@ -1,9 +1,8 @@
 /// @author 一凨
 
 import 'package:flutter/material.dart';
-
-import 'package:flutter_go/utils/style.dart';
 import 'package:flutter_go/resources/widget_name_to_icon.dart';
+import 'package:flutter_go/utils/style.dart';
 
 String _widgetName;
 
@@ -76,7 +75,7 @@ class WidgetItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           border: _buildBorder(context),
         ),
         padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10.0),

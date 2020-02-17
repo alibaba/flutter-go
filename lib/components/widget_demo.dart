@@ -7,14 +7,14 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 
+import '../components/markdown.dart';
+import '../event/event_bus.dart';
+import '../event/event_model.dart';
 import '../routers/application.dart';
 import '../routers/routers.dart';
-import '../components/markdown.dart';
 
 /// import '../model/collection.dart';
 import '../widgets/index.dart';
-import '../event/event_bus.dart';
-import '../event/event_model.dart';
 
 class WidgetDemo extends StatefulWidget {
   final List<dynamic> contentList;
@@ -38,9 +38,9 @@ class WidgetDemo extends StatefulWidget {
 class _WidgetDemoState extends State<WidgetDemo> {
   bool _hasCollected = false;
 
-  /// CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = CollectionControlModel();
   var _collectionIcons;
-  List widgetDemosList = new WidgetDemoList().getDemos();
+  List widgetDemosList = WidgetDemoList().getDemos();
   String widgetType = 'old';
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -189,14 +189,14 @@ class _WidgetDemoState extends State<WidgetDemo> {
     }
     List<PopupMenuEntry<String>> menus = buildPopupMenu();
     List<Widget> actions = [
-      new IconButton(
+      IconButton(
         tooltip: 'goBack home',
         onPressed: () {
           Navigator.popUntil(context, ModalRoute.withName(Routes.root));
         },
         icon: Icon(Icons.home),
       ),
-      new IconButton(
+      IconButton(
         tooltip: 'collection',
         onPressed: _getCollection,
         icon: Icon(_collectionIcons),

@@ -7,6 +7,7 @@
 // tartget: 代码获取自: https://blog.csdn.net/O_time/article/details/86496537
 //
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -53,15 +54,15 @@ class _LoadingDialog extends State<NetLoadingDialog> {
     if (!widget.loading) {
       return Container();
     }
-    return new GestureDetector(
+    return GestureDetector(
       onTap: widget.outsideDismiss ? _dismissDialog : null,
       child: Material(
         type: MaterialType.transparency,
-        child: new Center(
-          child: new SizedBox(
+        child: Center(
+          child: SizedBox(
             width: 120.0,
             height: 120.0,
-            child: new Container(
+            child: Container(
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -69,18 +70,18 @@ class _LoadingDialog extends State<NetLoadingDialog> {
                   ),
                 ),
               ),
-              child: new Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  new CircularProgressIndicator(),
-                  new Padding(
+                  CircularProgressIndicator(),
+                  Padding(
                     padding: const EdgeInsets.only(
                       top: 20.0,
                     ),
-                    child: new Text(
+                    child: Text(
                       widget.loadingText,
-                      style: new TextStyle(fontSize: 12.0),
+                      style: TextStyle(fontSize: 12.0),
                     ),
                   ),
                 ],

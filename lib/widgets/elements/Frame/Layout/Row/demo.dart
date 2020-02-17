@@ -102,28 +102,28 @@ class RowExpanded extends StatelessWidget {
       children: <Widget>[
         ////填充数据
         Expanded(
-          child: new RaisedButton(
+          child: RaisedButton(
               onPressed: () {},
               color: Color(0xfffce4ec),
-              child: new Text(
+              child: Text(
                 'flutter',
                 style: TextStyle(color: Colors.white),
               )),
         ),
         Expanded(
-          child: new RaisedButton(
+          child: RaisedButton(
               onPressed: () {},
               color: Color(0xfff8bbd0),
-              child: new Text(
+              child: Text(
                 'Expanded',
                 style: TextStyle(color: Colors.white),
               )),
         ),
         Expanded(
-          child: new RaisedButton(
+          child: RaisedButton(
               onPressed: () {},
               color: Color(0xfff48fb1),
-              child: new Text(
+              child: Text(
                 'flutter',
                 style: TextStyle(color: Colors.white),
               )),

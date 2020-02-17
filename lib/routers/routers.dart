@@ -1,8 +1,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_go/utils/analytics.dart' show analytics;
-import '../widgets/index.dart';
+
 import './router_handler.dart';
+import '../widgets/index.dart';
 
 /// import '../standard_pages/index.dart';
 class Routes {
@@ -19,8 +20,8 @@ class Routes {
   static String standardPage = '/standard-page/:id';
 
   static void configureRoutes(Router router) {
-    List widgetDemosList = new WidgetDemoList().getDemos();
-//    router.notFoundHandler = new Handler(
+    List widgetDemosList = WidgetDemoList().getDemos();
+//    router.notFoundHandler = Handler(
 //      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
 //      }
 //    );
@@ -36,7 +37,7 @@ class Routes {
     router.define(issuesMessage, handler: issuesMessageHandler);
     router.define(standardPage, handler: standardPageHandler);
     widgetDemosList.forEach((demo) {
-      Handler handler = new Handler(handlerFunc:
+      Handler handler = Handler(handlerFunc:
           (BuildContext context, Map<String, List<String>> params) {
         print('组件路由params=$params widgetsItem=${demo.routerName}');
         analytics

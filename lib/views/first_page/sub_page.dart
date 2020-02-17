@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:flutter_go/components/list_view_item.dart';
-import 'package:flutter_go/components/list_refresh.dart' as listComp;
-import 'package:flutter_go/components/pagination.dart';
-import 'package:flutter_go/views/first_page/first_page_item.dart';
 import 'package:flutter_go/components/disclaimer_msg.dart';
+import 'package:flutter_go/components/list_refresh.dart' as listComp;
+import 'package:flutter_go/components/list_view_item.dart';
+import 'package:flutter_go/components/pagination.dart';
 import 'package:flutter_go/utils/net_utils.dart';
+import 'package:flutter_go/views/first_page/first_page_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ValueKey<String> key;
 
@@ -38,7 +37,7 @@ class SubPageState extends State<SubPage> with AutomaticKeepAliveClientMixin {
 
       /// 判断是否需要弹出免责声明,已经勾选过不在显示,就不会主动弹
       _unKnow.then((bool value) {
-        new Future.delayed(const Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           if (!value &&
               key.currentState is DisclaimerMsgState &&
               key.currentState.showAlertDialog is Function) {
@@ -66,10 +65,10 @@ class SubPageState extends State<SubPage> with AutomaticKeepAliveClientMixin {
       }
     } catch (e) {}
     pageIndex += 1;
-    List resultList = new List();
+    List resultList = List();
     for (int i = 0; i < responseList.length; i++) {
       try {
-        FirstPageItem cellData = new FirstPageItem.fromJson(responseList[i]);
+        FirstPageItem cellData = FirstPageItem.fromJson(responseList[i]);
         resultList.add(cellData);
       } catch (e) {
         // No specified type, handles all
@@ -87,7 +86,7 @@ class SubPageState extends State<SubPage> with AutomaticKeepAliveClientMixin {
     var myTitle = '${item.title}';
     var myUsername = '${'👲'}: ${item.username} ';
     var codeUrl = '${item.detailUrl}';
-    return new ListViewItem(
+    return ListViewItem(
       itemUrl: codeUrl,
       itemTitle: myTitle,
       data: myUsername,
@@ -117,8 +116,8 @@ class SubPageState extends State<SubPage> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return new Column(children: <Widget>[
-      new Expanded(child: listComp.ListRefresh(getIndexListData, makeCard))
+    return Column(children: <Widget>[
+      Expanded(child: listComp.ListRefresh(getIndexListData, makeCard))
     ]);
   }
 }

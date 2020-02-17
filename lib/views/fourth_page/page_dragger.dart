@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_go/views/fourth_page/pager_indicator.dart';
 
 class PageDragger extends StatefulWidget {
@@ -50,13 +49,13 @@ class _PageDraggerState extends State<PageDragger> {
       } else {
         slidePercent = 0.0;
       }
-      widget.slideUpdateStream.add(
-          new SlideUpdate(UpdateType.dragging, slideDirection, slidePercent));
+      widget.slideUpdateStream
+          .add(SlideUpdate(UpdateType.dragging, slideDirection, slidePercent));
     }
   }
 
   onDragEnd(DragEndDetails details) {
-    widget.slideUpdateStream.add(new SlideUpdate(
+    widget.slideUpdateStream.add(SlideUpdate(
       UpdateType.doneDragging,
       SlideDirection.none,
       0.0,
@@ -99,21 +98,21 @@ class AnimatedPageDragger {
 
       final slideRemaining = 1.0 - slidePercent;
 
-      duration = new Duration(
+      duration = Duration(
           milliseconds: (slideRemaining / PERCENT_PER_MILLISECOND).round());
     } else {
       endSlidePercent = 0.0;
-      duration = new Duration(
+      duration = Duration(
           milliseconds: (slidePercent / PERCENT_PER_MILLISECOND).round());
     }
 
     completionAnimationController =
-        new AnimationController(duration: duration, vsync: vsync)
+        AnimationController(duration: duration, vsync: vsync)
           ..addListener(() {
             slidePercent = lerpDouble(startSlidePercent, endSlidePercent,
                 completionAnimationController.value);
 
-            slideUpdateStream.add(new SlideUpdate(
+            slideUpdateStream.add(SlideUpdate(
               UpdateType.animating,
               slideDirection,
               slidePercent,
@@ -121,7 +120,7 @@ class AnimatedPageDragger {
           })
           ..addStatusListener((AnimationStatus status) {
             if (status == AnimationStatus.completed) {
-              slideUpdateStream.add(new SlideUpdate(
+              slideUpdateStream.add(SlideUpdate(
                 UpdateType.doneAnimating,
                 slideDirection,
                 endSlidePercent,

@@ -21,7 +21,7 @@ class SpUtil {
 
   static Future<SpUtil> getInstance() async {
     if (_instance == null) {
-      _instance = new SpUtil._();
+      _instance = SpUtil._();
     }
     if (_spf == null) {
       await _instance._init();

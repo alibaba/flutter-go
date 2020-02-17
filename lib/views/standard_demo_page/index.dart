@@ -7,18 +7,20 @@
 // tartget:  xxx
 //
 
+import 'dart:convert';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import '../../components/widget_demo.dart';
-import 'dart:convert';
-import '../../components/markdown.dart' as mdCopy;
-import '../../components/flutter_markdown/lib/flutter_markdown.dart';
-import '../../standard_pages/index.dart';
-import '../../page_demo_package/index.dart';
+import 'package:flutter_go/components/loading.dart';
 import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
 import 'package:flutter_go/utils/net_utils.dart';
-import 'package:flutter_go/components/loading.dart';
+
+import '../../components/flutter_markdown/lib/flutter_markdown.dart';
+import '../../components/markdown.dart' as mdCopy;
+import '../../components/widget_demo.dart';
+import '../../page_demo_package/index.dart';
+import '../../standard_pages/index.dart';
 
 const githubHost =
     'https://raw.githubusercontent.com/alibaba/flutter-go/master';
@@ -43,7 +45,7 @@ class _StandardView extends State<StandardView> {
   bool isLoading = false;
   String author = '';
   String email = '';
-  StandardPages standardPage = new StandardPages();
+  StandardPages standardPage = StandardPages();
   @override
   void initState() {
     super.initState();
@@ -182,7 +184,7 @@ class _StandardView extends State<StandardView> {
 
     return MarkdownBody(
         data: markdownDesc,
-        syntaxHighlighter: new mdCopy.HighLight(),
+        syntaxHighlighter: mdCopy.HighLight(),
         demoBuilder: (Map<String, dynamic> attrs) {
           List<Widget> demo = demoObjects[attrs['id']];
           if (demo == null) {
@@ -217,12 +219,12 @@ class _StandardView extends State<StandardView> {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        return new AlertDialog(
-            title: new Text(title),
-            content: new SingleChildScrollView(
-              child: new ListBody(
+        return AlertDialog(
+            title: Text(title),
+            content: SingleChildScrollView(
+              child: ListBody(
                 children: <Widget>[
-                  new Text(msg),
+                  Text(msg),
                 ],
               ),
             ));
@@ -232,7 +234,7 @@ class _StandardView extends State<StandardView> {
 
   @override
   Widget build(BuildContext context) {
-    return new WidgetDemo(
+    return WidgetDemo(
       title: pageTitle,
 //      codeUrl: 'elements/Form/Button/DropdownButton/demo.dart',
       contentList: [

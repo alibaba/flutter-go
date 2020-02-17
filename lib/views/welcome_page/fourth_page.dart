@@ -8,7 +8,7 @@ import 'package:flutter_go/views/fourth_page/pages.dart';
 
 class FourthPage extends StatefulWidget {
   @override
-  FourthPageState createState() => new FourthPageState();
+  FourthPageState createState() => FourthPageState();
 }
 
 class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
@@ -23,7 +23,7 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
   double slidePercent = 0.0;
 
   FourthPageState() {
-    slideUpdateStream = new StreamController<SlideUpdate>();
+    slideUpdateStream = StreamController<SlideUpdate>();
 
     slideUpdateStream.stream.listen((SlideUpdate event) {
       if (mounted) {
@@ -41,7 +41,7 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
             }
           } else if (event.updateType == UpdateType.doneDragging) {
             if (slidePercent > 0.5) {
-              animatedPageDragger = new AnimatedPageDragger(
+              animatedPageDragger = AnimatedPageDragger(
                 slideDirection: slideDirection,
                 transitionGoal: TransitionGoal.open,
                 slidePercent: slidePercent,
@@ -49,7 +49,7 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
                 vsync: this,
               );
             } else {
-              animatedPageDragger = new AnimatedPageDragger(
+              animatedPageDragger = AnimatedPageDragger(
                 slideDirection: slideDirection,
                 transitionGoal: TransitionGoal.close,
                 slidePercent: slidePercent,
@@ -90,29 +90,29 @@ class FourthPageState extends State<FourthPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return new Stack(
+    return Stack(
       children: [
-        new Page(
+        Page(
           // page 的主要内容
           viewModel: pages[activeIndex],
           percentVisible: 1.0,
         ),
-        new PageReveal(
+        PageReveal(
           revealPercent: slidePercent,
-          child: new Page(
+          child: Page(
             viewModel: pages[nextPageIndex],
             percentVisible: slidePercent,
           ),
         ),
-        new PagerIndicator(
-          viewModel: new PagerIndicatorViewModel(
+        PagerIndicator(
+          viewModel: PagerIndicatorViewModel(
             pages,
             activeIndex,
             slideDirection,
             slidePercent,
           ),
         ),
-        new PageDragger(
+        PageDragger(
           canDragLeftToRight: activeIndex > 0,
           canDragRightToLeft: activeIndex < pages.length - 1,
           slideUpdateStream: this.slideUpdateStream,

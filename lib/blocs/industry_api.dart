@@ -7,11 +7,13 @@
 // tartget: FlatButton 的示例
 //
 import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:html/parser.dart' show parse;
+
 import './search_result.dart';
 
-var dio = new Dio();
+var dio = Dio();
 
 //class Api2 {
 //  /// 关键字提示（起点）

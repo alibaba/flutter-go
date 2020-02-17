@@ -117,7 +117,7 @@ class WidgetControlModel {
     List listJson =
         await sql.getByCondition(conditions: widgetPoint.toSqlCondition());
     List<WidgetPoint> widgets = listJson.map((json) {
-      return new WidgetPoint.fromJSON(json);
+      return WidgetPoint.fromJSON(json);
     }).toList();
     // print("widgets $widgets");
     return widgets;
@@ -129,7 +129,7 @@ class WidgetControlModel {
     if (json.isEmpty) {
       return null;
     }
-    return new WidgetPoint.fromJSON(json.first);
+    return WidgetPoint.fromJSON(json.first);
   }
 
   Future<List<WidgetPoint>> search(String name) async {
@@ -140,7 +140,7 @@ class WidgetControlModel {
     }
 
     List<WidgetPoint> widgets = json.map((json) {
-      return new WidgetPoint.fromJSON(json);
+      return WidgetPoint.fromJSON(json);
     }).toList();
 
     return widgets;

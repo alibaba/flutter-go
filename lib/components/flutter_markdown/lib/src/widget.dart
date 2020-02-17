@@ -81,13 +81,13 @@ abstract class MarkdownWidget extends StatefulWidget {
   Widget build(BuildContext context, List<Widget> children);
 
   @override
-  _MarkdownWidgetState createState() => new _MarkdownWidgetState();
+  _MarkdownWidgetState createState() => _MarkdownWidgetState();
 }
 
 class DemosSyntax extends md.InlineSyntax {
   DemosSyntax() : super('\\[demo:([a-z0-9_+-]+)\\]');
   bool onMatch(parser, match) {
-    var anchor = new md.Element.empty('demo');
+    var anchor = md.Element.empty('demo');
     anchor.attributes['id'] = match[1];
     parser.addNode(anchor);
     return true;
@@ -119,22 +119,22 @@ class _MarkdownWidgetState extends State<MarkdownWidget>
   }
 
   void _parseMarkdown() {
-    final MarkdownStyleSheet styleSheet = widget.styleSheet ??
-        new MarkdownStyleSheet.fromTheme(Theme.of(context));
+    final MarkdownStyleSheet styleSheet =
+        widget.styleSheet ?? MarkdownStyleSheet.fromTheme(Theme.of(context));
 
     _disposeRecognizers();
 
     // TODO: This can be optimized by doing the split and removing \r at the same time
     final List<String> lines = widget.data.replaceAll('\r\n', '\n').split('\n');
-    final md.ExtensionSet extens = new md.ExtensionSet([
+    final md.ExtensionSet extens = md.ExtensionSet([
       md.FencedCodeBlockSyntax()
     ], [
-      new DemosSyntax(),
-      new md.InlineHtmlSyntax(),
+      DemosSyntax(),
+      md.InlineHtmlSyntax(),
     ]);
     final md.Document document =
-        new md.Document(encodeHtml: false, extensionSet: extens);
-    final MarkdownBuilder builder = new MarkdownBuilder(
+        md.Document(encodeHtml: false, extensionSet: extens);
+    final MarkdownBuilder builder = MarkdownBuilder(
         delegate: this,
         styleSheet: styleSheet,
         imageDirectory: widget.imageDirectory,
@@ -145,14 +145,14 @@ class _MarkdownWidgetState extends State<MarkdownWidget>
   void _disposeRecognizers() {
     if (_recognizers.isEmpty) return;
     final List<GestureRecognizer> localRecognizers =
-        new List<GestureRecognizer>.from(_recognizers);
+        List<GestureRecognizer>.from(_recognizers);
     _recognizers.clear();
     for (GestureRecognizer recognizer in localRecognizers) recognizer.dispose();
   }
 
   @override
   GestureRecognizer createLink(String href) {
-    final TapGestureRecognizer recognizer = new TapGestureRecognizer()
+    final TapGestureRecognizer recognizer = TapGestureRecognizer()
       ..onTap = () {
         if (widget.onTapLink != null) widget.onTapLink(href);
       };
@@ -164,7 +164,7 @@ class _MarkdownWidgetState extends State<MarkdownWidget>
   TextSpan formatText(MarkdownStyleSheet styleSheet, String code) {
     if (widget.syntaxHighlighter != null)
       return widget.syntaxHighlighter.format(code);
-    return new TextSpan(style: styleSheet.code, text: code);
+    return TextSpan(style: styleSheet.code, text: code);
   }
 
   @override
@@ -202,7 +202,7 @@ class MarkdownBody extends MarkdownWidget {
   @override
   Widget build(BuildContext context, List<Widget> children) {
     if (children.length == 1) return children.single;
-    return new Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: children,
     );
@@ -242,6 +242,6 @@ class Markdown extends MarkdownWidget {
 
   @override
   Widget build(BuildContext context, List<Widget> children) {
-    return new ListView(padding: padding, children: children);
+    return ListView(padding: padding, children: children);
   }
 }

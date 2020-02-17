@@ -28,14 +28,14 @@ class SearchHistoryList {
     if (_instance == null) {
       _sp = sp;
       String json = sp.get(SharedPreferencesKeys.searchHistory);
-      _instance = new SearchHistoryList.fromJSON(json);
+      _instance = SearchHistoryList.fromJSON(json);
     }
     return _instance;
   }
 
   factory SearchHistoryList([SpUtil sp]) {
     if (sp == null && _instance == null) {
-      print(new ArgumentError(
+      print(ArgumentError(
           ['SearchHistoryList need instantiatied SpUtil at first timte ']));
     }
     return _getInstance(sp);

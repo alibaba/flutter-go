@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
@@ -9,7 +10,7 @@ Map<String, dynamic> optHeader = {
   'content-type': 'application/json'
 };
 
-var dio = new Dio(BaseOptions(connectTimeout: 30000, headers: optHeader));
+var dio = Dio(BaseOptions(connectTimeout: 30000, headers: optHeader));
 
 class NetUtils {
   static Future get(String url, [Map<String, dynamic> params]) async {
@@ -25,7 +26,7 @@ class NetUtils {
 
     Directory documentsDir = await getApplicationDocumentsDirectory();
     String documentsPath = documentsDir.path;
-    var dir = new Directory("$documentsPath/cookies");
+    var dir = Directory("$documentsPath/cookies");
     await dir.create();
     dio.interceptors.add(CookieManager(PersistCookieJar(dir: dir.path)));
     if (params != null) {
@@ -46,7 +47,7 @@ class NetUtils {
     // };
     Directory documentsDir = await getApplicationDocumentsDirectory();
     String documentsPath = documentsDir.path;
-    var dir = new Directory("$documentsPath/cookies");
+    var dir = Directory("$documentsPath/cookies");
     await dir.create();
     dio.interceptors.add(CookieManager(PersistCookieJar(dir: dir.path)));
     var response = await dio.post(url, data: params);

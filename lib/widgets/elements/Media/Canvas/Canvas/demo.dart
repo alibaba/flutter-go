@@ -1,3 +1,7 @@
+import 'dart:async';
+import 'dart:math';
+import 'dart:typed_data';
+
 /// Created with Android Studio.
 /// User: 一晟
 /// Date: 2019/1/20
@@ -7,9 +11,6 @@
 
 import 'dart:ui';
 import 'dart:ui' as ui;
-import 'dart:typed_data';
-import 'dart:math';
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -87,7 +88,7 @@ class DrawPainter extends CustomPainter {
     //    ..filterQuality = FilterQuality.high //颜色渲染模式的质量
     //    ..strokeWidth = 15.0 ;//画笔的宽度
 
-    painter = new Paint()
+    painter = Paint()
       ..color = Colors.blueAccent
       ..strokeCap = StrokeCap.round
       ..isAntiAlias = true
@@ -283,7 +284,7 @@ class MathTools {
       _flag = true;
     }
     if (_flag) {
-      _mathTools = new MathTools._internal();
+      _mathTools = MathTools._internal();
       _flag = false;
     }
     return _mathTools;
@@ -332,7 +333,7 @@ class MathTools {
   ///@return n角星路径
   ///
   Path nStarPath(int num, double R, double r, Offset xy) {
-    Path path = new Path();
+    Path path = Path();
     double perDeg = 360 / num; //尖角的度数
     double degA = perDeg / 2 / 2;
     double degB = 360 / (num - 1) / 2 - degA / 2 + degA;

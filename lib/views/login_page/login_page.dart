@@ -1,18 +1,16 @@
+import 'package:event_bus/event_bus.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:event_bus/event_bus.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-import 'package:flutter_go/utils/data_utils.dart';
-import 'package:flutter_go/views/home.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
-
+import 'package:flutter_go/model/user_info.dart';
 import 'package:flutter_go/model/user_info_cache.dart';
 import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/routers/routers.dart';
-import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_go/utils/data_utils.dart';
+import 'package:flutter_go/views/home.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,21 +19,19 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   _LoginPageState() {
-    final eventBus = new EventBus();
+    final eventBus = EventBus();
     ApplicationEvent.event = eventBus;
   }
 
   // 利用FocusNode和_focusScopeNode来控制焦点 可以通过FocusNode.of(context)来获取widget树中默认的_focusScopeNode
-  FocusNode _emailFocusNode = new FocusNode();
-  FocusNode _passwordFocusNode = new FocusNode();
-  FocusScopeNode _focusScopeNode = new FocusScopeNode();
-  UserInfoControlModel _userInfoControlModel = new UserInfoControlModel();
+  FocusNode _emailFocusNode = FocusNode();
+  FocusNode _passwordFocusNode = FocusNode();
+  FocusScopeNode _focusScopeNode = FocusScopeNode();
+  UserInfoControlModel _userInfoControlModel = UserInfoControlModel();
 
-  GlobalKey<FormState> _signInFormKey = new GlobalKey();
-  TextEditingController _userNameEditingController =
-      new TextEditingController();
-  TextEditingController _passwordEditingController =
-      new TextEditingController();
+  GlobalKey<FormState> _signInFormKey = GlobalKey();
+  TextEditingController _userNameEditingController = TextEditingController();
+  TextEditingController _passwordEditingController = TextEditingController();
 
   bool isShowPassWord = false;
   String username = '';
@@ -219,7 +215,7 @@ class _LoginPageState extends State<LoginPage> {
         if (_signInFormKey.currentState.validate()) {
           // 如果输入都检验通过，则进行登录操作
           // Scaffold.of(context)
-          //     .showSnackBar(new SnackBar(content: new Text("执行登录操作")));
+          //     .showSnackBar(SnackBar(content: Text("执行登录操作")));
           //调用所有自孩子��save回调，保存表单内容
           doLogin();
         }
@@ -360,7 +356,7 @@ class _LoginPageState extends State<LoginPage> {
                       buildSignInTextForm(),
                       buildSignInButton(),
                       SizedBox(height: 15.0),
-                      new Container(
+                      Container(
                         height: 1,
                         width: MediaQuery.of(context).size.width * 0.75,
                         color: Colors.grey[400],

@@ -77,13 +77,13 @@ class Provider {
       ByteData data = await rootBundle.load(join("assets", "app.db"));
       List<int> bytes =
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      await new File(path).writeAsBytes(bytes);
+      await File(path).writeAsBytes(bytes);
 
       db = await openDatabase(path, version: 1,
           onCreate: (Database db, int version) async {
         print('db created version is $version');
       }, onOpen: (Database db) async {
-        print('new db opened');
+        print('db opened');
       });
     } else {
       print("Opening existing database");

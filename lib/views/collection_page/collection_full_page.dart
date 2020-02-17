@@ -1,15 +1,15 @@
+import 'package:event_bus/event_bus.dart';
+import 'package:fluro/fluro.dart';
+
 /// @Author: 一凨
 /// @Date: 2019-06-05 14:01:03
 /// @Last Modified by:   一凨
 /// @Last Modified time: 2019-06-05 14:01:03
 import 'package:flutter/material.dart';
-import 'package:event_bus/event_bus.dart';
-import 'package:fluro/fluro.dart';
-
-import 'package:flutter_go/model/collection.dart';
-import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/event/event_bus.dart';
 import 'package:flutter_go/event/event_model.dart';
+import 'package:flutter_go/model/collection.dart';
+import 'package:flutter_go/routers/application.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 
 class CollectionFullPage extends StatefulWidget {
@@ -22,13 +22,13 @@ class CollectionFullPage extends StatefulWidget {
 
 class _CollectionFullPageState extends State<CollectionFullPage> {
   _CollectionFullPageState() {
-    final eventBus = new EventBus();
+    final eventBus = EventBus();
     ApplicationEvent.event = eventBus;
   }
 
-  /// CollectionControlModel _collectionControl = new CollectionControlModel();
+  /// CollectionControlModel _collectionControl = CollectionControlModel();
   List<Collection> _collectionList = [];
-  ScrollController _scrollController = new ScrollController();
+  ScrollController _scrollController = ScrollController();
   var _icons;
 
   @override
@@ -92,7 +92,7 @@ class _CollectionFullPageState extends State<CollectionFullPage> {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
-          new BoxShadow(
+          BoxShadow(
             color: const Color(0xFFd0d0d0),
             blurRadius: 1.0,
             spreadRadius: 2.0,

@@ -1,3 +1,5 @@
+import 'package:fluro/fluro.dart';
+
 /// Created with Android Studio.
 /// User: 三帆
 /// Date: 16/01/2019
@@ -7,28 +9,27 @@
 
 import 'package:flutter/material.dart';
 
+/// import 'package:flutter_go/widgets/index.dart';
+import 'package:flutter_go/components/search_input.dart';
+import 'package:flutter_go/model/search_history.dart';
+import 'package:flutter_go/model/user_info.dart';
+
+/// import 'package:flutter_go/utils/provider.dart';
+import 'package:flutter_go/model/widget.dart';
+import 'package:flutter_go/resources/widget_name_to_icon.dart';
+
+/// import 'package:flutter_go/views/collection_page/collection_page.dart';
+import 'package:flutter_go/routers/application.dart';
+
 /// import 'package:flutter/rendering.dart';
 import 'package:flutter_go/utils/data_utils.dart';
 import 'package:flutter_go/utils/shared_preferences.dart';
 
 /// import 'package:flutter_go/views/first_page/first_page.dart';
 import 'package:flutter_go/views/first_page/main_page.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter_go/views/user_page/user_page.dart';
-import 'package:flutter_go/views/widget_page/widget_page.dart';
 import 'package:flutter_go/views/welcome_page/fourth_page.dart';
-
-/// import 'package:flutter_go/views/collection_page/collection_page.dart';
-import 'package:flutter_go/routers/application.dart';
-
-/// import 'package:flutter_go/utils/provider.dart';
-import 'package:flutter_go/model/widget.dart';
-
-/// import 'package:flutter_go/widgets/index.dart';
-import 'package:flutter_go/components/search_input.dart';
-import 'package:flutter_go/model/search_history.dart';
-import 'package:flutter_go/resources/widget_name_to_icon.dart';
-import 'package:flutter_go/model/user_info.dart';
+import 'package:flutter_go/views/widget_page/widget_page.dart';
 
 class AppPage extends StatefulWidget {
   final UserInformation userInfo;
@@ -44,7 +45,7 @@ class AppPage extends StatefulWidget {
 class _MyHomePageState extends State<AppPage>
     with SingleTickerProviderStateMixin {
   SpUtil sp;
-  WidgetControlModel widgetControl = new WidgetControlModel();
+  WidgetControlModel widgetControl = WidgetControlModel();
   SearchHistoryList searchHistoryList;
   bool isSearch = false;
 
@@ -111,13 +112,13 @@ class _MyHomePageState extends State<AppPage>
   }
 
   Widget buildSearchInput(BuildContext context) {
-    return new SearchInput((value) async {
+    return SearchInput((value) async {
       if (value != '') {
         print('value ::: $value');
         // List<WidgetPoint> list = await widgetControl.search(value);
         List<WidgetPoint> list = await DataUtils.searchWidget(value);
         return list
-            .map((item) => new MaterialSearchResult<String>(
+            .map((item) => MaterialSearchResult<String>(
                   value: item.name,
                   icon: WidgetName2Icon.icons[item.name] ?? null,
                   text: 'widget',
@@ -142,7 +143,7 @@ class _MyHomePageState extends State<AppPage>
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: renderAppBar(context, widget, _currentIndex),
       body: IndexedStack(
         index: _currentIndex,

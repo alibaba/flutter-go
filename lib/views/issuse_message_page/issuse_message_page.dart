@@ -1,10 +1,10 @@
 /// import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:zefyr/zefyr.dart';
 import 'package:flutter_go/utils/data_utils.dart';
-import 'package:notus/convert.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:notus/convert.dart';
+import 'package:zefyr/zefyr.dart';
 
 class IssuesMessagePage extends StatefulWidget {
   @override
@@ -12,9 +12,9 @@ class IssuesMessagePage extends StatefulWidget {
 }
 
 class _IssuesMessagePageState extends State<IssuesMessagePage> {
-  final TextEditingController _controller = new TextEditingController();
-  final ZefyrController _zefyrController = new ZefyrController(NotusDocument());
-  final FocusNode _focusNode = new FocusNode();
+  final TextEditingController _controller = TextEditingController();
+  final ZefyrController _zefyrController = ZefyrController(NotusDocument());
+  final FocusNode _focusNode = FocusNode();
   String _title = "";
   var _delta;
 
@@ -110,10 +110,10 @@ class _IssuesMessagePageState extends State<IssuesMessagePage> {
             child: ListView(
               children: <Widget>[
                 Text('输入标题：'),
-                new TextFormField(
+                TextFormField(
                   maxLength: 50,
                   controller: _controller,
-                  decoration: new InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'Title',
                   ),
                 ),
@@ -126,7 +126,7 @@ class _IssuesMessagePageState extends State<IssuesMessagePage> {
   }
 
   Widget _descriptionEditor() {
-    final theme = new ZefyrThemeData(
+    final theme = ZefyrThemeData(
       toolbarTheme: ZefyrToolbarTheme.fallback(context).copyWith(
         color: Colors.grey.shade800,
         toggleColor: Colors.grey.shade900,

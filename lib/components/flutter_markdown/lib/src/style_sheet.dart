@@ -50,10 +50,10 @@ class MarkdownStyleSheet {
   /// Creates a [MarkdownStyleSheet] from the [TextStyle]s in the provided [ThemeData].
   factory MarkdownStyleSheet.fromTheme(ThemeData theme) {
     assert(theme?.textTheme?.body1?.fontSize != null);
-    return new MarkdownStyleSheet(
+    return MarkdownStyleSheet(
       a: const TextStyle(color: Colors.blue),
       p: theme.textTheme.body1,
-      code: new TextStyle(
+      code: TextStyle(
           color: Colors.grey.shade700,
           fontFamily: "monospace",
           fontSize: theme.textTheme.body1.fontSize * 0.85),
@@ -70,16 +70,16 @@ class MarkdownStyleSheet {
       blockSpacing: 8.0,
       listIndent: 32.0,
       blockquotePadding: 8.0,
-      blockquoteDecoration: new BoxDecoration(
+      blockquoteDecoration: BoxDecoration(
           color: Colors.blue.shade100,
-          borderRadius: new BorderRadius.circular(2.0)),
+          borderRadius: BorderRadius.circular(2.0)),
       codeblockPadding: 8.0,
-      codeblockDecoration: new BoxDecoration(
+      codeblockDecoration: BoxDecoration(
           color: Colors.grey.shade100,
-          borderRadius: new BorderRadius.circular(2.0)),
-      horizontalRuleDecoration: new BoxDecoration(
-        border: new Border(
-            top: new BorderSide(width: 5.0, color: Colors.grey.shade300)),
+          borderRadius: BorderRadius.circular(2.0)),
+      horizontalRuleDecoration: BoxDecoration(
+        border:
+            Border(top: BorderSide(width: 5.0, color: Colors.grey.shade300)),
       ),
     );
   }
@@ -89,10 +89,10 @@ class MarkdownStyleSheet {
   /// This constructor uses larger fonts for the headings than in
   /// [MarkdownStyle.fromTheme].
   factory MarkdownStyleSheet.largeFromTheme(ThemeData theme) {
-    return new MarkdownStyleSheet(
+    return MarkdownStyleSheet(
       a: const TextStyle(color: Colors.blue),
       p: theme.textTheme.body1,
-      code: new TextStyle(
+      code: TextStyle(
           color: Colors.grey.shade700,
           fontFamily: "monospace",
           fontSize: theme.textTheme.body1.fontSize * 0.85),
@@ -109,21 +109,21 @@ class MarkdownStyleSheet {
       blockSpacing: 8.0,
       listIndent: 32.0,
       blockquotePadding: 8.0,
-      blockquoteDecoration: new BoxDecoration(
+      blockquoteDecoration: BoxDecoration(
           color: Colors.blue.shade100,
-          borderRadius: new BorderRadius.circular(2.0)),
+          borderRadius: BorderRadius.circular(2.0)),
       codeblockPadding: 8.0,
-      codeblockDecoration: new BoxDecoration(
+      codeblockDecoration: BoxDecoration(
           color: Colors.grey.shade100,
-          borderRadius: new BorderRadius.circular(2.0)),
-      horizontalRuleDecoration: new BoxDecoration(
-        border: new Border(
-            top: new BorderSide(width: 5.0, color: Colors.grey.shade300)),
+          borderRadius: BorderRadius.circular(2.0)),
+      horizontalRuleDecoration: BoxDecoration(
+        border:
+            Border(top: BorderSide(width: 5.0, color: Colors.grey.shade300)),
       ),
     );
   }
 
-  /// Creates a new [MarkdownStyleSheet] based on the current style, with the
+  /// Creates a [MarkdownStyleSheet] based on the current style, with the
   /// provided parameters overridden.
   MarkdownStyleSheet copyWith({
     TextStyle a,
@@ -148,7 +148,7 @@ class MarkdownStyleSheet {
     Decoration horizontalRuleDecoration,
     double textScaleFactor,
   }) {
-    return new MarkdownStyleSheet(
+    return MarkdownStyleSheet(
       a: a ?? this.a,
       p: p ?? this.p,
       code: code ?? this.code,
