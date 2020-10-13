@@ -14,4 +14,4 @@
 
 - 简历投递 邮箱：yifeng.yl@alibaba-inc.com
 - 钉钉扫码直接连接:
-- <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/udZl15qqib0OaD86WS3NwoaWadpxicmZqf2JLT5KLOhkEA2uUSJ87XwCiaopFdfEibvMynZCFJ1dVNV5YSSoHsMHHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" width=278 height=357>
+- <img src="https://gw.alicdn.com/tfs/TB1VXgXYFT7gK0jSZFpXXaTkpXa-716-914.png" width=278 height=357>
