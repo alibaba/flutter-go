@@ -22,11 +22,6 @@ class CustomViewPage extends StatefulWidget {
 class CustomViewPageState extends State<CustomViewPage>
     with SingleTickerProviderStateMixin {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     graph = CustomPaint(painter: DrawPainter(type: widget.type));
     return Container(
@@ -42,11 +37,6 @@ class CustomViewPageState extends State<CustomViewPage>
   @override
   void reassemble() {
     super.reassemble();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }
 
