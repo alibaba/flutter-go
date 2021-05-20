@@ -524,7 +524,7 @@ void error([String message = null]) {
 
 ### 类成员
 
-#### 不要把不必要地将字段包装在getter和setter中
+#### 不要把不必要地字段包装在getter和setter中
 
 不推荐如下写法：
 
